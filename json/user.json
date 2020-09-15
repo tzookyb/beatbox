@@ -1,0 +1,18 @@
+{
+    "user": {
+        "_id": "u101",
+        "fullName": "Orly Amdadi",
+        "userName": "orly@amdadi.com",
+        "password": "tinkerbell",
+        "isAdmin": true,
+        "followers": [
+            {
+                "minimal-user"
+            },
+            {
+                "minimal-user"
+            }
+        ],
+        "imgUrl": "http://some-img"
+    }
+}

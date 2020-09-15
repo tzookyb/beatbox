@@ -1,0 +1,41 @@
+{
+    "box": {
+        "_id": "5c09",
+        "name": "Funky Monks",
+        "tags": [
+            "Funk",
+            "Happy"
+        ],
+        "createdAt": 1541652422,
+        "createdBy": {
+            "_id": "u101",
+            "fullName": "Puki Ben David",
+            "imgUrl": "http://some-photo/"
+        },
+        "likedByUsers": [
+            {
+                "minimal-user"
+            },
+            {
+                "minimal-user"
+            }
+        ],
+        "songs": [
+            {
+                "id": "s1001",
+                "title": "The Meters - Cissy Strut",
+                "youtubeId": "youtubeId",
+                "imgUrl": "https://i.ytimg.com/vi/4_iC0MyIykM/mqdefault.jpg",
+                "addedBy": {
+                    "minimal-user"
+                }
+            },
+            {
+                "title": "The JB's - Pass The Peas",
+                "id": "mUkfiLjooxs",
+                "imgUrl": "https://i.ytimg.com/vi/mUkfiLjooxs/mqdefault.jpg",
+                "addedBy": {}
+            }
+        ]
+    }
+}
