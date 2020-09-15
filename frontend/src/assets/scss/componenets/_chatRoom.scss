@@ -1,0 +1,22 @@
+.chat-room {
+    position: fixed;
+    background-color: #9c9595cc;
+    right: 5px;
+    bottom: 2vh;
+    padding: 20px;
+    color: #eff3c6;
+    max-height: 300px;
+    border-radius: 5px;
+    
+    ul{
+        overflow-y: scroll;
+        flex-direction: column-reverse;
+        overflow-wrap: break-word;
+        width: 100%;
+    }
+
+    li {
+        margin: 5px;
+        font-size: 1rem;
+    }
+}

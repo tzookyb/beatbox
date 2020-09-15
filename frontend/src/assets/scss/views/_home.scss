@@ -1,0 +1,39 @@
+.chart-container>* {
+    max-width: 50%;
+}
+
+.App {
+    height: 100vh;
+}
+
+.hero-container{
+    background-image: url('../../img/hero1.png');
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 80vh;
+
+    .hero-txt{
+        font-size: 1rem;
+        color: #fff;
+    }
+}
+
+.welcome-div {
+    align-self: flex-end;
+    padding: 20px;
+    height: rem(400px);
+    font-size: rem(15px);
+
+
+    >* {
+        margin: 0 0 1em;
+        max-width: 50%;
+    }
+
+    .welcome-txt span {
+        font-family: Grandstander;
+    }
+
+
+}
