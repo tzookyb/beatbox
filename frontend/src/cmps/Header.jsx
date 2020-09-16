@@ -24,7 +24,7 @@ export default class Header extends Component {
             <header onScroll={() => this.onScroll} className={`${this.state.isScroll ? 'sticky' : ''} flex space-around  align-center`}>
                 <Link to="/" className="logo">BeatBox</Link>
                 <ul className="main-nav flex clean-list space-between">
-                    <li><a href="#boxes">Boxes</a></li>
+                    <li><Link to="/box">Boxes</Link></li>
                     <Link to="/box/edit">Create Box</Link>
                     {/* <li className="link flex align-center">Link3</li> */}
                     <Link to='/login'>Login</Link>

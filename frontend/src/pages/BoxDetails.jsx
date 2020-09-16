@@ -21,9 +21,10 @@ class _BoxDetails extends Component {
         const { box } = this.state;
         return (
             <section className="box-details">
-                <BoxInfo box={box} />
-                <BoxPlaylist songs={box.songs} />
-                <ChatBox />
+                <h1>Here</h1>
+                {/* <BoxInfo box={box} /> */}
+                {/* <BoxPlaylist songs={box.songs} /> */}
+                {/* <ChatBox /> */}
             </section>
         )
     }

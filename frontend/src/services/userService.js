@@ -1,5 +1,5 @@
 // import httpService from './httpService'
-const BASE_URL = 'http://localhost:3000/user'
+const BASE_URL = 'http://localhost:3030/user'
 
 const STORAGE_KEY = 'user';
 
