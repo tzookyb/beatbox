@@ -47,7 +47,7 @@ export default class SongPick extends Component {
                         const { title } = result.snippet;
                         const imgUrl = result.snippet.thumbnails.default.url;
                         return <div key={id} className="song-pick-result" onClick={() => this.addSong(result)}>
-                            <img width="120" height="90" src={imgUrl} alt="thumbnail" />{title}
+                            <img src={imgUrl} alt="thumbnail" />{title}
                         </div>
                     })
                 }
