@@ -28,6 +28,8 @@ export const boxService = {
 //     return gBoxes.find(box => box._id === boxId)
 // }
 
+
+
 // //TODO: change to backend mood
 async function getById(boxId) {
     return httpService.get(`box/${boxId}`)

@@ -1,0 +1,19 @@
+.song-list {
+    min-height: rem(300px);
+    background-color: #ccc;
+
+    ul {
+        overflow-y: scroll;
+        
+
+        li {
+            border-bottom: 1px solid #999;
+            width: 100%;
+        }
+    }
+
+
+    .songPick {
+        min-width: 30%;
+    }
+}

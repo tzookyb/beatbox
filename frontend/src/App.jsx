@@ -19,7 +19,7 @@ class _App extends Component {
 
   render() {
     return (
-      <div id="page-top" className="main-container">
+      <div className="main">
         <Header/>
         <Switch>
         <Route component={BoxEdit} path="/box/edit/:id?"/>

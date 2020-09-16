@@ -4,26 +4,32 @@ import { connect } from 'react-redux'
 
 import { boxService } from '../services/boxService'
 import { ChatBox } from '../cmps/BoxDetails/ChatBox'
-import { BoxPlaylist } from '../cmps/BoxDetails/BoxPlaylist'
+import { SongList } from '../cmps/BoxDetails/SongList'
 import { BoxInfo } from '../cmps/BoxDetails/BoxInfo'
+import { songService } from '../services/songService'
 
 class _BoxDetails extends Component {
     state = {
-        box: null
+        box: null,
+        songs: []
     }
 
-    componentDidMount() {
-        const boxId = this.props.match.params.boxId;
-        boxService.getById(boxId).then((box) => this.setState({ box }))
+    async componentDidMount() {
+        const songs = await  songService.query()
+
+        console.log("componentDidMount -> songs", songs)
+        this.setState({songs})
+        // const boxId = this.props.match.params.boxId;
+        // boxService.getById(boxId).then((box) => this.setState({ box }))
     }
 
     render() {
-        const { box } = this.state;
+        const { box, songs } = this.state;
         return (
-            <section className="box-details">
-                <h1>Here</h1>
-                {/* <BoxInfo box={box} /> */}
-                {/* <BoxPlaylist songs={box.songs} /> */}
+            <section className="box-details flex column main-container">
+                <BoxInfo />
+                <SongList songs={songs} />
+                
                 {/* <ChatBox /> */}
             </section>
         )
