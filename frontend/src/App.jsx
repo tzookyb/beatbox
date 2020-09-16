@@ -9,16 +9,11 @@ import { BoxDetails } from './pages/BoxDetails';
 import { BoxAdd } from './pages/BoxAdd';
 import { Home } from './pages/Home';
 import { UserDetails } from './pages/UserDetails';
-
-
 class _App extends Component {
   state = {
-
   }
-
   componentDidMount() {
   }
-
   render() {
     return (
       <div className="App">
@@ -36,15 +31,10 @@ class _App extends Component {
     )
   }
 }
-
 const mapStateToProps = state => {
   return {
-
   }
 }
-
 const mapDispatchToProps = {
-
 }
-
 export const App = connect(mapStateToProps, mapDispatchToProps)(_App);
