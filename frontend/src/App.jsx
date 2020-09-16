@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Header from './cmps/Header';
 import { BoxApp } from './pages/BoxApp';
 import { BoxDetails } from './pages/BoxDetails';
-import { BoxEdit } from './pages/BoxEdit';
+import { BoxAdd } from './pages/BoxAdd';
 import { Home } from './pages/Home';
 import { UserDetails } from './pages/UserDetails';
 
@@ -22,7 +22,7 @@ class _App extends Component {
       <div className="main">
         <Header/>
         <Switch>
-        <Route component={BoxEdit} path="/box/edit/:id?"/>
+        <Route component={BoxAdd} path="/box/add/"/>
         <Route component={BoxDetails} path="/box/:id"/>
         <Route component={UserDetails} path="/user/:id"/>
         <Route component={BoxApp} path="/box"/>

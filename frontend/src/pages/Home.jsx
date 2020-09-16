@@ -3,6 +3,7 @@ import Footer from '../cmps/Footer'
 import { BoxApp } from './BoxApp'
 import { connect } from 'react-redux'
 
+import {boxService} from '../services/boxService'
 import { loadBoxes } from '../store/actions/boxAction'
 
 export class _Home extends Component {
@@ -14,30 +15,31 @@ export class _Home extends Component {
         this.props.loadBoxes()
     }
 
-    getGenres = (boxes) => {
-        var geners = [];
-        boxes.forEach(box => {
-            box.tags.forEach(tag => {
-                if (!geners.includes(tag)) geners.push(tag);
-            })
-        })
-        return geners;
+    getGenres () {
+        return boxService.getGenres();
+        // var genres = [];
+        // boxes.forEach(box => {
+        //     box.tags.forEach(tag => {
+        //         if (!genres.includes(tag)) genres.push(tag);
+        //     })
+        // })
+        // return genres;
     }
 
     render() {
         const { boxes } = this.props;
         if (!boxes) return <h1>Loading...</h1>
-        const geners = this.getGenres(boxes)
+        const genres = this.getGenres(boxes)
         return (
             <div>
                 <div className="hero-container flex justify-center align-center">
                     <div className="hero-txt flex align-center column">
                         <h1>Share the beat...</h1>
-                        <a href="#box"><button>Get Started!</button></a>
+                        <button>Get Started!</button>
                     </div>
                 </div>
                 <div className="gener-list">
-                    {geners.map((gener, idx) => <BoxApp key={idx} gener={gener} />)}
+                    {genres.length && <BoxApp genres={genres} />}
                 </div>
                 <Footer />
             </div>

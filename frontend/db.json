@@ -1,118 +1,150 @@
 {
   "box": [
     {
-  "_id": "5c09",
-  "name": "Funky Monks",
-  "tags": ["Funk", "Happy"],
-  "description": "This Box is",
-  "likedByUser": [],
-  "imgUrl": "https://images.unsplash.com/photo-1487180144351-b8472da7d491?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-  "createdAt": 1541652422,
-  "createdBy": {
-    "_id": "u101",
-    "fullName": "Puki Ben David",
-    "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
-  "songs":[
-    {
-      "title": "The Meters",
-      "id":"s1011",
-      "youtubeId":"youtubeId",
-      "imgUrl": "imgUrl",
-      "addedBy": {}
-    },
-    {
-      "title": "The Sky",
-      "id":"s1012",
-      "youtubeId":"youtubeId",
-      "imgUrl": "imgUrl",
-      "addedBy": {}
-    }
-  ]
-  },
-    {
-  "_id": "104a",
-  "name": "Best Box",
-  "tags": ["Hiphop", "Pop", "Happy"],
-  "description": "This Box is",
-  "likedByUser": [
-    {"name": "hilla", "id":"101"},
-    {"name": "Matan", "id":"102"},
-    {"name": "Idan", "id":"103"}
-  ],
-  "imgUrl": "https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-  "createdAt": 1541652422,
-  "createdBy": {
-    "_id": "u101",
-    "fullName": "Puki Ben David",
-    "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
-  "songs":[
-    {
-      "title": "The Meters",
-      "id":"s1011",
-      "youtubeId":"youtubeId",
-      "imgUrl": "imgUrl",
-      "addedBy": {}
-    },
-    {
-      "title": "The Sky",
-      "id":"s1012",
-      "youtubeId":"youtubeId",
-      "imgUrl": "imgUrl",
-      "addedBy": {}
-    }]
-  },
-    {
-  "_id": "105a",
-  "name": "New Box",
-  "tags": ["Hiphop", "Chilout"],
-  "description": "This Box is",
-  "likedByUser": [
-    {"name": "hilla", "id":"101"},
-    {"name": "Matan", "id":"102"},
-    {"name": "Idan", "id":"103"}
-  ],
-  "imgUrl": "https://images.unsplash.com/photo-1477233534935-f5e6fe7c1159?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-  "createdAt": 1541652422,
-  "createdBy": {
-    "_id": "u101",
-    "fullName": "Puki Ben David",
-    "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
-  "songs":[
-    {
-      "title": "The Meters",
-      "id":"s1011",
-      "youtubeId":"youtubeId",
-      "imgUrl": "imgUrl",
-      "addedBy": {}
-    },
-    {
-      "title": "The Sky",
-      "id":"s1012",
-      "youtubeId":"youtubeId",
-      "imgUrl": "imgUrl",
-      "addedBy": {}
-    }
-  ]
-  }
-],
-  "user": {
-    "_id": "u101",
-      "fullName": "Puki Ben David",
-      "userName": "orly@amdadi.com",
-      "password": "1",
-      "imgUrl": "http://some-img",
-      "followers":[],
-      "following":[],
-      "notifs": [
+      "_id": "5c09",
+      "name": "Funky Monks",
+      "tags": [
+        "Hip-hop",
+        "Arabic"
+      ],
+      "description": "This Box is",
+      "likedByUser": [],
+      "imgUrl": "https://images.unsplash.com/photo-1487180144351-b8472da7d491?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+      "createdAt": 1541652422,
+      "createdBy": {
+        "_id": "u101",
+        "fullName": "Puki Ben David",
+        "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      },
+      "songs": [
         {
-          "id": "a101",
-          "txt": "Bla bla",
-          "createdAt": 154514,
-          "action": {
-            "id": "c101",
-            "title": "do that"
-          }
+          "title": "The Meters",
+          "id": "s1011",
+          "youtubeId": "youtubeId",
+          "imgUrl": "imgUrl",
+          "addedBy": {}
+        },
+        {
+          "title": "The Sky",
+          "id": "s1012",
+          "youtubeId": "youtubeId",
+          "imgUrl": "imgUrl",
+          "addedBy": {}
         }
       ]
+    },
+    {
+      "_id": "104a",
+      "name": "Best Box",
+      "tags": [
+        "Alternative",
+        "Pop",
+        "Classical"
+      ],
+      "description": "This Box is",
+      "likedByUser": [
+        {
+          "name": "hilla",
+          "id": "101"
+        },
+        {
+          "name": "Matan",
+          "id": "102"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        }
+      ],
+      "imgUrl": "https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+      "createdAt": 1541652422,
+      "createdBy": {
+        "_id": "u101",
+        "fullName": "Puki Ben David",
+        "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      },
+      "songs": [
+        {
+          "title": "The Meters",
+          "id": "s1011",
+          "youtubeId": "youtubeId",
+          "imgUrl": "imgUrl",
+          "addedBy": {}
+        },
+        {
+          "title": "The Sky",
+          "id": "s1012",
+          "youtubeId": "youtubeId",
+          "imgUrl": "imgUrl",
+          "addedBy": {}
+        }
+      ]
+    },
+    {
+      "_id": "105a",
+      "name": "New Box",
+      "tags": [
+        "Classical",
+        "Country"
+      ],
+      "description": "This Box is",
+      "likedByUser": [
+        {
+          "name": "hilla",
+          "id": "101"
+        },
+        {
+          "name": "Matan",
+          "id": "102"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        }
+      ],
+      "imgUrl": "https://images.unsplash.com/photo-1477233534935-f5e6fe7c1159?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+      "createdAt": 1541652422,
+      "createdBy": {
+        "_id": "u101",
+        "fullName": "Puki Ben David",
+        "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      },
+      "songs": [
+        {
+          "title": "The Meters",
+          "id": "s1011",
+          "youtubeId": "youtubeId",
+          "imgUrl": "imgUrl",
+          "addedBy": {}
+        },
+        {
+          "title": "The Sky",
+          "id": "s1012",
+          "youtubeId": "youtubeId",
+          "imgUrl": "imgUrl",
+          "addedBy": {}
+        }
+      ]
+    }
+  ],
+  "user": {
+    "_id": "u101",
+    "fullName": "Puki Ben David",
+    "userName": "orly@amdadi.com",
+    "password": "1",
+    "imgUrl": "http://some-img",
+    "followers": [],
+    "following": [],
+    "notifs": [
+      {
+        "id": "a101",
+        "txt": "Bla bla",
+        "createdAt": 154514,
+        "action": {
+          "id": "c101",
+          "title": "do that"
+        }
+      }
+    ]
   }
 }

@@ -22,7 +22,7 @@ export function boxReducer(state = initialState, action) {
             }
         case 'ADD_BOX':
             return {
-                ...state, boxes: [...state.boxs, action.box]
+                ...state, boxes: [...state.boxes, action.box]
             }
         case 'REMOVE_BOX':
             return { ...state, boxes: state.boxes.filter(box => box._id !== action.boxId) }
