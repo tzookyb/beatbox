@@ -1,4 +1,7 @@
 
+import React from 'react'
+
+
 import { SongPreview } from './SongPreview'
 
 export function BoxPlaylist({ songs }) {

@@ -1,0 +1,69 @@
+{
+    "box": [
+      {
+          "_id": "5c09",
+          "name": "Funky Monks",
+          "tags": [
+            "Funk",
+            "Happy"
+          ],
+          "createdAt": 1541652422,
+          "createdBy": {
+            "_id": "u101",
+            "fullName": "Puki Ben David",
+            "imgUrl": "http://some-photo/"
+          },
+          "songs": [
+            {
+              "title": "The Meters - Cissy Strut",
+              "id": "s1001",
+              "youtubeId": "youtubeId",
+              "imgUrl": "https://i.ytimg.com/vi/4_iC0MyIykM/mqdefault.jpg"
+            },
+            {
+              "title": "The JB's - Pass The Peas",
+              "id": "mUkfiLjooxs",
+              "youtubeId": "youtubeId",
+              "imgUrl": "https://i.ytimg.com/vi/mUkfiLjooxs/mqdefault.jpg",
+              "addedBy": {}
+            }
+          ]
+        },
+      {
+          "_id": "5c10",
+          "name": "Dunky Monks",
+          "tags": [
+            "Funk",
+            "Happy"
+          ],
+          "createdAt": 1541652422,
+          "createdBy": {
+            "_id": "u101",
+            "fullName": "Puki Ben David",
+            "imgUrl": "http://some-photo/"
+          },
+          "songs": [
+            {
+              "title": "The Meters - Cissy Strut",
+              "id": "s1001",
+              "youtubeId": "youtubeId",
+              "imgUrl": "https://i.ytimg.com/vi/4_iC0MyIykM/mqdefault.jpg"
+            },
+            {
+              "title": "The JB's - Pass The Peas",
+              "id": "mUkfiLjooxs",
+              "youtubeId": "youtubeId",
+              "imgUrl": "https://i.ytimg.com/vi/mUkfiLjooxs/mqdefault.jpg",
+              "addedBy": {}
+            }
+          ]
+        }      
+    ],
+    "user": {
+      "_id": "u101",
+      "fullName": "Puki Ben David",
+      "userName": "orly@amdadi.com",
+      "password": "1",
+      "imgUrl": "http://some-img"
+   }
+  }

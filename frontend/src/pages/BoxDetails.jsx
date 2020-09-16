@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import { boxService } from '../services/boxService'
 import { ChatBox } from '../cmps/BoxDetails/ChatBox'
