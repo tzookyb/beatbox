@@ -1,7 +1,4 @@
-
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-
 import { boxService } from '../services/boxService'
 import { ChatBox } from '../cmps/BoxDetails/ChatBox'
 import { SongList } from '../cmps/BoxDetails/SongList'
@@ -15,10 +12,10 @@ class _BoxDetails extends Component {
     }
 
     async componentDidMount() {
-        const songs = await  songService.query()
+        const songs = await songService.query()
 
         console.log("componentDidMount -> songs", songs)
-        this.setState({songs})
+        this.setState({ songs })
         // const boxId = this.props.match.params.boxId;
         // boxService.getById(boxId).then((box) => this.setState({ box }))
     }
@@ -29,7 +26,7 @@ class _BoxDetails extends Component {
             <section className="box-details flex column main-container">
                 <BoxInfo />
                 <SongList songs={songs} />
-                
+
                 {/* <ChatBox /> */}
             </section>
         )
@@ -46,4 +43,3 @@ const mapDispatchToProps = {
 }
 
 export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails)
-
