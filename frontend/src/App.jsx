@@ -9,6 +9,7 @@ import { BoxDetails } from './pages/BoxDetails';
 import { BoxAdd } from './pages/BoxAdd';
 import { Home } from './pages/Home';
 import { UserDetails } from './pages/UserDetails';
+
 class _App extends Component {
   state = {
   }
@@ -20,6 +21,8 @@ class _App extends Component {
         <Header />
         <main>
           <Switch>
+            
+            <Route component={Player} path="/player" />
             <Route component={BoxAdd} path="/box/add" />
             <Route component={BoxDetails} path="/box/:boxId" />
             <Route component={UserDetails} path="/user/:id" />
