@@ -4,6 +4,7 @@ import { ChatBox } from '../cmps/BoxDetails/ChatBox'
 import { SongList } from '../cmps/BoxDetails/SongList'
 import { BoxInfo } from '../cmps/BoxDetails/BoxInfo'
 import { songService } from '../services/songService'
+import { connect } from 'react-redux'
 
 class _BoxDetails extends Component {
     state = {

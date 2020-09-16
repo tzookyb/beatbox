@@ -30,7 +30,6 @@ class _App extends Component {
           <Route component={BoxApp} path="/box" />
           <Route component={Home} path="/" />
         </Switch>
-        <SongPick />
       </div>
     )
   }
