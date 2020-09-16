@@ -1,69 +1,167 @@
 {
   "box": [
     {
-          "_id": "5c09",
-          "name": "Funky Monks",
-          "tags": [
-            "Funk",
-            "Happy"
-          ],
-          "createdAt": 1541652422,
-          "createdBy": {
-          "_id": "u101",
-            "fullName": "Puki Ben David",
-            "imgUrl": "http://some-photo/"
-          },
-          "songs": [
-            {
-              "title": "The Meters - Cissy Strut",
-              "id": "s1001",
-              "youtubeId": "youtubeId",
-              "imgUrl": "https://i.ytimg.com/vi/4_iC0MyIykM/mqdefault.jpg"
-            },
-            {
-              "title": "The JB's - Pass The Peas",
-              "id": "mUkfiLjooxs",
-              "youtubeId": "youtubeId",
-              "imgUrl": "https://i.ytimg.com/vi/mUkfiLjooxs/mqdefault.jpg",
-              "addedBy": {}
-            }
-          ]
-        },
-      {
-          "_id": "5c10",
-          "name": "Dunky Monks",
-          "tags": [
-            "Funk",
-            "Happy"
+      "_id": "5c09",
+      "name": "Funky Monks",
+      "tags": [
+        "Hip-hop",
+        "Arabic"
       ],
-          "createdAt": 1541652422,
-          "createdBy": {
-            "_id": "u101",
-            "fullName": "Puki Ben David",
-            "imgUrl": "http://some-photo/"
-          },
-          "songs": [
-            {
-              "title": "The Meters - Cissy Strut",
-              "id": "s1001",
-              "youtubeId": "youtubeId",
-              "imgUrl": "https://i.ytimg.com/vi/4_iC0MyIykM/mqdefault.jpg"
-            },
-            {
-              "title": "The JB's - Pass The Peas",
-              "id": "mUkfiLjooxs",
-              "youtubeId": "youtubeId",
-              "imgUrl": "https://i.ytimg.com/vi/mUkfiLjooxs/mqdefault.jpg",
-              "addedBy": {}
-            }
-          ]
+      "description": "This Box is",
+      "likedByUser": [],
+      "imgUrl": "https://images.unsplash.com/photo-1487180144351-b8472da7d491?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+      "createdAt": 1541652422,
+      "createdBy": {
+        "_id": "u101",
+        "fullName": "Puki Ben David",
+        "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      },
+      "songs": [
+        {
+          "title": "The Meters",
+          "id": "s1011",
+          "youtubeId": "youtubeId",
+          "imgUrl": "imgUrl",
+          "addedBy": {}
+        },
+        {
+          "title": "The Sky",
+          "id": "s1012",
+          "youtubeId": "youtubeId",
+          "imgUrl": "imgUrl",
+          "addedBy": {}
+        },
+        {
+          "id": "OBVeLeuV06I",
+          "title": "AD &quot;Thug&quot; Feat. YG (WSHH Exclusive - Official Music Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/OBVeLeuV06I/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
         }
-    ],
-    "user": {
-      "_id": "u101",
-      "fullName": "Puki Ben David",
-      "userName": "orly@amdadi.com",
-      "password": "1",
-      "imgUrl": "http://some-img"
-   }
+      ]
+    },
+    {
+      "_id": "104a",
+      "name": "Best Box",
+      "tags": [
+        "Alternative",
+        "Pop",
+        "Classical"
+      ],
+      "description": "This Box is",
+      "likedByUser": [
+        {
+          "name": "hilla",
+          "id": "101"
+        },
+        {
+          "name": "Matan",
+          "id": "102"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        }
+      ],
+      "imgUrl": "https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+      "createdAt": 1541652422,
+      "createdBy": {
+        "_id": "u101",
+        "fullName": "Puki Ben David",
+        "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      },
+      "songs": [
+        {
+          "title": "The Meters",
+          "id": "s1011",
+          "youtubeId": "youtubeId",
+          "imgUrl": "imgUrl",
+          "addedBy": {}
+        },
+        {
+          "title": "The Sky",
+          "id": "s1012",
+          "youtubeId": "youtubeId",
+          "imgUrl": "imgUrl",
+          "addedBy": {}
+        }
+      ]
+    },
+    {
+      "_id": "105a",
+      "name": "New Box",
+      "tags": [
+        "Classical",
+        "Country"
+      ],
+      "description": "This Box is",
+      "likedByUser": [
+        {
+          "name": "hilla",
+          "id": "101"
+        },
+        {
+          "name": "Matan",
+          "id": "102"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        }
+      ],
+      "imgUrl": "https://images.unsplash.com/photo-1477233534935-f5e6fe7c1159?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+      "createdAt": 1541652422,
+      "createdBy": {
+        "_id": "u101",
+        "fullName": "Puki Ben David",
+        "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      },
+      "songs": [
+        {
+          "title": "The Meters",
+          "id": "s1011",
+          "youtubeId": "youtubeId",
+          "imgUrl": "imgUrl",
+          "addedBy": {}
+        },
+        {
+          "title": "The Meters",
+          "id": "s101122",
+          "youtubeId": "youtubeId",
+          "imgUrl": "imgUrl",
+          "addedBy": {}
+        },
+        {
+          "title": "The Meters",
+          "id": "s101122",
+          "youtubeId": "youtubeId",
+          "imgUrl": "imgUrl",
+          "addedBy": {}
+        }
+      ]
+    }
+  ],
+  "user": {
+    "_id": "u101",
+    "fullName": "Puki Ben David",
+    "userName": "orly@amdadi.com",
+    "password": "1",
+    "imgUrl": "http://some-img",
+    "followers": [],
+    "following": [],
+    "notifs": [
+      {
+        "id": "a101",
+        "txt": "Bla bla",
+        "createdAt": 154514,
+        "action": {
+          "id": "c101",
+          "title": "do that"
+        }
+      }
+    ]
   }
+}

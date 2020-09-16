@@ -25,18 +25,21 @@ export class SongPick extends Component {
     getSongs = async () => {
         const query = this.state.searchStr;
         const res = await youtubeService.get(query);
-        console.log("SongPick -> getSongs -> res", res)
         const results = res.items;
         this.setState({ results });
     }
 
-  
+    onAddSong = (result) => {
+        this.props.onAddSong(result);
+        this.setState({ results: '', searchStr: '', isSearching: false });
+    }
+
     render() {
         const { results, isSearching, searchStr } = this.state;
 
         return (
             <div className="song-pick">
-                <input type="search" name="searchStr" value={searchStr} onChange={this.handleInput} placeholder="Add song to playlist" />
+                <input type="search" name="searchStr" value={searchStr} onChange={this.handleInput} placeholder="Add song to playlist" autoComplete="off"/>
 
                 {(isSearching && !results) && <div>Getting results...</div>}
 
@@ -44,7 +47,7 @@ export class SongPick extends Component {
                     const id = result.id.videoId;
                     const { title } = result.snippet;
                     const imgUrl = result.snippet.thumbnails.default.url;
-                    return <div key={id} className="song-pick-result" onClick={() => this.props.onAddSong(result)}>
+                    return <div key={id} className="song-pick-result" onClick={() => this.onAddSong(result)}>
                         <img src={imgUrl} alt="thumbnail" />{title}
                     </div>
                 })

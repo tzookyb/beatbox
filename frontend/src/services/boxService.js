@@ -11,7 +11,8 @@ export const boxService = {
     query,
     getById,
     getGenres,
-    save
+    save,
+    addSong
     // remove,
 }
 
@@ -41,17 +42,17 @@ async function save(box) {
     } else {
         //ADD CREATED AT AND CREATED BT YO BACKEND
         box.likedByUser = [];
-        return httpService.post(`box`, box)
+        return httpService.post(`box`, box);
     }
 }
 
-
-
-function _makeId(length = 5) {
-    var txt = '';
-    var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    for (var i = 0; i < length; i++) {
-        txt += possible.charAt(Math.floor(Math.random() * possible.length));
+function addSong(song) {
+    const newSong = {
+        id: song.id.videoId,
+        title: song.snippet.title,
+        imgUrl: song.snippet.thumbnails.default,
+        //TODO: add loggedin user to addedby -MATAN!!!!
+        addedBy: {}
     }
-    return txt;
+    return newSong;
 }

@@ -4,8 +4,8 @@ export function BoxInfo({ box }) {
     return (
         <div className="box-info flex space-between">
             <div className="info-txt">
-                <h1>box info</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur saepe aperiam voluptas necessitatibus, voluptates tempore sit laborum quas, doloremque accusamus culpa quibusdam fugit facilis soluta ut recusandae. Hic, suscipit voluptates.</p>
+                <h1>{box.name}</h1>
+                <p>{box.description}</p>
                 <div className="info-creator">
                     Dani
                 </div>
@@ -14,7 +14,7 @@ export function BoxInfo({ box }) {
                 <p>likes</p>
                 <p>listeners</p>
             </div>
-            <div className="box-img"><img src={require("../../assets/img/bg1.png")} alt="" /></div>
+            <div className="box-img"><img src={box.imgUrl} alt="" /></div>
         </div>
     )
 }

@@ -20,9 +20,7 @@ class _BoxApp extends Component {
 
     render() {
         const { boxes } = this.props;
-        console.log("render -> boxes", boxes)
         const { genres } = this.state;
-        console.log("render -> genres", genres)
         if (!boxes || !genres) return <h1>Loading....</h1>
         return (
             <section className="box-app" id="boxes">

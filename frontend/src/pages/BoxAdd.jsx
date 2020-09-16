@@ -4,29 +4,30 @@ import { connect } from 'react-redux'
 import { boxService } from '../services/boxService'
 import { saveBox } from '../store/actions/boxAction'
 import { cloudService } from '../services/cloudService'
+import { SongPick } from '../cmps/BoxDetails/SongPick'
+import { SongPreview } from '../cmps/BoxDetails/SongPreview'
 
 export class _BoxAdd extends Component {
     state = {
         box: {
             name: '',
-            tags: [],
+            tags: ['Hip-hop'],
             description: '',
             imgUrl: null,
             songs: []
         }
     }
 
-    onAddBox = (ev) => {
+    onAddBox = async (ev) => {
         ev.preventDefault();
-        this.props.saveBox(this.state.box)
-
-        // this.props.history.push(`/box/${boxId}`);
-
+        const newBox = await this.props.saveBox(this.state.box);
+        // console.log("onAddBox -> newBox", newBox._id)
+        this.props.history.push(`/box/${newBox._id}`);
     }
 
     handleInput = ({ target }) => {
         const field = target.name;
-        const value = (target.name === 'tags') ?  [target.value]: target.value;
+        const value = (target.name === 'tags') ? [target.value] : target.value;
         this.setState(prevState => {
             return {
                 box: {
@@ -56,7 +57,18 @@ export class _BoxAdd extends Component {
         })
     }
 
-
+    onAddSong = (song) => {
+        const newSong = boxService.addSong(song);
+        const songs = [...this.state.box.songs, newSong];
+        this.setState(prevState => {
+            return {
+                box: {
+                    ...prevState.box,
+                    songs
+                }
+            }
+        })
+    }
     //Add Song pick
     render() {
         const { box } = this.state;
@@ -66,13 +78,19 @@ export class _BoxAdd extends Component {
                 <form onSubmit={this.onAddBox} >
                     <input type="txt" value={box.name} placeholder='Enter box name:' onChange={this.handleInput} name="name" />
                     <input type="txt" value={box.description} placeholder='About the box: ' onChange={this.handleInput} name="description" />
-                    <select id="tags" name="tags" onChange={this.handleInput}>
+
+                    <label htmlFor="tags">Genre:</label>
+                    <select id="tags" name="tags" onChange={this.handleInput} >
                         {this.getGenresOptions()}
                     </select>
                     <label> Upload Img
                        <input onChange={(ev) => this.uploadImg(ev)} type="file" />
                     </label>
-                    {this.state.box.imgUrl && <img src={this.state.box.imgUrl}/>}
+                    {this.state.box.imgUrl && <img src={this.state.box.imgUrl} />}
+                    <SongPick onAddSong={this.onAddSong} />
+                    <div className="song-list flex column">
+                        {this.state.box.songs.map(song => <SongPreview song={song} />)}
+                    </div>
                     <button>Save</button>
                 </form>
             </section>

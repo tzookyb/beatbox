@@ -5,7 +5,7 @@ import { ChatBox } from '../cmps/BoxDetails/ChatBox'
 import { SongList } from '../cmps/BoxDetails/SongList'
 import { BoxInfo } from '../cmps/BoxDetails/BoxInfo'
 import { loadBox, saveBox } from '../store/actions/boxAction'
-
+import { boxService } from '../services/boxService'
 
 class _BoxDetails extends Component {
     state = {
@@ -28,14 +28,8 @@ class _BoxDetails extends Component {
         // await this.props.removeSong(songId)
     }
 
-    onAddSong = (song) =>{
-        const newSong = {
-            id: song.id.videoId,
-            title: song.snippet.title,
-            imgUrl: song.snippet.thumbnails.default,
-            addedBy: {}
-        }
-
+    onAddSong = (song) => {
+        const newSong = boxService.addSong(song)
         const box = { ...this.state.box }
         box.songs.push(newSong)
         this.props.saveBox(box)
@@ -46,7 +40,7 @@ class _BoxDetails extends Component {
         if (!box) return <h1>Loading...</h1>
         return (
             <section className="box-details main-container">
-                <BoxInfo />
+                <BoxInfo box={box}/>
                 <SongList songs={box.songs} onRemoveSong={this.onRemoveSong} onAddSong={this.onAddSong} />
 
                 {/* <ChatBox /> */}
