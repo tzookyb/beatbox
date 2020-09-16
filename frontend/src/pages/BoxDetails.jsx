@@ -1,10 +1,9 @@
-
 import React, { Component } from 'react'
-
 import { boxService } from '../services/boxService'
 import { ChatBox } from '../cmps/BoxDetails/ChatBox'
 import { BoxPlaylist } from '../cmps/BoxDetails/BoxPlaylist'
 import { BoxInfo } from '../cmps/BoxDetails/BoxInfo'
+import { connect } from 'react-redux'
 
 class _BoxDetails extends Component {
     state = {
