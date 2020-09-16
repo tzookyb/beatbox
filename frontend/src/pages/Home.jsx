@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Footer from '../cmps/Footer'
 import { BoxApp } from './BoxApp'
 
 export class Home extends Component {
@@ -13,6 +14,7 @@ export class Home extends Component {
                     </div>
                 </div>
                 <BoxApp></BoxApp>
+                <Footer/>
             </div>
         )
     }

@@ -14,7 +14,6 @@ export default class Header extends Component {
 
     onScroll = (ev) => {
         if (window.scrollY > 0) {
-            console.log(window.scrollY);
             this.setState({isScroll : true})
         } 
         else this.setState({isScroll: false})
