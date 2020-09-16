@@ -1,8 +1,9 @@
 header {
-    max-height: 70px;
+    min-height: 90px;
     margin-bottom: 10px;
     position: fixed;
     width: 100%;
+    transition: 0.6s;
 
 
     >* {
@@ -18,5 +19,10 @@ header {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: rem(30px);
         color: #fff;
+    }
+
+    &.sticky {
+        background-color: $clr3;
+        min-height: 50px;
     }
 }

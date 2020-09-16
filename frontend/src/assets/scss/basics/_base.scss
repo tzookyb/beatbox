@@ -5,6 +5,8 @@
 
 html {
     height: 100vh;
+    scroll-behavior: smooth;
+
 }
 
 body {
@@ -13,6 +15,14 @@ body {
     font-size: 0.875rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #727272;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
 }
 
 main.home {

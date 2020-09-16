@@ -11,13 +11,11 @@
 @import "./basics/layout";
 
 // Components
-@import "./componenets/map";
+
 @import "./componenets/header";
-@import "./componenets/toyFilter";
 @import "./componenets/chatRoom";
-@import "./componenets/toyPreview";
-@import "./componenets/reviewPreview";
+
 
 // Views
 @import "./views/home";
-@import "./views/toyApp";
+@import "./views/bookApp";
