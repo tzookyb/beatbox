@@ -52,6 +52,6 @@ export default class SongPick extends Component {
                     })
                 }
             </div>
-        )git 
+        )
     }
 }
