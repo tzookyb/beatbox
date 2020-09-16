@@ -21,7 +21,6 @@ class _App extends Component {
 
   render() {
     return (
-<<<<<<< HEAD
       <div className="App">
         <Header />
         <main>
@@ -33,18 +32,6 @@ class _App extends Component {
             <Route component={Home} path="/" />
           </Switch>
         </main>
-=======
-      <div id="page-top" className="main-container">
-        <Player></Player>
-        {/* <Header />
-        <Switch>
-          <Route component={BoxEdit} path="/box/edit/:id?" />
-          <Route component={BoxDetails} path="/box/:id" />
-          <Route component={UserDetails} path="/user/:id" />
-          <Route component={BoxApp} path="/box" />
-          <Route component={Home} path="/" />
-        </Switch> */}
->>>>>>> e14778ca0fcb5d6b64cca5bce99e1dcbce686dff
       </div>
     )
   }
