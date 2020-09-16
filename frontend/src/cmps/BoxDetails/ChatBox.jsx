@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import socketService from '../../services/socketService';
 import { connect } from 'react-redux'
 
-class _Chat extends Component {
+class _ChatBox extends Component {
     state = {
         msg: {
             from: 'Me',
@@ -109,4 +109,4 @@ const mapDispatchToProps = {
 
 }
 
-export const Chat = connect(mapStateToProps, mapDispatchToProps)(_Chat)
+export const ChatBox = connect(mapStateToProps, mapDispatchToProps)(_ChatBox)
