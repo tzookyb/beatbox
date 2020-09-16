@@ -29,7 +29,7 @@ export class _Home extends Component {
         if (!boxes) return <h1>Loading...</h1>
         const geners = this.getGenres(boxes)
         return (
-            <div>
+            <React.Fragment>
                 <div className="hero-container flex justify-center align-center">
                     <div className="hero-txt flex align-center column">
                         <h1>Share the beat...</h1>
@@ -40,7 +40,7 @@ export class _Home extends Component {
                     {geners.map((gener, idx) => <BoxApp key={idx} gener={gener} />)}
                 </div>
                 <Footer />
-            </div>
+                </React.Fragment>
         )
     }
 }

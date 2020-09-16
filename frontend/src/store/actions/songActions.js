@@ -1,9 +1,11 @@
+import { boxService } from "../../services/boxService"
 import { songService } from "../../services/songService"
 
 
 export function loadSongs(boxId) {
     return async dispatch => {
-        const songs = await songService.query(boxId)
+        const box = await boxService.getById(boxId)
+        const songs = box.songs
         dispatch({ type: 'SET_SONGS', songs })
     }
 }
@@ -17,22 +19,12 @@ export function addSong(song) {
     }
 }
 
-// export function editSong(song) {
-//     return dispatch => {
-//         songService.save(song)
-//             .then((song) => {
-//                 dispatch({ type: 'EDIT_SONG', song })
-//                 dispatch({ type: 'NOTIFY', isShown: true, msg: 'Added seccessfuly' })
-
-//             })
-//     }
-// }
 
 export function removeSong(id) {
     return async dispatch => {
         await songService.remove(id)
         dispatch({ type: 'REMOVE_SONG', id })
-        dispatch({ type: 'NOTIFY', isShown: true, msg: 'Removed seccessfuly' })
+        // dispatch({ type: 'NOTIFY', isShown: true, msg: 'Removed seccessfuly' })
 
     }
 }

@@ -7,29 +7,39 @@ import { ChatBox } from '../cmps/BoxDetails/ChatBox'
 import { SongList } from '../cmps/BoxDetails/SongList'
 import { BoxInfo } from '../cmps/BoxDetails/BoxInfo'
 import { songService } from '../services/songService'
+import { loadSongs, removeSong } from '../store/actions/songActions'
+import { loadBox, saveBox } from '../store/actions/boxAction'
+
 
 class _BoxDetails extends Component {
     state = {
         box: null,
-        songs: []
     }
 
     async componentDidMount() {
-        const songs = await  songService.query()
+        const boxId = this.props.match.params.boxId;
+        await this.props.loadBox(boxId)
+        const { box } = this.props
+        this.setState({ box })
+    }
 
-        console.log("componentDidMount -> songs", songs)
-        this.setState({songs})
-        // const boxId = this.props.match.params.boxId;
-        // boxService.getById(boxId).then((box) => this.setState({ box }))
+    onRemoveSong = (ev, songId) => {
+        ev.stopPropagation()
+        const box = { ...this.state.box }
+        const songIdx = box.songs.findIndex(song => song.id === songId)
+        box.songs.splice(songIdx, 1);
+        this.props.saveBox(box)
+        // await this.props.removeSong(songId)
     }
 
     render() {
-        const { box, songs } = this.state;
+        const { box } = this.state;
+        if (!box) return <h1>Loading...</h1>
         return (
-            <section className="box-details flex column main-container">
+            <section className="box-details main-container">
                 <BoxInfo />
-                <SongList songs={songs} />
-                
+                <SongList songs={box.songs} onRemoveSong={this.onRemoveSong} />
+
                 {/* <ChatBox /> */}
             </section>
         )
@@ -38,11 +48,14 @@ class _BoxDetails extends Component {
 
 const mapStateToProps = state => {
     return {
-
+        box: state.boxReducer.currBox
     }
 }
-const mapDispatchToProps = {
 
+
+const mapDispatchToProps = {
+    loadBox,
+    saveBox
 }
 
 export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails)

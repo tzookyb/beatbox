@@ -8,8 +8,9 @@ import httpService from './httpService';
 export const boxService = {
     query,
     getById,
+    save
+
     // remove,
-    // save
 }
 
 
@@ -28,6 +29,16 @@ export const boxService = {
 //     return gBoxes.find(box => box._id === boxId)
 // }
 
+async function save(box) {
+    if (box._id) {
+        return httpService.put(`box/${box._id}`, box)
+    } else {
+         //TODO: delete Id
+        box._id = _makeId();
+        return httpService.post(`box`, box)
+    }
+}
+
 
 
 // //TODO: change to backend mood
@@ -39,4 +50,14 @@ async function query(filterBy) {
     var queryStr = {};
     return httpService.get(`box`)
     // return httpService.get(`toy`, { name: filterBy.name, inStock: filterBy.inStock, type: filterBy.type, sortBy })
+}
+
+
+function _makeId(length = 5) {
+    var txt = '';
+    var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    for (var i = 0; i < length; i++) {
+        txt += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return txt;
 }

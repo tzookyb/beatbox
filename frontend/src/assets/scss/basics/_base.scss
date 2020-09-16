@@ -18,8 +18,10 @@ body {
     
 }
 
-main{
-    padding-top: 100px;
+main {
+    height: 100%;
+    background-color: $clr1;
+    
 }
 
 h1,
@@ -31,8 +33,8 @@ h5 {
 }
 
 main.home {
-    background-color: $clr5;
     height: 100%;
+    background-color: $clr5;
 }
 
 // a:not(.logo)

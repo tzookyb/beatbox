@@ -19,15 +19,17 @@ class _App extends Component {
 
   render() {
     return (
-      <div className="main">
-        <Header/>
-        <Switch>
-        <Route component={BoxEdit} path="/box/edit/:id?"/>
-        <Route component={BoxDetails} path="/box/:id"/>
-        <Route component={UserDetails} path="/user/:id"/>
-        <Route component={BoxApp} path="/box"/>
-        <Route component={Home} path="/"/>
-        </Switch>
+      <div className="App">
+        <Header />
+        <main>
+          <Switch>
+            <Route component={BoxEdit} path="/box/edit/:id?" />
+            <Route component={BoxDetails} path="/box/:boxId" />
+            <Route component={UserDetails} path="/user/:id" />
+            <Route component={BoxApp} path="/box" />
+            <Route component={Home} path="/" />
+          </Switch>
+        </main>
       </div>
     )
   }
