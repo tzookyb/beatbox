@@ -2,7 +2,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export function BoxPreview({ box, gener }) {
+export function BoxPreview({ box, genre }) {
     return (
         <div className="box-preview">
             <Link to={`/box/${box._id}`} >
@@ -10,7 +10,7 @@ export function BoxPreview({ box, gener }) {
             </Link>
             <div className="flex space-between">
                 <h3>{box.name}</h3>
-                <label>{gener}</label>
+                <Link to= {`/box?&genre=${genre}`} className="btn-genre">{genre}</Link>
                 <p>🖤 {box.likedByUser.length}</p>
             </div>
         </div>

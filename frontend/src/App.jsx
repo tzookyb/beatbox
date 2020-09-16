@@ -6,7 +6,7 @@ import Header from './cmps/Header';
 import { Player } from './cmps/Player';
 import { BoxApp } from './pages/BoxApp';
 import { BoxDetails } from './pages/BoxDetails';
-import { BoxEdit } from './pages/BoxEdit';
+import { BoxAdd } from './pages/BoxAdd';
 import { Home } from './pages/Home';
 import { UserDetails } from './pages/UserDetails';
 
@@ -25,7 +25,7 @@ class _App extends Component {
         <Header />
         <main>
           <Switch>
-            <Route component={BoxEdit} path="/box/edit/:id?" />
+            <Route component={BoxAdd} path="/box/add" />
             <Route component={BoxDetails} path="/box/:boxId" />
             <Route component={UserDetails} path="/user/:id" />
             <Route component={BoxApp} path="/box" />

@@ -25,7 +25,7 @@ export default class Header extends Component {
                 <Link to="/" className="logo">BeatBox</Link>
                 <ul className="main-nav flex clean-list space-between">
                     <li><Link to="/box">Boxes</Link></li>
-                    <Link to="/box/edit">Create Box</Link>
+                    <Link to="/box/add">Create Box</Link>
                     {/* <li className="link flex align-center">Link3</li> */}
                     <Link to='/login'>Login</Link>
                     {/* <Link to='/signup'>Signup</Link> */}

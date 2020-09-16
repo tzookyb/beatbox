@@ -4,8 +4,8 @@
       "_id": "5c09",
       "name": "Funky Monks",
       "tags": [
-        "Funk",
-        "Happy"
+        "Hip-hop",
+        "Arabic"
       ],
       "description": "This Box is",
       "likedByUser": [],
@@ -37,9 +37,9 @@
       "_id": "104a",
       "name": "Best Box",
       "tags": [
-        "Hiphop",
+        "Alternative",
         "Pop",
-        "Happy"
+        "Classical"
       ],
       "description": "This Box is",
       "likedByUser": [
@@ -72,7 +72,7 @@
           "addedBy": {}
         },
         {
-          "title": "The ground",
+          "title": "The Sky",
           "id": "s1012",
           "youtubeId": "youtubeId",
           "imgUrl": "imgUrl",
@@ -84,8 +84,8 @@
       "_id": "105a",
       "name": "New Box",
       "tags": [
-        "Hiphop",
-        "Chilout"
+        "Classical",
+        "Country"
       ],
       "description": "This Box is",
       "likedByUser": [
@@ -125,23 +125,10 @@
           "addedBy": {}
         },
         {
-          "id": "3V726_HShyY",
-          "title": "George Michael, Mary J. Blige - As (Official Video)",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/3V726_HShyY/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "GYQfWJNWe3I",
-          "title": "Stevie Wonder - As",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/GYQfWJNWe3I/default.jpg",
-            "width": 120,
-            "height": 90
-          },
+          "title": "The Meters",
+          "id": "s101122",
+          "youtubeId": "youtubeId",
+          "imgUrl": "imgUrl",
           "addedBy": {}
         }
       ]

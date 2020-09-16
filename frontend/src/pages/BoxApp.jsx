@@ -5,18 +5,29 @@ import { loadBoxes } from '../store/actions/boxAction'
 import { BoxList } from '../cmps/Boxes/BoxList'
 
 class _BoxApp extends Component {
-
+    state = {
+        genres: null,
+    }
 
     componentDidMount() {
-        this.props.loadBoxes();
+        const genre = new URLSearchParams(window.location.href).get('genre');
+        console.log("componentDidMount -> genre", genre)
+        const { genres } = this.props;
+        if (genres) this.setState({ genres })
+        else this.setState({ genres: [] })
+        this.props.loadBoxes(genre);
     }
 
     render() {
-        const { boxes, gener } = this.props;
-        if (!boxes) return <h1>Loading....</h1>
+        const { boxes } = this.props;
+        console.log("render -> boxes", boxes)
+        const { genres } = this.state;
+        console.log("render -> genres", genres)
+        if (!boxes || !genres) return <h1>Loading....</h1>
         return (
             <section className="box-app" id="boxes">
-                <BoxList boxes={boxes} gener={gener}/>
+                {genres.length && genres.map((genre, idx) => <BoxList boxes={boxes} key={idx} genre={genre} />)}
+                {!genres.length && <BoxList boxes={boxes} />}
             </section>
         )
     }

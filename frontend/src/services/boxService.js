@@ -3,54 +3,48 @@ import httpService from './httpService';
 
 // const BASE_URL = 'http://localhost:3030/box'
 
-// var gBoxes = [];
+
+var gGenre = ['Hip-hop', 'Arabic', 'Easy', 'Electronic', 'Country', 'Latin', 'Jazz', 'Rock',
+    'Pop', 'Classical', 'Alternative', 'Folk', 'Soul', 'Blues', 'Disco', 'Metal']
 
 export const boxService = {
     query,
     getById,
+    getGenres,
     save
-
     // remove,
 }
 
+function getGenres() {
+    return gGenre;
+}
 
-// function query(filterBy) {
-//     if (!filterBy) filterBy = {};
-//     return axios.get(BASE_URL)
-//         .then(res => res.data)
-//         .then(boxes => {
-//             gBoxes = boxes;
-//             console.log("query -> boxes", boxes)
-//             return boxes;
-//         })
-// }
 
-// function getById(boxId) {
-//     return gBoxes.find(box => box._id === boxId)
-// }
+async function getById(boxId) {
+    return httpService.get(`box/${boxId}`)
+}
+
+//TODO: fix filter
+async function query(filterBy) {
+    var queryStr = filterBy;
+
+    //In Backend: filter- only by the type if filter exist
+    // return httpService.get(`box${queryStr}`)
+    return httpService.get(`box`, queryStr)
+    // return httpService.get(`toy`, { name: filterBy.name, inStock: filterBy.inStock, type: filterBy.type, sortBy })
+}
+
 
 async function save(box) {
     if (box._id) {
         return httpService.put(`box/${box._id}`, box)
     } else {
-         //TODO: delete Id
-        box._id = _makeId();
+        //ADD CREATED AT AND CREATED BT YO BACKEND
+        box.likedByUser = [];
         return httpService.post(`box`, box)
     }
 }
 
-
-
-// //TODO: change to backend mood
-async function getById(boxId) {
-    return httpService.get(`box/${boxId}`)
-}
-
-async function query(filterBy) {
-    var queryStr = {};
-    return httpService.get(`box`)
-    // return httpService.get(`toy`, { name: filterBy.name, inStock: filterBy.inStock, type: filterBy.type, sortBy })
-}
 
 
 function _makeId(length = 5) {
