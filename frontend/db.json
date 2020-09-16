@@ -4,8 +4,13 @@
       "_id": "5c09",
       "name": "Funky Monks",
       "tags": [
+<<<<<<< HEAD
         "Hip-hop",
         "Arabic"
+=======
+        "Funk",
+        "Happy"
+>>>>>>> 3f6d4f96feded7b30a6a9b76b2eac55060a61c2f
       ],
       "description": "This Box is",
       "likedByUser": [],
@@ -37,9 +42,15 @@
       "_id": "104a",
       "name": "Best Box",
       "tags": [
+<<<<<<< HEAD
         "Alternative",
         "Pop",
         "Classical"
+=======
+        "Hiphop",
+        "Pop",
+        "Happy"
+>>>>>>> 3f6d4f96feded7b30a6a9b76b2eac55060a61c2f
       ],
       "description": "This Box is",
       "likedByUser": [
@@ -72,7 +83,11 @@
           "addedBy": {}
         },
         {
+<<<<<<< HEAD
           "title": "The Sky",
+=======
+          "title": "The ground",
+>>>>>>> 3f6d4f96feded7b30a6a9b76b2eac55060a61c2f
           "id": "s1012",
           "youtubeId": "youtubeId",
           "imgUrl": "imgUrl",
@@ -84,8 +99,13 @@
       "_id": "105a",
       "name": "New Box",
       "tags": [
+<<<<<<< HEAD
         "Classical",
         "Country"
+=======
+        "Hiphop",
+        "Chilout"
+>>>>>>> 3f6d4f96feded7b30a6a9b76b2eac55060a61c2f
       ],
       "description": "This Box is",
       "likedByUser": [
@@ -118,8 +138,20 @@
           "addedBy": {}
         },
         {
+<<<<<<< HEAD
           "title": "The Sky",
           "id": "s1012",
+=======
+          "title": "The Meters",
+          "id": "s10121",
+          "youtubeId": "youtubeId",
+          "imgUrl": "imgUrl",
+          "addedBy": {}
+        },
+        {
+          "title": "The Meters",
+          "id": "s101122",
+>>>>>>> 3f6d4f96feded7b30a6a9b76b2eac55060a61c2f
           "youtubeId": "youtubeId",
           "imgUrl": "imgUrl",
           "addedBy": {}

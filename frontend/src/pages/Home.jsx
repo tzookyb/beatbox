@@ -31,7 +31,7 @@ export class _Home extends Component {
         if (!boxes) return <h1>Loading...</h1>
         const genres = this.getGenres(boxes)
         return (
-            <div>
+            <React.Fragment>
                 <div className="hero-container flex justify-center align-center">
                     <div className="hero-txt flex align-center column">
                         <h1>Share the beat...</h1>
@@ -42,7 +42,7 @@ export class _Home extends Component {
                     {genres.length && <BoxApp genres={genres} />}
                 </div>
                 <Footer />
-            </div>
+                </React.Fragment>
         )
     }
 }

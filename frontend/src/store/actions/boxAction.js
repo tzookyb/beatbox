@@ -7,10 +7,18 @@ export function loadBoxes(filterBy) {
       };
 }
 
+export function loadBox(boxId) {
+    return async dispatch => {
+        const box = await boxService.getById(boxId);
+        dispatch({ type: 'SET_BOX', box })
+      };
+}
+
 export function saveBox(box) {
     return async dispatch => {
         const actionType = box._id ? 'EDIT_BOX' : 'ADD_BOX';
         const newBox = await boxService.save(box);
+        console.log("saveBox -> newBox", newBox)
         dispatch({ type: actionType, box:newBox })
       };
 }

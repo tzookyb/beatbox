@@ -30,19 +30,24 @@ var gSongs = [
 
 
 
-function query(boxId) {
-    //   if (boxId) var queryStr = `?boxId=${boxId}`;
-    //   return httpService.get(`song${queryStr || ''}`);
-    return Promise.resolve(gSongs)
+async function query(boxId) {
+      if (boxId) var queryStr = `?boxId=${boxId}`;
+      const box = await httpService.get(`box${queryStr || ''}`);
+      console.log("query -> box", box)
+      return box.songs
+      
+    // return Promise.resolve(gSongs)
 }
 
 function remove(songId) {
-    const songIdx = getIdxById(songId)
-    gSongs.splice(songIdx, 1)
-    return gSongs
-    // return httpService.delete(`box/song/${songId}`);
+    // const songIdx = getIdxById(songId)
+    // gSongs.splice(songIdx, 1)
+    // return gSongs
+    return httpService.delete(`box/${songId}`);
 
 }
+
+
 
 function getIdxById(songId) {
     // return axios.get(`${BASE_URL}`)

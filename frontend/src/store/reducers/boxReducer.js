@@ -12,9 +12,15 @@ export function boxReducer(state = initialState, action) {
                 ...state,
                 boxes: action.boxes
             }
+        case 'SET_BOX':
+            return {
+                ...state,
+                currBox: action.box
+            }
         case 'EDIT_BOX':
             return {
                 ...state,
+                currBox: action.box,
                 boxes: state.boxes.map(box => {
                     if (action.box._id === box._id) return action.box
                     return box;

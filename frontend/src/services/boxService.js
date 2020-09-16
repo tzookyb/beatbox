@@ -13,7 +13,6 @@ export const boxService = {
     getGenres,
     save
     // remove,
-    // save
 }
 
 function getGenres() {
