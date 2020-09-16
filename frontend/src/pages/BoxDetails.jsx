@@ -1,13 +1,9 @@
-
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { boxService } from '../services/boxService'
 import { ChatBox } from '../cmps/BoxDetails/ChatBox'
 import { SongList } from '../cmps/BoxDetails/SongList'
 import { BoxInfo } from '../cmps/BoxDetails/BoxInfo'
-import { songService } from '../services/songService'
-import { loadSongs, removeSong } from '../store/actions/songActions'
 import { loadBox, saveBox } from '../store/actions/boxAction'
 
 
@@ -59,4 +55,3 @@ const mapDispatchToProps = {
 }
 
 export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails)
-
