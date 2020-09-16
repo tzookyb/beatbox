@@ -17,6 +17,10 @@ class _Player extends Component {
         loop: false
     }
 
+    componentDidMount() {
+        this.setState({ url: this.props.url })
+    }
+
     load = url => {
         this.setState({
             url,
@@ -109,10 +113,6 @@ class _Player extends Component {
         this.setState({ duration })
     }
 
-    // handleClickFullscreen = () => {
-    //     screenfull.request(findDOMNode(this.player))
-    // }
-
     renderLoadButton = (url, label) => {
         return (
             <button onClick={() => this.load(url)}>
@@ -125,14 +125,17 @@ class _Player extends Component {
         this.player = player
     }
 
-    componentDidMount() {
-        this.setState({ url: this.props.url })
+    handleInput = ({ target }) => {
+        const field = target.name;
+        const value = target.value;
+
+        this.setState({ [field]: value });
     }
 
     render() {
         return (this.state.url) ? null : (
             <div className="player-container">
-
+                <input type="text" name="url" value={this.state.url} onChange={this.handleInput} />
                 <ReactPlayer
                     url={this.state.url}
                     playing={this.state.playing}
@@ -153,7 +156,7 @@ class _Player extends Component {
 
 const mapStateToProps = state => {
     return {
-        player: state.playerReducer
+        currBox: state.boxReducer.currBox
     }
 }
 

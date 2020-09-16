@@ -22,14 +22,15 @@ class _App extends Component {
   render() {
     return (
       <div id="page-top" className="main-container">
-        <Header />
+        <Player></Player>
+        {/* <Header />
         <Switch>
           <Route component={BoxEdit} path="/box/edit/:id?" />
           <Route component={BoxDetails} path="/box/:id" />
           <Route component={UserDetails} path="/user/:id" />
           <Route component={BoxApp} path="/box" />
           <Route component={Home} path="/" />
-        </Switch>
+        </Switch> */}
       </div>
     )
   }
