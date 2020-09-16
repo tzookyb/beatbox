@@ -31,7 +31,6 @@ export class SongPick extends Component {
 
     onAddSong = (result) => {
         this.props.onAddSong(result);
-        this.setState({ results: '', searchStr: '', isSearching: false });
     }
 
     render() {
