@@ -1,10 +1,11 @@
 
 import React from 'react'
+import { SongPick } from './SongPick'
 
 
 // import { SongPreview } from './SongPreview'
 
-export function SongList({ songs, onRemoveSong }) {
+export function SongList({ songs, onRemoveSong , onAddSong}) {
     return (
         <div className="song-list flex space-between">
             <ul className="clean-list flex column space-around flex-1">
@@ -18,7 +19,8 @@ export function SongList({ songs, onRemoveSong }) {
                 {/* )} */}
             </ul>
             {/* {songs.map(song => <SongPreview key={song._id} song={song} />)} */}
-            <div className="songPick">songPick</div>
+            <SongPick  onAddSong={onAddSong}/>
+            {/* <div className="songPick">songPick</div> */}
         </div>
     )
 }

@@ -28,13 +28,26 @@ class _BoxDetails extends Component {
         // await this.props.removeSong(songId)
     }
 
+    onAddSong = (song) =>{
+        const newSong = {
+            id: song.id.videoId,
+            title: song.snippet.title,
+            imgUrl: song.snippet.thumbnails.default,
+            addedBy: {}
+        }
+
+        const box = { ...this.state.box }
+        box.songs.push(newSong)
+        this.props.saveBox(box)
+    }
+
     render() {
         const { box } = this.state;
         if (!box) return <h1>Loading...</h1>
         return (
             <section className="box-details main-container">
                 <BoxInfo />
-                <SongList songs={box.songs} onRemoveSong={this.onRemoveSong} />
+                <SongList songs={box.songs} onRemoveSong={this.onRemoveSong} onAddSong={this.onAddSong} />
 
                 {/* <ChatBox /> */}
             </section>
