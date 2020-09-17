@@ -18,20 +18,6 @@
       },
       "songs": [
         {
-          "title": "The Meters",
-          "id": "s1011",
-          "youtubeId": "youtubeId",
-          "imgUrl": "imgUrl",
-          "addedBy": {}
-        },
-        {
-          "title": "The Sky",
-          "id": "s1012",
-          "youtubeId": "youtubeId",
-          "imgUrl": "imgUrl",
-          "addedBy": {}
-        },
-        {
           "id": "OBVeLeuV06I",
           "title": "AD &quot;Thug&quot; Feat. YG (WSHH Exclusive - Official Music Video)",
           "imgUrl": {
@@ -70,8 +56,19 @@
             "height": 90
           },
           "addedBy": {}
+        },
+        {
+          "id": "dqUdI4AIDF0",
+          "title": "Jack Johnson - Upside Down (Official Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/dqUdI4AIDF0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
         }
-      ]
+      ],
+      "currSongIdx": 4
     },
     {
       "_id": "104a",
@@ -202,29 +199,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
-      "songs": [
-        {
-          "title": "The Meters",
-          "id": "s1011",
-          "youtubeId": "youtubeId",
-          "imgUrl": "imgUrl",
-          "addedBy": {}
-        },
-        {
-          "title": "The Meters",
-          "id": "s101122",
-          "youtubeId": "youtubeId",
-          "imgUrl": "imgUrl",
-          "addedBy": {}
-        },
-        {
-          "title": "The Meters",
-          "id": "s101122",
-          "youtubeId": "youtubeId",
-          "imgUrl": "imgUrl",
-          "addedBy": {}
-        }
-      ]
+      "songs": []
     },
     {
       "_id": "109a",
@@ -269,24 +244,73 @@
       },
       "songs": [
         {
-          "title": "The Meters",
-          "id": "s1011",
-          "youtubeId": "youtubeId",
-          "imgUrl": "imgUrl",
+          "id": "RBumgq5yVrA",
+          "title": "Passenger | Let Her Go (Official Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/RBumgq5yVrA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
           "addedBy": {}
         },
         {
-          "title": "The Meters",
-          "id": "s101122",
-          "youtubeId": "youtubeId",
-          "imgUrl": "imgUrl",
+          "id": "VvRVu78IHHo",
+          "title": "Passenger | The Wrong Direction (Official Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/VvRVu78IHHo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
           "addedBy": {}
         },
         {
-          "title": "The Meters",
-          "id": "s101122",
-          "youtubeId": "youtubeId",
-          "imgUrl": "imgUrl",
+          "id": "kBqqlW6-99M",
+          "title": "Passenger | Heart&#39;s On Fire (Official Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/kBqqlW6-99M/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "hef9UEHQisY",
+          "title": "Passenger | When We Were Young (Official Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/hef9UEHQisY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "eC8yt1DR0NY",
+          "title": "Passenger Seat - Stephen Speaks (Lyrics)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/eC8yt1DR0NY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "IjainiB8mk4",
+          "title": "Deftones – Passenger (Official Visualizer)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/IjainiB8mk4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "E_Vt4MlbM0c",
+          "title": "Matisyahu - Sunshine",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/E_Vt4MlbM0c/default.jpg",
+            "width": 120,
+            "height": 90
+          },
           "addedBy": {}
         }
       ]

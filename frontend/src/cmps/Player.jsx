@@ -99,42 +99,45 @@ class _Player extends Component {
             return `${mins}:${secs}`
         }
 
-        return song && <div className="player-container flex align-center">
-            <ReactPlayer
-                ref={this.ref}
-                className="player"
-                url={`https://www.youtube.com/watch?v=${song.id}`}
-                playing={playing}
-                controls={false}
-                volume={volume}
-                muted={muted}
-                onReady={() => console.log('onReady')}
-                onStart={() => console.log('onStart')}
-                onPlay={this.handlePlay}
-                onPause={this.handlePause}
-                onBuffer={() => console.log('onBuffer')}
-                onSeek={e => console.log('onSeek', e)}
-                onEnded={this.handleEnded}
-                onError={e => console.log('onError', e)}
-                onProgress={this.handleProgress}
-                onDuration={this.handleDuration}
-            />
-            <div className="player-song-details flex align-center">
-                <img src={song.imgUrl.url} alt="song thumbnail" />
-                <p>{song.title}</p>
-            </div>
+        return <div className="main-player-containe">
+            {song && <div className="player-container flex align-center">
+                <ReactPlayer
+                    ref={this.ref}
+                    className="player"
+                    url={`https://www.youtube.com/watch?v=${song.id}`}
+                    playing={playing}
+                    controls={false}
+                    volume={volume}
+                    muted={muted}
+                    onReady={() => console.log('onReady')}
+                    onStart={() => console.log('onStart')}
+                    onPlay={this.handlePlay}
+                    onPause={this.handlePause}
+                    onBuffer={() => console.log('onBuffer')}
+                    onSeek={e => console.log('onSeek', e)}
+                    onEnded={this.handleEnded}
+                    onError={e => console.log('onError', e)}
+                    onProgress={this.handleProgress}
+                    onDuration={this.handleDuration}
+                />
+                <div className="player-song-details flex align-center">
+                    <img src={song.imgUrl.url} alt="song thumbnail" />
+                    <p>{song.title}</p>
+                </div>
 
-            <div className="player-controls">
-                <span>playing gif</span>
-                <button class="player-ctrl" onClick={() => this.skipToSong(-1)}>previous</button>
-                <button class="player-ctrl" onClick={this.togglePlay}>{playing ? 'pause' : 'play'}</button>
-                <button class="player-ctrl" onClick={() => this.skipToSong(1)}>next</button>
-                <button class="player-ctrl" onClick={this.toggleMute}>Mute</button>
-                <span>{showTime(this.state.played)}</span>
-                <input type="range" name="" value="" />
-                {this.state.duration && <span>{showTime(this.state.duration)}</span>}
-                <input type="range" name="" value="" />
-            </div>
+                <div className="player-controls">
+                    <span>playing gif</span>
+                    <button class="player-ctrl" onClick={() => this.skipToSong(-1)}>previous</button>
+                    <button class="player-ctrl" onClick={this.togglePlay}>{playing ? 'pause' : 'play'}</button>
+                    <button class="player-ctrl" onClick={() => this.skipToSong(1)}>next</button>
+                    <button class="player-ctrl" onClick={this.toggleMute}>Mute</button>
+                    <span>{showTime(this.state.played)}</span>
+                    <input type="range" name="" value="" />
+                    {this.state.duration && <span>{showTime(this.state.duration)}</span>}
+                    <input type="range" name="" value="" />
+                </div>
+            </div>}
+
         </div>
     }
 }
