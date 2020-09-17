@@ -15,25 +15,43 @@ class _Player extends Component {
         isSmall: false,
         playerBox: null,
         song: '',
-        playing: false,
+        playing: true,
         muted: false,
         volume: 0.35,
         played: 0,
+        duration: undefined
     }
 
     componentDidMount() {
+        console.log('hi')
         this.setState({ currBox: this.props.playerBox });
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (prevProps.playerBox === this.props.playerBox) return;
         const { playerBox } = this.props;
-        this.setState({ playerBox }, () => this.load(playerBox.currSongIdx));
+        console.log("componentDidUpdate -> playerBox", playerBox)
+        // Prevent loop:
+        if (prevProps.playerBox === playerBox) return;
+
+        if (!this.state.playerBox) {
+            this.setState({ playerBox }, () => this.load(0));
+            return;
+        }
+
+        // if same box id, just update playerbox in state
+        if (prevProps.playerBox._id === playerBox._id) {
+            this.setState({ playerBox });
+            return;
+        }
+        // if different box -> setstate and load song idx 0 to player.
+        if (prevProps.playerBox && prevProps.playerBox._id !== playerBox._id) {
+            this.setState({ playerBox }, () => this.load(0));
+        }
     }
 
     load = (currSongIdx = 0) => {
-        const song = this.state.playerBox.songs[currSongIdx];
-        this.setState({ song });
+        const newBox = { ...this.state.playerBox, currSongIdx }
+        this.props.updatePlayerBox(newBox)
         this.play();
     }
 
@@ -77,18 +95,21 @@ class _Player extends Component {
     }
 
     handleSeekChange = (ev, value) => {
-        this.setState({ played: value })
-        this.player.seekTo(value)
+        if (value > this.state.duration) {
+            value = this.state.duration - 5
+        }
+        console.log("handleSeekChange -> value", value)
+        this.setState({ played: value });
     }
 
     handleSeekMouseUp = (ev, value) => {
-        this.setState({ seeking: false })
+        this.setState({ seeking: false });
+        this.player.seekTo(this.state.played);
     }
 
     handleProgress = state => {
-        // console.log('onProgress', state)
         if (!this.state.seeking) {
-            this.setState({ played: state.playedSeconds })
+            this.setState({ played: state.playedSeconds });
         }
     }
 
@@ -105,7 +126,9 @@ class _Player extends Component {
     }
 
     render() {
-        const { song, playing, volume, muted, duration } = this.state
+        const { playerBox, playing, volume, muted, duration } = this.state
+        if (!playerBox) return null;
+        const song = playerBox.songs[playerBox.currSongIdx]
 
         function showTime(seconds) {
             var mins;
@@ -132,14 +155,9 @@ class _Player extends Component {
                         controls={false}
                         volume={volume}
                         muted={muted}
-                        // onReady={() => console.log('onReady')}
-                        // onStart={() => console.log('onStart')}
-                        // onBuffer={() => console.log('onBuffer')}
                         onPlay={this.handlePlay}
                         onPause={this.handlePause}
-                        onSeek={ev => console.log('onSeek', ev)}
                         onEnded={this.handleEnded}
-                        onError={ev => console.log('onError', ev)}
                         onProgress={this.handleProgress}
                         onDuration={this.handleDuration}
                     />
