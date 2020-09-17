@@ -18,20 +18,6 @@
       },
       "songs": [
         {
-          "title": "The Meters",
-          "id": "s1011",
-          "youtubeId": "youtubeId",
-          "imgUrl": "imgUrl",
-          "addedBy": {}
-        },
-        {
-          "title": "The Sky",
-          "id": "s1012",
-          "youtubeId": "youtubeId",
-          "imgUrl": "imgUrl",
-          "addedBy": {}
-        },
-        {
           "id": "OBVeLeuV06I",
           "title": "AD &quot;Thug&quot; Feat. YG (WSHH Exclusive - Official Music Video)",
           "imgUrl": {
@@ -581,11 +567,12 @@
           },
           "addedBy": {}
         }
-      ]
+      ],
+      "currSongIdx": 3
     },
     {
       "_id": "110a",
-      "name": "Arabic Box for matan",
+      "name": "Arabic Box",
       "tags": [
         "Arabic"
       ],
@@ -825,10 +812,11 @@
           },
           "addedBy": {}
         }
-      ]
+      ],
+      "currSongIdx": 5
     },
     {
-      "_id": "112a",
+      "_id": "135a",
       "name": "Electronic Box",
       "tags": [
         "Electronic",
@@ -843,6 +831,22 @@
         {
           "name": "Matan",
           "id": "102"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
         },
         {
           "name": "Idan",
@@ -959,7 +963,7 @@
     },
     {
       "_id": "113a",
-      "name": "Electronic Box",
+      "name": "Boxi",
       "tags": [
         "Hip-hop"
       ],
@@ -986,7 +990,207 @@
           "id": "103"
         }
       ],
-      "imgUrl": "https://images.unsplash.com/photo-1509335919466-c196457ea95a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+      "imgUrl": "https://images.unsplash.com/photo-1513104487127-813ea879b8da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+      "createdAt": 1541652422,
+      "createdBy": {
+        "_id": "u101",
+        "fullName": "Puki Ben David",
+        "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      },
+      "songs": [
+        {
+          "id": "RBumgq5yVrA",
+          "title": "Passenger | Let Her Go (Official Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/RBumgq5yVrA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "ZAYZmIfHEiU",
+          "title": "Passenger | Home (Official Album Audio)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/ZAYZmIfHEiU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "E_Vt4MlbM0c",
+          "title": "Matisyahu - Sunshine",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/E_Vt4MlbM0c/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ]
+    },
+    {
+      "_id": "115a",
+      "name": "Boxush",
+      "tags": [
+        "Hip-hop",
+        "Country"
+      ],
+      "description": "Hip Hop fun and bun",
+      "likedByUser": [
+        {
+          "name": "hilla",
+          "id": "101"
+        },
+        {
+          "name": "Matan",
+          "id": "102"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        }
+      ],
+      "imgUrl": "https://images.unsplash.com/photo-1546528377-65924be33e1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+      "createdAt": 1541652422,
+      "createdBy": {
+        "_id": "u101",
+        "fullName": "Puki Ben David",
+        "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      },
+      "songs": [
+        {
+          "id": "0nEDzAeWxz8",
+          "title": "Deep House &amp; Nu Disco 2020 Live Mix Pete Bellis &amp; Tommy #DeepDiscoRecords",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/0nEDzAeWxz8/default_live.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "3G0O3CQtcv4",
+          "title": "Disco Malupitan Sayawan 2020",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/3G0O3CQtcv4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "iFDHMoWUCnA",
+          "title": "Surf Curse - Disco",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/iFDHMoWUCnA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "lEXY6gP7eLs",
+          "title": "12&quot; Disco Mix - The Ultimate Disco Mix",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/lEXY6gP7eLs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "mJpymZpk-t8",
+          "title": "Ottawan - D.I.S.C.O. (HD) Legendado em PT- BR",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/mJpymZpk-t8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "I5SzASOuZVA",
+          "title": "Disco Disco: A Gentleman - Sundar, Susheel, Risky | Sidharth,Jacqueline | Sachin-Jigar|Benny,Shirley",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/I5SzASOuZVA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "7jELobZuKVE",
+          "title": "90&#39;s &amp; 00&#39;s Disco Hits | Eurodance | Non-Stop Playlist",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/7jELobZuKVE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "4bElMPdJuNQ",
+          "title": "DISCO-80 /Various artists/ 25 ORIGINAL HITS OF THE 80&#39;S",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/4bElMPdJuNQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "QKE1oCCO_N0",
+          "title": "NONSTOP 90&#39;S DISCO REMIX",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/QKE1oCCO_N0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSongIdx": 1
+    },
+    {
+      "_id": "112a",
+      "name": "Box of fun",
+      "tags": [
+        "Hip-hop"
+      ],
+      "description": "A genre for electronic music lovers",
+      "likedByUser": [
+        {
+          "name": "hilla",
+          "id": "101"
+        },
+        {
+          "name": "Matan",
+          "id": "102"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        }
+      ],
+      "imgUrl": "https://images.unsplash.com/photo-1531503406248-d63777b50f39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
       "createdAt": 1541652422,
       "createdBy": {
         "_id": "u101",
@@ -1087,76 +1291,124 @@
       ]
     },
     {
-      "name": "hila",
+      "_id": "118a",
+      "name": "Hip Hop",
       "tags": [
-        "Arabic"
+        "Electronic",
+        "Hip-hop"
       ],
-      "description": "giklkflds",
-      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600358127/k8ccnm5tpq6jbk3pnkjj.webp",
+      "description": "A genre for electronic music lovers",
+      "likedByUser": [
+        {
+          "name": "hilla",
+          "id": "101"
+        },
+        {
+          "name": "Matan",
+          "id": "102"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        }
+      ],
+      "imgUrl": "https://images.unsplash.com/photo-1535146851324-6571dc3f2672?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+      "createdAt": 1541652422,
+      "createdBy": {
+        "_id": "u101",
+        "fullName": "Puki Ben David",
+        "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      },
       "songs": [
         {
-          "id": "L3vjVXIt6uQ",
-          "title": "[Official MV] ทำไมไม่คิดดีดี - S.D.F",
+          "id": "3G0O3CQtcv4",
+          "title": "Disco Malupitan Sayawan 2020",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/L3vjVXIt6uQ/default.jpg",
+            "url": "https://i.ytimg.com/vi/3G0O3CQtcv4/default.jpg",
             "width": 120,
             "height": 90
           },
           "addedBy": {}
         },
         {
-          "id": "jX1sQAlNOq8",
-          "title": "เกิดมาเพื่อรักเธอ (Ost.สามีตีตรา) - S.D.F【OFFICIAL MV】",
+          "id": "iFDHMoWUCnA",
+          "title": "Surf Curse - Disco",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/jX1sQAlNOq8/default.jpg",
+            "url": "https://i.ytimg.com/vi/iFDHMoWUCnA/default.jpg",
             "width": 120,
             "height": 90
           },
           "addedBy": {}
         },
         {
-          "id": "eIaR0PbXtHc",
-          "title": "รวมเพลงฮิต S.D.F - NOS - PARATA l เกิดมาเพื่อรักเธอ,คิดไปเอง,คือเธอเท่านั้น l",
+          "id": "lEXY6gP7eLs",
+          "title": "12&quot; Disco Mix - The Ultimate Disco Mix",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/eIaR0PbXtHc/default.jpg",
+            "url": "https://i.ytimg.com/vi/lEXY6gP7eLs/default.jpg",
             "width": 120,
             "height": 90
           },
           "addedBy": {}
         },
         {
-          "id": "jX1sQAlNOq8",
-          "title": "เกิดมาเพื่อรักเธอ (Ost.สามีตีตรา) - S.D.F【OFFICIAL MV】",
+          "id": "mJpymZpk-t8",
+          "title": "Ottawan - D.I.S.C.O. (HD) Legendado em PT- BR",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/jX1sQAlNOq8/default.jpg",
+            "url": "https://i.ytimg.com/vi/mJpymZpk-t8/default.jpg",
             "width": 120,
             "height": 90
           },
           "addedBy": {}
         },
         {
-          "id": "L3vjVXIt6uQ",
-          "title": "[Official MV] ทำไมไม่คิดดีดี - S.D.F",
+          "id": "I5SzASOuZVA",
+          "title": "Disco Disco: A Gentleman - Sundar, Susheel, Risky | Sidharth,Jacqueline | Sachin-Jigar|Benny,Shirley",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/L3vjVXIt6uQ/default.jpg",
+            "url": "https://i.ytimg.com/vi/I5SzASOuZVA/default.jpg",
             "width": 120,
             "height": 90
           },
           "addedBy": {}
         },
         {
-          "id": "t_mgoENmTYU",
-          "title": "[Audio] อย่าฝากชีวิตไว้ที่ฉัน - SDF",
+          "id": "7jELobZuKVE",
+          "title": "90&#39;s &amp; 00&#39;s Disco Hits | Eurodance | Non-Stop Playlist",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/t_mgoENmTYU/default.jpg",
+            "url": "https://i.ytimg.com/vi/7jELobZuKVE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "4bElMPdJuNQ",
+          "title": "DISCO-80 /Various artists/ 25 ORIGINAL HITS OF THE 80&#39;S",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/4bElMPdJuNQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "QKE1oCCO_N0",
+          "title": "NONSTOP 90&#39;S DISCO REMIX",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/QKE1oCCO_N0/default.jpg",
             "width": 120,
             "height": 90
           },
           "addedBy": {}
         }
-      ],
-      "likedByUser": [],
-      "_id": "w2Kowi1"
+      ]
     }
   ],
   "user": {
