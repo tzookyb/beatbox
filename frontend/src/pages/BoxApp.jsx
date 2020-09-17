@@ -24,7 +24,7 @@ class _BoxApp extends Component {
         if (!boxes || !genres) return <h1>Loading....</h1>
         return (
             <section className="box-app" id="box">
-                {genres.length && genres.map((genre, idx) => <BoxList boxes={boxes} key={idx} genre={genre} />)}
+                {genres.length || genres.map((genre, idx) => <BoxList boxes={boxes} key={idx} genre={genre} />)}
                 {!genres.length && <BoxList boxes={boxes} />}
             </section>
         )
