@@ -1,0 +1,14 @@
+.player-container {
+    position        : fixed;
+    height          : 60px;
+    width           : 100%;
+    bottom          : 0;
+    z-index         : 2;
+    background-color: #18191a;
+}
+
+.player {
+    display: none;
+}
+
+.player-ctrl {}
