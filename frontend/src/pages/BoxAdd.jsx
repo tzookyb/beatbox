@@ -73,7 +73,7 @@ export class _BoxAdd extends Component {
     render() {
         const { box } = this.state;
         return (
-            <section>
+            <section className="box-add">
                 <h2>Create Your Box</h2>
                 <form onSubmit={this.onAddBox} >
                     <input type="txt" value={box.name} placeholder='Enter box name:' onChange={this.handleInput} name="name" />

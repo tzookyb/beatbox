@@ -88,9 +88,9 @@ form:not(.form-filter) {
     }
 }
 
-
 ::-webkit-scrollbar {
     width: 15px; 
+    background-color: $clr1;
 }
 
 ::-webkit-scrollbar-track {

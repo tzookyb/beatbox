@@ -4,6 +4,7 @@ header {
     position: fixed;
     width: 100%;
     transition: 0.6s;
+    font-family: Righteous;
 
 
     >* {
@@ -12,17 +13,17 @@ header {
         
         a {
             color: #fff;
+            font-size: rem(20px);
         }
     }
     
     a.logo {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: rem(30px);
+        font-size: rem(40px);
         color: #fff;
     }
 
     &.sticky {
-        background-color: $clr3;
+        background-color: #555555;
         min-height: 50px;
     }
 }
