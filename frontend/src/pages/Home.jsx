@@ -17,13 +17,6 @@ export class _Home extends Component {
 
     getGenres () {
         return boxService.getGenres();
-        // var genres = [];
-        // boxes.forEach(box => {
-        //     box.tags.forEach(tag => {
-        //         if (!genres.includes(tag)) genres.push(tag);
-        //     })
-        // })
-        // return genres;
     }
 
     render() {

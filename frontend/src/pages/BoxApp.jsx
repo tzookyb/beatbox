@@ -7,14 +7,14 @@ import { BoxList } from '../cmps/Boxes/BoxList'
 class _BoxApp extends Component {
     state = {
         genres: null,
+        isHomePage: true
     }
 
     componentDidMount() {
         const genre = new URLSearchParams(window.location.href).get('genre');
-        console.log("componentDidMount -> genre", genre)
         const { genres } = this.props;
-        if (genres) this.setState({ genres })
-        else this.setState({ genres: [] })
+        if (genres) this.setState({ genres, isHomePage: true })
+        else this.setState({ genres: [], isHomePage: false })
         this.props.loadBoxes(genre);
     }
 
@@ -24,7 +24,11 @@ class _BoxApp extends Component {
         if (!boxes || !genres) return <h1>Loading....</h1>
         return (
             <section className="box-app" id="box">
-                {genres.length || genres.map((genre, idx) => <BoxList boxes={boxes} key={idx} genre={genre} />)}
+                {this.state.isHomePage && genres.map((genre, idx) => {
+                    return (
+                        <BoxList boxes={boxes} key={idx} genre={genre} />
+                    )
+                })}
                 {!genres.length && <BoxList boxes={boxes} />}
             </section>
         )
