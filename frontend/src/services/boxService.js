@@ -4,8 +4,9 @@ import httpService from './httpService';
 // const BASE_URL = 'http://localhost:3030/box'
 
 
-var gGenre = ['Hip-hop', 'Arabic', 'Easy', 'Electronic', 'Country', 'Latin', 'Jazz', 'Rock',
-    'Pop', 'Classical', 'Alternative', 'Folk', 'Soul', 'Blues', 'Disco', 'Metal']
+var gGenre = ['Hip-hop', 'Arabic', 'Electronic', 'Country']
+// var gGenre = ['Hip-hop', 'Arabic', 'Easy', 'Electronic', 'Country', 'Latin', 'Jazz', 'Rock',
+//     'Pop', 'Classical', 'Alternative', 'Folk', 'Soul', 'Blues', 'Disco', 'Metal','Israeli']
 
 export const boxService = {
     query,
@@ -54,6 +55,5 @@ function addSong(song) {
         //TODO: add loggedin user to addedby -MATAN!!!!
         addedBy: {}
     }
-    console.log("addSong -> newSong", newSong)
     return newSong;
 }

@@ -1,18 +1,25 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { BoxPreview } from './BoxPreview'
 
 export function BoxList({ boxes, genre }) {
     if (!boxes) return <h1>Loading...</h1>
     return (
-        <section className="box-list">
-            {genre && boxes.map(box => {
-                    if (box.tags.includes(genre)){
-                        return <BoxPreview key={box._id} box={box} genre={genre} />
-                    } 
-                })}
-            {!genre && boxes.map(box => <BoxPreview key={box._id} box={box} />)}
-
+        <section className= "list-container">
+            {genre && <Link to={`/box?&genre=${genre}`} className="btn-genre">{genre}</Link>}
+            {genre &&
+                <div className="box-list">
+                    {boxes.map(box => {
+                        if (box.tags.includes(genre)) {
+                            return <BoxPreview key={box._id} box={box} genre={genre} />
+                        }
+                    })}
+                </div>
+            }
+            <div className="box-list">
+                {!genre && boxes.map(box => <BoxPreview key={box._id} box={box} />)}
+            </div>
         </section>
     )
 }

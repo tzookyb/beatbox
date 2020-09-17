@@ -1,6 +1,6 @@
 .box-preview {
     height: rem(260px);
-
+    transition: 0.6s;
     .box-preview-img {
 
         img {
@@ -9,5 +9,9 @@
             height: rem(165px);
         }
     }
-
+    &:hover{
+        height: 18.5rem;
+        z-index: 5;
+    }
+    .box-preview-details {}
 }

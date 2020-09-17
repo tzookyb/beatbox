@@ -1,6 +1,7 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
+// import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 
 export function BoxPreview({ box, genre }) {
     return (
@@ -11,7 +12,6 @@ export function BoxPreview({ box, genre }) {
             </Link>
             <div className="box-preview-details flex align-center column space-between">
                 <h3>{box.name}</h3>
-                <Link to= {`/box?&genre=${genre}`} className="btn-genre">{genre}</Link>
                 <p><span role="img" aria-label="bbb">💜</span> {box.likedByUser.length}</p>
             </div>
         </div>

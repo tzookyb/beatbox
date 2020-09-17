@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-// import { ChatBox } from '../cmps/box-details/ChatBox'
+import { ChatBox } from '../cmps/box-details/ChatBox'
 import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
 import { loadBox, saveBox } from '../store/actions/boxAction'
