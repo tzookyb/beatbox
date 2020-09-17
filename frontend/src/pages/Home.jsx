@@ -2,19 +2,19 @@ import React, { Component } from 'react'
 import Footer from '../cmps/Footer'
 import { BoxApp } from './BoxApp'
 import { connect } from 'react-redux'
-import {boxService} from '../services/boxService'
+
+import { boxService } from '../services/boxService'
 import { loadBoxes } from '../store/actions/boxAction'
 
 export class _Home extends Component {
-
     state = {
     }
 
     componentDidMount() {
-        this.props.loadBoxes()
+        this.props.loadBoxes();
     }
 
-    getGenres () {
+    getGenres() {
         return boxService.getGenres();
     }
 
@@ -34,7 +34,7 @@ export class _Home extends Component {
                     {genres.length && <BoxApp genres={genres} />}
                 </div>
                 <Footer />
-                </React.Fragment>
+            </React.Fragment>
         )
     }
 }

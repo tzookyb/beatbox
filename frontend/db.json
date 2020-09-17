@@ -124,16 +124,6 @@
           "addedBy": {}
         },
         {
-          "id": "TDWx175pdfY",
-          "title": "G.T. - Hell Yeah (Official Video)",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/TDWx175pdfY/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
           "id": "iDK5IzUGLmw",
           "title": "คืนสุดท้าย - GT  Official Music Video",
           "imgUrl": {
@@ -168,26 +158,6 @@
           "title": "GT - Talk My S**t (Produced by: Royal House)",
           "imgUrl": {
             "url": "https://i.ytimg.com/vi/YmI7lzqhI40/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "5fE1meBm398",
-          "title": "GT - &quot;Trappin&quot; Prod. By Frontline (Official Video) Shot By #CTFILMS",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/5fE1meBm398/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "Cl4nfLQPtOE",
-          "title": "[드래곤볼GT] 마지막화 엔딩 - 점점 마음이 이끌려",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/Cl4nfLQPtOE/default.jpg",
             "width": 120,
             "height": 90
           },
@@ -398,30 +368,10 @@
           "addedBy": {}
         },
         {
-          "id": "EkxOXF9J77w",
-          "title": "Saree Ke Fall Sa Full Video Song | R...Rajkumar | Pritam",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/EkxOXF9J77w/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
           "id": "6qmzau3JBt0",
           "title": "JADOR - CU CINE SA MA CERT ? (OFICIAL VIDEO) ♫ █▬█ █ ▀█▀♫ 2020",
           "imgUrl": {
             "url": "https://i.ytimg.com/vi/6qmzau3JBt0/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "Pr-tdBlDrV4",
-          "title": "Bagong Trending Pinoy OPM Ibig Kanta Sa Wish 107.5  2021 - Skusta Clee, Matthaios, Flow G",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/Pr-tdBlDrV4/default.jpg",
             "width": 120,
             "height": 90
           },
@@ -446,8 +396,19 @@
             "height": 90
           },
           "addedBy": {}
+        },
+        {
+          "id": "OBVeLeuV06I",
+          "title": "AD &quot;Thug&quot; Feat. YG (WSHH Exclusive - Official Music Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/OBVeLeuV06I/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
         }
-      ]
+      ],
+      "currSongIdx": 4
     },
     {
       "_id": "109a",
@@ -1087,68 +1048,48 @@
       ]
     },
     {
-      "name": "hila",
+      "name": "Israeli",
       "tags": [
-        "Arabic"
+        "Israeli"
       ],
-      "description": "giklkflds",
-      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600358127/k8ccnm5tpq6jbk3pnkjj.webp",
+      "description": "",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600375624/f1cvtbg2rwelijg02mdw.gif",
       "songs": [
         {
-          "id": "L3vjVXIt6uQ",
-          "title": "[Official MV] ทำไมไม่คิดดีดี - S.D.F",
+          "id": "PQzmY3-ecvY",
+          "title": "עומר אדם &amp; נטע ברזילי - BEG",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/L3vjVXIt6uQ/default.jpg",
+            "url": "https://i.ytimg.com/vi/PQzmY3-ecvY/default.jpg",
             "width": 120,
             "height": 90
           },
           "addedBy": {}
         },
         {
-          "id": "jX1sQAlNOq8",
-          "title": "เกิดมาเพื่อรักเธอ (Ost.สามีตีตรา) - S.D.F【OFFICIAL MV】",
+          "id": "HBdmI1mQz9U",
+          "title": "עומר אדם - צליל מיתר",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/jX1sQAlNOq8/default.jpg",
+            "url": "https://i.ytimg.com/vi/HBdmI1mQz9U/default.jpg",
             "width": 120,
             "height": 90
           },
           "addedBy": {}
         },
         {
-          "id": "eIaR0PbXtHc",
-          "title": "รวมเพลงฮิต S.D.F - NOS - PARATA l เกิดมาเพื่อรักเธอ,คิดไปเอง,คือเธอเท่านั้น l",
+          "id": "9zHtxhzM-ys",
+          "title": "עומר אדם - יש דברים שלא עושים",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/eIaR0PbXtHc/default.jpg",
+            "url": "https://i.ytimg.com/vi/9zHtxhzM-ys/default.jpg",
             "width": 120,
             "height": 90
           },
           "addedBy": {}
         },
         {
-          "id": "jX1sQAlNOq8",
-          "title": "เกิดมาเพื่อรักเธอ (Ost.สามีตีตรา) - S.D.F【OFFICIAL MV】",
+          "id": "BwrojtyHms8",
+          "title": "עומר אדם - תמחל לי",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/jX1sQAlNOq8/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "L3vjVXIt6uQ",
-          "title": "[Official MV] ทำไมไม่คิดดีดี - S.D.F",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/L3vjVXIt6uQ/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "t_mgoENmTYU",
-          "title": "[Audio] อย่าฝากชีวิตไว้ที่ฉัน - SDF",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/t_mgoENmTYU/default.jpg",
+            "url": "https://i.ytimg.com/vi/BwrojtyHms8/default.jpg",
             "width": 120,
             "height": 90
           },
@@ -1156,7 +1097,7 @@
         }
       ],
       "likedByUser": [],
-      "_id": "w2Kowi1"
+      "_id": "vf_IFhN"
     }
   ],
   "user": {
