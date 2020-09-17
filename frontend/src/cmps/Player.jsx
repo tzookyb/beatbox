@@ -7,9 +7,12 @@ import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import VolumeMuteIcon from '@material-ui/icons/VolumeMute';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp';
+import { updatePlayerBox } from '../store/actions/playerActions';
+import Slider from '@material-ui/core/Slider';
 
 class _Player extends Component {
     state = {
+        isSmall: false,
         playerBox: null,
         song: '',
         playing: false,
@@ -19,14 +22,13 @@ class _Player extends Component {
     }
 
     componentDidMount() {
-        this.setState({ currBox: this.props.playerBox }, console.log(this.state.playerBox));
+        this.setState({ currBox: this.props.playerBox });
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (prevState.playerBox === this.props.playerBox) return;
-        console.log('inside', this.state.playerBox)
+        if (prevProps.playerBox === this.props.playerBox) return;
         const { playerBox } = this.props;
-        this.setState({ playerBox: playerBox }, () => this.load(playerBox.currSongIdx));
+        this.setState({ playerBox }, () => this.load(playerBox.currSongIdx));
     }
 
     load = (currSongIdx = 0) => {
@@ -34,14 +36,25 @@ class _Player extends Component {
         this.setState({ song });
         this.play();
     }
+
     play = () => {
         this.setState({ playing: true });
     }
 
-    skipToSong = (step) => {
-        this.load(this.state.currSong + step);
-        this.togglePlay();
+    skipToSong = (skip) => {
+        const { currSongIdx } = this.state.playerBox;
+        const songsIdxLength = this.state.playerBox.songs.length - 1
+
+        var nextSongIdx = currSongIdx + skip;
+        if (nextSongIdx === -1) nextSongIdx = songsIdxLength;
+        else if (nextSongIdx > songsIdxLength) nextSongIdx = 0;
+
+        const updatedBox = { ...this.state.playerBox, currSongIdx: nextSongIdx };
+        this.props.updatePlayerBox(updatedBox);
+        this.load(nextSongIdx);
+        this.play();
     }
+
 
     togglePlay = () => {
         this.setState({ playing: !this.state.playing });
@@ -51,45 +64,44 @@ class _Player extends Component {
         this.setState({ url: null, playing: false })
     }
 
-    handleVolumeChange = (ev) => {
-        this.setState({ volume: parseFloat(ev.target.value) })
+    handleVolumeChange = (ev, value) => {
+        this.setState({ volume: value })
     }
 
     toggleMute = () => {
         this.setState({ muted: !this.state.muted })
     }
 
-    handleSeekMouseDown = (ev) => {
+    handleSeekMouseDown = (ev, value) => {
         this.setState({ seeking: true })
     }
 
-    handleSeekChange = (ev) => {
-        this.setState({ played: parseFloat(ev.target.value) })
+    handleSeekChange = (ev, value) => {
+        this.setState({ played: value })
+        this.player.seekTo(value)
     }
 
-    handleSeekMouseUp = (ev) => {
+    handleSeekMouseUp = (ev, value) => {
         this.setState({ seeking: false })
-        this.player.seekTo(parseFloat(ev.target.value))
     }
 
     handleProgress = state => {
+        // console.log('onProgress', state)
         if (!this.state.seeking) {
             this.setState({ played: state.playedSeconds })
         }
     }
 
     handleEnded = () => {
-        console.log('onEnded')
-        this.setState({ playing: this.state.loop })
+        this.skipToSong(1);
+    }
+
+    handleDuration = (duration) => {
+        this.setState({ duration })
     }
 
     ref = player => {
         this.player = player
-    }
-
-    handleDuration = (duration) => {
-        console.log('onDuration', duration)
-        this.setState({ duration })
     }
 
     render() {
@@ -108,48 +120,75 @@ class _Player extends Component {
             return `${mins}:${secs}`
         }
 
-        return <div className="main-player-containe">
+        return <React.Fragment>
 
-            {song && <div className={`player-container flex align-center space-between ${playing ? 'is-playing' : ''}`}>
-                <ReactPlayer
-                    ref={this.ref}
-                    className="player"
-                    url={`https://www.youtube.com/watch?v=${song.id}`}
-                    playing={playing}
-                    controls={false}
-                    volume={volume}
-                    muted={muted}
-                    onReady={() => console.log('onReady')}
-                    onStart={() => console.log('onStart')}
-                    onPlay={this.handlePlay}
-                    onPause={this.handlePause}
-                    onBuffer={() => console.log('onBuffer')}
-                    onSeek={e => console.log('onSeek', e)}
-                    onEnded={this.handleEnded}
-                    onError={e => console.log('onError', e)}
-                    onProgress={this.handleProgress}
-                    onDuration={this.handleDuration}
-                />
-                <div className="player-song-details flex align-center">
-                    <img className="player-thumbnail" src={song.imgUrl.url} alt="song thumbnail" />
-                    <p>{song.title}</p>
-                </div>
+            {
+                song && <div className={`player-container flex align-center space-between ${playing ? 'is-playing' : ''}`}>
+                    <ReactPlayer
+                        ref={this.ref}
+                        className="player"
+                        url={`https://www.youtube.com/watch?v=${song.id}`}
+                        playing={playing}
+                        controls={false}
+                        volume={volume}
+                        muted={muted}
+                        // onReady={() => console.log('onReady')}
+                        // onStart={() => console.log('onStart')}
+                        // onBuffer={() => console.log('onBuffer')}
+                        onPlay={this.handlePlay}
+                        onPause={this.handlePause}
+                        onSeek={ev => console.log('onSeek', ev)}
+                        onEnded={this.handleEnded}
+                        onError={ev => console.log('onError', ev)}
+                        onProgress={this.handleProgress}
+                        onDuration={this.handleDuration}
+                    />
+                    <div className="player-song-details flex align-center">
+                        <img className="player-thumbnail" src={song.imgUrl.url} alt="song thumbnail" />
+                        <p className="player-title">{song.title}</p>
+                    </div>
 
-                <div className="player-controls">
-                    {/* {playing ? <img className="playing-animation" src={require('../assets/img/fxVE.gif')} alt="play animation" /> : ''} */}
-                    <button class="player-ctrl" onClick={() => this.skipToSong(-1)}><SkipPreviousIcon /></button>
-                    <button class="player-ctrl" onClick={this.togglePlay}>{playing ? <PauseIcon /> : <PlayArrowIcon />}</button>
-                    <button class="player-ctrl" onClick={() => this.skipToSong(1)}><SkipNextIcon /></button>
-                    <button class="player-ctrl" onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
                     <span>{showTime(this.state.played)}</span>
-                    <input type="range" name="" value="" />
+                    <Slider
+                        style={{
+                            width: '70px',
+                            color: 'white'
+                        }}
+                        name="played"
+                        min={0}
+                        max={duration}
+                        onMouseDown={this.handleSeekMouseDown}
+                        onMouseUp={this.handleSeekMouseUp}
+                        onChange={this.handleSeekChange}
+                        value={this.state.played}
+                    />
                     {duration && <span>{showTime(duration)}</span>}
-                    <input type="range" name="" value="" />
-                </div>
-                <div></div>
 
-            </div>}
-        </div>
+                    <div className="player-controls flex align-center">
+                        <button className="player-ctrl" onClick={() => this.skipToSong(-1)}><SkipPreviousIcon /></button>
+                        <button className="player-ctrl" onClick={this.togglePlay}>{playing ? <PauseIcon /> : <PlayArrowIcon />}</button>
+                        <button className="player-ctrl" onClick={() => this.skipToSong(1)}><SkipNextIcon /></button>
+
+
+                        <Slider
+                            style={{
+                                height: '50px',
+                                color: 'white'
+                            }}
+                            value={volume}
+                            min={0}
+                            step={0.05}
+                            max={1}
+                            orientation="vertical"
+                            onChange={this.handleVolumeChange}
+                        />
+                        <button className="player-ctrl" onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
+
+                    </div>
+
+                </div>
+            }
+        </React.Fragment>
     }
 }
 
@@ -161,7 +200,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-
+    updatePlayerBox
 }
 
 export const Player = connect(mapStateToProps, mapDispatchToProps)(_Player);
