@@ -4,9 +4,9 @@ import httpService from './httpService';
 // const BASE_URL = 'http://localhost:3030/box'
 
 
-var gGenre = ['Hip-hop', 'Arabic', 'Electronic', 'Country']
-// var gGenre = ['Hip-hop', 'Arabic', 'Easy', 'Electronic', 'Country', 'Latin', 'Jazz', 'Rock',
-//     'Pop', 'Classical', 'Alternative', 'Folk', 'Soul', 'Blues', 'Disco', 'Metal','Israeli']
+// var gGenre = ['Hip-hop', 'Arabic', 'Electronic', 'Country']
+var gGenre = ['Hip-hop', 'Arabic', 'Easy', 'Electronic', 'Country', 'Latin', 'Jazz', 'Rock',
+    'Pop', 'Classical', 'Alternative', 'Blues', 'Disco','Israeli']
 
 export const boxService = {
     query,
@@ -28,13 +28,51 @@ async function getById(boxId) {
 
 //TODO: fix filter
 async function query(filterBy) {
-    var queryStr = filterBy;
-
-    //In Backend: filter- only by the type if filter exist
-    // return httpService.get(`box${queryStr}`)
-    return httpService.get(`box`, queryStr)
-    // return httpService.get(`toy`, { name: filterBy.name, inStock: filterBy.inStock, type: filterBy.type, sortBy })
+    // if (!filterBy) filterBy = { name: '', genre: '' };
+    // else var queryStr = `?name=${filterBy.name}&genre=${filterBy.genre}`;
+    const boxes = await httpService.get(`box`, filterBy)
+    return byFilter(boxes, filterBy);
 }
+
+function byFilter(boxes, filterBy) {
+    if (!boxes) return;
+    if (!filterBy) return boxes;
+    var filterBoxes = [];
+    if (filterBy.genre && filterBy.name) {
+        boxes.forEach(box => {
+            if (box.tags.includes(filterBy.genre) && box.name.toLowerCase().includes(filterBy.name.toLowerCase())) filterBoxes.push(box);
+        })
+        return filterBoxes;
+    }
+    else if (filterBy.name) {
+        boxes.forEach(box => {
+            if (box.name.toLowerCase().includes(filterBy.name.toLowerCase())) filterBoxes.push(box);
+        })
+        return filterBoxes;
+    }
+    else if (filterBy.genre) {
+        boxes.forEach(box => {
+            if (box.tags.includes(filterBy.genre)) filterBoxes.push(box);
+        })
+        return filterBoxes;
+    }
+
+    return boxes;
+}
+
+
+//FOR BACKEND:
+// function _buildCriteria(filterBy) {
+//     const criteria = {};
+//     if (filterBy.name) {
+//         criteria.name = { $regex: new RegExp(filterBy.name, 'ig') }
+//     }
+//     if (filterBy.genre) {
+//             criteria.genre = filterBy.genre;
+//     }
+//     return criteria;
+// }
+
 
 
 async function save(box) {
