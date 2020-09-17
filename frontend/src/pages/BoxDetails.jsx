@@ -16,7 +16,6 @@ class _BoxDetails extends Component {
         const boxId = this.props.match.params.boxId;
         await this.props.loadBox(boxId)
         const { box } = this.props
-        console.log("componentDidMount -> box", box)
         this.setState({ box })
     }
 
