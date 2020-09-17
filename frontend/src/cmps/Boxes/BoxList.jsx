@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { AutoRotatingCarousel } from 'material-auto-rotating-carousel';
 
 import { BoxPreview } from './BoxPreview'
 
