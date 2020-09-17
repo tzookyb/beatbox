@@ -1,4 +1,5 @@
 import React from 'react';
+import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 
 export function SongPreview({ song, onRemoveSong, onPlaySong }) {
     return (
@@ -8,8 +9,7 @@ export function SongPreview({ song, onRemoveSong, onPlaySong }) {
                 <h3>{song.title}</h3>
             </div>
             <div className="song-preview-btns flex align-center">
-                <button onClick={() => onPlaySong()} className="play-song-btn">{'>'}</button>
-                <button onClick={(ev) => onRemoveSong(ev, song.id)} className="remove-song-btn">X</button>
+                <button onClick={(ev) => onRemoveSong(ev, song.id)} className="remove-song-btn"><DeleteOutlineIcon /></button>
             </div>
         </li>
     )
