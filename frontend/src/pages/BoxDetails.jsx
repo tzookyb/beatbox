@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { ChatBox } from '../cmps/BoxDetails/ChatBox'
-import { SongList } from '../cmps/BoxDetails/SongList'
-import { BoxInfo } from '../cmps/BoxDetails/BoxInfo'
+// import { ChatBox } from '../cmps/box-details/ChatBox'
+import { SongList } from '../cmps/box-details/SongList'
+import { BoxInfo } from '../cmps/box-details/BoxInfo'
 import { loadBox, saveBox } from '../store/actions/boxAction'
 import { boxService } from '../services/boxService'
 

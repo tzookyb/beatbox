@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import { boxService } from '../services/boxService'
 import { saveBox } from '../store/actions/boxAction'
 import { cloudService } from '../services/cloudService'
-import { SongPick } from '../cmps/BoxDetails/SongPick'
-import { SongPreview } from '../cmps/BoxDetails/SongPreview'
+import { SongPick } from '../cmps/box-details/SongPick'
+import { SongPreview } from '../cmps/box-details/SongPreview'
 
 export class _BoxAdd extends Component {
     state = {
@@ -87,7 +87,7 @@ export class _BoxAdd extends Component {
                         <label className="upload-label" style={{ cursor: 'pointer' }}> Upload Photo!
                         <input onChange={(ev) => this.uploadImg(ev)} type="file" hidden />
                         </label>
-                        {this.state.box.imgUrl && <img src={this.state.box.imgUrl} />}
+                        {this.state.box.imgUrl && <img src={this.state.box.imgUrl} alt="box-img" />}
                     </div>
                     <div className="song-list flex space-between">
                         <ul className="clean-list flex column space-between flex-1">

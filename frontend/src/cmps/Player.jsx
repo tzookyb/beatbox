@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import ReactPlayer from 'react-player/youtube'
 import { connect } from 'react-redux';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import PauseIcon from '@material-ui/icons/Pause';
+import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
+import SkipNextIcon from '@material-ui/icons/SkipNext';
+import VolumeMuteIcon from '@material-ui/icons/VolumeMute';
+import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 
 class _Player extends Component {
     state = {
@@ -25,7 +31,11 @@ class _Player extends Component {
 
     load = (currSongIdx = 0) => {
         const song = this.state.playerBox.songs[currSongIdx];
-        this.setState({ song })
+        this.setState({ song });
+        this.play();
+    }
+    play = () => {
+        this.setState({ playing: true });
     }
 
     skipToSong = (step) => {
@@ -84,7 +94,7 @@ class _Player extends Component {
     }
 
     render() {
-        const { song, playing, volume, muted, played, loaded, duration } = this.state
+        const { song, playing, volume, muted, duration } = this.state
 
         function showTime(seconds) {
             var mins;
@@ -100,7 +110,8 @@ class _Player extends Component {
         }
 
         return <div className="main-player-containe">
-            {song && <div className="player-container flex align-center">
+
+            {song && <div className={`player-container flex align-center space-between ${playing ? 'is-playing' : ''}`}>
                 <ReactPlayer
                     ref={this.ref}
                     className="player"
@@ -121,23 +132,24 @@ class _Player extends Component {
                     onDuration={this.handleDuration}
                 />
                 <div className="player-song-details flex align-center">
-                    <img src={song.imgUrl.url} alt="song thumbnail" />
+                    <img className="player-thumbnail" src={song.imgUrl.url} alt="song thumbnail" />
                     <p>{song.title}</p>
                 </div>
 
                 <div className="player-controls">
-                    <span>playing gif</span>
-                    <button class="player-ctrl" onClick={() => this.skipToSong(-1)}>previous</button>
-                    <button class="player-ctrl" onClick={this.togglePlay}>{playing ? 'pause' : 'play'}</button>
-                    <button class="player-ctrl" onClick={() => this.skipToSong(1)}>next</button>
-                    <button class="player-ctrl" onClick={this.toggleMute}>Mute</button>
+                    {/* {playing ? <img className="playing-animation" src={require('../assets/img/fxVE.gif')} alt="play animation" /> : ''} */}
+                    <button class="player-ctrl" onClick={() => this.skipToSong(-1)}><SkipPreviousIcon /></button>
+                    <button class="player-ctrl" onClick={this.togglePlay}>{playing ? <PauseIcon /> : <PlayArrowIcon />}</button>
+                    <button class="player-ctrl" onClick={() => this.skipToSong(1)}><SkipNextIcon /></button>
+                    <button class="player-ctrl" onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
                     <span>{showTime(this.state.played)}</span>
                     <input type="range" name="" value="" />
-                    {this.state.duration && <span>{showTime(this.state.duration)}</span>}
+                    {duration && <span>{showTime(duration)}</span>}
                     <input type="range" name="" value="" />
                 </div>
-            </div>}
+                <div></div>
 
+            </div>}
         </div>
     }
 }
