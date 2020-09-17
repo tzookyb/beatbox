@@ -93,7 +93,6 @@ class _Player extends Component {
     }
 
     handleEnded = () => {
-        console.log('onEnded')
         this.skipToSong(1);
     }
 

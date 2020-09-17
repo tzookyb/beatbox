@@ -6,6 +6,7 @@ import { BoxInfo } from '../cmps/box-details/BoxInfo'
 import { loadBox, saveBox } from '../store/actions/boxAction'
 import { boxService } from '../services/boxService'
 
+
 class _BoxDetails extends Component {
     state = {
         box: null,
@@ -22,8 +23,6 @@ class _BoxDetails extends Component {
         ev.stopPropagation()
         const box = { ...this.state.box }
         const songIdx = box.songs.findIndex(song => song.id === songId)
-        console.log("onRemoveSong -> box.songs", box.songs[songIdx])
-        console.log("onRemoveSong -> songIdx", songIdx)
         box.songs.splice(songIdx, 1);
         this.props.saveBox(box)
         // await this.props.removeSong(songId)
@@ -41,12 +40,17 @@ class _BoxDetails extends Component {
         this.props.saveBox(box);
     }
 
+    onSaveInfo = (box) => {
+        this.props.saveBox(box);
+    }
+
+
     render() {
         const { box } = this.state;
         if (!box) return <h1>Loading...</h1>
         return (
             <section className="box-details main-container">
-                <BoxInfo box={box} />
+                <BoxInfo box={box} onSaveInfo={this.onSaveInfo} />
                 <SongList songs={box.songs} onPlaySong={this.onPlaySong} onRemoveSong={this.onRemoveSong} onAddSong={this.onAddSong} />
 
                 {/* <ChatBox /> */}
