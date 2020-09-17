@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export function SongPreview({ song, onRemoveSong, onPlaySong }) {
     return (
-        <li className="song-preview flex space-between" >
+        <li onClick={() => onPlaySong()} className="song-preview flex space-between" >
             <div className="song-data flex align-center">
                 <div className="song-preview-img"><img src={song.imgUrl.url} /></div>
                 <h3>{song.title}</h3>

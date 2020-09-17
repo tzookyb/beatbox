@@ -1,14 +1,47 @@
 .player-container {
-    position        : fixed;
-    height          : 60px;
-    width           : 100%;
-    bottom          : 0;
-    z-index         : 2;
-    background-color: #18191a;
+    position           : fixed;
+    height             : 60px;
+    width              : 65%;
+    border-radius      : 999px;
+    left               : 0;
+    right              : 0;
+    margin             : 0 auto;
+    bottom             : 15px;
+    z-index            : 2;
+    background-color   : #0a0a0a;
+    background-image   : url('../../img/fxVE.gif');
+    background-size    : 0px;
+    background-position: bottom 500px;
+    background-repeat  : no-repeat;
+    padding            : 40px 0px;
+    transition         : 1s;
+}
+
+.is-playing {
+    background-size    : cover;
+    background-position: center;
 }
 
 .player {
     display: none;
 }
 
-.player-ctrl {}
+.player-ctrl {
+    border-radius: 50%;
+    padding      : 5px;
+}
+
+.player-controls>* {
+    margin-right: 5px;
+}
+
+.playing-animation {
+    height: 60px;
+    width : auto;
+}
+
+.player-thumbnail {
+    border-radius: 80%;
+    width        : 100px;
+    margin       : 0 10px;
+}
