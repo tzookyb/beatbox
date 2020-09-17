@@ -20,7 +20,8 @@ class _BoxDetails extends Component {
     }
 
     onRemoveSong = (ev, songId) => {
-        ev.stopPropagation()
+        ev.stopPropagation();
+        ev.preventDefault();
         const box = { ...this.state.box }
         const songIdx = box.songs.findIndex(song => song.id === songId)
         box.songs.splice(songIdx, 1);

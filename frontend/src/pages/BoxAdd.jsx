@@ -17,11 +17,23 @@ export class _BoxAdd extends Component {
             description: '',
             imgUrl: null,
             songs: []
-        }
+        },
+        msgWarnnig: ''
+    }
+
+    printMsg() {
+        this.setState({ msgWarnnig: 'Name of box is required' })
+        setTimeout(() => {
+            this.setState({ msgWarnnig: '' })
+        }, 2000)
     }
 
     onAddBox = async (ev) => {
         ev.preventDefault();
+        if (!this.state.box.name) {
+            this.printMsg();
+            return;
+        }
         const newBox = await this.props.saveBox(this.state.box);
         this.props.history.push(`/box/${newBox._id}`);
     }
@@ -32,9 +44,9 @@ export class _BoxAdd extends Component {
                 box: {
                     ...prevState.box,
                     name: box.name,
-                    tags:box.tags,
-                    description:box.description,
-                    imgUrl:box.imgUrl
+                    tags: box.tags,
+                    description: box.description,
+                    imgUrl: box.imgUrl
                 }
             }
         })
@@ -58,9 +70,12 @@ export class _BoxAdd extends Component {
         return (
             <section className="box-add main-container">
                 <h2>Create Your Box</h2>
-                <BoxInfoEdit updateBox={this.updateBox}/>
+                <BoxInfoEdit updateBox={this.updateBox} />
                 <SongList songs={box.songs} onPlaySong={this.onPlaySong} onRemoveSong={this.onRemoveSong} onAddSong={this.onAddSong} />
-                <button className="btn-create" onClick={this.onAddBox}>Create Box</button>
+                <div className="btn-create-container">
+                    <button className="btn-create" onClick={this.onAddBox}>Create Box</button>
+                    {this.state.msgWarnnig && <label>{this.state.msgWarnnig}</label>}
+                </div>
             </section>
         )
     }
