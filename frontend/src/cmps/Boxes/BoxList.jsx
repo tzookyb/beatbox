@@ -6,14 +6,14 @@ import { BoxPreview } from './BoxPreview'
 export function BoxList({ boxes, genre }) {
     if (!boxes) return <h1>Loading...</h1>
     return (
-        <section className= "list-container">
+        <section className="list-container">
             {genre && <Link to={`/box?&genre=${genre}`} className="btn-genre">{genre}</Link>}
             {genre &&
                 <div className="box-list">
                     {boxes.map(box => {
                         if (box.tags.includes(genre)) {
                             return <BoxPreview key={box._id} box={box} genre={genre} />
-                        }
+                        } else return null
                     })}
                 </div>
             }
