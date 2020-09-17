@@ -16,7 +16,6 @@ export function loadBox(boxId) {
 }
 
 export function saveBox(box) {
-  console.log(box);
   return async dispatch => {
     const actionType = box._id ? 'EDIT_BOX' : 'ADD_BOX';
     const newBox = await boxService.save(box);

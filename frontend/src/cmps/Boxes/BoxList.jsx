@@ -16,7 +16,7 @@ export function BoxList({ boxes, genre }) {
                     {boxes.map(box => {
                         if (box.tags.includes(genre)) {
                             return <BoxPreview key={box._id} box={box} genre={genre} />
-                        }
+                        } else return null
                     })}
                 </div>
             }

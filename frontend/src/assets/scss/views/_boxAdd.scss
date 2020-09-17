@@ -1,38 +1,38 @@
 .box-add {
-    padding-top: 100px;
+  padding-top: 100px;
 
-    form {
-
-        >* {
-            margin-bottom: 15px;
-            margin-top: 0;
-            font-size: 20px;
-
-        }
-
-        .upload-label{
-            background-color: $clr2;
-            padding: 10px;
-            border-radius: 5px;
-            color: #fff;
-        }
-
-        .song-list {
-            width: 100%;
-
-        }
-
+  form {
+    > * {
+      margin-bottom: 15px;
+      margin-top: 0;
+      font-size: 20px;
     }
 
+    .upload-label {
+      // background-color: $clr2;
+      // padding: 10px;
+      // border-radius: 5px;
+      // color: #fff;
+    }
 
+    .song-list {
+      width: 100%;
+    }
+  }
+  .btn-create {
+    border: none;
+    background: #565656cf;
+    width: 150px;
+    color: white;
+    padding: 10px;
+    margin-top: 5px;
+  }
 }
 
 form:not(.form-filter) {
-    background-color: $clr2;
-    padding: 20px;
-    // margin: 0 auto;
-    border-radius: 5px;
-    // max-height: 75%;
-
-
+  background-color: $clr2;
+  padding: 20px;
+  // margin: 0 auto;
+  border-radius: 5px;
+  // max-height: 75%;
 }
