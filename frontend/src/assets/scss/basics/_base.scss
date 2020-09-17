@@ -87,3 +87,22 @@ form:not(.form-filter) {
 
     }
 }
+
+::-webkit-scrollbar {
+    width: 15px; 
+    background-color: $clr1;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px  #9A6FCB;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #9A6FCB;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #9A6FCB;
+}

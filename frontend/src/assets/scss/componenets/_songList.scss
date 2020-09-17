@@ -1,6 +1,6 @@
 .song-list {
     min-height: rem(300px);
-    background-color: #ccc;
+    background-color: #ffffff12;
 
     ul {
         overflow-y: scroll;
@@ -8,9 +8,12 @@
         
 
         li {
-            border-bottom: 1px solid #999;
+            // border-bottom: 1px solid #999;
             width: 100%;
             min-height: rem(50px);
+            margin-bottom: 5px;
+            border-radius: 5px;
+            background-color: #ffffff12;
         }
     }
 

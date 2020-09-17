@@ -1,13 +1,13 @@
 {
   "box": [
     {
-      "_id": "5c09",
-      "name": "Funky Monks",
+      "_id": "103a",
+      "name": "Funky Monks",
       "tags": [
         "Hip-hop",
         "Arabic"
       ],
-      "description": "This Box is",
+      "description": "In this box you will hear Arabic music along with pop music, a powerful combination of worlds",
       "likedByUser": [],
       "imgUrl": "https://images.unsplash.com/photo-1487180144351-b8472da7d491?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
       "createdAt": 1541652422,
@@ -17,20 +17,6 @@
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
       "songs": [
-        {
-          "title": "The Meters",
-          "id": "s1011",
-          "youtubeId": "youtubeId",
-          "imgUrl": "imgUrl",
-          "addedBy": {}
-        },
-        {
-          "title": "The Sky",
-          "id": "s1012",
-          "youtubeId": "youtubeId",
-          "imgUrl": "imgUrl",
-          "addedBy": {}
-        },
         {
           "id": "OBVeLeuV06I",
           "title": "AD &quot;Thug&quot; Feat. YG (WSHH Exclusive - Official Music Video)",
@@ -81,7 +67,7 @@
         "Pop",
         "Classical"
       ],
-      "description": "This Box is",
+      "description": "In this box the music is calm but surprising, try us ",
       "likedByUser": [
         {
           "name": "hilla",
@@ -105,17 +91,93 @@
       },
       "songs": [
         {
-          "title": "The Meters",
-          "id": "s1011",
-          "youtubeId": "youtubeId",
-          "imgUrl": "imgUrl",
+          "id": "RBumgq5yVrA",
+          "title": "Passenger | Let Her Go (Official Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/RBumgq5yVrA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
           "addedBy": {}
         },
         {
-          "title": "The Sky",
-          "id": "s1012",
-          "youtubeId": "youtubeId",
-          "imgUrl": "imgUrl",
+          "id": "ZAYZmIfHEiU",
+          "title": "Passenger | Home (Official Album Audio)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/ZAYZmIfHEiU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "GF4KagCN2jw",
+          "title": "Passenger | The Way That I Love You (Official Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/GF4KagCN2jw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "vN0gaXS8dQE",
+          "title": "Passenger | Survivors (Official Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/vN0gaXS8dQE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "-fWw7FE9tTo",
+          "title": "Iggy Pop - The Passenger (Official Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/-fWw7FE9tTo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "DRrgWOCEDsI",
+          "title": "Passenger live at Pinkpop 2013 - FULL SHOW",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/DRrgWOCEDsI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "hef9UEHQisY",
+          "title": "Passenger | When We Were Young (Official Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/hef9UEHQisY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "VvRVu78IHHo",
+          "title": "Passenger | The Wrong Direction (Official Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/VvRVu78IHHo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "kBqqlW6-99M",
+          "title": "Passenger | Heart&#39;s On Fire (Official Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/kBqqlW6-99M/default.jpg",
+            "width": 120,
+            "height": 90
+          },
           "addedBy": {}
         }
       ]
@@ -127,7 +189,7 @@
         "Classical",
         "Country"
       ],
-      "description": "This Box is",
+      "description": "Quality and calm music, only people who want to take a break from the hustle and bustle enter this box",
       "likedByUser": [
         {
           "name": "hilla",
@@ -172,11 +234,299 @@
           "addedBy": {}
         }
       ]
+    },
+    {
+      "_id": "108a",
+      "name": "Fun Music Box",
+      "tags": [
+        "Folk",
+        "Country"
+      ],
+      "description": "Peaceful music for good days",
+      "likedByUser": [
+        {
+          "name": "hilla",
+          "id": "101"
+        },
+        {
+          "name": "Matan",
+          "id": "102"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        }
+      ],
+      "imgUrl": "https://images.unsplash.com/photo-1475744214834-0cb9be6eb226?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+      "createdAt": 1541652422,
+      "createdBy": {
+        "_id": "u101",
+        "fullName": "Puki Ben David",
+        "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      },
+      "songs": [
+        {
+          "id": "tAGnKpE4NCI",
+          "title": "Metallica: Nothing Else Matters (Official Music Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/tAGnKpE4NCI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "CD-E-LDc384",
+          "title": "Metallica: Enter Sandman (Official Music Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/CD-E-LDc384/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "Ckom3gf57Yw",
+          "title": "Metallica - The Unforgiven (Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/Ckom3gf57Yw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "Gomb1_E3Fgw",
+          "title": "METALICA - NOTHING ELSE MATTERS  [HD]",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/Gomb1_E3Fgw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "WM8bTdBs-cw",
+          "title": "Metallica: One (Official Music Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/WM8bTdBs-cw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "goZEdong4NI",
+          "title": "Melhores e mais tocadas de Metallica",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/goZEdong4NI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "SVA1GBtQ5VA",
+          "title": "Regüle Edin - Devletçi Metali (Türkçe)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/SVA1GBtQ5VA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "SVA1GBtQ5VA",
+          "title": "Regüle Edin - Devletçi Metali (Türkçe)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/SVA1GBtQ5VA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ]
+    },
+    {
+      "_id": "109a",
+      "name": "Fun Music Box",
+      "tags": [
+        "Disco",
+        "Alternative"
+      ],
+      "description": "Peaceful music for good days",
+      "likedByUser": [
+        {
+          "name": "hilla",
+          "id": "101"
+        },
+        {
+          "name": "Matan",
+          "id": "102"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        }
+      ],
+      "imgUrl": "https://images.unsplash.com/photo-1503218751919-1ea90572e609?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+      "createdAt": 1541652422,
+      "createdBy": {
+        "_id": "u101",
+        "fullName": "Puki Ben David",
+        "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      },
+      "songs": [
+        {
+          "id": "2nY2BoXNQoA",
+          "title": "You Are My Sunshine (Cover) Music Travel Love (White Island, Camiguin Philippines)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/2nY2BoXNQoA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "Outs4qo3r3A",
+          "title": "Sunshine",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/Outs4qo3r3A/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "PB1XM_mpMyQ",
+          "title": "Ant Beale - Sunshine (Official Audio)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/PB1XM_mpMyQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "nbXgHAzUWB0",
+          "title": "Axwell Λ Ingrosso - Sun Is Shining (Official Music Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/nbXgHAzUWB0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "E_Vt4MlbM0c",
+          "title": "Matisyahu - Sunshine",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/E_Vt4MlbM0c/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "GqJOfRXJctk",
+          "title": "Matisyahu - Sunshine (LYRICS)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/GqJOfRXJctk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ]
+    },
+    {
+      "name": "Matan + Hilla",
+      "tags": [
+        "Arabic"
+      ],
+      "description": "lets talk .....................",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600304170/bk1ynkoww4yngiueafof.png",
+      "songs": [
+        {
+          "id": "GsF05B8TFWg",
+          "title": "Axwell Λ Ingrosso - More Than You Know (Official Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/GsF05B8TFWg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "nbXgHAzUWB0",
+          "title": "Axwell Λ Ingrosso - Sun Is Shining (Official Music Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/nbXgHAzUWB0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "tnZrVvvVH_s",
+          "title": "SOLDATO - Isi Noice &amp; Axell (Street Video) #AFRODRILL",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/tnZrVvvVH_s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "CuQxtgT-teM",
+          "title": "AXELL- BadBoy ft KAY73",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/CuQxtgT-teM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "-sNWKbnaFkg",
+          "title": "Axel Thesleff - Bad Karma (Official Music Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/-sNWKbnaFkg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "1eLwFoN0syA",
+          "title": "MARCANTES 2006 - SÓ AS MELHORES ✔️ ( SEM VINHETA - DJ AXELL )☑️",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/1eLwFoN0syA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "likedByUser": [],
+      "_id": "Ws2aV9F"
     }
   ],
   "user": {
     "_id": "u101",
-    "fullName": "Puki Ben David",
+    "fullName": "Puki Ben David",
     "userName": "orly@amdadi.com",
     "password": "1",
     "imgUrl": "http://some-img",
