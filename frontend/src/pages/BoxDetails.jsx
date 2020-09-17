@@ -37,13 +37,18 @@ class _BoxDetails extends Component {
         this.props.saveBox(box)
     }
 
+    onPlaySong = (currSongIdx) => {
+        const box = { ...this.state.box, currSongIdx };
+        this.props.saveBox(box);
+    }
+
     render() {
         const { box } = this.state;
         if (!box) return <h1>Loading...</h1>
         return (
             <section className="box-details main-container">
-                <BoxInfo box={box}/>
-                <SongList songs={box.songs} onRemoveSong={this.onRemoveSong} onAddSong={this.onAddSong} />
+                <BoxInfo box={box} />
+                <SongList songs={box.songs} onPlaySong={this.onPlaySong} onRemoveSong={this.onRemoveSong} onAddSong={this.onAddSong} />
 
                 {/* <ChatBox /> */}
             </section>

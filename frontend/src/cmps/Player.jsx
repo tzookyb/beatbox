@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import ReactPlayer from 'react-player/youtube'
 import { connect } from 'react-redux';
-// https://www.youtube.com/watch?v=SmM0653YvXU
+
 class _Player extends Component {
     state = {
-        currBox: null,
-        songs: [],
+        playerBox: null,
         song: '',
-        url: '',
-        img: '',
         playing: false,
         muted: false,
         volume: 0.35,
@@ -16,21 +13,18 @@ class _Player extends Component {
     }
 
     componentDidMount() {
-        this.setState({ songs: this.props.currBox })
+        this.setState({ currBox: this.props.playerBox }, console.log(this.state.playerBox));
     }
 
-    componentDidUpdate(prevProps) {
-        if (prevProps === this.props) return;
-        if (this.props.currBox) {
-            const { currBox } = this.props;
-            this.setState({ currBox: currBox, songs: currBox.songs }, () => this.load(0));
-        }
-        // if (!currBox) return;
-        // if (!prevProps.currBox || prevProps.currBox._id !== currBox._id) {
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.playerBox === this.props.playerBox) return;
+        console.log('inside', this.state.playerBox)
+        const { playerBox } = this.props;
+        this.setState({ playerBox: playerBox }, () => this.load(playerBox.currSongIdx));
     }
 
-    load = (currSong) => {
-        const song = this.state.songs[currSong];
+    load = (currSongIdx = 0) => {
+        const song = this.state.playerBox.songs[currSongIdx];
         this.setState({ song })
     }
 
@@ -90,7 +84,7 @@ class _Player extends Component {
     }
 
     render() {
-        const { song, songs, url, playing, volume, muted, played, loaded, duration } = this.state
+        const { song, playing, volume, muted, played, loaded, duration } = this.state
 
         function showTime(seconds) {
             var mins;
@@ -109,7 +103,7 @@ class _Player extends Component {
             <ReactPlayer
                 ref={this.ref}
                 className="player"
-                url={url}
+                url={`https://www.youtube.com/watch?v=${song.id}`}
                 playing={playing}
                 controls={false}
                 volume={volume}
@@ -126,7 +120,7 @@ class _Player extends Component {
                 onDuration={this.handleDuration}
             />
             <div className="player-song-details flex align-center">
-                <img src={song.imgUrl} alt="song thumbnail" />
+                <img src={song.imgUrl.url} alt="song thumbnail" />
                 <p>{song.title}</p>
             </div>
 
@@ -148,7 +142,7 @@ class _Player extends Component {
 
 const mapStateToProps = state => {
     return {
-        currBox: state.boxReducer.currBox
+        playerBox: state.playerReducer.playerBox
     }
 }
 

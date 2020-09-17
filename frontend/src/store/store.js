@@ -3,13 +3,13 @@ import thunk from 'redux-thunk';
 
 import { userReducer } from './reducers/userReducer';
 import { boxReducer } from './reducers/boxReducer';
-import songReducer from './reducers/songReducer';
+import { playerReducer } from './reducers/playerReducer';
 // import { Reducer2 } from './reducers/Reducer2 ';
 
 const rootReducer = combineReducers({
     userReducer,
     boxReducer,
-    songReducer
+    playerReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
