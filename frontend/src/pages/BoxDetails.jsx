@@ -23,8 +23,6 @@ class _BoxDetails extends Component {
         ev.stopPropagation()
         const box = { ...this.state.box }
         const songIdx = box.songs.findIndex(song => song.id === songId)
-        console.log("onRemoveSong -> box.songs", box.songs[songIdx])
-        console.log("onRemoveSong -> songIdx", songIdx)
         box.songs.splice(songIdx, 1);
         this.props.saveBox(box)
         // await this.props.removeSong(songId)
