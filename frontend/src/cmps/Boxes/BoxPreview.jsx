@@ -1,10 +1,17 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
+
+
+
 // import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 
 export function BoxPreview({ box, genre }) {
+
+
+
     return (
+     
         <div className="box-preview">
             
             <Link to={`/box/${box._id}`} >
@@ -15,5 +22,6 @@ export function BoxPreview({ box, genre }) {
                 <p><span role="img" aria-label="bbb">💜</span> {box.likedByUser.length}</p>
             </div>
         </div>
+  
     )
 }

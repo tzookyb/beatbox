@@ -8,6 +8,8 @@ class _BoxApp extends Component {
         genres: null,
         isHomePage: true
     }
+    
+   
 
     componentDidMount() {
         const genre = new URLSearchParams(window.location.href).get('genre');
