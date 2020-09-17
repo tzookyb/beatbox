@@ -5,7 +5,7 @@ header {
     width: 100%;
     transition: 0.6s;
     font-family: Righteous;
-
+    z-index: 999;
 
     >* {
         height: 100%;
@@ -23,7 +23,9 @@ header {
     }
 
     &.sticky {
-        background-color: #555555;
+        background-color: $clr4;
+        padding: 10px 0;
         min-height: 50px;
+        
     }
 }

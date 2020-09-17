@@ -12,10 +12,11 @@
     background-position: right;
     background-repeat: no-repeat;
     height: 80vh;
-
+    
     .hero-txt {
         font-size: 2rem;
         color: #fff;
+        position: relative;
 
         h1 {
             font-family: Kalam;
@@ -30,8 +31,8 @@
             color: #fff;
             font-size: 2.2rem;
             position: absolute;
-            right: 230px;
-            top: 520px;
+            right: -100px;
+            top: 200px;
         }
     }
 }
