@@ -10,7 +10,8 @@
         }
     }
     &:hover{
-        height: 18.5rem;
+        transform: scale3d(1.3, 1.2, 1.2);
+        background-color: #4b4b4b;
         z-index: 5;
     }
 

@@ -73,7 +73,6 @@ class _Player extends Component {
     }
 
     handleProgress = state => {
-        console.log('onProgress', state)
         if (!this.state.seeking) {
             this.setState({ played: state.playedSeconds })
         }

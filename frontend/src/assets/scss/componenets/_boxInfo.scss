@@ -1,24 +1,92 @@
 .box-info {
-    min-height: rem(150px);
-    margin-bottom: 15px;
-    padding: 10px;
+  min-height: rem(150px);
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 100%;
+  background-color: #ffffff12;
+
+  color: #fff;
+
+  .box-img {
     width: 100%;
-    background-color: #ffffff12;
+    max-height: rem(200px);
+    max-width: rem(220px);
+    position: relative;
 
-    color: #fff;
-
-    .box-img {
-        width: 100%;
-        max-height: rem(200px);
-        max-width: rem(220px);
-
-        img{
-            width:100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    p {
-        max-width: 60ch;
+  }
+  p {
+    max-width: 60ch;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    svg {
+      background: transparent;
+      border: none;
+      color: white;
+      box-shadow: none;
+      position: absolute;
+      font-size: 1rem;
     }
+  }
+  .hide-btn {
+    display: none;
+  }
+  .info-header {
+    input {
+      border: none;
+      border-radius: 5px;
+      padding: 5px;
+      outline: none;
+    }
+    &:hover {
+      .hide-btn {
+        display: block;
+      }
+    }
+  }
+
+  .info-description {
+    max-width: 400px;
+    textarea {
+      width: 500px;
+      color: white;
+      border-radius: 5px;
+    }
+    &:hover {
+      .hide-btn {
+        display: block;
+      }
+    }
+  }
+
+  .info-input-actions {
+    > * {
+      margin: 5px;
+    }
+    textarea,
+    input,
+    select {
+      width: 500px;
+      border-radius: 5px;
+      outline: none;
+      padding: 5px;
+    }
+  }
+  .upload-box-img {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
