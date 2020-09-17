@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import { boxService } from '../services/boxService'
 import { saveBox } from '../store/actions/boxAction'
 import { cloudService } from '../services/cloudService'
-import { SongPick } from '../cmps/BoxDetails/SongPick'
-import { SongPreview } from '../cmps/BoxDetails/SongPreview'
+import { SongPick } from '../cmps/box-details/SongPick'
+import { SongPreview } from '../cmps/box-details/SongPreview'
 
 export class _BoxAdd extends Component {
     state = {

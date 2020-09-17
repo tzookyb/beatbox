@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
 import { loadBoxes } from '../store/actions/boxAction'
-import { BoxList } from '../cmps/Boxes/BoxList'
+import { BoxList } from '../cmps/boxes/BoxList'
 
 class _BoxApp extends Component {
     state = {

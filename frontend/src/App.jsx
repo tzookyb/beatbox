@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-import SongPick from './cmps/BoxDetails/SongPick';
+import SongPick from './cmps/box-details/SongPick';
 import Header from './cmps/Header';
 import { Player } from './cmps/Player';
 import { BoxApp } from './pages/BoxApp';
