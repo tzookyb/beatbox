@@ -70,23 +70,7 @@ a:not(a.logo):hover {
 }
 
 
-form:not(.form-filter) {
-    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 1px 3px 1px rgba(60, 64, 67, 0.149);
-    padding: 20px;
-    max-width: 60%;
-    margin: 0 auto;
-    border-radius: 5px;
-    max-height: 75%;
 
-    >* {
-
-        max-width: 90%;
-        margin-bottom: 15px;
-        margin-top: 0;
-        font-size: 20px;
-
-    }
-}
 
 ::-webkit-scrollbar {
     width: 15px; 

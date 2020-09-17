@@ -94,7 +94,7 @@ class _Player extends Component {
     }
 
     render() {
-        const { song, playing, volume, muted, played, loaded, duration } = this.state
+        const { song, playing, volume, muted, duration } = this.state
 
         function showTime(seconds) {
             var mins;
@@ -109,44 +109,47 @@ class _Player extends Component {
             return `${mins}:${secs}`
         }
 
-        return song && <div className={`player-container flex align-center space-between ${playing ? 'is-playing' : ''}`}>
-            <ReactPlayer
-                ref={this.ref}
-                className="player"
-                url={`https://www.youtube.com/watch?v=${song.id}`}
-                playing={playing}
-                controls={false}
-                volume={volume}
-                muted={muted}
-                onReady={() => console.log('onReady')}
-                onStart={() => console.log('onStart')}
-                onPlay={this.handlePlay}
-                onPause={this.handlePause}
-                onBuffer={() => console.log('onBuffer')}
-                onSeek={e => console.log('onSeek', e)}
-                onEnded={this.handleEnded}
-                onError={e => console.log('onError', e)}
-                onProgress={this.handleProgress}
-                onDuration={this.handleDuration}
-            />
-            <div className="player-song-details flex align-center">
-                <img className="player-thumbnail" src={song.imgUrl.url} alt="song thumbnail" />
-                <p>{song.title}</p>
-            </div>
+        return <div className="main-player-containe">
 
-            <div className="player-controls">
-                {/* {playing ? <img className="playing-animation" src={require('../assets/img/fxVE.gif')} alt="play animation" /> : ''} */}
-                <button class="player-ctrl" onClick={() => this.skipToSong(-1)}><SkipPreviousIcon /></button>
-                <button class="player-ctrl" onClick={this.togglePlay}>{playing ? <PauseIcon /> : <PlayArrowIcon />}</button>
-                <button class="player-ctrl" onClick={() => this.skipToSong(1)}><SkipNextIcon /></button>
-                <button class="player-ctrl" onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
-                <span>{showTime(this.state.played)}</span>
-                <input type="range" name="" value="" />
-                {this.state.duration && <span>{showTime(this.state.duration)}</span>}
-                <input type="range" name="" value="" />
-            </div>
-            <div></div>
+            {song && <div className={`player-container flex align-center space-between ${playing ? 'is-playing' : ''}`}>
+                <ReactPlayer
+                    ref={this.ref}
+                    className="player"
+                    url={`https://www.youtube.com/watch?v=${song.id}`}
+                    playing={playing}
+                    controls={false}
+                    volume={volume}
+                    muted={muted}
+                    onReady={() => console.log('onReady')}
+                    onStart={() => console.log('onStart')}
+                    onPlay={this.handlePlay}
+                    onPause={this.handlePause}
+                    onBuffer={() => console.log('onBuffer')}
+                    onSeek={e => console.log('onSeek', e)}
+                    onEnded={this.handleEnded}
+                    onError={e => console.log('onError', e)}
+                    onProgress={this.handleProgress}
+                    onDuration={this.handleDuration}
+                />
+                <div className="player-song-details flex align-center">
+                    <img className="player-thumbnail" src={song.imgUrl.url} alt="song thumbnail" />
+                    <p>{song.title}</p>
+                </div>
 
+                <div className="player-controls">
+                    {/* {playing ? <img className="playing-animation" src={require('../assets/img/fxVE.gif')} alt="play animation" /> : ''} */}
+                    <button class="player-ctrl" onClick={() => this.skipToSong(-1)}><SkipPreviousIcon /></button>
+                    <button class="player-ctrl" onClick={this.togglePlay}>{playing ? <PauseIcon /> : <PlayArrowIcon />}</button>
+                    <button class="player-ctrl" onClick={() => this.skipToSong(1)}><SkipNextIcon /></button>
+                    <button class="player-ctrl" onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
+                    <span>{showTime(this.state.played)}</span>
+                    <input type="range" name="" value="" />
+                    {duration && <span>{showTime(duration)}</span>}
+                    <input type="range" name="" value="" />
+                </div>
+                <div></div>
+
+            </div>}
         </div>
     }
 }

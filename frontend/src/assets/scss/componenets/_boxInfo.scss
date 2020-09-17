@@ -1,8 +1,11 @@
 .box-info {
     min-height: rem(150px);
-    background-color: #ddd;
     margin-bottom: 15px;
     padding: 10px;
+    width: 100%;
+    background-color: #ffffff12;
+
+    color: #fff;
 
     .box-img {
         width: 100%;
@@ -12,5 +15,8 @@
             height: 100%;
             object-fit: cover;
         }
+    }
+    p {
+        max-width: 60ch;
     }
 }

@@ -38,6 +38,16 @@
           "addedBy": {}
         },
         {
+          "id": "mp5E_3cgydM",
+          "title": "F.D.",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/mp5E_3cgydM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
           "id": "wSRvX6Tt9qU",
           "title": "FD - Dedication (Roller Pt. 2)",
           "imgUrl": {
@@ -46,19 +56,8 @@
             "height": 90
           },
           "addedBy": {}
-        },
-        {
-          "id": "mTHjFeXmnHs",
-          "title": "Air - All I Need",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/mTHjFeXmnHs/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
         }
-      ],
-      "currSongIdx": 5
+      ]
     },
     {
       "_id": "104a",
@@ -568,7 +567,8 @@
           },
           "addedBy": {}
         }
-      ]
+      ],
+      "currSongIdx": 3
     },
     {
       "_id": "110a",

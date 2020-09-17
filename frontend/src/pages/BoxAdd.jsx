@@ -73,9 +73,9 @@ export class _BoxAdd extends Component {
     render() {
         const { box } = this.state;
         return (
-            <section className="box-add">
+            <section className="box-add main-container">
                 <h2>Create Your Box</h2>
-                <form onSubmit={this.onAddBox} >
+                <form onSubmit={this.onAddBox} className="box-add-form flex column align-center" >
                     <input type="txt" value={box.name} placeholder='Enter box name:' onChange={this.handleInput} name="name" />
                     <input type="txt" value={box.description} placeholder='About the box: ' onChange={this.handleInput} name="description" />
 
@@ -83,17 +83,23 @@ export class _BoxAdd extends Component {
                     <select id="tags" name="tags" onChange={this.handleInput} >
                         {this.getGenresOptions()}
                     </select>
-                    <label> Upload Img
-                       <input onChange={(ev) => this.uploadImg(ev)} type="file" />
-                    </label>
-                    {this.state.box.imgUrl && <img src={this.state.box.imgUrl} />}
-                    <SongPick onAddSong={this.onAddSong} />
-                    <div className="song-list flex column">
-                        {this.state.box.songs.map(song => <SongPreview song={song} />)}
+                    <div className="upload-img-container flex">
+                        <label className="upload-label" style={{ cursor: 'pointer' }}> Upload Photo!
+                        <input onChange={(ev) => this.uploadImg(ev)} type="file" hidden />
+                        </label>
+                        {this.state.box.imgUrl && <img src={this.state.box.imgUrl} alt="box-img" />}
                     </div>
+                    <div className="song-list flex space-between">
+                        <ul className="clean-list flex column space-between flex-1">
+                            {this.state.box.songs.map(song => <SongPreview song={song} />)}
+
+                        </ul>
+                        <SongPick onAddSong={this.onAddSong} />
+                    </div>
+
                     <button>Save</button>
                 </form>
-            </section>
+            </section >
         )
     }
 }
