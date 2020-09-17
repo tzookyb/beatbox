@@ -368,30 +368,10 @@
           "addedBy": {}
         },
         {
-          "id": "EkxOXF9J77w",
-          "title": "Saree Ke Fall Sa Full Video Song | R...Rajkumar | Pritam",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/EkxOXF9J77w/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
           "id": "6qmzau3JBt0",
           "title": "JADOR - CU CINE SA MA CERT ? (OFICIAL VIDEO) ♫ █▬█ █ ▀█▀♫ 2020",
           "imgUrl": {
             "url": "https://i.ytimg.com/vi/6qmzau3JBt0/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "Pr-tdBlDrV4",
-          "title": "Bagong Trending Pinoy OPM Ibig Kanta Sa Wish 107.5  2021 - Skusta Clee, Matthaios, Flow G",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/Pr-tdBlDrV4/default.jpg",
             "width": 120,
             "height": 90
           },
@@ -416,8 +396,19 @@
             "height": 90
           },
           "addedBy": {}
+        },
+        {
+          "id": "OBVeLeuV06I",
+          "title": "AD &quot;Thug&quot; Feat. YG (WSHH Exclusive - Official Music Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/OBVeLeuV06I/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
         }
-      ]
+      ],
+      "currSongIdx": 4
     },
     {
       "_id": "109a",
