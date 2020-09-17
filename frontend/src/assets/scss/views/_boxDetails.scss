@@ -1,4 +1,23 @@
-.box-details{
+.box-details {
     padding-top: 100px;
-   
+
+    .box-info {
+        width: 100%;
+        background-color: #ffffff12;
+
+        color: #fff;
+
+        p {
+            max-width: 60ch;
+        }
+
+        .box-img {
+            max-width: 30%;
+
+            img {
+
+                border-radius: 5px;
+            }
+        }
+    }
 }

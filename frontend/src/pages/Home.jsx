@@ -34,8 +34,8 @@ export class _Home extends Component {
             <React.Fragment>
                 <div className="hero-container flex justify-center align-center">
                     <div className="hero-txt flex align-center column">
-                        <h1>Share the beat...</h1>
-                        <a href="#box"><button>start listening!</button></a>
+                        <h1>Share the <span>Beat</span>...</h1>
+                        <a href="#box"><button>Start listening!</button></a>
                     </div>
                 </div>
                 <div className="gener-list">

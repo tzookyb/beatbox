@@ -5,13 +5,14 @@ import { Link } from 'react-router-dom'
 export function BoxPreview({ box, genre }) {
     return (
         <div className="box-preview">
+            
             <Link to={`/box/${box._id}`} >
-                <img src={box.imgUrl} />
+            <div className="box-preview-img"><img src={box.imgUrl} /></div> 
             </Link>
-            <div className="flex space-between">
+            <div className="box-preview-details flex align-center column space-between">
                 <h3>{box.name}</h3>
                 <Link to= {`/box?&genre=${genre}`} className="btn-genre">{genre}</Link>
-                <p>🖤 {box.likedByUser.length}</p>
+                <p>💜 {box.likedByUser.length}</p>
             </div>
         </div>
     )

@@ -54,5 +54,6 @@ function addSong(song) {
         //TODO: add loggedin user to addedby -MATAN!!!!
         addedBy: {}
     }
+    console.log("addSong -> newSong", newSong)
     return newSong;
 }

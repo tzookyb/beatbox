@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 
-export function SongPreview({ song }) {
+export function SongPreview({ song, onRemoveSong }) {
     return (
-        <div className="song-preview flex">
-            <img src={song.imgUrl.url} />
-            <h3>{song.title}</h3>
-        </div>
+        <li className="song-preview flex space-between" >
+            <div className="song-data flex align-center">
+                <div className="song-preview-img"><img src={song.imgUrl.url} /></div>
+                <h3>{song.title}</h3>
+            </div>
+            <div className="song-preview-btns flex align-center">
+            <button className="play-song-btn">{'>'}</button>
+            <button onClick={(ev) => onRemoveSong(ev, song.id)} className="remove-song-btn">X</button>
+            </div>
+        </li>
     )
 }
