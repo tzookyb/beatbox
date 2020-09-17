@@ -14,8 +14,15 @@ export class _Home extends Component {
         this.props.loadBoxes();
     }
 
-    getGenres() {
-        return boxService.getGenres();
+    getGenres(boxes) {
+        // return boxService.getGenres();
+        var genres = [];
+        boxes.forEach(box => {
+            box.tags.forEach(tag => {
+                if (!genres.includes(tag)) genres.push(tag);
+            })
+        })
+        return genres
     }
 
     render() {

@@ -2,7 +2,7 @@
   "box": [
     {
       "_id": "103a",
-      "name": "Funky Monks",
+      "name": "Funky Monks",
       "tags": [
         "Hip-hop",
         "Arabic"
@@ -17,20 +17,6 @@
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
       "songs": [
-        {
-          "title": "The Meters",
-          "id": "s1011",
-          "youtubeId": "youtubeId",
-          "imgUrl": "imgUrl",
-          "addedBy": {}
-        },
-        {
-          "title": "The Sky",
-          "id": "s1012",
-          "youtubeId": "youtubeId",
-          "imgUrl": "imgUrl",
-          "addedBy": {}
-        },
         {
           "id": "OBVeLeuV06I",
           "title": "AD &quot;Thug&quot; Feat. YG (WSHH Exclusive - Official Music Video)",
@@ -124,6 +110,16 @@
           "addedBy": {}
         },
         {
+          "id": "TDWx175pdfY",
+          "title": "G.T. - Hell Yeah (Official Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/TDWx175pdfY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
           "id": "iDK5IzUGLmw",
           "title": "คืนสุดท้าย - GT  Official Music Video",
           "imgUrl": {
@@ -158,6 +154,26 @@
           "title": "GT - Talk My S**t (Produced by: Royal House)",
           "imgUrl": {
             "url": "https://i.ytimg.com/vi/YmI7lzqhI40/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "5fE1meBm398",
+          "title": "GT - &quot;Trappin&quot; Prod. By Frontline (Official Video) Shot By #CTFILMS",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/5fE1meBm398/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "Cl4nfLQPtOE",
+          "title": "[드래곤볼GT] 마지막화 엔딩 - 점점 마음이 이끌려",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/Cl4nfLQPtOE/default.jpg",
             "width": 120,
             "height": 90
           },
@@ -368,10 +384,30 @@
           "addedBy": {}
         },
         {
+          "id": "EkxOXF9J77w",
+          "title": "Saree Ke Fall Sa Full Video Song | R...Rajkumar | Pritam",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/EkxOXF9J77w/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
           "id": "6qmzau3JBt0",
           "title": "JADOR - CU CINE SA MA CERT ? (OFICIAL VIDEO) ♫ █▬█ █ ▀█▀♫ 2020",
           "imgUrl": {
             "url": "https://i.ytimg.com/vi/6qmzau3JBt0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "Pr-tdBlDrV4",
+          "title": "Bagong Trending Pinoy OPM Ibig Kanta Sa Wish 107.5  2021 - Skusta Clee, Matthaios, Flow G",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/Pr-tdBlDrV4/default.jpg",
             "width": 120,
             "height": 90
           },
@@ -396,19 +432,8 @@
             "height": 90
           },
           "addedBy": {}
-        },
-        {
-          "id": "OBVeLeuV06I",
-          "title": "AD &quot;Thug&quot; Feat. YG (WSHH Exclusive - Official Music Video)",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/OBVeLeuV06I/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
         }
-      ],
-      "currSongIdx": 4
+      ]
     },
     {
       "_id": "109a",
@@ -546,7 +571,7 @@
     },
     {
       "_id": "110a",
-      "name": "Arabic Box for matan",
+      "name": "Arabic Box",
       "tags": [
         "Arabic"
       ],
@@ -707,6 +732,16 @@
       },
       "songs": [
         {
+          "id": "0nEDzAeWxz8",
+          "title": "Deep House &amp; Nu Disco 2020 Live Mix Pete Bellis &amp; Tommy #DeepDiscoRecords",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/0nEDzAeWxz8/default_live.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
           "id": "3G0O3CQtcv4",
           "title": "Disco Malupitan Sayawan 2020",
           "imgUrl": {
@@ -789,7 +824,7 @@
       ]
     },
     {
-      "_id": "112a",
+      "_id": "135a",
       "name": "Electronic Box",
       "tags": [
         "Electronic",
@@ -804,6 +839,22 @@
         {
           "name": "Matan",
           "id": "102"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
         },
         {
           "name": "Idan",
@@ -920,7 +971,7 @@
     },
     {
       "_id": "113a",
-      "name": "Electronic Box",
+      "name": "Boxi",
       "tags": [
         "Hip-hop"
       ],
@@ -947,7 +998,7 @@
           "id": "103"
         }
       ],
-      "imgUrl": "https://images.unsplash.com/photo-1509335919466-c196457ea95a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+      "imgUrl": "https://images.unsplash.com/photo-1513104487127-813ea879b8da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
       "createdAt": 1541652422,
       "createdBy": {
         "_id": "u101",
@@ -1048,61 +1099,398 @@
       ]
     },
     {
-      "name": "Israeli",
+      "_id": "115a",
+      "name": "Boxush",
       "tags": [
-        "Israeli"
+        "Hip-hop",
+        "Country"
       ],
-      "description": "",
-      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600375624/f1cvtbg2rwelijg02mdw.gif",
+      "description": "Hip Hop fun and bun",
+      "likedByUser": [
+        {
+          "name": "hilla",
+          "id": "101"
+        },
+        {
+          "name": "Matan",
+          "id": "102"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        }
+      ],
+      "imgUrl": "https://images.unsplash.com/photo-1546528377-65924be33e1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+      "createdAt": 1541652422,
+      "createdBy": {
+        "_id": "u101",
+        "fullName": "Puki Ben David",
+        "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      },
       "songs": [
         {
-          "id": "PQzmY3-ecvY",
-          "title": "עומר אדם &amp; נטע ברזילי - BEG",
+          "id": "0nEDzAeWxz8",
+          "title": "Deep House &amp; Nu Disco 2020 Live Mix Pete Bellis &amp; Tommy #DeepDiscoRecords",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/PQzmY3-ecvY/default.jpg",
+            "url": "https://i.ytimg.com/vi/0nEDzAeWxz8/default_live.jpg",
             "width": 120,
             "height": 90
           },
           "addedBy": {}
         },
         {
-          "id": "HBdmI1mQz9U",
-          "title": "עומר אדם - צליל מיתר",
+          "id": "3G0O3CQtcv4",
+          "title": "Disco Malupitan Sayawan 2020",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/HBdmI1mQz9U/default.jpg",
+            "url": "https://i.ytimg.com/vi/3G0O3CQtcv4/default.jpg",
             "width": 120,
             "height": 90
           },
           "addedBy": {}
         },
         {
-          "id": "9zHtxhzM-ys",
-          "title": "עומר אדם - יש דברים שלא עושים",
+          "id": "iFDHMoWUCnA",
+          "title": "Surf Curse - Disco",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/9zHtxhzM-ys/default.jpg",
+            "url": "https://i.ytimg.com/vi/iFDHMoWUCnA/default.jpg",
             "width": 120,
             "height": 90
           },
           "addedBy": {}
         },
         {
-          "id": "BwrojtyHms8",
-          "title": "עומר אדם - תמחל לי",
+          "id": "lEXY6gP7eLs",
+          "title": "12&quot; Disco Mix - The Ultimate Disco Mix",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/BwrojtyHms8/default.jpg",
+            "url": "https://i.ytimg.com/vi/lEXY6gP7eLs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "mJpymZpk-t8",
+          "title": "Ottawan - D.I.S.C.O. (HD) Legendado em PT- BR",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/mJpymZpk-t8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "I5SzASOuZVA",
+          "title": "Disco Disco: A Gentleman - Sundar, Susheel, Risky | Sidharth,Jacqueline | Sachin-Jigar|Benny,Shirley",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/I5SzASOuZVA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "7jELobZuKVE",
+          "title": "90&#39;s &amp; 00&#39;s Disco Hits | Eurodance | Non-Stop Playlist",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/7jELobZuKVE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "4bElMPdJuNQ",
+          "title": "DISCO-80 /Various artists/ 25 ORIGINAL HITS OF THE 80&#39;S",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/4bElMPdJuNQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "QKE1oCCO_N0",
+          "title": "NONSTOP 90&#39;S DISCO REMIX",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/QKE1oCCO_N0/default.jpg",
             "width": 120,
             "height": 90
           },
           "addedBy": {}
         }
+      ]
+    },
+    {
+      "_id": "112a",
+      "name": "Box of fun",
+      "tags": [
+        "Hip-hop"
       ],
-      "likedByUser": [],
-      "_id": "vf_IFhN"
+      "description": "A genre for electronic music lovers",
+      "likedByUser": [
+        {
+          "name": "hilla",
+          "id": "101"
+        },
+        {
+          "name": "Matan",
+          "id": "102"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        }
+      ],
+      "imgUrl": "https://images.unsplash.com/photo-1531503406248-d63777b50f39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+      "createdAt": 1541652422,
+      "createdBy": {
+        "_id": "u101",
+        "fullName": "Puki Ben David",
+        "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      },
+      "songs": [
+        {
+          "id": "0nEDzAeWxz8",
+          "title": "Deep House &amp; Nu Disco 2020 Live Mix Pete Bellis &amp; Tommy #DeepDiscoRecords",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/0nEDzAeWxz8/default_live.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "3G0O3CQtcv4",
+          "title": "Disco Malupitan Sayawan 2020",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/3G0O3CQtcv4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "iFDHMoWUCnA",
+          "title": "Surf Curse - Disco",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/iFDHMoWUCnA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "lEXY6gP7eLs",
+          "title": "12&quot; Disco Mix - The Ultimate Disco Mix",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/lEXY6gP7eLs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "mJpymZpk-t8",
+          "title": "Ottawan - D.I.S.C.O. (HD) Legendado em PT- BR",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/mJpymZpk-t8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "I5SzASOuZVA",
+          "title": "Disco Disco: A Gentleman - Sundar, Susheel, Risky | Sidharth,Jacqueline | Sachin-Jigar|Benny,Shirley",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/I5SzASOuZVA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "7jELobZuKVE",
+          "title": "90&#39;s &amp; 00&#39;s Disco Hits | Eurodance | Non-Stop Playlist",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/7jELobZuKVE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "4bElMPdJuNQ",
+          "title": "DISCO-80 /Various artists/ 25 ORIGINAL HITS OF THE 80&#39;S",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/4bElMPdJuNQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "QKE1oCCO_N0",
+          "title": "NONSTOP 90&#39;S DISCO REMIX",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/QKE1oCCO_N0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ]
+    },
+    {
+      "_id": "118a",
+      "name": "Hip Hop",
+      "tags": [
+        "Electronic",
+        "Hip-hop"
+      ],
+      "description": "A genre for electronic music lovers",
+      "likedByUser": [
+        {
+          "name": "hilla",
+          "id": "101"
+        },
+        {
+          "name": "Matan",
+          "id": "102"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        }
+      ],
+      "imgUrl": "https://images.unsplash.com/photo-1535146851324-6571dc3f2672?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+      "createdAt": 1541652422,
+      "createdBy": {
+        "_id": "u101",
+        "fullName": "Puki Ben David",
+        "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      },
+      "songs": [
+        {
+          "id": "0nEDzAeWxz8",
+          "title": "Deep House &amp; Nu Disco 2020 Live Mix Pete Bellis &amp; Tommy #DeepDiscoRecords",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/0nEDzAeWxz8/default_live.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "3G0O3CQtcv4",
+          "title": "Disco Malupitan Sayawan 2020",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/3G0O3CQtcv4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "iFDHMoWUCnA",
+          "title": "Surf Curse - Disco",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/iFDHMoWUCnA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "lEXY6gP7eLs",
+          "title": "12&quot; Disco Mix - The Ultimate Disco Mix",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/lEXY6gP7eLs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "mJpymZpk-t8",
+          "title": "Ottawan - D.I.S.C.O. (HD) Legendado em PT- BR",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/mJpymZpk-t8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "I5SzASOuZVA",
+          "title": "Disco Disco: A Gentleman - Sundar, Susheel, Risky | Sidharth,Jacqueline | Sachin-Jigar|Benny,Shirley",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/I5SzASOuZVA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "7jELobZuKVE",
+          "title": "90&#39;s &amp; 00&#39;s Disco Hits | Eurodance | Non-Stop Playlist",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/7jELobZuKVE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "4bElMPdJuNQ",
+          "title": "DISCO-80 /Various artists/ 25 ORIGINAL HITS OF THE 80&#39;S",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/4bElMPdJuNQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "QKE1oCCO_N0",
+          "title": "NONSTOP 90&#39;S DISCO REMIX",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/QKE1oCCO_N0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ]
     }
   ],
   "user": {
     "_id": "u101",
-    "fullName": "Puki Ben David",
+    "fullName": "Puki Ben David",
     "userName": "orly@amdadi.com",
     "password": "1",
     "imgUrl": "http://some-img",
@@ -1121,3 +1509,4 @@
     ]
   }
 }
+

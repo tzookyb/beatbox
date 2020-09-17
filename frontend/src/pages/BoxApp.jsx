@@ -15,8 +15,6 @@ class _BoxApp extends Component {
         }
     }
     
-   
-
     componentDidMount() {
         const genre = new URLSearchParams(window.location.href).get('genre');
         const filterBy = { name: '', genre: genre }
