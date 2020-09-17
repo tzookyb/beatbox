@@ -21,8 +21,6 @@ class _App extends Component {
         <Header />
         <main>
           <Switch>
-            
-            <Route component={Player} path="/player" />
             <Route component={BoxAdd} path="/box/add" />
             <Route component={BoxDetails} path="/box/:boxId" />
             <Route component={UserDetails} path="/user/:id" />
@@ -30,6 +28,7 @@ class _App extends Component {
             <Route component={Home} path="/" />
           </Switch>
         </main>
+        <Player />
       </div>
     )
   }
