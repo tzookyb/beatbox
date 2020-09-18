@@ -36,15 +36,15 @@ class _BoxApp extends Component {
         this.setState({ filterBy: { ...this.state.filterBy, genre: filterByGenre } }, () => this.loadBoxes())
     }
 
-    loadBoxes = () => {
-        this.props.loadBoxes(this.state.filterBy)
-            .then(() => console.log('boxes loaded'))
+    loadBoxes = async () => {
+        await this.props.loadBoxes(this.state.filterBy);
+        // console.log('boxes loaded');
     }
 
     onToggleLikeBox = (boxId) => {
         var minimalUser = this.getMinimalUser();
         boxService.addLike(boxId, minimalUser)
-        .then(() => this.loadBoxes())
+            .then(() => this.loadBoxes())
     }
     onAddToFavorites = (boxId) => {
         //TODO: ADD TO USER FAVORITS

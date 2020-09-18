@@ -73,7 +73,6 @@ class _Player extends Component {
         const { currBox } = this.state;
         const currSong = { ...currBox.currSong, isPlaying: this.state.isPlaying, secPlayed: this.state.secPlayed };
         const newBox = { ...this.state.currBox, currSong }
-        console.log("updateBox -> newBox", newBox)
         await this.props.saveBox(newBox);
     }
 
