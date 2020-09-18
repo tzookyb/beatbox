@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
+
 import { Header } from './cmps/Header';
 import { Player } from './cmps/Player';
 import { BoxApp } from './pages/BoxApp';
@@ -9,12 +10,9 @@ import { BoxAdd } from './pages/BoxAdd';
 import { Login } from './cmps/user/Login';
 import { Home } from './pages/Home';
 import { UserDetails } from './pages/UserDetails';
+import { Notification } from './cmps/Notification';
 
 class _App extends Component {
-  state = {
-  }
-  componentDidMount() {
-  }
   render() {
     return (
       <div className="App">
@@ -29,6 +27,7 @@ class _App extends Component {
             <Route component={Home} path="/" />
           </Switch>
         </main>
+        <Notification/>
         <Player />
       </div>
     )

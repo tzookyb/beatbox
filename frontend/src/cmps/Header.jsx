@@ -27,7 +27,7 @@ class _Header extends Component {
         const { user } = this.props;
         return (
             <header onScroll={() => this.onScroll} className={`${this.state.isScroll ? 'sticky' : ''} flex space-around  align-center`}>
-                <Link to="/#top" className="logo">BeatBox</Link>
+                <Link to="/" className="logo">BeatBox</Link>
                 <ul className="main-nav flex clean-list space-between align-center">
                     <li><Link to="/box">Boxes</Link></li>
                     <Link to="/box/add">Create Box</Link>

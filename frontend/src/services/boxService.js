@@ -1,4 +1,5 @@
 import httpService from './httpService';
+
 // import axios from 'axios';
 // const BASE_URL = 'http://localhost:3030/box'
 
@@ -99,9 +100,15 @@ async function save(box) {
     }
 }
 
-function addSong(song) {
+function addSong(song, songs) {
+    // const idx = songs.findIndex(currSong => currSong.youtubeId = song.id.videoId)
+    // if (idx === -1) {
+
+    //     return
+    // }
     const newSong = {
         id: song.id.videoId,
+        youtubeId: song.id.videoId,
         title: song.snippet.title,
         imgUrl: song.snippet.thumbnails.default,
         //TODO: add loggedin user to addedby -MATAN!!!!
@@ -135,4 +142,13 @@ async function addConnectedUser(boxId, minimalUser) {
         updateBox.viewCount++;
         await save(updateBox);
     }
+}
+
+function _makeId(length = 6) {
+    var txt = '';
+    var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    for (var i = 0; i < length; i++) {
+        txt += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return txt;
 }

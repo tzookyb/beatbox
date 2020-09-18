@@ -24,7 +24,7 @@ export function removeSong(id) {
     return async dispatch => {
         await songService.remove(id)
         dispatch({ type: 'REMOVE_SONG', id })
-        // dispatch({ type: 'NOTIFY', isShown: true, msg: 'Removed seccessfuly' })
+        dispatch({ type: 'NOTIFY', isShown: true, msg: 'Removed seccessfuly' })
 
     }
 }

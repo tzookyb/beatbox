@@ -28,25 +28,35 @@ class _BoxDetails extends Component {
         this.setState({ box })
     }
 
-    onRemoveSong = (ev, songId) => {
+    componentDidUpdate(prevProps, prevState) {
+        const newBox = this.props.box;
+        // Prevent loop:
+        if (prevProps.box === newBox) return;
+        this.setState({ box: newBox });
+    }
+
+
+    onRemoveSong = async (ev, songId) => {
         ev.stopPropagation();
         ev.preventDefault();
-        const box = { ...this.state.box }
+        const box = { ...this.props.box }
         const songIdx = box.songs.findIndex(song => song.id === songId)
         box.songs.splice(songIdx, 1);
-        this.props.saveBox(box)
-        // await this.props.removeSong(songId)
+        await this.props.saveBox(box)
     }
 
     onAddSong = (song) => {
-        const newSong = boxService.addSong(song)
+        const newSong = boxService.addSong(song, this.state.box.songs)
         const box = { ...this.state.box }
         box.songs.push(newSong)
         this.props.saveBox(box)
     }
 
     onPlaySong = (currSongIdx) => {
-        const box = { ...this.state.box, currSongIdx };
+        const songId = this.state.box.songs[currSongIdx].id;
+        const currSong = { id: songId, isPlaying: true, secPlayed: 0 };
+        const box = { ...this.state.box, currSong };
+        console.log("onPlaySong -> box", box)
         this.props.saveBox(box);
     }
 
