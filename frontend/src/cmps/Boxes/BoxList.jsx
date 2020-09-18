@@ -16,6 +16,7 @@ export function BoxList({ boxes, genre }) {
     const executeScroll = (scrollTo) =>{
         let scrollDiff = ref.current.scrollWidth - ref.current.offsetWidth
         console.dir(ref)
+
         if (ref.current.scrollLeft >= scrollDiff) ref.current.scrollLeft = 0
         else ref.current.scrollLeft += scrollTo
         console.log("executeScroll -> scrollTo", scrollTo)

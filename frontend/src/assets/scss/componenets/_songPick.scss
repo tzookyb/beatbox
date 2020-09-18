@@ -1,8 +1,18 @@
 .song-pick {
 
-    max-width: 40%;
+    // display: none;
+
+    width: 0;
+    transition: 0.6s;
+
     max-height: 25rem;
     overflow-y: auto;
+
+
+    &.opened {
+        max-width: 80%;
+        width: 40%
+    }
 
     .song-pick-result {
         display: flex;

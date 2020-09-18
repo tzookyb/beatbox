@@ -5,11 +5,14 @@ import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
 import { loadBox, saveBox } from '../store/actions/boxAction'
 import { boxService } from '../services/boxService'
+import { Fab } from '@material-ui/core';
+import { AddCircleOutline } from '@material-ui/icons';
 
 
 class _BoxDetails extends Component {
     state = {
         box: null,
+        isSearchOpen: false
     }
 
     async componentDidMount() {
@@ -46,14 +49,28 @@ class _BoxDetails extends Component {
     }
 
 
+    openAddSearch = () => {
+        console.log(';');
+        this.setState({ isSearchOpen: !this.state.isSearchOpen })
+    }
+
     render() {
-        const { box } = this.state;
+        const { box, isSearchOpen } = this.state;
         if (!box) return <h1>Loading...</h1>
         return (
             <section className="box-details main-container">
                 <BoxInfo box={box} onSaveInfo={this.onSaveInfo} />
-                <SongList songs={box.songs} onPlaySong={this.onPlaySong} onRemoveSong={this.onRemoveSong} onAddSong={this.onAddSong} />
-
+                {/* <Fab className="add-song-btn" onClick={this.openAddSearch} color="primary" aria-label="add">
+                    <AddCircleOutline />
+                </Fab> */}
+                <SongList 
+                songs={box.songs} 
+                onPlaySong={this.onPlaySong} 
+                onRemoveSong={this.onRemoveSong} 
+                onAddSong={this.onAddSong}
+                isSearchOpen={isSearchOpen}
+                openAddSearch={this.openAddSearch}/>
+                
                 {/* <ChatBox /> */}
             </section>
         )

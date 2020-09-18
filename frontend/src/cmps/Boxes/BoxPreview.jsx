@@ -13,7 +13,6 @@ export function BoxPreview({ box, genre, isHomePage }) {
     return (
 
         <div className={`box-preview ${isHomePage ? 'box-home-preview' : ''}`}>
-            {console.log(box)}
             <Link to={`/box/${box._id}`} >
                 <div className="box-preview-img"><img src={box.imgUrl} alt="box-preview img" /></div>
             </Link>

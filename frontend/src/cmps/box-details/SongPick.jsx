@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { youtubeService } from '../../services/youtubeService';
 import { debounce } from 'debounce';
 
+
+
+
 export class SongPick extends Component {
     state = {
         searchStr: '',
@@ -37,8 +40,8 @@ export class SongPick extends Component {
         const { results, isSearching, searchStr } = this.state;
 
         return (
-            <div className="song-pick">
-                <input type="search" name="searchStr" value={searchStr} onChange={this.handleInput} placeholder="Add song to playlist" autoComplete="off"/>
+            <div className={`song-pick ${this.props.isSearchOpen ? 'opened':''}`}>
+                <input type="search" name="searchStr" value={searchStr} onChange={this.handleInput} placeholder="Add song to playlist" autoComplete="off" />
 
                 {(isSearching && !results) && <div>Getting results...</div>}
 
