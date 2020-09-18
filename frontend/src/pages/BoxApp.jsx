@@ -47,12 +47,12 @@ class _BoxApp extends Component {
             .then(() => this.loadBoxes())
     }
 
-    getMinimalUser(){
+    getMinimalUser() {
         return userService.getMinimalUser();
     }
 
     render() {
-        const { boxes,user } = this.props;
+        const { boxes, user } = this.props;
         const minimalUser = this.getMinimalUser();
         const { genres } = this.state;
         if (!boxes || !genres) return <h1>Loading....</h1>
@@ -61,13 +61,13 @@ class _BoxApp extends Component {
                 <FilterBox onSetFilter={this.onSetFilter} />
                 {this.state.isHomePage && genres.map((genre, idx) => {
                     return (
-                        <BoxList boxes={boxes} key={idx} genre={genre} onToggleLikeBox={this.onToggleLikeBox} minimalUser={minimalUser}/>
+                        <BoxList boxes={boxes} key={idx} genre={genre} onToggleLikeBox={this.onToggleLikeBox} minimalUser={minimalUser} />
                     )
                 })}
                 {!this.state.isHomePage &&
-                    <ButtonsFilter onSetFilterGenre={this.onSetFilterGenre} genreCount ={5}/>
+                    <ButtonsFilter onSetFilterGenre={this.onSetFilterGenre} genreCount={5} />
                 }
-                {!genres.length && <BoxList boxes={boxes} minimalUser={minimalUser}/>}
+                {!genres.length && <BoxList boxes={boxes} minimalUser={minimalUser} />}
             </section>
         )
     }
