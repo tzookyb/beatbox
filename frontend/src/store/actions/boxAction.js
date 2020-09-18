@@ -11,7 +11,6 @@ export function loadBox(boxId) {
   return async dispatch => {
     const box = await boxService.getById(boxId);
     dispatch({ type: 'SET_BOX', box })
-    dispatch({ type: 'PLAYER_SET_BOX', box })
   };
 }
 
@@ -20,7 +19,6 @@ export function saveBox(box) {
     const actionType = box._id ? 'EDIT_BOX' : 'ADD_BOX';
     const newBox = await boxService.save(box);
     dispatch({ type: actionType, box: newBox })
-    dispatch({ type: 'PLAYER_SET_BOX', box: newBox })
     return newBox;
   };
 }
