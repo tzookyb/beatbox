@@ -18,7 +18,8 @@ export class _BoxAdd extends Component {
             imgUrl: null,
             songs: []
         },
-        msgWarnnig: ''
+        msgWarnnig: '',
+        isSearchOpen: false
     }
 
     printMsg() {
@@ -64,14 +65,25 @@ export class _BoxAdd extends Component {
             }
         })
     }
+
+    openAddSearch = () => {
+
+        this.setState({ isSearchOpen: !this.state.isSearchOpen })
+    }
+
     //Add Song pick
     render() {
-        const { box } = this.state;
+        const { box, isSearchOpen } = this.state;
         return (
             <section className="box-add main-container">
                 <h2>Create Your Box</h2>
                 <BoxInfoEdit updateBox={this.updateBox} />
-                <SongList songs={box.songs} onPlaySong={this.onPlaySong} onRemoveSong={this.onRemoveSong} onAddSong={this.onAddSong} />
+                <SongList songs={box.songs}
+                 onPlaySong={this.onPlaySong}
+                  onRemoveSong={this.onRemoveSong}
+                   onAddSong={this.onAddSong}
+                   openAddSearch={this.openAddSearch}
+                   isSearchOpen={isSearchOpen} />
                 <div className="btn-create-container">
                     <button className="btn-create" onClick={this.onAddBox}>Create Box</button>
                     {this.state.msgWarnnig && <label>{this.state.msgWarnnig}</label>}

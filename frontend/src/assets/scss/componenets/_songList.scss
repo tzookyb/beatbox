@@ -1,11 +1,12 @@
 .song-list {
     min-height: rem(300px);
     background-color: #ffffff12;
+    position: relative;
 
     ul {
         overflow-y: scroll;
         max-height: rem(400px);
-        
+
 
         li {
             // border-bottom: 1px solid #999;
@@ -17,8 +18,17 @@
         }
     }
 
+    .add-song-btn {
+        position: absolute;
+        right: rem(-35px);
+        top: rem(-15px);
+        background-color: $clr3;
 
-    .songPick {
-        min-width: 30%;
+        &:hover{
+            background-color: $clr5;
+        }
     }
+
+
+
 }

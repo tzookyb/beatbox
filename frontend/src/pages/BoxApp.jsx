@@ -65,7 +65,7 @@ class _BoxApp extends Component {
                     )
                 })}
                 {!this.state.isHomePage &&
-                    <ButtonsFilter onSetFilterGenre={this.onSetFilterGenre} />
+                    <ButtonsFilter onSetFilterGenre={this.onSetFilterGenre} genreCount ={5}/>
                 }
                 {!genres.length && <BoxList boxes={boxes} minimalUser={minimalUser}/>}
             </section>

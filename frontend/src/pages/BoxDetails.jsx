@@ -8,11 +8,15 @@ import { BoxInfo } from '../cmps/box-details/BoxInfo'
 import { loadBox, saveBox } from '../store/actions/boxAction'
 import { boxService } from '../services/boxService'
 import { FilterBox } from "../cmps/boxes/FilterBox";
+import { Fab } from '@material-ui/core';
+import { AddCircleOutline } from '@material-ui/icons';
+
 
 class _BoxDetails extends Component {
     state = {
         box: null,
-        filterBy: ''
+        filterBy: '',
+        isSearchOpen: false
     }
 
     async componentDidMount() {
@@ -61,16 +65,31 @@ class _BoxDetails extends Component {
         return songs;
     }
 
+    openAddSearch = () => {
+        console.log(';');
+        this.setState({ isSearchOpen: !this.state.isSearchOpen })
+    }
+
     render() {
-        const { box } = this.state;
+        const { box, isSearchOpen } = this.state;
         if (!box) return <h1>Loading...</h1>
         const songsToShow = this.getSongsForDispley();
         return (
             <section className="box-details main-container">
                 <BoxInfo box={box} onSaveInfo={this.onSaveInfo} />
                 <FilterBox onSetFilter={this.onSetFilter} />
-                <SongList songs={songsToShow} onPlaySong={this.onPlaySong} onRemoveSong={this.onRemoveSong} onAddSong={this.onAddSong} />
                 {/* <Picker onEmojiClick={this.onEmojiClick} /> */}
+                {/* <Fab className="add-song-btn" onClick={this.openAddSearch} color="primary" aria-label="add">
+                    <AddCircleOutline />
+                </Fab> */}
+                <SongList 
+                songs={songsToShow} 
+                onPlaySong={this.onPlaySong} 
+                onRemoveSong={this.onRemoveSong} 
+                onAddSong={this.onAddSong}
+                isSearchOpen={isSearchOpen}
+                openAddSearch={this.openAddSearch}/>
+                
                 {/* <ChatBox /> */}
             </section>
         )
