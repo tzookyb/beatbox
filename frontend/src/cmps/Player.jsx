@@ -29,7 +29,6 @@ class _Player extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         const { playerBox } = this.props;
-        console.log("componentDidUpdate -> playerBox", playerBox)
         // Prevent loop:
         if (prevProps.playerBox === playerBox) return;
 

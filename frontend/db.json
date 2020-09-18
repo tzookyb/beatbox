@@ -11,11 +11,11 @@
       "likedByUser": [
         {
           "name": "Guest",
-          "id": "KJUvv"
+          "id": "Pyuyj"
         },
         {
           "name": "Guest",
-          "id": "mp2zY"
+          "id": "Ts42X"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1487180144351-b8472da7d491?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
@@ -25,6 +25,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
           "id": "OBVeLeuV06I",
@@ -97,102 +98,13 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
-          "id": "_yZcdOYeMBo",
-          "title": "GT Feat. Drego &amp; Beno &quot;Hustling All Day&quot; (WSHH Exclusive - Official Music Video)",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/_yZcdOYeMBo/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "TDWx175pdfY",
-          "title": "G.T. - Hell Yeah (Official Video)",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/TDWx175pdfY/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "TDWx175pdfY",
-          "title": "G.T. - Hell Yeah (Official Video)",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/TDWx175pdfY/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "iDK5IzUGLmw",
-          "title": "คืนสุดท้าย - GT  Official Music Video",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/iDK5IzUGLmw/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "KIoO-FC3DCQ",
-          "title": "Wanna Be -  ( Official Music Video ) GT - feat. Moon",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/KIoO-FC3DCQ/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
           "id": "YmI7lzqhI40",
           "title": "GT - Talk My S**t (Produced by: Royal House)",
           "imgUrl": {
             "url": "https://i.ytimg.com/vi/YmI7lzqhI40/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "YmI7lzqhI40",
-          "title": "GT - Talk My S**t (Produced by: Royal House)",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/YmI7lzqhI40/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "5fE1meBm398",
-          "title": "GT - &quot;Trappin&quot; Prod. By Frontline (Official Video) Shot By #CTFILMS",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/5fE1meBm398/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "Cl4nfLQPtOE",
-          "title": "[드래곤볼GT] 마지막화 엔딩 - 점점 마음이 이끌려",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/Cl4nfLQPtOE/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "KIoO-FC3DCQ",
-          "title": "Wanna Be -  ( Official Music Video ) GT - feat. Moon",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/KIoO-FC3DCQ/default.jpg",
             "width": 120,
             "height": 90
           },
@@ -210,12 +122,20 @@
       "description": "Quality and calm music, only people who want to take a break from the hustle and bustle enter this box",
       "likedByUser": [
         {
-          "name": "Guest",
-          "id": "KJUvv"
+          "name": "hilla",
+          "id": "101"
+        },
+        {
+          "name": "Matan",
+          "id": "102"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
         },
         {
           "name": "Guest",
-          "id": "9xwS1"
+          "id": "Ts42X"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1477233534935-f5e6fe7c1159?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
@@ -225,6 +145,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
           "id": "Wq-ezXSLPOU",
@@ -315,26 +236,6 @@
             "height": 90
           },
           "addedBy": {}
-        },
-        {
-          "id": "1K4KwuV2l4s",
-          "title": "Amy Shark - I Said Hi (Official Video)",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/1K4KwuV2l4s/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "zxND-svLcZ8",
-          "title": "bonnadol x anotherboytj - ทัก (HI!) | Lyrical Video (Prod. Laxnely)",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/zxND-svLcZ8/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
         }
       ]
     },
@@ -349,15 +250,7 @@
       "likedByUser": [
         {
           "name": "Guest",
-          "id": "KJUvv"
-        },
-        {
-          "name": "Guest",
-          "id": "9xwS1"
-        },
-        {
-          "name": "Guest",
-          "id": "101aa"
+          "id": "Ts42X"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1475744214834-0cb9be6eb226?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -367,6 +260,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
           "id": "lPTWOgXst14",
@@ -476,26 +370,6 @@
         {
           "name": "Matan",
           "id": "102"
-        },
-        {
-          "name": "Idan",
-          "id": "103"
-        },
-        {
-          "name": "Idan",
-          "id": "103"
-        },
-        {
-          "name": "Idan",
-          "id": "103"
-        },
-        {
-          "name": "Idan",
-          "id": "103"
-        },
-        {
-          "name": "Guest",
-          "id": "KJUvv"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1503218751919-1ea90572e609?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -505,172 +379,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
-      "songs": [
-        {
-          "id": "0nEDzAeWxz8",
-          "title": "Deep House &amp; Nu Disco 2020 Live Mix Pete Bellis &amp; Tommy #DeepDiscoRecords",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/0nEDzAeWxz8/default_live.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "3G0O3CQtcv4",
-          "title": "Disco Malupitan Sayawan 2020",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/3G0O3CQtcv4/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "iFDHMoWUCnA",
-          "title": "Surf Curse - Disco",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/iFDHMoWUCnA/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "lEXY6gP7eLs",
-          "title": "12&quot; Disco Mix - The Ultimate Disco Mix",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/lEXY6gP7eLs/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "mJpymZpk-t8",
-          "title": "Ottawan - D.I.S.C.O. (HD) Legendado em PT- BR",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/mJpymZpk-t8/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "I5SzASOuZVA",
-          "title": "Disco Disco: A Gentleman - Sundar, Susheel, Risky | Sidharth,Jacqueline | Sachin-Jigar|Benny,Shirley",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/I5SzASOuZVA/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "7jELobZuKVE",
-          "title": "90&#39;s &amp; 00&#39;s Disco Hits | Eurodance | Non-Stop Playlist",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/7jELobZuKVE/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "4bElMPdJuNQ",
-          "title": "DISCO-80 /Various artists/ 25 ORIGINAL HITS OF THE 80&#39;S",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/4bElMPdJuNQ/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "QKE1oCCO_N0",
-          "title": "NONSTOP 90&#39;S DISCO REMIX",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/QKE1oCCO_N0/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "7wtfhZwyrcc",
-          "title": "Imagine Dragons - Believer",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/7wtfhZwyrcc/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        }
-      ],
-      "currSongIdx": 9
-    },
-    {
-      "_id": "110a",
-      "name": "Arabic Box",
-      "tags": [
-        "Arabic"
-      ],
-      "description": "Music from the Arab countries, all Western lovers are invited",
-      "likedByUser": [
-        {
-          "name": "hilla",
-          "id": "101"
-        },
-        {
-          "name": "Matan",
-          "id": "102"
-        },
-        {
-          "name": "Idan",
-          "id": "103"
-        },
-        {
-          "name": "Idan",
-          "id": "103"
-        },
-        {
-          "name": "Idan",
-          "id": "103"
-        },
-        {
-          "name": "Idan",
-          "id": "103"
-        },
-        {
-          "name": "Guest",
-          "id": "101aa"
-        },
-        {
-          "name": "Guest",
-          "id": "KJUvv"
-        },
-        {
-          "name": "Guest",
-          "id": "mp2zY"
-        },
-        {
-          "id": "pyCCd"
-        },
-        {
-          "id": "YnVhg"
-        },
-        {
-          "name": "Guest",
-          "id": "RpKVL"
-        }
-      ],
-      "imgUrl": "https://images.unsplash.com/photo-1561882192-c606a6e15e5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
-      "createdAt": 1541652422,
-      "createdBy": {
-        "_id": "u101",
-        "fullName": "Puki Ben David",
-        "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-      },
+      "connectedUser": [],
       "songs": [
         {
           "id": "0nEDzAeWxz8",
@@ -765,6 +474,90 @@
       ]
     },
     {
+      "_id": "110a",
+      "name": "Arabic Box",
+      "tags": [
+        "Arabic"
+      ],
+      "description": "Music from the Arab countries, all Western lovers are invited",
+      "likedByUser": [
+        {
+          "name": "hilla",
+          "id": "101"
+        },
+        {
+          "name": "Matan",
+          "id": "102"
+        },
+        {
+          "name": "Idan",
+          "id": "103"
+        },
+        {
+          "name": "Idan",
+          "id": "104"
+        },
+        {
+          "name": "Idan",
+          "id": "105"
+        },
+        {
+          "name": "Idan",
+          "id": "106"
+        }
+      ],
+      "imgUrl": "https://images.unsplash.com/photo-1561882192-c606a6e15e5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+      "createdAt": 1541652422,
+      "createdBy": {
+        "_id": "u101",
+        "fullName": "Puki Ben David",
+        "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      },
+      "connectedUser": [],
+      "songs": [
+        {
+          "id": "iFDHMoWUCnA",
+          "title": "Surf Curse - Disco",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/iFDHMoWUCnA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "lEXY6gP7eLs",
+          "title": "12&quot; Disco Mix - The Ultimate Disco Mix",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/lEXY6gP7eLs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "mJpymZpk-t8",
+          "title": "Ottawan - D.I.S.C.O. (HD) Legendado em PT- BR",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/mJpymZpk-t8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "QKE1oCCO_N0",
+          "title": "NONSTOP 90&#39;S DISCO REMIX",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/QKE1oCCO_N0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ]
+    },
+    {
       "_id": "111a",
       "name": "Nice Box",
       "tags": [
@@ -785,11 +578,8 @@
           "id": "103"
         },
         {
-          "id": "YnVhg"
-        },
-        {
           "name": "Guest",
-          "id": "RpKVL"
+          "id": "b3bNr"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1502160836-112bd0f5bdee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -799,6 +589,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
           "id": "0nEDzAeWxz8",
@@ -911,35 +702,35 @@
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "4234f"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "234"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "1213"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "1102"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "108"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "107"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "sdf2"
         },
         {
           "name": "Guest",
-          "id": "KJUvv"
+          "id": "Pyuyj"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1509335919466-c196457ea95a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -949,6 +740,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
           "id": "0nEDzAeWxz8",
@@ -1060,33 +852,23 @@
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "10dfgd3"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "10g3"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "vbcf"
         },
         {
           "name": "Guest",
-          "id": "101aa"
+          "id": "Pyuyj"
         },
         {
           "name": "Guest",
-          "id": "KJUvv"
-        },
-        {
-          "id": "pyCCd"
-        },
-        {
-          "id": "YnVhg"
-        },
-        {
-          "name": "Guest",
-          "id": "RpKVL"
+          "id": "Ts42X"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1513104487127-813ea879b8da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -1096,92 +878,13 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
-        {
-          "id": "0nEDzAeWxz8",
-          "title": "Deep House &amp; Nu Disco 2020 Live Mix Pete Bellis &amp; Tommy #DeepDiscoRecords",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/0nEDzAeWxz8/default_live.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "3G0O3CQtcv4",
-          "title": "Disco Malupitan Sayawan 2020",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/3G0O3CQtcv4/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "iFDHMoWUCnA",
-          "title": "Surf Curse - Disco",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/iFDHMoWUCnA/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
         {
           "id": "lEXY6gP7eLs",
           "title": "12&quot; Disco Mix - The Ultimate Disco Mix",
           "imgUrl": {
             "url": "https://i.ytimg.com/vi/lEXY6gP7eLs/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "mJpymZpk-t8",
-          "title": "Ottawan - D.I.S.C.O. (HD) Legendado em PT- BR",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/mJpymZpk-t8/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "I5SzASOuZVA",
-          "title": "Disco Disco: A Gentleman - Sundar, Susheel, Risky | Sidharth,Jacqueline | Sachin-Jigar|Benny,Shirley",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/I5SzASOuZVA/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "7jELobZuKVE",
-          "title": "90&#39;s &amp; 00&#39;s Disco Hits | Eurodance | Non-Stop Playlist",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/7jELobZuKVE/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "4bElMPdJuNQ",
-          "title": "DISCO-80 /Various artists/ 25 ORIGINAL HITS OF THE 80&#39;S",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/4bElMPdJuNQ/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "QKE1oCCO_N0",
-          "title": "NONSTOP 90&#39;S DISCO REMIX",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/QKE1oCCO_N0/default.jpg",
             "width": 120,
             "height": 90
           },
@@ -1208,18 +911,23 @@
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "1ssdf03"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "vxc"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "fdsfs"
         },
         {
-          "id": "YnVhg"
+          "name": "Guest",
+          "id": "Pyuyj"
+        },
+        {
+          "name": "Guest",
+          "id": "Ts42X"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1546528377-65924be33e1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -1229,6 +937,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
           "id": "0nEDzAeWxz8",
@@ -1340,15 +1049,23 @@
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "ssdfs"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "10df3"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "10zxc3"
+        },
+        {
+          "name": "Guest",
+          "id": "Pyuyj"
+        },
+        {
+          "name": "Guest",
+          "id": "Ts42X"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1531503406248-d63777b50f39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -1358,6 +1075,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
           "id": "0nEDzAeWxz8",
@@ -1470,15 +1188,15 @@
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "10zxcz3"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "10sda3"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "10ad3"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1535146851324-6571dc3f2672?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -1488,6 +1206,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
           "id": "0nEDzAeWxz8",
@@ -1580,32 +1299,6 @@
           "addedBy": {}
         }
       ]
-    },
-    {
-      "name": "Idan",
-      "tags": [
-        "Easy"
-      ],
-      "description": "idanssjsdjdkslj",
-      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600411779/sfd8efimqi5te9ys67uo.jpg",
-      "songs": [
-        {
-          "id": "SHWpLfZzGU0",
-          "title": "Michael Jackson - D.S. (Audio)",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/SHWpLfZzGU0/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        }
-      ],
-      "likedByUser": [
-        {
-          "id": "YnVhg"
-        }
-      ],
-      "_id": "TSScKYu"
     }
   ],
   "user": {

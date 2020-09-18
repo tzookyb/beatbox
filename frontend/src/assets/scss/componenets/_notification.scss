@@ -1,0 +1,14 @@
+.notification-box {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    background-color: $clr3;
+    color:#fff;
+    width: 250px;
+    height: 100px;
+    bottom: 100px;
+    right: 15px;
+    border-radius: 5px;
+    padding: 20px;
+    font-family: Kalam;
+}

@@ -110,3 +110,4 @@ async function addLike(boxId, user) {
 function getIsUserLikeBox(currBox, currUser) {
     return currBox.likedByUser.findIndex(user => user.id === currUser.id)
 } 
+
