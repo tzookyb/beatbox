@@ -595,8 +595,19 @@
             "height": 90
           },
           "addedBy": {}
+        },
+        {
+          "id": "7wtfhZwyrcc",
+          "title": "Imagine Dragons - Believer",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/7wtfhZwyrcc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
         }
-      ]
+      ],
+      "currSongIdx": 9
     },
     {
       "_id": "110a",
