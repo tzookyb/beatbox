@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 
 import { boxService } from '../services/boxService'
 import { loadBoxes } from '../store/actions/boxAction'
+import { loadUser } from '../store/actions/userAction'
 
 export class _Home extends Component {
     state = {
@@ -12,6 +13,7 @@ export class _Home extends Component {
 
     componentDidMount() {
         this.props.loadBoxes();
+        this.props.loadUser();
     }
 
     getGenres(boxes) {
@@ -49,10 +51,12 @@ export class _Home extends Component {
 const mapStateToProps = state => {
     return {
         boxes: state.boxReducer.boxes,
+        user: state.userReducer.loggedinUser
     }
 }
 const mapDispatchToProps = {
-    loadBoxes
+    loadBoxes,
+    loadUser
 }
 
 export const Home = connect(mapStateToProps, mapDispatchToProps)(_Home)

@@ -5,6 +5,10 @@ import { BoxList } from '../cmps/boxes/BoxList'
 import { FilterBox } from '../cmps/boxes/FilterBox'
 import { ButtonsFilter } from '../cmps/ButtonsFilter'
 
+import { boxService } from '../services/boxService'
+import { userService } from '../services/userService'
+import { loadUser } from '../store/actions/userAction'
+
 class _BoxApp extends Component {
     state = {
         genres: null,
@@ -14,8 +18,9 @@ class _BoxApp extends Component {
             genre: ''
         }
     }
-    
+
     componentDidMount() {
+        this.props.loadUser();
         const genre = new URLSearchParams(window.location.href).get('genre');
         const filterBy = { name: '', genre: genre }
         const { genres } = this.props;
@@ -36,8 +41,19 @@ class _BoxApp extends Component {
             .then(() => console.log('boxes loaded'))
     }
 
+    onToggleLikeBox = (boxId) => {
+        var minimalUser = this.getMinimalUser();
+        boxService.addLike(boxId, minimalUser)
+            .then(() => this.loadBoxes())
+    }
+
+    getMinimalUser(){
+        return userService.getMinimalUser();
+    }
+
     render() {
-        const { boxes } = this.props;
+        const { boxes,user } = this.props;
+        const minimalUser = this.getMinimalUser();
         const { genres } = this.state;
         if (!boxes || !genres) return <h1>Loading....</h1>
         return (
@@ -45,13 +61,13 @@ class _BoxApp extends Component {
                 <FilterBox onSetFilter={this.onSetFilter} />
                 {this.state.isHomePage && genres.map((genre, idx) => {
                     return (
-                        <BoxList boxes={boxes} key={idx} genre={genre} />
+                        <BoxList boxes={boxes} key={idx} genre={genre} onToggleLikeBox={this.onToggleLikeBox} minimalUser={minimalUser}/>
                     )
                 })}
                 {!this.state.isHomePage &&
-                    <ButtonsFilter onSetFilterGenre={this.onSetFilterGenre}/>
+                    <ButtonsFilter onSetFilterGenre={this.onSetFilterGenre} />
                 }
-                {!genres.length && <BoxList boxes={boxes} />}
+                {!genres.length && <BoxList boxes={boxes} minimalUser={minimalUser}/>}
             </section>
         )
     }
@@ -60,10 +76,12 @@ class _BoxApp extends Component {
 const mapStateToProps = state => {
     return {
         boxes: state.boxReducer.boxes,
+        user: state.userReducer.loggedinUser
     }
 }
 const mapDispatchToProps = {
-    loadBoxes
+    loadBoxes,
+    loadUser
 }
 
 export const BoxApp = connect(mapStateToProps, mapDispatchToProps)(_BoxApp)

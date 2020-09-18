@@ -1,0 +1,28 @@
+// .modal {
+//     position: fixed;
+//     top: 20%;
+//     left: 30%;
+//     width: 500px;
+//     height: 400px;
+//     text-align: center;
+//     font-size: 1.8rem;
+//     z-index: 5;
+//     padding: 10px;
+//     visibility: hidden;
+//     border-radius: 50px;
+// }
+
+.login-page {
+  padding-top: 200px;
+
+  .input-login {
+    .box-img {
+      img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+  }
+}
