@@ -2,13 +2,22 @@
   "box": [
     {
       "_id": "103a",
-      "name": "Funky Monks",
+      "name": "Funky Monks",
       "tags": [
         "Hip-hop",
         "Arabic"
       ],
       "description": "In this box you will hear Arabic music along with pop music, a powerful combination of worlds",
-      "likedByUser": [],
+      "likedByUser": [
+        {
+          "name": "Guest",
+          "id": "KJUvv"
+        },
+        {
+          "name": "Guest",
+          "id": "mp2zY"
+        }
+      ],
       "imgUrl": "https://images.unsplash.com/photo-1487180144351-b8472da7d491?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
       "createdAt": 1541652422,
       "createdBy": {
@@ -201,16 +210,12 @@
       "description": "Quality and calm music, only people who want to take a break from the hustle and bustle enter this box",
       "likedByUser": [
         {
-          "name": "hilla",
-          "id": "101"
+          "name": "Guest",
+          "id": "KJUvv"
         },
         {
-          "name": "Matan",
-          "id": "102"
-        },
-        {
-          "name": "Idan",
-          "id": "103"
+          "name": "Guest",
+          "id": "9xwS1"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1477233534935-f5e6fe7c1159?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
@@ -310,6 +315,26 @@
             "height": 90
           },
           "addedBy": {}
+        },
+        {
+          "id": "1K4KwuV2l4s",
+          "title": "Amy Shark - I Said Hi (Official Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/1K4KwuV2l4s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "zxND-svLcZ8",
+          "title": "bonnadol x anotherboytj - ทัก (HI!) | Lyrical Video (Prod. Laxnely)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/zxND-svLcZ8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
         }
       ]
     },
@@ -323,16 +348,16 @@
       "description": "Peaceful music for good days",
       "likedByUser": [
         {
-          "name": "hilla",
-          "id": "101"
+          "name": "Guest",
+          "id": "KJUvv"
         },
         {
-          "name": "Matan",
-          "id": "102"
+          "name": "Guest",
+          "id": "9xwS1"
         },
         {
-          "name": "Idan",
-          "id": "103"
+          "name": "Guest",
+          "id": "101aa"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1475744214834-0cb9be6eb226?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -467,6 +492,10 @@
         {
           "name": "Idan",
           "id": "103"
+        },
+        {
+          "name": "Guest",
+          "id": "KJUvv"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1503218751919-1ea90572e609?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -611,6 +640,28 @@
         {
           "name": "Idan",
           "id": "103"
+        },
+        {
+          "name": "Guest",
+          "id": "101aa"
+        },
+        {
+          "name": "Guest",
+          "id": "KJUvv"
+        },
+        {
+          "name": "Guest",
+          "id": "mp2zY"
+        },
+        {
+          "id": "pyCCd"
+        },
+        {
+          "id": "YnVhg"
+        },
+        {
+          "name": "Guest",
+          "id": "RpKVL"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1561882192-c606a6e15e5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -732,6 +783,13 @@
         {
           "name": "Idan",
           "id": "103"
+        },
+        {
+          "id": "YnVhg"
+        },
+        {
+          "name": "Guest",
+          "id": "RpKVL"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1502160836-112bd0f5bdee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -742,6 +800,16 @@
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
       "songs": [
+        {
+          "id": "0nEDzAeWxz8",
+          "title": "Deep House &amp; Nu Disco 2020 Live Mix Pete Bellis &amp; Tommy #DeepDiscoRecords",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/0nEDzAeWxz8/default_live.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
         {
           "id": "3G0O3CQtcv4",
           "title": "Disco Malupitan Sayawan 2020",
@@ -822,8 +890,7 @@
           },
           "addedBy": {}
         }
-      ],
-      "currSongIdx": 5
+      ]
     },
     {
       "_id": "135a",
@@ -869,6 +936,10 @@
         {
           "name": "Idan",
           "id": "103"
+        },
+        {
+          "name": "Guest",
+          "id": "KJUvv"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1509335919466-c196457ea95a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -998,6 +1069,24 @@
         {
           "name": "Idan",
           "id": "103"
+        },
+        {
+          "name": "Guest",
+          "id": "101aa"
+        },
+        {
+          "name": "Guest",
+          "id": "KJUvv"
+        },
+        {
+          "id": "pyCCd"
+        },
+        {
+          "id": "YnVhg"
+        },
+        {
+          "name": "Guest",
+          "id": "RpKVL"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1513104487127-813ea879b8da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -1009,30 +1098,90 @@
       },
       "songs": [
         {
-          "id": "RBumgq5yVrA",
-          "title": "Passenger | Let Her Go (Official Video)",
+          "id": "0nEDzAeWxz8",
+          "title": "Deep House &amp; Nu Disco 2020 Live Mix Pete Bellis &amp; Tommy #DeepDiscoRecords",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/RBumgq5yVrA/default.jpg",
+            "url": "https://i.ytimg.com/vi/0nEDzAeWxz8/default_live.jpg",
             "width": 120,
             "height": 90
           },
           "addedBy": {}
         },
         {
-          "id": "ZAYZmIfHEiU",
-          "title": "Passenger | Home (Official Album Audio)",
+          "id": "3G0O3CQtcv4",
+          "title": "Disco Malupitan Sayawan 2020",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/ZAYZmIfHEiU/default.jpg",
+            "url": "https://i.ytimg.com/vi/3G0O3CQtcv4/default.jpg",
             "width": 120,
             "height": 90
           },
           "addedBy": {}
         },
         {
-          "id": "E_Vt4MlbM0c",
-          "title": "Matisyahu - Sunshine",
+          "id": "iFDHMoWUCnA",
+          "title": "Surf Curse - Disco",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/E_Vt4MlbM0c/default.jpg",
+            "url": "https://i.ytimg.com/vi/iFDHMoWUCnA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "lEXY6gP7eLs",
+          "title": "12&quot; Disco Mix - The Ultimate Disco Mix",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/lEXY6gP7eLs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "mJpymZpk-t8",
+          "title": "Ottawan - D.I.S.C.O. (HD) Legendado em PT- BR",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/mJpymZpk-t8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "I5SzASOuZVA",
+          "title": "Disco Disco: A Gentleman - Sundar, Susheel, Risky | Sidharth,Jacqueline | Sachin-Jigar|Benny,Shirley",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/I5SzASOuZVA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "7jELobZuKVE",
+          "title": "90&#39;s &amp; 00&#39;s Disco Hits | Eurodance | Non-Stop Playlist",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/7jELobZuKVE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "4bElMPdJuNQ",
+          "title": "DISCO-80 /Various artists/ 25 ORIGINAL HITS OF THE 80&#39;S",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/4bElMPdJuNQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "QKE1oCCO_N0",
+          "title": "NONSTOP 90&#39;S DISCO REMIX",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/QKE1oCCO_N0/default.jpg",
             "width": 120,
             "height": 90
           },
@@ -1068,6 +1217,9 @@
         {
           "name": "Idan",
           "id": "103"
+        },
+        {
+          "id": "YnVhg"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1546528377-65924be33e1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -1168,8 +1320,7 @@
           },
           "addedBy": {}
         }
-      ],
-      "currSongIdx": 1
+      ]
     },
     {
       "_id": "112a",
@@ -1339,6 +1490,16 @@
       },
       "songs": [
         {
+          "id": "0nEDzAeWxz8",
+          "title": "Deep House &amp; Nu Disco 2020 Live Mix Pete Bellis &amp; Tommy #DeepDiscoRecords",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/0nEDzAeWxz8/default_live.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
           "id": "3G0O3CQtcv4",
           "title": "Disco Malupitan Sayawan 2020",
           "imgUrl": {
@@ -1419,11 +1580,37 @@
           "addedBy": {}
         }
       ]
+    },
+    {
+      "name": "Idan",
+      "tags": [
+        "Easy"
+      ],
+      "description": "idanssjsdjdkslj",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600411779/sfd8efimqi5te9ys67uo.jpg",
+      "songs": [
+        {
+          "id": "SHWpLfZzGU0",
+          "title": "Michael Jackson - D.S. (Audio)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/SHWpLfZzGU0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "likedByUser": [
+        {
+          "id": "YnVhg"
+        }
+      ],
+      "_id": "TSScKYu"
     }
   ],
   "user": {
     "_id": "u101",
-    "fullName": "Puki Ben David",
+    "fullName": "Puki Ben David",
     "userName": "orly@amdadi.com",
     "password": "1",
     "imgUrl": "http://some-img",

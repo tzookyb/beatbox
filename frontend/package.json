@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.20.0",
     "debounce": "^1.2.0",
+    "emoji-picker-react": "^3.2.3",
     "font-awesome": "^4.7.0",
     "material-carouselauto-rotating-": "^3.0.2",
     "material-design-icons": "^3.0.1",

@@ -1,26 +1,25 @@
 import httpService from './httpService';
 // import axios from 'axios';
-
 // const BASE_URL = 'http://localhost:3030/box'
-
 
 // var gGenre = ['Hip-hop', 'Arabic', 'Electronic', 'Country']
 var gGenre = ['Hip-hop', 'Arabic', 'Easy', 'Electronic', 'Country', 'Latin', 'Jazz', 'Rock',
-    'Pop', 'Classical', 'Alternative', 'Blues', 'Disco','Israeli']
+    'Pop', 'Classical', 'Alternative', 'Blues', 'Disco', 'Israeli']
 
 export const boxService = {
     query,
     getById,
     getGenres,
     save,
-    addSong
+    addSong,
+    addLike,
+    getIsUserLikeBox
     // remove,
 }
 
 function getGenres() {
     return gGenre;
 }
-
 
 async function getById(boxId) {
     return httpService.get(`box/${boxId}`)
@@ -95,3 +94,19 @@ function addSong(song) {
     }
     return newSong;
 }
+
+async function addLike(boxId, user) {
+    const box = await getById(boxId);
+    var newBox = { ...box };
+    var userIdx = getIsUserLikeBox(newBox, user);
+    if (userIdx === -1) {
+        newBox.likedByUser.push(user);
+    } else {
+        newBox.likedByUser.splice(userIdx, 1)
+    }
+    save(newBox);
+}
+
+function getIsUserLikeBox(currBox, currUser) {
+    return currBox.likedByUser.findIndex(user => user.id === currUser.id)
+} 

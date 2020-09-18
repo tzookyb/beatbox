@@ -9,7 +9,7 @@ import { BoxPreview } from './BoxPreview'
 
 // const ref = 
 
-export function BoxList({ boxes, genre }) {
+export function BoxList({ boxes, genre,onToggleLikeBox,minimalUser }) {
     const ref = React.createRef()
 
 
@@ -28,6 +28,7 @@ export function BoxList({ boxes, genre }) {
     if (!boxes) return <h1>Loading...</h1>
     return (
         <section className={`list-container ${genre ? '' : 'main-container'}`}>
+          
             {genre && <Link to={`/box?&genre=${genre}`} className="btn-genre">{genre}</Link>}
             {genre &&
 
@@ -35,14 +36,14 @@ export function BoxList({ boxes, genre }) {
                     <button className="list-left-btn" onClick={() => executeScroll(-350)}><ArrowBackIosIcon/></button>
                     {boxes.map(box => {
                         if (box.tags.includes(genre)) {
-                            return <BoxPreview isHomePage={true} key={box._id} box={box} genre={genre} />
+                            return <BoxPreview isHomePage={true} key={box._id} box={box} genre={genre} onToggleLikeBox={onToggleLikeBox} minimalUser={minimalUser}/>
                         } else return null
                     })}
                     <button className="list-right-btn" onClick={() => executeScroll(350)}><ArrowForwardIosIcon/></button>
                 </div>
             }
             <div className="box-list full-grid ">
-                {!genre && boxes.map(box => <BoxPreview isHomePage={false} key={box._id} box={box} />)}
+                {!genre && boxes.map(box => <BoxPreview isHomePage={false} key={box._id} box={box} minimalUser={minimalUser}/>)}
             </div>
         </section>
     )
