@@ -19,8 +19,7 @@ export function saveBox(box) {
     const actionType = box._id ? 'EDIT_BOX' : 'ADD_BOX';
     const newBox = await boxService.save(box);
     dispatch({ type: actionType, box: newBox })
-    dispatch({ type: 'PLAYER_SET_BOX', box: newBox })
-    dispatch({ type: 'NOTIFY', isShown: true, msg: 'Changes Saved!' })
+    // dispatch({ type: 'NOTIFY', isShown: true, msg: 'Changes Saved!' })
     return newBox;
   };
 }
@@ -34,7 +33,6 @@ export function removeBox(boxId) {
 
 export function closeNotification() {
   return dispatch => {
-    console.log('Notify');
-      dispatch({  type: 'NOTIFY', isShown: false, msg: ''})
+    dispatch({ type: 'NOTIFY', isShown: false, msg: '' })
   }
 }
