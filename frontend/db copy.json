@@ -16,6 +16,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
           "id": "OBVeLeuV06I",
@@ -79,6 +80,10 @@
         {
           "name": "Idan",
           "id": "103"
+        },
+        {
+          "name": "Guest",
+          "id": "b3bNr"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
@@ -88,6 +93,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
           "id": "_yZcdOYeMBo",
@@ -211,6 +217,14 @@
         {
           "name": "Idan",
           "id": "103"
+        },
+        {
+          "name": "Guest",
+          "id": "b3bNr"
+        },
+        {
+          "name": "Guest",
+          "id": "SX9Vj"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1477233534935-f5e6fe7c1159?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
@@ -220,6 +234,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
           "id": "Wq-ezXSLPOU",
@@ -333,6 +348,14 @@
         {
           "name": "Idan",
           "id": "103"
+        },
+        {
+          "name": "Guest",
+          "id": "b3bNr"
+        },
+        {
+          "name": "Guest",
+          "id": "SX9Vj"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1475744214834-0cb9be6eb226?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -342,6 +365,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
           "id": "lPTWOgXst14",
@@ -451,22 +475,6 @@
         {
           "name": "Matan",
           "id": "102"
-        },
-        {
-          "name": "Idan",
-          "id": "103"
-        },
-        {
-          "name": "Idan",
-          "id": "103"
-        },
-        {
-          "name": "Idan",
-          "id": "103"
-        },
-        {
-          "name": "Idan",
-          "id": "103"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1503218751919-1ea90572e609?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -476,6 +484,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
           "id": "0nEDzAeWxz8",
@@ -591,15 +600,19 @@
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "104"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "105"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "106"
+        },
+        {
+          "name": "Guest",
+          "id": "b3bNr"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1561882192-c606a6e15e5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -609,6 +622,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
           "id": "0nEDzAeWxz8",
@@ -721,6 +735,10 @@
         {
           "name": "Idan",
           "id": "103"
+        },
+        {
+          "name": "Guest",
+          "id": "b3bNr"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1502160836-112bd0f5bdee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -730,6 +748,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
           "id": "0nEDzAeWxz8",
@@ -842,31 +861,31 @@
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "4234f"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "234"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "1213"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "1102"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "108"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "107"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "sdf2"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1509335919466-c196457ea95a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -876,6 +895,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
           "id": "0nEDzAeWxz8",
@@ -987,15 +1007,23 @@
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "10dfgd3"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "10g3"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "vbcf"
+        },
+        {
+          "name": "Guest",
+          "id": "b3bNr"
+        },
+        {
+          "name": "Guest",
+          "id": "SX9Vj"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1513104487127-813ea879b8da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -1005,6 +1033,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
           "id": "0nEDzAeWxz8",
@@ -1117,15 +1146,15 @@
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "1ssdf03"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "vxc"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "fdsfs"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1546528377-65924be33e1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -1135,6 +1164,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
           "id": "0nEDzAeWxz8",
@@ -1246,15 +1276,23 @@
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "ssdfs"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "10df3"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "10zxc3"
+        },
+        {
+          "name": "Guest",
+          "id": "b3bNr"
+        },
+        {
+          "name": "Guest",
+          "id": "SX9Vj"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1531503406248-d63777b50f39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -1264,6 +1302,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
           "id": "0nEDzAeWxz8",
@@ -1376,15 +1415,23 @@
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "10zxcz3"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "10sda3"
         },
         {
           "name": "Idan",
-          "id": "103"
+          "id": "10ad3"
+        },
+        {
+          "name": "Guest",
+          "id": "b3bNr"
+        },
+        {
+          "name": "Guest",
+          "id": "SX9Vj"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1535146851324-6571dc3f2672?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -1394,6 +1441,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
+      "connectedUser": [],
       "songs": [
         {
           "id": "0nEDzAeWxz8",
@@ -1509,4 +1557,3 @@
     ]
   }
 }
-

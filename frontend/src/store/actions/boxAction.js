@@ -11,7 +11,6 @@ export function loadBox(boxId) {
   return async dispatch => {
     const box = await boxService.getById(boxId);
     dispatch({ type: 'SET_BOX', box })
-    dispatch({ type: 'PLAYER_SET_BOX', box })
   };
 }
 
