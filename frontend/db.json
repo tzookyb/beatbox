@@ -3,12 +3,25 @@
     {
       "_id": "103a",
       "name": "Funky Monks",
+      "viewCount": 0,
       "tags": [
         "Hip-hop",
         "Arabic"
       ],
       "description": "In this box you will hear Arabic music along with pop music, a powerful combination of worlds",
-      "likedByUser": [],
+      "likedByUsers": [
+        {
+          "id": "6tTdB"
+        },
+        {
+          "name": "Guest",
+          "id": "VnBlC"
+        },
+        {
+          "name": "yair",
+          "id": "LDb0A"
+        }
+      ],
       "imgUrl": "https://images.unsplash.com/photo-1487180144351-b8472da7d491?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
       "createdAt": 1541652422,
       "createdBy": {
@@ -16,7 +29,19 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
-      "connectedUser": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "pNig3"
+        },
+        {
+          "name": "Guest",
+          "id": "CKxTg"
+        },
+        {
+          "id": "wbz5G"
+        }
+      ],
       "songs": [
         {
           "id": "OBVeLeuV06I",
@@ -63,12 +88,13 @@
     {
       "_id": "104a",
       "name": "Best Box",
+      "viewCount": 0,
       "tags": [
         "Country",
         "Disco"
       ],
       "description": "In this box the music is calm but surprising, try us ",
-      "likedByUser": [
+      "likedByUsers": [
         {
           "name": "hilla",
           "id": "101"
@@ -84,6 +110,10 @@
         {
           "name": "Guest",
           "id": "b3bNr"
+        },
+        {
+          "name": "Guest",
+          "id": "VnBlC"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
@@ -93,7 +123,12 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
-      "connectedUser": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "pNig3"
+        }
+      ],
       "songs": [
         {
           "id": "_yZcdOYeMBo",
@@ -200,12 +235,13 @@
     {
       "_id": "105a",
       "name": "New Box",
+      "viewCount": 1,
       "tags": [
         "Electronic",
         "Hip-hop"
       ],
       "description": "Quality and calm music, only people who want to take a break from the hustle and bustle enter this box",
-      "likedByUser": [
+      "likedByUsers": [
         {
           "name": "hilla",
           "id": "101"
@@ -225,6 +261,14 @@
         {
           "name": "Guest",
           "id": "SX9Vj"
+        },
+        {
+          "name": "Guest",
+          "id": "VnBlC"
+        },
+        {
+          "name": "yair",
+          "id": "LDb0A"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1477233534935-f5e6fe7c1159?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
@@ -234,7 +278,31 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
-      "connectedUser": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "SX9Vj"
+        },
+        {
+          "name": "Guest",
+          "id": "VnBlC"
+        },
+        {
+          "name": "Guest",
+          "id": "pNig3"
+        },
+        {
+          "name": "Guest",
+          "id": "CKxTg"
+        },
+        {
+          "id": "wbz5G"
+        },
+        {
+          "name": "Guest",
+          "id": "duYmd"
+        }
+      ],
       "songs": [
         {
           "id": "Wq-ezXSLPOU",
@@ -331,12 +399,13 @@
     {
       "_id": "108a",
       "name": "Fun Music Box",
+      "viewCount": 0,
       "tags": [
         "Hip-hop",
         "Country"
       ],
       "description": "Peaceful music for good days",
-      "likedByUser": [
+      "likedByUsers": [
         {
           "name": "hilla",
           "id": "101"
@@ -356,6 +425,25 @@
         {
           "name": "Guest",
           "id": "SX9Vj"
+        },
+        {
+          "name": "Guest",
+          "id": "r3fvK"
+        },
+        {
+          "id": "6tTdB"
+        },
+        {
+          "name": "Guest",
+          "id": "VnBlC"
+        },
+        {
+          "name": "Guest",
+          "id": "he0Od"
+        },
+        {
+          "name": "yair",
+          "id": "LDb0A"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1475744214834-0cb9be6eb226?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -365,7 +453,32 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
-      "connectedUser": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "SX9Vj"
+        },
+        {
+          "name": "Guest",
+          "id": "VnBlC"
+        },
+        {
+          "name": "Guest",
+          "id": "pNig3"
+        },
+        {
+          "name": "Guest",
+          "id": "pNig3"
+        },
+        {
+          "name": "Guest",
+          "id": "pNig3"
+        },
+        {
+          "name": "Guest",
+          "id": "CKxTg"
+        }
+      ],
       "songs": [
         {
           "id": "lPTWOgXst14",
@@ -462,12 +575,13 @@
     {
       "_id": "109a",
       "name": "Fun Music Box",
+      "viewCount": 0,
       "tags": [
         "Disco",
         "Electronic"
       ],
       "description": "Peaceful music for good days",
-      "likedByUser": [
+      "likedByUsers": [
         {
           "name": "hilla",
           "id": "101"
@@ -475,6 +589,18 @@
         {
           "name": "Matan",
           "id": "102"
+        },
+        {
+          "name": "Guest",
+          "id": "r3fvK"
+        },
+        {
+          "name": "Guest",
+          "id": "VnBlC"
+        },
+        {
+          "name": "Guest",
+          "id": "he0Od"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1503218751919-1ea90572e609?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -484,7 +610,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
-      "connectedUser": [],
+      "connectedUsers": [],
       "songs": [
         {
           "id": "0nEDzAeWxz8",
@@ -581,11 +707,12 @@
     {
       "_id": "110a",
       "name": "Arabic Box",
+      "viewCount": 0,
       "tags": [
         "Arabic"
       ],
       "description": "Music from the Arab countries, all Western lovers are invited",
-      "likedByUser": [
+      "likedByUsers": [
         {
           "name": "hilla",
           "id": "101"
@@ -613,6 +740,18 @@
         {
           "name": "Guest",
           "id": "b3bNr"
+        },
+        {
+          "name": "Guest",
+          "id": "r3fvK"
+        },
+        {
+          "name": "Guest",
+          "id": "VnBlC"
+        },
+        {
+          "name": "yair",
+          "id": "LDb0A"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1561882192-c606a6e15e5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -622,7 +761,15 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
-      "connectedUser": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "pNig3"
+        },
+        {
+          "id": "wbz5G"
+        }
+      ],
       "songs": [
         {
           "id": "0nEDzAeWxz8",
@@ -719,11 +866,12 @@
     {
       "_id": "111a",
       "name": "Nice Box",
+      "viewCount": 0,
       "tags": [
         "Country"
       ],
       "description": "Share your country Music and come to listen with us",
-      "likedByUser": [
+      "likedByUsers": [
         {
           "name": "hilla",
           "id": "101"
@@ -739,6 +887,10 @@
         {
           "name": "Guest",
           "id": "b3bNr"
+        },
+        {
+          "name": "Guest",
+          "id": "VnBlC"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1502160836-112bd0f5bdee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -748,7 +900,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
-      "connectedUser": [],
+      "connectedUsers": [],
       "songs": [
         {
           "id": "0nEDzAeWxz8",
@@ -845,12 +997,13 @@
     {
       "_id": "135a",
       "name": "Electronic Box",
+      "viewCount": 0,
       "tags": [
         "Electronic",
         "Country"
       ],
       "description": "A genre for electronic music lovers",
-      "likedByUser": [
+      "likedByUsers": [
         {
           "name": "hilla",
           "id": "101"
@@ -886,6 +1039,18 @@
         {
           "name": "Idan",
           "id": "sdf2"
+        },
+        {
+          "name": "Guest",
+          "id": "r3fvK"
+        },
+        {
+          "name": "Guest",
+          "id": "VnBlC"
+        },
+        {
+          "name": "Guest",
+          "id": "he0Od"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1509335919466-c196457ea95a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -895,7 +1060,12 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
-      "connectedUser": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "pNig3"
+        }
+      ],
       "songs": [
         {
           "id": "0nEDzAeWxz8",
@@ -992,11 +1162,12 @@
     {
       "_id": "113a",
       "name": "Boxi",
+      "viewCount": 0,
       "tags": [
         "Hip-hop"
       ],
       "description": "A genre for electronic music lovers",
-      "likedByUser": [
+      "likedByUsers": [
         {
           "name": "hilla",
           "id": "101"
@@ -1024,6 +1195,18 @@
         {
           "name": "Guest",
           "id": "SX9Vj"
+        },
+        {
+          "name": "Guest",
+          "id": "r3fvK"
+        },
+        {
+          "name": "Guest",
+          "id": "VnBlC"
+        },
+        {
+          "name": "Guest",
+          "id": "he0Od"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1513104487127-813ea879b8da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -1033,7 +1216,16 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
-      "connectedUser": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "pNig3"
+        },
+        {
+          "name": "Guest",
+          "id": "CKxTg"
+        }
+      ],
       "songs": [
         {
           "id": "0nEDzAeWxz8",
@@ -1130,12 +1322,13 @@
     {
       "_id": "115a",
       "name": "Boxush",
+      "viewCount": 1,
       "tags": [
         "Hip-hop",
         "Country"
       ],
       "description": "Hip Hop fun and bun",
-      "likedByUser": [
+      "likedByUsers": [
         {
           "name": "hilla",
           "id": "101"
@@ -1155,6 +1348,17 @@
         {
           "name": "Idan",
           "id": "fdsfs"
+        },
+        {
+          "id": "6tTdB"
+        },
+        {
+          "name": "Guest",
+          "id": "VnBlC"
+        },
+        {
+          "name": "yair",
+          "id": "LDb0A"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1546528377-65924be33e1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -1164,18 +1368,20 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
-      "connectedUser": [],
-      "songs": [
+      "connectedUsers": [
         {
-          "id": "0nEDzAeWxz8",
-          "title": "Deep House &amp; Nu Disco 2020 Live Mix Pete Bellis &amp; Tommy #DeepDiscoRecords",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/0nEDzAeWxz8/default_live.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
+          "name": "Guest",
+          "id": "CKxTg"
         },
+        {
+          "id": "wbz5G"
+        },
+        {
+          "name": "Guest",
+          "id": "duYmd"
+        }
+      ],
+      "songs": [
         {
           "id": "3G0O3CQtcv4",
           "title": "Disco Malupitan Sayawan 2020",
@@ -1256,16 +1462,18 @@
           },
           "addedBy": {}
         }
-      ]
+      ],
+      "currSongIdx": 1
     },
     {
       "_id": "112a",
       "name": "Box of fun",
+      "viewCount": 0,
       "tags": [
         "Hip-hop"
       ],
       "description": "A genre for electronic music lovers",
-      "likedByUser": [
+      "likedByUsers": [
         {
           "name": "hilla",
           "id": "101"
@@ -1293,6 +1501,18 @@
         {
           "name": "Guest",
           "id": "SX9Vj"
+        },
+        {
+          "name": "Guest",
+          "id": "r3fvK"
+        },
+        {
+          "name": "Guest",
+          "id": "VnBlC"
+        },
+        {
+          "name": "yair",
+          "id": "LDb0A"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1531503406248-d63777b50f39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -1302,7 +1522,7 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
-      "connectedUser": [],
+      "connectedUsers": [],
       "songs": [
         {
           "id": "0nEDzAeWxz8",
@@ -1399,12 +1619,13 @@
     {
       "_id": "118a",
       "name": "Hip Hop",
+      "viewCount": 0,
       "tags": [
         "Electronic",
         "Hip-hop"
       ],
       "description": "A genre for electronic music lovers",
-      "likedByUser": [
+      "likedByUsers": [
         {
           "name": "hilla",
           "id": "101"
@@ -1432,6 +1653,10 @@
         {
           "name": "Guest",
           "id": "SX9Vj"
+        },
+        {
+          "name": "Guest",
+          "id": "he0Od"
         }
       ],
       "imgUrl": "https://images.unsplash.com/photo-1535146851324-6571dc3f2672?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -1441,7 +1666,20 @@
         "fullName": "Puki Ben David",
         "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
       },
-      "connectedUser": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "SX9Vj"
+        },
+        {
+          "name": "Guest",
+          "id": "VnBlC"
+        },
+        {
+          "name": "Guest",
+          "id": "pNig3"
+        }
+      ],
       "songs": [
         {
           "id": "0nEDzAeWxz8",

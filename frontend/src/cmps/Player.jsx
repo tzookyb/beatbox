@@ -29,7 +29,6 @@ class _Player extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         const { playerBox } = this.props;
-        console.log("componentDidUpdate -> playerBox", playerBox)
         // Prevent loop:
         if (prevProps.playerBox === playerBox) return;
 
@@ -98,7 +97,6 @@ class _Player extends Component {
         if (value > this.state.duration) {
             value = this.state.duration - 5
         }
-        console.log("handleSeekChange -> value", value)
         this.setState({ played: value });
     }
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { boxService } from '../services/boxService'
-import { saveBox } from '../store/actions/boxAction'
+import { saveBox,loadBoxes } from '../store/actions/boxAction'
 import { cloudService } from '../services/cloudService'
 import { SongPick } from '../cmps/box-details/SongPick'
 import { SongPreview } from '../cmps/box-details/SongPreview'
@@ -11,15 +11,14 @@ import { SongList } from '../cmps/box-details/SongList'
 
 export class _BoxAdd extends Component {
     state = {
-        box: {
-            name: '',
-            tags: ['Hip-hop'],
-            description: '',
-            imgUrl: null,
-            songs: []
-        },
+        box: null,
         msgWarnnig: '',
         isSearchOpen: false
+    }
+
+    componentDidMount() {
+        const emptyBox = boxService.getEmptyBox();
+        this.setState({ box: emptyBox })
     }
 
     printMsg() {
@@ -36,6 +35,7 @@ export class _BoxAdd extends Component {
             return;
         }
         const newBox = await this.props.saveBox(this.state.box);
+       await this.props.loadBoxes();
         this.props.history.push(`/box/${newBox._id}`);
     }
 
@@ -52,7 +52,16 @@ export class _BoxAdd extends Component {
             }
         })
     }
-
+    
+    onRemoveSong = (ev, songId) => {
+        ev.stopPropagation();
+        ev.preventDefault();
+        const box = { ...this.state.box }
+        const songIdx = box.songs.findIndex(song => song.id === songId)
+        box.songs.splice(songIdx, 1);
+        this.props.saveBox(box)
+        // await this.props.removeSong(songId)
+    }
     onAddSong = (song) => {
         const newSong = boxService.addSong(song);
         const songs = [...this.state.box.songs, newSong];
@@ -74,16 +83,16 @@ export class _BoxAdd extends Component {
     //Add Song pick
     render() {
         const { box, isSearchOpen } = this.state;
+        if (!box) return <h1>Loading...</h1>
         return (
             <section className="box-add main-container">
                 <h2>Create Your Box</h2>
                 <BoxInfoEdit updateBox={this.updateBox} />
                 <SongList songs={box.songs}
-                 onPlaySong={this.onPlaySong}
-                  onRemoveSong={this.onRemoveSong}
-                   onAddSong={this.onAddSong}
-                   openAddSearch={this.openAddSearch}
-                   isSearchOpen={isSearchOpen} />
+                    onRemoveSong={this.onRemoveSong}
+                    onAddSong={this.onAddSong}
+                    openAddSearch={this.openAddSearch}
+                    isSearchOpen={isSearchOpen} />
                 <div className="btn-create-container">
                     <button className="btn-create" onClick={this.onAddBox}>Create Box</button>
                     {this.state.msgWarnnig && <label>{this.state.msgWarnnig}</label>}
@@ -99,7 +108,8 @@ const mapStateToProps = state => {
     }
 }
 const mapDispatchToProps = {
-    saveBox
+    saveBox,
+    loadBoxes
 }
 
 export const BoxAdd = connect(mapStateToProps, mapDispatchToProps)(_BoxAdd)

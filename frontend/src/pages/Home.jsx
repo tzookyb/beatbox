@@ -17,7 +17,6 @@ export class _Home extends Component {
     }
 
     getGenres(boxes) {
-        // return boxService.getGenres();
         var genres = [];
         boxes.forEach(box => {
             box.tags.forEach(tag => {

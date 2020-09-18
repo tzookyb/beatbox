@@ -13,7 +13,9 @@ export const boxService = {
     save,
     addSong,
     addLike,
-    getIsUserLikeBox
+    getIsUserLikeBox,
+    getEmptyBox,
+    addConnectedUser
     // remove,
 }
 
@@ -72,14 +74,27 @@ function byFilter(boxes, filterBy) {
 //     return criteria;
 // }
 
-
+function getEmptyBox() {
+    return {
+        name: '',
+        description: '',
+        imgUrl: null,
+        likedByUsers: [],
+        connectedUsers: [],
+        tags: ['Hip-hop'],
+        createdBy: {},
+        createdAt: Date.now(),
+        songs: [],
+        currSong: null,
+        viewCount: 0
+    }
+}
 
 async function save(box) {
     if (box._id) {
         return httpService.put(`box/${box._id}`, box)
     } else {
         //ADD CREATED AT AND CREATED BT YO BACKEND
-        box.likedByUser = [];
         return httpService.post(`box`, box);
     }
 }
@@ -100,13 +115,24 @@ async function addLike(boxId, user) {
     var newBox = { ...box };
     var userIdx = getIsUserLikeBox(newBox, user);
     if (userIdx === -1) {
-        newBox.likedByUser.push(user);
+        newBox.likedByUsers.push(user);
     } else {
-        newBox.likedByUser.splice(userIdx, 1)
+        newBox.likedByUsers.splice(userIdx, 1)
     }
     save(newBox);
 }
 
 function getIsUserLikeBox(currBox, currUser) {
-    return currBox.likedByUser.findIndex(user => user.id === currUser.id)
-} 
+    return currBox.likedByUsers.findIndex(user => user.id === currUser.id)
+}
+
+async function addConnectedUser(boxId, minimalUser) {
+    const box = await getById(boxId);
+    const updateBox = { ...box };
+    const isUserInStation = updateBox.connectedUsers.find(user => user.id === minimalUser.id)
+    if (!isUserInStation) {
+        updateBox.connectedUsers.push(minimalUser);
+        updateBox.viewCount++;
+        await save(updateBox);
+    }
+}

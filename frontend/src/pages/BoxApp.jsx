@@ -44,7 +44,10 @@ class _BoxApp extends Component {
     onToggleLikeBox = (boxId) => {
         var minimalUser = this.getMinimalUser();
         boxService.addLike(boxId, minimalUser)
-            .then(() => this.loadBoxes())
+        .then(() => this.loadBoxes())
+    }
+    onAddToFavorites = (boxId) => {
+        //TODO: ADD TO USER FAVORITS
     }
 
     getMinimalUser() {
@@ -61,13 +64,15 @@ class _BoxApp extends Component {
                 <FilterBox onSetFilter={this.onSetFilter} />
                 {this.state.isHomePage && genres.map((genre, idx) => {
                     return (
-                        <BoxList boxes={boxes} key={idx} genre={genre} onToggleLikeBox={this.onToggleLikeBox} minimalUser={minimalUser} />
+                        <BoxList boxes={boxes} key={idx} genre={genre} onToggleLikeBox={this.onToggleLikeBox}
+                            minimalUser={minimalUser} onAddToFavorites={this.onAddToFavorites} />
                     )
                 })}
                 {!this.state.isHomePage &&
                     <ButtonsFilter onSetFilterGenre={this.onSetFilterGenre} genreCount={5} />
                 }
-                {!genres.length && <BoxList boxes={boxes} minimalUser={minimalUser} />}
+                {!genres.length && <BoxList boxes={boxes} onToggleLikeBox={this.onToggleLikeBox}
+                    minimalUser={minimalUser} onAddToFavorites={this.onAddToFavorites} />}
             </section>
         )
     }

@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import SaveIcon from '@material-ui/icons/Save';
 import CreateIcon from '@material-ui/icons/Create';
+import ShareIcon from '@material-ui/icons/Share';
+
+
 import { cloudService } from '../../services/cloudService'
 
 export class BoxInfo extends Component {
@@ -51,6 +54,26 @@ export class BoxInfo extends Component {
         this.onSave('isEditableImg');
     }
 
+    onShare = async () => {
+        console.log('share');
+        // try {
+        //     const result = await Share.share({
+        //         message:
+        //             'React Native | A framework for building native apps using React',
+        //     });
+        //     if (result.action === Share.sharedAction) {
+        //         if (result.activityType) {
+        //             // shared with activity type of result.activityType
+        //         } else {
+        //             // shared
+        //         }
+        //     } else if (result.action === Share.dismissedAction) {
+        //         // dismissed
+        //     }
+        // } catch (error) {
+        //     alert(error.message);
+        // }
+    }
     render() {
         const { box } = this.state;
         const { isEditableName, isEditableDesc } = this.state;
@@ -79,6 +102,7 @@ export class BoxInfo extends Component {
                 <div className="social-params">
                     <p>likes</p>
                     <p>listeners</p>
+                    {/* <ShareIcon onClick={this.onShare} /> */}
                 </div>
 
 

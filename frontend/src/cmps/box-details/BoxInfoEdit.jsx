@@ -59,7 +59,7 @@ export class BoxInfoEdit extends Component {
             <form className="box-info flex space-between">
                 <div className="info-input-actions flex space-between column">
                     <input autoComplete="off" autoFocus type="txt" value={box.name} name="name" onChange={this.handleInput} placeholder="Box Name" />
-                    <textarea autoFocus type="txt" value={box.description} name="description" onChange={this.handleInput} placeholder="About the box" />
+                    <textarea type="txt" value={box.description} name="description" onChange={this.handleInput} placeholder="About the box" />
                     <label>Genre: </label>
                     <select id="tags" name="tags" onChange={this.handleInput} >
                         {this.getGenresOptions()}

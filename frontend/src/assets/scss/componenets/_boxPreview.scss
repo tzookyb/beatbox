@@ -1,7 +1,7 @@
 .box-preview {
   height: rem(260px);
   transition: 0.6s;
-
+  position: relative;
   .box-preview-img {
     img {
       width: 100%;
@@ -17,20 +17,35 @@
       z-index: 5;
     }
   }
-  .likes {
-    border: 1px solid white;
-    border-radius: 50%;
-    padding: 5px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    svg {
-      font-size: 1rem;
+
+  .box-preview-action {
+    width: 100%;
+    >* {
+      border: 1px solid white;
+      border-radius: 50%;
+      padding: 5px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      svg {
+        font-size: 1rem;
+      }
+    }
+    .liked {
+      background-color: #242424;
+      svg {
+        fill: rgb(250, 102, 102);
+      }
     }
   }
-  .liked {
-    background-color: #242424;
-    svg {
-      fill: rgb(250, 102, 102);
+  .container-equalizer {
+    width: 50px;
+    position: absolute;
+    bottom: -15px;
+    right: 0;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
     }
   }
 }
