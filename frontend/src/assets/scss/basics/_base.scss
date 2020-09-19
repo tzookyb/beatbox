@@ -2,26 +2,22 @@
     box-sizing: border-box;
 }
 
-
 html {
     height: 100vh;
     scroll-behavior: smooth;
-
 }
 
 body {
     margin: 0;
     height: 100%;
     font-size: 0.875rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: VarelaRound, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: #727272;
-    
 }
 
 main {
     height: 100%;
     background-color: $clr1;
-    
 }
 
 h1,
@@ -69,24 +65,21 @@ a:not(a.logo):hover {
     background-color: #efe9e996;
 }
 
-
-
-
 ::-webkit-scrollbar {
-    width: 8px; 
+    width: 8px;
     background-color: $clr1;
 }
 
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px  #9A6FCB;
+    box-shadow: inset 0 0 5px #9a6fcb;
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #9A6FCB;
+    background: #9a6fcb;
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #9A6FCB;
+    background: #9a6fcb;
 }
