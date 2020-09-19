@@ -44,8 +44,8 @@ export function BoxList({ boxes, genre, onToggleLikeBox, minimalUser, onAddToFav
                     <button className="list-right-btn" onClick={() => executeScroll(350)}><ArrowForwardIosIcon /></button>
                 </div>
             }
-            <div className="box-list full-grid ">
-                {!genre && boxes.map(box => <BoxPreview
+            {!genre && <div className="box-list full-grid ">
+                {boxes.map(box => <BoxPreview
                     isHomePage={false}
                     key={box._id}
                     box={box}
@@ -53,7 +53,7 @@ export function BoxList({ boxes, genre, onToggleLikeBox, minimalUser, onAddToFav
                     onAddToFavorites={onAddToFavorites}
                 />
                 )}
-            </div>
+            </div>}
         </section>
     )
 }

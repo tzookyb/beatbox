@@ -9,6 +9,10 @@
         {
           "name": "Guest",
           "id": "hiNXu"
+        },
+        {
+          "name": "Guest",
+          "id": "7fU7u"
         }
       ],
       "tags": [
@@ -85,11 +89,11 @@
         }
       ],
       "currSong": {
-        "id": "YVVTZgwYwVo",
-        "isPlaying": false,
-        "secPlayed": 25.345114
+        "id": "GC_mV1IpjWA",
+        "isPlaying": true,
+        "secPlayed": 225.2025489065399
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "_s4MlLQ"
     },
     {
@@ -606,6 +610,10 @@
         {
           "name": "Guest",
           "id": "QX0FC"
+        },
+        {
+          "name": "Guest",
+          "id": "7fU7u"
         }
       ],
       "tags": [
@@ -671,11 +679,11 @@
         }
       ],
       "currSong": {
-        "id": "NcPg80JqNX8",
+        "id": "pgU0E4MgieE",
         "isPlaying": true,
-        "secPlayed": 327.9483710152588
+        "secPlayed": 0
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "Tkzz7kA"
     },
     {
@@ -768,6 +776,10 @@
         {
           "name": "Guest",
           "id": "QX0FC"
+        },
+        {
+          "name": "Guest",
+          "id": "7fU7u"
         }
       ],
       "tags": [
@@ -830,15 +842,269 @@
             "height": 90
           },
           "addedBy": {}
+        },
+        {
+          "id": "ZJL4UGSbeFg",
+          "youtubeId": "ZJL4UGSbeFg",
+          "title": "Shania Twain - Man! I Feel Like A Woman ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/ZJL4UGSbeFg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
         }
       ],
       "currSong": {
-        "id": "WaSy8yy-mr8",
+        "id": "Ixrje2rXLMA",
         "isPlaying": true,
-        "secPlayed": 179.43950500953673
+        "secPlayed": 235.19994185694884
+      },
+      "viewCount": 2,
+      "_id": "lFZ1a07"
+    },
+    {
+      "name": "Recent Eurovisions",
+      "description": "The cheesy song contest with the addictive songs",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600554918/nors5secwjzdsahrnxoo.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "7fU7u"
+        }
+      ],
+      "tags": [
+        "Pop"
+      ],
+      "createdBy": {},
+      "createdAt": 1600554901670,
+      "songs": [
+        {
+          "id": "PHn0jA4Klx8",
+          "youtubeId": "PHn0jA4Klx8",
+          "title": "Toy",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/PHn0jA4Klx8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "oFrvRiixXcA",
+          "youtubeId": "oFrvRiixXcA",
+          "title": "Arcade",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/oFrvRiixXcA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "8HdnyCIe-Kk",
+          "youtubeId": "8HdnyCIe-Kk",
+          "title": "Friend Of A Friend",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/8HdnyCIe-Kk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "22lISUXgSUw",
+          "youtubeId": "22lISUXgSUw",
+          "title": "Mahmood - Soldi (Prod. Dardust & Charlie Charles)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/22lISUXgSUw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "eVbShUW6QBM",
+          "youtubeId": "eVbShUW6QBM",
+          "title": "HATARI – HATRIÐ MUN SIGRA",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/eVbShUW6QBM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "eVbShUW6QBM",
+        "isPlaying": true,
+        "secPlayed": 0
       },
       "viewCount": 1,
-      "_id": "lFZ1a07"
+      "_id": "liTPj5R"
+    },
+    {
+      "name": "Female Power",
+      "description": "Powerful female artists",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600555181/pq2kvhjiczz4eifhdgjb.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "7fU7u"
+        }
+      ],
+      "tags": [
+        "Hip-hop"
+      ],
+      "createdBy": {},
+      "createdAt": 1600555174243,
+      "songs": [
+        {
+          "id": "WDZJPJV__bQ",
+          "youtubeId": "WDZJPJV__bQ",
+          "title": "Beyoncé - Formation",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/WDZJPJV__bQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "bnVUHWCynig",
+          "youtubeId": "bnVUHWCynig",
+          "title": "Beyoncé - Halo",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/bnVUHWCynig/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "cjIvu7e6Wq8",
+          "youtubeId": "cjIvu7e6Wq8",
+          "title": "Missy Elliott - Work It ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/cjIvu7e6Wq8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "xTlNMmZKwpA",
+          "youtubeId": "xTlNMmZKwpA",
+          "title": "Cardi B, Bad Bunny & J Balvin - I Like It ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/xTlNMmZKwpA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "gl1aHhXnN1k",
+          "youtubeId": "gl1aHhXnN1k",
+          "title": "Ariana Grande - thank u, next ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/gl1aHhXnN1k/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "bnVUHWCynig",
+        "isPlaying": true,
+        "secPlayed": 0
+      },
+      "viewCount": 1,
+      "_id": "HYjm9q5"
+    },
+    {
+      "name": "Boy Bands",
+      "description": "Boys will be boys",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600555365/b7wbvj0j0vdhi3fzaqyv.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "7fU7u"
+        }
+      ],
+      "tags": [
+        "Pop"
+      ],
+      "createdBy": {},
+      "createdAt": 1600555324132,
+      "songs": [
+        {
+          "id": "Eo-KmOd3i7s",
+          "youtubeId": "Eo-KmOd3i7s",
+          "title": "*NSYNC - Bye Bye Bye ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/Eo-KmOd3i7s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "6M6samPEMpM",
+          "youtubeId": "6M6samPEMpM",
+          "title": "Backstreet Boys - Everybody (Backstreet's Back) ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/6M6samPEMpM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "fV8vB1BB2qc",
+          "youtubeId": "fV8vB1BB2qc",
+          "title": "Boyz II Men - I'll Make Love To You ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/fV8vB1BB2qc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "CTqabbIPfc0",
+          "youtubeId": "CTqabbIPfc0",
+          "title": "Take That - How Deep Is Your Love ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/CTqabbIPfc0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "tP_WRk-xV7I",
+          "youtubeId": "tP_WRk-xV7I",
+          "title": "East 17 - It s Alright ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/tP_WRk-xV7I/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "tP_WRk-xV7I",
+        "isPlaying": true,
+        "secPlayed": 0
+      },
+      "viewCount": 1,
+      "_id": "MeC8av_"
     }
   ],
   "user": {
