@@ -10,7 +10,7 @@ import equalizer from '../../assets/img/equalizer5.gif';
 
 export function BoxPreview({ box, genre, isHomePage, onToggleLikeBox, minimalUser, onAddToFavorites }) {
     function getIsUserLikeBox() {
-        const idx = boxService.getIsUserLikeBox(box, minimalUser);
+        // const idx = boxService.getIsUserLikeBox(box, minimalUser);
         return (boxService.getIsUserLikeBox(box, minimalUser) !== -1) ? 'liked' : '';
     }
     return (
@@ -33,7 +33,7 @@ export function BoxPreview({ box, genre, isHomePage, onToggleLikeBox, minimalUse
                 </div>
             </div>
             {box.connectedUsers.length > 0 &&
-                <div className="container-equalizer"> <img src={equalizer} /> </div>}
+                <div className="container-equalizer"> <img src={equalizer} img="equalizer animation"/> </div>}
         </div >
 
     )

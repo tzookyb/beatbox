@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 
 import { boxService } from '../services/boxService'
 import { saveBox,loadBoxes } from '../store/actions/boxAction'
-import { cloudService } from '../services/cloudService'
-import { SongPick } from '../cmps/box-details/SongPick'
-import { SongPreview } from '../cmps/box-details/SongPreview'
+// import { cloudService } from '../services/cloudService'
+// import { SongPick } from '../cmps/box-details/SongPick'
+// import { SongPreview } from '../cmps/box-details/SongPreview'
 import { BoxInfoEdit } from '../cmps/box-details/BoxInfoEdit'
 import { SongList } from '../cmps/box-details/SongList'
 
