@@ -39,7 +39,7 @@ class _Header extends Component {
                     {/* {loggedinUser && <button onClick={() => onLogout()}>Logout</button>} */}
 
                     {user && <div className="avatar-img">
-                        <img src={user.imgUrl} />
+                        <img src={user.imgUrl} alt="avatar"/>
                     </div>}
                 </ul>
             </header>
