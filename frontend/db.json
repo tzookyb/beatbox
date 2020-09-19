@@ -1,0 +1,931 @@
+{
+  "box": [
+    {
+      "_id": "103a",
+      "name": "Funky Monks",
+      "viewCount": 1,
+      "tags": [
+        "Hip-hop",
+        "Arabic"
+      ],
+      "description": "In this box you will hear Arabic music along with pop music, a powerful combination of worlds",
+      "likedByUsers": [
+        {
+          "id": "6tTdB"
+        },
+        {
+          "name": "Guest",
+          "id": "VnBlC"
+        },
+        {
+          "name": "yair",
+          "id": "LDb0A"
+        }
+      ],
+      "imgUrl": "https://images.unsplash.com/photo-1487180144351-b8472da7d491?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+      "createdAt": 1541652422,
+      "createdBy": {
+        "_id": "u101",
+        "fullName": "Puki Ben David",
+        "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      },
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "pNig3"
+        },
+        {
+          "name": "Guest",
+          "id": "CKxTg"
+        },
+        {
+          "id": "wbz5G"
+        },
+        {
+          "name": "Guest",
+          "id": "hiNXu"
+        }
+      ],
+      "songs": [
+        {
+          "id": "OBVeLeuV06I",
+          "title": "AD &quot;Thug&quot; Feat. YG (WSHH Exclusive - Official Music Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/OBVeLeuV06I/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "OBVeLeuV06I",
+        "isPlaying": false,
+        "secPlayed": 24.962592
+      }
+    },
+    {
+      "name": "Disney Songs",
+      "description": "All time favorite songs from Disney's Movies!",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600549928/qxiazrfcapee4mirzzfk.png",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "hiNXu"
+        }
+      ],
+      "tags": [
+        "Easy"
+      ],
+      "createdBy": {},
+      "createdAt": 1600549709748,
+      "songs": [
+        {
+          "id": "YVVTZgwYwVo",
+          "youtubeId": "YVVTZgwYwVo",
+          "title": "Idina Menzel - Let It Go (from Frozen) ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/YVVTZgwYwVo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "GC_mV1IpjWA",
+          "youtubeId": "GC_mV1IpjWA",
+          "title": "The Little Mermaid - Under the Sea (from The Little Mermaid) ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/GC_mV1IpjWA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "GibiNy4d4gc",
+          "youtubeId": "GibiNy4d4gc",
+          "title": "Carmen Twillie, Lebo M. - Circle Of Life (Official Video from \"The Lion King\")",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/GibiNy4d4gc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "0MxulhivCvI",
+          "youtubeId": "0MxulhivCvI",
+          "title": "Hakuna Matata (From \"The Lion King\")",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/0MxulhivCvI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "eitDnP0_83k",
+          "youtubeId": "eitDnP0_83k",
+          "title": "Mena Massoud, Naomi Scott - A Whole New World (from Aladdin) ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/eitDnP0_83k/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "elBKil5zE2g",
+          "youtubeId": "elBKil5zE2g",
+          "title": "I'll Make a Man Out of You (From \"Mulan\"/Soundtrack)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/elBKil5zE2g/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "YVVTZgwYwVo",
+        "isPlaying": false,
+        "secPlayed": 25.345114
+      },
+      "viewCount": 1,
+      "_id": "_s4MlLQ"
+    },
+    {
+      "name": "ראפ ישראלי",
+      "description": "ראפ ישראלי בועט, גם מחתרתי ומסחרי",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600550741/cc2me1bbkbwcx26cn26e.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "hiNXu"
+        }
+      ],
+      "tags": [
+        "Israeli"
+      ],
+      "createdBy": {},
+      "createdAt": 1600550242624,
+      "songs": [
+        {
+          "id": "_sMjZrVEB9E",
+          "youtubeId": "_sMjZrVEB9E",
+          "title": "פלד - מה אני נראה לך / Peled - Ma Ani Nira",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/_sMjZrVEB9E/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "fQug2Rw7i7M",
+          "youtubeId": "fQug2Rw7i7M",
+          "title": "שבק ס - תתקעו בחצוצרה (קליפ)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/fQug2Rw7i7M/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "Z760vU8ezg4",
+          "youtubeId": "Z760vU8ezg4",
+          "title": "סאבלימינל - הפינאלי - Subliminal",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/Z760vU8ezg4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "PQp2a_yunmM",
+          "youtubeId": "PQp2a_yunmM",
+          "title": "קפה שחור חזק מארחים את נצ'י נצ' - יהיה בסדר // Cafe Shahor Hazak ft Nechi Nech - ihiye beseder",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/PQp2a_yunmM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "jP4XtOEs-1s",
+          "youtubeId": "jP4XtOEs-1s",
+          "title": "רביד פלוטניק - כפרה שלי / Ravid Plotnik - Kapara Sheli",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/jP4XtOEs-1s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "3PJmE-ucx_o",
+          "youtubeId": "3PJmE-ucx_o",
+          "title": "טונה - גם זה יעבור // Tuna - Gam Ze Ya'avor",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/3PJmE-ucx_o/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "_sMjZrVEB9E",
+        "isPlaying": false,
+        "secPlayed": 0
+      },
+      "viewCount": 1,
+      "_id": "omAQnh6"
+    },
+    {
+      "name": "Singer/Songwriter",
+      "description": "The best Singer/Songwriter compilation.\nEnchanting vocal and a guitar.",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600551014/p2pmsdqqnaxu7e4tfy6f.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "hiNXu"
+        }
+      ],
+      "tags": [
+        "Easy"
+      ],
+      "createdBy": {},
+      "createdAt": 1600551006105,
+      "songs": [
+        {
+          "id": "RBumgq5yVrA",
+          "youtubeId": "RBumgq5yVrA",
+          "title": "Passenger | Let Her Go ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/RBumgq5yVrA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "YdgoG8hTMUw",
+          "youtubeId": "YdgoG8hTMUw",
+          "title": "Banana Pancakes",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/YdgoG8hTMUw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "2Vv-BfVoq4g",
+          "youtubeId": "2Vv-BfVoq4g",
+          "title": "Ed Sheeran - Perfect (Official Music Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/2Vv-BfVoq4g/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "IwOfCgkyEj0",
+          "youtubeId": "IwOfCgkyEj0",
+          "title": "Bob Dylan - Like a Rolling Stone (Audio)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/IwOfCgkyEj0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "RBumgq5yVrA",
+        "isPlaying": false,
+        "secPlayed": 0
+      },
+      "viewCount": 1,
+      "_id": "8ODPTfm"
+    },
+    {
+      "name": "Podcasts Box",
+      "description": "Join this box to listen and debate with people about mind-opening talks.",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600551346/jburawocfuvdcwxnmh2j.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "hiNXu"
+        }
+      ],
+      "tags": [
+        "Easy"
+      ],
+      "createdBy": {},
+      "createdAt": 1600551334649,
+      "songs": [
+        {
+          "id": "IwPOPL-ieD0",
+          "youtubeId": "IwPOPL-ieD0",
+          "title": "Home Is a Song I've Always Remembered | Teitur | TED Talks",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/IwPOPL-ieD0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "MaPYuwjL-dI",
+          "youtubeId": "MaPYuwjL-dI",
+          "title": "Jonwayne - TED Talk",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/MaPYuwjL-dI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "KExLCJAuTXA",
+          "youtubeId": "KExLCJAuTXA",
+          "title": "TEDxZurich - Jojo Mayer - Exploring the distance between 0 and 1",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/KExLCJAuTXA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "IwPOPL-ieD0",
+          "youtubeId": "IwPOPL-ieD0",
+          "title": "Home Is a Song I've Always Remembered | Teitur | TED Talks",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/IwPOPL-ieD0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "IwPOPL-ieD0",
+        "isPlaying": false,
+        "secPlayed": 0
+      },
+      "viewCount": 1,
+      "_id": "t9rjp7s"
+    },
+    {
+      "name": "Best of Coldplay",
+      "description": "Probably the most popular band in the world!",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600551449/grcwz9pvkddi90c93cdz.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "hiNXu"
+        }
+      ],
+      "tags": [
+        "Pop"
+      ],
+      "createdBy": {},
+      "createdAt": 1600551439033,
+      "songs": [
+        {
+          "id": "RB-RcX5DS5A",
+          "youtubeId": "RB-RcX5DS5A",
+          "title": "Coldplay - The Scientist ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/RB-RcX5DS5A/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "uIgxY0yWLNY",
+          "youtubeId": "uIgxY0yWLNY",
+          "title": "X & Y",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/uIgxY0yWLNY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "Ar48yzjn1PE",
+          "youtubeId": "Ar48yzjn1PE",
+          "title": "Coldplay - Sparks",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/Ar48yzjn1PE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "v77WFwYtUE0",
+          "youtubeId": "v77WFwYtUE0",
+          "title": "Parachutes",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/v77WFwYtUE0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "gnIZ7RMuLpU",
+          "youtubeId": "gnIZ7RMuLpU",
+          "title": "Coldplay - In My Place ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/gnIZ7RMuLpU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "j37GED-AR3M",
+          "youtubeId": "j37GED-AR3M",
+          "title": "Square One",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/j37GED-AR3M/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "RB-RcX5DS5A",
+        "isPlaying": false,
+        "secPlayed": 0
+      },
+      "viewCount": 1,
+      "_id": "6A6VaoA"
+    },
+    {
+      "name": "Rock with Muse",
+      "description": "It is the best progressive rock band nowadays... ",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600551929/qep7bbhgerqfppqmzyy9.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "hiNXu"
+        }
+      ],
+      "tags": [
+        "Rock"
+      ],
+      "createdBy": {},
+      "createdAt": 1600551919385,
+      "songs": [
+        {
+          "id": "dbB-mICjkQM",
+          "youtubeId": "dbB-mICjkQM",
+          "title": "Muse - Plug In Baby ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/dbB-mICjkQM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "G_sBOsh-vyI",
+          "youtubeId": "G_sBOsh-vyI",
+          "title": "Muse - Knights Of Cydonia  (Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/G_sBOsh-vyI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "3dm_5qWWDV8",
+          "youtubeId": "3dm_5qWWDV8",
+          "title": "Muse - Hysteria [Official Music Video]",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/3dm_5qWWDV8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "Pgum6OT_VH8",
+          "youtubeId": "Pgum6OT_VH8",
+          "title": "Muse - Starlight [Official Music Video]",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/Pgum6OT_VH8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "zhAmug6Ts6o",
+          "youtubeId": "zhAmug6Ts6o",
+          "title": "Muse - Time Is Running Out (Official Music Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/zhAmug6Ts6o/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "dbB-mICjkQM",
+        "isPlaying": false,
+        "secPlayed": 37.43277904386902
+      },
+      "viewCount": 1,
+      "_id": "QYQd5PB"
+    },
+    {
+      "name": "Queen",
+      "description": "Fun fun fun! Playlist of Queen!",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600552172/o6p4hw5i0opqsioeaqum.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "hiNXu"
+        }
+      ],
+      "tags": [
+        "Rock"
+      ],
+      "createdBy": {},
+      "createdAt": 1600552143328,
+      "songs": [
+        {
+          "id": "fJ9rUzIMcZQ",
+          "youtubeId": "fJ9rUzIMcZQ",
+          "title": "Queen – Bohemian Rhapsody (Official Video Remastered)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/fJ9rUzIMcZQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "f4Mc-NYPHaQ",
+          "youtubeId": "f4Mc-NYPHaQ",
+          "title": "Queen - I Want To Break Free ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/f4Mc-NYPHaQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "HgzGwKwLmgM",
+          "youtubeId": "HgzGwKwLmgM",
+          "title": "Queen - Don't Stop Me Now ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/HgzGwKwLmgM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "kijpcUv-b8M",
+          "youtubeId": "kijpcUv-b8M",
+          "title": "Queen - Somebody To Love ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/kijpcUv-b8M/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "t99KH0TR-J4",
+          "youtubeId": "t99KH0TR-J4",
+          "title": "Queen - The Show Must Go On ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/t99KH0TR-J4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "rY0WxgSXdEE",
+          "youtubeId": "rY0WxgSXdEE",
+          "title": "Queen - Another One Bites the Dust ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/rY0WxgSXdEE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "o-0ygW-B_gI",
+          "youtubeId": "o-0ygW-B_gI",
+          "title": "Queen - Radio Ga Ga (Live Aid 1985)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/o-0ygW-B_gI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "fJ9rUzIMcZQ",
+        "isPlaying": false,
+        "secPlayed": 37.43277904386902
+      },
+      "viewCount": 1,
+      "_id": "CmjFCOE"
+    },
+    {
+      "name": "Melodic Trance",
+      "description": "Trance that will send shivers down your spine!",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600553061/pyq1t0v9oybkkvxjfwhj.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "QX0FC"
+        }
+      ],
+      "tags": [
+        "Electronic"
+      ],
+      "createdBy": {},
+      "createdAt": 1600553047304,
+      "songs": [
+        {
+          "id": "NcPg80JqNX8",
+          "youtubeId": "NcPg80JqNX8",
+          "title": "Gaia - Tuvan (Original Mix)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/NcPg80JqNX8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "pgU0E4MgieE",
+          "youtubeId": "pgU0E4MgieE",
+          "title": "Ferry Corsten - Take Me (Original Extended)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/pgU0E4MgieE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "u5jIjBdmm9w",
+          "youtubeId": "u5jIjBdmm9w",
+          "title": "William Orbit - Adagio For Strings (Ferry Corsten Mix)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/u5jIjBdmm9w/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "LBJo2KvFOCQ",
+          "youtubeId": "LBJo2KvFOCQ",
+          "title": "Above & Beyond - Anjunabeach (Original Mix)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/LBJo2KvFOCQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "JynnHicr0ug",
+          "youtubeId": "JynnHicr0ug",
+          "title": "Daniel Kandi - Venice Beach (Original Mix)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/JynnHicr0ug/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "NcPg80JqNX8",
+        "isPlaying": true,
+        "secPlayed": 327.9483710152588
+      },
+      "viewCount": 1,
+      "_id": "Tkzz7kA"
+    },
+    {
+      "name": "להקות ישראליות",
+      "description": "הלהקות הכי טובות, השירים הכי טובים",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600553283/gf0ljx6uzuowfq6nziqh.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "QX0FC"
+        }
+      ],
+      "tags": [
+        "Israeli"
+      ],
+      "createdBy": {},
+      "createdAt": 1600553276857,
+      "songs": [
+        {
+          "id": "d1uvv83Z_FY",
+          "youtubeId": "d1uvv83Z_FY",
+          "title": "Hadag Nahash - Shir Nehama הדג נחש - שיר נחמה",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/d1uvv83Z_FY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "dVwE5u1xFLw",
+          "youtubeId": "dVwE5u1xFLw",
+          "title": "מוניקה סקס - על הרצפה (קליפ)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/dVwE5u1xFLw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "lupkDR8fC2A",
+          "youtubeId": "lupkDR8fC2A",
+          "title": "איפה הילד - לבן בחלום שחור",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/lupkDR8fC2A/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "Zfld19xewtU",
+          "youtubeId": "Zfld19xewtU",
+          "title": "החברים של נטשה-על קו הזינוק",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/Zfld19xewtU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "PVAD3KWgQrQ",
+          "youtubeId": "PVAD3KWgQrQ",
+          "title": "משינה - אין מקום אחר - קיסריה 2003",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/PVAD3KWgQrQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "PVAD3KWgQrQ",
+        "isPlaying": true,
+        "secPlayed": 0
+      },
+      "viewCount": 1,
+      "_id": "naBAhk9"
+    },
+    {
+      "name": "Ride that horse",
+      "description": "Country Music",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600553547/tzsenyjtdzxx9kuzuz0d.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "QX0FC"
+        }
+      ],
+      "tags": [
+        "Country"
+      ],
+      "createdBy": {},
+      "createdAt": 1600553446081,
+      "songs": [
+        {
+          "id": "Ixrje2rXLMA",
+          "youtubeId": "Ixrje2rXLMA",
+          "title": "Dolly Parton - Jolene (Audio)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/Ixrje2rXLMA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "8AHCfZTRGiI",
+          "youtubeId": "8AHCfZTRGiI",
+          "title": "Johnny Cash - Hurt (Official Music Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/8AHCfZTRGiI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "UgUgz4T3_wc",
+          "youtubeId": "UgUgz4T3_wc",
+          "title": "Miley Cyrus - Jolene (Backyard Session) HD | LYRICS IN VIDEO!",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/UgUgz4T3_wc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "WaSy8yy-mr8",
+          "youtubeId": "WaSy8yy-mr8",
+          "title": "Carrie Underwood - Before He Cheats ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/WaSy8yy-mr8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "v9bxXO9fj98",
+          "youtubeId": "v9bxXO9fj98",
+          "title": "Should've Said No",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/v9bxXO9fj98/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "WaSy8yy-mr8",
+        "isPlaying": true,
+        "secPlayed": 179.43950500953673
+      },
+      "viewCount": 1,
+      "_id": "lFZ1a07"
+    }
+  ],
+  "user": {
+    "_id": "u101",
+    "fullName": "Puki Ben David",
+    "userName": "orly@amdadi.com",
+    "password": "1",
+    "imgUrl": "http://some-img",
+    "followers": [],
+    "following": [],
+    "notifs": [
+      {
+        "id": "a101",
+        "txt": "Bla bla",
+        "createdAt": 154514,
+        "action": {
+          "id": "c101",
+          "title": "do that"
+        }
+      }
+    ]
+  }
+}
