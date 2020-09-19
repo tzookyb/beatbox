@@ -1,70 +1,6 @@
 {
   "box": [
     {
-      "_id": "103a",
-      "name": "Funky Monks",
-      "viewCount": 1,
-      "tags": [
-        "Hip-hop",
-        "Arabic"
-      ],
-      "description": "In this box you will hear Arabic music along with pop music, a powerful combination of worlds",
-      "likedByUsers": [
-        {
-          "id": "6tTdB"
-        },
-        {
-          "name": "Guest",
-          "id": "VnBlC"
-        },
-        {
-          "name": "yair",
-          "id": "LDb0A"
-        }
-      ],
-      "imgUrl": "https://images.unsplash.com/photo-1487180144351-b8472da7d491?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-      "createdAt": 1541652422,
-      "createdBy": {
-        "_id": "u101",
-        "fullName": "Puki Ben David",
-        "imgUrl": "https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-      },
-      "connectedUsers": [
-        {
-          "name": "Guest",
-          "id": "pNig3"
-        },
-        {
-          "name": "Guest",
-          "id": "CKxTg"
-        },
-        {
-          "id": "wbz5G"
-        },
-        {
-          "name": "Guest",
-          "id": "hiNXu"
-        }
-      ],
-      "songs": [
-        {
-          "id": "OBVeLeuV06I",
-          "title": "AD &quot;Thug&quot; Feat. YG (WSHH Exclusive - Official Music Video)",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/OBVeLeuV06I/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        }
-      ],
-      "currSong": {
-        "id": "OBVeLeuV06I",
-        "isPlaying": false,
-        "secPlayed": 24.962592
-      }
-    },
-    {
       "name": "Disney Songs",
       "description": "All time favorite songs from Disney's Movies!",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600549928/qxiazrfcapee4mirzzfk.png",
@@ -165,6 +101,10 @@
         {
           "name": "Guest",
           "id": "hiNXu"
+        },
+        {
+          "name": "Guest",
+          "id": "7fU7u"
         }
       ],
       "tags": [
@@ -242,10 +182,10 @@
       ],
       "currSong": {
         "id": "_sMjZrVEB9E",
-        "isPlaying": false,
+        "isPlaying": true,
         "secPlayed": 0
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "omAQnh6"
     },
     {
@@ -327,6 +267,10 @@
         {
           "name": "Guest",
           "id": "hiNXu"
+        },
+        {
+          "name": "Guest",
+          "id": "7fU7u"
         }
       ],
       "tags": [
@@ -335,28 +279,6 @@
       "createdBy": {},
       "createdAt": 1600551334649,
       "songs": [
-        {
-          "id": "IwPOPL-ieD0",
-          "youtubeId": "IwPOPL-ieD0",
-          "title": "Home Is a Song I've Always Remembered | Teitur | TED Talks",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/IwPOPL-ieD0/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "MaPYuwjL-dI",
-          "youtubeId": "MaPYuwjL-dI",
-          "title": "Jonwayne - TED Talk",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/MaPYuwjL-dI/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
         {
           "id": "KExLCJAuTXA",
           "youtubeId": "KExLCJAuTXA",
@@ -378,14 +300,25 @@
             "height": 90
           },
           "addedBy": {}
+        },
+        {
+          "id": "3frKGcuGzEg",
+          "youtubeId": "3frKGcuGzEg",
+          "title": "John Mayer Slow Blues Lick Lesson Podcast 18",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/3frKGcuGzEg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
         }
       ],
       "currSong": {
-        "id": "IwPOPL-ieD0",
-        "isPlaying": false,
-        "secPlayed": 0
+        "id": "KExLCJAuTXA",
+        "isPlaying": true,
+        "secPlayed": 522
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "t9rjp7s"
     },
     {

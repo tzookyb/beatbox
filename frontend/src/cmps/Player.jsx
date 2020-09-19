@@ -171,6 +171,7 @@ class _Player extends Component {
 
         const pL = playerLocation ? { left: `${playerLocation.x}`, top: `${playerLocation.y}` } : {};
 
+        console.log(this.props.location.pathname, currBox._id)
         return <React.Fragment>
             <ReactPlayer
                 ref={this.ref}
@@ -240,7 +241,7 @@ class _Player extends Component {
                     <button className="player-ctrl-btn flex align-center" title={muted ? 'Unmute' : 'Mute'} onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
 
                     <img
-                        style={{ visibility: (this.props.location.pathname === `/ box / ${currBox._id}`) ? 'hidden' : 'visible' }}
+                        style={{ visibility: (this.props.location.pathname === `/box/${currBox._id}`) ? 'hidden' : 'visible' }}
                         className="back-to-box"
                         src={require('../assets/img/box.png')}
                         title="Back to box"
