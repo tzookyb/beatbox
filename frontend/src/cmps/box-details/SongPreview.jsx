@@ -1,7 +1,8 @@
 import React from 'react';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 
-import equalizer from '../../assets/img/equalizer5.gif';
+// If the current playing song animation is nice, delete commented lines 5,15
+// import equalizer from '../../assets/img/equalizer5.gif';
 
 export function SongPreview({ song, onRemoveSong, onPlaySong, nowPlayingId }) {
     return (

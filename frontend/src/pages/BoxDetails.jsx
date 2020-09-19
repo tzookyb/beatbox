@@ -56,7 +56,6 @@ class _BoxDetails extends Component {
         const songId = this.state.box.songs[currSongIdx].id;
         const currSong = { id: songId, isPlaying: true, secPlayed: 0 };
         const box = { ...this.state.box, currSong };
-        console.log("onPlaySong -> box", box)
         this.props.saveBox(box);
     }
 
