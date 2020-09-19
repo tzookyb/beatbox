@@ -2,7 +2,8 @@ import axios from 'axios';
 import he from 'he';
 
 const BASE_URL = 'https://www.googleapis.com/youtube/v3/search'
-const API_KEY = 'AIzaSyCPP5cxksnuliRKXkqCqeZYG3dviWGM5cM';
+// const API_KEY = 'AIzaSyCPP5cxksnuliRKXkqCqeZYG3dviWGM5cM';
+const API_KEY = 'AIzaSyDd9KipmgPk6pAvx9HUICBglcd27bt-KlU'
 
 export const youtubeService = {
     get,
@@ -23,8 +24,8 @@ function titleSimplify(title) {
     // Removes HTML char codes
     let output = he.decode(title);
     // Removes 'Official Video' brackets
-    const officialVideoRegex = /[([].?official.?video.?[)\]]/ig
+    const officialVideoRegex = /[([].?(official.?video)?(official music video)?.?[)\]]/ig
     output = output.replace(officialVideoRegex, '');
-    
+
     return output;
 }
