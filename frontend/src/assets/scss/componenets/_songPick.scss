@@ -1,5 +1,4 @@
 .song-pick {
-
     // display: none;
 
     width: 0;
@@ -8,30 +7,35 @@
     max-height: 25rem;
     overflow-y: auto;
 
-
     &.opened {
         max-width: 80%;
-        width: 40%
+        width: 40%;
     }
 
     .song-pick-result {
         display: flex;
+        padding: 0px 5px;
         align-items: center;
-        justify-content: space-between;
-        width: 90%;
+        // justify-content: space-between;
+        width: 100%;
         cursor: pointer;
-        text-overflow: 30ch;
-
+        text-overflow: ellipsis;
+        transition: 0.3s;
+        background-color: #ffffff12;
+        margin-bottom: 5px;
         img {
-
             width: 25%;
             height: 100%;
             padding: 5px;
         }
+        &:hover {
+            color: #cdcdcdfc;
+            background-color: #6e6d6d6e;
+        }
     }
 
     input {
-        width: 100%;
+        width: 95%;
         outline: none;
         border: none;
         background-color: #ffffff12;
