@@ -1,8 +1,7 @@
-
 import React from 'react'
 import { Link } from 'react-router-dom'
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
-import AddIcon from '@material-ui/icons/Add';
+// import AddIcon from '@material-ui/icons/Add';
 import { boxService } from "../../services/boxService";
 
 import equalizer from '../../assets/img/equalizer5.gif';
