@@ -56,10 +56,10 @@ class _Home extends Component {
         const genres = this.getGenres(boxes)
         return (
             <React.Fragment>
-                <div className="hero-container flex justify-center align-center" >
+                <div id="top" className="hero-container flex justify-center align-center" >
                     <div className="hero-txt flex align-center column">
                         <h1>Share the <span>Beat</span>...</h1>
-                        <a href="#box"><button>Start listening!</button></a>
+                        <a href="#box"><button>Start listening</button></a>
                     </div>
                 </div>
                 <div className="gener-list">
