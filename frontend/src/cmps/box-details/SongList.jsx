@@ -5,8 +5,6 @@ import { AddCircleOutline } from '@material-ui/icons';
 import { SongPick } from './SongPick'
 import { SongPreview } from './SongPreview'
 
-// import { SongPreview } from './SongPreview'
-
 export function SongList({ songs, onRemoveSong, onAddSong, onPlaySong, isSearchOpen, openAddSearch, nowPlayingId }) {
 
     return (
