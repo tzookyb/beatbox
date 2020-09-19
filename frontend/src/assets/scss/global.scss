@@ -3,7 +3,7 @@
 @import "./setup/functions";
 @import "./setup/mixins";
 @import "./setup/typography";
-
+@import "./setup/animations";
 
 // Basics
 @import "./basics/helpers";
@@ -26,7 +26,6 @@
 @import "./componenets/login";
 @import "./componenets/notification";
 
-
 // Views
 @import "./views/home";
 @import "./views/boxApp";
@@ -34,10 +33,3 @@
 @import "./views/boxAdd";
 @import "./views/player";
 @import "./views/player";
-
-
-
-// @import "~slick-carousel/slick/slick-theme.css";
-// @import "~slick-carousel/slick/slick.css"; 
-
-// 

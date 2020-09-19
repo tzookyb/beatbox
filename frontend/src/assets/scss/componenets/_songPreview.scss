@@ -22,6 +22,12 @@
             border: none;
             color: #fff;
         }
+        .remove-song-btn {
+            padding:5px;
+            &:hover {
+                animation: wobble-ver-right 1s;
+            }
+        }
     }
 
     &:hover:not(.now-playing) {
