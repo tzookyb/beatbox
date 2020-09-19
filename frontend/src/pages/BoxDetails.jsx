@@ -72,20 +72,20 @@ class _BoxDetails extends Component {
         this.setState({ filterBy: filterBy.name })
     }
 
-    getSongsForDispley = () => {
+    getSongsForDisplay = () => {
         const songs = this.state.box.songs.filter(song => song.title.toLowerCase().includes(this.state.filterBy.toLowerCase()));
         return songs;
     }
 
     openAddSearch = () => {
-        console.log(';');
         this.setState({ isSearchOpen: !this.state.isSearchOpen })
     }
 
     render() {
         const { box, isSearchOpen } = this.state;
         if (!box) return <h1>Loading...</h1>
-        const songsToShow = this.getSongsForDispley();
+        const currSongId = (box.currSong) ? box.currSong.id : null;
+        const songsToShow = this.getSongsForDisplay();
         return (
             <section className="box-details main-container">
                 <BoxInfo box={box} onSaveInfo={this.onSaveInfo} />
@@ -100,7 +100,9 @@ class _BoxDetails extends Component {
                     onRemoveSong={this.onRemoveSong}
                     onAddSong={this.onAddSong}
                     isSearchOpen={isSearchOpen}
-                    openAddSearch={this.openAddSearch} />
+                    openAddSearch={this.openAddSearch}
+                    nowPlayingId={currSongId}
+                />
 
                 {/* <ChatBox /> */}
             </section>

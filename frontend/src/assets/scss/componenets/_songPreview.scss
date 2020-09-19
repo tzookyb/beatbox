@@ -1,35 +1,47 @@
 .song-preview {
-    cursor    : pointer;
+    cursor: pointer;
     transition: 0.3s;
 
     .song-preview-img {
         max-width: 60px;
-        margin   : 5px;
+        margin: 5px;
 
         img {
-            width  : 100%;
-            height : 100%;
+            width: 100%;
+            height: 100%;
             padding: 5px;
-            margin : 0 2px;
+            margin: 0 2px;
         }
-
     }
 
     .song-preview-btns {
         margin-inline-end: 10px;
 
         button {
-
             background-color: transparent;
-            border          : none;
-            color           : #fff;
-
+            border: none;
+            color: #fff;
         }
     }
 
-    &:hover {
-        color           : #cdcdcdfc;
+    &:hover:not(.now-playing) {
+        color: #cdcdcdfc;
         background-color: #6e6d6d6e;
-        font-size       : rem(14.5px);
+        font-size: rem(14.5px);
+    }
+}
+
+.now-playing {
+    color: white;
+    // height: 40px;
+    // width: auto;
+    background-image: url("../../img/equalizer2.gif");
+    background-size: cover;
+    background-blend-mode: saturation;
+    background-position: center;
+    transition: background-position 0s;
+
+    &:hover {
+        font-size: rem(14.5px);
     }
 }

@@ -11,6 +11,7 @@ import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import Slider from '@material-ui/core/Slider';
 
 import { saveBox } from '../store/actions/boxAction';
+import { withRouter } from 'react-router-dom';
 
 class _Player extends Component {
     state = {
@@ -153,7 +154,7 @@ class _Player extends Component {
             return `${mins}:${secs}`
         }
 
-        return <div className={`player-container flex align-center space-between ${isPlaying ? 'is-playing' : ''}`}>
+        return <div className={`player-container flex align-center space-between ${isPlaying ? 'is-playing' : 'paused'}`}>
             <ReactPlayer
                 ref={this.ref}
                 className="player"
@@ -170,7 +171,9 @@ class _Player extends Component {
             />
             <div className="player-song-details flex align-center">
                 <img className="player-thumbnail" src={song.imgUrl.url} alt="song thumbnail" />
-                <p className="player-title">{song.title}</p>
+
+                <span className="player-title">{song.title}</span>
+
             </div>
 
             <span>{showTime(this.state.secPlayed)}</span>
@@ -191,15 +194,15 @@ class _Player extends Component {
             {duration && <span>{showTime(duration)}</span>}
 
             <div className="player-controls flex align-center">
-                <button className="player-ctrl" onClick={() => this.skipToSong(-1)}><SkipPreviousIcon /></button>
-                <button className="player-ctrl" onClick={this.togglePlay}>{isPlaying ? <PauseIcon /> : <PlayArrowIcon />}</button>
-                <button className="player-ctrl" onClick={() => this.skipToSong(1)}><SkipNextIcon /></button>
+                <button className="player-ctrl-btn flex align-center" title="Previous" onClick={() => this.skipToSong(-1)}><SkipPreviousIcon /></button>
+                <button className="player-ctrl-btn flex align-center" title={isPlaying ? 'Pause' : 'Play'} onClick={this.togglePlay}>{isPlaying ? <PauseIcon /> : <PlayArrowIcon />}</button>
+                <button className="player-ctrl-btn flex align-center" title="Next" onClick={() => this.skipToSong(1)}><SkipNextIcon /></button>
 
 
                 <Slider
                     style={{
                         height: '50px',
-                        color: 'white'
+                        color: muted ? '#292929' : 'white'
                     }}
                     value={volume}
                     min={0}
@@ -208,8 +211,14 @@ class _Player extends Component {
                     orientation="vertical"
                     onChange={this.handleVolumeChange}
                 />
-                <button className="player-ctrl" onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
+                <button className="player-ctrl-btn flex align-center" title={muted ? 'Unmute' : 'Mute' } onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
 
+                <img
+                    className="back-to-box"
+                    src={require('../assets/img/box.png')}
+                    title="Back to box"
+                    alt="Back to box"
+                    onClick={() => this.props.history.push(`/box/${currBox._id}`)} />
             </div>
 
         </div>
@@ -227,4 +236,4 @@ const mapDispatchToProps = {
     saveBox
 }
 
-export const Player = connect(mapStateToProps, mapDispatchToProps)(_Player);
+export const Player = connect(mapStateToProps, mapDispatchToProps)(withRouter(_Player));
