@@ -15,7 +15,7 @@ export class FilterBox extends Component {
         const { name } = this.state;
         return (
             <div className="box-filter flex justify-center">
-                <input className="name-filter" name="name" autoComplete="off" value={name} onChange={this.onHandleChange} placeholder="Search Box" />
+                <input type="search" className="name-filter" name="name" autoComplete="off" value={name} onChange={this.onHandleChange} placeholder="Search Box" />
             </div>
         )
     }

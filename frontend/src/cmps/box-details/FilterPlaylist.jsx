@@ -15,7 +15,7 @@ export class FilterPlaylist extends Component {
         const { name } = this.state;
         return (
             <div className="box-filter">
-                <input className="name-filter" name="name" autoComplete="off" value={name} onChange={this.onHandleChange} placeholder="Search Song" />
+                <input type="search" className="name-filter" name="name" autoComplete="off" value={name} onChange={this.onHandleChange} placeholder="Search Song" />
             </div>
         )
     }
