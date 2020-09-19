@@ -36,8 +36,10 @@ export class ButtonsFilter extends Component {
             <div className="btns-filter flex justify-center">
                 <button onClick={() => this.goPrevGenre()} className="btns-filter-nav">{'<'}</button>
                 {genres.map((genre, idx) => {
-                    if (idx - 1 <= genreCount) 
-                    return <button className="btn-filter" key={idx} onClick={() => this.props.onSetFilterGenre(genre)}>{genre}</button>
+                    if (idx - 1 <= genreCount) {
+                        return <button className="btn-filter" key={idx} onClick={() => this.props.onSetFilterGenre(genre)}>{genre}</button>
+                    } else return null;
+
                 })
                 }
                 <button onClick={() => this.goNextGenre()} className="btns-filter-nav">{'>'}</button>
