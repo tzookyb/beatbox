@@ -4,13 +4,12 @@ import { connect } from 'react-redux'
 // import Picker from 'emoji-picker-react';
 import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
-import { loadBox, saveBox } from '../store/actions/boxAction'
+import { loadBox, notify, saveBox } from '../store/actions/boxAction'
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService';
 import { FilterBox } from "../cmps/boxes/FilterBox";
 // import { Fab } from '@material-ui/core';
 // import { AddCircleOutline } from '@material-ui/icons';
-
 
 class _BoxDetails extends Component {
     state = {
@@ -40,8 +39,13 @@ class _BoxDetails extends Component {
         ev.stopPropagation();
         ev.preventDefault();
         const box = { ...this.props.box }
+        if (box.currSong.id === songId) {
+            this.props.notify('Cannot remove song that is currently playing')
+            return;
+        }
         const songIdx = box.songs.findIndex(song => song.id === songId)
         box.songs.splice(songIdx, 1);
+        this.props.notify('Song removed')
         await this.props.saveBox(box)
     }
 
@@ -49,6 +53,7 @@ class _BoxDetails extends Component {
         const newSong = boxService.addSong(song, this.state.box.songs)
         const box = { ...this.state.box }
         box.songs.push(newSong)
+        this.props.notify('Song added')
         this.props.saveBox(box)
     }
 
@@ -118,7 +123,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
     loadBox,
-    saveBox
+    saveBox,
+    notify
 }
 
 export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails)
