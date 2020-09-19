@@ -26,6 +26,7 @@ export class SongPick extends Component {
     getSongs = async () => {
         const query = this.state.searchStr;
         const res = await youtubeService.get(query);
+        if (!res) return
         const results = res.items;
         this.setState({ results });
     }
