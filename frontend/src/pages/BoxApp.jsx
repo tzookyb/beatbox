@@ -55,7 +55,9 @@ class _BoxApp extends Component {
     }
 
     render() {
-        const { boxes, user } = this.props;
+        const { boxes } = this.props;
+        // notused:
+        // const user = this.props
         const minimalUser = this.getMinimalUser();
         const { genres } = this.state;
         if (!boxes || !genres) return <h1>Loading....</h1>

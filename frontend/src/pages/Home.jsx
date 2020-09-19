@@ -3,7 +3,7 @@ import Footer from '../cmps/Footer'
 import { BoxApp } from './BoxApp'
 import { connect } from 'react-redux'
 
-import { boxService } from '../services/boxService'
+// import { boxService } from '../services/boxService'
 import { loadBoxes } from '../store/actions/boxAction'
 import { loadUser } from '../store/actions/userAction'
 

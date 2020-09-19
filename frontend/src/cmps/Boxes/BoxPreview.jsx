@@ -33,7 +33,7 @@ export function BoxPreview({ box, genre, isHomePage, onToggleLikeBox, minimalUse
                 </div>
             </div>
             {box.connectedUsers.length > 0 &&
-                <div className="container-equalizer"> <img src={equalizer} img="equalizer animation"/> </div>}
+                <div className="container-equalizer"> <img src={equalizer} alt="equalizer animation"/> </div>}
         </div >
 
     )
