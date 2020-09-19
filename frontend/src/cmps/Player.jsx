@@ -140,7 +140,7 @@ class _Player extends Component {
         const { currBox, isPlaying, volume, muted, duration } = this.state
         if (!currBox || !currBox.currSong) return null;
         const song = currBox.songs.find(song => song.id === currBox.currSong.id)
-
+        
         function showTime(seconds) {
             var mins;
             var secs;
@@ -214,6 +214,7 @@ class _Player extends Component {
                 <button className="player-ctrl-btn flex align-center" title={muted ? 'Unmute' : 'Mute'} onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
 
                 <img
+                    style={{ visibility: (this.props.location.pathname === `/box/${currBox._id}`) ? 'hidden' : 'visible'  }}
                     className="back-to-box"
                     src={require('../assets/img/box.png')}
                     title="Back to box"
