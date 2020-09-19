@@ -3,7 +3,6 @@ import SaveIcon from '@material-ui/icons/Save';
 import CreateIcon from '@material-ui/icons/Create';
 // import ShareIcon from '@material-ui/icons/Share';
 
-
 import { cloudService } from '../../services/cloudService'
 
 export class BoxInfo extends Component {
@@ -82,10 +81,24 @@ export class BoxInfo extends Component {
             <section className="box-info flex space-between">
                 <div className="info-txt flex space-between column">
                     <div className="info-header flex align-end">
-                        {!isEditableName && <h2 className="box-name"> {box.name}</h2>}
+
+                        {/* Suggestion for readability, if good, then do same below */}
+                        {isEditableName ?
+                            <React.Fragment>
+                                <input autoFocus type="txt" value={box.name} name="name" onChange={this.handleInput} />
+                                <button onClick={() => this.onSave('isEditableName')} ><SaveIcon /></button>
+                            </React.Fragment>
+                            :
+                            <React.Fragment>
+                                <h2 className="box-name"> {box.name}</h2>
+                                <button onClick={() => this.onEdit('isEditableName')} className="hide-btn"><CreateIcon /></button>
+                            </React.Fragment>
+                        }
+
+                        {/* {!isEditableName && <h2 className="box-name"> {box.name}</h2>}
                         {!isEditableName && <button onClick={() => this.onEdit('isEditableName')} className="hide-btn"><CreateIcon /></button>}
                         {isEditableName && <input autoFocus type="txt" value={box.name} name="name" onChange={this.handleInput} />}
-                        {isEditableName && <button onClick={() => this.onSave('isEditableName')} ><SaveIcon /></button>}
+                        {isEditableName && <button onClick={() => this.onSave('isEditableName')} ><SaveIcon /></button>} */}
                     </div>
 
                     <div className="info-description flex">
