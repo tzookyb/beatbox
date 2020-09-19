@@ -181,7 +181,7 @@ class _Player extends Component {
             <Slider
                 style={{
                     width: '70px',
-                    color: 'white'
+                    color: 'white',
                 }}
                 name="played"
                 min={0}
@@ -211,7 +211,7 @@ class _Player extends Component {
                     orientation="vertical"
                     onChange={this.handleVolumeChange}
                 />
-                <button className="player-ctrl-btn flex align-center" title={muted ? 'Unmute' : 'Mute' } onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
+                <button className="player-ctrl-btn flex align-center" title={muted ? 'Unmute' : 'Mute'} onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
 
                 <img
                     className="back-to-box"

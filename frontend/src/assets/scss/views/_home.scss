@@ -1,4 +1,4 @@
-.chart-container>* {
+.chart-container > * {
     max-width: 50%;
 }
 
@@ -7,12 +7,12 @@
 }
 
 .hero-container {
-    background-image: url('../../img/hero1.png');
+    background-image: url("../../img/hero1.png");
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
     height: 80vh;
-    
+
     .hero-txt {
         font-size: 2rem;
         color: #fff;
@@ -24,8 +24,8 @@
         }
 
         button {
-            font-family: Kalam;
-            background-color: #9ef36cc9;
+            font-family: Catamaran;
+            background-color: #3f940dd9;
             padding: 15px;
             border-radius: 5px;
             color: #fff;
@@ -33,6 +33,7 @@
             position: absolute;
             right: -100px;
             top: 200px;
+            box-shadow: 0px 0px 10px 1px black;
         }
     }
 }
@@ -43,8 +44,7 @@
     height: rem(400px);
     font-size: rem(15px);
 
-
-    >* {
+    > * {
         margin: 0 0 1em;
         max-width: 50%;
     }
@@ -52,6 +52,4 @@
     .welcome-txt span {
         font-family: Grandstander;
     }
-
-
 }
