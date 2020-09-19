@@ -4,7 +4,6 @@ import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import equalizer from '../../assets/img/equalizer5.gif';
 
 export function SongPreview({ song, onRemoveSong, onPlaySong, nowPlayingId }) {
-    console.log(song, nowPlayingId);
     return (
         <li onClick={() => onPlaySong()} className={`song-preview flex space-between ${(nowPlayingId === song.id) ? 'now-playing' : ''}`} >
             <div className="song-data flex align-center">

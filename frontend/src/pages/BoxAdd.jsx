@@ -2,17 +2,17 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { boxService } from '../services/boxService'
-import { saveBox,loadBoxes } from '../store/actions/boxAction'
+import { saveBox, loadBoxes } from '../store/actions/boxAction'
+import { BoxInfoEdit } from '../cmps/box-details/BoxInfoEdit'
+import { SongList } from '../cmps/box-details/SongList'
 // import { cloudService } from '../services/cloudService'
 // import { SongPick } from '../cmps/box-details/SongPick'
 // import { SongPreview } from '../cmps/box-details/SongPreview'
-import { BoxInfoEdit } from '../cmps/box-details/BoxInfoEdit'
-import { SongList } from '../cmps/box-details/SongList'
 
 export class _BoxAdd extends Component {
     state = {
         box: null,
-        msgWarnnig: '',
+        msgWarning: '',
         isSearchOpen: false
     }
 
@@ -22,9 +22,9 @@ export class _BoxAdd extends Component {
     }
 
     printMsg() {
-        this.setState({ msgWarnnig: 'Name of box is required' })
+        this.setState({ msgWarning: 'Name of box is required' })
         setTimeout(() => {
-            this.setState({ msgWarnnig: '' })
+            this.setState({ msgWarning: '' })
         }, 2000)
     }
 
@@ -35,7 +35,7 @@ export class _BoxAdd extends Component {
             return;
         }
         const newBox = await this.props.saveBox(this.state.box);
-       await this.props.loadBoxes();
+        await this.props.loadBoxes();
         this.props.history.push(`/box/${newBox._id}`);
     }
 
@@ -52,7 +52,7 @@ export class _BoxAdd extends Component {
             }
         })
     }
-    
+
     onRemoveSong = (ev, songId) => {
         ev.stopPropagation();
         ev.preventDefault();
@@ -95,7 +95,7 @@ export class _BoxAdd extends Component {
                     isSearchOpen={isSearchOpen} />
                 <div className="btn-create-container">
                     <button className="btn-create" onClick={this.onAddBox}>Create Box</button>
-                    {this.state.msgWarnnig && <label>{this.state.msgWarnnig}</label>}
+                    {this.state.msgWarning && <label>{this.state.msgWarning}</label>}
                 </div>
             </section>
         )

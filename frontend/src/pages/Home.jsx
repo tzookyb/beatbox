@@ -62,7 +62,7 @@ class _Home extends Component {
                         <a href="#box"><button>Start listening</button></a>
                     </div>
                 </div>
-                <div className="gener-list">
+                <div className="genre-list">
                     {genres.length && <BoxApp genres={genres} />}
                 </div>
                 <Footer />
