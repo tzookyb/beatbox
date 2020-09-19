@@ -1,4 +1,5 @@
 import httpService from './httpService';
+import { youtubeService } from './youtubeService';
 
 // import axios from 'axios';
 // const BASE_URL = 'http://localhost:3030/box'
@@ -101,6 +102,7 @@ async function save(box) {
 }
 
 function addSong(song, songs) {
+    // prep for validation if song already exists
     // const idx = songs.findIndex(currSong => currSong.youtubeId = song.id.videoId)
     // if (idx === -1) {
 
@@ -109,7 +111,7 @@ function addSong(song, songs) {
     const newSong = {
         id: song.id.videoId,
         youtubeId: song.id.videoId,
-        title: song.snippet.title,
+        title: youtubeService.titleSimplify(song.snippet.title),
         imgUrl: song.snippet.thumbnails.default,
         //TODO: add loggedin user to addedby -MATAN!!!!
         addedBy: {}

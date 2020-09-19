@@ -15,6 +15,7 @@ import { withRouter } from 'react-router-dom';
 
 class _Player extends Component {
     state = {
+        isShrunk: false,
         currBox: null,
         song: '',
 
@@ -32,22 +33,22 @@ class _Player extends Component {
 
         // if first box - set and start playing
         if (!this.state.currBox) {
-            this.setState({ currBox: newBox }, this.load);
+            this.setState({ currBox: newBox }, this.loadSongToPlayer);
             return;
         }
 
         // if same box id, just update playerbox in state
         if (prevProps.currBox._id === newBox._id) {
-            this.setState({ currBox: newBox });
+            this.setState({ isPlaying: newBox.currSong.isPlaying, secPlayed: newBox.currSong.secPlayed, currBox: newBox });
             return;
         }
         // if different box -> setstate and load song idx 0 to player.
         if (prevProps.currBox && prevProps.currBox._id !== newBox._id) {
-            this.setState({ currBox: newBox }, () => this.load(0));
+            this.setState({ currBox: newBox }, () => this.loadSongToPlayer(0));
         }
     }
 
-    load = (currSongIdx = 0) => {
+    loadSongToPlayer = (currSongIdx = 0) => {
         const { currBox } = this.state;
         // If no songs in box, do nothing.
         if (!currBox.songs.length) return;
@@ -86,7 +87,7 @@ class _Player extends Component {
         if (nextSongIdx === -1) nextSongIdx = lastSongIdx;
         else if (nextSongIdx > lastSongIdx) nextSongIdx = 0;
 
-        this.load(nextSongIdx);
+        this.loadSongToPlayer(nextSongIdx);
     }
 
     handleSeekMouseDown = () => {
@@ -94,9 +95,6 @@ class _Player extends Component {
     }
 
     handleSeekChange = (ev, value) => {
-        // if (value > this.state.duration) {
-        //     value = this.state.duration - 5
-        // }
         this.setState({ secPlayed: value });
     }
 
@@ -135,12 +133,15 @@ class _Player extends Component {
     ref = player => {
         this.player = player
     }
+    onToggleShrink = () => {
+        this.setState({ isShrunk: !this.state.isShrunk })
+    }
 
     render() {
-        const { currBox, isPlaying, volume, muted, duration } = this.state
+        const { currBox, isPlaying, volume, muted, duration, isShrunk } = this.state
         if (!currBox || !currBox.currSong) return null;
         const song = currBox.songs.find(song => song.id === currBox.currSong.id)
-        
+
         function showTime(seconds) {
             var mins;
             var secs;
@@ -154,7 +155,7 @@ class _Player extends Component {
             return `${mins}:${secs}`
         }
 
-        return <div className={`player-container flex align-center space-between ${isPlaying ? 'is-playing' : 'paused'}`}>
+        return <React.Fragment>
             <ReactPlayer
                 ref={this.ref}
                 className="player"
@@ -169,60 +170,62 @@ class _Player extends Component {
                 onProgress={this.handleProgress}
                 onDuration={this.handleDuration}
             />
-            <div className="player-song-details flex align-center">
-                <img className="player-thumbnail" src={song.imgUrl.url} alt="song thumbnail" />
+            <div className={`player-container flex align-center space-between ${isPlaying ? 'is-playing' : 'paused'} ${isShrunk ? 'shrunk' : ''}`}>
+
+                <img className="player-thumbnail" onClick={this.onToggleShrink} src={song.imgUrl.url} title={song.title} alt="song thumbnail" />
 
                 <span className="player-title">{song.title}</span>
 
+                <div className="song-time flex align-center space-between">
+                    <span>{showTime(this.state.secPlayed)}</span>
+
+                    <Slider
+                        style={{
+                            width: '70px',
+                            color: 'white',
+                        }}
+                        name="played"
+                        min={0}
+                        max={duration}
+                        onMouseDown={this.handleSeekMouseDown}
+                        onMouseUp={this.handleSeekMouseUp}
+                        onChange={this.handleSeekChange}
+                        value={this.state.secPlayed}
+                    />
+
+                    {duration && <span>{showTime(duration)}</span>}
+                </div>
+
+                <div className="player-controls flex align-center">
+                    <button className="player-ctrl-btn flex align-center" title="Previous" onClick={() => this.skipToSong(-1)}><SkipPreviousIcon /></button>
+                    <button className="player-ctrl-btn flex align-center" title={isPlaying ? 'Pause' : 'Play'} onClick={this.togglePlay}>{isPlaying ? <PauseIcon /> : <PlayArrowIcon />}</button>
+                    <button className="player-ctrl-btn flex align-center" title="Next" onClick={() => this.skipToSong(1)}><SkipNextIcon /></button>
+
+
+                    <Slider
+                        style={{
+                            height: '50px',
+                            color: muted ? '#292929' : 'white'
+                        }}
+                        value={volume}
+                        min={0}
+                        step={0.05}
+                        max={1}
+                        orientation="vertical"
+                        onChange={this.handleVolumeChange}
+                    />
+                    <button className="player-ctrl-btn flex align-center" title={muted ? 'Unmute' : 'Mute'} onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
+
+                    <img
+                        style={{ visibility: (this.props.location.pathname === `/box/${currBox._id}`) ? 'hidden' : 'visible' }}
+                        className="back-to-box"
+                        src={require('../assets/img/box.png')}
+                        title="Back to box"
+                        alt="Back to box"
+                        onClick={() => this.props.history.push(`/box/${currBox._id}`)} />
+                </div>
             </div>
-
-            <span>{showTime(this.state.secPlayed)}</span>
-
-            <Slider
-                style={{
-                    width: '70px',
-                    color: 'white',
-                }}
-                name="played"
-                min={0}
-                max={duration}
-                onMouseDown={this.handleSeekMouseDown}
-                onMouseUp={this.handleSeekMouseUp}
-                onChange={this.handleSeekChange}
-                value={this.state.secPlayed}
-            />
-            {duration && <span>{showTime(duration)}</span>}
-
-            <div className="player-controls flex align-center">
-                <button className="player-ctrl-btn flex align-center" title="Previous" onClick={() => this.skipToSong(-1)}><SkipPreviousIcon /></button>
-                <button className="player-ctrl-btn flex align-center" title={isPlaying ? 'Pause' : 'Play'} onClick={this.togglePlay}>{isPlaying ? <PauseIcon /> : <PlayArrowIcon />}</button>
-                <button className="player-ctrl-btn flex align-center" title="Next" onClick={() => this.skipToSong(1)}><SkipNextIcon /></button>
-
-
-                <Slider
-                    style={{
-                        height: '50px',
-                        color: muted ? '#292929' : 'white'
-                    }}
-                    value={volume}
-                    min={0}
-                    step={0.05}
-                    max={1}
-                    orientation="vertical"
-                    onChange={this.handleVolumeChange}
-                />
-                <button className="player-ctrl-btn flex align-center" title={muted ? 'Unmute' : 'Mute'} onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
-
-                <img
-                    style={{ visibility: (this.props.location.pathname === `/box/${currBox._id}`) ? 'hidden' : 'visible'  }}
-                    className="back-to-box"
-                    src={require('../assets/img/box.png')}
-                    title="Back to box"
-                    alt="Back to box"
-                    onClick={() => this.props.history.push(`/box/${currBox._id}`)} />
-            </div>
-
-        </div>
+        </React.Fragment>
     }
 }
 
