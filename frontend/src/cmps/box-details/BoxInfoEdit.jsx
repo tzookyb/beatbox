@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 // import CreateIcon from '@material-ui/icons/Create';
 import { cloudService } from '../../services/cloudService'
 import { boxService } from '../../services/boxService'
+import imgPlaceholder from '../../assets/img/img_placeholder.png';
 
 export class BoxInfoEdit extends Component {
     state = {
@@ -69,9 +70,9 @@ export class BoxInfoEdit extends Component {
                     <label className="upload-label" style={{ cursor: 'pointer' }} >
                         <input onChange={(ev) => this.uploadImg(ev)} type="file" hidden />
                         <div className="upload-box-img">
-                            Upload Image
-                    </div>
-                        <img src={box.imgUrl} alt="" />
+                            {box.imgUrl ? '' : 'Upload Image'}
+                        </div>
+                        <img src={box.imgUrl || imgPlaceholder} alt="box" />
                     </label>
                 </div>
             </form>
