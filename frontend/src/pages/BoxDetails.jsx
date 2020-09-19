@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 // import { ChatBox } from '../cmps/box-details/ChatBox'
-import Picker from 'emoji-picker-react';
+// import Picker from 'emoji-picker-react';
 import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
 import { loadBox, saveBox } from '../store/actions/boxAction'
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService';
 import { FilterBox } from "../cmps/boxes/FilterBox";
-import { Fab } from '@material-ui/core';
-import { AddCircleOutline } from '@material-ui/icons';
+// import { Fab } from '@material-ui/core';
+// import { AddCircleOutline } from '@material-ui/icons';
 
 
 class _BoxDetails extends Component {
