@@ -82,8 +82,9 @@
 }
 
 .shrunk {
+    border-radius: 80%;
     width: 100px;
-    transition: width 1s;
+    transition: 1s;
 
     .player-thumbnail {
         margin: 0;

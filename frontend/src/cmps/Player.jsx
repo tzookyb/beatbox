@@ -18,7 +18,7 @@ class _Player extends Component {
         isShrunk: false,
         currBox: null,
         song: '',
-
+        playerLocation: null,
         isPlaying: true,
         secPlayed: 0,
         muted: false,
@@ -137,8 +137,22 @@ class _Player extends Component {
         this.setState({ isShrunk: !this.state.isShrunk })
     }
 
+    onPlayerMouseDown = (ev) => {
+        this.setState({ isDragging: true })
+    }
+    onPlayerMouseUp = () => {
+        this.setState({ isDragging: false })
+    }
+    onPlayerDrag = (ev) => {
+        if (this.state.isDragging) {
+            ev.preventDefault()
+            ev.stopPropagation()
+            this.setState({ playerLocation: { x: ev.clientX, y: ev.clientY } })
+        }
+    }
+
     render() {
-        const { currBox, isPlaying, volume, muted, duration, isShrunk } = this.state
+        const { currBox, isPlaying, volume, muted, duration, isShrunk, playerLocation } = this.state
         if (!currBox || !currBox.currSong) return null;
         const song = currBox.songs.find(song => song.id === currBox.currSong.id)
 
@@ -155,6 +169,8 @@ class _Player extends Component {
             return `${mins}:${secs}`
         }
 
+        const pL = playerLocation ? { left: `${playerLocation.x}`, top: `${playerLocation.y}` } : {};
+
         return <React.Fragment>
             <ReactPlayer
                 ref={this.ref}
@@ -170,7 +186,14 @@ class _Player extends Component {
                 onProgress={this.handleProgress}
                 onDuration={this.handleDuration}
             />
-            <div className={`player-container flex align-center space-between ${isPlaying ? 'is-playing' : 'paused'} ${isShrunk ? 'shrunk' : ''}`}>
+            <div
+                className={`player-container flex align-center space-between ${isPlaying ? 'is-playing' : 'paused'} ${isShrunk ? 'shrunk' : ''}`}
+                style={pL}
+                onMouseDown={this.onPlayerMouseDown}
+                onMouseUp={this.onPlayerMouseUp}
+                onDrag={this.onPlayerDrag}
+            >
+
 
                 <img className="player-thumbnail" onClick={this.onToggleShrink} src={song.imgUrl.url} title={song.title} alt="song thumbnail" />
 
@@ -217,15 +240,15 @@ class _Player extends Component {
                     <button className="player-ctrl-btn flex align-center" title={muted ? 'Unmute' : 'Mute'} onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
 
                     <img
-                        style={{ visibility: (this.props.location.pathname === `/box/${currBox._id}`) ? 'hidden' : 'visible' }}
+                        style={{ visibility: (this.props.location.pathname === `/ box / ${currBox._id}`) ? 'hidden' : 'visible' }}
                         className="back-to-box"
                         src={require('../assets/img/box.png')}
                         title="Back to box"
                         alt="Back to box"
                         onClick={() => this.props.history.push(`/box/${currBox._id}`)} />
                 </div>
-            </div>
-        </React.Fragment>
+            </div >
+        </React.Fragment >
     }
 }
 
