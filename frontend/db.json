@@ -1105,6 +1105,965 @@
       },
       "viewCount": 1,
       "_id": "MeC8av_"
+    },
+    {
+      "name": "",
+      "description": "",
+      "imgUrl": null,
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "KmHKi"
+        }
+      ],
+      "tags": [
+        "Hip-hop"
+      ],
+      "createdBy": {},
+      "createdAt": 1600579176655,
+      "songs": [
+        {
+          "id": "LYHE4lD_CSA",
+          "youtubeId": "LYHE4lD_CSA",
+          "title": "ASD (Afrob & Samy Deluxe) - Sneak Preview ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/LYHE4lD_CSA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "ZXUmcj93CVY",
+          "youtubeId": "ZXUmcj93CVY",
+          "title": "ASD - Legendär / Populär",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/ZXUmcj93CVY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "eCt5N4pdYic",
+          "youtubeId": "eCt5N4pdYic",
+          "title": "ASD (Afrob & Samy Deluxe) - Hey Du ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/eCt5N4pdYic/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "s_jtWU7jxcg",
+          "youtubeId": "s_jtWU7jxcg",
+          "title": "ASD - Antihaltung",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/s_jtWU7jxcg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "q9d6-_cEHNQ",
+          "youtubeId": "q9d6-_cEHNQ",
+          "title": "ASD - Tortellini Augen",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/q9d6-_cEHNQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "idzgERYmetg",
+          "youtubeId": "idzgERYmetg",
+          "title": "ASD-11.Χειμώνες (Feat. Άτοπος,Ένοπλος)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/idzgERYmetg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "RZTtwdSUYIg",
+          "youtubeId": "RZTtwdSUYIg",
+          "title": "ASD - Guck dir diese Jungs an",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/RZTtwdSUYIg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "H68wWHEIIG0",
+          "youtubeId": "H68wWHEIIG0",
+          "title": "Asd",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/H68wWHEIIG0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "MYyVf2s7pm4",
+          "youtubeId": "MYyVf2s7pm4",
+          "title": "ASD - Mensch gegen Maschine",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/MYyVf2s7pm4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "LYHE4lD_CSA",
+        "isPlaying": false,
+        "secPlayed": 17.65123798855591
+      },
+      "viewCount": 1,
+      "_id": "4rWwQjD"
+    },
+    {
+      "name": "",
+      "description": "",
+      "imgUrl": null,
+      "likedByUsers": [],
+      "connectedUsers": [],
+      "tags": [
+        "Hip-hop"
+      ],
+      "createdBy": {},
+      "createdAt": 1600579176655,
+      "songs": [
+        {
+          "id": "ZXUmcj93CVY",
+          "youtubeId": "ZXUmcj93CVY",
+          "title": "ASD - Legendär / Populär",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/ZXUmcj93CVY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "eCt5N4pdYic",
+          "youtubeId": "eCt5N4pdYic",
+          "title": "ASD (Afrob & Samy Deluxe) - Hey Du ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/eCt5N4pdYic/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "s_jtWU7jxcg",
+          "youtubeId": "s_jtWU7jxcg",
+          "title": "ASD - Antihaltung",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/s_jtWU7jxcg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "q9d6-_cEHNQ",
+          "youtubeId": "q9d6-_cEHNQ",
+          "title": "ASD - Tortellini Augen",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/q9d6-_cEHNQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "idzgERYmetg",
+          "youtubeId": "idzgERYmetg",
+          "title": "ASD-11.Χειμώνες (Feat. Άτοπος,Ένοπλος)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/idzgERYmetg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "RZTtwdSUYIg",
+          "youtubeId": "RZTtwdSUYIg",
+          "title": "ASD - Guck dir diese Jungs an",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/RZTtwdSUYIg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "H68wWHEIIG0",
+          "youtubeId": "H68wWHEIIG0",
+          "title": "Asd",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/H68wWHEIIG0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "MYyVf2s7pm4",
+          "youtubeId": "MYyVf2s7pm4",
+          "title": "ASD - Mensch gegen Maschine",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/MYyVf2s7pm4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": null,
+      "viewCount": 0,
+      "_id": "evqmF5M"
+    },
+    {
+      "name": "Electronic Chill",
+      "description": "Wind down with this fantastic mellow electronic music.",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600580466/ifmadwtooq2kl0kvmmv5.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "KmHKi"
+        }
+      ],
+      "tags": [
+        "Electronic"
+      ],
+      "createdBy": {},
+      "createdAt": 1600580428683,
+      "songs": [
+        {
+          "id": "mTHjFeXmnHs",
+          "youtubeId": "mTHjFeXmnHs",
+          "title": "Air - All I Need",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/mTHjFeXmnHs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "_LQMqtXzUvs",
+          "youtubeId": "_LQMqtXzUvs",
+          "title": "Sunlounger - Aguas Blancas (Chillout Mix)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/_LQMqtXzUvs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "Vg1jyL3cr60",
+          "youtubeId": "Vg1jyL3cr60",
+          "title": "Portishead - Roads",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/Vg1jyL3cr60/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "13EifDb4GYs",
+          "youtubeId": "13EifDb4GYs",
+          "title": "Moby - Porcelain",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/13EifDb4GYs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "4cW-_8LzLfc",
+          "youtubeId": "4cW-_8LzLfc",
+          "title": "LUX - NORTHERN  LIGHTS",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/4cW-_8LzLfc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "mTHjFeXmnHs",
+        "isPlaying": false,
+        "secPlayed": 1.5278559942779542
+      },
+      "viewCount": 1,
+      "_id": "NGT-4vu"
+    },
+    {
+      "name": "מלחמת העידנים",
+      "description": "עידן רייכל, עידן עמדי, עידן חביב... מי הטוב ביותר?",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600580687/endnjh4plh6smejtoaqz.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "KmHKi"
+        }
+      ],
+      "tags": [
+        "Israeli"
+      ],
+      "createdBy": {},
+      "createdAt": 1600580625698,
+      "songs": [
+        {
+          "id": "dG3NAutpEoY",
+          "youtubeId": "dG3NAutpEoY",
+          "title": "Idan Raichel - Lifney She'Yigamer (Before It Ends) - עידן רייכל - לפני שייגמר",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/dG3NAutpEoY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "iUMQ1NjHsqY",
+          "youtubeId": "iUMQ1NjHsqY",
+          "title": "Idan Amedi | עידן עמדי - חלק מהזמן",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/iUMQ1NjHsqY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "5ejT8FqglLM",
+          "youtubeId": "5ejT8FqglLM",
+          "title": "עידן רפאל חביב - שלמים | Idan Rafael Haviv",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/5ejT8FqglLM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "t6vEiHoiVm0",
+          "youtubeId": "t6vEiHoiVm0",
+          "title": "עידן רפאל חביב - רודף אהבה בימים",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/t6vEiHoiVm0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "a3XUaHqqtjk",
+          "youtubeId": "a3XUaHqqtjk",
+          "title": "עידן חביב - עד שתחזור (שכתב ליובל דיין) | רדיוס 100FM - מושיקו שטרן",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/a3XUaHqqtjk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "5ejT8FqglLM",
+        "isPlaying": false,
+        "secPlayed": 147.55195384169005
+      },
+      "viewCount": 1,
+      "_id": "bqNpi5h"
+    },
+    {
+      "name": "Psychedelic Trance",
+      "description": "When you need some hard bass",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600582666/h2y6tpnbeqroexfn6zwt.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "KmHKi"
+        }
+      ],
+      "tags": [
+        "Electronic"
+      ],
+      "createdBy": {},
+      "createdAt": 1600582337051,
+      "songs": [
+        {
+          "id": "WxhTbxMSvT0",
+          "youtubeId": "WxhTbxMSvT0",
+          "title": "Infected Mushroom - Becoming Insane",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/WxhTbxMSvT0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "yo4pmauhugo",
+          "youtubeId": "yo4pmauhugo",
+          "title": "Armin van Buuren vs Vini Vici feat. Hilight Tribe - Great Spirit (Extended Mix)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/yo4pmauhugo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "0lBjcaMokvo",
+          "youtubeId": "0lBjcaMokvo",
+          "title": "Hilight Tribe - Free Tibet (Vini Vici Remix)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/0lBjcaMokvo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "_k6SaRidAm0",
+          "youtubeId": "_k6SaRidAm0",
+          "title": "Astrix - 03 - Tweaky",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/_k6SaRidAm0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "Aooy7iw-7cY",
+          "youtubeId": "Aooy7iw-7cY",
+          "title": "Vini Vici & Astrix - Adhana",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/Aooy7iw-7cY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "WxhTbxMSvT0",
+        "isPlaying": false,
+        "secPlayed": 147.55195384169005
+      },
+      "viewCount": 1,
+      "_id": "w2QkOxE"
+    },
+    {
+      "name": "With the Beatles",
+      "description": "Good old Oldies",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600582845/jxtbin18kas0t9ndpm93.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "KmHKi"
+        }
+      ],
+      "tags": [
+        "Rock"
+      ],
+      "createdBy": {},
+      "createdAt": 1600582838497,
+      "songs": [
+        {
+          "id": "UelDrZ1aFeY",
+          "youtubeId": "UelDrZ1aFeY",
+          "title": "The Beatles - Something",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/UelDrZ1aFeY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "NVv7IzEVf3M",
+          "youtubeId": "NVv7IzEVf3M",
+          "title": "She Came In Through The Bathroom Window (Remastered 2009)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/NVv7IzEVf3M/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "NrgmdOz227I",
+          "youtubeId": "NrgmdOz227I",
+          "title": "Yesterday (Remastered 2009)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/NrgmdOz227I/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "A_MjCqQoLLA",
+          "youtubeId": "A_MjCqQoLLA",
+          "title": "The Beatles - Hey Jude",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/A_MjCqQoLLA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "YBcdt6DsLQA",
+          "youtubeId": "YBcdt6DsLQA",
+          "title": "In My Life (Remastered 2009)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/YBcdt6DsLQA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "UelDrZ1aFeY",
+        "isPlaying": false,
+        "secPlayed": 0
+      },
+      "viewCount": 1,
+      "_id": "OmLGxJ-"
+    },
+    {
+      "name": "This is Nirvana",
+      "description": "Did you miss your teen spirit?",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600583008/qjbahyosvmflilp9fpzx.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "KmHKi"
+        }
+      ],
+      "tags": [
+        "Rock"
+      ],
+      "createdBy": {},
+      "createdAt": 1600582960073,
+      "songs": [
+        {
+          "id": "vabnZ9-ex7o",
+          "youtubeId": "vabnZ9-ex7o",
+          "title": "Nirvana - Come As You Are",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/vabnZ9-ex7o/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "hTWKbfoikeg",
+          "youtubeId": "hTWKbfoikeg",
+          "title": "Nirvana - Smells Like Teen Spirit ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/hTWKbfoikeg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "pkcJEvMcnEg",
+          "youtubeId": "pkcJEvMcnEg",
+          "title": "Nirvana - Lithium",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/pkcJEvMcnEg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "n6P0SitRwy8",
+          "youtubeId": "n6P0SitRwy8",
+          "title": "Nirvana - Heart-Shaped Box",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/n6P0SitRwy8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "vabnZ9-ex7o",
+        "isPlaying": false,
+        "secPlayed": 0
+      },
+      "viewCount": 1,
+      "_id": "yavXo-u"
+    },
+    {
+      "name": "Pearl Jam",
+      "description": "All fans enroll here!",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600583108/b5no6plpnrszirsqysp9.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "KmHKi"
+        }
+      ],
+      "tags": [
+        "Rock"
+      ],
+      "createdBy": {},
+      "createdAt": 1600583077155,
+      "songs": [
+        {
+          "id": "IpwHB2U3J1s",
+          "youtubeId": "IpwHB2U3J1s",
+          "title": "Black",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/IpwHB2U3J1s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "qM0zINtulhM",
+          "youtubeId": "qM0zINtulhM",
+          "title": "Pearl Jam - Alive ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/qM0zINtulhM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "CxKWTzr-k6s",
+          "youtubeId": "CxKWTzr-k6s",
+          "title": "Pearl Jam - Even Flow (Video)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/CxKWTzr-k6s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "bQtPzo-7AHs",
+          "youtubeId": "bQtPzo-7AHs",
+          "title": "Jeremy",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/bQtPzo-7AHs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "IpwHB2U3J1s",
+        "isPlaying": false,
+        "secPlayed": 0
+      },
+      "viewCount": 1,
+      "_id": "zAM9UZx"
+    },
+    {
+      "name": "90's MTV",
+      "description": "",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600583246/hm4qcyscnxshtnitbr2p.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "KmHKi"
+        }
+      ],
+      "tags": [
+        "Pop"
+      ],
+      "createdBy": {},
+      "createdAt": 1600583193531,
+      "songs": [
+        {
+          "id": "2kXMcjKhBgU",
+          "youtubeId": "2kXMcjKhBgU",
+          "title": "Phats & Small - Turn Around ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/2kXMcjKhBgU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "mMfxI3r_LyA",
+          "youtubeId": "mMfxI3r_LyA",
+          "title": "Modjo - Lady (Hear Me Tonight) ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/mMfxI3r_LyA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "y6120QOlsfU",
+          "youtubeId": "y6120QOlsfU",
+          "title": "Darude - Sandstorm",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/y6120QOlsfU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "5A9OIIapSko",
+          "youtubeId": "5A9OIIapSko",
+          "title": "ATB - 9PM (Till I Come) - HQ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/5A9OIIapSko/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "5DKYvo18FzA",
+          "youtubeId": "5DKYvo18FzA",
+          "title": "Stardust - Music Sounds Better With You ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/5DKYvo18FzA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "y6120QOlsfU",
+        "isPlaying": true,
+        "secPlayed": 0
+      },
+      "viewCount": 1,
+      "_id": "5JTLisd"
+    },
+    {
+      "name": "Daft Punk",
+      "description": "The wonderful French electro duo.",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600583439/woryvrnfuirts1uxxmj1.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "KmHKi"
+        }
+      ],
+      "tags": [
+        "Electronic"
+      ],
+      "createdBy": {},
+      "createdAt": 1600583433880,
+      "songs": [
+        {
+          "id": "FGBhQbmPwH8",
+          "youtubeId": "FGBhQbmPwH8",
+          "title": "Daft Punk - One More Time ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/FGBhQbmPwH8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "5NV6Rdv1a3I",
+          "youtubeId": "5NV6Rdv1a3I",
+          "title": "Daft Punk - Get Lucky (Official Audio) ft. Pharrell Williams, Nile Rodgers",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/5NV6Rdv1a3I/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "dwDns8x3Jb4",
+          "youtubeId": "dwDns8x3Jb4",
+          "title": "Daft Punk - Around the world (Official Audio)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/dwDns8x3Jb4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "qFLhGq0060w",
+          "youtubeId": "qFLhGq0060w",
+          "title": "The Weeknd - I Feel It Coming ft. Daft Punk ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/qFLhGq0060w/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "9sjWU5dGcGI",
+          "youtubeId": "9sjWU5dGcGI",
+          "title": "Daft Punk - Harder, Better, Faster, Stronger (Far Out Remix)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/9sjWU5dGcGI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "NF-kLy44Hls",
+          "youtubeId": "NF-kLy44Hls",
+          "title": "Daft Punk - Lose Yourself to Dance (Official Version)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/NF-kLy44Hls/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "FGBhQbmPwH8",
+        "isPlaying": true,
+        "secPlayed": 69.17718903242492
+      },
+      "viewCount": 1,
+      "_id": "W5v_-nT"
+    },
+    {
+      "name": "A day at the beach",
+      "description": "Electronic collection suitable for a day at the beach",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600583581/pczpuihjp6qvxeshsr86.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "KmHKi"
+        }
+      ],
+      "tags": [
+        "Electronic"
+      ],
+      "createdBy": {},
+      "createdAt": 1600583545213,
+      "songs": [
+        {
+          "id": "9Sc-ir2UwGU",
+          "youtubeId": "9Sc-ir2UwGU",
+          "title": "Kygo - Firestone ft. Conrad Sewell ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/9Sc-ir2UwGU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "5yXQJBU8A28",
+          "youtubeId": "5yXQJBU8A28",
+          "title": "Jonas Blue - Fast Car ft. Dakota ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/5yXQJBU8A28/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "ajN57m_OSpY",
+          "youtubeId": "ajN57m_OSpY",
+          "title": "Ellie Goulding, Diplo, Swae Lee - Close To Me ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/ajN57m_OSpY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "jGflUbPQfW8",
+          "youtubeId": "jGflUbPQfW8",
+          "title": "OMI - Cheerleader (Felix Jaehn Remix) ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/jGflUbPQfW8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "E07s5ZYygMg",
+          "youtubeId": "E07s5ZYygMg",
+          "title": "Harry Styles - Watermelon Sugar ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/E07s5ZYygMg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "bvC_0foemLY",
+          "youtubeId": "bvC_0foemLY",
+          "title": "Robin Schulz - Sugar (feat. Francesco Yates) ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/bvC_0foemLY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "5yXQJBU8A28",
+        "isPlaying": true,
+        "secPlayed": 221.92658708010865
+      },
+      "viewCount": 1,
+      "_id": "FQT42e2"
     }
   ],
   "user": {
