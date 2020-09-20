@@ -104,6 +104,11 @@ export class _BoxAdd extends Component {
         this.setState({ editBox: newBox });
     }
 
+    onPlaySong = () => {
+        // TODO: add capability to demo listen to song (on hover prefferably - connect new player comp. here)
+        return
+    }
+    
     render() {
         const { editBox, isSongPickOpen, isDragging } = this.state;
         if (!editBox) return <h1>Loading...</h1>
@@ -124,6 +129,7 @@ export class _BoxAdd extends Component {
                         onDragStart={this.onDragStart}
                         onDragEnd={this.onDragEnd}
                         isDragging={isDragging}
+                        onPlaySong={this.onPlaySong}
                     />
                 </DragDropContext>
 

@@ -2352,6 +2352,190 @@
       },
       "viewCount": 1,
       "_id": "WE_PnQ5"
+    },
+    {
+      "name": "פרץ את פרץ",
+      "description": "משה וקובי באים להרים לכם",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600618414/xklaiayqyziynj7ajrft.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "VzGzc"
+        }
+      ],
+      "tags": [
+        "Israeli"
+      ],
+      "createdBy": {},
+      "createdAt": 1600618411022,
+      "songs": [
+        {
+          "id": "06IrarkJBCQ",
+          "youtubeId": "06IrarkJBCQ",
+          "title": "קובי פרץ-בלבלי אותו",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/06IrarkJBCQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "dMaUNdXs6-w",
+          "youtubeId": "dMaUNdXs6-w",
+          "title": "משה פרץ - קרמלה",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/dMaUNdXs6-w/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "7Tubf4bthSk",
+          "youtubeId": "7Tubf4bthSk",
+          "title": "קובי פרץ סה לה וי קליפ Kobi Peretz",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/7Tubf4bthSk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "5IGwdsR0jw0",
+          "youtubeId": "5IGwdsR0jw0",
+          "title": "משה פרץ - כוס של יין",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/5IGwdsR0jw0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "16H12jNP3x0",
+          "youtubeId": "16H12jNP3x0",
+          "title": "משה פרץ - זיקוקים - Moshe Perez - Zikukim",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/16H12jNP3x0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "z86_x_TFkdM",
+          "youtubeId": "z86_x_TFkdM",
+          "title": "כמה אהבה קובי פרץ הקליפ הרשמי Kobi Peretz",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/z86_x_TFkdM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "2VWrWC2yxEw",
+          "youtubeId": "2VWrWC2yxEw",
+          "title": "קובי פרץ - אלף פרפרים Kobi Peretz",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/2VWrWC2yxEw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "06IrarkJBCQ",
+        "isPlaying": false,
+        "secPlayed": 6.513460946594238
+      },
+      "viewCount": 1,
+      "_id": "kN7pwUA"
+    },
+    {
+      "name": "Silly Songs",
+      "description": "Oh my god, i just entered this box by mistake...",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600618919/wycfxf0kckzuuhe0vluw.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "VzGzc"
+        }
+      ],
+      "tags": [
+        "Alternative"
+      ],
+      "createdBy": {},
+      "createdAt": 1600618911705,
+      "songs": [
+        {
+          "id": "k85mRPqvMbE",
+          "youtubeId": "k85mRPqvMbE",
+          "title": "Crazy Frog - Axel F ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/k85mRPqvMbE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "cGc_NfiTxng",
+          "youtubeId": "cGc_NfiTxng",
+          "title": "PSY - GANGNAM STYLE [Original Video]",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/cGc_NfiTxng/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "ZyhrYis509A",
+          "youtubeId": "ZyhrYis509A",
+          "title": "Aqua - Barbie Girl",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/ZyhrYis509A/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "jLPYnw17GTY",
+          "youtubeId": "jLPYnw17GTY",
+          "title": "Crazy Frog - I Like To Move It ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/jLPYnw17GTY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "NfuiB52K7X8",
+          "youtubeId": "NfuiB52K7X8",
+          "title": "PIKOTARO - PPAP (Pen Pineapple Apple Pen) ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/NfuiB52K7X8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "k85mRPqvMbE",
+        "isPlaying": true,
+        "secPlayed": 0
+      },
+      "viewCount": 1,
+      "_id": "SNsZ4EP"
     }
   ],
   "user": {
