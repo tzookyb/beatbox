@@ -911,17 +911,6 @@
           "addedBy": {}
         },
         {
-          "id": "8HdnyCIe-Kk",
-          "youtubeId": "8HdnyCIe-Kk",
-          "title": "Friend Of A Friend",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/8HdnyCIe-Kk/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
           "id": "22lISUXgSUw",
           "youtubeId": "22lISUXgSUw",
           "title": "Mahmood - Soldi (Prod. Dardust & Charlie Charles)",
@@ -942,12 +931,23 @@
             "height": 90
           },
           "addedBy": {}
+        },
+        {
+          "id": "Ho9MuPJPZ90",
+          "youtubeId": "Ho9MuPJPZ90",
+          "title": "Lake Malawi - Friend Of A Friend",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/Ho9MuPJPZ90/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
         }
       ],
       "currSong": {
         "id": "22lISUXgSUw",
         "isPlaying": true,
-        "secPlayed": 0
+        "secPlayed": 183.62636791416932
       },
       "viewCount": 2,
       "_id": "liTPj5R"
