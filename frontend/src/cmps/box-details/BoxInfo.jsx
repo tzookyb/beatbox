@@ -13,9 +13,10 @@ export class BoxInfo extends Component {
         isEditableImg: false
     }
 
-    componentDidMount() {
-        const { box } = this.props;
-        this.setState({ box })
+    componentDidUpdate(prevProps, prevState) {
+        const newBox = this.props.box
+        if (prevProps.box === newBox) return;
+        this.setState({ box: newBox })
     }
 
     onEdit = (field) => {
@@ -24,7 +25,8 @@ export class BoxInfo extends Component {
 
     onSave = (field) => {
         this.setState({ [field]: false });
-        this.props.onSaveInfo(this.state.box);
+        const newBox = { ...this.state.box }
+        this.props.onSaveInfo(newBox);
     }
 
     handleInput = ({ target }) => {
