@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { DragDropContext, Droppable } from 'react-beautiful-dnd'
+import { DragDropContext } from 'react-beautiful-dnd'
 // import Picker from 'emoji-picker-react';
 
 // import { ChatBox } from '../cmps/box-details/ChatBox'
@@ -94,20 +94,20 @@ class _BoxDetails extends Component {
         if (destination.droppableId === 'trash') {
             this.onRemoveSong(null, draggableId)
         }
+        else if (destination.index === source.index) return;
+        else this.onSwapSongs(source.index, destination.index);
         this.setState({ isDragging: false })
-        if (destination.index === source.index) return;
 
-        if (destination.droppableId === 'songList') {
-            this.onSwapSongs(source.index, destination.index);
-        }
+        // if (destination.droppableId === 'songList') {
+        // }
     }
 
-    onSwapSongs = (srcIdx, destIdx) => {
+    onSwapSongs = async (srcIdx, destIdx) => {
         const songs = [...this.props.box.songs];
         const [songToMove] = songs.splice(srcIdx, 1);
         songs.splice(destIdx, 0, songToMove)
         const newBox = { ...this.props.box, songs }
-        this.props.saveBox(newBox);
+        await this.props.saveBox(newBox);
     }
 
     render() {
