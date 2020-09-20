@@ -279,6 +279,10 @@
         {
           "name": "Guest",
           "id": "7fU7u"
+        },
+        {
+          "name": "Guest",
+          "id": "zeYrr"
         }
       ],
       "tags": [
@@ -323,10 +327,10 @@
       ],
       "currSong": {
         "id": "KExLCJAuTXA",
-        "isPlaying": true,
-        "secPlayed": 522
+        "isPlaying": false,
+        "secPlayed": 517
       },
-      "viewCount": 2,
+      "viewCount": 3,
       "_id": "t9rjp7s"
     },
     {
@@ -511,6 +515,10 @@
         {
           "name": "Guest",
           "id": "hiNXu"
+        },
+        {
+          "name": "Guest",
+          "id": "zeYrr"
         }
       ],
       "tags": [
@@ -598,11 +606,11 @@
         }
       ],
       "currSong": {
-        "id": "fJ9rUzIMcZQ",
-        "isPlaying": false,
-        "secPlayed": 37.43277904386902
+        "id": "kijpcUv-b8M",
+        "isPlaying": true,
+        "secPlayed": 99
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "CmjFCOE"
     },
     {
@@ -1204,6 +1212,10 @@
         {
           "name": "Guest",
           "id": "KmHKi"
+        },
+        {
+          "name": "Guest",
+          "id": "zeYrr"
         }
       ],
       "tags": [
@@ -1269,11 +1281,11 @@
         }
       ],
       "currSong": {
-        "id": "5ejT8FqglLM",
-        "isPlaying": false,
-        "secPlayed": 147.55195384169005
+        "id": "a3XUaHqqtjk",
+        "isPlaying": true,
+        "secPlayed": 90.650556
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "bqNpi5h"
     },
     {
@@ -1587,6 +1599,10 @@
         {
           "name": "Guest",
           "id": "KmHKi"
+        },
+        {
+          "name": "Guest",
+          "id": "zeYrr"
         }
       ],
       "tags": [
@@ -1652,11 +1668,11 @@
         }
       ],
       "currSong": {
-        "id": "y6120QOlsfU",
-        "isPlaying": true,
-        "secPlayed": 0
+        "id": "2kXMcjKhBgU",
+        "isPlaying": false,
+        "secPlayed": 49.59837484741211
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "5JTLisd"
     },
     {
@@ -1760,6 +1776,10 @@
         {
           "name": "Guest",
           "id": "KmHKi"
+        },
+        {
+          "name": "Guest",
+          "id": "zeYrr"
         }
       ],
       "tags": [
@@ -1836,11 +1856,11 @@
         }
       ],
       "currSong": {
-        "id": "jGflUbPQfW8",
+        "id": "9Sc-ir2UwGU",
         "isPlaying": false,
-        "secPlayed": 16.424115080108642
+        "secPlayed": 48.27529909155273
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "FQT42e2"
     },
     {
