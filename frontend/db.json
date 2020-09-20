@@ -109,6 +109,10 @@
         {
           "name": "Guest",
           "id": "7fU7u"
+        },
+        {
+          "name": "Guest",
+          "id": "KmHKi"
         }
       ],
       "tags": [
@@ -187,9 +191,9 @@
       "currSong": {
         "id": "_sMjZrVEB9E",
         "isPlaying": true,
-        "secPlayed": 0
+        "secPlayed": 7.645469963760376
       },
-      "viewCount": 2,
+      "viewCount": 3,
       "_id": "omAQnh6"
     },
     {
@@ -872,6 +876,10 @@
         {
           "name": "Guest",
           "id": "7fU7u"
+        },
+        {
+          "name": "Guest",
+          "id": "KmHKi"
         }
       ],
       "tags": [
@@ -937,11 +945,11 @@
         }
       ],
       "currSong": {
-        "id": "eVbShUW6QBM",
+        "id": "22lISUXgSUw",
         "isPlaying": true,
         "secPlayed": 0
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "liTPj5R"
     },
     {
@@ -2058,12 +2066,152 @@
         }
       ],
       "currSong": {
-        "id": "5yXQJBU8A28",
-        "isPlaying": true,
-        "secPlayed": 221.92658708010865
+        "id": "jGflUbPQfW8",
+        "isPlaying": false,
+        "secPlayed": 16.424115080108642
       },
       "viewCount": 1,
       "_id": "FQT42e2"
+    },
+    {
+      "name": "Rasta Man",
+      "description": "Finest reggae music",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600584206/njjh2z87q4gx3cxaf0db.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "KmHKi"
+        }
+      ],
+      "tags": [
+        "Blues"
+      ],
+      "createdBy": {},
+      "createdAt": 1600584193936,
+      "songs": [
+        {
+          "id": "w0c_dv0TUmU",
+          "youtubeId": "w0c_dv0TUmU",
+          "title": "Alborosie - Kingston Town",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/w0c_dv0TUmU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "zXt56MB-3vc",
+          "youtubeId": "zXt56MB-3vc",
+          "title": "UB40 - Red Red Wine ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/zXt56MB-3vc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "CHekNnySAfM",
+          "youtubeId": "CHekNnySAfM",
+          "title": "Bob Marley - Is This Love",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/CHekNnySAfM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "AvMuUnFNPIk",
+          "youtubeId": "AvMuUnFNPIk",
+          "title": "The Black Seeds - Cool Me Down ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/AvMuUnFNPIk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "ikzQmC3S-mE",
+          "youtubeId": "ikzQmC3S-mE",
+          "title": "Ziggy Marley | True To Myself | Dragonfly",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/ikzQmC3S-mE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "ikzQmC3S-mE",
+        "isPlaying": true,
+        "secPlayed": 0
+      },
+      "viewCount": 1,
+      "_id": "H7sPvSp"
+    },
+    {
+      "name": "Classical Music",
+      "description": "Gather around, classical lovers",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600584410/ljst4v8pbrw9inxkpm5v.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "KmHKi"
+        }
+      ],
+      "tags": [
+        "Classical"
+      ],
+      "createdBy": {},
+      "createdAt": 1600584402433,
+      "songs": [
+        {
+          "id": "lzicvVsKrRk",
+          "youtubeId": "lzicvVsKrRk",
+          "title": "Mozart - Symphony No. 5 in B flat, K. 22 [complete]",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/lzicvVsKrRk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "GRxofEmo3HA",
+          "youtubeId": "GRxofEmo3HA",
+          "title": "Four Seasons ~ Vivaldi",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/GRxofEmo3HA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "pybqjwf8w8s",
+          "youtubeId": "pybqjwf8w8s",
+          "title": "Struggle for pleasure - Wim Mertens",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/pybqjwf8w8s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "lzicvVsKrRk",
+        "isPlaying": true,
+        "secPlayed": 0
+      },
+      "viewCount": 1,
+      "_id": "CZduMDo"
     }
   ],
   "user": {

@@ -26,7 +26,7 @@ class _Header extends Component {
     render() {
         const { user } = this.props;
         return (
-            <header onScroll={this.onScroll} className={`${this.state.isScroll ? 'sticky' : ''} flex space-around  align-center`}>
+            <header onScroll={this.onScroll} className={`${this.state.isScroll || this.props.location.pathname!== '/' ? 'sticky' : ''} flex space-around  align-center`}>
 
                 {(this.props.location.pathname === '/') ?
                     <a href="/#top" className="logo">BeatBox</a> :
