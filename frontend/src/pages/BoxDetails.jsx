@@ -16,7 +16,7 @@ class _BoxDetails extends Component {
         box: null,
         filterBy: '',
         isSongPickOpen: false,
-        isDragging: true
+        isDragging: false
     }
 
     async componentDidMount() {

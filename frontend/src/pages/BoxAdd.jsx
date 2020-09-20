@@ -82,11 +82,11 @@ export class _BoxAdd extends Component {
         const { destination, source, draggableId } = result;
 
         if (!destination) return;
-        
+
         if (destination.droppableId === 'trash') {
             this.onRemoveSong(null, draggableId)
         }
-        
+
         this.setState({ isDragging: false })
 
         if (destination.index === source.index) return;
@@ -100,7 +100,7 @@ export class _BoxAdd extends Component {
         const songs = [...this.state.editBox.songs];
         const [songToMove] = songs.splice(srcIdx, 1);
         songs.splice(destIdx, 0, songToMove)
-        const newBox = { ...this.state.box, songs }
+        const newBox = { ...this.state.editBox, songs }
         this.setState({ editBox: newBox });
     }
 
