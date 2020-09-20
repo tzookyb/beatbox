@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
-import { Delete } from '@material-ui/icons';
 // import Picker from 'emoji-picker-react';
 
 // import { ChatBox } from '../cmps/box-details/ChatBox'
@@ -17,7 +16,7 @@ class _BoxDetails extends Component {
         box: null,
         filterBy: '',
         isSongPickOpen: false,
-        isDragging: false
+        isDragging: true
     }
 
     async componentDidMount() {
@@ -29,14 +28,16 @@ class _BoxDetails extends Component {
         this.setState({ box })
     }
 
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate(prevProps) {
         const newBox = this.props.box;
         if (prevProps.box !== newBox) this.setState({ box: newBox });
     }
 
     onRemoveSong = async (ev, songId) => {
-        ev.stopPropagation();
-        ev.preventDefault();
+        if (ev) {
+            ev.stopPropagation();
+            ev.preventDefault();
+        }
         const box = { ...this.props.box }
         if (box.currSong.id === songId) {
             this.props.notify('Cannot remove song that is currently playing')
@@ -88,17 +89,16 @@ class _BoxDetails extends Component {
     }
 
     onDragEnd = (result) => {
-        this.setState({ isDragging: false })
         const { destination, source, draggableId } = result;
-
         if (!destination) return;
+        if (destination.droppableId === 'trash') {
+            this.onRemoveSong(null, draggableId)
+        }
+        this.setState({ isDragging: false })
         if (destination.index === source.index) return;
 
         if (destination.droppableId === 'songList') {
             this.onSwapSongs(source.index, destination.index);
-        }
-        if (destination.droppableId === 'trash') {
-            this.onRemoveSong(null, draggableId)
         }
     }
 
@@ -142,18 +142,8 @@ class _BoxDetails extends Component {
                         onDragStart={this.onDragStart}
                         onDragEnd={this.onDragEnd}
                         isFilter={isFilter}
+                        isDragging={isDragging}
                     />
-
-                    {/* <Droppable droppableId={'trash'}>
-                        {(provided) => (
-                            isDragging && <Delete
-                                ref={provided.innerRef}
-                                {...provided.droppableProps}
-                                className="remove-song"
-                                style={{ fontSize: '50px', color: 'white' }}
-                            />
-                        )}
-                    </Droppable> */}
 
                 </DragDropContext>
 

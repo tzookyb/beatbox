@@ -50,7 +50,7 @@
 /* hide-helpers */
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .active {

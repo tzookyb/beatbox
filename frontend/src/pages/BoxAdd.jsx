@@ -52,8 +52,10 @@ export class _BoxAdd extends Component {
     }
 
     onRemoveSong = (ev, songId) => {
-        ev.stopPropagation();
-        ev.preventDefault();
+        if (ev) {
+            ev.stopPropagation();
+            ev.preventDefault();
+        }
         const newBox = { ...this.state.editBox }
         const songIdx = newBox.songs.findIndex(song => song.id === songId)
         newBox.songs.splice(songIdx, 1);
@@ -77,18 +79,20 @@ export class _BoxAdd extends Component {
     }
 
     onDragEnd = (result) => {
-        this.setState({ isDragging: false })
-
         const { destination, source, draggableId } = result;
 
         if (!destination) return;
+        
+        if (destination.droppableId === 'trash') {
+            this.onRemoveSong(null, draggableId)
+        }
+        
+        this.setState({ isDragging: false })
+
         if (destination.index === source.index) return;
 
         if (destination.droppableId === 'songList') {
             this.swapSongs(source.index, destination.index);
-        }
-        if (destination.droppableId === 'trash') {
-            this.onRemoveSong(null, draggableId)
         }
     }
 
@@ -101,7 +105,7 @@ export class _BoxAdd extends Component {
     }
 
     render() {
-        const { editBox, isSongPickOpen } = this.state;
+        const { editBox, isSongPickOpen, isDragging } = this.state;
         if (!editBox) return <h1>Loading...</h1>
         return (
             <section className="box-add main-container">
@@ -119,6 +123,7 @@ export class _BoxAdd extends Component {
                         isSongPickOpen={isSongPickOpen}
                         onDragStart={this.onDragStart}
                         onDragEnd={this.onDragEnd}
+                        isDragging={isDragging}
                     />
                 </DragDropContext>
 
