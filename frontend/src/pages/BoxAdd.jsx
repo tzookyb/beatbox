@@ -13,7 +13,7 @@ export class _BoxAdd extends Component {
     state = {
         box: null,
         msgWarning: '',
-        isSearchOpen: false
+        isSearchOpen: true
     }
 
     componentDidMount() {
@@ -56,12 +56,13 @@ export class _BoxAdd extends Component {
     onRemoveSong = (ev, songId) => {
         ev.stopPropagation();
         ev.preventDefault();
-        const box = { ...this.state.box }
-        const songIdx = box.songs.findIndex(song => song.id === songId)
-        box.songs.splice(songIdx, 1);
-        this.props.saveBox(box)
-        // await this.props.removeSong(songId)
+        const newBox = { ...this.state.box }
+        console.log(newBox);
+        const songIdx = newBox.songs.findIndex(song => song.id === songId)
+        newBox.songs.splice(songIdx, 1);
+        this.setState({ box: newBox })
     }
+
     onAddSong = (song) => {
         const newSong = boxService.addSong(song);
         const songs = [...this.state.box.songs, newSong];
@@ -76,7 +77,6 @@ export class _BoxAdd extends Component {
     }
 
     openAddSearch = () => {
-
         this.setState({ isSearchOpen: !this.state.isSearchOpen })
     }
 
