@@ -150,6 +150,9 @@ class _Player extends Component {
             this.setState({ playerLocation: { x: ev.clientX, y: ev.clientY } })
         }
     }
+    onDemoPlay = () => {
+
+    }
 
     render() {
         const { currBox, isPlaying, volume, muted, duration, isShrunk, playerLocation } = this.state
@@ -171,7 +174,6 @@ class _Player extends Component {
 
         const pL = playerLocation ? { left: `${playerLocation.x}`, top: `${playerLocation.y}` } : {};
 
-        console.log(this.props.location.pathname, currBox._id)
         return <React.Fragment>
             <ReactPlayer
                 ref={this.ref}

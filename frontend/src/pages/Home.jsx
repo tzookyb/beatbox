@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Footer from '../cmps/Footer'
 import { BoxApp } from './BoxApp'
 import { connect } from 'react-redux'
 
@@ -65,7 +64,6 @@ class _Home extends Component {
                 <div className="genre-list">
                     {genres.length && <BoxApp genres={genres} />}
                 </div>
-                <Footer />
             </React.Fragment>
         )
     }

@@ -82,11 +82,20 @@
 }
 
 .shrunk {
-    border-radius: 80%;
-    width: 100px;
+    // border-radius: 80%;
+    width: 285px;
     transition: 1s;
-
+    .song-time {
+        display: none;
+    }
     .player-thumbnail {
         margin: 0;
+    }
+    .player-ctrl-btn {
+        margin: 2px;
+
+        &:first-child{
+            margin-left: 5px;
+        }
     }
 }
