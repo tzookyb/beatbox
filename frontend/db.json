@@ -2056,6 +2056,282 @@
       },
       "viewCount": 1,
       "_id": "jGHRzB1"
+    },
+    {
+      "name": "RIP Chris Cornell",
+      "description": "Let's reminisce Chris's best songs",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600587238/jr00bf3ek9s8to4lpatb.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "zeYrr"
+        }
+      ],
+      "tags": [
+        "Rock"
+      ],
+      "createdBy": {},
+      "createdAt": 1600587232253,
+      "songs": [
+        {
+          "id": "3mbBbFH9fAg",
+          "youtubeId": "3mbBbFH9fAg",
+          "title": "Soundgarden - Black Hole Sun",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/3mbBbFH9fAg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "7QU1nvuxaMA",
+          "youtubeId": "7QU1nvuxaMA",
+          "title": "Audioslave - Like a Stone ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/7QU1nvuxaMA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "pBZs_Py-1_0",
+          "youtubeId": "pBZs_Py-1_0",
+          "title": "Soundgarden - Rusty Cage",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/pBZs_Py-1_0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "dXfLt-S4zpI",
+          "youtubeId": "dXfLt-S4zpI",
+          "title": "Say Hello 2 Heaven",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/dXfLt-S4zpI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "vVXIK1xCRpY",
+          "youtubeId": "vVXIK1xCRpY",
+          "title": "Audioslave - Show Me How to Live ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/vVXIK1xCRpY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "3mbBbFH9fAg",
+        "isPlaying": false,
+        "secPlayed": 146.12390013923644
+      },
+      "viewCount": 1,
+      "_id": "lC1A1ws"
+    },
+    {
+      "name": "Fifa Songs",
+      "description": "All Fifa game fans! the best game with the best songs! let's choose the best ever!",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600587487/yexgjyuchkyxnlyl7nbo.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "zeYrr"
+        }
+      ],
+      "tags": [
+        "Rock"
+      ],
+      "createdBy": {},
+      "createdAt": 1600587464097,
+      "songs": [
+        {
+          "id": "SSbBvKaM6sk",
+          "youtubeId": "SSbBvKaM6sk",
+          "title": "Blur - Song 2",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/SSbBvKaM6sk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "bxWxXncl53U",
+          "youtubeId": "bxWxXncl53U",
+          "title": "Bomba Estéreo - Soy Yo ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/bxWxXncl53U/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "w5tWYmIOWGk",
+          "youtubeId": "w5tWYmIOWGk",
+          "title": "Imagine Dragons - On Top Of The World ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/w5tWYmIOWGk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "UtF6Jej8yb4",
+          "youtubeId": "UtF6Jej8yb4",
+          "title": "Avicii - The Nights",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/UtF6Jej8yb4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "CfihYWRWRTQ",
+          "youtubeId": "CfihYWRWRTQ",
+          "title": "John Newman - Love Me Again",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/CfihYWRWRTQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "oTM3YPTYNo0",
+          "youtubeId": "oTM3YPTYNo0",
+          "title": "Beck - Dreams (Official Audio)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/oTM3YPTYNo0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "SSbBvKaM6sk",
+        "isPlaying": false,
+        "secPlayed": 146.12390013923644
+      },
+      "viewCount": 1,
+      "_id": "cig8yh1"
+    },
+    {
+      "name": "Best of Beck",
+      "description": "We all love the pop-mastermind Beck. What's your favorite song?",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600587903/u2xgeviu6xa6tvux4vwn.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "zeYrr"
+        }
+      ],
+      "tags": [
+        "Pop"
+      ],
+      "createdBy": {},
+      "createdAt": 1600587900998,
+      "songs": [
+        {
+          "id": "YgSPaXgAdzE",
+          "youtubeId": "YgSPaXgAdzE",
+          "title": "Beck - Loser",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/YgSPaXgAdzE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "WRCA_Fo0rWA",
+          "youtubeId": "WRCA_Fo0rWA",
+          "title": "Beck - Colors",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/WRCA_Fo0rWA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "qkNa5xzOe5U",
+          "youtubeId": "qkNa5xzOe5U",
+          "title": "Beck - Lost Cause",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/qkNa5xzOe5U/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "VkCg-3nxT8E",
+          "youtubeId": "VkCg-3nxT8E",
+          "title": "Beck - Girl",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/VkCg-3nxT8E/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "oTM3YPTYNo0",
+          "youtubeId": "oTM3YPTYNo0",
+          "title": "Beck - Dreams (Official Audio)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/oTM3YPTYNo0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "zWe6bMVvTzk",
+          "youtubeId": "zWe6bMVvTzk",
+          "title": "Beck - Lonesome Tears",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/zWe6bMVvTzk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "Tj08Ni3tklw",
+          "youtubeId": "Tj08Ni3tklw",
+          "title": "Beck - Up All Night ",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/Tj08Ni3tklw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "YgSPaXgAdzE",
+        "isPlaying": false,
+        "secPlayed": 3.5205768817443848
+      },
+      "viewCount": 1,
+      "_id": "WE_PnQ5"
     }
   ],
   "user": {
