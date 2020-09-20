@@ -39,7 +39,7 @@ export class SongPick extends Component {
         const { results, isSearching, searchStr } = this.state;
 
         return (
-            <div className={`song-pick ${this.props.isSearchOpen ? 'opened' : ''}`}>
+            <div className={`song-pick ${this.props.isSongPickOpen ? 'opened' : ''}`}>
                 <input type="search" name="searchStr" value={searchStr} onChange={this.handleInput} placeholder="Add song to playlist" autoComplete="off" />
 
                 {(isSearching && !results) && <div>Getting results...</div>}
