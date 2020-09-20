@@ -1,24 +1,23 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { DragDropContext } from 'react-beautiful-dnd'
 
 import { boxService } from '../services/boxService'
 import { saveBox, loadBoxes } from '../store/actions/boxAction'
 import { BoxInfoEdit } from '../cmps/box-details/BoxInfoEdit'
 import { SongList } from '../cmps/box-details/SongList'
-// import { cloudService } from '../services/cloudService'
-// import { SongPick } from '../cmps/box-details/SongPick'
-// import { SongPreview } from '../cmps/box-details/SongPreview'
 
 export class _BoxAdd extends Component {
     state = {
-        box: null,
+        editBox: null,
         msgWarning: '',
-        isSearchOpen: true
+        isSongPickOpen: true,
+        isDragging: false
     }
 
     componentDidMount() {
         const emptyBox = boxService.getEmptyBox();
-        this.setState({ box: emptyBox })
+        this.setState({ editBox: emptyBox })
     }
 
     printMsg() {
@@ -30,69 +29,99 @@ export class _BoxAdd extends Component {
 
     onAddBox = async (ev) => {
         ev.preventDefault();
-        if (!this.state.box.name) {
+        if (!this.state.editBox.name) {
             this.printMsg();
             return;
         }
-        const newBox = await this.props.saveBox(this.state.box);
-        await this.props.loadBoxes();
-        this.props.history.push(`/box/${newBox._id}`);
+        const addedBox = await this.props.saveBox(this.state.editBox);
+        this.props.loadBoxes();
+        this.props.history.push(`/box/${addedBox._id}`);
     }
 
     updateBox = (box) => {
-        this.setState(prevState => {
-            return {
-                box: {
-                    ...prevState.box,
-                    name: box.name,
-                    tags: box.tags,
-                    description: box.description,
-                    imgUrl: box.imgUrl
-                }
+        this.setState(prevState => ({
+            editBox:
+            {
+                ...prevState.editBox,
+                name: box.name,
+                tags: box.tags,
+                description: box.description,
+                imgUrl: box.imgUrl
             }
-        })
+        }))
     }
 
     onRemoveSong = (ev, songId) => {
         ev.stopPropagation();
         ev.preventDefault();
-        const newBox = { ...this.state.box }
-        console.log(newBox);
+        const newBox = { ...this.state.editBox }
         const songIdx = newBox.songs.findIndex(song => song.id === songId)
         newBox.songs.splice(songIdx, 1);
-        this.setState({ box: newBox })
+        this.setState({ editBox: newBox })
     }
 
-    onAddSong = (song) => {
+    onAddSong = (song, idx = undefined) => {
         const newSong = boxService.addSong(song);
-        const songs = [...this.state.box.songs, newSong];
-        this.setState(prevState => {
-            return {
-                box: {
-                    ...prevState.box,
-                    songs
-                }
-            }
-        })
+        const songs = [...this.state.editBox.songs];
+        if (!idx) songs.push(newSong);
+        else songs.splice(idx, 0, newSong);
+        this.setState(prevState => ({ editBox: { ...prevState.editBox, songs } }))
     }
 
-    openAddSearch = () => {
-        this.setState({ isSearchOpen: !this.state.isSearchOpen })
+    toggleSongPick = () => {
+        this.setState({ isSongPickOpen: !this.state.isSongPickOpen })
     }
 
-    //Add Song pick
+    onDragStart = () => {
+        this.setState({ isDragging: true })
+    }
+
+    onDragEnd = (result) => {
+        this.setState({ isDragging: false })
+
+        const { destination, source, draggableId } = result;
+
+        if (!destination) return;
+        if (destination.index === source.index) return;
+
+        if (destination.droppableId === 'songList') {
+            this.swapSongs(source.index, destination.index);
+        }
+        if (destination.droppableId === 'trash') {
+            this.onRemoveSong(null, draggableId)
+        }
+    }
+
+    swapSongs = (srcIdx, destIdx) => {
+        const songs = [...this.state.editBox.songs];
+        const [songToMove] = songs.splice(srcIdx, 1);
+        songs.splice(destIdx, 0, songToMove)
+        const newBox = { ...this.state.box, songs }
+        this.setState({ editBox: newBox });
+    }
+
     render() {
-        const { box, isSearchOpen } = this.state;
-        if (!box) return <h1>Loading...</h1>
+        const { editBox, isSongPickOpen } = this.state;
+        if (!editBox) return <h1>Loading...</h1>
         return (
             <section className="box-add main-container">
                 <h2>Create Your Box</h2>
                 <BoxInfoEdit updateBox={this.updateBox} />
-                <SongList songs={box.songs}
-                    onRemoveSong={this.onRemoveSong}
-                    onAddSong={this.onAddSong}
-                    openAddSearch={this.openAddSearch}
-                    isSearchOpen={isSearchOpen} />
+
+                <DragDropContext
+                    onDragStart={this.onDragStart}
+                    onDragEnd={this.onDragEnd}
+                >
+                    <SongList songs={editBox.songs}
+                        onRemoveSong={this.onRemoveSong}
+                        onAddSong={this.onAddSong}
+                        toggleSongPick={this.toggleSongPick}
+                        isSongPickOpen={isSongPickOpen}
+                        onDragStart={this.onDragStart}
+                        onDragEnd={this.onDragEnd}
+                    />
+                </DragDropContext>
+
                 <div className="btn-create-container">
                     <button className="btn-create" onClick={this.onAddBox}>Create Box</button>
                     {this.state.msgWarning && <label>{this.state.msgWarning}</label>}

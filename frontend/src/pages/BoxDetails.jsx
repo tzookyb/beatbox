@@ -1,21 +1,23 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-// import { ChatBox } from '../cmps/box-details/ChatBox'
+import { DragDropContext, Droppable } from 'react-beautiful-dnd'
+import { Delete } from '@material-ui/icons';
 // import Picker from 'emoji-picker-react';
+
+// import { ChatBox } from '../cmps/box-details/ChatBox'
 import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
 import { loadBox, notify, saveBox } from '../store/actions/boxAction'
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService';
 import { FilterBox } from "../cmps/boxes/FilterBox";
-// import { Fab } from '@material-ui/core';
-// import { AddCircleOutline } from '@material-ui/icons';
 
 class _BoxDetails extends Component {
     state = {
         box: null,
         filterBy: '',
-        isSearchOpen: false
+        isSongPickOpen: false,
+        isDragging: false
     }
 
     async componentDidMount() {
@@ -29,11 +31,8 @@ class _BoxDetails extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         const newBox = this.props.box;
-        // Prevent loop:
-        if (prevProps.box === newBox) return;
-        this.setState({ box: newBox });
+        if (prevProps.box !== newBox) this.setState({ box: newBox });
     }
-
 
     onRemoveSong = async (ev, songId) => {
         ev.stopPropagation();
@@ -57,8 +56,7 @@ class _BoxDetails extends Component {
         this.props.saveBox(box)
     }
 
-    onPlaySong = (currSongIdx) => {
-        const songId = this.state.box.songs[currSongIdx].id;
+    onPlaySong = (songId) => {
         const currSong = { id: songId, isPlaying: true, secPlayed: 0 };
         const box = { ...this.state.box, currSong };
         this.props.saveBox(box);
@@ -77,36 +75,87 @@ class _BoxDetails extends Component {
     }
 
     getSongsForDisplay = () => {
-        const songs = this.state.box.songs.filter(song => song.title.toLowerCase().includes(this.state.filterBy.toLowerCase()));
+        const songs = this.props.box.songs.filter(song => song.title.toLowerCase().includes(this.state.filterBy.toLowerCase()));
         return songs;
     }
 
-    openAddSearch = () => {
-        this.setState({ isSearchOpen: !this.state.isSearchOpen })
+    toggleSongPick = () => {
+        this.setState({ isSongPickOpen: !this.state.isSongPickOpen })
+    }
+
+    onDragStart = () => {
+        this.setState({ isDragging: true })
+    }
+
+    onDragEnd = (result) => {
+        this.setState({ isDragging: false })
+        const { destination, source, draggableId } = result;
+
+        if (!destination) return;
+        if (destination.index === source.index) return;
+
+        if (destination.droppableId === 'songList') {
+            this.onSwapSongs(source.index, destination.index);
+        }
+        if (destination.droppableId === 'trash') {
+            this.onRemoveSong(null, draggableId)
+        }
+    }
+
+    onSwapSongs = (srcIdx, destIdx) => {
+        const songs = [...this.props.box.songs];
+        const [songToMove] = songs.splice(srcIdx, 1);
+        songs.splice(destIdx, 0, songToMove)
+        const newBox = { ...this.props.box, songs }
+        this.props.saveBox(newBox);
     }
 
     render() {
-        const { box, isSearchOpen } = this.state;
+        const { isSongPickOpen, isDragging, filterBy } = this.state;
+        const isFilter = filterBy ? true : false;
+        const { box } = this.props;
         if (!box) return <h1>Loading...</h1>
         const currSongId = (box.currSong) ? box.currSong.id : null;
         const songsToShow = this.getSongsForDisplay();
         return (
             <section className="box-details main-container">
+
                 <BoxInfo box={box} onSaveInfo={this.onSaveInfo} />
                 <FilterBox onSetFilter={this.onSetFilter} />
                 {/* <Picker onEmojiClick={this.onEmojiClick} /> */}
                 {/* <Fab className="add-song-btn" onClick={this.openAddSearch} color="primary" aria-label="add">
                     <AddCircleOutline />
                 </Fab> */}
-                <SongList
-                    songs={songsToShow}
-                    onPlaySong={this.onPlaySong}
-                    onRemoveSong={this.onRemoveSong}
-                    onAddSong={this.onAddSong}
-                    isSearchOpen={isSearchOpen}
-                    openAddSearch={this.openAddSearch}
-                    nowPlayingId={currSongId}
-                />
+
+                <DragDropContext
+                    onDragStart={this.onDragStart}
+                    onDragEnd={this.onDragEnd}
+                >
+                    <SongList
+                        songs={songsToShow}
+                        onPlaySong={this.onPlaySong}
+                        onRemoveSong={this.onRemoveSong}
+                        onAddSong={this.onAddSong}
+                        isSongPickOpen={isSongPickOpen}
+                        toggleSongPick={this.toggleSongPick}
+                        nowPlayingId={currSongId}
+                        onDragStart={this.onDragStart}
+                        onDragEnd={this.onDragEnd}
+                        isFilter={isFilter}
+                    />
+
+                    {/* <Droppable droppableId={'trash'}>
+                        {(provided) => (
+                            isDragging && <Delete
+                                ref={provided.innerRef}
+                                {...provided.droppableProps}
+                                className="remove-song"
+                                style={{ fontSize: '50px', color: 'white' }}
+                            />
+                        )}
+                    </Droppable> */}
+
+                </DragDropContext>
 
                 {/* <ChatBox /> */}
             </section>
@@ -119,7 +168,6 @@ const mapStateToProps = state => {
         box: state.boxReducer.currBox
     }
 }
-
 
 const mapDispatchToProps = {
     loadBox,
