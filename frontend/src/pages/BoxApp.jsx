@@ -38,7 +38,6 @@ class _BoxApp extends Component {
 
     loadBoxes = async () => {
         await this.props.loadBoxes(this.state.filterBy);
-        // console.log('boxes loaded');
     }
 
     onToggleLikeBox = (boxId) => {
@@ -47,7 +46,7 @@ class _BoxApp extends Component {
             .then(() => this.loadBoxes())
     }
     onAddToFavorites = (boxId) => {
-        //TODO: ADD TO USER FAVORITS
+        //TODO: ADD TO USER FAVORITES
     }
 
     getMinimalUser() {
