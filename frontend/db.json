@@ -1115,236 +1115,6 @@
       "_id": "MeC8av_"
     },
     {
-      "name": "",
-      "description": "",
-      "imgUrl": null,
-      "likedByUsers": [],
-      "connectedUsers": [
-        {
-          "name": "Guest",
-          "id": "KmHKi"
-        }
-      ],
-      "tags": [
-        "Hip-hop"
-      ],
-      "createdBy": {},
-      "createdAt": 1600579176655,
-      "songs": [
-        {
-          "id": "LYHE4lD_CSA",
-          "youtubeId": "LYHE4lD_CSA",
-          "title": "ASD (Afrob & Samy Deluxe) - Sneak Preview ",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/LYHE4lD_CSA/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "ZXUmcj93CVY",
-          "youtubeId": "ZXUmcj93CVY",
-          "title": "ASD - Legendär / Populär",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/ZXUmcj93CVY/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "eCt5N4pdYic",
-          "youtubeId": "eCt5N4pdYic",
-          "title": "ASD (Afrob & Samy Deluxe) - Hey Du ",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/eCt5N4pdYic/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "s_jtWU7jxcg",
-          "youtubeId": "s_jtWU7jxcg",
-          "title": "ASD - Antihaltung",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/s_jtWU7jxcg/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "q9d6-_cEHNQ",
-          "youtubeId": "q9d6-_cEHNQ",
-          "title": "ASD - Tortellini Augen",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/q9d6-_cEHNQ/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "idzgERYmetg",
-          "youtubeId": "idzgERYmetg",
-          "title": "ASD-11.Χειμώνες (Feat. Άτοπος,Ένοπλος)",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/idzgERYmetg/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "RZTtwdSUYIg",
-          "youtubeId": "RZTtwdSUYIg",
-          "title": "ASD - Guck dir diese Jungs an",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/RZTtwdSUYIg/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "H68wWHEIIG0",
-          "youtubeId": "H68wWHEIIG0",
-          "title": "Asd",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/H68wWHEIIG0/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "MYyVf2s7pm4",
-          "youtubeId": "MYyVf2s7pm4",
-          "title": "ASD - Mensch gegen Maschine",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/MYyVf2s7pm4/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        }
-      ],
-      "currSong": {
-        "id": "LYHE4lD_CSA",
-        "isPlaying": false,
-        "secPlayed": 17.65123798855591
-      },
-      "viewCount": 1,
-      "_id": "4rWwQjD"
-    },
-    {
-      "name": "",
-      "description": "",
-      "imgUrl": null,
-      "likedByUsers": [],
-      "connectedUsers": [],
-      "tags": [
-        "Hip-hop"
-      ],
-      "createdBy": {},
-      "createdAt": 1600579176655,
-      "songs": [
-        {
-          "id": "ZXUmcj93CVY",
-          "youtubeId": "ZXUmcj93CVY",
-          "title": "ASD - Legendär / Populär",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/ZXUmcj93CVY/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "eCt5N4pdYic",
-          "youtubeId": "eCt5N4pdYic",
-          "title": "ASD (Afrob & Samy Deluxe) - Hey Du ",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/eCt5N4pdYic/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "s_jtWU7jxcg",
-          "youtubeId": "s_jtWU7jxcg",
-          "title": "ASD - Antihaltung",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/s_jtWU7jxcg/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "q9d6-_cEHNQ",
-          "youtubeId": "q9d6-_cEHNQ",
-          "title": "ASD - Tortellini Augen",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/q9d6-_cEHNQ/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "idzgERYmetg",
-          "youtubeId": "idzgERYmetg",
-          "title": "ASD-11.Χειμώνες (Feat. Άτοπος,Ένοπλος)",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/idzgERYmetg/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "RZTtwdSUYIg",
-          "youtubeId": "RZTtwdSUYIg",
-          "title": "ASD - Guck dir diese Jungs an",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/RZTtwdSUYIg/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "H68wWHEIIG0",
-          "youtubeId": "H68wWHEIIG0",
-          "title": "Asd",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/H68wWHEIIG0/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
-        {
-          "id": "MYyVf2s7pm4",
-          "youtubeId": "MYyVf2s7pm4",
-          "title": "ASD - Mensch gegen Maschine",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/MYyVf2s7pm4/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        }
-      ],
-      "currSong": null,
-      "viewCount": 0,
-      "_id": "evqmF5M"
-    },
-    {
       "name": "Electronic Chill",
       "description": "Wind down with this fantastic mellow electronic music.",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600580466/ifmadwtooq2kl0kvmmv5.jpg",
@@ -2163,6 +1933,10 @@
         {
           "name": "Guest",
           "id": "KmHKi"
+        },
+        {
+          "name": "Guest",
+          "id": "zeYrr"
         }
       ],
       "tags": [
@@ -2210,8 +1984,78 @@
         "isPlaying": true,
         "secPlayed": 0
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "CZduMDo"
+    },
+    {
+      "name": "Pulp Fiction",
+      "description": "Let's talk about the wonderful scenes with the original soundtrack",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600586814/nv8vlfamtcxl03fjcuqb.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "zeYrr"
+        }
+      ],
+      "tags": [
+        "Blues"
+      ],
+      "createdBy": {},
+      "createdAt": 1600586777236,
+      "songs": [
+        {
+          "id": "dl-FN6hd-MA",
+          "youtubeId": "dl-FN6hd-MA",
+          "title": "Jungle Boogie",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/dl-FN6hd-MA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "DjydOI4MEIw",
+          "youtubeId": "DjydOI4MEIw",
+          "title": "Dusty Springfield Son of a Preacher Man",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/DjydOI4MEIw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "JAHA4Jh5jkw",
+          "youtubeId": "JAHA4Jh5jkw",
+          "title": "Urge Overkill - Girl You'll Be a Woman Soon",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/JAHA4Jh5jkw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "1hLIXrlpRe8",
+          "youtubeId": "1hLIXrlpRe8",
+          "title": "Pulp Fiction Misirlou",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/1hLIXrlpRe8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "dl-FN6hd-MA",
+        "isPlaying": true,
+        "secPlayed": 0
+      },
+      "viewCount": 1,
+      "_id": "jGHRzB1"
     }
   ],
   "user": {
