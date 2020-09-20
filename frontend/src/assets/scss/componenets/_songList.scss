@@ -27,19 +27,18 @@
             background-color: $clr5;
         }
     }
-
-    .remove-song {
-        position: fixed;
-        bottom: 120px;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-        z-index: 9999;
-        transition: 0.2s;
-        animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-        &:hover {
-            animation: wobble-ver-right 0.5s;
-            color: red !important;
-        }
+}
+.remove-song {
+    position: fixed;
+    bottom: 120px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    transition: 0.2s;
+    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    &:hover {
+        animation: wobble-ver-right 0.5s;
+        color: red !important;
     }
 }
