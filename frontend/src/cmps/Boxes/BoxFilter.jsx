@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import SearchIcon from '@material-ui/icons/Search';
 
 export class BoxFilter extends Component {
     state = {

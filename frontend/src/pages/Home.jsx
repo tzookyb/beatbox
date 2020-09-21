@@ -31,7 +31,7 @@ class _Home extends Component {
 
     render() {
         const { boxes } = this.state;
-        if (!boxes) return <CircleLoading size="150px" color="#ac0aff" />
+        if (!boxes) return <CircleLoading  size="large" color= "#ac0aff"/>
         const genres = this.getGenres(boxes);
         return (
             <React.Fragment>

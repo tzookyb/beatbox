@@ -8,6 +8,7 @@ import { ButtonsFilter } from '../cmps/ButtonsFilter'
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService'
 import { loadUser } from '../store/actions/userAction'
+import CircleLoading from 'react-loadingg/lib/CircleLoading'
 
 class _BoxApp extends Component {
     state = {
@@ -65,7 +66,7 @@ class _BoxApp extends Component {
         // notused:
         const minimalUser = this.getMinimalUser();
         const { genres } = this.state;
-        if (!boxes || !genres) return <h1>Loading....</h1>
+        if (!boxes || !genres) return <CircleLoading  size="large" color= "#ac0aff"/>
         return (
             <section className="box-app" id="box">
                 <BoxFilter onSetFilter={this.onSetFilter} />

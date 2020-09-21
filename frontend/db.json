@@ -2112,6 +2112,10 @@
         {
           "name": "Guest",
           "id": "vOtPM"
+        },
+        {
+          "name": "Guest",
+          "id": "s6oRe"
         }
       ],
       "genre": "Easy",
@@ -2138,20 +2142,6 @@
           "title": "Coldplay - Fix You Cover by John Adams",
           "imgUrl": "https://i.ytimg.com/vi/vJn4c1xHk8k/hqdefault.jpg",
           "addedBy": {}
-        },
-        {
-          "id": "DP55oVWQ_yk",
-          "youtubeId": "DP55oVWQ_yk",
-          "title": "Ed Sheeran - Beautiful People (Acoustic) (Lyrics)",
-          "imgUrl": "https://i.ytimg.com/vi/DP55oVWQ_yk/hqdefault.jpg",
-          "addedBy": {}
-        },
-        {
-          "id": "egW0kxHS4u8",
-          "youtubeId": "egW0kxHS4u8",
-          "title": "Set Fire to the Rain (Acoustic)",
-          "imgUrl": "https://i.ytimg.com/vi/egW0kxHS4u8/hqdefault.jpg",
-          "addedBy": {}
         }
       ],
       "currSong": {
@@ -2159,7 +2149,7 @@
         "isPlaying": true,
         "secPlayed": 248.90538795803832
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "BzfkRSg"
     },
     {
@@ -2296,6 +2286,10 @@
         {
           "name": "Guest",
           "id": "vOtPM"
+        },
+        {
+          "name": "Guest",
+          "id": "h77Rb"
         }
       ],
       "genre": "Pop",
@@ -2341,9 +2335,9 @@
       "currSong": {
         "id": "zpzdgmqIHOQ",
         "isPlaying": false,
-        "secPlayed": 7.197227062942505
+        "secPlayed": 0
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "QDFMIug"
     },
     {
