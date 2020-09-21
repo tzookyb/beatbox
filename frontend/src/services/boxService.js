@@ -43,7 +43,7 @@ function byFilter(boxes, filterBy) {
     if (filterBy.genre && filterBy.name) {
         boxes.forEach(box => {
             // if (box.tags.includes(filterBy.genre) && box.name.toLowerCase().includes(filterBy.name.toLowerCase())) filterBoxes.push(box);
-            if (box.genre === filterBy.genre && box.name.toLowerCase().includes(filterBy.name.toLowerCase())) filterBoxes.push(box);
+            if (box.genre === filterBy.genre && box.name.toLowerCase().includes(filterBy.name.toLowerCase())) BoxFilteres.push(box);
         })
         return BoxFilteres;
     }
@@ -55,7 +55,7 @@ function byFilter(boxes, filterBy) {
     }
     else if (filterBy.genre) {
         boxes.forEach(box => {
-            if(box.genre === filterBy.genre) filterBoxes.push(box);
+            if(box.genre === filterBy.genre) BoxFilteres.push(box);
             // if (box.tags.includes(filterBy.genre)) filterBoxes.push(box);
         })
         return BoxFilteres;
