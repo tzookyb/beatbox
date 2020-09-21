@@ -198,7 +198,7 @@ class _Player extends Component {
             >
 
 
-                <img className="player-thumbnail" onClick={this.onToggleShrink} src={song.imgUrl.url} title={song.title} alt="song thumbnail" />
+                <img className="player-thumbnail" onClick={this.onToggleShrink} src={song.imgUrl} title={song.title} alt="song thumbnail" />
 
                 <span className="player-title">{song.title}</span>
 
