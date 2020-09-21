@@ -119,7 +119,7 @@ class _BoxDetails extends Component {
         const currSongId = (box.currSong) ? box.currSong.id : null;
         const songsToShow = this.getSongsForDisplay();
         return (
-            <section className="box-details main-container">
+            <section className="box-details">
 
                 <BoxInfo box={box} onSaveInfo={this.onSaveInfo} />
                 <BoxFilter onSetFilter={this.onSetFilter} />

@@ -191,7 +191,7 @@
       "_id": "omAQnh6"
     },
     {
-      "name": "Singer/Songwriter",
+      "name": "Singer",
       "description": "The best Singer/Songwriter compilation.\nEnchanting vocal and a guitar.",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600551014/p2pmsdqqnaxu7e4tfy6f.jpg",
       "likedByUsers": [
@@ -208,6 +208,10 @@
         {
           "name": "Guest",
           "id": "G92Ed"
+        },
+        {
+          "name": "Guest",
+          "id": "i3g7y"
         }
       ],
       "tags": [
@@ -219,24 +223,10 @@
       "createdAt": 1600551006105,
       "songs": [
         {
-          "id": "CoONtDv9eJg",
-          "youtubeId": "CoONtDv9eJg",
-          "title": "Passenger - All The Little Lights",
-          "imgUrl": "https://i.ytimg.com/vi/CoONtDv9eJg/hqdefault.jpg",
-          "addedBy": {}
-        },
-        {
           "id": "YdgoG8hTMUw",
           "youtubeId": "YdgoG8hTMUw",
           "title": "Banana Pancakes",
           "imgUrl": "https://i.ytimg.com/vi/YdgoG8hTMUw/hqdefault.jpg",
-          "addedBy": {}
-        },
-        {
-          "id": "2Vv-BfVoq4g",
-          "youtubeId": "2Vv-BfVoq4g",
-          "title": "Ed Sheeran - Perfect (Official Music Video)",
-          "imgUrl": "https://i.ytimg.com/vi/2Vv-BfVoq4g/hqdefault.jpg",
           "addedBy": {}
         },
         {
@@ -247,19 +237,40 @@
           "addedBy": {}
         },
         {
+          "id": "2Vv-BfVoq4g",
+          "youtubeId": "2Vv-BfVoq4g",
+          "title": "Ed Sheeran - Perfect (Official Music Video)",
+          "imgUrl": "https://i.ytimg.com/vi/2Vv-BfVoq4g/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "CoONtDv9eJg",
+          "youtubeId": "CoONtDv9eJg",
+          "title": "Passenger - All The Little Lights",
+          "imgUrl": "https://i.ytimg.com/vi/CoONtDv9eJg/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
           "id": "ZAYZmIfHEiU",
           "youtubeId": "ZAYZmIfHEiU",
           "title": "Passenger | Home (Official Album Audio)",
           "imgUrl": "https://i.ytimg.com/vi/ZAYZmIfHEiU/hqdefault.jpg",
           "addedBy": {}
+        },
+        {
+          "id": "kJlywPr9kVQ",
+          "youtubeId": "kJlywPr9kVQ",
+          "title": "La Caravane Passe - Nomadic Spirit (Clip officiel) ft. Mehdi Nassouli",
+          "imgUrl": "https://i.ytimg.com/vi/kJlywPr9kVQ/hqdefault.jpg",
+          "addedBy": {}
         }
       ],
       "currSong": {
-        "id": "CoONtDv9eJg",
+        "id": "YdgoG8hTMUw",
         "isPlaying": true,
         "secPlayed": 0
       },
-      "viewCount": 8,
+      "viewCount": 9,
       "_id": "8ODPTfm"
     },
     {
@@ -288,6 +299,10 @@
         {
           "name": "Guest",
           "id": "vOtPM"
+        },
+        {
+          "name": "Guest",
+          "id": "i3g7y"
         }
       ],
       "tags": [
@@ -329,10 +344,10 @@
       ],
       "currSong": {
         "id": "IwPOPL-ieD0",
-        "isPlaying": true,
-        "secPlayed": 0
+        "isPlaying": false,
+        "secPlayed": 4.928572942779541
       },
-      "viewCount": 9,
+      "viewCount": 10,
       "_id": "t9rjp7s"
     },
     {
@@ -2015,6 +2030,14 @@
         {
           "name": "Guest",
           "id": "YAsFp"
+        },
+        {
+          "name": "Guest",
+          "id": "i3g7y"
+        },
+        {
+          "name": "Guest",
+          "id": "s6oRe"
         }
       ],
       "genre": "Easy",
@@ -2065,18 +2088,23 @@
         }
       ],
       "currSong": {
-        "id": "01_RTOD9hYc",
+        "id": "8j9zMok6two",
         "isPlaying": false,
-        "secPlayed": 6.765123906539917
+        "secPlayed": 70.01158592752076
       },
-      "viewCount": 2,
+      "viewCount": 4,
       "_id": "djfB2_l"
     },
     {
       "name": "Get ready for bed",
       "description": "Let's get ready for sleep",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600671546/blnf9beg3mrlhif2sy6c.jpg",
-      "likedByUsers": [],
+      "likedByUsers": [
+        {
+          "name": "Guest",
+          "id": "i3g7y"
+        }
+      ],
       "connectedUsers": [
         {
           "name": "Guest",

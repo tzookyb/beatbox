@@ -3,7 +3,7 @@
     grid-template-columns: 20px 1fr 20px;
 
     > * {
-        grid-column: 2;
+        grid-column: 2 ;
 
         &.full {
             grid-column: 1 /-1;
@@ -30,8 +30,25 @@
     }
 }
 
+
+
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 20px;
+}
+
+
+.box-details {
+    display: grid;
+    grid-template-columns: 20px 1fr 40px;
+    
+    padding: 40px;
+    > * {
+        grid-column: 1/4 ;
+    }
+
+    @include for-normal-layout {
+        grid-template-columns: repeat(5, 1fr) ;
+    }
 }
