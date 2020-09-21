@@ -127,9 +127,8 @@ class _BoxDetails extends Component {
         const currSongId = (box.currSong) ? box.currSong.id : null;
         const songsToShow = this.getSongsForDisplay();
         return (
-            <section className="box-details main-container"
-            onMouseMove={this.onMouseMove}
-            >
+            <section className="box-details">
+                onMouseMove={this.onMouseMove}
 
                 <BoxInfo box={box} onSaveInfo={this.onSaveInfo} />
                 <BoxFilter onSetFilter={this.onSetFilter} />
@@ -143,7 +142,7 @@ class _BoxDetails extends Component {
                     onDragEnd={this.onDragEnd}
                 >
                     <SongList
-                        
+
                         songs={songsToShow}
                         onPlaySong={this.onPlaySong}
                         onRemoveSong={this.onRemoveSong}

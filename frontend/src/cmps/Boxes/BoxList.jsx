@@ -19,8 +19,8 @@ export class BoxList extends Component {
     executeScroll = async (scrollTo) => {
         let scrollDiff = this.ref.current.scrollWidth - this.ref.current.offsetWidth
         console.dir(this.ref)
-        console.log(this.state.isScrolled );
-       if (this.ref.current.scrollLeft === 0) {
+        console.log(this.state.isScrolled);
+        if (this.ref.current.scrollLeft === 0) {
             this.setState({ isScrolled: true });
         }
         else {
@@ -32,7 +32,7 @@ export class BoxList extends Component {
         console.log("executeScroll -> scrollTo", scrollTo)
         console.log("scrollToRef -> this.ref.current.scrollLeft", this.ref.current.scrollLeft)
         console.log("scrollToRef -> this.ref.current.scrollOffset", scrollDiff)
-      
+
     }
 
     // if(!boxes) return<h1>Loading...</h1>
@@ -41,9 +41,12 @@ export class BoxList extends Component {
         return (
             <section className={`list-container ${this.props.genre ? '' : 'main-container'}`}>
 
-                {this.props.genre && <Link to={`/box?&genre=${this.props.genre}`} className="btn-genre">{this.props.genre}</Link>}
-                {this.props.genre &&
+                {this.props.genre && <div className="genre-filter flex">
+                    <h3 className="title-genre">{this.props.genre}</h3>
+                    <Link to={`/box?&genre=${this.props.genre}`}> <h3 className="see-all-genre" >See All →</h3></Link>
+                </div>}
 
+                {this.props.genre &&
                     <div ref={this.ref} className="box-list image-container">
                         {this.state.isScrolled && <button className="list-left-btn" onClick={() => this.executeScroll(-350)}><ArrowBackIosIcon /></button>}
                         {this.props.boxes.map(box => {
