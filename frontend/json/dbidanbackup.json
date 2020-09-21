@@ -12,10 +12,6 @@
         {
           "name": "Guest",
           "id": "s6oRe"
-        },
-        {
-          "name": "Guest",
-          "id": "5bzxu"
         }
       ],
       "connectedUsers": [
@@ -46,10 +42,6 @@
         {
           "name": "Guest",
           "id": "s6oRe"
-        },
-        {
-          "name": "Guest",
-          "id": "5bzxu"
         }
       ],
       "tags": [
@@ -57,11 +49,7 @@
         "happy"
       ],
       "genre": "Easy",
-      "createdBy": {
-      "name":"Idan",
-      "imgUrl":"https://res-console.cloudinary.com/daqs7x8my/thumbnails/transform/v1/image/upload//v1600700773/am9lYWR2YnB4MWl6ZTVmcnZvM2c=/drilldown",
-      "id":"123"
-  },
+      "createdBy": {},
       "createdAt": 1600549709748,
       "songs": [
         {
@@ -108,11 +96,11 @@
         }
       ],
       "currSong": {
-        "id": "YVVTZgwYwVo",
+        "id": "eitDnP0_83k",
         "isPlaying": false,
-        "secPlayed": 4.957123
+        "secPlayed": 71.26254211825561
       },
-      "viewCount": 8,
+      "viewCount": 7,
       "_id": "_s4MlLQ"
     },
     {
@@ -148,11 +136,7 @@
         "happy"
       ],
       "genre": "Israeli",
-      "createdBy": {
-        "name": "Hilla",
-        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
-        "id":"014a"
-  },
+      "createdBy": {},
       "createdAt": 1600550242624,
       "songs": [
         {
@@ -218,24 +202,12 @@
         {
           "name": "Guest",
           "id": "AGafG"
-        },
-        {
-          "name": "Guest",
-          "id": "YAsFp"
-        },
-        {
-          "name": "Guest",
-          "id": "5bzxu"
         }
       ],
       "connectedUsers": [
         {
           "name": "Guest",
           "id": "G92Ed"
-        },
-        {
-          "name": "Guest",
-          "id": "5bzxu"
         }
       ],
       "tags": [
@@ -243,11 +215,7 @@
         "happy"
       ],
       "genre": "Easy",
-      "createdBy": {
-        "name": "Matan",
-        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
-        "id":"015a"
-  },
+      "createdBy": {},
       "createdAt": 1600551006105,
       "songs": [
         {
@@ -255,6 +223,13 @@
           "youtubeId": "CoONtDv9eJg",
           "title": "Passenger - All The Little Lights",
           "imgUrl": "https://i.ytimg.com/vi/CoONtDv9eJg/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "YdgoG8hTMUw",
+          "youtubeId": "YdgoG8hTMUw",
+          "title": "Banana Pancakes",
+          "imgUrl": "https://i.ytimg.com/vi/YdgoG8hTMUw/hqdefault.jpg",
           "addedBy": {}
         },
         {
@@ -272,19 +247,19 @@
           "addedBy": {}
         },
         {
-          "id": "YdgoG8hTMUw",
-          "youtubeId": "YdgoG8hTMUw",
-          "title": "Banana Pancakes",
-          "imgUrl": "https://i.ytimg.com/vi/YdgoG8hTMUw/hqdefault.jpg",
+          "id": "ZAYZmIfHEiU",
+          "youtubeId": "ZAYZmIfHEiU",
+          "title": "Passenger | Home (Official Album Audio)",
+          "imgUrl": "https://i.ytimg.com/vi/ZAYZmIfHEiU/hqdefault.jpg",
           "addedBy": {}
         }
       ],
       "currSong": {
         "id": "CoONtDv9eJg",
-        "isPlaying": false,
-        "secPlayed": 7.366410933242798
+        "isPlaying": true,
+        "secPlayed": 0
       },
-      "viewCount": 10,
+      "viewCount": 8,
       "_id": "8ODPTfm"
     },
     {
@@ -303,10 +278,6 @@
         {
           "name": "Guest",
           "id": "s6oRe"
-        },
-        {
-          "name": "Guest",
-          "id": "5bzxu"
         }
       ],
       "connectedUsers": [
@@ -317,14 +288,6 @@
         {
           "name": "Guest",
           "id": "vOtPM"
-        },
-        {
-          "name": "Guest",
-          "id": "jiJ5U"
-        },
-        {
-          "name": "Guest",
-          "id": "5bzxu"
         }
       ],
       "tags": [
@@ -332,11 +295,7 @@
         "happy"
       ],
       "genre": "Easy",
-      "createdBy": {
-        "name":"Idan",
-        "imgUrl":"https://res-console.cloudinary.com/daqs7x8my/thumbnails/transform/v1/image/upload//v1600700773/am9lYWR2YnB4MWl6ZTVmcnZvM2c=/drilldown",
-        "id":"123"
-    },
+      "createdBy": {},
       "createdAt": 1600551334649,
       "songs": [
         {
@@ -370,10 +329,10 @@
       ],
       "currSong": {
         "id": "IwPOPL-ieD0",
-        "isPlaying": false,
-        "secPlayed": 3.8028957882843017
+        "isPlaying": true,
+        "secPlayed": 0
       },
-      "viewCount": 11,
+      "viewCount": 9,
       "_id": "t9rjp7s"
     },
     {
@@ -392,11 +351,7 @@
         "happy"
       ],
       "genre": "Pop",
-      "createdBy": {
-        "name":"Idan",
-        "imgUrl":"https://res-console.cloudinary.com/daqs7x8my/thumbnails/transform/v1/image/upload//v1600700773/am9lYWR2YnB4MWl6ZTVmcnZvM2c=/drilldown",
-        "id":"123"
-    },
+      "createdBy": {},
       "createdAt": 1600551439033,
       "songs": [
         {
@@ -470,11 +425,7 @@
         "happy"
       ],
       "genre": "Rock",
-      "createdBy": {
-        "name":"Idan",
-        "imgUrl":"https://res-console.cloudinary.com/daqs7x8my/thumbnails/transform/v1/image/upload//v1600700773/am9lYWR2YnB4MWl6ZTVmcnZvM2c=/drilldown",
-        "id":"123"
-    },
+      "createdBy": {},
       "createdAt": 1600551919385,
       "songs": [
         {
@@ -532,11 +483,7 @@
         "happy"
       ],
       "genre": "Rock",
-      "createdBy": {
-        "name":"Idan",
-        "imgUrl":"https://res-console.cloudinary.com/daqs7x8my/thumbnails/transform/v1/image/upload//v1600700773/am9lYWR2YnB4MWl6ZTVmcnZvM2c=/drilldown",
-        "id":"123"
-    },
+      "createdBy": {},
       "createdAt": 1600552143328,
       "songs": [
         {
@@ -608,11 +555,7 @@
         "happy"
       ],
       "genre": "Electronic",
-      "createdBy": {
-        "name":"Idan",
-        "imgUrl":"https://res-console.cloudinary.com/daqs7x8my/thumbnails/transform/v1/image/upload//v1600700773/am9lYWR2YnB4MWl6ZTVmcnZvM2c=/drilldown",
-        "id":"123"
-    },
+      "createdBy": {},
       "createdAt": 1600553047304,
       "songs": [
         {
@@ -670,11 +613,7 @@
         "happy"
       ],
       "genre": "Israeli",
-      "createdBy": {
-        "name":"Idan",
-        "imgUrl":"https://res-console.cloudinary.com/daqs7x8my/thumbnails/transform/v1/image/upload//v1600700773/am9lYWR2YnB4MWl6ZTVmcnZvM2c=/drilldown",
-        "id":"123"
-    },
+      "createdBy": {},
       "createdAt": 1600553276857,
       "songs": [
         {
@@ -732,11 +671,7 @@
         "happy"
       ],
       "genre": "Country",
-      "createdBy": {
-        "name": "Hilla",
-        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
-        "id":"014a"
-  },
+      "createdBy": {},
       "createdAt": 1600553446081,
       "songs": [
         {
@@ -801,11 +736,7 @@
         "happy"
       ],
       "genre": "Pop",
-      "createdBy": {
-        "name": "Hilla",
-        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
-        "id":"014a"
-  },
+      "createdBy": {},
       "createdAt": 1600554901670,
       "songs": [
         {
@@ -863,11 +794,7 @@
         "happy"
       ],
       "genre": "Hip-hop",
-      "createdBy": {
-        "name": "Hilla",
-        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
-        "id":"014a"
-  },
+      "createdBy": {},
       "createdAt": 1600555174243,
       "songs": [
         {
@@ -930,11 +857,7 @@
         "happy"
       ],
       "genre": "Pop",
-      "createdBy": {
-        "name": "Hilla",
-        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
-        "id":"014a"
-  },
+      "createdBy": {},
       "createdAt": 1600555324132,
       "songs": [
         {
@@ -997,11 +920,7 @@
         "happy"
       ],
       "genre": "Electronic",
-      "createdBy": {
-        "name": "Hilla",
-        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
-        "id":"014a"
-  },
+      "createdBy": {},
       "createdAt": 1600580428683,
       "songs": [
         {
@@ -1064,10 +983,6 @@
         {
           "name": "Guest",
           "id": "H04UJ"
-        },
-        {
-          "name": "Guest",
-          "id": "5bzxu"
         }
       ],
       "connectedUsers": [],
@@ -1076,11 +991,7 @@
         "happy"
       ],
       "genre": "Israeli",
-      "createdBy": {
-        "name": "Hilla",
-        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
-        "id":"014a"
-  },
+      "createdBy": {},
       "createdAt": 1600580625698,
       "songs": [
         {
@@ -1138,11 +1049,7 @@
         "happy"
       ],
       "genre": "Electronic",
-      "createdBy": {
-        "name": "Hilla",
-        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
-        "id":"014a"
-  },
+      "createdBy": {},
       "createdAt": 1600582337051,
       "songs": [
         {
@@ -1222,11 +1129,7 @@
         "happy"
       ],
       "genre": "Rock",
-      "createdBy": {
-        "name": "Matan",
-        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
-        "id":"015a"
-  },
+      "createdBy": {},
       "createdAt": 1600582838497,
       "songs": [
         {
@@ -1281,10 +1184,6 @@
         {
           "name": "Guest",
           "id": "ld7Aq"
-        },
-        {
-          "name": "Guest",
-          "id": "jiJ5U"
         }
       ],
       "connectedUsers": [
@@ -1302,11 +1201,7 @@
         "happy"
       ],
       "genre": "Rock",
-      "createdBy": {
-        "name": "Matan",
-        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
-        "id":"015a"
-  },
+      "createdBy": {},
       "createdAt": 1600582960073,
       "songs": [
         {
@@ -1354,10 +1249,6 @@
         {
           "name": "Guest",
           "id": "ld7Aq"
-        },
-        {
-          "name": "Guest",
-          "id": "jiJ5U"
         }
       ],
       "connectedUsers": [],
@@ -1366,11 +1257,7 @@
         "happy"
       ],
       "genre": "Rock",
-      "createdBy": {
-        "name": "Matan",
-        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
-        "id":"015a"
-  },
+      "createdBy": {},
       "createdAt": 1600583077155,
       "songs": [
         {
@@ -1418,10 +1305,6 @@
         {
           "name": "Guest",
           "id": "H04UJ"
-        },
-        {
-          "name": "Guest",
-          "id": "jiJ5U"
         }
       ],
       "connectedUsers": [],
@@ -1430,11 +1313,7 @@
         "happy"
       ],
       "genre": "Pop",
-      "createdBy": {
-        "name": "Matan",
-        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
-        "id":"015a"
-  },
+      "createdBy": {},
       "createdAt": 1600583193531,
       "songs": [
         {
@@ -1492,11 +1371,7 @@
         "happy"
       ],
       "genre": "Electronic",
-      "createdBy": {
-        "name": "Matan",
-        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
-        "id":"015a"
-  },
+      "createdBy": {},
       "createdAt": 1600583433880,
       "songs": [
         {
@@ -1561,11 +1436,7 @@
         "happy"
       ],
       "genre": "Electronic",
-      "createdBy": {
-        "name": "Matan",
-        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
-        "id":"015a"
-  },
+      "createdBy": {},
       "createdAt": 1600583545213,
       "songs": [
         {
@@ -1630,11 +1501,7 @@
         "happy"
       ],
       "genre": "Blues",
-      "createdBy": {
-        "name": "Matan",
-        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
-        "id":"015a"
-  },
+      "createdBy": {},
       "createdAt": 1600584193936,
       "songs": [
         {
@@ -1908,12 +1775,7 @@
       "name": "Best of Beck",
       "description": "We all love the pop-mastermind Beck. What's your favorite song?",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600587903/u2xgeviu6xa6tvux4vwn.jpg",
-      "likedByUsers": [
-        {
-          "name": "Guest",
-          "id": "jiJ5U"
-        }
-      ],
+      "likedByUsers": [],
       "connectedUsers": [
         {
           "name": "Guest",
@@ -1994,18 +1856,9 @@
         {
           "name": "Guest",
           "id": "s6oRe"
-        },
-        {
-          "name": "Guest",
-          "id": "5bzxu"
         }
       ],
-      "connectedUsers": [
-        {
-          "name": "Guest",
-          "id": "5bzxu"
-        }
-      ],
+      "connectedUsers": [],
       "tags": [
         "love",
         "happy"
@@ -2022,10 +1875,24 @@
           "addedBy": {}
         },
         {
+          "id": "dMaUNdXs6-w",
+          "youtubeId": "dMaUNdXs6-w",
+          "title": "משה פרץ - קרמלה",
+          "imgUrl": "https://i.ytimg.com/vi/dMaUNdXs6-w/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
           "id": "7Tubf4bthSk",
           "youtubeId": "7Tubf4bthSk",
           "title": "קובי פרץ סה לה וי קליפ Kobi Peretz",
           "imgUrl": "https://i.ytimg.com/vi/7Tubf4bthSk/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "5IGwdsR0jw0",
+          "youtubeId": "5IGwdsR0jw0",
+          "title": "משה פרץ - כוס של יין",
+          "imgUrl": "https://i.ytimg.com/vi/5IGwdsR0jw0/hqdefault.jpg",
           "addedBy": {}
         },
         {
@@ -2048,21 +1915,14 @@
           "title": "קובי פרץ - אלף פרפרים Kobi Peretz",
           "imgUrl": "https://i.ytimg.com/vi/2VWrWC2yxEw/hqdefault.jpg",
           "addedBy": {}
-        },
-        {
-          "id": "dMaUNdXs6-w",
-          "youtubeId": "dMaUNdXs6-w",
-          "title": "משה פרץ - קרמלה",
-          "imgUrl": "https://i.ytimg.com/vi/dMaUNdXs6-w/hqdefault.jpg",
-          "addedBy": {}
         }
       ],
       "currSong": {
-        "id": "7Tubf4bthSk",
+        "id": "06IrarkJBCQ",
         "isPlaying": false,
-        "secPlayed": 7.152130053405762
+        "secPlayed": 0.41062689891052245
       },
-      "viewCount": 3,
+      "viewCount": 2,
       "_id": "kN7pwUA"
     },
     {
@@ -2124,19 +1984,29 @@
       "_id": "SNsZ4EP"
     },
     {
+      "name": "fdasf",
+      "description": "fsd",
+      "imgUrl": null,
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "vOtPM"
+        }
+      ],
+      "genre": "Hip-hop",
+      "createdBy": {},
+      "createdAt": 1600670234423,
+      "songs": [],
+      "currSong": null,
+      "viewCount": 1,
+      "_id": "RVSLYPQ"
+    },
+    {
       "name": "Morning",
       "description": "Bring your coffee and listen to this!",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600671328/u1srmxj10ah4pn0b73kf.jpg",
-      "likedByUsers": [
-        {
-          "name": "Guest",
-          "id": "YAsFp"
-        },
-        {
-          "name": "Guest",
-          "id": "5bzxu"
-        }
-      ],
+      "likedByUsers": [],
       "connectedUsers": [
         {
           "name": "Guest",
@@ -2145,10 +2015,6 @@
         {
           "name": "Guest",
           "id": "YAsFp"
-        },
-        {
-          "name": "Guest",
-          "id": "5bzxu"
         }
       ],
       "genre": "Easy",
@@ -2201,33 +2067,20 @@
       "currSong": {
         "id": "01_RTOD9hYc",
         "isPlaying": false,
-        "secPlayed": 1.9029210171661377
+        "secPlayed": 6.765123906539917
       },
-      "viewCount": 3,
+      "viewCount": 2,
       "_id": "djfB2_l"
     },
     {
       "name": "Get ready for bed",
       "description": "Let's get ready for sleep",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600671546/blnf9beg3mrlhif2sy6c.jpg",
-      "likedByUsers": [
-        {
-          "name": "Guest",
-          "id": "YAsFp"
-        },
-        {
-          "name": "Guest",
-          "id": "5bzxu"
-        }
-      ],
+      "likedByUsers": [],
       "connectedUsers": [
         {
           "name": "Guest",
           "id": "vOtPM"
-        },
-        {
-          "name": "Guest",
-          "id": "5bzxu"
         }
       ],
       "genre": "Easy",
@@ -2273,21 +2126,16 @@
       "currSong": {
         "id": "5Pjd3EU9rnI",
         "isPlaying": false,
-        "secPlayed": 1.5321809027252198
+        "secPlayed": 199.88410821743776
       },
-      "viewCount": 2,
+      "viewCount": 1,
       "_id": "ATJdh9W"
     },
     {
       "name": "Acoustic Guitar",
       "description": "ohhh that soft sound...",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600671748/cydv9lqh2scdj1vfaitl.jpg",
-      "likedByUsers": [
-        {
-          "name": "Guest",
-          "id": "YAsFp"
-        }
-      ],
+      "likedByUsers": [],
       "connectedUsers": [
         {
           "name": "Guest",
@@ -2461,12 +2309,7 @@
       "name": "Queen of Pop",
       "description": "Long live the queen",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600673321/ircrfpwlygygyznt7toy.jpg",
-      "likedByUsers": [
-        {
-          "name": "Guest",
-          "id": "jiJ5U"
-        }
-      ],
+      "likedByUsers": [],
       "connectedUsers": [
         {
           "name": "Guest",

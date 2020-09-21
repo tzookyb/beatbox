@@ -15,6 +15,7 @@ import { withRouter } from 'react-router-dom';
 
 class _Player extends Component {
     state = {
+        isReady: false,
         isShrunk: false,
         currBox: null,
         song: '',
@@ -39,7 +40,7 @@ class _Player extends Component {
 
         // if same box id, just update playerbox in state
         if (prevProps.currBox._id === newBox._id) {
-            this.setState({ isPlaying: newBox.currSong.isPlaying, secPlayed: newBox.currSong.secPlayed, currBox: newBox });
+            this.setState({ isPlaying: newBox.currSong?.isPlaying, secPlayed: newBox.currSong?.secPlayed, currBox: newBox });
             return;
         }
         // if different box -> setstate and load song idx 0 to player.
@@ -64,7 +65,7 @@ class _Player extends Component {
 
         const newBox = { ...this.state.currBox, currSong };
         this.props.saveBox(newBox);
-        this.play();
+        if (this.state.isReady) this.play();
     }
 
     togglePlay = () => {
@@ -123,6 +124,10 @@ class _Player extends Component {
         this.setState({ playing: true });
     }
 
+    onReady = () => {
+        this.setState({ isReady: true }, this.play)
+    }
+
     handleVolumeChange = (ev, value) => {
         this.setState({ volume: value })
     }
@@ -149,9 +154,6 @@ class _Player extends Component {
             ev.stopPropagation()
             this.setState({ playerLocation: { x: ev.clientX, y: ev.clientY } })
         }
-    }
-    onDemoPlay = () => {
-
     }
 
     render() {
@@ -184,6 +186,7 @@ class _Player extends Component {
                 volume={volume}
                 muted={muted}
                 onPlay={this.handlePlay}
+                onReady={this.onReady}
                 onPause={this.handlePause}
                 onEnded={this.handleEnded}
                 onProgress={this.handleProgress}

@@ -8,6 +8,14 @@
         {
           "name": "Guest",
           "id": "AGafG"
+        },
+        {
+          "name": "Guest",
+          "id": "s6oRe"
+        },
+        {
+          "name": "Guest",
+          "id": "5bzxu"
         }
       ],
       "connectedUsers": [
@@ -37,7 +45,11 @@
         },
         {
           "name": "Guest",
-          "id": "HFRuh"
+          "id": "s6oRe"
+        },
+        {
+          "name": "Guest",
+          "id": "5bzxu"
         }
       ],
       "tags": [
@@ -97,10 +109,10 @@
       ],
       "currSong": {
         "id": "YVVTZgwYwVo",
-        "isPlaying": true,
-        "secPlayed": 0
+        "isPlaying": false,
+        "secPlayed": 4.957123
       },
-      "viewCount": 7,
+      "viewCount": 8,
       "_id": "_s4MlLQ"
     },
     {
@@ -129,10 +141,6 @@
         {
           "name": "Guest",
           "id": "vOtPM"
-        },
-        {
-          "name": "Guest",
-          "id": "HFRuh"
         }
       ],
       "tags": [
@@ -148,6 +156,34 @@
       "createdAt": 1600550242624,
       "songs": [
         {
+          "id": "_sMjZrVEB9E",
+          "youtubeId": "_sMjZrVEB9E",
+          "title": "פלד - מה אני נראה לך / Peled - Ma Ani Nira",
+          "imgUrl": "https://i.ytimg.com/vi/_sMjZrVEB9E/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "Z760vU8ezg4",
+          "youtubeId": "Z760vU8ezg4",
+          "title": "סאבלימינל - הפינאלי - Subliminal",
+          "imgUrl": "https://i.ytimg.com/vi/Z760vU8ezg4/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "3PJmE-ucx_o",
+          "youtubeId": "3PJmE-ucx_o",
+          "title": "טונה - גם זה יעבור // Tuna - Gam Ze Ya'avor",
+          "imgUrl": "https://i.ytimg.com/vi/3PJmE-ucx_o/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "fQug2Rw7i7M",
+          "youtubeId": "fQug2Rw7i7M",
+          "title": "שבק ס - תתקעו בחצוצרה (קליפ)",
+          "imgUrl": "https://i.ytimg.com/vi/fQug2Rw7i7M/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
           "id": "PQp2a_yunmM",
           "youtubeId": "PQp2a_yunmM",
           "title": "קפה שחור חזק מארחים את נצ'י נצ' - יהיה בסדר // Cafe Shahor Hazak ft Nechi Nech - ihiye beseder",
@@ -160,17 +196,14 @@
           "title": "רביד פלוטניק - כפרה שלי / Ravid Plotnik - Kapara Sheli",
           "imgUrl": "https://i.ytimg.com/vi/jP4XtOEs-1s/hqdefault.jpg",
           "addedBy": {}
-        },
-        {
-          "id": "3PJmE-ucx_o",
-          "youtubeId": "3PJmE-ucx_o",
-          "title": "טונה - גם זה יעבור // Tuna - Gam Ze Ya'avor",
-          "imgUrl": "https://i.ytimg.com/vi/3PJmE-ucx_o/hqdefault.jpg",
-          "addedBy": {}
         }
       ],
-      "currSong": null,
-      "viewCount": 5,
+      "currSong": {
+        "id": "_sMjZrVEB9E",
+        "isPlaying": false,
+        "secPlayed": 7.747623
+      },
+      "viewCount": 4,
       "_id": "omAQnh6"
     },
     {
@@ -185,6 +218,14 @@
         {
           "name": "Guest",
           "id": "AGafG"
+        },
+        {
+          "name": "Guest",
+          "id": "YAsFp"
+        },
+        {
+          "name": "Guest",
+          "id": "5bzxu"
         }
       ],
       "connectedUsers": [
@@ -194,11 +235,7 @@
         },
         {
           "name": "Guest",
-<<<<<<< HEAD
           "id": "5bzxu"
-=======
-          "id": "HFRuh"
->>>>>>> 3102449728530d04175757e4c653392474b6aece
         }
       ],
       "tags": [
@@ -212,7 +249,6 @@
         "id":"015a"
   },
       "createdAt": 1600551006105,
-<<<<<<< HEAD
       "songs": [
         {
           "id": "CoONtDv9eJg",
@@ -229,10 +265,10 @@
           "addedBy": {}
         },
         {
-          "id": "CoONtDv9eJg",
-          "youtubeId": "CoONtDv9eJg",
-          "title": "Passenger - All The Little Lights",
-          "imgUrl": "https://i.ytimg.com/vi/CoONtDv9eJg/hqdefault.jpg",
+          "id": "RBumgq5yVrA",
+          "youtubeId": "RBumgq5yVrA",
+          "title": "Passenger | Let Her Go ",
+          "imgUrl": "https://i.ytimg.com/vi/RBumgq5yVrA/hqdefault.jpg",
           "addedBy": {}
         },
         {
@@ -240,13 +276,6 @@
           "youtubeId": "YdgoG8hTMUw",
           "title": "Banana Pancakes",
           "imgUrl": "https://i.ytimg.com/vi/YdgoG8hTMUw/hqdefault.jpg",
-          "addedBy": {}
-        },
-        {
-          "id": "kJlywPr9kVQ",
-          "youtubeId": "kJlywPr9kVQ",
-          "title": "La Caravane Passe - Nomadic Spirit (Clip officiel) ft. Mehdi Nassouli",
-          "imgUrl": "https://i.ytimg.com/vi/kJlywPr9kVQ/hqdefault.jpg",
           "addedBy": {}
         }
       ],
@@ -256,11 +285,6 @@
         "secPlayed": 7.366410933242798
       },
       "viewCount": 10,
-=======
-      "songs": [],
-      "currSong": null,
-      "viewCount": 9,
->>>>>>> 3102449728530d04175757e4c653392474b6aece
       "_id": "8ODPTfm"
     },
     {
@@ -275,6 +299,14 @@
         {
           "name": "Guest",
           "id": "H04UJ"
+        },
+        {
+          "name": "Guest",
+          "id": "s6oRe"
+        },
+        {
+          "name": "Guest",
+          "id": "5bzxu"
         }
       ],
       "connectedUsers": [
@@ -288,15 +320,11 @@
         },
         {
           "name": "Guest",
-<<<<<<< HEAD
           "id": "jiJ5U"
         },
         {
           "name": "Guest",
           "id": "5bzxu"
-=======
-          "id": "HFRuh"
->>>>>>> 3102449728530d04175757e4c653392474b6aece
         }
       ],
       "tags": [
@@ -312,13 +340,6 @@
       "createdAt": 1600551334649,
       "songs": [
         {
-          "id": "xPD-ul7JzXA",
-          "youtubeId": "xPD-ul7JzXA",
-          "title": "Dr  Bujak's Lecture on Britain and the Second World War",
-          "imgUrl": "https://i.ytimg.com/vi/xPD-ul7JzXA/hqdefault.jpg",
-          "addedBy": {}
-        },
-        {
           "id": "IwPOPL-ieD0",
           "youtubeId": "IwPOPL-ieD0",
           "title": "Home Is a Song I've Always Remembered | Teitur | TED Talks",
@@ -333,6 +354,13 @@
           "addedBy": {}
         },
         {
+          "id": "xPD-ul7JzXA",
+          "youtubeId": "xPD-ul7JzXA",
+          "title": "Dr  Bujak's Lecture on Britain and the Second World War",
+          "imgUrl": "https://i.ytimg.com/vi/xPD-ul7JzXA/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
           "id": "_IL5qrPlfmk",
           "youtubeId": "_IL5qrPlfmk",
           "title": "William Bennett lecture @ MACBA",
@@ -343,15 +371,9 @@
       "currSong": {
         "id": "IwPOPL-ieD0",
         "isPlaying": false,
-<<<<<<< HEAD
-        "secPlayed": 2.3811940915527345
-      },
-      "viewCount": 11,
-=======
         "secPlayed": 3.8028957882843017
       },
-      "viewCount": 10,
->>>>>>> 3102449728530d04175757e4c653392474b6aece
+      "viewCount": 11,
       "_id": "t9rjp7s"
     },
     {
@@ -359,7 +381,12 @@
       "description": "Probably the most popular band in the world!",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600551449/grcwz9pvkddi90c93cdz.jpg",
       "likedByUsers": [],
-      "connectedUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "s6oRe"
+        }
+      ],
       "tags": [
         "love",
         "happy"
@@ -418,9 +445,9 @@
       "currSong": {
         "id": "RB-RcX5DS5A",
         "isPlaying": false,
-        "secPlayed": 0
+        "secPlayed": 2.801054910354614
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "6A6VaoA"
     },
     {
@@ -1327,6 +1354,10 @@
         {
           "name": "Guest",
           "id": "ld7Aq"
+        },
+        {
+          "name": "Guest",
+          "id": "jiJ5U"
         }
       ],
       "connectedUsers": [],
@@ -1387,14 +1418,13 @@
         {
           "name": "Guest",
           "id": "H04UJ"
-        }
-      ],
-      "connectedUsers": [
+        },
         {
           "name": "Guest",
-          "id": "HFRuh"
+          "id": "jiJ5U"
         }
       ],
+      "connectedUsers": [],
       "tags": [
         "love",
         "happy"
@@ -1446,9 +1476,9 @@
       "currSong": {
         "id": "2kXMcjKhBgU",
         "isPlaying": false,
-        "secPlayed": 2.172344
+        "secPlayed": 49.59837484741211
       },
-      "viewCount": 3,
+      "viewCount": 2,
       "_id": "5JTLisd"
     },
     {
@@ -1820,8 +1850,6 @@
       },
       "viewCount": 1,
       "_id": "lC1A1ws"
-<<<<<<< HEAD
-=======
     },
     {
       "name": "Fifa Songs",
@@ -2804,7 +2832,6 @@
       },
       "viewCount": 1,
       "_id": "4F9CoMR"
->>>>>>> 3102449728530d04175757e4c653392474b6aece
     }
   ],
   "user": {

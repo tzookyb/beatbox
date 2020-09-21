@@ -40,11 +40,17 @@ class _BoxDetails extends Component {
             ev.preventDefault();
         }
         const box = { ...this.props.box }
-        if (box.currSong.id === songId) {
-            this.props.notify('Cannot remove song that is currently playing')
-            return;
-        }
         const songIdx = box.songs.findIndex(song => song.id === songId)
+        if (box.currSong.id === songId) {
+            if (box.songs.length === 1) {
+                box.currSong = null;
+            } else {
+                let nextSongIdx = songIdx + 1;
+                if (nextSongIdx === box.songs.length) nextSongIdx = 0;
+                box.currSong = { id: box.songs[nextSongIdx].id, isPlaying: true, played: 0 }
+            }
+            await this.props.saveBox(box)
+        }
         box.songs.splice(songIdx, 1);
         this.props.notify('Song removed')
         await this.props.saveBox(box)
@@ -90,6 +96,7 @@ class _BoxDetails extends Component {
     }
 
     onDragEnd = (result) => {
+        this.setState({ isDragging: false })
         const { destination, source, draggableId } = result;
         if (!destination) return;
         if (destination.droppableId === 'trash') {
@@ -97,10 +104,6 @@ class _BoxDetails extends Component {
         }
         else if (destination.index === source.index) return;
         else this.onSwapSongs(source.index, destination.index);
-        this.setState({ isDragging: false })
-
-        // if (destination.droppableId === 'songList') {
-        // }
     }
 
     onSwapSongs = async (srcIdx, destIdx) => {
@@ -111,15 +114,21 @@ class _BoxDetails extends Component {
         await this.props.saveBox(newBox);
     }
 
+    onMouseMove = (ev) => {
+        console.log(ev);
+
+    }
+
     render() {
         const { isSongPickOpen, isDragging, filterBy } = this.state;
         const isFilter = filterBy ? true : false;
         const { box } = this.props;
-        if (!box) return <CircleLoading  size="large" color= "#ac0aff"/>
+        if (!box) return <CircleLoading size="large" color="#ac0aff" />
         const currSongId = (box.currSong) ? box.currSong.id : null;
         const songsToShow = this.getSongsForDisplay();
         return (
             <section className="box-details">
+                onMouseMove={this.onMouseMove}
 
                 <BoxInfo box={box} onSaveInfo={this.onSaveInfo} />
                 <BoxFilter onSetFilter={this.onSetFilter} />
@@ -133,6 +142,7 @@ class _BoxDetails extends Component {
                     onDragEnd={this.onDragEnd}
                 >
                     <SongList
+
                         songs={songsToShow}
                         onPlaySong={this.onPlaySong}
                         onRemoveSong={this.onRemoveSong}

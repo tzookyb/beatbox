@@ -23,14 +23,16 @@
             color: #fff;
         }
         .remove-song-btn {
-            padding:5px;
+            padding: 5px;
             &:hover {
                 animation: wobble-ver-right 1s;
             }
         }
     }
 
-    &:hover:not(.now-playing) {
+    // left for Equalizer background:
+    // &:hover:not(.now-playing) {
+    &:hover {
         color: #cdcdcdfc;
         background-color: #6e6d6d6e;
         font-size: rem(14.5px);
@@ -38,14 +40,20 @@
 }
 
 .now-playing {
-    color: white;
-    background-image: url("../../img/equalizer2.gif");
-    background-size: cover;
-    background-blend-mode: saturation;
-    background-position: center;
-    transition: background-position 0s;
+    color: $clr3;
+}
 
-    &:hover {
-        font-size: rem(14.5px);
-    }
+.playing-anim {
+    width: 40px;
+    height: auto;
+    //     color: white;
+    //     background-image: url("../../img/equalizer2.gif");
+    //     background-size: cover;
+    //     background-blend-mode: saturation;
+    //     background-position: center;
+    //     transition: background-position 0s;
+
+    //     &:hover {
+    //         font-size: rem(14.5px);
+    //     }
 }
