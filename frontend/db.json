@@ -274,6 +274,10 @@
         {
           "name": "Guest",
           "id": "H04UJ"
+        },
+        {
+          "name": "Guest",
+          "id": "vOtPM"
         }
       ],
       "tags": [
@@ -315,10 +319,10 @@
       ],
       "currSong": {
         "id": "IwPOPL-ieD0",
-        "isPlaying": false,
-        "secPlayed": 4.8844770057220455
+        "isPlaying": true,
+        "secPlayed": 0
       },
-      "viewCount": 8,
+      "viewCount": 9,
       "_id": "t9rjp7s"
     },
     {
@@ -2151,9 +2155,9 @@
         }
       ],
       "currSong": {
-        "id": "1Xyj3aXbcn8",
-        "isPlaying": false,
-        "secPlayed": 200.128308
+        "id": "vJn4c1xHk8k",
+        "isPlaying": true,
+        "secPlayed": 248.90538795803832
       },
       "viewCount": 1,
       "_id": "BzfkRSg"
@@ -2459,6 +2463,124 @@
       },
       "viewCount": 1,
       "_id": "E6-UqOb"
+    },
+    {
+      "name": "Chill on the beach",
+      "description": "Music to lie on the sand",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683347/n4myb2wunkocgowcimlv.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "vOtPM"
+        }
+      ],
+      "genre": "Easy",
+      "createdBy": {},
+      "createdAt": 1600683305160,
+      "songs": [
+        {
+          "id": "m4gQTYGHfRg",
+          "youtubeId": "m4gQTYGHfRg",
+          "title": "Xavier Rudd - Come Let Go ",
+          "imgUrl": "https://i.ytimg.com/vi/m4gQTYGHfRg/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "0E1bNmyPWww",
+          "youtubeId": "0E1bNmyPWww",
+          "title": "Xavier Rudd - Follow The Sun ",
+          "imgUrl": "https://i.ytimg.com/vi/0E1bNmyPWww/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "whbidPR4nVA",
+          "youtubeId": "whbidPR4nVA",
+          "title": "Dennis Lloyd - Alien (Official Audio)",
+          "imgUrl": "https://i.ytimg.com/vi/whbidPR4nVA/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "kCfVv3RsGw4",
+          "youtubeId": "kCfVv3RsGw4",
+          "title": "Dennis Lloyd - NEVERMIND",
+          "imgUrl": "https://i.ytimg.com/vi/kCfVv3RsGw4/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "4RxbCrMarZ4",
+          "youtubeId": "4RxbCrMarZ4",
+          "title": "Sunlounger - Aguas Blancas (Chill Mix)",
+          "imgUrl": "https://i.ytimg.com/vi/4RxbCrMarZ4/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "_bJ7RCFxR88",
+          "youtubeId": "_bJ7RCFxR88",
+          "title": "Sunlounger - Lost (Chill)",
+          "imgUrl": "https://i.ytimg.com/vi/_bJ7RCFxR88/hqdefault.jpg",
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "m4gQTYGHfRg",
+        "isPlaying": false,
+        "secPlayed": 8.607818019073486
+      },
+      "viewCount": 1,
+      "_id": "tT1Jp9L"
+    },
+    {
+      "name": "Background Music",
+      "description": "Soft music to have on the background",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683686/xsrdt0rrwntgribro7ke.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "vOtPM"
+        }
+      ],
+      "genre": "Easy",
+      "createdBy": {},
+      "createdAt": 1600683648498,
+      "songs": [
+        {
+          "id": "rlyL0PyzkJU",
+          "youtubeId": "rlyL0PyzkJU",
+          "title": "Tepid Rainscape",
+          "imgUrl": "https://i.ytimg.com/vi/rlyL0PyzkJU/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "r_N1ySosd50",
+          "youtubeId": "r_N1ySosd50",
+          "title": "Lo Air - Day and Night (Original Mix) (Music Video)",
+          "imgUrl": "https://i.ytimg.com/vi/r_N1ySosd50/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "0mUDlFhz4TE",
+          "youtubeId": "0mUDlFhz4TE",
+          "title": "Relaxing Zen Music and Nature Sounds - Wooden Flute and Pan Flute - Meditation, Sleep Sound",
+          "imgUrl": "https://i.ytimg.com/vi/0mUDlFhz4TE/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "3TNK916Pjto",
+          "youtubeId": "3TNK916Pjto",
+          "title": "FOREST AT NIGHT - Crickets Owls Rain Wind in Trees - Relax Study Sleep De-Stress 🎧 100% RELAX",
+          "imgUrl": "https://i.ytimg.com/vi/3TNK916Pjto/hqdefault.jpg",
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "rlyL0PyzkJU",
+        "isPlaying": false,
+        "secPlayed": 9.10225
+      },
+      "viewCount": 1,
+      "_id": "4F9CoMR"
     }
   ],
   "user": {
