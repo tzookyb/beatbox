@@ -263,7 +263,7 @@
           "youtubeId": "RBumgq5yVrA",
           "title": "Passenger | Let Her Go ",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/YdgoG8hTMUw/default.jpg",
+            "url": "https://i.ytimg.com/vi/RBumgq5yVrA/default.jpg",
             "width": 120,
             "height": 90
           },
@@ -340,6 +340,17 @@
       "createdAt": 1600551334649,
       "songs": [
         {
+          "id": "KExLCJAuTXA",
+          "youtubeId": "KExLCJAuTXA",
+          "title": "TEDxZurich - Jojo Mayer - Exploring the distance between 0 and 1",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/KExLCJAuTXA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
           "id": "IwPOPL-ieD0",
           "youtubeId": "IwPOPL-ieD0",
           "title": "Home Is a Song I've Always Remembered | Teitur | TED Talks",
@@ -360,21 +371,10 @@
             "height": 90
           },
           "addedBy": {}
-        },
-        {
-          "id": "KExLCJAuTXA",
-          "youtubeId": "KExLCJAuTXA",
-          "title": "TEDxZurich - Jojo Mayer - Exploring the distance between 0 and 1",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/KExLCJAuTXA/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
         }
       ],
       "currSong": {
-        "id": "IwPOPL-ieD0",
+        "id": "KExLCJAuTXA",
         "isPlaying": false,
         "secPlayed": 1.178876979019165
       },
@@ -1013,11 +1013,11 @@
         }
       ],
       "currSong": {
-        "id": "PHn0jA4Klx8",
-        "isPlaying": false,
-        "secPlayed": 0
+        "id": "22lISUXgSUw",
+        "isPlaying": true,
+        "secPlayed": 183.62636791416932
       },
-      "viewCount": 3,
+      "viewCount": 2,
       "_id": "liTPj5R"
     },
     {
@@ -1102,7 +1102,12 @@
       "name": "Boy Bands",
       "description": "Boys will be boys",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600555365/b7wbvj0j0vdhi3fzaqyv.jpg",
-      "likedByUsers": [],
+      "likedByUsers": [
+        {
+          "name": "Guest",
+          "id": "i9JWo"
+        }
+      ],
       "connectedUsers": [
         {
           "name": "Guest",
@@ -1278,7 +1283,12 @@
           "id": "oxGU8"
         }
       ],
-      "connectedUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "i9JWo"
+        }
+      ],
       "tags": [
         "love",
         "happy"
@@ -1341,14 +1351,36 @@
             "height": 90
           },
           "addedBy": {}
+        },
+        {
+          "id": "5ejT8FqglLM",
+          "youtubeId": "5ejT8FqglLM",
+          "title": "עידן רפאל חביב - שלמים | Idan Rafael Haviv",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/5ejT8FqglLM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
+        {
+          "id": "iCitB5bkB3E",
+          "youtubeId": "iCitB5bkB3E",
+          "title": "דולי ופן - ואז את תראי (עם דיקלה, עידן חביב ומארק אליהו)",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/iCitB5bkB3E/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
         }
       ],
       "currSong": {
-        "id": "dG3NAutpEoY",
+        "id": "iCitB5bkB3E",
         "isPlaying": false,
-        "secPlayed": 10.28007288746643
+        "secPlayed": 20.91022598283386
       },
-      "viewCount": 3,
+      "viewCount": 4,
       "_id": "bqNpi5h"
     },
     {
@@ -1437,16 +1469,16 @@
         {
           "name": "Guest",
           "id": "ld7Aq"
+        },
+        {
+          "name": "Guest",
+          "id": "i9JWo"
         }
       ],
       "connectedUsers": [
         {
           "name": "Guest",
           "id": "KmHKi"
-        },
-        {
-          "name": "Guest",
-          "id": "bDhwa"
         }
       ],
       "tags": [
@@ -1516,9 +1548,9 @@
       "currSong": {
         "id": "UelDrZ1aFeY",
         "isPlaying": false,
-        "secPlayed": 2.2775950381469725
+        "secPlayed": 0
       },
-      "viewCount": 2,
+      "viewCount": 1,
       "_id": "OmLGxJ-"
     },
     {
@@ -1529,16 +1561,16 @@
         {
           "name": "Guest",
           "id": "ld7Aq"
+        },
+        {
+          "name": "Guest",
+          "id": "i9JWo"
         }
       ],
       "connectedUsers": [
         {
           "name": "Guest",
           "id": "KmHKi"
-        },
-        {
-          "name": "Guest",
-          "id": "bDhwa"
         }
       ],
       "tags": [
@@ -1597,9 +1629,9 @@
       "currSong": {
         "id": "vabnZ9-ex7o",
         "isPlaying": false,
-        "secPlayed": 13.309397881744385
+        "secPlayed": 0
       },
-      "viewCount": 2,
+      "viewCount": 1,
       "_id": "yavXo-u"
     },
     {
@@ -1610,6 +1642,10 @@
         {
           "name": "Guest",
           "id": "ld7Aq"
+        },
+        {
+          "name": "Guest",
+          "id": "i9JWo"
         }
       ],
       "connectedUsers": [],
@@ -1678,7 +1714,12 @@
       "name": "90's MTV",
       "description": "",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600583246/hm4qcyscnxshtnitbr2p.jpg",
-      "likedByUsers": [],
+      "likedByUsers": [
+        {
+          "name": "Guest",
+          "id": "i9JWo"
+        }
+      ],
       "connectedUsers": [],
       "tags": [
         "love",
@@ -2021,7 +2062,12 @@
       "name": "Classical Music",
       "description": "Gather around, classical lovers",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600584410/ljst4v8pbrw9inxkpm5v.jpg",
-      "likedByUsers": [],
+      "likedByUsers": [
+        {
+          "name": "Guest",
+          "id": "i9JWo"
+        }
+      ],
       "connectedUsers": [
         {
           "name": "Guest",
@@ -2430,7 +2476,12 @@
       "name": "פרץ את פרץ",
       "description": "משה וקובי באים להרים לכם",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600618414/xklaiayqyziynj7ajrft.jpg",
-      "likedByUsers": [],
+      "likedByUsers": [
+        {
+          "name": "Guest",
+          "id": "i9JWo"
+        }
+      ],
       "connectedUsers": [],
       "tags": [
         "love",
@@ -2521,9 +2572,9 @@
       "currSong": {
         "id": "06IrarkJBCQ",
         "isPlaying": false,
-        "secPlayed": 0.41062689891052245
+        "secPlayed": 6.513460946594238
       },
-      "viewCount": 2,
+      "viewCount": 1,
       "_id": "kN7pwUA"
     },
     {
