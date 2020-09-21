@@ -19,7 +19,7 @@ async function get(query) {
         console.dir(err);
         if (gCount === API_KEYS.length) {
             gCount = 0
-            throw ('all api keys failed.')
+            throw (err)
         } else {
             console.log('api key failed, trying another one...')
             gCurrApiKey++;
