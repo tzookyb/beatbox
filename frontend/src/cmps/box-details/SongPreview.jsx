@@ -19,11 +19,10 @@ function _SongPreview({ currBox, song, onRemoveSong, onPlaySong, isPlaying, inde
                     className={`song-preview flex space-between ${(isPlaying && currBox.currSong.isPlaying) ? 'now-playing' : ''}`}
                 >
                     <div className="song-data flex align-center">
-                        <div className="song-preview-img"><img src={song.imgUrl.url} alt="song-img" /></div>
+                        <div className="song-preview-img"><img src={song.imgUrl} alt="song-img" /></div>
                         <h3>{song.title}</h3>
                     </div>
                     <div className="song-preview-btns flex align-center">
-                        {/* {(nowPlayingId === song.id) && <img className="now-playing" src={equalizer} alt="now playing" title="Currently playing song" />} */}
                         <button onClick={(ev) => onRemoveSong(ev, song.id)} className="remove-song-btn"><DeleteOutlineIcon /></button>
                     </div>
                 </li>

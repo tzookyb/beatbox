@@ -33,7 +33,7 @@ export class BoxPreview extends Component {
         var count = this.state.count;
         this.interavlImgs = setInterval(() => {
             count = (count >= songs.length - 1) ? 0 : count += 1;
-            this.setState({ imgUrlOver: songs[this.state.count].imgUrl.url, count });
+            this.setState({ imgUrlOver: songs[this.state.count].imgUrl, count });
         }, 1500)
     }
 
