@@ -96,6 +96,7 @@ class _BoxDetails extends Component {
     }
 
     onDragEnd = (result) => {
+        this.setState({ isDragging: false })
         const { destination, source, draggableId } = result;
         if (!destination) return;
         if (destination.droppableId === 'trash') {
@@ -103,10 +104,6 @@ class _BoxDetails extends Component {
         }
         else if (destination.index === source.index) return;
         else this.onSwapSongs(source.index, destination.index);
-        this.setState({ isDragging: false })
-
-        // if (destination.droppableId === 'songList') {
-        // }
     }
 
     onSwapSongs = async (srcIdx, destIdx) => {
@@ -117,6 +114,11 @@ class _BoxDetails extends Component {
         await this.props.saveBox(newBox);
     }
 
+    onMouseMove = (ev) => {
+        console.log(ev);
+
+    }
+
     render() {
         const { isSongPickOpen, isDragging, filterBy } = this.state;
         const isFilter = filterBy ? true : false;
@@ -125,7 +127,9 @@ class _BoxDetails extends Component {
         const currSongId = (box.currSong) ? box.currSong.id : null;
         const songsToShow = this.getSongsForDisplay();
         return (
-            <section className="box-details main-container">
+            <section className="box-details main-container"
+            onMouseMove={this.onMouseMove}
+            >
 
                 <BoxInfo box={box} onSaveInfo={this.onSaveInfo} />
                 <BoxFilter onSetFilter={this.onSetFilter} />
@@ -139,6 +143,7 @@ class _BoxDetails extends Component {
                     onDragEnd={this.onDragEnd}
                 >
                     <SongList
+                        
                         songs={songsToShow}
                         onPlaySong={this.onPlaySong}
                         onRemoveSong={this.onRemoveSong}
