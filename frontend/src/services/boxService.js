@@ -39,26 +39,25 @@ async function query(filterBy) {
 function byFilter(boxes, filterBy) {
     if (!boxes) return;
     if (!filterBy) return boxes;
-    var BoxFilteres = [];
+    var boxFilteres = [];
     if (filterBy.genre && filterBy.name) {
         boxes.forEach(box => {
-            // if (box.tags.includes(filterBy.genre) && box.name.toLowerCase().includes(filterBy.name.toLowerCase())) filterBoxes.push(box);
-            if (box.genre === filterBy.genre && box.name.toLowerCase().includes(filterBy.name.toLowerCase())) BoxFilteres.push(box);
+            if (box.genre === filterBy.genre && box.name.toLowerCase().includes(filterBy.name.toLowerCase())) boxFilteres.push(box);
         })
-        return BoxFilteres;
+        return boxFilteres;
     }
     else if (filterBy.name) {
         boxes.forEach(box => {
-            if (box.name.toLowerCase().includes(filterBy.name.toLowerCase())) BoxFilteres.push(box);
+            if (box.name.toLowerCase().includes(filterBy.name.toLowerCase())) boxFilteres.push(box);
         })
-        return BoxFilteres;
+        return boxFilteres;
     }
     else if (filterBy.genre) {
         boxes.forEach(box => {
-            if(box.genre === filterBy.genre) BoxFilteres.push(box);
+            if(box.genre === filterBy.genre) boxFilteres.push(box);
             // if (box.tags.includes(filterBy.genre)) filterBoxes.push(box);
         })
-        return BoxFilteres;
+        return boxFilteres;
     }
 
     return boxes;
@@ -109,11 +108,12 @@ function addSong(song, songs) {
 
     //     return
     // }
+    console.log(song)
     const newSong = {
         id: song.id.videoId,
         youtubeId: song.id.videoId,
         title: youtubeService.titleSimplify(song.snippet.title),
-        imgUrl: song.snippet.thumbnails.default,
+        imgUrl: song.snippet.thumbnails.high.url,
         //TODO: add loggedin user to addedby -MATAN!!!!
         addedBy: {}
     }

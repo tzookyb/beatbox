@@ -9,6 +9,7 @@ import equalizer from '../../assets/img/equalizer5.gif';
 
 // import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 
+
 export class BoxPreview extends Component {
     state = {
         isOver: false,
@@ -16,43 +17,48 @@ export class BoxPreview extends Component {
         imgUrlOver: ''
     }
 
-    interavlImgs = null;
+    intervalImgs = null;
+
     componentDidMount() {
         const { box } = this.props;
-        this.setState({ imgUrlOver: box.imgUrl })
+        this.setState({ imgUrlOver: box.imgUrl, isOver: false })
     }
+
     getIsUserLikeBox(box, minimalUser) {
-        // const idx = boxService.getIsUserLikeBox(box, minimalUser);
         return (boxService.getIsUserLikeBox(box, minimalUser) !== -1) ? 'liked' : '';
     }
 
-    startOver = () => {
+    startOver = (isHomePage) => {
+        clearInterval(this.intervalImgs);
+        const { box } = this.props;
+        this.setState({ isOver: false, imgUrlOver: box.imgUrl, count: 0 });
+        if (!isHomePage) return;
         const { songs } = this.props.box;
-        if(!songs.length) return;
+        if (!songs.length) return;
         this.setState({ isOver: true });
         var count = this.state.count;
-        this.interavlImgs = setInterval(() => {
+        this.intervalImgs = setInterval(() => {
             count = (count >= songs.length - 1) ? 0 : count += 1;
-            this.setState({ imgUrlOver: songs[this.state.count].imgUrl.url, count });
-        }, 1500)
+            this.setState({ imgUrlOver: songs[this.state.count].imgUrl, count });
+        }, 2000)
     }
 
+
     stopOver = () => {
-        this.setState({ isOver: false })
-        clearInterval(this.interavlImgs);
-        this.interavlImgs = null;
+        clearInterval(this.intervalImgs);
+        this.intervalImgs = null;
+        const { box } = this.props;
+        this.setState({ isOver: false, imgUrlOver: box.imgUrl, count: 0 });
     }
 
     render() {
-        const { box, genre, isHomePage, onToggleLikeBox, minimalUser, onAddToFavorites } = this.props;
+        const { box, isHomePage, onToggleLikeBox, minimalUser } = this.props;
         const { isOver } = this.state;
-
-        // console.log("BoxPreview -> render -> src", src)
         return (
-            <div onMouseOver={this.startOver} onMouseLeave={this.stopOver} className={`box-preview ${isHomePage ? 'box-home-preview' : ''}`}>
+            <div onMouseOver={() => this.startOver(isHomePage)} onMouseLeave={this.stopOver} onMouseOut={this.stopOver} className={`box-preview ${isHomePage ? 'box-home-preview' : ''}`}>
                 <Link to={`/box/${box._id}`} >
-                    {!isOver && <div className="box-preview-img"><img src={box.imgUrl} alt="box-preview img" /></div>}
-                    {isOver && <div className="box-preview-img"><img src={this.state.imgUrlOver} alt="box-preview img" /></div>}
+                    {!isOver && <div className="box-preview-img"> <img src={box.imgUrl} alt="box-preview img" /></div>}
+                    {isOver && <div className="box-preview-img fade"> <img className="fade-in" src={this.state.imgUrlOver} alt="box-preview img" /></div>}
                 </Link>
                 <div className="box-preview-details flex align-center column space-between">
                     <h3>{box.name}</h3>
