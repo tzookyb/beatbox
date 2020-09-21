@@ -42,7 +42,6 @@ function byFilter(boxes, filterBy) {
     var boxFilteres = [];
     if (filterBy.genre && filterBy.name) {
         boxes.forEach(box => {
-            // if (box.tags.includes(filterBy.genre) && box.name.toLowerCase().includes(filterBy.name.toLowerCase())) filterBoxes.push(box);
             if (box.genre === filterBy.genre && box.name.toLowerCase().includes(filterBy.name.toLowerCase())) boxFilteres.push(box);
         })
         return boxFilteres;
