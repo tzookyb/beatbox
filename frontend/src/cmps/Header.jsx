@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
+import Avatar from '@material-ui/core/Avatar';
 
 import { loadUser } from '../store/actions/userAction'
 
@@ -43,8 +44,10 @@ class _Header extends Component {
 
                     {/* {loggedinUser && <button onClick={() => onLogout()}>Logout</button>} */}
 
-                    {user && <div className="avatar-img flex column align-center">
-                        <img src={user.imgUrl}  alt="avatar" />
+                    {user && <div className="flex column align-center">
+                    <Avatar alt="Remy Sharp" src={user.imgUrl} />
+
+                        {/* <img src={user.imgUrl}  alt="avatar" /> */}
                         <label className="avatar-name">Hi {user.username}</label>
 
                     </div>}

@@ -14,9 +14,20 @@
 
 .login-page {
   padding-top: 200px;
+  width: 500px;
+  margin: 0 auto;
 
   .input-login {
+    >*{
+      margin: 5px;
+      background: #28292a;
+      border: 1px solid white;
+      color: white;
+      padding: 5px;
+      // width: 50%;
+    }
     .box-img {
+      margin: 0 auto;
       img {
         width: 200px;
         height: 200px;
