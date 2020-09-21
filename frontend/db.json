@@ -1407,8 +1407,7 @@
       "description": "Electronic collection suitable for a day at the beach",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600583581/pczpuihjp6qvxeshsr86.jpg",
       "likedByUsers": [],
-      "connectedUsers": [
-      ],
+      "connectedUsers": [],
       "tags": [
         "love",
         "happy"
@@ -1531,8 +1530,7 @@
       "description": "Gather around, classical lovers",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600584410/ljst4v8pbrw9inxkpm5v.jpg",
       "likedByUsers": [],
-      "connectedUsers": [
-      ],
+      "connectedUsers": [],
       "tags": [
         "love",
         "happy"
@@ -2416,6 +2414,51 @@
       },
       "viewCount": 1,
       "_id": "2l3HadM"
+    },
+    {
+      "name": "Let's Study",
+      "description": "Music to keep you focused while studying with friends",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600675759/estpocmowmmckxr7azsm.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "ASi5z"
+        }
+      ],
+      "genre": "Easy",
+      "createdBy": {},
+      "createdAt": 1600675205003,
+      "songs": [
+        {
+          "id": "Td-yC-Mx0z4",
+          "youtubeId": "Td-yC-Mx0z4",
+          "title": "Rite of Passage",
+          "imgUrl": "https://i.ytimg.com/vi/Td-yC-Mx0z4/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "sUh3t-ImGbs",
+          "youtubeId": "sUh3t-ImGbs",
+          "title": "Color Me Blue",
+          "imgUrl": "https://i.ytimg.com/vi/sUh3t-ImGbs/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "JqEiEStMffc",
+          "youtubeId": "JqEiEStMffc",
+          "title": "The Morning After",
+          "imgUrl": "https://i.ytimg.com/vi/JqEiEStMffc/hqdefault.jpg",
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "Td-yC-Mx0z4",
+        "isPlaying": false,
+        "secPlayed": 0
+      },
+      "viewCount": 1,
+      "_id": "E6-UqOb"
     }
   ],
   "user": {
