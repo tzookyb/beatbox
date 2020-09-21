@@ -139,17 +139,24 @@
           "addedBy": {}
         },
         {
-          "id": "fQug2Rw7i7M",
-          "youtubeId": "fQug2Rw7i7M",
-          "title": "שבק ס - תתקעו בחצוצרה (קליפ)",
-          "imgUrl": "https://i.ytimg.com/vi/fQug2Rw7i7M/hqdefault.jpg",
-          "addedBy": {}
-        },
-        {
           "id": "Z760vU8ezg4",
           "youtubeId": "Z760vU8ezg4",
           "title": "סאבלימינל - הפינאלי - Subliminal",
           "imgUrl": "https://i.ytimg.com/vi/Z760vU8ezg4/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "3PJmE-ucx_o",
+          "youtubeId": "3PJmE-ucx_o",
+          "title": "טונה - גם זה יעבור // Tuna - Gam Ze Ya'avor",
+          "imgUrl": "https://i.ytimg.com/vi/3PJmE-ucx_o/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "fQug2Rw7i7M",
+          "youtubeId": "fQug2Rw7i7M",
+          "title": "שבק ס - תתקעו בחצוצרה (קליפ)",
+          "imgUrl": "https://i.ytimg.com/vi/fQug2Rw7i7M/hqdefault.jpg",
           "addedBy": {}
         },
         {
@@ -164,13 +171,6 @@
           "youtubeId": "jP4XtOEs-1s",
           "title": "רביד פלוטניק - כפרה שלי / Ravid Plotnik - Kapara Sheli",
           "imgUrl": "https://i.ytimg.com/vi/jP4XtOEs-1s/hqdefault.jpg",
-          "addedBy": {}
-        },
-        {
-          "id": "3PJmE-ucx_o",
-          "youtubeId": "3PJmE-ucx_o",
-          "title": "טונה - גם זה יעבור // Tuna - Gam Ze Ya'avor",
-          "imgUrl": "https://i.ytimg.com/vi/3PJmE-ucx_o/hqdefault.jpg",
           "addedBy": {}
         }
       ],
@@ -1985,6 +1985,10 @@
         {
           "name": "Guest",
           "id": "vOtPM"
+        },
+        {
+          "name": "Guest",
+          "id": "YAsFp"
         }
       ],
       "genre": "Easy",
@@ -2035,11 +2039,11 @@
         }
       ],
       "currSong": {
-        "id": "04mfKJWDSzI",
+        "id": "01_RTOD9hYc",
         "isPlaying": false,
-        "secPlayed": 38.46368493133545
+        "secPlayed": 6.765123906539917
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "djfB2_l"
     },
     {
