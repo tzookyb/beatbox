@@ -41,7 +41,7 @@ export class BoxList extends Component {
         return (
             <section className={`list-container ${this.props.genre ? '' : 'main-container'}`}>
 
-                {this.props.genre && <Link to={`/box?&thisgenre=${this.props.genre}`} className="btn-genre">{this.props.genre}</Link>}
+                {this.props.genre && <Link to={`/box?&genre=${this.props.genre}`} className="btn-genre">{this.props.genre}</Link>}
                 {this.props.genre &&
 
                     <div ref={this.ref} className="box-list image-container">

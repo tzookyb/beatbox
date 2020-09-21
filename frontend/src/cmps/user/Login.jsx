@@ -45,7 +45,7 @@ class _Login extends React.Component {
         const { user } = this.state;
         return (
             <div className="login-page">
-                <form className="input-login" onSubmit={this.onLogin}>
+                <form className="input-login flex column" onSubmit={this.onLogin}>
                     <input name="username" type="text" onChange={this.onChange} placeholder="User Name:" autoComplete="off" />
                     <input name="fullName" type="text" onChange={this.onChange} placeholder="Full Name" autoComplete="off" />
                     <input name="password" type="password" onChange={this.onChange} placeholder="Password" />
@@ -56,7 +56,7 @@ class _Login extends React.Component {
                             <div className="upload-box-img">
                                 Upload Image
                             </div>
-                            <img src={user.imgUrl} alt="" />
+                            <img src={user.imgUrl || imgPlaceholder} alt="user" />
                         </label>
                     </div>
 

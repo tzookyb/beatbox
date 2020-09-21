@@ -194,12 +194,20 @@
         {
           "name": "Guest",
           "id": "AGafG"
+        },
+        {
+          "name": "Guest",
+          "id": "YAsFp"
         }
       ],
       "connectedUsers": [
         {
           "name": "Guest",
           "id": "BiiD6"
+        },
+        {
+          "name": "Guest",
+          "id": "jiJ5U"
         }
       ],
       "tags": [
@@ -256,9 +264,9 @@
       "currSong": {
         "id": "YdgoG8hTMUw",
         "isPlaying": false,
-        "secPlayed": 6.565436984741211
+        "secPlayed": 11.93810712588501
       },
-      "viewCount": 8,
+      "viewCount": 9,
       "_id": "8ODPTfm"
     },
     {
@@ -273,6 +281,10 @@
         {
           "name": "Guest",
           "id": "H04UJ"
+        },
+        {
+          "name": "Guest",
+          "id": "YAsFp"
         }
       ],
       "connectedUsers": [
@@ -283,6 +295,10 @@
         {
           "name": "Guest",
           "id": "vOtPM"
+        },
+        {
+          "name": "Guest",
+          "id": "jiJ5U"
         }
       ],
       "tags": [
@@ -323,11 +339,11 @@
         }
       ],
       "currSong": {
-        "id": "IwPOPL-ieD0",
+        "id": "3frKGcuGzEg",
         "isPlaying": true,
-        "secPlayed": 0
+        "secPlayed": 1.8333318798370362
       },
-      "viewCount": 9,
+      "viewCount": 10,
       "_id": "t9rjp7s"
     },
     {
@@ -1170,6 +1186,10 @@
         {
           "name": "Guest",
           "id": "ld7Aq"
+        },
+        {
+          "name": "Guest",
+          "id": "jiJ5U"
         }
       ],
       "connectedUsers": [
@@ -1235,6 +1255,10 @@
         {
           "name": "Guest",
           "id": "ld7Aq"
+        },
+        {
+          "name": "Guest",
+          "id": "jiJ5U"
         }
       ],
       "connectedUsers": [],
@@ -1291,6 +1315,10 @@
         {
           "name": "Guest",
           "id": "H04UJ"
+        },
+        {
+          "name": "Guest",
+          "id": "jiJ5U"
         }
       ],
       "connectedUsers": [],
@@ -1761,7 +1789,12 @@
       "name": "Best of Beck",
       "description": "We all love the pop-mastermind Beck. What's your favorite song?",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600587903/u2xgeviu6xa6tvux4vwn.jpg",
-      "likedByUsers": [],
+      "likedByUsers": [
+        {
+          "name": "Guest",
+          "id": "jiJ5U"
+        }
+      ],
       "connectedUsers": [
         {
           "name": "Guest",
@@ -1838,7 +1871,16 @@
       "name": "פרץ את פרץ",
       "description": "משה וקובי באים להרים לכם",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600618414/xklaiayqyziynj7ajrft.jpg",
-      "likedByUsers": [],
+      "likedByUsers": [
+        {
+          "name": "Guest",
+          "id": "YAsFp"
+        },
+        {
+          "name": "Guest",
+          "id": "jiJ5U"
+        }
+      ],
       "connectedUsers": [],
       "tags": [
         "love",
@@ -1965,29 +2007,15 @@
       "_id": "SNsZ4EP"
     },
     {
-      "name": "fdasf",
-      "description": "fsd",
-      "imgUrl": null,
-      "likedByUsers": [],
-      "connectedUsers": [
-        {
-          "name": "Guest",
-          "id": "vOtPM"
-        }
-      ],
-      "genre": "Hip-hop",
-      "createdBy": {},
-      "createdAt": 1600670234423,
-      "songs": [],
-      "currSong": null,
-      "viewCount": 1,
-      "_id": "RVSLYPQ"
-    },
-    {
       "name": "Morning",
       "description": "Bring your coffee and listen to this!",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600671328/u1srmxj10ah4pn0b73kf.jpg",
-      "likedByUsers": [],
+      "likedByUsers": [
+        {
+          "name": "Guest",
+          "id": "YAsFp"
+        }
+      ],
       "connectedUsers": [
         {
           "name": "Guest",
@@ -2057,7 +2085,12 @@
       "name": "Get ready for bed",
       "description": "Let's get ready for sleep",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600671546/blnf9beg3mrlhif2sy6c.jpg",
-      "likedByUsers": [],
+      "likedByUsers": [
+        {
+          "name": "Guest",
+          "id": "YAsFp"
+        }
+      ],
       "connectedUsers": [
         {
           "name": "Guest",
@@ -2116,7 +2149,12 @@
       "name": "Acoustic Guitar",
       "description": "ohhh that soft sound...",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600671748/cydv9lqh2scdj1vfaitl.jpg",
-      "likedByUsers": [],
+      "likedByUsers": [
+        {
+          "name": "Guest",
+          "id": "YAsFp"
+        }
+      ],
       "connectedUsers": [
         {
           "name": "Guest",
@@ -2290,7 +2328,12 @@
       "name": "Queen of Pop",
       "description": "Long live the queen",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600673321/ircrfpwlygygyznt7toy.jpg",
-      "likedByUsers": [],
+      "likedByUsers": [
+        {
+          "name": "Guest",
+          "id": "jiJ5U"
+        }
+      ],
       "connectedUsers": [
         {
           "name": "Guest",
@@ -2476,6 +2519,10 @@
         {
           "name": "Guest",
           "id": "vOtPM"
+        },
+        {
+          "name": "Guest",
+          "id": "jiJ5U"
         }
       ],
       "genre": "Easy",
@@ -2526,11 +2573,11 @@
         }
       ],
       "currSong": {
-        "id": "m4gQTYGHfRg",
+        "id": "0E1bNmyPWww",
         "isPlaying": false,
-        "secPlayed": 8.607818019073486
+        "secPlayed": 54.78852895994568
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "tT1Jp9L"
     },
     {
