@@ -1,13 +1,16 @@
 .song-pick {
-    // display: none;
-
+    position: relative;
     width: 0;
     transition: 0.6s;
-
     max-height: 25rem;
     overflow-y: auto;
     background-color: $clr1;
 
+    .song-pick-msg {
+        color: white;
+        font-size: 1.1rem;
+        padding-top: 15px;
+    }
     &.opened {
         max-width: 80%;
         width: 40%;
@@ -17,7 +20,6 @@
         display: flex;
         padding: 0px 5px;
         align-items: center;
-        // justify-content: space-between;
         width: 100%;
         cursor: pointer;
         text-overflow: ellipsis;

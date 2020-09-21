@@ -6,6 +6,7 @@ import { boxService } from '../services/boxService'
 import { saveBox, loadBoxes } from '../store/actions/boxAction'
 import { BoxInfoEdit } from '../cmps/box-details/BoxInfoEdit'
 import { SongList } from '../cmps/box-details/SongList'
+import CircleLoading from 'react-loadingg/lib/CircleLoading'
 
 
 
@@ -123,7 +124,7 @@ export class _BoxAdd extends Component {
 
     render() {
         const { editBox, isSongPickOpen, isDragging } = this.state;
-        if (!editBox) return <h1>Loading...</h1>
+        if (!editBox) return <CircleLoading  size="large" color= "#ac0aff"/>
         return (
             <section className="box-add main-container">
                 <h2>Create Your Box</h2>

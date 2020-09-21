@@ -10,6 +10,7 @@ import { loadBox, notify, saveBox } from '../store/actions/boxAction'
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService';
 import { BoxFilter } from "../cmps/boxes/BoxFilter";
+import CircleLoading from 'react-loadingg/lib/CircleLoading'
 
 class _BoxDetails extends Component {
     state = {
@@ -114,7 +115,7 @@ class _BoxDetails extends Component {
         const { isSongPickOpen, isDragging, filterBy } = this.state;
         const isFilter = filterBy ? true : false;
         const { box } = this.props;
-        if (!box) return <h1>Loading...</h1>
+        if (!box) return <CircleLoading  size="large" color= "#ac0aff"/>
         const currSongId = (box.currSong) ? box.currSong.id : null;
         const songsToShow = this.getSongsForDisplay();
         return (

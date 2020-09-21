@@ -4,6 +4,7 @@ import CreateIcon from '@material-ui/icons/Create';
 // import ShareIcon from '@material-ui/icons/Share';
 
 import { cloudService } from '../../services/cloudService'
+import CircleLoading from 'react-loadingg/lib/CircleLoading';
 
 export class BoxInfo extends Component {
     state = {
@@ -83,7 +84,7 @@ export class BoxInfo extends Component {
     render() {
         const { box } = this.state;
         const { isEditableName, isEditableDesc } = this.state;
-        if (!box) return <h1>Loading..</h1>
+        if (!box) return <CircleLoading  size="large" color= "#ac0aff"/>
         return (
             <section className="box-info flex space-between">
                 <div className="info-txt flex space-between column">

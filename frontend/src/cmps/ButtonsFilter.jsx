@@ -3,6 +3,9 @@
 import React, { Component } from 'react'
 import { boxService } from '../services/boxService'
 
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+
 export class ButtonsFilter extends Component {
     state = {
         genres: [],
@@ -34,7 +37,7 @@ export class ButtonsFilter extends Component {
         if (!genres.length) return <h1>Loading...</h1>
         return (
             <div className="btns-filter flex justify-center">
-                <button onClick={() => this.goPrevGenre()} className="btns-filter-nav">{'<'}</button>
+                <button onClick={() => this.goPrevGenre()} className="btn-filter-nav"><ArrowBackIosIcon /></button>
                 {genres.map((genre, idx) => {
                     if (idx - 1 <= genreCount) {
                         return <button className="btn-filter" key={idx} onClick={() => this.props.onSetFilterGenre(genre)}>{genre}</button>
@@ -42,7 +45,7 @@ export class ButtonsFilter extends Component {
 
                 })
                 }
-                <button onClick={() => this.goNextGenre()} className="btns-filter-nav">{'>'}</button>
+                <button onClick={() => this.goNextGenre()} className="btn-filter-nav"><ArrowForwardIosIcon /></button>
             </div>
         )
     }

@@ -30,6 +30,10 @@
         {
           "name": "Guest",
           "id": "AGafG"
+        },
+        {
+          "name": "Guest",
+          "id": "vOtPM"
         }
       ],
       "tags": [
@@ -86,9 +90,9 @@
       "currSong": {
         "id": "YVVTZgwYwVo",
         "isPlaying": false,
-        "secPlayed": 5.300800893188477
+        "secPlayed": 7.747623
       },
-      "viewCount": 5,
+      "viewCount": 6,
       "_id": "_s4MlLQ"
     },
     {
@@ -116,7 +120,7 @@
         },
         {
           "name": "Guest",
-          "id": "BiiD6"
+          "id": "vOtPM"
         }
       ],
       "tags": [
@@ -173,7 +177,7 @@
       "currSong": {
         "id": "_sMjZrVEB9E",
         "isPlaying": false,
-        "secPlayed": 3.6485641049041746
+        "secPlayed": 7.747623
       },
       "viewCount": 4,
       "_id": "omAQnh6"
@@ -278,7 +282,7 @@
         },
         {
           "name": "Guest",
-          "id": "BiiD6"
+          "id": "vOtPM"
         }
       ],
       "tags": [
@@ -320,8 +324,8 @@
       ],
       "currSong": {
         "id": "IwPOPL-ieD0",
-        "isPlaying": false,
-        "secPlayed": 4.282137015258789
+        "isPlaying": true,
+        "secPlayed": 0
       },
       "viewCount": 9,
       "_id": "t9rjp7s"
@@ -1961,61 +1965,625 @@
       "_id": "SNsZ4EP"
     },
     {
-      "name": "Nevo",
-      "description": "",
-      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600677122/zsionwwabzxa6q8cgzgj.jpg",
+      "name": "fdasf",
+      "description": "fsd",
+      "imgUrl": null,
       "likedByUsers": [],
       "connectedUsers": [
         {
           "name": "Guest",
-          "id": "BiiD6"
+          "id": "vOtPM"
         }
       ],
       "genre": "Hip-hop",
       "createdBy": {},
-      "createdAt": 1600677108478,
+      "createdAt": 1600670234423,
       "songs": [],
       "currSong": null,
       "viewCount": 1,
-      "_id": "KaUiK97"
+      "_id": "RVSLYPQ"
     },
     {
-      "name": "nevo",
-      "description": "",
-      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600677216/iud5qkzqrydwfz084wyc.jpg",
+      "name": "Morning",
+      "description": "Bring your coffee and listen to this!",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600671328/u1srmxj10ah4pn0b73kf.jpg",
       "likedByUsers": [],
       "connectedUsers": [
         {
           "name": "Guest",
-          "id": "BiiD6"
+          "id": "vOtPM"
+        },
+        {
+          "name": "Guest",
+          "id": "YAsFp"
         }
       ],
-      "genre": "Hip-hop",
+      "genre": "Easy",
       "createdBy": {},
-      "createdAt": 1600677166847,
-      "songs": [],
-      "currSong": null,
-      "viewCount": 1,
-      "_id": "2BEQpBK"
+      "createdAt": 1600671317905,
+      "songs": [
+        {
+          "id": "01_RTOD9hYc",
+          "youtubeId": "01_RTOD9hYc",
+          "title": "The Cardigans - For What It's Worth - Director’s Cut",
+          "imgUrl": "https://i.ytimg.com/vi/01_RTOD9hYc/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "04mfKJWDSzI",
+          "youtubeId": "04mfKJWDSzI",
+          "title": "Gorillaz - On Melancholy Hill ",
+          "imgUrl": "https://i.ytimg.com/vi/04mfKJWDSzI/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "taOL5HJdx1A",
+          "youtubeId": "taOL5HJdx1A",
+          "title": "Lighthouse Family - High ",
+          "imgUrl": "https://i.ytimg.com/vi/taOL5HJdx1A/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "ag8XcMG1EX4",
+          "youtubeId": "ag8XcMG1EX4",
+          "title": "Crowded House - Weather With You ",
+          "imgUrl": "https://i.ytimg.com/vi/ag8XcMG1EX4/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "8j9zMok6two",
+          "youtubeId": "8j9zMok6two",
+          "title": "Miley Cyrus - Malibu ",
+          "imgUrl": "https://i.ytimg.com/vi/8j9zMok6two/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "8N-qO3sPMjc",
+          "youtubeId": "8N-qO3sPMjc",
+          "title": "Sixpence None The Richer - Kiss Me (Official HQ)",
+          "imgUrl": "https://i.ytimg.com/vi/8N-qO3sPMjc/hqdefault.jpg",
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "01_RTOD9hYc",
+        "isPlaying": false,
+        "secPlayed": 6.765123906539917
+      },
+      "viewCount": 2,
+      "_id": "djfB2_l"
     },
     {
-      "name": "hila",
-      "description": "",
-      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600677455/ra8ik10zgienrpvuujtd.jpg",
+      "name": "Get ready for bed",
+      "description": "Let's get ready for sleep",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600671546/blnf9beg3mrlhif2sy6c.jpg",
       "likedByUsers": [],
       "connectedUsers": [
         {
           "name": "Guest",
-          "id": "BiiD6"
+          "id": "vOtPM"
         }
       ],
-      "genre": "Hip-hop",
+      "genre": "Easy",
       "createdBy": {},
-      "createdAt": 1600677446484,
-      "songs": [],
-      "currSong": null,
+      "createdAt": 1600671516647,
+      "songs": [
+        {
+          "id": "QYEC4TZsy-Y",
+          "youtubeId": "QYEC4TZsy-Y",
+          "title": "Lou Reed - Perfect Day",
+          "imgUrl": "https://i.ytimg.com/vi/QYEC4TZsy-Y/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "91tbOGkRx2M",
+          "youtubeId": "91tbOGkRx2M",
+          "title": "Geva Alon - I Can See The Stars",
+          "imgUrl": "https://i.ytimg.com/vi/91tbOGkRx2M/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "_qphknagXqA",
+          "youtubeId": "_qphknagXqA",
+          "title": "Melody Gardot - Baby I'm A Fool ",
+          "imgUrl": "https://i.ytimg.com/vi/_qphknagXqA/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "5Pjd3EU9rnI",
+          "youtubeId": "5Pjd3EU9rnI",
+          "title": "Beneath the Surface",
+          "imgUrl": "https://i.ytimg.com/vi/5Pjd3EU9rnI/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "s6TtwR2Dbjg",
+          "youtubeId": "s6TtwR2Dbjg",
+          "title": "Bryan Adams - Heaven ",
+          "imgUrl": "https://i.ytimg.com/vi/s6TtwR2Dbjg/hqdefault.jpg",
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "5Pjd3EU9rnI",
+        "isPlaying": false,
+        "secPlayed": 199.88410821743776
+      },
       "viewCount": 1,
-      "_id": "E2sxHpw"
+      "_id": "ATJdh9W"
+    },
+    {
+      "name": "Acoustic Guitar",
+      "description": "ohhh that soft sound...",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600671748/cydv9lqh2scdj1vfaitl.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "vOtPM"
+        },
+        {
+          "name": "Guest",
+          "id": "s6oRe"
+        }
+      ],
+      "genre": "Easy",
+      "createdBy": {},
+      "createdAt": 1600671718242,
+      "songs": [
+        {
+          "id": "1Xyj3aXbcn8",
+          "youtubeId": "1Xyj3aXbcn8",
+          "title": "Heal the World (Acoustic)",
+          "imgUrl": "https://i.ytimg.com/vi/1Xyj3aXbcn8/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "0gVxRvNfFLg",
+          "youtubeId": "0gVxRvNfFLg",
+          "title": "Ryan Adams - Wonderwall",
+          "imgUrl": "https://i.ytimg.com/vi/0gVxRvNfFLg/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "vJn4c1xHk8k",
+          "youtubeId": "vJn4c1xHk8k",
+          "title": "Coldplay - Fix You Cover by John Adams",
+          "imgUrl": "https://i.ytimg.com/vi/vJn4c1xHk8k/hqdefault.jpg",
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "vJn4c1xHk8k",
+        "isPlaying": true,
+        "secPlayed": 248.90538795803832
+      },
+      "viewCount": 2,
+      "_id": "BzfkRSg"
+    },
+    {
+      "name": "אייל גולן",
+      "description": "השירים האהובים של הזמיר",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600671999/exoacpehflwmgovifbjf.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "vOtPM"
+        }
+      ],
+      "genre": "Israeli",
+      "createdBy": {},
+      "createdAt": 1600671995788,
+      "songs": [
+        {
+          "id": "oKLLyDOczbY",
+          "youtubeId": "oKLLyDOczbY",
+          "title": "אייל גולן צליל מיתר Eyal Golan",
+          "imgUrl": "https://i.ytimg.com/vi/oKLLyDOczbY/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "Uek72vsnahc",
+          "youtubeId": "Uek72vsnahc",
+          "title": "אייל גולן ואני קורא לך Eyal Golan",
+          "imgUrl": "https://i.ytimg.com/vi/Uek72vsnahc/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "tGubzVL31r4",
+          "youtubeId": "tGubzVL31r4",
+          "title": "אייל גולן - טעיתי",
+          "imgUrl": "https://i.ytimg.com/vi/tGubzVL31r4/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "joStlhuYjfk",
+          "youtubeId": "joStlhuYjfk",
+          "title": "אייל גולן - באתי אלייך Eyal Golan",
+          "imgUrl": "https://i.ytimg.com/vi/joStlhuYjfk/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "CQv9FleO4Uk",
+          "youtubeId": "CQv9FleO4Uk",
+          "title": "אייל גולן לקנות לך יהלום Eyal Golan",
+          "imgUrl": "https://i.ytimg.com/vi/CQv9FleO4Uk/hqdefault.jpg",
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "oKLLyDOczbY",
+        "isPlaying": false,
+        "secPlayed": 0
+      },
+      "viewCount": 1,
+      "_id": "cjcxziD"
+    },
+    {
+      "name": "הליגיונרים",
+      "description": "אמנים כחול-לבן שהצליחו בחו\"ל",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600672136/f6mjeqrvyusqhepwih6o.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "vOtPM"
+        }
+      ],
+      "genre": "Israeli",
+      "createdBy": {},
+      "createdAt": 1600672108323,
+      "songs": [
+        {
+          "id": "A16VcQdTL80",
+          "youtubeId": "A16VcQdTL80",
+          "title": "Asaf Avidan  // Reckoning Song (One Day)",
+          "imgUrl": "https://i.ytimg.com/vi/A16VcQdTL80/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "wHyplEnrgQQ",
+          "youtubeId": "wHyplEnrgQQ",
+          "title": "Asaf Avidan - Different Pulses",
+          "imgUrl": "https://i.ytimg.com/vi/wHyplEnrgQQ/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "X5e1z3bbkUA",
+          "youtubeId": "X5e1z3bbkUA",
+          "title": "Acollective - Happiest of All Memorial Days",
+          "imgUrl": "https://i.ytimg.com/vi/X5e1z3bbkUA/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "8Psuqys26J4",
+          "youtubeId": "8Psuqys26J4",
+          "title": "Balkan Beat Box - Hermetico ",
+          "imgUrl": "https://i.ytimg.com/vi/8Psuqys26J4/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "rfIJ1vX_K1c",
+          "youtubeId": "rfIJ1vX_K1c",
+          "title": "Avishai Cohen - אבישי כהן - אהבה חדשה",
+          "imgUrl": "https://i.ytimg.com/vi/rfIJ1vX_K1c/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "cJdxZ9fmkEw",
+          "youtubeId": "cJdxZ9fmkEw",
+          "title": "Ofra Haza - Im Nin'alu - עפרה חזה - אם ננעלו",
+          "imgUrl": "https://i.ytimg.com/vi/cJdxZ9fmkEw/hqdefault.jpg",
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "A16VcQdTL80",
+        "isPlaying": false,
+        "secPlayed": 0
+      },
+      "viewCount": 1,
+      "_id": "nigkwt5"
+    },
+    {
+      "name": "Queen of Pop",
+      "description": "Long live the queen",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600673321/ircrfpwlygygyznt7toy.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "vOtPM"
+        },
+        {
+          "name": "Guest",
+          "id": "h77Rb"
+        }
+      ],
+      "genre": "Pop",
+      "createdBy": {},
+      "createdAt": 1600672386374,
+      "songs": [
+        {
+          "id": "zpzdgmqIHOQ",
+          "youtubeId": "zpzdgmqIHOQ",
+          "title": "Madonna - La Isla Bonita ",
+          "imgUrl": "https://i.ytimg.com/vi/zpzdgmqIHOQ/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "79fzeNUqQbQ",
+          "youtubeId": "79fzeNUqQbQ",
+          "title": "Madonna - Like A Prayer ",
+          "imgUrl": "https://i.ytimg.com/vi/79fzeNUqQbQ/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "XS088Opj9o0",
+          "youtubeId": "XS088Opj9o0",
+          "title": "Madonna - Frozen ",
+          "imgUrl": "https://i.ytimg.com/vi/XS088Opj9o0/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "GuJQSAiODqI",
+          "youtubeId": "GuJQSAiODqI",
+          "title": "Madonna - Vogue ",
+          "imgUrl": "https://i.ytimg.com/vi/GuJQSAiODqI/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "EDwb9jOVRtU",
+          "youtubeId": "EDwb9jOVRtU",
+          "title": "Madonna - Hung Up ",
+          "imgUrl": "https://i.ytimg.com/vi/EDwb9jOVRtU/hqdefault.jpg",
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "zpzdgmqIHOQ",
+        "isPlaying": false,
+        "secPlayed": 0
+      },
+      "viewCount": 2,
+      "_id": "QDFMIug"
+    },
+    {
+      "name": "King of Pop",
+      "description": "Long live the king!",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600673823/yg88s1agip36ecfwpp1a.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "vOtPM"
+        }
+      ],
+      "genre": "Pop",
+      "createdBy": {},
+      "createdAt": 1600673473651,
+      "songs": [
+        {
+          "id": "Zi_XLOBDo_Y",
+          "youtubeId": "Zi_XLOBDo_Y",
+          "title": "Michael Jackson - Billie Jean ",
+          "imgUrl": "https://i.ytimg.com/vi/Zi_XLOBDo_Y/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "h_D3VFfhvs4",
+          "youtubeId": "h_D3VFfhvs4",
+          "title": "Michael Jackson - Smooth Criminal ",
+          "imgUrl": "https://i.ytimg.com/vi/h_D3VFfhvs4/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "oRdxUFDoQe0",
+          "youtubeId": "oRdxUFDoQe0",
+          "title": "Michael Jackson - Beat It ",
+          "imgUrl": "https://i.ytimg.com/vi/oRdxUFDoQe0/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "sOnqjkJTMaA",
+          "youtubeId": "sOnqjkJTMaA",
+          "title": "Michael Jackson - Thriller ",
+          "imgUrl": "https://i.ytimg.com/vi/sOnqjkJTMaA/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "XAi3VTSdTxU",
+          "youtubeId": "XAi3VTSdTxU",
+          "title": "Michael Jackson - Earth Song ",
+          "imgUrl": "https://i.ytimg.com/vi/XAi3VTSdTxU/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "LeiFF0gvqcc",
+          "youtubeId": "LeiFF0gvqcc",
+          "title": "Michael Jackson - Remember The Time ",
+          "imgUrl": "https://i.ytimg.com/vi/LeiFF0gvqcc/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "pAyKJAtDNCw",
+          "youtubeId": "pAyKJAtDNCw",
+          "title": "Michael Jackson - You Are Not Alone ",
+          "imgUrl": "https://i.ytimg.com/vi/pAyKJAtDNCw/hqdefault.jpg",
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "Zi_XLOBDo_Y",
+        "isPlaying": false,
+        "secPlayed": 7.747623
+      },
+      "viewCount": 1,
+      "_id": "2l3HadM"
+    },
+    {
+      "name": "Let's Study",
+      "description": "Music to keep you focused while studying with friends",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600675759/estpocmowmmckxr7azsm.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "ASi5z"
+        }
+      ],
+      "genre": "Easy",
+      "createdBy": {},
+      "createdAt": 1600675205003,
+      "songs": [
+        {
+          "id": "Td-yC-Mx0z4",
+          "youtubeId": "Td-yC-Mx0z4",
+          "title": "Rite of Passage",
+          "imgUrl": "https://i.ytimg.com/vi/Td-yC-Mx0z4/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "sUh3t-ImGbs",
+          "youtubeId": "sUh3t-ImGbs",
+          "title": "Color Me Blue",
+          "imgUrl": "https://i.ytimg.com/vi/sUh3t-ImGbs/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "JqEiEStMffc",
+          "youtubeId": "JqEiEStMffc",
+          "title": "The Morning After",
+          "imgUrl": "https://i.ytimg.com/vi/JqEiEStMffc/hqdefault.jpg",
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "Td-yC-Mx0z4",
+        "isPlaying": false,
+        "secPlayed": 0
+      },
+      "viewCount": 1,
+      "_id": "E6-UqOb"
+    },
+    {
+      "name": "Chill on the beach",
+      "description": "Music to lie on the sand",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683347/n4myb2wunkocgowcimlv.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "vOtPM"
+        }
+      ],
+      "genre": "Easy",
+      "createdBy": {},
+      "createdAt": 1600683305160,
+      "songs": [
+        {
+          "id": "m4gQTYGHfRg",
+          "youtubeId": "m4gQTYGHfRg",
+          "title": "Xavier Rudd - Come Let Go ",
+          "imgUrl": "https://i.ytimg.com/vi/m4gQTYGHfRg/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "0E1bNmyPWww",
+          "youtubeId": "0E1bNmyPWww",
+          "title": "Xavier Rudd - Follow The Sun ",
+          "imgUrl": "https://i.ytimg.com/vi/0E1bNmyPWww/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "whbidPR4nVA",
+          "youtubeId": "whbidPR4nVA",
+          "title": "Dennis Lloyd - Alien (Official Audio)",
+          "imgUrl": "https://i.ytimg.com/vi/whbidPR4nVA/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "kCfVv3RsGw4",
+          "youtubeId": "kCfVv3RsGw4",
+          "title": "Dennis Lloyd - NEVERMIND",
+          "imgUrl": "https://i.ytimg.com/vi/kCfVv3RsGw4/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "4RxbCrMarZ4",
+          "youtubeId": "4RxbCrMarZ4",
+          "title": "Sunlounger - Aguas Blancas (Chill Mix)",
+          "imgUrl": "https://i.ytimg.com/vi/4RxbCrMarZ4/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "_bJ7RCFxR88",
+          "youtubeId": "_bJ7RCFxR88",
+          "title": "Sunlounger - Lost (Chill)",
+          "imgUrl": "https://i.ytimg.com/vi/_bJ7RCFxR88/hqdefault.jpg",
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "m4gQTYGHfRg",
+        "isPlaying": false,
+        "secPlayed": 8.607818019073486
+      },
+      "viewCount": 1,
+      "_id": "tT1Jp9L"
+    },
+    {
+      "name": "Background Music",
+      "description": "Soft music to have on the background",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683686/xsrdt0rrwntgribro7ke.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "vOtPM"
+        }
+      ],
+      "genre": "Easy",
+      "createdBy": {},
+      "createdAt": 1600683648498,
+      "songs": [
+        {
+          "id": "rlyL0PyzkJU",
+          "youtubeId": "rlyL0PyzkJU",
+          "title": "Tepid Rainscape",
+          "imgUrl": "https://i.ytimg.com/vi/rlyL0PyzkJU/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "r_N1ySosd50",
+          "youtubeId": "r_N1ySosd50",
+          "title": "Lo Air - Day and Night (Original Mix) (Music Video)",
+          "imgUrl": "https://i.ytimg.com/vi/r_N1ySosd50/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "0mUDlFhz4TE",
+          "youtubeId": "0mUDlFhz4TE",
+          "title": "Relaxing Zen Music and Nature Sounds - Wooden Flute and Pan Flute - Meditation, Sleep Sound",
+          "imgUrl": "https://i.ytimg.com/vi/0mUDlFhz4TE/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "3TNK916Pjto",
+          "youtubeId": "3TNK916Pjto",
+          "title": "FOREST AT NIGHT - Crickets Owls Rain Wind in Trees - Relax Study Sleep De-Stress 🎧 100% RELAX",
+          "imgUrl": "https://i.ytimg.com/vi/3TNK916Pjto/hqdefault.jpg",
+          "addedBy": {}
+        }
+      ],
+      "currSong": {
+        "id": "rlyL0PyzkJU",
+        "isPlaying": false,
+        "secPlayed": 9.10225
+      },
+      "viewCount": 1,
+      "_id": "4F9CoMR"
     }
   ],
   "user": {
