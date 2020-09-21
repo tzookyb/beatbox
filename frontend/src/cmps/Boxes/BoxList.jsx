@@ -25,10 +25,10 @@ export function BoxList({ boxes, genre, onToggleLikeBox, minimalUser, onAddToFav
         <section className={`list-container ${genre ? '' : 'main-container'}`}>
 
             {genre && <Link to={`/box?&genre=${genre}`} className="btn-genre">{genre}</Link>}
-            {genre &&
+            {genre && 
                 <div ref={ref} className="box-list image-container">
                     <button className= "list-left-btn" onClick={() => executeScroll(-350)}><ArrowBackIosIcon /></button>
-                    {boxes.map(box => {
+                    {boxes.map((box) => {
                         if (box.genre  === genre) {
                             return <BoxPreview
                                 isHomePage={true}
@@ -38,7 +38,7 @@ export function BoxList({ boxes, genre, onToggleLikeBox, minimalUser, onAddToFav
                                 onAddToFavorites={onAddToFavorites}
                                 minimalUser={minimalUser}
                             />
-                        } else return null
+                        } 
                     })}
                      <button className="list-right-btn" onClick={() => executeScroll(350)}><ArrowForwardIosIcon /></button>
                 </div>
