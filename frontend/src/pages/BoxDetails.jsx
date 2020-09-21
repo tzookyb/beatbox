@@ -114,11 +114,6 @@ class _BoxDetails extends Component {
         await this.props.saveBox(newBox);
     }
 
-    onMouseMove = (ev) => {
-        console.log(ev);
-
-    }
-
     render() {
         const { isSongPickOpen, isDragging, filterBy } = this.state;
         const isFilter = filterBy ? true : false;
@@ -128,7 +123,7 @@ class _BoxDetails extends Component {
         const songsToShow = this.getSongsForDisplay();
         return (
             <section className="box-details">
-                onMouseMove={this.onMouseMove}
+
 
                 <BoxInfo box={box} onSaveInfo={this.onSaveInfo} />
                 <BoxFilter onSetFilter={this.onSetFilter} />
