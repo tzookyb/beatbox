@@ -24,7 +24,6 @@ class _BoxApp extends Component {
         const genre = new URLSearchParams(window.location.href).get('genre');
         const filterBy = { name: '', genre: genre }
         const { genres } = this.props;
-        console.log("componentDidMount -> genres", genres)
         if (genres) this.setState({ genres, isHomePage: true, filterBy }, () => this.loadBoxes())
         else this.setState({ genres: [], isHomePage: false, filterBy }, () => this.loadBoxes())
     }
@@ -54,6 +53,13 @@ class _BoxApp extends Component {
         return userService.getMinimalUser();
     }
 
+    // getBestGenres() {
+    //     const allGenres = boxService.getGenres();
+    //     const mapGenresCount = allGenres.map(genre=>{
+    //         return {genre, count:0}
+    //     })
+    // }
+
     render() {
         const { boxes } = this.props;
         // notused:
@@ -69,7 +75,7 @@ class _BoxApp extends Component {
                             minimalUser={minimalUser} onAddToFavorites={this.onAddToFavorites} />
                     )
                 })}
-                
+
                 {!this.state.isHomePage &&
                     <ButtonsFilter onSetFilterGenre={this.onSetFilterGenre} genreCount={5} />
                 }

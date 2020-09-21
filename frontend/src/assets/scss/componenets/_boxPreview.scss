@@ -3,10 +3,16 @@
   transition: 0.6s;
   position: relative;
   .box-preview-img {
+    transition: 0.6s;
     img {
+      transition: 0.6s;
       width: 100%;
       object-fit: cover;
       height: rem(165px);
+      -webkit-transition: opacity 1s ease-in-out;
+      -moz-transition: opacity 1s ease-in-out;
+      -o-transition: opacity 1s ease-in-out;
+      transition: opacity 1s ease-in-out;
     }
   }
 

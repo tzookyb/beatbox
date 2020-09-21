@@ -48,7 +48,6 @@ class _Home extends Component {
                     </div>
                 </div>
                 <div className="genre-list">
-                    {console.log("render -> genres", genres)}
                     {genres.length && <BoxApp genres={genres} />}
                 </div>
                 <Footer />
