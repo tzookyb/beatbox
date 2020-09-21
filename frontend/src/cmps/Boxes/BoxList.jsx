@@ -20,7 +20,7 @@ export class BoxList extends Component {
         let scrollDiff = this.ref.current.scrollWidth - this.ref.current.offsetWidth
         console.dir(this.ref)
         console.log(this.state.isScrolled );
-       if (this.ref.current.scrollLeft === 0 && this.ref.current.scrollLeft !== scrollDiff) {
+       if (this.ref.current.scrollLeft === 0) {
             this.setState({ isScrolled: true });
         }
         else {
@@ -41,7 +41,7 @@ export class BoxList extends Component {
         return (
             <section className={`list-container ${this.props.genre ? '' : 'main-container'}`}>
 
-                {this.props.genre && <Link to={`/box?&thisgenre=${this.props.genre}`} className="btn-genre">{this.props.genre}</Link>}
+                {this.props.genre && <Link to={`/box?&genre=${this.props.genre}`} className="btn-genre">{this.props.genre}</Link>}
                 {this.props.genre &&
 
                     <div ref={this.ref} className="box-list image-container">

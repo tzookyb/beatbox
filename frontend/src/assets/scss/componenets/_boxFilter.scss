@@ -1,16 +1,25 @@
 .box-filter {
+    max-width: 300px;
+    margin: 15px auto;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px solid white;
     input {
-        background-color: $clr1;
-        padding: 10px;
-        color: white;
         border-color: white;
+        color: white;
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        font-size: 1.1rem;
         outline: none;
-        border-radius: 5px;
-        width: 280px;
-
         &::placeholder {
-            color: white;
+            color: rgba(206, 206, 206, 0.9);
             border-color: white;
+        }
+        svg{
+            // color: white;
         }
     }
 }

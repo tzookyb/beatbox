@@ -1,5 +1,4 @@
 import { boxService } from "../../services/boxService"
-var gTimeoutId;
 
 export function loadBoxes(filterBy) {
   return async dispatch => {

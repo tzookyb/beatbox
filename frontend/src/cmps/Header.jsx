@@ -44,7 +44,7 @@ class _Header extends Component {
                     {/* {loggedinUser && <button onClick={() => onLogout()}>Logout</button>} */}
 
                     {user && <div className="avatar-img flex column align-center">
-                        <img src={user.imgUrl} alt="avatar" />
+                        <img src={user.imgUrl}  alt="avatar" />
                         <label className="avatar-name">Hi {user.username}</label>
 
                     </div>}

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { login, loadUser } from '../../store/actions/userAction'
 import { cloudService } from '../../services/cloudService'
+import imgPlaceholder from '../../assets/img/img_placeholder.png';
 
 class _Login extends React.Component {
     state = {

@@ -19,6 +19,7 @@
 
     .add-song-btn {
         position: absolute;
+        z-index: 5;
         right: rem(-35px);
         top: rem(-15px);
         background-color: $clr3;
