@@ -1103,7 +1103,12 @@
       "description": "Boys will be boys",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600555365/b7wbvj0j0vdhi3fzaqyv.jpg",
       "likedByUsers": [],
-      "connectedUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "6woey"
+        }
+      ],
       "tags": [
         "love",
         "happy"
@@ -1169,11 +1174,11 @@
         }
       ],
       "currSong": {
-        "id": "tP_WRk-xV7I",
+        "id": "Eo-KmOd3i7s",
         "isPlaying": true,
         "secPlayed": 0
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "MeC8av_"
     },
     {
