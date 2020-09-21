@@ -1692,7 +1692,11 @@
         "happy"
       ],
       "genre": "Classical",
-      "createdBy": {},
+      "createdBy": {
+        "name": "Matan",
+        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
+        "id":"015a"
+  },
       "createdAt": 1600584402433,
       "songs": [
         {
@@ -1736,7 +1740,11 @@
         "happy"
       ],
       "genre": "Blues",
-      "createdBy": {},
+      "createdBy": {
+        "name":"Idan",
+        "imgUrl":"https://res-console.cloudinary.com/daqs7x8my/thumbnails/transform/v1/image/upload//v1600700773/am9lYWR2YnB4MWl6ZTVmcnZvM2c=/drilldown",
+        "id":"123"
+    },
       "createdAt": 1600586777236,
       "songs": [
         {
@@ -1792,7 +1800,11 @@
         "happy"
       ],
       "genre": "Rock",
-      "createdBy": {},
+      "createdBy": {
+        "name":"Idan",
+        "imgUrl":"https://res-console.cloudinary.com/daqs7x8my/thumbnails/transform/v1/image/upload//v1600700773/am9lYWR2YnB4MWl6ZTVmcnZvM2c=/drilldown",
+        "id":"123"
+    },
       "createdAt": 1600587232253,
       "songs": [
         {
@@ -1850,7 +1862,11 @@
         "happy"
       ],
       "genre": "Rock",
-      "createdBy": {},
+      "createdBy": {
+        "name":"Idan",
+        "imgUrl":"https://res-console.cloudinary.com/daqs7x8my/thumbnails/transform/v1/image/upload//v1600700773/am9lYWR2YnB4MWl6ZTVmcnZvM2c=/drilldown",
+        "id":"123"
+    },
       "createdAt": 1600587464097,
       "songs": [
         {
@@ -1925,7 +1941,11 @@
         "happy"
       ],
       "genre": "Pop",
-      "createdBy": {},
+      "createdBy": {
+        "name":"Idan",
+        "imgUrl":"https://res-console.cloudinary.com/daqs7x8my/thumbnails/transform/v1/image/upload//v1600700773/am9lYWR2YnB4MWl6ZTVmcnZvM2c=/drilldown",
+        "id":"123"
+    },
       "createdAt": 1600587900998,
       "songs": [
         {
@@ -2011,7 +2031,11 @@
         "happy"
       ],
       "genre": "Israeli",
-      "createdBy": {},
+      "createdBy": {
+        "name":"Idan",
+        "imgUrl":"https://res-console.cloudinary.com/daqs7x8my/thumbnails/transform/v1/image/upload//v1600700773/am9lYWR2YnB4MWl6ZTVmcnZvM2c=/drilldown",
+        "id":"123"
+    },
       "createdAt": 1600618411022,
       "songs": [
         {
@@ -2076,7 +2100,11 @@
         "happy"
       ],
       "genre": "Alternative",
-      "createdBy": {},
+      "createdBy": {
+        "name": "Matan",
+        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
+        "id":"015a"
+  },
       "createdAt": 1600618911705,
       "songs": [
         {
@@ -2152,7 +2180,11 @@
         }
       ],
       "genre": "Easy",
-      "createdBy": {},
+      "createdBy": {
+        "name": "Hilla",
+        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
+        "id":"014a"
+  },
       "createdAt": 1600671317905,
       "songs": [
         {
@@ -2231,7 +2263,11 @@
         }
       ],
       "genre": "Easy",
-      "createdBy": {},
+      "createdBy": {
+        "name": "Matan",
+        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
+        "id":"015a"
+  },
       "createdAt": 1600671516647,
       "songs": [
         {
@@ -2299,7 +2335,11 @@
         }
       ],
       "genre": "Easy",
-      "createdBy": {},
+      "createdBy": {
+        "name": "Hilla",
+        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
+        "id":"014a"
+  },
       "createdAt": 1600671718242,
       "songs": [
         {
@@ -2344,7 +2384,11 @@
         }
       ],
       "genre": "Israeli",
-      "createdBy": {},
+      "createdBy": {
+        "name": "Hilla",
+        "imgUrl":"https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
+        "id":"014a"
+  },
       "createdAt": 1600671995788,
       "songs": [
         {
@@ -2403,7 +2447,11 @@
         }
       ],
       "genre": "Israeli",
-      "createdBy": {},
+      "createdBy": {
+        "name":"Idan",
+        "imgUrl":"https://res-console.cloudinary.com/daqs7x8my/thumbnails/transform/v1/image/upload//v1600700773/am9lYWR2YnB4MWl6ZTVmcnZvM2c=/drilldown",
+        "id":"123"
+    },
       "createdAt": 1600672108323,
       "songs": [
         {
@@ -2478,7 +2526,11 @@
         }
       ],
       "genre": "Pop",
-      "createdBy": {},
+      "createdBy": {
+        "name":"Idan",
+        "imgUrl":"https://res-console.cloudinary.com/daqs7x8my/thumbnails/transform/v1/image/upload//v1600700773/am9lYWR2YnB4MWl6ZTVmcnZvM2c=/drilldown",
+        "id":"123"
+    },
       "createdAt": 1600672386374,
       "songs": [
         {
@@ -2537,7 +2589,11 @@
         }
       ],
       "genre": "Pop",
-      "createdBy": {},
+      "createdBy": {
+        "name":"Idan",
+        "imgUrl":"https://res-console.cloudinary.com/daqs7x8my/thumbnails/transform/v1/image/upload//v1600700773/am9lYWR2YnB4MWl6ZTVmcnZvM2c=/drilldown",
+        "id":"123"
+    },
       "createdAt": 1600673473651,
       "songs": [
         {
@@ -2610,7 +2666,11 @@
         }
       ],
       "genre": "Easy",
-      "createdBy": {},
+      "createdBy": {
+        "name":"Idan",
+        "imgUrl":"https://res-console.cloudinary.com/daqs7x8my/thumbnails/transform/v1/image/upload//v1600700773/am9lYWR2YnB4MWl6ZTVmcnZvM2c=/drilldown",
+        "id":"123"
+    },
       "createdAt": 1600675205003,
       "songs": [
         {
@@ -2659,7 +2719,11 @@
         }
       ],
       "genre": "Easy",
-      "createdBy": {},
+      "createdBy": {
+        "name":"Idan",
+        "imgUrl":"https://res-console.cloudinary.com/daqs7x8my/thumbnails/transform/v1/image/upload//v1600700773/am9lYWR2YnB4MWl6ZTVmcnZvM2c=/drilldown",
+        "id":"123"
+    },
       "createdAt": 1600683305160,
       "songs": [
         {
@@ -2725,7 +2789,11 @@
         }
       ],
       "genre": "Easy",
-      "createdBy": {},
+      "createdBy": {
+        "name":"Idan",
+        "imgUrl":"https://res-console.cloudinary.com/daqs7x8my/thumbnails/transform/v1/image/upload//v1600700773/am9lYWR2YnB4MWl6ZTVmcnZvM2c=/drilldown",
+        "id":"123"
+    },
       "createdAt": 1600683648498,
       "songs": [
         {
