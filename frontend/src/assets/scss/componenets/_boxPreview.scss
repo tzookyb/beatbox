@@ -20,9 +20,7 @@
 
   .box-preview-action {
     width: 100%;
-    >* {
-      border: 1px solid white;
-      border-radius: 50%;
+    > * {
       padding: 5px;
       cursor: pointer;
       font-size: 0.8rem;
@@ -31,7 +29,6 @@
       }
     }
     .liked {
-      background-color: #242424;
       svg {
         fill: rgb(250, 102, 102);
       }

@@ -13,6 +13,11 @@ export class BoxInfo extends Component {
         isEditableImg: false
     }
 
+    componentDidMount() {
+        const { box } = this.props;
+        this.setState({ box });
+    }
+
     componentDidUpdate(prevProps, prevState) {
         const newBox = this.props.box
         if (prevProps.box === newBox) return;

@@ -222,10 +222,6 @@
         {
           "name": "Guest",
           "id": "ld7Aq"
-        },
-        {
-          "name": "Guest",
-          "id": "U460V"
         }
       ],
       "tags": [
@@ -263,7 +259,7 @@
           "youtubeId": "RBumgq5yVrA",
           "title": "Passenger | Let Her Go ",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/YdgoG8hTMUw/default.jpg",
+            "url": "https://i.ytimg.com/vi/RBumgq5yVrA/default.jpg",
             "width": 120,
             "height": 90
           },
@@ -305,10 +301,10 @@
       ],
       "currSong": {
         "id": "YdgoG8hTMUw",
-        "isPlaying": false,
-        "secPlayed": 1.6865999866485595
+        "isPlaying": true,
+        "secPlayed": 0
       },
-      "viewCount": 5,
+      "viewCount": 4,
       "_id": "8ODPTfm"
     },
     {
@@ -325,10 +321,6 @@
         {
           "name": "Guest",
           "id": "ld7Aq"
-        },
-        {
-          "name": "Guest",
-          "id": "sTEw9"
         }
       ],
       "tags": [
@@ -339,6 +331,17 @@
       "createdBy": {},
       "createdAt": 1600551334649,
       "songs": [
+        {
+          "id": "KExLCJAuTXA",
+          "youtubeId": "KExLCJAuTXA",
+          "title": "TEDxZurich - Jojo Mayer - Exploring the distance between 0 and 1",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/KExLCJAuTXA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
+        },
         {
           "id": "IwPOPL-ieD0",
           "youtubeId": "IwPOPL-ieD0",
@@ -360,25 +363,14 @@
             "height": 90
           },
           "addedBy": {}
-        },
-        {
-          "id": "KExLCJAuTXA",
-          "youtubeId": "KExLCJAuTXA",
-          "title": "TEDxZurich - Jojo Mayer - Exploring the distance between 0 and 1",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/KExLCJAuTXA/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
         }
       ],
       "currSong": {
-        "id": "IwPOPL-ieD0",
-        "isPlaying": false,
-        "secPlayed": 1.178876979019165
+        "id": "KExLCJAuTXA",
+        "isPlaying": true,
+        "secPlayed": 0
       },
-      "viewCount": 6,
+      "viewCount": 5,
       "_id": "t9rjp7s"
     },
     {
@@ -1013,11 +1005,11 @@
         }
       ],
       "currSong": {
-        "id": "PHn0jA4Klx8",
-        "isPlaying": false,
-        "secPlayed": 0
+        "id": "22lISUXgSUw",
+        "isPlaying": true,
+        "secPlayed": 183.62636791416932
       },
-      "viewCount": 3,
+      "viewCount": 2,
       "_id": "liTPj5R"
     },
     {
@@ -1103,12 +1095,7 @@
       "description": "Boys will be boys",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600555365/b7wbvj0j0vdhi3fzaqyv.jpg",
       "likedByUsers": [],
-      "connectedUsers": [
-        {
-          "name": "Guest",
-          "id": "6woey"
-        }
-      ],
+      "connectedUsers": [],
       "tags": [
         "love",
         "happy"
@@ -1174,11 +1161,11 @@
         }
       ],
       "currSong": {
-        "id": "Eo-KmOd3i7s",
+        "id": "tP_WRk-xV7I",
         "isPlaying": true,
         "secPlayed": 0
       },
-      "viewCount": 2,
+      "viewCount": 1,
       "_id": "MeC8av_"
     },
     {
@@ -1272,10 +1259,6 @@
         {
           "name": "Guest",
           "id": "ld7Aq"
-        },
-        {
-          "name": "hila",
-          "id": "oxGU8"
         }
       ],
       "connectedUsers": [],
@@ -1443,10 +1426,6 @@
         {
           "name": "Guest",
           "id": "KmHKi"
-        },
-        {
-          "name": "Guest",
-          "id": "bDhwa"
         }
       ],
       "tags": [
@@ -1516,9 +1495,9 @@
       "currSong": {
         "id": "UelDrZ1aFeY",
         "isPlaying": false,
-        "secPlayed": 2.2775950381469725
+        "secPlayed": 0
       },
-      "viewCount": 2,
+      "viewCount": 1,
       "_id": "OmLGxJ-"
     },
     {
@@ -1535,10 +1514,6 @@
         {
           "name": "Guest",
           "id": "KmHKi"
-        },
-        {
-          "name": "Guest",
-          "id": "bDhwa"
         }
       ],
       "tags": [
@@ -1597,9 +1572,9 @@
       "currSong": {
         "id": "vabnZ9-ex7o",
         "isPlaying": false,
-        "secPlayed": 13.309397881744385
+        "secPlayed": 0
       },
-      "viewCount": 2,
+      "viewCount": 1,
       "_id": "yavXo-u"
     },
     {
@@ -2521,9 +2496,9 @@
       "currSong": {
         "id": "06IrarkJBCQ",
         "isPlaying": false,
-        "secPlayed": 0.41062689891052245
+        "secPlayed": 6.513460946594238
       },
-      "viewCount": 2,
+      "viewCount": 1,
       "_id": "kN7pwUA"
     },
     {
@@ -2613,6 +2588,7 @@
     "imgUrl": "http://some-img",
     "followers": [],
     "following": [],
+    "currBoxId" :"",
     "notifs": [
       {
         "id": "a101",

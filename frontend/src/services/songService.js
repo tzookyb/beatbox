@@ -33,7 +33,6 @@ var gSongs = [
 async function query(boxId) {
       if (boxId) var queryStr = `?boxId=${boxId}`;
       const box = await httpService.get(`box${queryStr || ''}`);
-      console.log("query -> box", box)
       return box.songs
       
     // return Promise.resolve(gSongs)

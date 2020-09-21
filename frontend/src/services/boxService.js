@@ -4,7 +4,6 @@ import { youtubeService } from './youtubeService';
 // import axios from 'axios';
 // const BASE_URL = 'http://localhost:3030/box'
 
-// var gGenre = ['Hip-hop', 'Arabic', 'Electronic', 'Country']
 var gGenre = ['Hip-hop', 'Arabic', 'Easy', 'Electronic', 'Country', 'Latin', 'Jazz', 'Rock',
     'Pop', 'Classical', 'Alternative', 'Blues', 'Disco', 'Israeli']
 
@@ -43,7 +42,8 @@ function byFilter(boxes, filterBy) {
     var BoxFilteres = [];
     if (filterBy.genre && filterBy.name) {
         boxes.forEach(box => {
-            if (box.tags.includes(filterBy.genre) && box.name.toLowerCase().includes(filterBy.name.toLowerCase())) BoxFilteres.push(box);
+            // if (box.tags.includes(filterBy.genre) && box.name.toLowerCase().includes(filterBy.name.toLowerCase())) filterBoxes.push(box);
+            if (box.genre === filterBy.genre && box.name.toLowerCase().includes(filterBy.name.toLowerCase())) filterBoxes.push(box);
         })
         return BoxFilteres;
     }
@@ -55,7 +55,8 @@ function byFilter(boxes, filterBy) {
     }
     else if (filterBy.genre) {
         boxes.forEach(box => {
-            if (box.tags.includes(filterBy.genre)) BoxFilteres.push(box);
+            if(box.genre === filterBy.genre) filterBoxes.push(box);
+            // if (box.tags.includes(filterBy.genre)) filterBoxes.push(box);
         })
         return BoxFilteres;
     }
@@ -83,7 +84,7 @@ function getEmptyBox() {
         imgUrl: null,
         likedByUsers: [],
         connectedUsers: [],
-        tags: ['Hip-hop'],
+        genre:'',
         createdBy: {},
         createdAt: Date.now(),
         songs: [],
@@ -138,13 +139,18 @@ function getIsUserLikeBox(currBox, currUser) {
 async function addConnectedUser(boxId, minimalUser) {
     const box = await getById(boxId);
     const updateBox = { ...box };
-    const isUserInStation = updateBox.connectedUsers.find(user => user.id === minimalUser.id)
-    if (!isUserInStation) {
+    const isUserInBox = updateBox.connectedUsers.find(user => user.id === minimalUser.id)
+    if (!isUserInBox) {
         updateBox.connectedUsers.push(minimalUser);
         updateBox.viewCount++;
         await save(updateBox);
+
+        //ToDO:
+        // const boxIdx = getById(minimalUser.currBoxId);
+        // boxes[boxIdx].connectedUsers.splice() 
     }
 }
+
 
 // function _makeId(length = 6) {
 //     var txt = '';

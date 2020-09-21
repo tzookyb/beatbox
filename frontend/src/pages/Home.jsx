@@ -25,9 +25,7 @@ class _Home extends Component {
     getGenres(boxes) {
         var genres = [];
         boxes.forEach(box => {
-            box.tags.forEach(tag => {
-                if (!genres.includes(tag)) genres.push(tag);
-            })
+            if (!genres.includes(box.genre)) genres.push(box.genre);
         })
         return genres
     }
@@ -35,7 +33,7 @@ class _Home extends Component {
     render() {
         const { boxes } = this.state;
         if (!boxes) return <h1>Loading...</h1>
-        const genres = this.getGenres(boxes)
+        const genres = this.getGenres(boxes);
         return (
             <React.Fragment>
                 <div id="top" className="hero-container flex justify-center align-center" >

@@ -57,7 +57,6 @@ class _BoxApp extends Component {
     render() {
         const { boxes } = this.props;
         // notused:
-        // const user = this.props
         const minimalUser = this.getMinimalUser();
         const { genres } = this.state;
         if (!boxes || !genres) return <h1>Loading....</h1>
@@ -70,10 +69,11 @@ class _BoxApp extends Component {
                             minimalUser={minimalUser} onAddToFavorites={this.onAddToFavorites} />
                     )
                 })}
+                
                 {!this.state.isHomePage &&
                     <ButtonsFilter onSetFilterGenre={this.onSetFilterGenre} genreCount={5} />
                 }
-                {!genres.length && <BoxList boxes={boxes} onToggleLikeBox={this.onToggleLikeBox}
+                {!this.state.isHomePage && <BoxList boxes={boxes} onToggleLikeBox={this.onToggleLikeBox}
                     minimalUser={minimalUser} onAddToFavorites={this.onAddToFavorites} />}
             </section>
         )

@@ -9,7 +9,7 @@ export class BoxInfoEdit extends Component {
     state = {
         box: {
             name: '',
-            tags: ['Hip-hop'],
+            genre: '',
             description: '',
             imgUrl: null
         },
@@ -22,7 +22,8 @@ export class BoxInfoEdit extends Component {
 
     handleInput = ({ target }) => {
         const field = target.name;
-        const value = (target.name === 'tags') ? [target.value] : target.value;
+        // const value = (target.name === 'tags') ? [target.value] : target.value;
+        const value = target.value;
         this.setState(prevState => {
             return {
                 box: {
@@ -42,7 +43,10 @@ export class BoxInfoEdit extends Component {
     }
 
     async uploadImg(ev) {
-        const imgUrl = await cloudService.uploadImg(ev)
+        this.props.setIsLoading('true');
+        const imgUrl = await cloudService.uploadImg(ev);
+        this.props.setIsLoading('');
+
         this.setState(prevState => {
             return {
                 box: {
@@ -62,7 +66,8 @@ export class BoxInfoEdit extends Component {
                     <input autoComplete="off" autoFocus type="txt" value={box.name} name="name" onChange={this.handleInput} placeholder="Box Name" />
                     <textarea type="txt" value={box.description} name="description" onChange={this.handleInput} placeholder="About the box" />
                     <label>Genre: </label>
-                    <select id="tags" name="tags" onChange={this.handleInput} >
+                    <select id="genre" name="genre" onChange={this.handleInput} >
+                    <option value=""></option>
                         {this.getGenresOptions()}
                     </select>
                 </div>

@@ -22,7 +22,7 @@ class _Login extends React.Component {
         this.setState(prevState => {
             return {
                 user: {
-                    ...prevState.box,
+                    ...prevState.user,
                     imgUrl
                 }
             }
@@ -32,8 +32,8 @@ class _Login extends React.Component {
     onLogin = (ev) => {
         ev.preventDefault();
         if (this.state.username === '') return;
-        const { username, fullName, password, imgUrl } = this.state.user
-        const userCreds = { username, fullName, password, imgUrl };;
+        const { username, fullName, password, imgUrl } = this.state.user;
+        const userCreds = { username, fullName, password, imgUrl };
         this.props.login(userCreds);
         this.props.loadUser()
         .then(()=> this.props.history.push('/'))

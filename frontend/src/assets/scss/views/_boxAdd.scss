@@ -27,6 +27,11 @@
     padding: 10px;
     margin-top: 5px;
   }
+  .btn-create-container{
+    .msg-warnning{
+      color: $clr3;
+    }
+  }
 }
 
 form:not(.form-filter) {
