@@ -1,5 +1,5 @@
 .list-container {
-position: relative;
+  position: relative;
 
   .box-list {
     display: grid;
@@ -10,8 +10,7 @@ position: relative;
     padding: 25px 0;
     scroll-behavior: smooth;
 
-
-    >* {
+    > * {
       align-self: center;
       background-color: #ffffff12;
     }
@@ -33,13 +32,12 @@ position: relative;
       margin: 0;
     }
 
-    .list-right-btn{
-      right:0;
-      
+    .list-right-btn {
+      right: 0;
     }
 
-    .list-left-btn{
-      left:0;
+    .list-left-btn {
+      left: 0;
     }
 
     &::-webkit-scrollbar {
@@ -60,27 +58,22 @@ position: relative;
     //   overflow-x: auto;
     //   overflow-y: hidden;
     // // }
-
   }
 
-
   .btn-genre {
-    box-shadow: 0px 1px 5px 0 rgba(157, 233, 170, 0.302),
-    0 1px 3px 1px rgba(189, 191, 192, 0.149);
+    box-shadow: 0px 1px 5px 0 rgb(138, 108, 193);
     color: white;
     font-size: 1.4rem;
     font-weight: 800;
-    transition: .4s, color .3s;
+    transition: 0.4s, color 0.3s;
     position: relative;
     padding: 10px;
     margin: 0 10px;
     border-radius: 50px;
     padding-inline-end: 1rem;
-    
 
     &:hover {
-      box-shadow: 0px 1px 5px 0 rgba(157, 233, 170, 0.302),
-        0 1px 3px 1px rgba(189, 191, 192, 0.149);
+      box-shadow: 0px 1px 5px 0 rgba(157, 233, 170, 0.302), 0 1px 3px 1px rgba(189, 191, 192, 0.149);
       padding-inline-end: 4em;
     }
 

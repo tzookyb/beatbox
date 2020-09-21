@@ -7,7 +7,7 @@ import { loadBoxes } from '../store/actions/boxAction'
 import { loadUser } from '../store/actions/userAction'
 import { Footer } from '../cmps/Footer'
 
-
+import { CircleLoading  } from 'react-loadingg';
 
 class _Home extends Component {
 
@@ -32,7 +32,7 @@ class _Home extends Component {
 
     render() {
         const { boxes } = this.state;
-        if (!boxes) return <h1>Loading...</h1>
+        if (!boxes) return <CircleLoading  size="150px" color= "#ac0aff"/>
         const genres = this.getGenres(boxes);
         return (
             <React.Fragment>
