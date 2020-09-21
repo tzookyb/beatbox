@@ -11,6 +11,13 @@ export class SongPick extends Component {
         isSearching: false
     }
 
+    inputRef = React.createRef()
+
+    componentDidUpdate(prevProps, prevState) {
+        this.inputRef.current.focus();
+    }
+
+
     handleInput = (ev) => {
         const { value } = ev.target;
         if (!value) {
@@ -40,7 +47,7 @@ export class SongPick extends Component {
         const { results, isSearching, searchStr } = this.state;
         return (
             <div className={`song-pick ${this.props.isSongPickOpen ? 'opened' : ''}`}>
-                <input type="search" name="searchStr" value={searchStr} onChange={this.handleInput} placeholder="Add song to playlist" autoComplete="off" />
+                <input ref={this.inputRef} type="search" name="searchStr" value={searchStr} onChange={this.handleInput} placeholder="Add song to playlist" autoComplete="off" />
 
                 {(isSearching && !results) && <div className="song-pick-msg flex justify-center">
                     Getting results...
