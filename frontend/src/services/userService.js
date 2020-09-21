@@ -1,6 +1,5 @@
 // import httpService from './httpService'
 // const BASE_URL = 'http://localhost:3030/user'
-
 const STORAGE_KEY = 'loggedinUser'
 
 export const userService = {
@@ -38,8 +37,7 @@ function getGuestMode() {
     return {
         username: 'Guest',
         fullName: 'Best Guest',
-        // imgUrl: 'https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/266/266749/aging-man.jpg?w=1155&h=1537',
-        imgUrl: 'https://lms.sprintzeal.com/uploads/blog_images/the-impact-of-internet-of-things-on-marketing_arthur_image_1581428444.png',
+        imgUrl: 'https://res.cloudinary.com/daqs7x8my/image/upload/v1600683124/ko8ia4xof4zz3yspbgoc.png',
         _id: _makeId()
     }
 }

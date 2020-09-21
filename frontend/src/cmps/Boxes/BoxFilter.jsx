@@ -17,6 +17,7 @@ export class BoxFilter extends Component {
         return (
             <div className="box-filter flex justify-center">
                 <input type="search" className="name-filter" name="name" autoComplete="off" value={name} onChange={this.onHandleChange} placeholder="Search Box" />
+                <SearchIcon />
             </div>
         )
     }

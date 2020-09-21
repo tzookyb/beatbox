@@ -113,6 +113,10 @@
         {
           "name": "Guest",
           "id": "KmHKi"
+        },
+        {
+          "name": "Guest",
+          "id": "BiiD6"
         }
       ],
       "tags": [
@@ -131,17 +135,24 @@
           "addedBy": {}
         },
         {
-          "id": "fQug2Rw7i7M",
-          "youtubeId": "fQug2Rw7i7M",
-          "title": "שבק ס - תתקעו בחצוצרה (קליפ)",
-          "imgUrl": "https://i.ytimg.com/vi/fQug2Rw7i7M/hqdefault.jpg",
-          "addedBy": {}
-        },
-        {
           "id": "Z760vU8ezg4",
           "youtubeId": "Z760vU8ezg4",
           "title": "סאבלימינל - הפינאלי - Subliminal",
           "imgUrl": "https://i.ytimg.com/vi/Z760vU8ezg4/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "3PJmE-ucx_o",
+          "youtubeId": "3PJmE-ucx_o",
+          "title": "טונה - גם זה יעבור // Tuna - Gam Ze Ya'avor",
+          "imgUrl": "https://i.ytimg.com/vi/3PJmE-ucx_o/hqdefault.jpg",
+          "addedBy": {}
+        },
+        {
+          "id": "fQug2Rw7i7M",
+          "youtubeId": "fQug2Rw7i7M",
+          "title": "שבק ס - תתקעו בחצוצרה (קליפ)",
+          "imgUrl": "https://i.ytimg.com/vi/fQug2Rw7i7M/hqdefault.jpg",
           "addedBy": {}
         },
         {
@@ -157,21 +168,14 @@
           "title": "רביד פלוטניק - כפרה שלי / Ravid Plotnik - Kapara Sheli",
           "imgUrl": "https://i.ytimg.com/vi/jP4XtOEs-1s/hqdefault.jpg",
           "addedBy": {}
-        },
-        {
-          "id": "3PJmE-ucx_o",
-          "youtubeId": "3PJmE-ucx_o",
-          "title": "טונה - גם זה יעבור // Tuna - Gam Ze Ya'avor",
-          "imgUrl": "https://i.ytimg.com/vi/3PJmE-ucx_o/hqdefault.jpg",
-          "addedBy": {}
         }
       ],
       "currSong": {
         "id": "_sMjZrVEB9E",
-        "isPlaying": true,
-        "secPlayed": 7.645469963760376
+        "isPlaying": false,
+        "secPlayed": 3.6485641049041746
       },
-      "viewCount": 3,
+      "viewCount": 4,
       "_id": "omAQnh6"
     },
     {
@@ -188,7 +192,12 @@
           "id": "AGafG"
         }
       ],
-      "connectedUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "BiiD6"
+        }
+      ],
       "tags": [
         "love",
         "happy"
@@ -243,9 +252,9 @@
       "currSong": {
         "id": "YdgoG8hTMUw",
         "isPlaying": false,
-        "secPlayed": 1.10104804196167
+        "secPlayed": 6.565436984741211
       },
-      "viewCount": 7,
+      "viewCount": 8,
       "_id": "8ODPTfm"
     },
     {
@@ -266,6 +275,10 @@
         {
           "name": "Guest",
           "id": "H04UJ"
+        },
+        {
+          "name": "Guest",
+          "id": "BiiD6"
         }
       ],
       "tags": [
@@ -308,9 +321,9 @@
       "currSong": {
         "id": "IwPOPL-ieD0",
         "isPlaying": false,
-        "secPlayed": 4.8844770057220455
+        "secPlayed": 4.282137015258789
       },
-      "viewCount": 8,
+      "viewCount": 9,
       "_id": "t9rjp7s"
     },
     {
@@ -1399,8 +1412,7 @@
       "description": "Electronic collection suitable for a day at the beach",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600583581/pczpuihjp6qvxeshsr86.jpg",
       "likedByUsers": [],
-      "connectedUsers": [
-      ],
+      "connectedUsers": [],
       "tags": [
         "love",
         "happy"
@@ -1523,8 +1535,7 @@
       "description": "Gather around, classical lovers",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600584410/ljst4v8pbrw9inxkpm5v.jpg",
       "likedByUsers": [],
-      "connectedUsers": [
-      ],
+      "connectedUsers": [],
       "tags": [
         "love",
         "happy"
@@ -1948,6 +1959,63 @@
       },
       "viewCount": 1,
       "_id": "SNsZ4EP"
+    },
+    {
+      "name": "Nevo",
+      "description": "",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600677122/zsionwwabzxa6q8cgzgj.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "BiiD6"
+        }
+      ],
+      "genre": "Hip-hop",
+      "createdBy": {},
+      "createdAt": 1600677108478,
+      "songs": [],
+      "currSong": null,
+      "viewCount": 1,
+      "_id": "KaUiK97"
+    },
+    {
+      "name": "nevo",
+      "description": "",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600677216/iud5qkzqrydwfz084wyc.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "BiiD6"
+        }
+      ],
+      "genre": "Hip-hop",
+      "createdBy": {},
+      "createdAt": 1600677166847,
+      "songs": [],
+      "currSong": null,
+      "viewCount": 1,
+      "_id": "2BEQpBK"
+    },
+    {
+      "name": "hila",
+      "description": "",
+      "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600677455/ra8ik10zgienrpvuujtd.jpg",
+      "likedByUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "BiiD6"
+        }
+      ],
+      "genre": "Hip-hop",
+      "createdBy": {},
+      "createdAt": 1600677446484,
+      "songs": [],
+      "currSong": null,
+      "viewCount": 1,
+      "_id": "E2sxHpw"
     }
   ],
   "user": {
