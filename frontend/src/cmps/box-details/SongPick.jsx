@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { debounce } from 'debounce';
+import { CircleLoading } from 'react-loadingg';
 
 import { youtubeService } from '../../services/youtubeService';
 
@@ -16,7 +17,7 @@ export class SongPick extends Component {
             this.setState({ searchStr: '', isSearching: false, results: '' });
             return;
         }
-        this.setState({ searchStr: value, isSearching: true });
+        this.setState({ results: '', searchStr: value, isSearching: true });
         if (!this.debouncedSearch) {
             this.debouncedSearch = debounce(() => this.getSongs(), 1000)
         }
@@ -37,17 +38,19 @@ export class SongPick extends Component {
 
     render() {
         const { results, isSearching, searchStr } = this.state;
-
         return (
             <div className={`song-pick ${this.props.isSongPickOpen ? 'opened' : ''}`}>
                 <input type="search" name="searchStr" value={searchStr} onChange={this.handleInput} placeholder="Add song to playlist" autoComplete="off" />
 
-                {(isSearching && !results) && <div>Getting results...</div>}
-
+                {(isSearching && !results) && <div className="song-pick-msg flex justify-center">
+                    Getting results...
+                    <CircleLoading color="#ac0aff" />
+                </div>}
+                {results && !results.length && <div className="song-pick-msg flex justify-center">No results found</div>}
                 {results && results.map(result => {
                     const id = result.id.videoId;
                     const title = youtubeService.titleSimplify(result.snippet.title);
-                    const imgUrl = result.snippet.thumbnails.default.url;
+                    const imgUrl = result.snippet.thumbnails.medium.url;
 
                     return <div key={id} className="song-pick-result" onClick={() => this.onAddSong(result)}>
                         <img src={imgUrl} alt="thumbnail" />
