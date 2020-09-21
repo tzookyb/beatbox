@@ -1,5 +1,4 @@
 import { boxService } from "../../services/boxService"
-var gTimeoutId;
 
 export function loadBoxes(filterBy) {
   return async dispatch => {
@@ -33,8 +32,6 @@ export function removeBox(boxId) {
 }
 
 export function notify(txt) {
-  clearTimeout(gTimeoutId);
-  gTimeoutId = setTimeout(closeNotification, 2000);
   return dispatch => {
     dispatch({ type: 'NOTIFY', isShown: true, msg: txt })
   }

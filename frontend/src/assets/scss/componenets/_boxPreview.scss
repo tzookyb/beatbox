@@ -1,7 +1,48 @@
 .box-preview {
+  opacity: 0.85;
   height: rem(260px);
   transition: 0.6s;
   position: relative;
+  color: #e0e0e0;
+
+  &:hover {
+    opacity: 1;
+    color: white;
+  }
+  .box-preview-details {
+    margin: 0 5px;
+    height: 33%;
+    .box-preview-reaction {
+      height: 100%;
+      > * {
+        min-width: 50px;
+      }
+      .likes {
+        svg {
+          cursor: pointer;
+        }
+      }
+      svg {
+        color: rgb(95, 95, 95);
+      }
+      .liked {
+        svg {
+          color: rebeccapurple;
+        }
+      }
+    }
+    .box-preview-data {
+      height: 100%;
+      .box-name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 16ch;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
   .box-preview-img {
     transition: 0.6s;
     img {
@@ -14,38 +55,25 @@
       -o-transition: opacity 1s ease-in-out;
       transition: opacity 1s ease-in-out;
     }
+    &:hover {
+      color: rgb(170, 170, 170);
+    }
   }
 
   &.box-home-preview {
-    &:hover {
-      transform: scale3d(1.3, 1.2, 1.2);
-      background-color: #4b4b4b;
-      z-index: 5;
-    }
+    // &:hover {
+    //   transform: scale3d(1.3, 1.2, 1.2);
+    //   background-color: #4b4b4b;
+    //   z-index: 5;
+    // }
   }
 
-  .box-preview-action {
-    width: 100%;
-    > * {
-      padding: 5px;
-      cursor: pointer;
-      font-size: 0.8rem;
-      svg {
-        font-size: 1rem;
-      }
-    }
-    .liked {
-      svg {
-        fill: rgb(250, 102, 102);
-      }
-    }
-  }
   .active-box {
     height: auto;
     width: 50px;
-    position: absolute;
-    bottom: -10px;
-    right: 5px;
+    // position: absolute;
+    // bottom: -10px;
+    // right: 5px;
     img {
       width: 100%;
       height: 100%;
