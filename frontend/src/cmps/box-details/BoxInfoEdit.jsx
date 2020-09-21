@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import { cloudService } from '../../services/cloudService'
 import { boxService } from '../../services/boxService'
 import imgPlaceholder from '../../assets/img/img_placeholder.png';
+import CircleLoading from 'react-loadingg/lib/CircleLoading';
 
 export class BoxInfoEdit extends Component {
     state = {
@@ -59,7 +60,7 @@ export class BoxInfoEdit extends Component {
 
     render() {
         const { box } = this.state;
-        if (!box) return <h1>Loading..</h1>
+        if (!box) return <CircleLoading  size="large" color= "#ac0aff"/>
         return (
             <form className="box-info flex space-between">
                 <div className="info-input-actions flex space-between column">

@@ -1407,8 +1407,7 @@
       "description": "Electronic collection suitable for a day at the beach",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600583581/pczpuihjp6qvxeshsr86.jpg",
       "likedByUsers": [],
-      "connectedUsers": [
-      ],
+      "connectedUsers": [],
       "tags": [
         "love",
         "happy"
@@ -1531,8 +1530,7 @@
       "description": "Gather around, classical lovers",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600584410/ljst4v8pbrw9inxkpm5v.jpg",
       "likedByUsers": [],
-      "connectedUsers": [
-      ],
+      "connectedUsers": [],
       "tags": [
         "love",
         "happy"
@@ -2110,6 +2108,10 @@
         {
           "name": "Guest",
           "id": "vOtPM"
+        },
+        {
+          "name": "Guest",
+          "id": "s6oRe"
         }
       ],
       "genre": "Easy",
@@ -2136,28 +2138,14 @@
           "title": "Coldplay - Fix You Cover by John Adams",
           "imgUrl": "https://i.ytimg.com/vi/vJn4c1xHk8k/hqdefault.jpg",
           "addedBy": {}
-        },
-        {
-          "id": "DP55oVWQ_yk",
-          "youtubeId": "DP55oVWQ_yk",
-          "title": "Ed Sheeran - Beautiful People (Acoustic) (Lyrics)",
-          "imgUrl": "https://i.ytimg.com/vi/DP55oVWQ_yk/hqdefault.jpg",
-          "addedBy": {}
-        },
-        {
-          "id": "egW0kxHS4u8",
-          "youtubeId": "egW0kxHS4u8",
-          "title": "Set Fire to the Rain (Acoustic)",
-          "imgUrl": "https://i.ytimg.com/vi/egW0kxHS4u8/hqdefault.jpg",
-          "addedBy": {}
         }
       ],
       "currSong": {
-        "id": "1Xyj3aXbcn8",
+        "id": "vJn4c1xHk8k",
         "isPlaying": false,
-        "secPlayed": 200.128308
+        "secPlayed": 12.772409045776367
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "BzfkRSg"
     },
     {
@@ -2294,6 +2282,10 @@
         {
           "name": "Guest",
           "id": "vOtPM"
+        },
+        {
+          "name": "Guest",
+          "id": "h77Rb"
         }
       ],
       "genre": "Pop",
@@ -2339,9 +2331,9 @@
       "currSong": {
         "id": "zpzdgmqIHOQ",
         "isPlaying": false,
-        "secPlayed": 7.197227062942505
+        "secPlayed": 0
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "QDFMIug"
     },
     {

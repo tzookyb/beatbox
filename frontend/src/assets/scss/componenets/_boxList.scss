@@ -15,9 +15,9 @@
       background-color: #ffffff12;
     }
 
-    .box-preview:first-of-type {
-      z-index: 5;
-    }
+    // .box-preview:first-of-type {
+    //   z-index: 5;
+    // }
 
     .list-left-btn,
     .list-right-btn {
@@ -27,7 +27,7 @@
       padding: rem(10px);
       height: rem(260px);
       width: fit-content;
-      z-index: 3;
+      z-index: 5;
       border-radius: 0;
       margin: 0;
     }

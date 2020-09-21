@@ -10,7 +10,7 @@ class _Notification extends Component {
     // unsubscribe;
 
     componentDidUpdate() {
-        setTimeout(() => this.props.closeNotification() , 2000)
+        // setTimeout(() => this.props.closeNotification() , 2000)
     }
 
 
