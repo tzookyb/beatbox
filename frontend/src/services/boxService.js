@@ -40,24 +40,24 @@ async function query(filterBy) {
 function byFilter(boxes, filterBy) {
     if (!boxes) return;
     if (!filterBy) return boxes;
-    var filterBoxes = [];
+    var BoxFilteres = [];
     if (filterBy.genre && filterBy.name) {
         boxes.forEach(box => {
-            if (box.tags.includes(filterBy.genre) && box.name.toLowerCase().includes(filterBy.name.toLowerCase())) filterBoxes.push(box);
+            if (box.tags.includes(filterBy.genre) && box.name.toLowerCase().includes(filterBy.name.toLowerCase())) BoxFilteres.push(box);
         })
-        return filterBoxes;
+        return BoxFilteres;
     }
     else if (filterBy.name) {
         boxes.forEach(box => {
-            if (box.name.toLowerCase().includes(filterBy.name.toLowerCase())) filterBoxes.push(box);
+            if (box.name.toLowerCase().includes(filterBy.name.toLowerCase())) BoxFilteres.push(box);
         })
-        return filterBoxes;
+        return BoxFilteres;
     }
     else if (filterBy.genre) {
         boxes.forEach(box => {
-            if (box.tags.includes(filterBy.genre)) filterBoxes.push(box);
+            if (box.tags.includes(filterBy.genre)) BoxFilteres.push(box);
         })
-        return filterBoxes;
+        return BoxFilteres;
     }
 
     return boxes;

@@ -5,35 +5,21 @@ import { connect } from 'react-redux'
 // import { boxService } from '../services/boxService'
 import { loadBoxes } from '../store/actions/boxAction'
 import { loadUser } from '../store/actions/userAction'
+import { Footer } from '../cmps/Footer'
 
-// const heroImgUrls = [
-//     '../assets/img/bg1.png',
-//     '../assets/img/bg2.png',
-//     '../assets/img/hero1.png'
-// ]
+
 
 class _Home extends Component {
-    // state = {
-    //     currentImg: 0
-    // }
 
+    state = {
+        boxes: null
+    }
 
-
-    // nextBackground = () => {
-    //     console.log(this.state);
-    //     let currentImg = this.state.currentImg
-    //     currentImg++
-    //     currentImg = currentImg % heroImgUrls.length;
-    //     this.setState({ currentImg})
-    // }
-
-
-    componentDidMount() {
-        this.props.loadBoxes();
+    async componentDidMount() {
+        await this.props.loadBoxes();
+        this.setState({boxes: this.props.boxes})
         this.props.loadUser();
-        // console.log(heroImgUrls[this.state.currentImg]);
-        // setInterval(() => this.nextBackground(), 3000);
-        // this.nextBackground()
+
     }
 
     getGenres(boxes) {
@@ -47,10 +33,7 @@ class _Home extends Component {
     }
 
     render() {
-        // const style = {
-        //     backgroundImage : `require(${heroImgUrls[this.state.currentImg]})`
-        // }
-        const { boxes } = this.props;
+        const { boxes } = this.state;
         if (!boxes) return <h1>Loading...</h1>
         const genres = this.getGenres(boxes)
         return (
@@ -60,10 +43,17 @@ class _Home extends Component {
                         <h1>Share the <span>Beat</span>...</h1>
                         <a href="#box"><button>Start listening</button></a>
                     </div>
+                    <div className="hero-img">
+                        <img src={require('../assets/img/hero3.jpg')} alt="" />
+                        <img src={require('../assets/img/hero2.png')} alt="" />
+                        <img src={require('../assets/img/hero1.jpg')} alt="" />
+                    </div>
                 </div>
                 <div className="genre-list">
+                    {console.log("render -> genres", genres)}
                     {genres.length && <BoxApp genres={genres} />}
                 </div>
+                <Footer />
             </React.Fragment>
         )
     }

@@ -6,6 +6,7 @@
 
     max-height: 25rem;
     overflow-y: auto;
+    background-color: $clr1;
 
     &.opened {
         max-width: 80%;

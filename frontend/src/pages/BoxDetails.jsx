@@ -9,7 +9,7 @@ import { BoxInfo } from '../cmps/box-details/BoxInfo'
 import { loadBox, notify, saveBox } from '../store/actions/boxAction'
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService';
-import { FilterBox } from "../cmps/boxes/FilterBox";
+import { BoxFilter } from "../cmps/boxes/BoxFilter";
 
 class _BoxDetails extends Component {
     state = {
@@ -121,7 +121,7 @@ class _BoxDetails extends Component {
             <section className="box-details main-container">
 
                 <BoxInfo box={box} onSaveInfo={this.onSaveInfo} />
-                <FilterBox onSetFilter={this.onSetFilter} />
+                <BoxFilter onSetFilter={this.onSetFilter} />
                 {/* <Picker onEmojiClick={this.onEmojiClick} /> */}
                 {/* <Fab className="add-song-btn" onClick={this.openAddSearch} color="primary" aria-label="add">
                     <AddCircleOutline />

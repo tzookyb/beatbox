@@ -3,23 +3,21 @@ position: relative;
 
   .box-list {
     display: grid;
-    // grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    // grid-auto-rows: 300px;
     grid-gap: 20px;
     grid-auto-flow: column;
     grid-auto-columns: 205px;
-    // overflow-wrap: none;
     overflow: auto;
-
     padding: 25px 0;
     scroll-behavior: smooth;
 
-    // transition: 0.6s;
 
     >* {
       align-self: center;
       background-color: #ffffff12;
+    }
 
+    .box-preview:first-of-type {
+      z-index: 5;
     }
 
     .list-left-btn,
@@ -30,7 +28,7 @@ position: relative;
       padding: rem(10px);
       height: rem(260px);
       width: fit-content;
-      z-index: 999;
+      z-index: 3;
       border-radius: 0;
       margin: 0;
     }
@@ -67,25 +65,28 @@ position: relative;
 
 
   .btn-genre {
+    box-shadow: 0px 1px 5px 0 rgba(157, 233, 170, 0.302),
+    0 1px 3px 1px rgba(189, 191, 192, 0.149);
     color: white;
     font-size: 1.4rem;
     font-weight: 800;
-    transition: padding .6s, color .3s;
+    transition: .4s, color .3s;
     position: relative;
     padding: 10px;
     margin: 0 10px;
-    padding-inline-end: 4em;
+    border-radius: 50px;
+    padding-inline-end: 1rem;
+    
 
     &:hover {
       box-shadow: 0px 1px 5px 0 rgba(157, 233, 170, 0.302),
         0 1px 3px 1px rgba(189, 191, 192, 0.149);
-      border-radius: 50px;
-      padding-inline-end: 5.125em;
+      padding-inline-end: 4em;
     }
 
     &:hover::after {
       content: "List all →";
-      right: 2rem;
+      right: 1rem;
       font-size: 0.8rem;
       position: absolute;
       top: 50%;

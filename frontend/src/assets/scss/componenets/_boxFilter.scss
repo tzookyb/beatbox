@@ -1,0 +1,15 @@
+.box-filter {
+    input {
+        background-color: $clr1;
+        padding: 10px;
+        color: white;
+        border-color: white;
+        outline: none;
+        border-radius: 5px;
+
+        &::placeholder {
+            color: white;
+            border-color: white;
+        }
+    }
+}

@@ -13,7 +13,9 @@ body {
     font-size: 0.875rem;
     font-family: VarelaRound, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: #727272;
+    user-select: none;
 }
+
 
 main {
     min-height: 100vh;

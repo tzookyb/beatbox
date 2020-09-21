@@ -1,4 +1,4 @@
-.chart-container > * {
+.chart-container>* {
     max-width: 50%;
 }
 
@@ -7,16 +7,51 @@
 }
 
 .hero-container {
-    background-image: url("../../img/hero1.png");
-    background-size: cover;
-    background-position: right;
-    background-repeat: no-repeat;
+
     height: 80vh;
+
+    .hero-img {
+        width: 100%;
+        height: 80vh;
+        top: 0;
+        position: absolute;
+
+        img {
+            filter: brightness(70%);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            object-fit: cover;
+            position: absolute;
+            animation-name: image-crossfade;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-duration: 15s;
+
+            &:nth-of-type(1) {
+                animation-delay: 10s;
+            }
+
+            &:nth-of-type(2) {
+                animation-delay: 5s;
+            }
+
+            &:nth-of-type(3) {
+                animation-delay: 0s;
+            }
+
+            // &:nth-of-type(4) {
+            //     animation-delay: 0s;
+            // }
+
+        }
+    }
 
     .hero-txt {
         font-size: 2rem;
         color: #fff;
         position: relative;
+        z-index: 1;
 
         h1 {
             font-family: Kalam;
@@ -24,12 +59,12 @@
         }
 
         button {
-            font-family: Catamaran;
-            background-color: #3f940dd9;
+            font-family: Kalam;
+            background-color: #a3f46da6;
             padding: 15px;
-            border-radius: 5px;
+            border-radius: 10px;
             color: #fff;
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             position: absolute;
             right: -100px;
             top: 200px;
@@ -44,7 +79,7 @@
     height: rem(400px);
     font-size: rem(15px);
 
-    > * {
+    >* {
         margin: 0 0 1em;
         max-width: 50%;
     }

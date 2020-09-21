@@ -205,6 +205,10 @@
         {
           "name": "Guest",
           "id": "hiNXu"
+        },
+        {
+          "name": "Guest",
+          "id": "bDhwa"
         }
       ],
       "tags": [
@@ -214,22 +218,22 @@
       "createdAt": 1600551006105,
       "songs": [
         {
-          "id": "RBumgq5yVrA",
-          "youtubeId": "RBumgq5yVrA",
-          "title": "Passenger | Let Her Go ",
+          "id": "YdgoG8hTMUw",
+          "youtubeId": "YdgoG8hTMUw",
+          "title": "Banana Pancakes",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/RBumgq5yVrA/default.jpg",
+            "url": "https://i.ytimg.com/vi/YdgoG8hTMUw/default.jpg",
             "width": 120,
             "height": 90
           },
           "addedBy": {}
         },
         {
-          "id": "YdgoG8hTMUw",
-          "youtubeId": "YdgoG8hTMUw",
-          "title": "Banana Pancakes",
+          "id": "RBumgq5yVrA",
+          "youtubeId": "RBumgq5yVrA",
+          "title": "Passenger | Let Her Go ",
           "imgUrl": {
-            "url": "https://i.ytimg.com/vi/YdgoG8hTMUw/default.jpg",
+            "url": "https://i.ytimg.com/vi/RBumgq5yVrA/default.jpg",
             "width": 120,
             "height": 90
           },
@@ -259,11 +263,11 @@
         }
       ],
       "currSong": {
-        "id": "RBumgq5yVrA",
+        "id": "YdgoG8hTMUw",
         "isPlaying": false,
-        "secPlayed": 0
+        "secPlayed": 0.40670695040893556
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "8ODPTfm"
     },
     {
@@ -283,6 +287,10 @@
         {
           "name": "Guest",
           "id": "zeYrr"
+        },
+        {
+          "name": "Guest",
+          "id": "bDhwa"
         }
       ],
       "tags": [
@@ -291,17 +299,6 @@
       "createdBy": {},
       "createdAt": 1600551334649,
       "songs": [
-        {
-          "id": "KExLCJAuTXA",
-          "youtubeId": "KExLCJAuTXA",
-          "title": "TEDxZurich - Jojo Mayer - Exploring the distance between 0 and 1",
-          "imgUrl": {
-            "url": "https://i.ytimg.com/vi/KExLCJAuTXA/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "addedBy": {}
-        },
         {
           "id": "IwPOPL-ieD0",
           "youtubeId": "IwPOPL-ieD0",
@@ -323,14 +320,25 @@
             "height": 90
           },
           "addedBy": {}
+        },
+        {
+          "id": "KExLCJAuTXA",
+          "youtubeId": "KExLCJAuTXA",
+          "title": "TEDxZurich - Jojo Mayer - Exploring the distance between 0 and 1",
+          "imgUrl": {
+            "url": "https://i.ytimg.com/vi/KExLCJAuTXA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "addedBy": {}
         }
       ],
       "currSong": {
-        "id": "KExLCJAuTXA",
+        "id": "IwPOPL-ieD0",
         "isPlaying": false,
-        "secPlayed": 517
+        "secPlayed": 1.2799641277923584
       },
-      "viewCount": 3,
+      "viewCount": 4,
       "_id": "t9rjp7s"
     },
     {
@@ -888,6 +896,10 @@
         {
           "name": "Guest",
           "id": "KmHKi"
+        },
+        {
+          "name": "Guest",
+          "id": "bDhwa"
         }
       ],
       "tags": [
@@ -953,11 +965,11 @@
         }
       ],
       "currSong": {
-        "id": "22lISUXgSUw",
-        "isPlaying": true,
-        "secPlayed": 183.62636791416932
+        "id": "PHn0jA4Klx8",
+        "isPlaying": false,
+        "secPlayed": 0
       },
-      "viewCount": 2,
+      "viewCount": 3,
       "_id": "liTPj5R"
     },
     {
@@ -1378,6 +1390,10 @@
         {
           "name": "Guest",
           "id": "KmHKi"
+        },
+        {
+          "name": "Guest",
+          "id": "bDhwa"
         }
       ],
       "tags": [
@@ -1445,9 +1461,9 @@
       "currSong": {
         "id": "UelDrZ1aFeY",
         "isPlaying": false,
-        "secPlayed": 0
+        "secPlayed": 2.2775950381469725
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "OmLGxJ-"
     },
     {
@@ -1459,6 +1475,10 @@
         {
           "name": "Guest",
           "id": "KmHKi"
+        },
+        {
+          "name": "Guest",
+          "id": "bDhwa"
         }
       ],
       "tags": [
@@ -1515,9 +1535,9 @@
       "currSong": {
         "id": "vabnZ9-ex7o",
         "isPlaying": false,
-        "secPlayed": 0
+        "secPlayed": 13.309397881744385
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "yavXo-u"
     },
     {
@@ -2362,6 +2382,10 @@
         {
           "name": "Guest",
           "id": "VzGzc"
+        },
+        {
+          "name": "Guest",
+          "id": "bDhwa"
         }
       ],
       "tags": [
@@ -2451,9 +2475,9 @@
       "currSong": {
         "id": "06IrarkJBCQ",
         "isPlaying": false,
-        "secPlayed": 6.513460946594238
+        "secPlayed": 0.41062689891052245
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "kN7pwUA"
     },
     {

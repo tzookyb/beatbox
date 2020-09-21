@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class FilterBox extends Component {
+export class BoxFilter extends Component {
     state = {
         name: '',
     }

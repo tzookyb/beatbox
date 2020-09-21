@@ -11,7 +11,6 @@ import { Login } from './cmps/user/Login';
 import { Home } from './pages/Home';
 import { UserDetails } from './pages/UserDetails';
 import { Notification } from './cmps/Notification';
-import { Footer } from './cmps/Footer';
 
 class _App extends Component {
   render() {
@@ -30,7 +29,6 @@ class _App extends Component {
         </main>
         <Notification />
         <Player />
-        <Footer />
       </div>
     )
   }
