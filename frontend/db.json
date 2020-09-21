@@ -196,7 +196,12 @@
           "id": "AGafG"
         }
       ],
-      "connectedUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "G92Ed"
+        }
+      ],
       "tags": [
         "love",
         "happy"
@@ -205,6 +210,13 @@
       "createdBy": {},
       "createdAt": 1600551006105,
       "songs": [
+        {
+          "id": "CoONtDv9eJg",
+          "youtubeId": "CoONtDv9eJg",
+          "title": "Passenger - All The Little Lights",
+          "imgUrl": "https://i.ytimg.com/vi/CoONtDv9eJg/hqdefault.jpg",
+          "addedBy": {}
+        },
         {
           "id": "YdgoG8hTMUw",
           "youtubeId": "YdgoG8hTMUw",
@@ -223,37 +235,23 @@
           "id": "RBumgq5yVrA",
           "youtubeId": "RBumgq5yVrA",
           "title": "Passenger | Let Her Go ",
-          "imgUrl": "https://i.ytimg.com/vi/YdgoG8hTMUw/hqdefault.jpg",
+          "imgUrl": "https://i.ytimg.com/vi/RBumgq5yVrA/hqdefault.jpg",
           "addedBy": {}
         },
         {
-          "id": "lPTWOgXst14",
-          "youtubeId": "lPTWOgXst14",
-          "title": "KIDA - EDHE SA",
-          "imgUrl": "https://i.ytimg.com/vi/lPTWOgXst14/hqdefault.jpg",
-          "addedBy": {}
-        },
-        {
-          "id": "u4S4Ss_vT2c",
-          "youtubeId": "u4S4Ss_vT2c",
-          "title": "SA MAU KOI - TOJANA - CYTA WALONE ",
-          "imgUrl": "https://i.ytimg.com/vi/u4S4Ss_vT2c/hqdefault.jpg",
-          "addedBy": {}
-        },
-        {
-          "id": "E0pz2DTRURc",
-          "youtubeId": "E0pz2DTRURc",
-          "title": "#Pirates SA x BZ x ABZ - Truth (Music Video) | @MixtapeMadness",
-          "imgUrl": "https://i.ytimg.com/vi/E0pz2DTRURc/hqdefault.jpg",
+          "id": "ZAYZmIfHEiU",
+          "youtubeId": "ZAYZmIfHEiU",
+          "title": "Passenger | Home (Official Album Audio)",
+          "imgUrl": "https://i.ytimg.com/vi/ZAYZmIfHEiU/hqdefault.jpg",
           "addedBy": {}
         }
       ],
       "currSong": {
-        "id": "YdgoG8hTMUw",
-        "isPlaying": false,
-        "secPlayed": 1.10104804196167
+        "id": "CoONtDv9eJg",
+        "isPlaying": true,
+        "secPlayed": 0
       },
-      "viewCount": 7,
+      "viewCount": 8,
       "_id": "8ODPTfm"
     },
     {
@@ -2467,6 +2465,10 @@
         {
           "name": "Guest",
           "id": "vOtPM"
+        },
+        {
+          "name": "Guest",
+          "id": "G92Ed"
         }
       ],
       "genre": "Easy",
@@ -2518,10 +2520,10 @@
       ],
       "currSong": {
         "id": "m4gQTYGHfRg",
-        "isPlaying": false,
-        "secPlayed": 8.607818019073486
+        "isPlaying": true,
+        "secPlayed": 0
       },
-      "viewCount": 1,
+      "viewCount": 2,
       "_id": "tT1Jp9L"
     },
     {
