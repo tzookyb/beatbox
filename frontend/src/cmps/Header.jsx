@@ -15,18 +15,18 @@ class _Header extends Component {
         window.addEventListener("scroll", this.onScroll)
     }
 
-
+    
     onScroll = () => {
         if (window.scrollY > 0) {
             this.setState({ isScroll: true })
         }
         else this.setState({ isScroll: false })
     }
-
+    
     render() {
-        const { user } = this.props;
+        const { user } = this.props;        
         return (
-            <header onScroll={this.onScroll} className={`${this.state.isScroll || this.props.location.pathname!== '/' ? 'sticky' : ''} flex space-around  align-center`}>
+            <header onScroll={this.onScroll} className={`${this.state.isScroll || this.props.location.pathname !== '/' ? 'sticky' : ''} flex space-around  align-center`}>
 
                 {(this.props.location.pathname === '/') ?
                     <a href="/#top" className="logo">BeatBox</a> :
@@ -43,8 +43,10 @@ class _Header extends Component {
 
                     {/* {loggedinUser && <button onClick={() => onLogout()}>Logout</button>} */}
 
-                    {user && <div className="avatar-img">
+                    {user && <div className="avatar-img flex column align-center">
                         <img src={user.imgUrl} alt="avatar" />
+                        <label className="avatar-name">Hi {user.username}</label>
+
                     </div>}
                 </ul>
             </header>

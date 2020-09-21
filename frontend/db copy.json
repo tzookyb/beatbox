@@ -222,10 +222,6 @@
         {
           "name": "Guest",
           "id": "ld7Aq"
-        },
-        {
-          "name": "Guest",
-          "id": "U460V"
         }
       ],
       "tags": [
@@ -305,10 +301,10 @@
       ],
       "currSong": {
         "id": "YdgoG8hTMUw",
-        "isPlaying": false,
-        "secPlayed": 1.6865999866485595
+        "isPlaying": true,
+        "secPlayed": 0
       },
-      "viewCount": 5,
+      "viewCount": 4,
       "_id": "8ODPTfm"
     },
     {
@@ -325,10 +321,6 @@
         {
           "name": "Guest",
           "id": "ld7Aq"
-        },
-        {
-          "name": "Guest",
-          "id": "sTEw9"
         }
       ],
       "tags": [
@@ -375,10 +367,10 @@
       ],
       "currSong": {
         "id": "KExLCJAuTXA",
-        "isPlaying": false,
-        "secPlayed": 1.178876979019165
+        "isPlaying": true,
+        "secPlayed": 0
       },
-      "viewCount": 6,
+      "viewCount": 5,
       "_id": "t9rjp7s"
     },
     {
@@ -1267,10 +1259,6 @@
         {
           "name": "Guest",
           "id": "ld7Aq"
-        },
-        {
-          "name": "hila",
-          "id": "oxGU8"
         }
       ],
       "connectedUsers": [],
@@ -2600,6 +2588,7 @@
     "imgUrl": "http://some-img",
     "followers": [],
     "following": [],
+    "currBoxId" :"",
     "notifs": [
       {
         "id": "a101",

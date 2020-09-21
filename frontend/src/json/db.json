@@ -4,10 +4,10 @@
       "_id": "103a",
       "name": "Funky Monks",
       "viewCount": 0,
-      "tags": [
-        "Hip-hop",
-        "Arabic"
+      "tags": ["love",
+        "happ"
       ],
+      "genre": "Hip-hop",
       "description": "In this box you will hear Arabic music along with pop music, a powerful combination of worlds",
       "likedByUsers": [
         {
@@ -89,10 +89,10 @@
       "_id": "104a",
       "name": "Best Box",
       "viewCount": 0,
-      "tags": [
-        "Country",
-        "Disco"
+      "tags": ["love",
+        "happy"
       ],
+      "genre": "Disco",
       "description": "In this box the music is calm but surprising, try us ",
       "likedByUsers": [
         {

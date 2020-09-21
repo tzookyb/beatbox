@@ -7,12 +7,15 @@ import { saveBox, loadBoxes } from '../store/actions/boxAction'
 import { BoxInfoEdit } from '../cmps/box-details/BoxInfoEdit'
 import { SongList } from '../cmps/box-details/SongList'
 
+
+
 export class _BoxAdd extends Component {
     state = {
         editBox: null,
         msgWarning: '',
         isSongPickOpen: true,
-        isDragging: false
+        isDragging: false,
+        isLoading: ''
     }
 
     componentDidMount() {
@@ -20,8 +23,8 @@ export class _BoxAdd extends Component {
         this.setState({ editBox: emptyBox })
     }
 
-    printMsg() {
-        this.setState({ msgWarning: 'Name of box is required' })
+    printMsg(msg) {
+        this.setState({ msgWarning: msg })
         setTimeout(() => {
             this.setState({ msgWarning: '' })
         }, 2000)
@@ -30,9 +33,14 @@ export class _BoxAdd extends Component {
     onAddBox = async (ev) => {
         ev.preventDefault();
         if (!this.state.editBox.name) {
-            this.printMsg();
+            this.printMsg('Name of box is required');
             return;
         }
+        if (!this.state.editBox.genre) {
+            this.printMsg('Genre of box is required');
+            return;
+        }
+        // if (!this.state.editBox.imgUrl) this.setState({ ...this.state.editBox, editBox:{ imgUrl: require('../assets/img/default-box-img.jpg') } })
         const addedBox = await this.props.saveBox(this.state.editBox);
         this.props.loadBoxes();
         this.props.history.push(`/box/${addedBox._id}`);
@@ -44,7 +52,7 @@ export class _BoxAdd extends Component {
             {
                 ...prevState.editBox,
                 name: box.name,
-                tags: box.tags,
+                genre: box.genre,
                 description: box.description,
                 imgUrl: box.imgUrl
             }
@@ -108,14 +116,18 @@ export class _BoxAdd extends Component {
         // TODO: add capability to demo listen to song (on hover prefferably - connect new player comp. here)
         return
     }
-    
+
+    setIsLoading = (isLoading) => {
+        this.setState({ isLoading })
+    }
+
     render() {
         const { editBox, isSongPickOpen, isDragging } = this.state;
         if (!editBox) return <h1>Loading...</h1>
         return (
             <section className="box-add main-container">
                 <h2>Create Your Box</h2>
-                <BoxInfoEdit updateBox={this.updateBox} />
+                <BoxInfoEdit updateBox={this.updateBox} setIsLoading={this.setIsLoading} />
 
                 <DragDropContext
                     onDragStart={this.onDragStart}
@@ -134,8 +146,8 @@ export class _BoxAdd extends Component {
                 </DragDropContext>
 
                 <div className="btn-create-container">
-                    <button className="btn-create" onClick={this.onAddBox}>Create Box</button>
-                    {this.state.msgWarning && <label>{this.state.msgWarning}</label>}
+                    <button disabled={this.state.isLoading} className={`btn-create ${this.state.isLoading ? 'faded-btn' : ''}`} onClick={this.onAddBox}>Create Box</button>
+                    {this.state.msgWarning && <label className="msg-warnning">{this.state.msgWarning}</label>}
                 </div>
             </section>
         )
