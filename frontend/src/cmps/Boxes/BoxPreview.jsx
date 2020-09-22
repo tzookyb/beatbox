@@ -66,7 +66,6 @@ export class BoxPreview extends Component {
                 <div className="box-preview-details flex space-between align-center">
                     <div className="box-preview-data flex column space-between">
                         <h3 className="box-name">{box.name}</h3>
-                        {/* <h3>{box.genre}</h3> */}
                         <Avatar alt="Remy Sharp" src={box.createdBy.imgUrl} style={{ width: '30px', height: '30px' }} />
                     </div>
                     <div className="box-preview-reaction flex column">
@@ -78,9 +77,9 @@ export class BoxPreview extends Component {
                             <label>{box.viewCount}</label>
                             <HeadsetIcon />
                         </div>
-                        {(box.connectedUsers.length > 0) &&
+                        {/* {(box.connectedUsers.length > 0) &&
                             <img className="active-box" src={equalizer} title="Someone is listening to this box!" alt="equalizer animation" />
-                        }
+                        } */}
                     </div>
                 </div>
             </section >

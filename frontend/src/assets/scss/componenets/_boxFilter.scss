@@ -1,25 +1,37 @@
 .box-filter {
-    max-width: 300px;
-    margin: 15px auto;
-    padding: 15px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-evenly;
-    border: 1px solid white;
-    input {
-        border-color: white;
-        color: white;
-        width: 100%;
-        border: none;
-        background-color: transparent;
-        font-size: 1.1rem;
-        outline: none;
-        &::placeholder {
-            color: rgba(206, 206, 206, 0.9);
-            border-color: white;
-        }
-        svg{
-            // color: white;
-        }
+  max-width: 300px;
+  padding: 8px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid white;
+  width: 40px;
+  transition: 0.7s;
+
+  .search-icon {
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      color: $clr3;
     }
+  }
+  &.open {
+    width: 250px;
+  }
+  input {
+    border-color: white;
+    color: white;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 1.1rem;
+    outline: none;
+    &::placeholder {
+      color: rgba(206, 206, 206, 0.9);
+      border-color: white;
+    }
+    svg {
+      // color: white;
+    }
+  }
 }

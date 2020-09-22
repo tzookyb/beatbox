@@ -1,5 +1,6 @@
 .list-container {
   position: relative;
+  padding-inline-start: 25px;
 
   .box-list {
     display: grid;
@@ -7,7 +8,7 @@
     grid-auto-flow: column;
     grid-auto-columns: 205px;
     overflow: auto;
-    padding: 25px 0;
+    padding: 15px 0 40px 0;
     scroll-behavior: smooth;
 
     > * {
@@ -25,11 +26,13 @@
       background-color: #18191acc;
       color: #fff;
       padding: rem(10px);
-      height: rem(260px);
+      height: 52px;
       width: fit-content;
       z-index: 6;
       border-radius: 0;
       margin: 0;
+      align-self: center;
+      top: calc(50% - 26px);
     }
 
     .list-right-btn {
@@ -69,6 +72,9 @@
       font-size: 1.8rem;
     }
     .see-all-genre {
+      border: 1px solid white;
+      border-radius: 5px;
+      padding: 10px;
       font-size: 1rem;
       color: rgb(195, 195, 195);
       // cursor: pointer;

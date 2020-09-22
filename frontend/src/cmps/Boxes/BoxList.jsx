@@ -41,7 +41,7 @@ export class BoxList extends Component {
         return (
             <section className={`list-container ${this.props.genre ? '' : 'main-container'}`}>
 
-                {this.props.genre && <div className="genre-filter flex">
+                {this.props.genre && <div className="genre-filter flex align-enter space-between">
                     <h3 className="title-genre">{this.props.genre}</h3>
                     <Link to={`/box?&genre=${this.props.genre}`}> <h3 className="see-all-genre" >See All →</h3></Link>
                 </div>}

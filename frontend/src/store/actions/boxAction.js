@@ -24,6 +24,14 @@ export function saveBox(box) {
   };
 }
 
+export function updateBox(box) {
+  return dispatch => {
+    const actionType = 'EDIT_BOX';
+    boxService.save(box);
+    dispatch({ type: actionType, box })
+  };
+}
+
 export function removeBox(boxId) {
   return async dispatch => {
     await boxService.remove(boxId)
