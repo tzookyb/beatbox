@@ -1,9 +1,6 @@
 import httpService from './httpService';
 import { youtubeService } from './youtubeService';
 
-// import axios from 'axios';
-// const BASE_URL = 'http://localhost:3030/box'
-
 var gGenre = ['Hip-hop', 'Arabic', 'Easy', 'Electronic', 'Country', 'Latin', 'Jazz', 'Rock',
     'Pop', 'Classical', 'Alternative', 'Blues', 'Disco', 'Israeli']
 
@@ -39,25 +36,25 @@ async function query(filterBy) {
 function byFilter(boxes, filterBy) {
     if (!boxes) return;
     if (!filterBy) return boxes;
-    var boxFilteres = [];
+    var boxFilters = [];
     if (filterBy.genre && filterBy.name) {
         boxes.forEach(box => {
-            if (box.genre === filterBy.genre && box.name.toLowerCase().includes(filterBy.name.toLowerCase())) boxFilteres.push(box);
+            if (box.genre === filterBy.genre && box.name.toLowerCase().includes(filterBy.name.toLowerCase())) boxFilters.push(box);
         })
-        return boxFilteres;
+        return boxFilters;
     }
     else if (filterBy.name) {
         boxes.forEach(box => {
-            if (box.name.toLowerCase().includes(filterBy.name.toLowerCase())) boxFilteres.push(box);
+            if (box.name.toLowerCase().includes(filterBy.name.toLowerCase())) boxFilters.push(box);
         })
-        return boxFilteres;
+        return boxFilters;
     }
     else if (filterBy.genre) {
         boxes.forEach(box => {
-            if(box.genre === filterBy.genre) boxFilteres.push(box);
+            if (box.genre === filterBy.genre) boxFilters.push(box);
             // if (box.tags.includes(filterBy.genre)) filterBoxes.push(box);
         })
-        return boxFilteres;
+        return boxFilters;
     }
 
     return boxes;
@@ -83,7 +80,7 @@ function getEmptyBox() {
         imgUrl: null,
         likedByUsers: [],
         connectedUsers: [],
-        genre:'',
+        genre: '',
         createdBy: {},
         createdAt: Date.now(),
         songs: [],
@@ -110,7 +107,7 @@ function addSong(song, songs) {
     // }
     console.log(song)
     const newSong = {
-        id: song.id.videoId,
+        id: _makeId(),
         youtubeId: song.id.videoId,
         title: youtubeService.titleSimplify(song.snippet.title),
         imgUrl: song.snippet.thumbnails.high.url,
@@ -151,12 +148,11 @@ async function addConnectedUser(boxId, minimalUser) {
     }
 }
 
-
-// function _makeId(length = 6) {
-//     var txt = '';
-//     var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-//     for (var i = 0; i < length; i++) {
-//         txt += possible.charAt(Math.floor(Math.random() * possible.length));
-//     }
-//     return txt;
-// }
+function _makeId(length = 8) {
+    var txt = '';
+    var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    for (var i = 0; i < length; i++) {
+        txt += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return txt;
+}
