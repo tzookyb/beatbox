@@ -7,11 +7,11 @@ import CircleLoading from 'react-loadingg/lib/CircleLoading'
 // import { ChatBox } from '../cmps/box-details/ChatBox'
 import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
-import { loadBox, notify, saveBox } from '../store/actions/boxAction'
+import { loadBox, notify, saveBox, updateBox } from '../store/actions/boxAction'
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService';
 import { BoxFilter } from '../cmps/boxes/BoxFilter';
-import {BoxWall} from '../cmps/box-details/BoxWall'
+import { BoxWall } from '../cmps/box-details/BoxWall'
 
 class _BoxDetails extends Component {
     state = {
@@ -107,17 +107,12 @@ class _BoxDetails extends Component {
         else this.onSwapSongs(source.index, destination.index);
     }
 
-    onSwapSongs = async (srcIdx, destIdx) => {
-        const songs = [...this.props.box.songs];
-        const [songToMove] = songs.splice(srcIdx, 1);
-        songs.splice(destIdx, 0, songToMove)
-        const newBox = { ...this.props.box, songs }
-        await this.props.saveBox(newBox);
-    }
-
-    onMouseMove = (ev) => {
-        console.log(ev);
-
+    onSwapSongs = (srcIdx, destIdx) => {
+        const newSongs = Array.from(this.props.box.songs);
+        const [songToMove] = newSongs.splice(srcIdx, 1);
+        newSongs.splice(destIdx, 0, songToMove)
+        const newBox = { ...this.props.box, songs: newSongs }
+        this.props.updateBox(newBox);
     }
 
     render() {
@@ -173,7 +168,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
     loadBox,
     saveBox,
-    notify
+    notify,
+    updateBox
 }
 
 export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails)
