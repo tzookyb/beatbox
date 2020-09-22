@@ -10,8 +10,9 @@ import { BoxInfo } from '../cmps/box-details/BoxInfo'
 import { loadBox, notify, saveBox, updateBox } from '../store/actions/boxAction'
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService';
+import { BoxFilter } from "../cmps/boxes/BoxFilter";
+import { BoxWall, Demo } from '../cmps/box-details/BoxWall'
 import { BoxFilter } from '../cmps/boxes/BoxFilter';
-import { BoxWall } from '../cmps/box-details/BoxWall'
 
 class _BoxDetails extends Component {
     state = {
@@ -124,7 +125,8 @@ class _BoxDetails extends Component {
         const songsToShow = this.getSongsForDisplay();
         return (
             <section className="box-details">
-                {/* <BoxWall /> */}
+
+                {/* <BoxWall/> */}
                 <BoxInfo box={box} onSaveInfo={this.onSaveInfo} />
                 <BoxFilter onSetFilter={this.onSetFilter} />
                 {/* <Picker onEmojiClick={this.onEmojiClick} /> */}
