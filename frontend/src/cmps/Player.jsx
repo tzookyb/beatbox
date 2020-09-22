@@ -32,6 +32,7 @@ class _Player extends Component {
     componentDidMount() {
         socketService.setup();
         socketService.on('update song time', (secPlayed) => this.onSeek(secPlayed));
+        // socketService.on('song status changed', (isPlaying) => this.setState({isPlaying}));
     }
 
 
@@ -71,7 +72,8 @@ class _Player extends Component {
     }
 
     loadSongToPlayer = (currSongIdx = 0) => {
-        const { currBox } = this.state;
+        const { currBox } = this.props;
+        console.log("loadSongToPlayer -> currBox", currBox)
         // If no songs in box, do nothing.
         if (!currBox.songs.length) return;
 
@@ -90,15 +92,20 @@ class _Player extends Component {
     }
 
     togglePlay = () => {
-        this.setState({ isPlaying: !this.state.isPlaying }, this.onUpdateBox);
+        this.setState({ isPlaying: !this.state.isPlaying }, async () => {
+            this.onUpdateBox();
+            
+        } )
+        
     }
 
-    onUpdateBox = async () => {
+    onUpdateBox = () => {
         // HAVE BEEN CHANGED - SOCKETS
         const { currBox } = this.props;
         const currSong = { ...currBox.currSong, isPlaying: this.state.isPlaying, secPlayed: this.state.secPlayed };
         const newBox = { ...currBox, currSong }
-        await this.props.updateBox(newBox);
+        this.props.updateBox(newBox);
+        socketService.emit('set currSong', currSong);
     }
 
     skipToSong = (skip) => {
@@ -123,6 +130,7 @@ class _Player extends Component {
 
     handleSeekMouseUp = () => {
         socketService.emit('song time changed', this.state.secPlayed);
+    
         this.setState({ seeking: false }, () => {
             this.onUpdateBox();
             this.player.seekTo(this.state.secPlayed);
@@ -187,7 +195,7 @@ class _Player extends Component {
 
     render() {
         const { currBox, isPlaying, volume, muted, duration, isShrunk, playerLocation } = this.state;
-
+        
         if (!currBox || !currBox.currSong) return null;
         const song = currBox.songs.find(song => song.id === currBox.currSong.id)
 
