@@ -10,7 +10,7 @@ import VolumeMuteIcon from '@material-ui/icons/VolumeMute';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import Slider from '@material-ui/core/Slider';
 
-import { saveBox } from '../store/actions/boxAction';
+import { saveBox, updateBox } from '../store/actions/boxAction';
 import { withRouter } from 'react-router-dom';
 
 class _Player extends Component {
@@ -72,11 +72,12 @@ class _Player extends Component {
         this.setState({ isPlaying: !this.state.isPlaying }, this.updateBox);
     }
 
-    updateBox = async () => {
-        const { currBox } = this.state;
+    updateBox = () => {
+        // HAVE BEEN CHANGED - SOCKETS
+        const { currBox } = this.props;
         const currSong = { ...currBox.currSong, isPlaying: this.state.isPlaying, secPlayed: this.state.secPlayed };
-        const newBox = { ...this.state.currBox, currSong }
-        await this.props.saveBox(newBox);
+        const newBox = { ...currBox, currSong }
+        this.props.updateBox(newBox);
     }
 
     skipToSong = (skip) => {
@@ -180,7 +181,7 @@ class _Player extends Component {
             <ReactPlayer
                 ref={this.ref}
                 className="player"
-                url={`https://www.youtube.com/watch?v=${song.id}`}
+                url={`https://www.youtube.com/watch?v=${song.youtubeId}`}
                 playing={isPlaying}
                 controls={false}
                 volume={volume}
@@ -266,7 +267,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-    saveBox
+    saveBox,
+    updateBox
 }
 
 export const Player = connect(mapStateToProps, mapDispatchToProps)(withRouter(_Player));

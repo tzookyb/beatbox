@@ -1,10 +1,11 @@
+// OUTSOURCE IMPORT 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { DragDropContext } from 'react-beautiful-dnd'
 import CircleLoading from 'react-loadingg/lib/CircleLoading'
-// import Picker from 'emoji-picker-react';
 
-// import { ChatBox } from '../cmps/box-details/ChatBox'
+
+// LOCAL IMPORT
 import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
 import { loadBox, notify, saveBox, updateBox } from '../store/actions/boxAction'
@@ -12,6 +13,7 @@ import { boxService } from '../services/boxService'
 import { userService } from '../services/userService';
 import { BoxFilter } from "../cmps/boxes/BoxFilter";
 import { BoxWall, Demo } from '../cmps/box-details/BoxWall'
+import { socketService } from '../services/socketService'
 
 class _BoxDetails extends Component {
     state = {
@@ -22,17 +24,36 @@ class _BoxDetails extends Component {
     }
 
     async componentDidMount() {
+        console.log('mount');
         const boxId = this.props.match.params.boxId;
         const minimalUser = userService.getMinimalUser();
-        await boxService.addConnectedUser(boxId, minimalUser);
+        // await boxService.addConnectedUser(boxId, minimalUser);
         await this.props.loadBox(boxId);
         const { box } = this.props;
         this.setState({ box })
+
+        // SOCKET SETUP
+        socketService.setup();
+        socketService.emit('join box', this.state.box._id);
+        // socketService.on('chat addMsg', this.addMsg);
+        // socketService.on('chat typing', this.onTyping);
+        // socketService.on('set currSong', this.state.box.currSong)
+        socketService.on('song changed', (currSong) => this.onSetCurrSong(currSong))
     }
 
     componentDidUpdate(prevProps) {
-        const newBox = this.props.box;
-        if (prevProps.box !== newBox) this.setState({ box: newBox });
+            const newBox = this.props.box;
+            if(prevProps.box !== newBox) this.setState({ box: newBox });
+    }
+
+    componentWillUnmount() {
+        console.log('unmount');
+
+    }
+
+    onSetCurrSong = (currSong) => {
+        const newBox = { ...this.props.box, currSong };
+        this.props.updateBox(newBox);
     }
 
     onRemoveSong = async (ev, songId) => {
@@ -54,7 +75,7 @@ class _BoxDetails extends Component {
         }
         box.songs.splice(songIdx, 1);
         this.props.notify('Song removed')
-        await this.props.saveBox(box)
+        await this.props.updateBox(box)
     }
 
     onAddSong = (song) => {
@@ -67,6 +88,7 @@ class _BoxDetails extends Component {
 
     onPlaySong = (songId) => {
         const currSong = { id: songId, isPlaying: true, secPlayed: 0 };
+        socketService.emit('set currSong', currSong);
         const box = { ...this.state.box, currSong };
         this.props.saveBox(box);
     }
