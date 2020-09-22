@@ -85,10 +85,7 @@ async function update(box) {
 
     try {
         await collection.replaceOne({ '_id': box._id }, box )
-<<<<<<< HEAD
-=======
         // console.log("update -> box", box)
->>>>>>> af5ab9c09c3547f1bb7a72243d9351639afb7d13
         return box
     } catch (err) {
         console.log(`ERROR: cannot update box ${box._id}`)
