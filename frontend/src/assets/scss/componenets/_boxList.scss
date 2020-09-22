@@ -7,7 +7,7 @@
     grid-auto-flow: column;
     grid-auto-columns: 205px;
     overflow: auto;
-    padding: 25px 0;
+    padding: 15px 0 40px 0;
     scroll-behavior: smooth;
 
     > * {
@@ -69,6 +69,9 @@
       font-size: 1.8rem;
     }
     .see-all-genre {
+      border: 1px solid white;
+      border-radius: 5px;
+      padding: 10px;
       font-size: 1rem;
       color: rgb(195, 195, 195);
       // cursor: pointer;

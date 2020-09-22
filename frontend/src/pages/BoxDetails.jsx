@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { DragDropContext } from 'react-beautiful-dnd'
+import CircleLoading from 'react-loadingg/lib/CircleLoading'
 // import Picker from 'emoji-picker-react';
 
 // import { ChatBox } from '../cmps/box-details/ChatBox'
@@ -9,8 +10,8 @@ import { BoxInfo } from '../cmps/box-details/BoxInfo'
 import { loadBox, notify, saveBox } from '../store/actions/boxAction'
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService';
-import { BoxFilter } from "../cmps/boxes/BoxFilter";
-import CircleLoading from 'react-loadingg/lib/CircleLoading'
+import { BoxFilter } from '../cmps/boxes/BoxFilter';
+import {BoxWall} from '../cmps/box-details/BoxWall'
 
 class _BoxDetails extends Component {
     state = {
@@ -129,7 +130,7 @@ class _BoxDetails extends Component {
         return (
             <section className="box-details">
                 onMouseMove={this.onMouseMove}
-
+                <BoxWall />
                 <BoxInfo box={box} onSaveInfo={this.onSaveInfo} />
                 <BoxFilter onSetFilter={this.onSetFilter} />
                 {/* <Picker onEmojiClick={this.onEmojiClick} /> */}
