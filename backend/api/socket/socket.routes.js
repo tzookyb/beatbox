@@ -24,7 +24,7 @@ function connectSockets(io) {
         socket.on('chat newMsg', msg => {
             io.to(socket.myTopic).emit('chat addMsg', msg)
         })
-        socket.on('chat name', topic => {
+        socket.on('chat topic', topic => {
             if (socket.myTopic) {
                 socket.leave(socket.myTopic)
             }
@@ -42,9 +42,9 @@ function connectSockets(io) {
             socket.myBox = boxId;
             io.to(socket.myBox).emit('joined new box', boxId)
         })
-        socket.on('song time changed', timestamp => {
-            io.to(socket.myBox).emit('update song time', timestamp)
-        })
+        // socket.on('song time changed', timestamp => {
+        //     io.to(socket.myBox).emit('update song time', timestamp)
+        // })
         socket.on('set currSong', currSong => {
             io.to(socket.myBox).emit('song changed', currSong)
         })
