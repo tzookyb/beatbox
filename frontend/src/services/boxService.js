@@ -1,7 +1,7 @@
 import httpService from './httpService';
 import { youtubeService } from './youtubeService';
 
-var gGenre = ['Hip-hop', 'Arabic', 'Easy', 'Electronic', 'Country', 'Latin', 'Jazz', 'Rock',
+var gGenre = ['Hip-hop', 'Arabic', 'Easy', 'Electronic', 'Country', 'Latin', 'Rock',
     'Pop', 'Classical', 'Alternative', 'Blues', 'Disco', 'Israeli']
 
 export const boxService = {
