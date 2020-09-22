@@ -133,10 +133,6 @@
         {
           "name": "Guest",
           "id": "HFRuh"
-        },
-        {
-          "name": "Guest",
-          "id": "72ryH"
         }
       ],
       "tags": [
@@ -173,12 +169,8 @@
           "addedBy": {}
         }
       ],
-      "currSong": {
-        "id": "PQp2a_yunmM",
-        "isPlaying": false,
-        "secPlayed": 2.4359339771118163
-      },
-      "viewCount": 6,
+      "currSong": null,
+      "viewCount": 5,
       "_id": "omAQnh6"
     },
     {
@@ -2748,24 +2740,26 @@
       "_id": "4F9CoMR"
     }
   ],
-  "user": {
-    "_id": "u101",
-    "fullName": "Puki Ben David",
-    "userName": "orly@amdadi.com",
-    "password": "1",
-    "imgUrl": "http://some-img",
-    "followers": [],
-    "following": [],
-    "notifs": [
-      {
-        "id": "a101",
-        "txt": "Bla bla",
-        "createdAt": 154514,
-        "action": {
-          "id": "c101",
-          "title": "do that"
+  "user": [
+    {
+      "_id": "u101",
+      "fullName": "Puki Ben David",
+      "userName": "orly@amdadi.com",
+      "password": "1",
+      "imgUrl": "http://some-img",
+      "followers": [],
+      "following": [],
+      "notifs": [
+        {
+          "id": "a101",
+          "txt": "Bla bla",
+          "createdAt": 154514,
+          "action": {
+            "id": "c101",
+            "title": "do that"
+          }
         }
-      }
-    ]
-  }
+      ]
+    }
+  ]
 }
