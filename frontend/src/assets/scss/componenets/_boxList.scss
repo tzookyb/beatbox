@@ -1,5 +1,6 @@
 .list-container {
   position: relative;
+  padding-inline-start: 25px;
 
   .box-list {
     display: grid;
@@ -25,11 +26,13 @@
       background-color: #18191acc;
       color: #fff;
       padding: rem(10px);
-      height: rem(260px);
+      height: 52px;
       width: fit-content;
       z-index: 6;
       border-radius: 0;
       margin: 0;
+      align-self: center;
+      top: calc(50% - 26px);
     }
 
     .list-right-btn {

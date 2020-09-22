@@ -1,7 +1,8 @@
 import React from 'react'
 import { Fab } from '@material-ui/core';
 import { Droppable } from 'react-beautiful-dnd';
-import { AddCircleOutline, Delete } from '@material-ui/icons';
+import { Delete } from '@material-ui/icons';
+import AddIcon from '@material-ui/icons/Add';
 
 import { SongPick } from './SongPick'
 import { SongPreview } from './SongPreview'
@@ -48,8 +49,8 @@ export function SongList({ songs, onRemoveSong, onAddSong, onPlaySong, isSongPic
                 )}
             </Droppable>
 
-            <Fab className="add-song-btn" onClick={toggleSongPick} color="primary" aria-label="add">
-                <AddCircleOutline />
+            <Fab className={`add-song-btn  ${isSongPickOpen ? 'opened' : ''}`} onClick={toggleSongPick} color="primary" aria-label="add">
+                <AddIcon/>
             </Fab>
 
             <SongPick isSongPickOpen={isSongPickOpen} onAddSong={onAddSong} />

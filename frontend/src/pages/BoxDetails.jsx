@@ -1,13 +1,14 @@
+// OUTSOURCE IMPORT 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { DragDropContext } from 'react-beautiful-dnd'
 import CircleLoading from 'react-loadingg/lib/CircleLoading'
-// import Picker from 'emoji-picker-react';
 
-// import { ChatBox } from '../cmps/box-details/ChatBox'
+
+// LOCAL IMPORT
 import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
-import { loadBox, notify, saveBox } from '../store/actions/boxAction'
+import { loadBox, notify, saveBox, updateBox } from '../store/actions/boxAction'
 import { addMessage, loadMessages } from '../store/actions/messageAction'
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService';
@@ -32,11 +33,29 @@ class _BoxDetails extends Component {
         await this.props.loadBox(boxId);
         const { box } = this.props;
         this.setState({ box })
+
+        // SOCKET SETUP
+        socketService.setup();
+        socketService.emit('join box', this.state.box._id);
+        // socketService.on('chat addMsg', this.addMsg);
+        // socketService.on('chat typing', this.onTyping);
+        // socketService.on('set currSong', this.state.box.currSong)
+        socketService.on('song changed', (currSong) => this.onSetCurrSong(currSong));
     }
 
     componentDidUpdate(prevProps) {
         const newBox = this.props.box;
         if (prevProps.box !== newBox) this.setState({ box: newBox });
+    }
+
+    componentWillUnmount() {
+        console.log('unmount');
+
+    }
+
+    onSetCurrSong = (currSong) => {
+        const newBox = { ...this.props.box, currSong };
+        this.props.updateBox(newBox);
     }
 
     onRemoveSong = async (ev, songId) => {
@@ -58,8 +77,7 @@ class _BoxDetails extends Component {
         }
         const song = box.songs.splice(songIdx, 1);
         this.addMessageChat(`Song ${song[0].title} removed by ${this.props.user.username}`);
-        // this.props.notify('Song removed');
-        await this.props.saveBox(box)
+        await this.props.updateBox(box)
     }
 
     onAddSong = (song) => {
@@ -73,6 +91,7 @@ class _BoxDetails extends Component {
 
     onPlaySong = (songId) => {
         const currSong = { id: songId, isPlaying: true, secPlayed: 0 };
+        socketService.emit('set currSong', currSong);
         const box = { ...this.state.box, currSong };
         this.props.saveBox(box);
     }
@@ -109,14 +128,6 @@ class _BoxDetails extends Component {
         else this.onSwapSongs(source.index, destination.index);
     }
 
-    onSwapSongs = async (srcIdx, destIdx) => {
-        const songs = [...this.props.box.songs];
-        const [songToMove] = songs.splice(srcIdx, 1);
-        songs.splice(destIdx, 0, songToMove)
-        const newBox = { ...this.props.box, songs }
-        await this.props.saveBox(newBox);
-    }
-
     addMessageChat = async (msg) => {
         const messageObj = {
             text: msg,
@@ -139,6 +150,14 @@ class _BoxDetails extends Component {
         await this.props.loadBox(boxId);
     }
 
+    onSwapSongs = (srcIdx, destIdx) => {
+        const newSongs = Array.from(this.props.box.songs);
+        const [songToMove] = newSongs.splice(srcIdx, 1);
+        newSongs.splice(destIdx, 0, songToMove)
+        const newBox = { ...this.props.box, songs: newSongs }
+        this.props.updateBox(newBox);
+    }
+
     render() {
         const { isSongPickOpen, isDragging, filterBy } = this.state;
         const isFilter = filterBy ? true : false;
@@ -151,19 +170,14 @@ class _BoxDetails extends Component {
             <section className="box-details">
                 <BoxWall box={box} />
                 <BoxInfo box={box} onSaveInfo={this.onSaveInfo} minimalUser={minimalUser} onToggleLikeBox={this.onToggleLikeBox}/>
+
                 <BoxFilter onSetFilter={this.onSetFilter} />
-
-
-                {/* <Fab className="add-song-btn" onClick={this.openAddSearch} color="primary" aria-label="add">
-                    <AddCircleOutline />
-                </Fab> */}
 
                 <DragDropContext
                     onDragStart={this.onDragStart}
                     onDragEnd={this.onDragEnd}
                 >
                     <SongList
-
                         songs={songsToShow}
                         onPlaySong={this.onPlaySong}
                         onRemoveSong={this.onRemoveSong}
@@ -176,29 +190,22 @@ class _BoxDetails extends Component {
                         isFilter={isFilter}
                         isDragging={isDragging}
                     />
-
                 </DragDropContext>
-
-                {/* <ChatBox /> */}
             </section>
         )
     }
 }
-
 const mapStateToProps = state => {
     return {
-        box: state.boxReducer.currBox,
-        messages: state.messageReducer.messages,
-        user: state.userReducer.loggedinUser
+        box: state.boxReducer.currBox
     }
 }
-
 const mapDispatchToProps = {
     loadBox,
     saveBox,
     notify,
-    loadMessages,
+    updateBox,
     addMessage,
+     loadMessages 
 }
-
 export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails)

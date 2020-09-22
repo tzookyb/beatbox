@@ -44,9 +44,9 @@ export class BoxInfoEdit extends Component {
     }
 
     async uploadImg(ev) {
-        this.props.setIsLoading('true');
+        this.props.setIsLoading(true);
         const imgUrl = await cloudService.uploadImg(ev);
-        this.props.setIsLoading('');
+        this.props.setIsLoading(false);
 
         this.setState(prevState => {
             return {

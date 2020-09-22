@@ -5,7 +5,6 @@ const BASE_URL =
 
 let socket;
 
-
 let gMapMessages = [
   {
     boxId: '_s4MlLQ',

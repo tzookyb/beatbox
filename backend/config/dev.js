@@ -1,3 +1,5 @@
+
 module.exports = {
-  "dbURL": "mongodb://localhost:27017",
+  "dbURL": "mongodb+srv://tzookyb:562charlesSt@cluster0.5tdbt.mongodb.net/?retryWrites=true&w=majority",
+  dbName : 'beatbox_dev'
 }

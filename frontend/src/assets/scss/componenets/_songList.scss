@@ -23,6 +23,16 @@
         right: rem(-35px);
         top: rem(-15px);
         background-color: $clr3;
+        transition: 0.6s;
+
+        svg {
+            font-size: 2rem;
+        }
+
+        &.opened{
+            transform: rotate(45deg);
+            right: rem(-25px);
+        }
 
         &:hover {
             background-color: $clr5;

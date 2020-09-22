@@ -14,7 +14,10 @@ function getTime() {
 function doLog(line, level='Debug') {
     if (typeof line !== 'string') line = JSON.stringify(line)
     line = `${getTime()} - ${level} - ${line}\n` 
-    console.log(line);
+<<<<<<< HEAD
+=======
+    // console.log(line);
+>>>>>>> af5ab9c09c3547f1bb7a72243d9351639afb7d13
     fs.appendFileSync('./logs/backend.log',line);
 }
 

@@ -17,13 +17,11 @@ function _SongPreview({ currBox, song, onRemoveSong, onPlaySong, isPlaying, inde
                     {...provided.dragHandleProps}
                     onClick={() => onPlaySong()}
                     className="song-preview flex space-between"
-
-                // Equalizer Background:
-                // className={`song-preview flex space-between ${(isPlaying && currBox.currSong.isPlaying) ? 'now-playing' : ''}`}
                 >
+
                     <div className="song-data flex align-center">
                         <div className="song-preview-img"><img src={song.imgUrl} alt="song-img" /></div>
-                        <h3 className={(isPlaying && currBox.currSong.isPlaying) && 'now-playing'}>{song.title}</h3>
+                        <h3 className={(isPlaying && currBox.currSong.isPlaying) ? 'now-playing': ''}>{song.title}</h3>
                     </div>
                     <div className="song-preview-btns flex align-center">
                         {isPlaying && currBox.currSong.isPlaying && <img className='playing-anim' src={require('../../assets/img/equalizer5.gif')} title="Now playing" alt="now-playing" />}
