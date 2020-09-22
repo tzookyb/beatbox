@@ -1,0 +1,38 @@
+.message-box {
+  .not-user-message {
+    .submit-by {
+      font-size: 0.95em;
+      margin: 0px;
+    }
+    .submit-mess-data{
+        >*{
+            margin: 3px;
+        }
+    }
+    // .container-message {
+    //   .ant-col {
+    //     .chat-message {
+    //       background-color: pink;
+    //       color: white;
+    //       border-radius: 0px 10px 10px 0px;
+    //       padding: 10px;
+    //       margin-bottom: 15px;
+    //       box-shadow: 1px 2px 3px #ccc;
+    //       // width: "fit-content"
+    //     }
+    //   }
+    // }
+  }
+  .user-message {
+    .submit-by {
+      font-size: 0.95em;
+      margin: 0px;
+    }
+  }
+  .system-message {
+    .submit-by {
+      font-size: 0.95em;
+      margin: 0px;
+    }
+  }
+}

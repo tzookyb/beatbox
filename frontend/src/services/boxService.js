@@ -101,14 +101,7 @@ async function save(box) {
     }
 }
 
-function addSong(song, songs) {
-    // prep for validation if song already exists
-    // const idx = songs.findIndex(currSong => currSong.youtubeId = song.id.videoId)
-    // if (idx === -1) {
-
-    //     return
-    // }
-    console.log(song)
+function addSong(song) {
     const newSong = {
         id: song.id.videoId,
         youtubeId: song.id.videoId,
@@ -151,12 +144,3 @@ async function addConnectedUser(boxId, minimalUser) {
     }
 }
 
-
-// function _makeId(length = 6) {
-//     var txt = '';
-//     var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-//     for (var i = 0; i < length; i++) {
-//         txt += possible.charAt(Math.floor(Math.random() * possible.length));
-//     }
-//     return txt;
-// }

@@ -1,112 +1,48 @@
+
 import React, { Component } from 'react';
 import socketService from '../../services/socketService';
 import { connect } from 'react-redux'
+import { Spin } from "antd";
 
-class _ChatBox extends Component {
-    state = {
-        msg: {
-            from: 'Me',
-            txt: ''
-        },
-        msgs: [],
-        isTyping: false,
-        typingStr: '',
-    };
+// import { MessageBox } from 'react-chat-elements/native';
 
-    componentDidMount() {
-        const userName = this.props.user.username;
-        this.setState({ msg: { from: userName, txt: '' } })
-        socketService.setup();
-        socketService.on('chat addMsg', this.addMsg);
-        socketService.on('chat typing', this.onTyping);
+import { MessageBox } from "./MessageBox";
+
+export class ChatBox extends Component {
+
+    state={
+
     }
-
-    componentWillUnmount() {
-        socketService.off('chat addMsg', this.addMsg);
-        socketService.off('chat typing', this.onTyping);
-        socketService.terminate();
-    }
-
-    addMsg = newMsg => {
-        this.setState(prevState => ({ msgs: [...prevState.msgs, newMsg] }));
-    };
-
-    onTyping = typingStr => {
-        this.setState(({ typingStr: typingStr }))
-    }
-
-    sendMsg = ev => {
-        ev.preventDefault();
-        socketService.emit('chat newMsg', this.state.msg);
-        const userName = this.props.user.username;
-        this.setState({ msg: { from: userName, txt: '' } })
-    };
-
-
-    timeoutFunction = () => {
-        this.setState({ isTyping: false });
-        socketService.emit('chat typing', '');
-    }
-
-    msgHandleChange = async ev => {
-        var timeout;
-        if (!this.state.isTyping) {
-            clearTimeout(timeout);
-            this.setState({ isTyping: true });
-            const userName = this.props.user.username;
-            const typingStr = userName + ' is typing...';
-            socketService.emit('chat typing', typingStr);
-            timeout = setTimeout(this.timeoutFunction, 1500);
-        } else {
-            clearTimeout(timeout);
-            timeout = setTimeout(this.timeoutFunction, 1500);
-        }
-
-        const { name, value } = ev.target;
-        await this.setState(prevState => {
-            return {
-                msg: {
-                    ...prevState.msg,
-                    [name]: value,
-                }
-            };
+    renderMessages = () => {
+        const { messages, user } = this.props;
+        const MessageArray = [];
+        messages.forEach(message => {
+            MessageArray.push(
+                <MessageBox className="message-box"
+                    text={message.text}
+                    avatar={message.avatar}
+                    submitAt={message.submitAt}
+                    submitBy={message.submitBy}
+                    own={user._id === message.id}
+                    type={message.type}
+                />
+            );
         });
+        return (
+            <div style={{ padding: "0px", width: "100%", position:"relative" }}>
+                {MessageArray.map(Message => Message)}
+            </div>
+        );
     };
 
     render() {
+        const { messages } = this.props;
         return (
-            <div className="chat">
-                <h2> Chat Room</h2>
-                <div className="typing-container">
-                    {this.state.typingStr && <h3>{this.state.typingStr}</h3>}
-                </div>
-                <ul className="chat-msg clean-list">
-                    {this.state.msgs.map((msg, idx) => (
-                        <li key={idx}>{msg.from}: {msg.txt}</li>
-                    ))}
-                </ul>
-                <form onSubmit={this.sendMsg}>
-                    <input
-                        autoComplete="off"
-                        type="text"
-                        value={this.state.msg.txt}
-                        onChange={this.msgHandleChange}
-                        name="txt"
-                    />
-                </form>
+            <div>
+                {messages ? <this.renderMessages /> : <Spin size="large" />}
+               
+                {/* {this.props.messages ? <this.renderMessages /> : <Spin size="large" />} */}
             </div>
         );
     }
 }
-
-const mapStateToProps = state => {
-    return {
-        user: state.userReducer.loggedinUser,
-    }
-}
-
-const mapDispatchToProps = {
-
-}
-
-export const ChatBox = connect(mapStateToProps, mapDispatchToProps)(_ChatBox)

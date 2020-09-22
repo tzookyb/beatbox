@@ -1,5 +1,5 @@
 .box-preview {
-  height: rem(260px);
+  height: rem(230px);
   transition: 0.8s;
   position: relative;
   color: #e0e0e0;
@@ -14,31 +14,37 @@
     height: 33%;
     .box-preview-reaction {
       height: 100%;
-      > * {
-        min-width: 50px;
-      }
       .likes {
         svg {
           cursor: pointer;
+          font-size: 2.4rem;
         }
       }
+      
       svg {
         color: rgb(95, 95, 95);
       }
       .liked {
         svg {
-          color: rebeccapurple;
+          color: #c5565b;
         }
       }
     }
     .box-preview-data {
       height: 100%;
+      align-items: flex-end;
       .box-name {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
         max-width: 16ch;
         font-size: 0.9rem;
+      }
+    }
+    .played{
+      svg {
+        color: white;
+        cursor: pointer;
       }
     }
   }

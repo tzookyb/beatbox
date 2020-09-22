@@ -25,10 +25,11 @@ function getUser() {
     return user;
 }
 
-function getMinimalUser(){
+function getMinimalUser() {
     var user = getUser();
     return {
         name: user.username,
+        imgUrl: user.imgUrl,
         id: user._id
     }
 }

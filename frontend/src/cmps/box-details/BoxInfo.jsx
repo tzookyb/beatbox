@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import SaveIcon from '@material-ui/icons/Save';
 import CreateIcon from '@material-ui/icons/Create';
-// import ShareIcon from '@material-ui/icons/Share';
-
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import Avatar from '@material-ui/core/Avatar';
+import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import { cloudService } from '../../services/cloudService'
 import CircleLoading from 'react-loadingg/lib/CircleLoading';
+
+import { boxService } from '../../services/boxService'
 
 export class BoxInfo extends Component {
     state = {
@@ -63,28 +66,24 @@ export class BoxInfo extends Component {
 
     onShare = async () => {
         console.log('share');
-        // try {
-        //     const result = await Share.share({
-        //         message:
-        //             'React Native | A framework for building native apps using React',
-        //     });
-        //     if (result.action === Share.sharedAction) {
-        //         if (result.activityType) {
-        //             // shared with activity type of result.activityType
-        //         } else {
-        //             // shared
-        //         }
-        //     } else if (result.action === Share.dismissedAction) {
-        //         // dismissed
-        //     }
-        // } catch (error) {
-        //     alert(error.message);
-        // }
+
     }
+
+    getUsersAvatars(connectedUsers) {
+        const avatars = connectedUsers.map(user => {
+            return <Avatar alt={user.name} src={user.imgUrl} style={{ width: '30px', height: '30px' }} />
+        })
+        return avatars;
+    }
+
+    getIsUserLikeBox(box, minimalUser) {
+        return (boxService.getIsUserLikeBox(box, minimalUser) !== -1) ? 'liked' : '';
+    }
+
     render() {
-        const { box } = this.state;
-        const { isEditableName, isEditableDesc } = this.state;
-        if (!box) return <CircleLoading  size="large" color= "#ac0aff"/>
+        const { box, isEditableName, isEditableDesc } = this.state;
+        const { minimalUser } = this.props;
+        if (!box) return <CircleLoading size="large" color="#ac0aff" />
         return (
             <section className="box-info flex space-between">
                 <div className="info-txt flex space-between column">
@@ -103,10 +102,6 @@ export class BoxInfo extends Component {
                             </React.Fragment>
                         }
 
-                        {/* {!isEditableName && <h2 className="box-name"> {box.name}</h2>}
-                        {!isEditableName && <button onClick={() => this.onEdit('isEditableName')} className="hide-btn"><CreateIcon /></button>}
-                        {isEditableName && <input autoFocus type="txt" value={box.name} name="name" onChange={this.handleInput} />}
-                        {isEditableName && <button onClick={() => this.onSave('isEditableName')} ><SaveIcon /></button>} */}
                     </div>
 
                     <div className="info-description flex">
@@ -121,8 +116,13 @@ export class BoxInfo extends Component {
                 </div>
                 </div>
                 <div className="social-params">
-                    <p>likes</p>
-                    <p>listeners</p>
+                    <div onClick={() => this.props.onToggleLikeBox(box._id, minimalUser)} className={`like ${this.getIsUserLikeBox(box, minimalUser)}`}>
+                        {box.likedByUsers.length}
+                        <FavoriteIcon />
+                    </div>
+                    <AvatarGroup className="connected-users" max={4}>
+                        {this.getUsersAvatars(box.connectedUsers)}
+                    </AvatarGroup>
                     {/* <ShareIcon onClick={this.onShare} /> */}
                 </div>
 
