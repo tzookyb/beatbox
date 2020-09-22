@@ -14,7 +14,7 @@ export class SongPick extends Component {
     inputRef = React.createRef()
 
     componentDidUpdate(prevProps, prevState) {
-        this.inputRef.current.focus();
+        // this.inputRef.current.focus();
     }
 
 

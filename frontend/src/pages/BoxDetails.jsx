@@ -10,14 +10,7 @@ import { BoxInfo } from '../cmps/box-details/BoxInfo'
 import { loadBox, notify, saveBox } from '../store/actions/boxAction'
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService';
-<<<<<<< HEAD
 import { BoxFilter } from "../cmps/boxes/BoxFilter";
-import CircleLoading from 'react-loadingg/lib/CircleLoading'
-import { BoxWall, Demo } from '../cmps/box-details/BoxWall'
-=======
-import { BoxFilter } from '../cmps/boxes/BoxFilter';
-import {BoxWall} from '../cmps/box-details/BoxWall'
->>>>>>> 108593639636541e81c114b33160faad2b99bb24
 
 class _BoxDetails extends Component {
     state = {
@@ -134,14 +127,9 @@ class _BoxDetails extends Component {
         const currSongId = (box.currSong) ? box.currSong.id : null;
         const songsToShow = this.getSongsForDisplay();
         return (
-<<<<<<< HEAD
             <section className="box-details" onMouseMove={this.onMouseMove}>
   
                 {/* <BoxWall/> */}
-=======
-            <section className="box-details">
-                {/* <BoxWall /> */}
->>>>>>> 108593639636541e81c114b33160faad2b99bb24
                 <BoxInfo box={box} onSaveInfo={this.onSaveInfo} />
                 <BoxFilter onSetFilter={this.onSetFilter} />
                 {/* <Picker onEmojiClick={this.onEmojiClick} /> */}

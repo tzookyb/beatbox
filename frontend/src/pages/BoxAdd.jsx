@@ -16,7 +16,7 @@ export class _BoxAdd extends Component {
         msgWarning: '',
         isSongPickOpen: true,
         isDragging: false,
-        isLoading: ''
+        isLoading: false
     }
 
     componentDidMount() {
@@ -33,6 +33,7 @@ export class _BoxAdd extends Component {
 
     onAddBox = async (ev) => {
         ev.preventDefault();
+        ev.stopPropagation()
         if (!this.state.editBox.name) {
             this.printMsg('Name of box is required');
             return;

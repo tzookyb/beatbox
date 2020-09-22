@@ -1,6 +1,5 @@
 import { Button } from '@material-ui/core';
 import React, { Component } from 'react'
-<<<<<<< HEAD
 import { MessageList } from 'react-chat-elements'
 import { SystemMessage } from 'react-chat-elements'
 import { Input } from 'react-chat-elements'
@@ -74,7 +73,6 @@ render() {
     )
 }
 }
-=======
 import { connect } from 'react-redux'
 import { MessageList } from 'react-chat-elements'
 import { SystemMessage } from 'react-chat-elements'
@@ -158,4 +156,3 @@ export const BoxWall = connect(mapStateToProps, mapDispatchToProps)(_BoxWall)
                                 backgroundColor='black'
                                 text='Send' />
                         } /> */}
->>>>>>> 108593639636541e81c114b33160faad2b99bb24
