@@ -12,7 +12,6 @@ import { boxService } from '../services/boxService'
 import { userService } from '../services/userService';
 import { BoxFilter } from "../cmps/boxes/BoxFilter";
 import { BoxWall, Demo } from '../cmps/box-details/BoxWall'
-import { BoxFilter } from '../cmps/boxes/BoxFilter';
 
 class _BoxDetails extends Component {
     state = {
