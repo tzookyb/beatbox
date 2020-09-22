@@ -42,16 +42,10 @@ function connectSockets(io) {
             socket.myBox = boxId;
             io.to(socket.myBox).emit('joined new box', boxId)
         })
-<<<<<<< HEAD
-        socket.on('song time changed', timestamp => {
-        console.log("connectSockets -> timestamp", timestamp)
-            io.to(socket.myBox).emit('update song time', timestamp)
-=======
         socket.on('song time changed', secPlayed => {
             console.log(secPlayed)
             const res = io.to(socket.myBox).emit('update song time', secPlayed)
             console.log("connectSockets -> res", res)
->>>>>>> af5ab9c09c3547f1bb7a72243d9351639afb7d13
         })
         socket.on('set currSong', currSong => {
             console.log(currSong)
