@@ -11,6 +11,7 @@ import { boxService } from '../services/boxService'
 import { userService } from '../services/userService';
 import { BoxFilter } from "../cmps/boxes/BoxFilter";
 import CircleLoading from 'react-loadingg/lib/CircleLoading'
+import { BoxWall, Demo } from '../cmps/box-details/BoxWall'
 
 class _BoxDetails extends Component {
     state = {
@@ -115,7 +116,7 @@ class _BoxDetails extends Component {
     }
 
     onMouseMove = (ev) => {
-        console.log(ev);
+        // console.log(ev);
 
     }
 
@@ -127,9 +128,9 @@ class _BoxDetails extends Component {
         const currSongId = (box.currSong) ? box.currSong.id : null;
         const songsToShow = this.getSongsForDisplay();
         return (
-            <section className="box-details">
-                onMouseMove={this.onMouseMove}
-
+            <section className="box-details" onMouseMove={this.onMouseMove}>
+  
+                {/* <BoxWall/> */}
                 <BoxInfo box={box} onSaveInfo={this.onSaveInfo} />
                 <BoxFilter onSetFilter={this.onSetFilter} />
                 {/* <Picker onEmojiClick={this.onEmojiClick} /> */}
