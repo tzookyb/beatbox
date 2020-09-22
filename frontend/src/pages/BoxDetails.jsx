@@ -129,8 +129,7 @@ class _BoxDetails extends Component {
         const songsToShow = this.getSongsForDisplay();
         return (
             <section className="box-details">
-                onMouseMove={this.onMouseMove}
-                <BoxWall />
+                {/* <BoxWall /> */}
                 <BoxInfo box={box} onSaveInfo={this.onSaveInfo} />
                 <BoxFilter onSetFilter={this.onSetFilter} />
                 {/* <Picker onEmojiClick={this.onEmojiClick} /> */}

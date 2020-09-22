@@ -247,6 +247,10 @@
         {
           "name": "Guest",
           "id": "y0p4u"
+        },
+        {
+          "name": "Guest",
+          "id": "KkQzr"
         }
       ],
       "tags": [
@@ -285,10 +289,10 @@
       ],
       "currSong": {
         "id": "IwPOPL-ieD0",
-        "isPlaying": false,
-        "secPlayed": 33.84477100190735
+        "isPlaying": true,
+        "secPlayed": 0
       },
-      "viewCount": 11,
+      "viewCount": 12,
       "_id": "t9rjp7s"
     },
     {
