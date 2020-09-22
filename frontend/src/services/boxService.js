@@ -98,14 +98,7 @@ async function save(box) {
     }
 }
 
-function addSong(song, songs) {
-    // prep for validation if song already exists
-    // const idx = songs.findIndex(currSong => currSong.youtubeId = song.id.videoId)
-    // if (idx === -1) {
-
-    //     return
-    // }
-    console.log(song)
+function addSong(song) {
     const newSong = {
         id: _makeId(),
         youtubeId: song.id.videoId,

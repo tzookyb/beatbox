@@ -89,4 +89,21 @@
     justify-content: space-around;
     align-items: center;
   }
+
+  .social-params {
+    .like {
+      cursor: pointer;
+    }
+    .liked {
+      svg {
+        color: #c5565b;
+      }
+    }
+    .connected-users {
+      > * {
+        height: 30px;
+        width: 30px;
+      }
+    }
+  }
 }

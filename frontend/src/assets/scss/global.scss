@@ -13,7 +13,7 @@
 // Components
 
 @import "./componenets/header";
-@import "./componenets/chatRoom";
+@import "./componenets/chat";
 @import "./componenets/footer";
 @import "./componenets/boxList";
 @import "./componenets/boxPreview";
@@ -26,6 +26,9 @@
 @import "./componenets/login";
 @import "./componenets/notification";
 @import "./componenets/boxFilter";
+@import "./componenets/boxWall";
+@import "./componenets/emoji";
+@import "./componenets/messageBox";
 
 // Views
 @import "./views/home";

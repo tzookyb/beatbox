@@ -71,6 +71,7 @@ export class BoxList extends Component {
                         box={box}
                         minimalUser={this.props.minimalUser}
                         onAddToFavorites={this.props.onAddToFavorites}
+                        onToggleLikeBox={this.props.onToggleLikeBox}
                     />
                     )}
                 </div>}
