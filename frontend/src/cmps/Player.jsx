@@ -92,15 +92,20 @@ class _Player extends Component {
     }
 
     togglePlay = () => {
-        this.setState({ isPlaying: !this.state.isPlaying }, this.onUpdateBox);
+        this.setState({ isPlaying: !this.state.isPlaying }, async () => {
+            this.onUpdateBox();
+
+        })
+
     }
 
-    onUpdateBox = async () => {
+    onUpdateBox = () => {
         // HAVE BEEN CHANGED - SOCKETS
         const { currBox } = this.props;
         const currSong = { ...currBox.currSong, isPlaying: this.state.isPlaying, secPlayed: this.state.secPlayed };
         const newBox = { ...currBox, currSong }
-        await this.props.updateBox(newBox);
+        this.props.updateBox(newBox);
+        socketService.emit('set currSong', currSong);
     }
 
     skipToSong = (skip) => {
@@ -125,6 +130,7 @@ class _Player extends Component {
 
     handleSeekMouseUp = () => {
         socketService.emit('song time changed', this.state.secPlayed);
+
         this.setState({ seeking: false }, () => {
             this.onUpdateBox();
             this.player.seekTo(this.state.secPlayed);
@@ -191,9 +197,12 @@ class _Player extends Component {
     render() {
         const { isReady, isPlaying, volume, muted, duration, isShrunk, playerLocation } = this.state;
         const { currBox } = this.props
+
         if (!currBox || !currBox.currSong) return null;
+
         const song = currBox.songs.find(song => song.id === currBox.currSong.id)
         if (!song) return null;
+
         function showTime(seconds) {
             var mins;
             var secs;

@@ -14,7 +14,7 @@
         width: 100%;
         height: 80vh;
         top: 0;
-        position: absolute;
+        position: fixed;
 
         img {
             filter: brightness(70%);
@@ -50,7 +50,7 @@
     .hero-txt {
         font-size: 2rem;
         color: #fff;
-        position: relative;
+        position: fixed;
         z-index: 1;
 
         h1 {
@@ -60,7 +60,7 @@
 
         button {
             font-family: Righteous;
-            background-color: #f8f877ba;
+            background-color: #d3749eb5;
             padding: 15px;
             border-radius: 10px;
             color: #fff;

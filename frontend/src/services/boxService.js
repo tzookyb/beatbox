@@ -94,7 +94,6 @@ async function save(box) {
     return await httpService.post(`box`, box);
 }
 
-
 async function update(box) {
     return await httpService.put(`box/${box._id}`, box)
 }

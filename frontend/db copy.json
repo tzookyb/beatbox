@@ -133,10 +133,6 @@
         {
           "name": "Guest",
           "id": "HFRuh"
-        },
-        {
-          "name": "Guest",
-          "id": "72ryH"
         }
       ],
       "tags": [
@@ -173,12 +169,8 @@
           "addedBy": {}
         }
       ],
-      "currSong": {
-        "id": "PQp2a_yunmM",
-        "isPlaying": false,
-        "secPlayed": 2.4359339771118163
-      },
-      "viewCount": 6,
+      "currSong": null,
+      "viewCount": 5,
       "_id": "omAQnh6"
     },
     {
@@ -203,6 +195,10 @@
         {
           "name": "Guest",
           "id": "HFRuh"
+        },
+        {
+          "name": "Guest",
+          "id": "y0p4u"
         }
       ],
       "tags": [
@@ -218,7 +214,7 @@
       "createdAt": 1600551006105,
       "songs": [],
       "currSong": null,
-      "viewCount": 9,
+      "viewCount": 10,
       "_id": "8ODPTfm"
     },
     {
@@ -247,6 +243,18 @@
         {
           "name": "Guest",
           "id": "HFRuh"
+        },
+        {
+          "name": "Guest",
+          "id": "y0p4u"
+        },
+        {
+          "name": "Guest",
+          "id": "KkQzr"
+        },
+        {
+          "name": "Guest",
+          "id": "tYUMZ"
         }
       ],
       "tags": [
@@ -261,13 +269,6 @@
       },
       "createdAt": 1600551334649,
       "songs": [
-        {
-          "id": "xPD-ul7JzXA",
-          "youtubeId": "xPD-ul7JzXA",
-          "title": "Dr  Bujak's Lecture on Britain and the Second World War",
-          "imgUrl": "https://i.ytimg.com/vi/xPD-ul7JzXA/hqdefault.jpg",
-          "addedBy": {}
-        },
         {
           "id": "IwPOPL-ieD0",
           "youtubeId": "IwPOPL-ieD0",
@@ -291,18 +292,23 @@
         }
       ],
       "currSong": {
-        "id": "IwPOPL-ieD0",
-        "isPlaying": false,
-        "secPlayed": 3.8028957882843017
+        "id": "3frKGcuGzEg",
+        "isPlaying": true,
+        "secPlayed": 649.3053709465943
       },
-      "viewCount": 10,
+      "viewCount": 13,
       "_id": "t9rjp7s"
     },
     {
       "name": "Best of Coldplay",
       "description": "Probably the most popular band in the world!",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600551449/grcwz9pvkddi90c93cdz.jpg",
-      "likedByUsers": [],
+      "likedByUsers": [
+        {
+          "name": "Guest",
+          "id": "y0p4u"
+        }
+      ],
       "connectedUsers": [],
       "tags": [
         "love",
@@ -711,7 +717,12 @@
       "name": "Recent Eurovisions",
       "description": "The cheesy song contest with the addictive songs",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600554918/nors5secwjzdsahrnxoo.jpg",
-      "likedByUsers": [],
+      "likedByUsers": [
+        {
+          "name": "Guest",
+          "id": "y0p4u"
+        }
+      ],
       "connectedUsers": [],
       "tags": [
         "love",
@@ -835,7 +846,12 @@
       "name": "Boy Bands",
       "description": "Boys will be boys",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600555365/b7wbvj0j0vdhi3fzaqyv.jpg",
-      "likedByUsers": [],
+      "likedByUsers": [
+        {
+          "name": "Guest",
+          "id": "y0p4u"
+        }
+      ],
       "connectedUsers": [
         {
           "name": "Guest",
@@ -987,7 +1003,12 @@
           "id": "5bzxu"
         }
       ],
-      "connectedUsers": [],
+      "connectedUsers": [
+        {
+          "name": "Guest",
+          "id": "y0p4u"
+        }
+      ],
       "tags": [
         "love",
         "happy"
@@ -1034,21 +1055,33 @@
           "title": "עידן חביב - עד שתחזור (שכתב ליובל דיין) | רדיוס 100FM - מושיקו שטרן",
           "imgUrl": "https://i.ytimg.com/vi/a3XUaHqqtjk/hqdefault.jpg",
           "addedBy": {}
+        },
+        {
+          "id": "iCitB5bkB3E",
+          "youtubeId": "iCitB5bkB3E",
+          "title": "דולי ופן - ואז את תראי (עם דיקלה, עידן חביב ומארק אליהו)",
+          "imgUrl": "https://i.ytimg.com/vi/iCitB5bkB3E/hqdefault.jpg",
+          "addedBy": {}
         }
       ],
       "currSong": {
-        "id": "dG3NAutpEoY",
-        "isPlaying": false,
-        "secPlayed": 10.28007288746643
+        "id": "iCitB5bkB3E",
+        "isPlaying": true,
+        "secPlayed": 0
       },
-      "viewCount": 3,
+      "viewCount": 4,
       "_id": "bqNpi5h"
     },
     {
       "name": "Psychedelic Trance",
       "description": "When you need some hard bass",
       "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600582666/h2y6tpnbeqroexfn6zwt.jpg",
-      "likedByUsers": [],
+      "likedByUsers": [
+        {
+          "name": "Guest",
+          "id": "y0p4u"
+        }
+      ],
       "connectedUsers": [],
       "tags": [
         "love",
@@ -1331,12 +1364,20 @@
         {
           "name": "Guest",
           "id": "H04UJ"
+        },
+        {
+          "name": "Guest",
+          "id": "y0p4u"
         }
       ],
       "connectedUsers": [
         {
           "name": "Guest",
           "id": "HFRuh"
+        },
+        {
+          "name": "Guest",
+          "id": "y0p4u"
         }
       ],
       "tags": [
@@ -1390,9 +1431,9 @@
       "currSong": {
         "id": "2kXMcjKhBgU",
         "isPlaying": false,
-        "secPlayed": 2.172344
+        "secPlayed": 33.84477100190735
       },
-      "viewCount": 3,
+      "viewCount": 4,
       "_id": "5JTLisd"
     },
     {
@@ -1938,6 +1979,10 @@
         {
           "name": "Guest",
           "id": "5bzxu"
+        },
+        {
+          "name": "Guest",
+          "id": "y0p4u"
         }
       ],
       "tags": [
@@ -1996,11 +2041,11 @@
         }
       ],
       "currSong": {
-        "id": "7Tubf4bthSk",
+        "id": "06IrarkJBCQ",
         "isPlaying": false,
-        "secPlayed": 7.152130053405762
+        "secPlayed": 33.84477100190735
       },
-      "viewCount": 3,
+      "viewCount": 4,
       "_id": "kN7pwUA"
     },
     {
@@ -2091,6 +2136,14 @@
         {
           "name": "Guest",
           "id": "5bzxu"
+        },
+        {
+          "name": "Guest",
+          "id": "TQYgk"
+        },
+        {
+          "name": "Guest",
+          "id": "y0p4u"
         }
       ],
       "genre": "Easy",
@@ -2146,10 +2199,10 @@
       ],
       "currSong": {
         "id": "01_RTOD9hYc",
-        "isPlaying": false,
-        "secPlayed": 1.9029210171661377
+        "isPlaying": true,
+        "secPlayed": 0
       },
-      "viewCount": 3,
+      "viewCount": 5,
       "_id": "djfB2_l"
     },
     {

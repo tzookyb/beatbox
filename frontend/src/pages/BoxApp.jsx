@@ -41,11 +41,7 @@ class _BoxApp extends Component {
         await this.props.loadBoxes(this.state.filterBy);
     }
 
-    onToggleLikeBox = (boxId) => {
-        var minimalUser = this.getMinimalUser();
-        boxService.addLike(boxId, minimalUser)
-            .then(() => this.loadBoxes())
-    }
+  
     onAddToFavorites = (boxId) => {
         //TODO: ADD TO USER FAVORITES
     }
