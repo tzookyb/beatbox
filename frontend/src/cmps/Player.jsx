@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactPlayer from 'react-player/youtube'
+import { withRouter } from 'react-router-dom';
 
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import PauseIcon from '@material-ui/icons/Pause';
@@ -11,7 +12,8 @@ import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import Slider from '@material-ui/core/Slider';
 
 import { saveBox, updateBox } from '../store/actions/boxAction';
-import { withRouter } from 'react-router-dom';
+import { socketService } from '../services/socketService'
+import { ContactSupport } from '@material-ui/icons';
 
 class _Player extends Component {
     state = {
@@ -27,6 +29,12 @@ class _Player extends Component {
         duration: undefined
     }
 
+    componentDidMount() {
+        socketService.setup();
+        socketService.on('update song time', (secPlayed) => this.onSeek(secPlayed));
+    }
+
+
     componentDidUpdate(prevProps, prevState) {
         const newBox = this.props.currBox;
         // Prevent loop:
@@ -34,19 +42,32 @@ class _Player extends Component {
 
         // if first box - set and start playing
         if (!this.state.currBox) {
+            this.socketSetup(false);
             this.setState({ currBox: newBox }, this.loadSongToPlayer);
             return;
         }
 
         // if same box id, just update playerbox in state
         if (prevProps.currBox._id === newBox._id) {
-            this.setState({ isPlaying: newBox.currSong?.isPlaying, secPlayed: newBox.currSong?.secPlayed, currBox: newBox });
+            this.setState({
+                isPlaying: newBox.currSong?.isPlaying,
+                secPlayed: newBox.currSong?.secPlayed,
+                currBox: newBox
+            });
             return;
         }
         // if different box -> setstate and load song idx 0 to player.
         if (prevProps.currBox && prevProps.currBox._id !== newBox._id) {
+            this.socketSetup(true, prevProps.currBox._id);
             this.setState({ currBox: newBox }, () => this.loadSongToPlayer(0));
         }
+    }
+
+    socketSetup = (isJoined, prevBoxId) => {
+        if (isJoined) {
+            socketService.off(prevBoxId, (secPlayed) => this.onSeek(secPlayed))
+        }
+        socketService.emit('join box', this.props.currBox._id);
     }
 
     loadSongToPlayer = (currSongIdx = 0) => {
@@ -69,15 +90,15 @@ class _Player extends Component {
     }
 
     togglePlay = () => {
-        this.setState({ isPlaying: !this.state.isPlaying }, this.updateBox);
+        this.setState({ isPlaying: !this.state.isPlaying }, this.onUpdateBox);
     }
 
-    updateBox = () => {
+    onUpdateBox = async () => {
         // HAVE BEEN CHANGED - SOCKETS
         const { currBox } = this.props;
         const currSong = { ...currBox.currSong, isPlaying: this.state.isPlaying, secPlayed: this.state.secPlayed };
         const newBox = { ...currBox, currSong }
-        this.props.updateBox(newBox);
+        await this.props.updateBox(newBox);
     }
 
     skipToSong = (skip) => {
@@ -101,10 +122,16 @@ class _Player extends Component {
     }
 
     handleSeekMouseUp = () => {
+        socketService.emit('song time changed', this.state.secPlayed);
         this.setState({ seeking: false }, () => {
-            this.updateBox();
+            this.onUpdateBox();
             this.player.seekTo(this.state.secPlayed);
         });
+    }
+
+    onSeek = (secPlayed) => {
+        console.log(secPlayed)
+        this.player.seekTo(secPlayed);
     }
 
     handleProgress = state => {
@@ -112,6 +139,7 @@ class _Player extends Component {
             this.setState({ secPlayed: state.playedSeconds });
         }
     }
+
 
     handleEnded = () => {
         this.skipToSong(1);
@@ -158,7 +186,8 @@ class _Player extends Component {
     }
 
     render() {
-        const { currBox, isPlaying, volume, muted, duration, isShrunk, playerLocation } = this.state
+        const { currBox, isPlaying, volume, muted, duration, isShrunk, playerLocation } = this.state;
+
         if (!currBox || !currBox.currSong) return null;
         const song = currBox.songs.find(song => song.id === currBox.currSong.id)
 

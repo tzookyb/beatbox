@@ -24,7 +24,6 @@ class _BoxDetails extends Component {
     }
 
     async componentDidMount() {
-        console.log('mount');
         const boxId = this.props.match.params.boxId;
         const minimalUser = userService.getMinimalUser();
         // await boxService.addConnectedUser(boxId, minimalUser);
@@ -38,12 +37,12 @@ class _BoxDetails extends Component {
         // socketService.on('chat addMsg', this.addMsg);
         // socketService.on('chat typing', this.onTyping);
         // socketService.on('set currSong', this.state.box.currSong)
-        socketService.on('song changed', (currSong) => this.onSetCurrSong(currSong))
+        socketService.on('song changed', (currSong) => this.onSetCurrSong(currSong));
     }
 
     componentDidUpdate(prevProps) {
-            const newBox = this.props.box;
-            if(prevProps.box !== newBox) this.setState({ box: newBox });
+        const newBox = this.props.box;
+        if (prevProps.box !== newBox) this.setState({ box: newBox });
     }
 
     componentWillUnmount() {
@@ -74,7 +73,6 @@ class _BoxDetails extends Component {
             await this.props.saveBox(box)
         }
         box.songs.splice(songIdx, 1);
-        this.props.notify('Song removed')
         await this.props.updateBox(box)
     }
 
@@ -82,7 +80,6 @@ class _BoxDetails extends Component {
         const newSong = boxService.addSong(song, this.state.box.songs)
         const box = { ...this.state.box }
         box.songs.push(newSong)
-        this.props.notify('Song added')
         this.props.saveBox(box)
     }
 
