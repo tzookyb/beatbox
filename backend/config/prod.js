@@ -1,3 +1,5 @@
+
 module.exports = {
-  "dbURL": "mongodb+srv://theUser:thePass@cluster0-klgzh.mongodb.net/test?retryWrites=true&w=majority",
+  "dbURL": "mongodb+srv://tzookyb:562charlesSt@cluster0.5tdbt.mongodb.net/?retryWrites=true&w=majority",
+  dbName = 'beatbox_prod'
 }
