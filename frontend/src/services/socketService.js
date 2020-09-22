@@ -5,7 +5,7 @@ const BASE_URL =
 
 let socket;
 
-export const socketService= {
+export const socketService = {
   setup,
   terminate,
   on,

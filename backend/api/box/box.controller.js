@@ -7,6 +7,10 @@ async function getBox(req, res) {
 }
   
 async function getBoxs(req, res) {
+<<<<<<< HEAD
+=======
+    // console.log(req.query);
+>>>>>>> af5ab9c09c3547f1bb7a72243d9351639afb7d13
     const boxs = await boxService.query(req.query)
     // logger.debug(boxs);
     res.send(boxs)
@@ -25,6 +29,10 @@ async function updateBox(req, res) {
 
 async function addBox(req, res) {
     const box = req.body;
+<<<<<<< HEAD
+=======
+    // console.log("addBox -> box", box)
+>>>>>>> af5ab9c09c3547f1bb7a72243d9351639afb7d13
     await boxService.add(box)
     res.send(box)
 }
