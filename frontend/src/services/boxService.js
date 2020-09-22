@@ -9,6 +9,7 @@ export const boxService = {
     getById,
     getGenres,
     save,
+    update,
     addSong,
     addLike,
     getIsUserLikeBox,
@@ -24,7 +25,6 @@ function getGenres() {
 async function getById(boxId) {
     return httpService.get(`box/${boxId}`)
 }
-
 //TODO: fix filter
 async function query(filterBy) {
     // if (!filterBy) filterBy = { name: '', genre: '' };
@@ -32,6 +32,7 @@ async function query(filterBy) {
     const boxes = await httpService.get(`box`, filterBy)
     return byFilter(boxes, filterBy);
 }
+
 
 function byFilter(boxes, filterBy) {
     if (!boxes) return;
@@ -90,22 +91,15 @@ function getEmptyBox() {
 }
 
 async function save(box) {
-    if (box._id) {
-        return await httpService.put(`box/${box._id}`, box)
-    } else {
-        //ADD CREATED AT AND CREATED BT YO BACKEND
-        return httpService.post(`box`, box);
-    }
+    return await httpService.post(`box`, box);
 }
 
-function addSong(song, songs) {
-    // prep for validation if song already exists
-    // const idx = songs.findIndex(currSong => currSong.youtubeId = song.id.videoId)
-    // if (idx === -1) {
 
-    //     return
-    // }
-    console.log(song)
+async function update(box) {
+    return await httpService.put(`box/${box._id}`, box)
+}
+
+function addSong(song) {
     const newSong = {
         id: _makeId(),
         youtubeId: song.id.videoId,

@@ -7,7 +7,7 @@ import AddIcon from '@material-ui/icons/Add';
 import { SongPick } from './SongPick'
 import { SongPreview } from './SongPreview'
 
-export function SongList({ songs, onRemoveSong, onAddSong, onPlaySong, isSongPickOpen, toggleSongPick, nowPlayingId, isFilter, isDragging }) {
+export function SongList({ songs, onRemoveSong, onAddSong, onPlaySong, isSongPickOpen, toggleSongPick, nowPlayingId, isFilter, isDragging, isBoxAdd }) {
     return (
         <div className="song-list flex space-between">
 
@@ -50,10 +50,10 @@ export function SongList({ songs, onRemoveSong, onAddSong, onPlaySong, isSongPic
             </Droppable>
 
             <Fab className={`add-song-btn  ${isSongPickOpen ? 'opened' : ''}`} onClick={toggleSongPick} color="primary" aria-label="add">
-                <AddIcon/>
+                <AddIcon />
             </Fab>
 
-            <SongPick isSongPickOpen={isSongPickOpen} onAddSong={onAddSong} />
+            <SongPick isBoxAdd={isBoxAdd} isSongPickOpen={isSongPickOpen} onAddSong={onAddSong} />
         </div>
     )
 }

@@ -16,10 +16,9 @@ export function loadBox(boxId) {
 
 export function saveBox(box) {
   return async dispatch => {
-    const actionType = box._id ? 'EDIT_BOX' : 'ADD_BOX';
+    const actionType = 'ADD_BOX';
     const newBox = await boxService.save(box);
     dispatch({ type: actionType, box: newBox })
-    // dispatch({ type: 'NOTIFY', isShown: true, msg: 'Changes Saved!' })
     return newBox;
   };
 }
@@ -27,7 +26,7 @@ export function saveBox(box) {
 export function updateBox(box) {
   return dispatch => {
     const actionType = 'EDIT_BOX';
-    boxService.save(box);
+    boxService.update(box);
     dispatch({ type: actionType, box })
   };
 }

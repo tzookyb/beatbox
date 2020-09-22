@@ -10,13 +10,14 @@ import SkipNextIcon from '@material-ui/icons/SkipNext';
 import VolumeMuteIcon from '@material-ui/icons/VolumeMute';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import Slider from '@material-ui/core/Slider';
+import { CircleLoading } from 'react-loadingg';
 
-import { saveBox, updateBox } from '../store/actions/boxAction';
+import { updateBox } from '../store/actions/boxAction';
 import { socketService } from '../services/socketService'
-import { ContactSupport } from '@material-ui/icons';
 
 class _Player extends Component {
     state = {
+        isFirstRun: true,
         isReady: false,
         isShrunk: false,
         currBox: null,
@@ -35,15 +36,14 @@ class _Player extends Component {
     }
 
 
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate(prevProps) {
         const newBox = this.props.currBox;
         // Prevent loop:
         if (prevProps.currBox === newBox) return;
-
         // if first box - set and start playing
-        if (!this.state.currBox) {
+        if (newBox && this.state.isFirstRun) {
             this.socketSetup(false);
-            this.setState({ currBox: newBox }, this.loadSongToPlayer);
+            this.setState({ isFirstRun: false }, this.loadSongToPlayer);
             return;
         }
 
@@ -71,7 +71,9 @@ class _Player extends Component {
     }
 
     loadSongToPlayer = (currSongIdx = 0) => {
-        const { currBox } = this.state;
+        this.setState({ isReady: false });
+        const { currBox } = this.props;
+        console.log("loadSongToPlayer -> currBox", currBox)
         // If no songs in box, do nothing.
         if (!currBox.songs.length) return;
 
@@ -84,8 +86,8 @@ class _Player extends Component {
             secPlayed: this.state.secPlayed
         }
 
-        const newBox = { ...this.state.currBox, currSong };
-        this.props.saveBox(newBox);
+        const newBox = { ...this.props.currBox, currSong };
+        this.props.updateBox(newBox);
         if (this.state.isReady) this.play();
     }
 
@@ -136,7 +138,7 @@ class _Player extends Component {
 
     handleProgress = state => {
         if (!this.state.seeking) {
-            this.setState({ secPlayed: state.playedSeconds });
+            this.setState({ secPlayed: parseInt(state.playedSeconds) });
         }
     }
 
@@ -154,6 +156,7 @@ class _Player extends Component {
     }
 
     onReady = () => {
+        console.log('player ready')
         this.setState({ isReady: true }, this.play)
     }
 
@@ -186,11 +189,11 @@ class _Player extends Component {
     }
 
     render() {
-        const { currBox, isPlaying, volume, muted, duration, isShrunk, playerLocation } = this.state;
-
+        const { isReady, isPlaying, volume, muted, duration, isShrunk, playerLocation } = this.state;
+        const { currBox } = this.props
         if (!currBox || !currBox.currSong) return null;
         const song = currBox.songs.find(song => song.id === currBox.currSong.id)
-
+        if (!song) return null;
         function showTime(seconds) {
             var mins;
             var secs;
@@ -233,27 +236,29 @@ class _Player extends Component {
 
                 <img className="player-thumbnail" onClick={this.onToggleShrink} src={song.imgUrl} title={song.title} alt="song thumbnail" />
 
-                <span className="player-title">{song.title}</span>
+                {isReady && <span className="player-title">{song.title}</span>}
 
-                <div className="song-time flex align-center space-between">
-                    <span>{showTime(this.state.secPlayed)}</span>
+                {!isReady ?
+                    <CircleLoading color="#ac0aff" /> :
+                    < div className="song-time flex align-center space-between">
+                        <span>{showTime(this.state.secPlayed)}</span>
 
-                    <Slider
-                        style={{
-                            width: '70px',
-                            color: 'white',
-                        }}
-                        name="played"
-                        min={0}
-                        max={duration}
-                        onMouseDown={this.handleSeekMouseDown}
-                        onMouseUp={this.handleSeekMouseUp}
-                        onChange={this.handleSeekChange}
-                        value={this.state.secPlayed}
-                    />
+                        <Slider
+                            style={{
+                                width: '70px',
+                                color: 'white',
+                            }}
+                            name="played"
+                            min={0}
+                            max={duration}
+                            onMouseDown={this.handleSeekMouseDown}
+                            onMouseUp={this.handleSeekMouseUp}
+                            onChange={this.handleSeekChange}
+                            value={this.state.secPlayed}
+                        />
 
-                    {duration && <span>{showTime(duration)}</span>}
-                </div>
+                        {duration && <span>{showTime(duration)}</span>}
+                    </div>}
 
                 <div className="player-controls flex align-center">
                     <button className="player-ctrl-btn flex align-center" title="Previous" onClick={() => this.skipToSong(-1)}><SkipPreviousIcon /></button>
@@ -296,7 +301,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-    saveBox,
+    updateBox,
     updateBox
 }
 
