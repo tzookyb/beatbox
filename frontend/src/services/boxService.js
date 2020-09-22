@@ -91,7 +91,7 @@ function getEmptyBox() {
 
 async function save(box) {
     if (box._id) {
-        return httpService.put(`box/${box._id}`, box)
+        return await httpService.put(`box/${box._id}`, box)
     } else {
         //ADD CREATED AT AND CREATED BT YO BACKEND
         return httpService.post(`box`, box);

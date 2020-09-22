@@ -13,6 +13,7 @@ import { UserDetails } from './pages/UserDetails';
 import { Notification } from './cmps/Notification';
 
 class _App extends Component {
+ 
   render() {
     return (
       <div className="App">
