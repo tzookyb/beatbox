@@ -1,15 +1,15 @@
 .box-preview {
-  opacity: 0.85;
   height: rem(260px);
-  transition: 0.6s;
+  transition: 0.8s;
   position: relative;
   color: #e0e0e0;
 
   &:hover {
-    opacity: 1;
+    transform: scale3d(1.05, 1.05, 1.05);
     color: white;
   }
   .box-preview-details {
+    padding: 8px;
     margin: 0 5px;
     height: 33%;
     .box-preview-reaction {

@@ -1,5 +1,6 @@
 import { Button } from '@material-ui/core';
 import React, { Component } from 'react'
+<<<<<<< HEAD
 import { MessageList } from 'react-chat-elements'
 import { SystemMessage } from 'react-chat-elements'
 import { Input } from 'react-chat-elements'
@@ -73,3 +74,88 @@ render() {
     )
 }
 }
+=======
+import { connect } from 'react-redux'
+import { MessageList } from 'react-chat-elements'
+import { SystemMessage } from 'react-chat-elements'
+import { Chat } from './Chat'
+
+import 'react-chat-elements/dist/main.css';
+
+class _BoxWall extends Component {
+
+    state={
+        messages:[]
+    }
+
+    componentDidMount(){
+
+    }
+
+    sendMessage = (msg) =>{
+        console.log(msg);
+    }
+
+    inputRef = React.createRef();
+
+    render() {
+        return (
+            <div className="wall-container">
+                <h2> Box Wall </h2>
+                <div className="wall-content">
+                    <Chat user={this.props.user} sendMessage={this.sendMessage}/>
+                </div>
+            </div>
+        )
+    }
+}
+
+
+const mapStateToProps = state => {
+    return {
+        // boxes: state.boxReducer.boxes,
+        user: state.userReducer.loggedinUser
+    }
+}
+const mapDispatchToProps = {
+
+}
+
+export const BoxWall = connect(mapStateToProps, mapDispatchToProps)(_BoxWall)
+
+                    {/* <MessageList
+                        className='message-list'
+                        lockable={true}
+                        toBottomHeight={'100%'}
+                        dataSource={[
+                            {
+                                position: 'right',
+                                type: 'text',
+                                text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+                                date: new Date(),
+                            },
+                            {
+                                position: 'left',
+                                type: 'text',
+                                text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+                                date: new Date(),
+                            },
+                            {
+                                position: 'right',
+                                type: 'text',
+                                text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+                                date: new Date(),
+                            },
+                        ]} />
+                    <SystemMessage
+                        text={'End of conversation'} />
+                    <Input
+                        placeholder="Type here..."
+                        multiline={true}
+                        rightButtons={
+                            <Button
+                                color='white'
+                                backgroundColor='black'
+                                text='Send' />
+                        } /> */}
+>>>>>>> 108593639636541e81c114b33160faad2b99bb24
