@@ -18,9 +18,9 @@
     overflow: hidden;
     transition: 0.7s;
 
-    & > * {
-        transition: 0.7s;
-    }
+    // & > * {
+    //     transition: 0.7s;
+    // }
     .song-time {
         min-width: 180px;
 
@@ -51,9 +51,9 @@
         min-width: 300px;
         padding-inline-end: 20px;
         position: relative;
-        & > * {
-            cursor: pointer;
-        }
+        // & > * {
+        //     cursor: pointer;
+        // }
         .player-ctrl-btn {
             border-radius: 45%;
             padding: 5px;

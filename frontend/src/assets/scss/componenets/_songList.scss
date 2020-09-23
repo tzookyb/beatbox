@@ -41,9 +41,9 @@
 }
 .remove-song {
     position: fixed;
-    bottom: 120px;
+    bottom: 90px;
     padding: 50px;
-    left: calc(50% - 50px);
+    left: calc(30% - 50px);
     z-index: 9999;
     animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
     &:hover {
