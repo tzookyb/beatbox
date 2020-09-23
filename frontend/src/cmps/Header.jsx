@@ -2,9 +2,14 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-// LOCAL IMPORT
 import Avatar from '@material-ui/core/Avatar';
+<<<<<<< HEAD
 import { loadUser } from '../store/actions/userAction';
+=======
+
+// LOCAL IMPORT
+import { BoxFilter } from './boxes/BoxFilter';
+>>>>>>> ac0a70851d2138b1b6074c4b57a80aae84b78044
 
 class _Header extends Component {
 
@@ -13,7 +18,10 @@ class _Header extends Component {
     }
 
     componentDidMount() {
+<<<<<<< HEAD
         this.props.loadUser();
+=======
+>>>>>>> ac0a70851d2138b1b6074c4b57a80aae84b78044
         window.addEventListener("scroll", this.onScroll)
     }
 
@@ -27,12 +35,14 @@ class _Header extends Component {
     render() {
         const { user } = this.props;
         return (
-            <header onScroll={this.onScroll} className={`${this.state.isScroll || this.props.location.pathname !== '/' ? 'sticky' : ''} flex space-around  align-center`}>
+            <header onScroll={this.onScroll} className={`${this.state.isScroll || this.props.location.pathname !== '/' ? 'sticky' : ''} flex space-around align-center`}>
 
                 {(this.props.location.pathname === '/') ?
-                    <a href="/#top" className="logo">BeatBox</a> :
-                    <Link to="/" className="logo">BeatBox</Link>
+                    <a href="/#top"><img title="BeatBox" className="logo" src={require('../assets/img/logo.png')} alt="logo" /></a> :
+                    <Link to="/" ><img title="BeatBox" className="logo" src={require('../assets/img/logo.png')} alt="logo" /></Link>
                 }
+
+                <BoxFilter isShown={(this.props.location.pathname !== '/' || this.state.isScroll)} />
 
                 <ul className="main-nav flex clean-list space-between align-center">
                     <li><Link to="/box">Boxes</Link></li>
@@ -45,7 +55,7 @@ class _Header extends Component {
 
                     </div>}
                 </ul>
-            </header>
+            </header >
         )
     }
 }
@@ -56,7 +66,10 @@ const mapStateToProps = state => {
     }
 }
 const mapDispatchToProps = {
+<<<<<<< HEAD
     loadUser
+=======
+>>>>>>> ac0a70851d2138b1b6074c4b57a80aae84b78044
 }
 
 export const Header = connect(mapStateToProps, mapDispatchToProps)(withRouter(_Header))

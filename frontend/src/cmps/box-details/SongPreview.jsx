@@ -6,7 +6,7 @@ import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 function _SongPreview({ currBox, song, onRemoveSong, onPlaySong, isPlaying, index, isFilter }) {
     return (
         <Draggable draggableId={song.id} index={index} isDragDisabled={isFilter}>
-            {(provided) => (
+            {provided => (
                 <li
                     ref={provided.innerRef}
                     {...provided.draggableProps}

@@ -1,7 +1,6 @@
 // OUTSOURCE IMPORT
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { DragDropContext } from 'react-beautiful-dnd'
 import CircleLoading from 'react-loadingg/lib/CircleLoading'
 // LOCAL IMPORT
 import { SongList } from '../cmps/box-details/SongList'
@@ -99,14 +98,15 @@ class _BoxDetails extends Component {
     }
 
     onDragEnd = (result) => {
-        this.setState({ isDragging: false })
         const { destination, source, draggableId } = result;
+        console.log("onDragEnd -> destination", destination)
         if (!destination) return;
         if (destination.droppableId === 'trash') {
             this.onRemoveSong(null, draggableId)
         }
         else if (destination.index === source.index) return;
         else this.onSwapSongs(source.index, destination.index);
+        this.setState({ isDragging: false })
     }
 
     addMessageChat = async (msg) => {
@@ -132,7 +132,7 @@ class _BoxDetails extends Component {
     }
 
     onSwapSongs = (srcIdx, destIdx) => {
-        const newSongs = Array.from(this.props.box.songs);
+        const newSongs = [...this.props.box.songs];
         const [songToMove] = newSongs.splice(srcIdx, 1);
         newSongs.splice(destIdx, 0, songToMove)
         const newBox = { ...this.props.box, songs: newSongs }
@@ -141,7 +141,6 @@ class _BoxDetails extends Component {
 
     render() {
         const { isSongPickOpen, isDragging, filterBy } = this.state;
-        // const isFilter = filterBy ? true : false;
         const { box } = this.props;
         if (!box) return <CircleLoading size="large" color="#ac0aff" />
 
@@ -156,24 +155,19 @@ class _BoxDetails extends Component {
 
                 <BoxFilter onSetFilter={this.onSetFilter} />
 
-                <DragDropContext
+                <SongList
+                    songs={songsToShow}
+                    onPlaySong={this.onPlaySong}
+                    onRemoveSong={this.onRemoveSong}
+                    onAddSong={this.onAddSong}
+                    isSongPickOpen={isSongPickOpen}
+                    toggleSongPick={this.toggleSongPick}
+                    nowPlayingId={currSongId}
                     onDragStart={this.onDragStart}
                     onDragEnd={this.onDragEnd}
-                >
-                    <SongList
-                        songs={songsToShow}
-                        onPlaySong={this.onPlaySong}
-                        onRemoveSong={this.onRemoveSong}
-                        onAddSong={this.onAddSong}
-                        isSongPickOpen={isSongPickOpen}
-                        toggleSongPick={this.toggleSongPick}
-                        nowPlayingId={currSongId}
-                        onDragStart={this.onDragStart}
-                        onDragEnd={this.onDragEnd}
-                        isFilter={!!filterBy}
-                        isDragging={isDragging}
-                    />
-                </DragDropContext>
+                    isFilter={!!filterBy}
+                    isDragging={isDragging}
+                />
             </section>
         )
     }
