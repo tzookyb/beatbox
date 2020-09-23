@@ -38,7 +38,7 @@ export class Chat extends React.Component {
       <div className="chat">
         <form className="form-message" onSubmit={this.sendMessage}>
           <Input placeholder="Write Messge" value={this.state.message} name="messageInput" onChange={e => this.setState({ message: e.target.value })} autoComplete="off" style={{ background: "white" }} />
-          <Button block type="primary" onClick={this.sendMessage} style={{ color: "white" }}>
+          <Button type="primary" onClick={this.sendMessage} style={{ color: "white" }}>
             <SendIcon />
           </Button>
         </form>

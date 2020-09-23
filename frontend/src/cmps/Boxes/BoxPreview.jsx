@@ -1,17 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
-import VisibilityIcon from '@material-ui/icons/Visibility';
-import Avatar from '@material-ui/core/Avatar';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import HeadsetIcon from '@material-ui/icons/Headset';
 
-import { boxService } from "../../services/boxService";
+import HeadsetIcon from '@material-ui/icons/Headset';
 
 export class BoxPreview extends Component {
 
     render() {
-        const { box, isHomePage, } = this.props;
+        const { box, isHomePage } = this.props;
         return (
             <section className={`box-preview ${isHomePage ? 'box-home-preview' : ''}`}>
                 <Link to={`/box/${box._id}`} >
@@ -31,8 +26,6 @@ export class BoxPreview extends Component {
         )
     }
 }
-
-
 
 
 // import React, { Component } from 'react'

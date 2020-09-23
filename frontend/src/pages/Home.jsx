@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
-import { BoxApp } from './BoxApp'
 import { connect } from 'react-redux'
+import { CircleLoading } from 'react-loadingg';
 
-// import { boxService } from '../services/boxService'
+import { BoxApp } from './BoxApp'
 import { loadBoxes } from '../store/actions/boxAction'
 import { loadUser } from '../store/actions/userAction'
 import { Footer } from '../cmps/Footer'
-
-import { CircleLoading } from 'react-loadingg';
 
 class _Home extends Component {
 
@@ -17,7 +15,7 @@ class _Home extends Component {
 
     async componentDidMount() {
         await this.props.loadBoxes();
-        this.setState({ boxes: this.props.boxes })
+        this.setState({ boxes: this.props.boxes });
         this.props.loadUser();
     }
 
@@ -26,12 +24,12 @@ class _Home extends Component {
         boxes.forEach(box => {
             if (!genres.includes(box.genre)) genres.push(box.genre);
         })
-        return genres
+        return genres;
     }
 
     render() {
         const { boxes } = this.state;
-        if (!boxes) return <CircleLoading  size="large" color= "#ac0aff"/>
+        if (!boxes) return <CircleLoading size="large" color="#ac0aff" />
         const genres = this.getGenres(boxes);
         return (
             <React.Fragment>

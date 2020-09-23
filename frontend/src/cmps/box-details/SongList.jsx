@@ -23,7 +23,7 @@ export function SongList({ songs, onRemoveSong, onAddSong, onPlaySong, isSongPic
                                 return <SongPreview
                                     key={song.id}
                                     index={idx}
-                                    onPlaySong={() => onPlaySong(song.id)}
+                                    onPlaySong={onPlaySong}
                                     onRemoveSong={onRemoveSong}
                                     isPlaying={(nowPlayingId === song.id)}
                                     song={song}

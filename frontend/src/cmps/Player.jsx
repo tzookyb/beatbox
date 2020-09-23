@@ -20,9 +20,8 @@ class _Player extends Component {
         isFirstRun: true,
         isReady: false,
         isShrunk: false,
-        currBox: null,
+        // currBox: null,
         song: '',
-        playerLocation: null,
         isPlaying: true,
         secPlayed: 0,
         muted: false,
@@ -41,7 +40,7 @@ class _Player extends Component {
         // Prevent loop:
         if (prevProps.currBox === newBox) return;
         // if first box - set and start playing
-        if (newBox && this.state.isFirstRun) {
+        if (this.state.isFirstRun && newBox) {
             this.socketSetup(false);
             this.setState({ isFirstRun: false }, this.loadSongToPlayer);
             return;
@@ -50,16 +49,16 @@ class _Player extends Component {
         // if same box id, just update playerbox in state
         if (prevProps.currBox._id === newBox._id) {
             this.setState({
-                isPlaying: newBox.currSong?.isPlaying,
-                secPlayed: newBox.currSong?.secPlayed,
-                currBox: newBox
+                isPlaying: newBox.currSong.isPlaying,
+                secPlayed: newBox.currSong.secPlayed,
             });
             return;
         }
         // if different box -> setstate and load song idx 0 to player.
-        if (prevProps.currBox && prevProps.currBox._id !== newBox._id) {
+        if (prevProps.currBox._id !== newBox._id) {
             this.socketSetup(true, prevProps.currBox._id);
-            this.setState({ currBox: newBox }, () => this.loadSongToPlayer(0));
+            // this.setState({ currBox: newBox }, () =>
+            this.loadSongToPlayer(0);
         }
     }
 
@@ -73,17 +72,16 @@ class _Player extends Component {
     loadSongToPlayer = (currSongIdx = 0) => {
         this.setState({ isReady: false });
         const { currBox } = this.props;
-        console.log("loadSongToPlayer -> currBox", currBox)
+
         // If no songs in box, do nothing.
         if (!currBox.songs.length) return;
 
         const song = currBox.songs[currSongIdx];
-        this.setState({ song });
 
         const currSong = {
             id: song.id,
-            isPlaying: this.state.isPlaying,
-            secPlayed: this.state.secPlayed
+            isPlaying: true,
+            secPlayed: 0
         }
 
         const newBox = { ...this.props.currBox, currSong };
@@ -92,7 +90,7 @@ class _Player extends Component {
     }
 
     togglePlay = () => {
-        this.setState({ isPlaying: !this.state.isPlaying }, async () => {
+        this.setState({ isPlaying: !this.state.isPlaying }, () => {
             this.onUpdateBox();
 
         })
@@ -100,10 +98,9 @@ class _Player extends Component {
     }
 
     onUpdateBox = () => {
-        // HAVE BEEN CHANGED - SOCKETS
         const { currBox } = this.props;
         const currSong = { ...currBox.currSong, isPlaying: this.state.isPlaying, secPlayed: this.state.secPlayed };
-        const newBox = { ...currBox, currSong }
+        const newBox = { ...currBox, currSong };
         this.props.updateBox(newBox);
         socketService.emit('set currSong', currSong);
     }
@@ -129,16 +126,14 @@ class _Player extends Component {
     }
 
     handleSeekMouseUp = () => {
-        socketService.emit('song time changed', this.state.secPlayed);
-
         this.setState({ seeking: false }, () => {
-            this.onUpdateBox();
+            socketService.emit('song time changed', this.state.secPlayed);
             this.player.seekTo(this.state.secPlayed);
+            this.onUpdateBox();
         });
     }
 
     onSeek = (secPlayed) => {
-        console.log(secPlayed)
         this.player.seekTo(secPlayed);
     }
 
@@ -162,7 +157,6 @@ class _Player extends Component {
     }
 
     onReady = () => {
-        console.log('player ready')
         this.setState({ isReady: true }, this.play)
     }
 
@@ -180,23 +174,9 @@ class _Player extends Component {
         this.setState({ isShrunk: !this.state.isShrunk })
     }
 
-    onPlayerMouseDown = (ev) => {
-        this.setState({ isDragging: true })
-    }
-    onPlayerMouseUp = () => {
-        this.setState({ isDragging: false })
-    }
-    onPlayerDrag = (ev) => {
-        if (this.state.isDragging) {
-            ev.preventDefault()
-            ev.stopPropagation()
-            this.setState({ playerLocation: { x: ev.clientX, y: ev.clientY } })
-        }
-    }
-
     render() {
-        const { isReady, isPlaying, volume, muted, duration, isShrunk, playerLocation } = this.state;
-        const { currBox } = this.props
+        const { isReady, isPlaying, volume, muted, duration, isShrunk } = this.state;
+        const { currBox } = this.props;
 
         if (!currBox || !currBox.currSong) return null;
 
@@ -216,8 +196,6 @@ class _Player extends Component {
             return `${mins}:${secs}`
         }
 
-        const pL = playerLocation ? { left: `${playerLocation.x}`, top: `${playerLocation.y}` } : {};
-
         return <React.Fragment>
             <ReactPlayer
                 ref={this.ref}
@@ -236,7 +214,6 @@ class _Player extends Component {
             />
             <div
                 className={`player-container flex align-center space-between ${isPlaying ? 'is-playing' : 'paused'} ${isShrunk ? 'shrunk' : ''}`}
-                style={pL}
                 onMouseDown={this.onPlayerMouseDown}
                 onMouseUp={this.onPlayerMouseUp}
                 onDrag={this.onPlayerDrag}
@@ -310,7 +287,6 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-    updateBox,
     updateBox
 }
 
