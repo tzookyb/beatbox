@@ -1,13 +1,14 @@
 import httpService from './httpService';
 import { youtubeService } from './youtubeService';
 
-var gGenre = ['Hip-hop', 'Easy', 'Electronic' , 'Latin', 'Rock',
+var gGenre = ['Hip-hop', 'Easy', 'Electronic', 'Latin', 'Rock',
     'Pop', 'Classical', 'Alternative', 'Blues', 'Disco', 'Israeli', 'Arabic']
 
 export const boxService = {
     query,
     getById,
-    getGenres,
+    getAllGenres,
+    getUsedGenres,
     save,
     update,
     addSong,
@@ -18,8 +19,17 @@ export const boxService = {
     // remove,
 }
 
-function getGenres() {
+function getAllGenres() {
     return gGenre;
+}
+
+function getUsedGenres(boxes) {
+    let allGenres = [];
+    boxes.forEach(box => {
+        allGenres.push(box.genre);
+    })
+    const genres = [...new Set(allGenres)];
+    return genres;
 }
 
 async function getById(boxId) {

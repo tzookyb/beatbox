@@ -35,7 +35,7 @@ export class BoxInfoEdit extends Component {
     }
 
     getGenresOptions() {
-        const genres = boxService.getGenres();
+        const genres = boxService.getAllGenres();
         return genres.map((gener, idx) => {
             return <option key={idx} value={gener}>{gener}</option>
         })

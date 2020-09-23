@@ -1,37 +1,29 @@
 import React, { Component } from 'react'
-import { BoxApp } from './BoxApp'
 import { connect } from 'react-redux'
-
-// import { boxService } from '../services/boxService'
-import { loadBoxes } from '../store/actions/boxAction'
-import { loadUser } from '../store/actions/userAction'
-import { Footer } from '../cmps/Footer'
-
 import { CircleLoading } from 'react-loadingg';
+
+import { BoxApp } from './BoxApp'
+import { loadBoxes } from '../store/actions/boxAction'
+import { Footer } from '../cmps/Footer'
 
 class _Home extends Component {
 
-    state = {
-        boxes: null
-    }
-
     async componentDidMount() {
         await this.props.loadBoxes();
-        this.setState({ boxes: this.props.boxes })
-        this.props.loadUser();
     }
 
     getGenres(boxes) {
-        var genres = [];
+        let allGenres = [];
         boxes.forEach(box => {
-            if (!genres.includes(box.genre)) genres.push(box.genre);
+            allGenres.push(box.genre);
         })
-        return genres
+        const genres = [...new Set(allGenres)];
+        return genres;
     }
 
     render() {
-        const { boxes } = this.state;
-        if (!boxes) return <CircleLoading  size="large" color= "#ac0aff"/>
+        const { boxes } = this.props;
+        if (!boxes) return <CircleLoading size="large" color="#ac0aff" />
         const genres = this.getGenres(boxes);
         return (
             <React.Fragment>
@@ -58,12 +50,10 @@ class _Home extends Component {
 const mapStateToProps = state => {
     return {
         boxes: state.boxReducer.boxes,
-        user: state.userReducer.loggedinUser
     }
 }
 const mapDispatchToProps = {
     loadBoxes,
-    loadUser
 }
 
 export const Home = connect(mapStateToProps, mapDispatchToProps)(_Home)

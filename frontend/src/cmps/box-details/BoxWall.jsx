@@ -46,7 +46,7 @@ class _BoxWall extends Component {
 
 
     render() {
-        const { messages, user } = this.props;
+        const { messages, user, box } = this.props;
         const { myEmoji, bottom, opacity } = this.state;
         const isEmoji = (myEmoji === '') ? false : true;
         return (
@@ -58,7 +58,7 @@ class _BoxWall extends Component {
                         {myEmoji}
                         <label className="reaction-user-name">{this.props.user.username}</label>
                     </div>}
-                    <Chat user={user} addMessage={this.addMessage} setEmoji={this.setEmoji} />
+                    <Chat user={user} addmsg={this.addMessage} setEmoji={this.setEmoji} box={box}/>
                 </div>
             </div>
         )

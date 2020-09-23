@@ -1,3 +1,4 @@
+// OUTSOURCE IMPORT
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactPlayer from 'react-player/youtube'
@@ -11,7 +12,7 @@ import VolumeMuteIcon from '@material-ui/icons/VolumeMute';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import Slider from '@material-ui/core/Slider';
 import { CircleLoading } from 'react-loadingg';
-
+// LOCAL IMPORT
 import { updateBox } from '../store/actions/boxAction';
 import { socketService } from '../services/socketService'
 
@@ -20,9 +21,7 @@ class _Player extends Component {
         isFirstRun: true,
         isReady: false,
         isShrunk: false,
-        // currBox: null,
         song: '',
-        playerLocation: null,
         isPlaying: true,
         secPlayed: 0,
         muted: false,
@@ -35,7 +34,6 @@ class _Player extends Component {
         socketService.on('update song time', (secPlayed) => this.onSeek(secPlayed));
     }
 
-
     componentDidUpdate(prevProps) {
         const newBox = this.props.currBox;
         // Prevent loop:
@@ -46,8 +44,7 @@ class _Player extends Component {
             this.setState({ isFirstRun: false }, this.loadSongToPlayer);
             return;
         }
-
-        // if same box id, just update playerbox in state
+        // if same box id, just update playing details in state
         if (prevProps.currBox._id === newBox._id) {
             this.setState({
                 isPlaying: newBox.currSong.isPlaying,
@@ -55,25 +52,24 @@ class _Player extends Component {
             });
             return;
         }
-        // if different box -> setstate and load song idx 0 to player.
+        // if box changed -> subscribe new socket and load first song 
         if (prevProps.currBox._id !== newBox._id) {
             this.socketSetup(true, prevProps.currBox._id);
-            // this.setState({ currBox: newBox }, () =>
             this.loadSongToPlayer(0);
         }
     }
 
     socketSetup = (isJoined, prevBoxId) => {
         if (isJoined) {
+            // CHECK IF RIGHT CONVENTION
             socketService.off(prevBoxId, (secPlayed) => this.onSeek(secPlayed))
         }
         socketService.emit('join box', this.props.currBox._id);
     }
 
     loadSongToPlayer = (currSongIdx = 0) => {
-        this.setState({ isReady: false });
+        // this.setState({ isReady: false });
         const { currBox } = this.props;
-
         // If no songs in box, do nothing.
         if (!currBox.songs.length) return;
 
@@ -85,17 +81,13 @@ class _Player extends Component {
             secPlayed: 0
         }
 
-        const newBox = { ...this.props.currBox, currSong };
+        const newBox = { ...currBox, currSong };
         this.props.updateBox(newBox);
         if (this.state.isReady) this.play();
     }
 
     togglePlay = () => {
-        this.setState({ isPlaying: !this.state.isPlaying }, () => {
-            this.onUpdateBox();
-
-        })
-
+        this.setState({ isPlaying: !this.state.isPlaying }, () => this.onUpdateBox());
     }
 
     onUpdateBox = () => {
@@ -175,20 +167,8 @@ class _Player extends Component {
         this.setState({ isShrunk: !this.state.isShrunk })
     }
 
-    onPlayerMouseDown = (ev) => {
-        this.setState({ isDragging: true })
-    }
-    onPlayerMouseUp = () => {
-        this.setState({ isDragging: false })
-    }
-    onPlayerDrag = (ev) => {
-        if (this.state.isDragging) {
-            this.setState({ playerLocation: { x: ev.clientX, y: ev.clientY } })
-        }
-    }
-
     render() {
-        const { isReady, isPlaying, volume, muted, duration, isShrunk, playerLocation } = this.state;
+        const { isReady, isPlaying, volume, muted, duration, isShrunk } = this.state;
         const { currBox } = this.props;
 
         if (!currBox || !currBox.currSong) return null;
@@ -291,7 +271,6 @@ class _Player extends Component {
         </React.Fragment >
     }
 }
-
 
 const mapStateToProps = state => {
     return {

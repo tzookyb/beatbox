@@ -10,12 +10,12 @@ export class Emoji extends React.Component {
     render() {
         return (
             <div className="emoji-container">
-                <span onClick={(ev) => this.onEmojiChoose('😍', ev)}>😍</span>
-                <span onClick={(ev) => this.onEmojiChoose('😂', ev)}>😂</span>
-                <span onClick={(ev) => this.onEmojiChoose('😉', ev)}>😉</span>
-                <span onClick={(ev) => this.onEmojiChoose('😳', ev)}>😳</span>
-                <span onClick={(ev) => this.onEmojiChoose('👍', ev)}>👍</span>
-                <span onClick={(ev) => this.onEmojiChoose('👏', ev)}>👏</span>
+                <span role="img" aria-label="in-love" onClick={(ev) => this.onEmojiChoose('😍', ev)}>😍</span>
+                <span role="img" aria-label="lol" onClick={(ev) => this.onEmojiChoose('😂', ev)}>😂</span>
+                <span role="img" aria-label="wink" onClick={(ev) => this.onEmojiChoose('😉', ev)}>😉</span>
+                <span role="img" aria-label="surprised" onClick={(ev) => this.onEmojiChoose('😳', ev)}>😳</span>
+                <span role="img" aria-label="thumbs-up" onClick={(ev) => this.onEmojiChoose('👍', ev)}>👍</span>
+                <span role="img" aria-label="clap" onClick={(ev) => this.onEmojiChoose('👏', ev)}>👏</span>
             </div>
 
         )

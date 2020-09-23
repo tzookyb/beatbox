@@ -103,11 +103,13 @@ export class BoxInfo extends Component {
                         {isEditableDesc && <textarea autoFocus type="txt" value={box.description} name="description" onChange={this.handleInput} />}
                         {isEditableDesc && <button onClick={() => this.onSave('isEditableDesc')} ><SaveIcon /></button>}
                     </div>
-                    <h4>Genre: {box.genre}</h4>
+                    <h4>{box.genre}</h4>
 
-                    <div className="info-creator">
-                        {box.createdBy.name}
-                </div>
+                    <div className="info-creator flex align-center">
+                        <label>Created By: </label>
+                        <Avatar alt="Remy Sharp" src={box.createdBy.imgUrl} style={{ width: '40px', height: '40px' }} />
+                        <label>{box.createdBy.name}</label>
+                    </div>
                 </div>
                 <div className="social-params">
                     <div onClick={() => this.props.onToggleLikeBox(box._id, minimalUser)} className={`like ${this.getIsUserLikeBox(box, minimalUser)}`}>

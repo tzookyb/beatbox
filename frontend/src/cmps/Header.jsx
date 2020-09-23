@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
-import { Link, withRouter } from 'react-router-dom'
-import { connect } from 'react-redux'
+// OUTSOURCE IMPORT
+import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+// LOCAL IMPORT
 import Avatar from '@material-ui/core/Avatar';
-
-import { loadUser } from '../store/actions/userAction'
+// import { loadUser } from '../store/actions/userAction';
 
 class _Header extends Component {
 
@@ -12,20 +13,19 @@ class _Header extends Component {
     }
 
     componentDidMount() {
-        this.props.loadUser();
+        // this.props.loadUser();
         window.addEventListener("scroll", this.onScroll)
     }
 
-    
     onScroll = () => {
         if (window.scrollY > 0) {
             this.setState({ isScroll: true })
         }
         else this.setState({ isScroll: false })
     }
-    
+
     render() {
-        const { user } = this.props;        
+        const { user } = this.props;
         return (
             <header onScroll={this.onScroll} className={`${this.state.isScroll || this.props.location.pathname !== '/' ? 'sticky' : ''} flex space-around  align-center`}>
 
@@ -37,19 +37,11 @@ class _Header extends Component {
                 <ul className="main-nav flex clean-list space-between align-center">
                     <li><Link to="/box">Boxes</Link></li>
                     <Link to="/box/add">Create Box</Link>
-                    {/* <li className="link flex align-center">Link3</li> */}
                     {!user && <Link to='/login'>Login</Link>}
                     <Link to='/login'>Login</Link>
-                    {/* <Link to='/signup'>Signup</Link> */}
-
-                    {/* {loggedinUser && <button onClick={() => onLogout()}>Logout</button>} */}
-
                     {user && <div className="flex column align-center">
-                    <Avatar alt="Remy Sharp" src={user.imgUrl} />
-
-                        {/* <img src={user.imgUrl}  alt="avatar" /> */}
+                        <Avatar alt="Remy Sharp" src={user.imgUrl} />
                         <label className="avatar-name">Hi {user.username}</label>
-
                     </div>}
                 </ul>
             </header>
@@ -57,14 +49,13 @@ class _Header extends Component {
     }
 }
 
-
 const mapStateToProps = state => {
     return {
         user: state.userReducer.loggedinUser
     }
 }
 const mapDispatchToProps = {
-    loadUser
+    // loadUser
 }
 
 export const Header = connect(mapStateToProps, mapDispatchToProps)(withRouter(_Header))

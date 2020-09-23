@@ -40,6 +40,9 @@
     display: none;
   }
   .info-header {
+    .box-name {
+      font-size: 1.8rem;
+    }
     input {
       border: none;
       border-radius: 5px;
@@ -55,6 +58,10 @@
 
   .info-description {
     max-width: 400px;
+    .box-description {
+      margin: 0;
+      font-size: 1.2rem;
+    }
     textarea {
       width: 500px;
       // color: white;
@@ -66,7 +73,16 @@
       }
     }
   }
-
+  h4 {
+    background: $clr3;
+    padding: 5px;
+    width: max-content;
+    border-radius: 5px;
+  }
+  .info-creator {
+    color: darkgray;
+    font-size: 1.1rem;
+  }
   .info-input-actions {
     > * {
       margin: 5px;

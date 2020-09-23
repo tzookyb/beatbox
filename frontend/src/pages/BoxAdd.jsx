@@ -9,8 +9,6 @@ import { BoxInfoEdit } from '../cmps/box-details/BoxInfoEdit'
 import { SongList } from '../cmps/box-details/SongList'
 import CircleLoading from 'react-loadingg/lib/CircleLoading'
 
-
-
 export class _BoxAdd extends Component {
     state = {
         editBox: null,
@@ -21,21 +19,21 @@ export class _BoxAdd extends Component {
     }
 
     componentDidMount() {
-        const minimalUser = userService.getMinimalUser()
+        const minimalUser = userService.getMinimalUser();
         const emptyBox = boxService.getEmptyBox(minimalUser);
-        this.setState({ editBox: emptyBox })
+        this.setState({ editBox: emptyBox });
     }
 
     printMsg(msg) {
-        this.setState({ msgWarning: msg })
+        this.setState({ msgWarning: msg });
         setTimeout(() => {
-            this.setState({ msgWarning: '' })
+            this.setState({ msgWarning: '' });
         }, 2000)
     }
 
     onAddBox = async (ev) => {
         ev.preventDefault();
-        ev.stopPropagation()
+        ev.stopPropagation();
         if (!this.state.editBox.name) {
             this.printMsg('Name of box is required');
             return;
@@ -44,7 +42,7 @@ export class _BoxAdd extends Component {
             this.printMsg('Genre of box is required');
             return;
         }
-        // if (!this.state.editBox.imgUrl) this.setState({ ...this.state.editBox, editBox:{ imgUrl: require('../assets/img/default-box-img.jpg') } })
+
         const addedBox = await this.props.saveBox(this.state.editBox);
         this.props.loadBoxes();
         this.props.history.push(`/box/${addedBox._id}`);
@@ -60,7 +58,7 @@ export class _BoxAdd extends Component {
                 description: box.description,
                 imgUrl: box.imgUrl
             }
-        }))
+        }));
     }
 
     onRemoveSong = (ev, songId) => {
@@ -68,10 +66,10 @@ export class _BoxAdd extends Component {
             ev.stopPropagation();
             ev.preventDefault();
         }
-        const newBox = { ...this.state.editBox }
-        const songIdx = newBox.songs.findIndex(song => song.id === songId)
+        const newBox = { ...this.state.editBox };
+        const songIdx = newBox.songs.findIndex(song => song.id === songId);
         newBox.songs.splice(songIdx, 1);
-        this.setState({ editBox: newBox })
+        this.setState({ editBox: newBox });
     }
 
     onAddSong = (song, idx = undefined) => {
@@ -79,15 +77,15 @@ export class _BoxAdd extends Component {
         const songs = [...this.state.editBox.songs];
         if (!idx) songs.push(newSong);
         else songs.splice(idx, 0, newSong);
-        this.setState(prevState => ({ editBox: { ...prevState.editBox, songs } }))
+        this.setState(prevState => ({ editBox: { ...prevState.editBox, songs } }));
     }
 
     toggleSongPick = () => {
-        this.setState({ isSongPickOpen: !this.state.isSongPickOpen })
+        this.setState(prevState => ({ isSongPickOpen: !prevState.isSongPickOpen }));
     }
 
     onDragStart = () => {
-        this.setState({ isDragging: true })
+        this.setState({ isDragging: true });
     }
 
     onDragEnd = (result) => {
@@ -96,10 +94,10 @@ export class _BoxAdd extends Component {
         if (!destination) return;
 
         if (destination.droppableId === 'trash') {
-            this.onRemoveSong(null, draggableId)
+            this.onRemoveSong(null, draggableId);
         }
 
-        this.setState({ isDragging: false })
+        this.setState({ isDragging: false });
 
         if (destination.index === source.index) return;
 
@@ -111,18 +109,18 @@ export class _BoxAdd extends Component {
     swapSongs = (srcIdx, destIdx) => {
         const songs = [...this.state.editBox.songs];
         const [songToMove] = songs.splice(srcIdx, 1);
-        songs.splice(destIdx, 0, songToMove)
-        const newBox = { ...this.state.editBox, songs }
+        songs.splice(destIdx, 0, songToMove);
+        const newBox = { ...this.state.editBox, songs };
         this.setState({ editBox: newBox });
     }
 
     onPlaySong = () => {
-        // TODO: add capability to demo listen to song (on hover prefferably - connect new player comp. here)
-        return
+        // TODO: add capability to demo listen to song
+        return;
     }
 
     setIsLoading = (isLoading) => {
-        this.setState({ isLoading })
+        this.setState({ isLoading });
     }
 
     render() {
@@ -151,7 +149,13 @@ export class _BoxAdd extends Component {
                 </DragDropContext>
 
                 <div className="btn-create-container">
-                    <button disabled={this.state.isLoading} className={`btn-create ${this.state.isLoading ? 'faded-btn' : ''}`} onClick={this.onAddBox}>Create Box</button>
+                    <button
+                        disabled={this.state.isLoading}
+                        className={`btn-create ${this.state.isLoading ? 'faded-btn' : ''}`}
+                        onClick={this.onAddBox}
+                    >
+                        Create Box
+                        </button>
                     {this.state.msgWarning && <label className="msg-warnning">{this.state.msgWarning}</label>}
                 </div>
             </section>
@@ -161,9 +165,9 @@ export class _BoxAdd extends Component {
 
 const mapStateToProps = state => {
     return {
-      
     }
 }
+
 const mapDispatchToProps = {
     saveBox,
     loadBoxes
