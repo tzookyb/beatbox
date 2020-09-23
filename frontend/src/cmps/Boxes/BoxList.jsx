@@ -29,9 +29,9 @@ export class BoxList extends Component {
 
         if (this.ref.current.scrollLeft >= scrollDiff) this.ref.current.scrollLeft = 0
         else this.ref.current.scrollLeft += scrollTo
-        console.log("executeScroll -> scrollTo", scrollTo)
-        console.log("scrollToRef -> this.ref.current.scrollLeft", this.ref.current.scrollLeft)
-        console.log("scrollToRef -> this.ref.current.scrollOffset", scrollDiff)
+        // console.log("executeScroll -> scrollTo", scrollTo)
+        // console.log("scrollToRef -> this.ref.current.scrollLeft", this.ref.current.scrollLeft)
+        // console.log("scrollToRef -> this.ref.current.scrollOffset", scrollDiff)
 
     }
 

@@ -3,8 +3,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { DragDropContext } from 'react-beautiful-dnd'
 import CircleLoading from 'react-loadingg/lib/CircleLoading'
-
-
 // LOCAL IMPORT
 import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
@@ -26,26 +24,20 @@ class _BoxDetails extends Component {
 
     async componentDidMount() {
         const boxId = this.props.match.params.boxId;
-        const minimalUser = userService.getMinimalUser();
         // const messages = socketService.getMessagesByBoxId(boxId)
-        await boxService.addConnectedUser(boxId, minimalUser);
         await this.props.loadBox(boxId);
+        const minimalUser = userService.getMinimalUser();
+        await boxService.addConnectedUser(boxId, minimalUser);
 
         // SOCKET SETUP
         socketService.setup();
         socketService.emit('join box', this.props.box._id);
+        socketService.on('song changed', (currSong) => this.onSetCurrSong(currSong));
         // socketService.on('chat addMsg', this.addMsg);
         // socketService.on('chat typing', this.onTyping);
         // socketService.on('set currSong', this.state.box.currSong)
-        socketService.on('song changed', (currSong) => this.onSetCurrSong(currSong));
     }
-
-    // componentDidUpdate(prevProps) {\
-
-    componentWillUnmount() {
-
-    }
-
+    
     onSetCurrSong = (currSong) => {
         const newBox = { ...this.props.box, currSong };
         this.props.updateBox(newBox);
@@ -78,7 +70,7 @@ class _BoxDetails extends Component {
         const box = { ...this.props.box };
         box.songs.push(newSong);
         this.addMessageChat(`Song ${newSong.title} added by ${this.props.user.username}`);
-        this.props.updateBox(box)
+        this.props.updateBox(box);
     }
 
     onPlaySong = (songId) => {
@@ -192,7 +184,8 @@ class _BoxDetails extends Component {
 }
 const mapStateToProps = state => {
     return {
-        box: state.boxReducer.currBox
+        box: state.boxReducer.currBox,
+        user: state.userReducer.loggedinUser
     }
 }
 const mapDispatchToProps = {

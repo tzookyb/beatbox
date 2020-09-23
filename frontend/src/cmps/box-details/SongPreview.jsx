@@ -15,13 +15,13 @@ function _SongPreview({ currBox, song, onRemoveSong, onPlaySong, isPlaying, inde
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
-                    onClick={() => onPlaySong()}
+                    onClick={() => onPlaySong(song.id)}
                     className="song-preview flex space-between"
                 >
 
                     <div className="song-data flex align-center">
                         <div className="song-preview-img"><img src={song.imgUrl} alt="song-img" /></div>
-                        <h3 className={(isPlaying && currBox.currSong.isPlaying) ? 'now-playing': ''}>{song.title}</h3>
+                        <h3 className={(isPlaying && currBox.currSong.isPlaying) ? 'now-playing' : ''}>{song.title}</h3>
                     </div>
                     <div className="song-preview-btns flex align-center">
                         {isPlaying && currBox.currSong.isPlaying && <img className='playing-anim' src={require('../../assets/img/equalizer5.gif')} title="Now playing" alt="now-playing" />}

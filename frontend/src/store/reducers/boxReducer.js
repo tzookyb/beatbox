@@ -20,7 +20,7 @@ export function boxReducer(state = initialState, action) {
                 currBox: action.box
             }
         case 'EDIT_BOX':
-            return {
+        return {
                 ...state,
                 currBox: action.box,
                 boxes: state.boxes.map(box => {

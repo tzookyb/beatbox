@@ -35,6 +35,7 @@ function connectSockets(io) {
             socket.broadcast.to(socket.myTopic).emit('chat showTyping', userName)
         })
         socket.on('join box', boxId => {
+            console.log(boxId)
             if (socket.myBox) {
                 socket.leave(socket.myBox)
             }
@@ -46,7 +47,6 @@ function connectSockets(io) {
             io.to(socket.myBox).emit('update song time', secPlayed)
         })
         socket.on('set currSong', currSong => {
-            console.log(currSong)
             io.to(socket.myBox).emit('song changed', currSong)
         })
         socket.on('set song status', isPlaying => {
