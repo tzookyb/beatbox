@@ -1,10 +1,11 @@
-
-
+// OUTSOURCE IMPORT
 import React, { Component } from 'react'
-import { boxService } from '../services/boxService'
 
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+// LOCAL IMPORT
+import { boxService } from '../services/boxService'
+
 
 export class ButtonsFilter extends Component {
     state = {
@@ -16,9 +17,7 @@ export class ButtonsFilter extends Component {
         const genres = await boxService.getGenres();
         const { genreCount } = this.props
         this.setState({ genres: [...genres], genreCount })
-
     }
-
 
     goNextGenre = () => {
         let currGenre = this.state.genres.splice(0, 1);
@@ -42,7 +41,6 @@ export class ButtonsFilter extends Component {
                     if (idx - 1 <= genreCount) {
                         return <button className="btn-filter" key={idx} onClick={() => this.props.onSetFilterGenre(genre)}>{genre}</button>
                     } else return null;
-
                 })
                 }
                 <button onClick={() => this.goNextGenre()} className="btn-filter-nav"><ArrowForwardIosIcon /></button>
