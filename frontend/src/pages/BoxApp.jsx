@@ -40,7 +40,6 @@ class _BoxApp extends Component {
         if (!boxes) return <CircleLoading size="large" color="#ac0aff" />
         return (
             <section className="box-app" id="box">
-                <BoxFilter onSetFilter={this.onSetFilter} />
                 {!!genres && genres.map((genre, idx) => {
                     return (
                         <BoxList boxes={boxes} key={idx} genre={genre}
