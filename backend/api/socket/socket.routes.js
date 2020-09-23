@@ -4,6 +4,8 @@ module.exports = connectSockets
 function connectSockets(io) {
     io.on('connection', socket => {
         socket.on('chat newMsg', msg => {
+        console.log("connectSockets -> msg", msg)
+        console.log("connectSockets -> ocket.myTopic", socket.myTopic)
             io.to(socket.myTopic).emit('chat addMsg', msg)
         })
         socket.on('chat topic', topic => {
