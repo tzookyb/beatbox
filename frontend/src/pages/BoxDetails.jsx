@@ -33,26 +33,13 @@ class _BoxDetails extends Component {
         // SOCKET SETUP
         socketService.setup();
         socketService.emit('join box', this.props.box._id);
-<<<<<<< HEAD
-        socketService.on('song changed', this.onSetCurrSong);
-=======
         socketService.on('get box status', this.props.setCurrSong)
         socketService.on('song changed', this.props.setCurrSong);
         socketService.on('box changed', this.props.gotBoxUpdate);
->>>>>>> 838d244b5d1441d0a6af5d213c6f170827293adb
         // socketService.on('chat addMsg', this.addMsg);
         // socketService.on('chat typing', this.onTyping);
         // socketService.on('set currSong', this.state.box.currSong)
     }
-<<<<<<< HEAD
-
-
-    onSetCurrSong = (currSong) => {
-        const newBox = { ...this.props.box, currSong };
-        this.props.updateBox(newBox);
-    }
-=======
->>>>>>> 838d244b5d1441d0a6af5d213c6f170827293adb
 
     onRemoveSong = (ev, songId) => {
         if (ev) {
@@ -201,12 +188,8 @@ const mapDispatchToProps = {
     loadBox,
     updateBox,
     addMessage,
-<<<<<<< HEAD
-    loadMessages
-=======
     loadMessages,
     setCurrSong,
     gotBoxUpdate
->>>>>>> 838d244b5d1441d0a6af5d213c6f170827293adb
 }
 export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails);
