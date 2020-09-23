@@ -192,10 +192,4 @@ const mapDispatchToProps = {
     setCurrSong,
     gotBoxUpdate
 }
-export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails)
-
-// onSetCurrSong = (currSong) => {
-    //     console.log('socket')
-    //     const newBox = { ...this.props.box, currSong };
-    //     this.props.updateBox(newBox);
-    // }
+export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails);
