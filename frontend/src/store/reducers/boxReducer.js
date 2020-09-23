@@ -2,7 +2,7 @@
 const initialState = {
     boxes: [],
     currBox: null,
-    isNoticeShown : false,
+    isNoticeShown: false,
     msg: ''
 }
 
@@ -20,7 +20,7 @@ export function boxReducer(state = initialState, action) {
                 currBox: action.box
             }
         case 'EDIT_BOX':
-        return {
+            return {
                 ...state,
                 currBox: action.box,
                 boxes: state.boxes.map(box => {
@@ -35,8 +35,6 @@ export function boxReducer(state = initialState, action) {
         case 'REMOVE_BOX':
             return { ...state, boxes: state.boxes.filter(box => box._id !== action.boxId) }
 
-        case 'NOTIFY':
-            return { ...state, isNoticeShown: action.isShown, msg: action.msg }
         default:
             return state
     }
