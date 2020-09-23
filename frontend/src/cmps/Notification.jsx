@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { closeNotification } from '../store/actions/boxAction'
+// import { closeNotification } from '../store/actions/boxAction'
 
 class _Notification extends Component {
     // state = {

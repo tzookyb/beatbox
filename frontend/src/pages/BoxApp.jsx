@@ -1,14 +1,14 @@
+// OUTSOURCE IMPORT
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import CircleLoading from 'react-loadingg/lib/CircleLoading'
+// LOCAL IMPORT
 import { loadBoxes } from '../store/actions/boxAction'
 import { BoxList } from '../cmps/boxes/BoxList'
 import { BoxFilter } from '../cmps/boxes/BoxFilter'
 import { ButtonsFilter } from '../cmps/ButtonsFilter'
-
-import { boxService } from '../services/boxService'
 import { userService } from '../services/userService'
 import { loadUser } from '../store/actions/userAction'
-import CircleLoading from 'react-loadingg/lib/CircleLoading'
 
 class _BoxApp extends Component {
     state = {

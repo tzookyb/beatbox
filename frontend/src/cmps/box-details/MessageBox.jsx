@@ -1,6 +1,5 @@
 import React from "react";
-import { Row, Col, Card } from "antd";
-import Moment from "moment";
+import { Row, Col } from "antd";
 import Avatar from '@material-ui/core/Avatar';
 
 export const MessageBox = ({ text, submitBy, submitAt, avatar, own, type }) => {

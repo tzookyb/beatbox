@@ -1,11 +1,7 @@
 
 import React, { Component } from 'react';
-import socketService from '../../services/socketService';
-import { connect } from 'react-redux'
+// LOCAL IMPORT
 import { Spin } from "antd";
-
-// import { MessageBox } from 'react-chat-elements/native';
-
 import { MessageBox } from "./MessageBox";
 
 export class ChatBox extends Component {
