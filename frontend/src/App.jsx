@@ -13,7 +13,7 @@ import { Home } from './pages/Home';
 import { UserDetails } from './pages/UserDetails';
 
 class _App extends Component {
- 
+
   render() {
     return (
       <div className="App">

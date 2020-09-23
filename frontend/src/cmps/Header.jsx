@@ -60,4 +60,4 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
 }
 
-export const Header = connect(mapStateToProps, mapDispatchToProps)(withRouter(_Header))
+export const Header = connect(mapStateToProps)(withRouter(_Header))

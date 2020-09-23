@@ -35,11 +35,17 @@ class _BoxDetails extends Component {
         socketService.on('get box status', this.props.setCurrSong)
         socketService.on('song changed', this.props.setCurrSong);
         socketService.on('box changed', this.props.gotBoxUpdate);
-        // socketService.on('chat addMsg', this.addMsg);
-        // socketService.on('chat typing', this.onTyping);
-        // socketService.on('set currSong', this.state.box.currSong)
+        socketService.on('chat addMsg', this.addMsg);    
+        
     }
 
+ 
+
+    addMsg = async (msgObj) => {
+        this.props.addMessage(this.props.box._id, msgObj);
+        await this.props.loadMessages(this.props.box._id);
+    }
+  
     onRemoveSong = (ev, songId) => {
         if (ev) {
             ev.stopPropagation();
@@ -150,7 +156,7 @@ class _BoxDetails extends Component {
 
         return (
             <section className="box-details">
-                <BoxWall box={box} />
+                <BoxWall box={box} addMsg={this.addMsg} />
                 <BoxInfo box={box} onSaveInfo={this.onSaveInfo} minimalUser={minimalUser} onToggleLikeBox={this.onToggleLikeBox} />
 
                 <BoxFilter onSetFilter={this.onSetFilter} />
