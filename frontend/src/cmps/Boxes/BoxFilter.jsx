@@ -1,19 +1,17 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 
 import SearchIcon from '@material-ui/icons/Search';
-import CloseIcon from '@material-ui/icons/Close';
+import { setFilter } from '../../store/actions/boxAction';
 
-export class BoxFilter extends Component {
+export class _BoxFilter extends Component {
     state = {
-        name: '',
-        genre: 'all',
-        isSearchOpen: false
+        searchStr: '',
     }
 
     onHandleChange = ({ target }) => {
-        const field = target.name;
         const value = target.value;
-        this.setState({ [field]: value }, () => this.props.onSetFilter(this.state));
+        this.setState({ searchStr: value }, this.props.setFilter(value));
     }
 
     toggleSearch = () => {
@@ -21,14 +19,26 @@ export class BoxFilter extends Component {
     }
 
     render() {
-        const { name, isSearchOpen } = this.state;
+        const { searchStr } = this.state;
         return (
-            <div className={`box-filter flex justify-center ${isSearchOpen ? 'open' : ''}`}>
-                <input type="search" className="name-filter" name="name" autoComplete="off" value={name}
+            <div className={`box-filter flex justify-center open ${(this.props.isShown) ? '' : 'opacity0'}`}>
+                <input type="search" className="name-filter" name="name" autoComplete="off" value={searchStr}
                     onChange={this.onHandleChange} placeholder="Search Box" />
-                {!isSearchOpen && <SearchIcon className="search-icon" onClick={this.toggleSearch} />}
-                {isSearchOpen && <CloseIcon className="search-icon" onClick={this.toggleSearch} />}
+                {<SearchIcon className="search-icon" onClick={this.toggleSearch} />}
             </div>
         )
     }
 }
+const mapStateToProps = (state) => ({
+    filterBy: state.boxReducer.filterBy
+})
+const mapDispatchToProps = {
+    setFilter
+}
+export const BoxFilter = connect(mapStateToProps, mapDispatchToProps)(_BoxFilter)
+
+// isSearchOpen: false
+// import CloseIcon from '@material-ui/icons/Close';
+// <div className={`box-filter flex justify-center ${isSearchOpen ? 'open' : ''}`}>
+// {!isSearchOpen && <SearchIcon className="search-icon" onClick={this.toggleSearch} />}
+// {isSearchOpen && <CloseIcon className="search-icon" onClick={this.toggleSearch} />}

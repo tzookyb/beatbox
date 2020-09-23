@@ -3,7 +3,7 @@
     grid-template-columns: 20px 1fr 20px;
 
     > * {
-        grid-column: 2 ;
+        grid-column: 2;
 
         &.full {
             grid-column: 1 /-1;
@@ -11,26 +11,24 @@
     }
 
     @include for-narrow-layout {
-        grid-template-columns: 
+        grid-template-columns:
             minmax(20px, 1fr)
             minmax(auto, $mobile-breakpoint)
             minmax(20px, 1fr);
     }
     @include for-normal-layout {
-        grid-template-columns: 
+        grid-template-columns:
             minmax(20px, 1fr)
             minmax(auto, $narrow-breakpoint)
             minmax(20px, 1fr);
     }
     @include for-wide-layout {
-        grid-template-columns: 
+        grid-template-columns:
             minmax(20px, 1fr)
             minmax(auto, $normal-breakpoint)
             minmax(20px, 1fr);
     }
 }
-
-
 
 .card-grid {
     display: grid;
@@ -38,24 +36,21 @@
     grid-gap: 20px;
 }
 
-
 .box-details {
     display: grid;
     grid-template-columns: 20px 1fr 45px;
-    
+
     padding: 40px;
     > * {
-        grid-column: 1/4 ;
-
+        grid-column: 1/4;
     }
 
-    .wall-container{
-        grid-column: 4/6 ;
+    .wall-container {
+        grid-column: 4/6;
         grid-row: 1/5;
     }
 
     @include for-normal-layout {
-        grid-template-columns: repeat(5, 1fr) ;
+        grid-template-columns: repeat(5, 1fr);
     }
 }
-

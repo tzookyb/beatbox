@@ -37,6 +37,11 @@ export function updateBox(box) {
     dispatch({ type: 'UPDATE_BOX', box })
   };
 }
+export function setFilter(filterBy) {
+  return dispatch => {
+    dispatch({ type: 'SET_FILTER', filterBy })
+  }
+}
 
 export function removeBox(boxId) {
   return async dispatch => {

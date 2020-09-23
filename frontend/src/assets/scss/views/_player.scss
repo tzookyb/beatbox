@@ -23,6 +23,10 @@
     }
     .song-time {
         min-width: 180px;
+
+        .player-time {
+            font-family: Righteous;
+        }
     }
 
     .player-thumbnail {
@@ -63,7 +67,6 @@
             margin: 0 0px 0px 15px;
             height: 70px;
             width: auto;
-            bottom: 4px;
             &:hover {
                 animation: jello-horizontal 1s;
             }
