@@ -1,24 +1,6 @@
 
 module.exports = connectSockets
 
-// function connectSockets(io) {
-//     io.on('connection', socket => {
-//         socket.on('chat newMsg', msg=>{
-//             console.log(msg)
-//             // io.emit('chat addMsg', msg)
-//             // emits only to sockets in the same room
-//             io.to(socket.myTopic).emit('chat addMsg', msg)
-//         })
-//         socket.on('chat topic', topic=>{
-//             if (socket.myTopic) {
-//                 socket.leave(socket.myTopic)
-//             }
-//             socket.join(topic)
-//             socket.myTopic = topic;
-//         })
-//     })
-// }
-
 function connectSockets(io) {
     io.on('connection', socket => {
         socket.on('chat newMsg', msg => {
@@ -43,13 +25,7 @@ function connectSockets(io) {
             io.to(socket.myBox).emit('joined new box', boxId)
         })
         socket.on('song time changed', secPlayed => {
-<<<<<<< HEAD
             io.to(socket.myBox).emit('update song time', secPlayed)
-=======
-            console.log(secPlayed)
-            const res = io.to(socket.myBox).emit('update song time', secPlayed)
-            console.log("connectSockets -> res", res)
->>>>>>> 0971e5c640ec7c0b389ba85d2660f44acc7ee565
         })
         socket.on('set currSong', currSong => {
             console.log(currSong)
