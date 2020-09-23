@@ -22,7 +22,6 @@ class _Player extends Component {
         isShrunk: false,
         // currBox: null,
         song: '',
-        playerLocation: null,
         isPlaying: true,
         secPlayed: 0,
         muted: false,
@@ -175,20 +174,8 @@ class _Player extends Component {
         this.setState({ isShrunk: !this.state.isShrunk })
     }
 
-    onPlayerMouseDown = (ev) => {
-        this.setState({ isDragging: true })
-    }
-    onPlayerMouseUp = () => {
-        this.setState({ isDragging: false })
-    }
-    onPlayerDrag = (ev) => {
-        if (this.state.isDragging) {
-            this.setState({ playerLocation: { x: ev.clientX, y: ev.clientY } })
-        }
-    }
-
     render() {
-        const { isReady, isPlaying, volume, muted, duration, isShrunk, playerLocation } = this.state;
+        const { isReady, isPlaying, volume, muted, duration, isShrunk } = this.state;
         const { currBox } = this.props;
 
         if (!currBox || !currBox.currSong) return null;
