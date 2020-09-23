@@ -31,7 +31,7 @@ class _Player extends Component {
 
     componentDidMount() {
         socketService.setup();
-        socketService.on('update song time', (secPlayed) => this.onSeek(secPlayed));
+        socketService.on('update song time',  this.onSeek);
     }
 
     componentDidUpdate(prevProps) {
@@ -68,7 +68,7 @@ class _Player extends Component {
     }
 
     loadSongToPlayer = (currSongIdx = 0) => {
-        // this.setState({ isReady: false });
+        this.setState({ isReady: false });
         const { currBox } = this.props;
         // If no songs in box, do nothing.
         if (!currBox.songs.length) return;
@@ -83,7 +83,7 @@ class _Player extends Component {
 
         const newBox = { ...currBox, currSong };
         this.props.updateBox(newBox);
-        if (this.state.isReady) this.play();
+        // if (this.state.isReady) this.play();
     }
 
     togglePlay = () => {
@@ -95,6 +95,7 @@ class _Player extends Component {
         const currSong = { ...currBox.currSong, isPlaying: this.state.isPlaying, secPlayed: this.state.secPlayed };
         const newBox = { ...currBox, currSong };
         this.props.updateBox(newBox);
+        console.log("onUpdateBox -> currSong", currSong)
         socketService.emit('set currSong', currSong);
     }
 
