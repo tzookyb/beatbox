@@ -29,15 +29,14 @@ class _Player extends Component {
 
     componentDidMount() {
         socketService.setup();
+        // REMEMBER! UPDATED ONLY AT CLIENT PLAYER -  WITHOUT STORE
         socketService.on('update song time', this.onSeek);
-        socketService.on('update song time', (secPlayed) => {
-            // REMEMBER! UPDATED ONLY AT CLIENT PLAYER -  WITHOUT STORE
-            this.onSeek(secPlayed)
-        });
     }
 
     componentDidUpdate(prevProps) {
         const newBox = this.props.currBox;
+        console.log("componentDidUpdate -> prevProps", prevProps)
+        console.log("componentDidUpdate -> newBox", newBox)
         if (prevProps.currBox?._id !== newBox?._id) {
             this.socketSetup();
             if (newBox.songs.length) this.props.loadSong(newBox.songs[0].id);
@@ -103,7 +102,7 @@ class _Player extends Component {
     }
 
     onReady = () => {
-        this.setState({ isReady: true });
+        this.setState({ isReady: true }, this.play());
     }
 
     handleVolumeChange = (ev, value) => {

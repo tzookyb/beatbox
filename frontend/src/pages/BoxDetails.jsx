@@ -35,15 +35,15 @@ class _BoxDetails extends Component {
         socketService.on('get box status', this.props.setCurrSong)
         socketService.on('song changed', this.props.setCurrSong);
         socketService.on('box changed', this.props.gotBoxUpdate);
-        socketService.on('chat addMsg', this.addMsg);    
-        
+        socketService.on('chat addMsg', this.addMsg);
+
     }
 
     addMsg = async (msgObj) => {
         this.props.addMessage(this.props.box._id, msgObj);
         await this.props.loadMessages(this.props.box._id);
     }
-  
+
     onRemoveSong = (ev, songId) => {
         if (ev) {
             ev.stopPropagation();
@@ -103,14 +103,13 @@ class _BoxDetails extends Component {
 
     onDragEnd = (result) => {
         const { destination, source, draggableId } = result;
-        console.log("onDragEnd -> destination", destination)
+        this.setState({ isDragging: false })
         if (!destination) return;
         if (destination.droppableId === 'trash') {
             this.onRemoveSong(null, draggableId)
         }
         else if (destination.index === source.index) return;
         else this.onSwapSongs(source.index, destination.index);
-        this.setState({ isDragging: false })
     }
 
     addMessageChat = async (msg) => {
@@ -156,8 +155,6 @@ class _BoxDetails extends Component {
             <section className="box-details">
                 <BoxWall box={box} addMsg={this.addMsg} />
                 <BoxInfo box={box} onSaveInfo={this.onSaveInfo} minimalUser={minimalUser} onToggleLikeBox={this.onToggleLikeBox} />
-
-                <BoxFilter onSetFilter={this.onSetFilter} />
 
                 <SongList
                     songs={songsToShow}
