@@ -141,7 +141,7 @@ class _BoxDetails extends Component {
 
     render() {
         const { isSongPickOpen, isDragging, filterBy } = this.state;
-        const isFilter = filterBy ? true : false;
+        // const isFilter = filterBy ? true : false;
         const { box } = this.props;
         if (!box) return <CircleLoading size="large" color="#ac0aff" />
 
@@ -170,7 +170,7 @@ class _BoxDetails extends Component {
                         nowPlayingId={currSongId}
                         onDragStart={this.onDragStart}
                         onDragEnd={this.onDragEnd}
-                        isFilter={isFilter}
+                        isFilter={!!filterBy}
                         isDragging={isDragging}
                     />
                 </DragDropContext>
