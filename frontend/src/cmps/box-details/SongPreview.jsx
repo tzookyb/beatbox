@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { Draggable } from 'react-beautiful-dnd';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 function _SongPreview({ currBox, song, onRemoveSong, onPlaySong, isPlaying, index, isFilter }) {
     return (
@@ -21,7 +22,10 @@ function _SongPreview({ currBox, song, onRemoveSong, onPlaySong, isPlaying, inde
                     </div>
                     <div className="song-preview-btns flex align-center">
                         {isPlaying && currBox.currSong.isPlaying && <img className='playing-anim' src={require('../../assets/img/equalizer5.gif')} title="Now playing" alt="now-playing" />}
-                        <button onClick={(ev) => onRemoveSong(ev, song.id)} className="remove-song-btn"><DeleteOutlineIcon /></button>
+                        <div>
+                            <MoreVertIcon />
+                            <button onClick={(ev) => onRemoveSong(ev, song.id)} className="remove-song-btn"><DeleteOutlineIcon /></button>
+                        </div>
                     </div>
                 </li>
             )

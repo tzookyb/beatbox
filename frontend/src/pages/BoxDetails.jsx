@@ -35,15 +35,15 @@ class _BoxDetails extends Component {
         socketService.on('get box status', this.props.setCurrSong)
         socketService.on('song changed', this.props.setCurrSong);
         socketService.on('box changed', this.props.gotBoxUpdate);
-        socketService.on('chat addMsg', this.addMsg);    
-        
+        socketService.on('chat addMsg', this.addMsg);
+
     }
 
     addMsg = async (msgObj) => {
         this.props.addMessage(this.props.box._id, msgObj);
         await this.props.loadMessages(this.props.box._id);
     }
-  
+
     onRemoveSong = (ev, songId) => {
         if (ev) {
             ev.stopPropagation();
