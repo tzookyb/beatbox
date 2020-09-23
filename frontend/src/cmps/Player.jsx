@@ -51,10 +51,6 @@ class _Player extends Component {
     togglePlay = () => {
         this.props.updateSongPlay(this.props.currBox.currSong);
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> ac0a70851d2138b1b6074c4b57a80aae84b78044
     skipToSong = (skip) => {
         const { currBox } = this.props;
         const currSongIdx = currBox.songs.findIndex(song => song.id === currBox.currSong.id);

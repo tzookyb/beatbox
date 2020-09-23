@@ -7,41 +7,8 @@ let socket;
 
 let gMapMessages = [
   {
-    boxId: '_s4MlLQ',
-    messages: [
-      {
-        text: "hi",
-        id: "012",
-        submitBy: "Idan",
-        submitAt:1600582337051,
-        type: 'chat',
-        avatar: "https://res-console.cloudinary.com/daqs7x8my/thumbnails/transform/v1/image/upload//v1600700773/am9lYWR2YnB4MWl6ZTVmcnZvM2c=/drilldown"
-      },
-      {
-        text: "Bey",
-        id: "011",
-        submitBy: "Hilla",
-        submitAt:1600582337051,
-        type: 'chat',
-        avatar: "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg"
-      },
-      {
-        text: "BoxBeat is so fun app  !",
-        id: "FK4kf",
-        submitBy: "Hilla",
-        submitAt:1600582337051,
-        type: 'chat',
-        avatar: "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg"
-      },
-      {
-        text: "Matan delete the song: ",
-        id: "014",
-        submitBy: "system",
-        submitAt:1600582337051,
-        type: 'system',
-        avatar: ""
-      }
-    ]
+    boxId: '',
+    messages: []
   }
 ]
 
@@ -89,6 +56,5 @@ function off(eventName, cb) {
 }
 
 function emit(eventName, data) {
-  console.log("emit -> data", data);
   socket.emit(eventName, data);
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Fab } from '@material-ui/core';
-import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import { Delete } from '@material-ui/icons';
 import AddIcon from '@material-ui/icons/Add';
 

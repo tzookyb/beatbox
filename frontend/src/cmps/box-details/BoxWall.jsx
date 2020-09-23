@@ -9,21 +9,17 @@ class _BoxWall extends Component {
     state = {
         myEmoji: '',
         bottom: 55,
-        opacity: 1
+        opacity: 1,
+        typingStr: ''
     }
     gInterval = null;
-   
+
     componentDidMount() {
         const { box } = this.props;
         this.props.loadMessages(box._id);
     }
 
-    addMessage = async (msg) => {
-        const { box } = this.props;
-        this.props.addMessage(box._id, msg)
-        await this.props.loadMessages(box._id);
-    }
-    
+
     setEmoji = async (myEmoji) => {
         clearInterval(this.gInterval);
         await this.setState({ myEmoji });
@@ -43,22 +39,29 @@ class _BoxWall extends Component {
             }
         }, 300);
     }
-
+    setTyping = (typingStr) => {
+        this.setState({ typingStr })
+    }
 
     render() {
         const { messages, user, box } = this.props;
-        const { myEmoji, bottom, opacity } = this.state;
+        const { myEmoji, bottom, opacity, typingStr } = this.state;
         const isEmoji = (myEmoji === '') ? false : true;
         return (
             <div className="wall-container">
                 <h2> Box Wall </h2>
                 <div className="wall-content">
                     <ChatBox messages={messages} user={user} />
-                    {isEmoji && <div style={{ bottom: bottom + "px", opacity: opacity }} class="my-emoji flex column">
+                    {isEmoji && <div style={{ bottom: bottom + "px", opacity: opacity }} className="my-emoji flex column">
                         {myEmoji}
                         <label className="reaction-user-name">{this.props.user.username}</label>
                     </div>}
-                    <Chat user={user} addMsg={this.addMessage} setEmoji={this.setEmoji} box={box}/>
+
+                    <div className="typing-container">
+                        {typingStr && <h3>{typingStr}</h3>}
+                    </div>
+
+                    <Chat user={user} addMsg={this.props.addMsg} setEmoji={this.setEmoji} box={box} setTyping={this.setTyping} />
                 </div>
             </div>
         )
@@ -68,7 +71,9 @@ class _BoxWall extends Component {
 const mapStateToProps = state => {
     return {
         user: state.userReducer.loggedinUser,
-        messages: state.messageReducer.messages
+        messages: state.messageReducer.messages,
+        typingStr: state.messageReducer.typingStr,
+
     }
 }
 const mapDispatchToProps = {
