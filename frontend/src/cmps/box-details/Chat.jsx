@@ -1,13 +1,13 @@
 import React from "react";
-import Button from '@material-ui/core/Button';
-import { Input } from '@material-ui/core';
-import { Emoji } from './Emoji'
+
+import { Input, Button } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
+import { Emoji } from './Emoji'
 
 export class Chat extends React.Component {
   state = {
     message: '',
-  };
+  }
 
   sendMessage = (ev) => {
     ev.preventDefault();

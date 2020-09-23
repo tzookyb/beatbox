@@ -1,14 +1,14 @@
+// OUTSOURCE IMPORT
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { loadBoxes } from '../store/actions/boxAction'
+import CircleLoading from 'react-loadingg/lib/CircleLoading'
+// LOCAL IMPORT
 import { BoxList } from '../cmps/boxes/BoxList'
 import { BoxFilter } from '../cmps/boxes/BoxFilter'
 import { ButtonsFilter } from '../cmps/ButtonsFilter'
-
-import { boxService } from '../services/boxService'
 import { userService } from '../services/userService'
+import { loadBoxes } from '../store/actions/boxAction'
 import { loadUser } from '../store/actions/userAction'
-import CircleLoading from 'react-loadingg/lib/CircleLoading'
 
 class _BoxApp extends Component {
     state = {
@@ -24,45 +24,33 @@ class _BoxApp extends Component {
         this.props.loadUser();
         let genre = new URLSearchParams(window.location.href).get('genre');
         if (!genre) genre = '';
-        const filterBy = { name: '', genre }
+        const filterBy = { name: '', genre };
         const { genres } = this.props;
         if (genres) this.setState({ genres, isHomePage: true, filterBy }, () => this.loadBoxes(filterBy))
         else this.setState({ genres: [], isHomePage: false, filterBy }, () => this.loadBoxes(filterBy))
     }
 
     onSetFilter = (filterByName) => {
-        this.setState({ filterBy: { ...this.state.filterBy, name: filterByName.name } }, () => this.loadBoxes())
+        this.setState({ filterBy: { ...this.state.filterBy, name: filterByName.name } }, () => this.loadBoxes(this.state.filterBy))
     }
 
     onSetFilterGenre = (filterByGenre) => {
-        this.setState({ filterBy: { ...this.state.filterBy, genre: filterByGenre } }, () => this.loadBoxes())
+        this.setState({ filterBy: { ...this.state.filterBy, genre: filterByGenre } }, () => this.loadBoxes(this.state.filterBy))
     }
 
     loadBoxes = async () => {
         await this.props.loadBoxes(this.state.filterBy);
     }
 
-
-    onAddToFavorites = (boxId) => {
-        //TODO: ADD TO USER FAVORITES
-    }
-
     getMinimalUser() {
         return userService.getMinimalUser();
     }
-
-    // getBestGenres() {
-    //     const allGenres = boxService.getGenres();
-    //     const mapGenresCount = allGenres.map(genre=>{
-    //         return {genre, count:0}
-    //     })
-    // }
+    //TODO: ADD TO FAVORITES, GET THE 3 BEST
 
     render() {
         const { boxes } = this.props;
-        // notused:
-        const minimalUser = this.getMinimalUser();
         const { genres } = this.state;
+        const minimalUser = this.getMinimalUser();
         if (!boxes || !genres) return <CircleLoading size="large" color="#ac0aff" />
         return (
             <section className="box-app" id="box">

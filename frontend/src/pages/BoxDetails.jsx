@@ -1,4 +1,4 @@
-// OUTSOURCE IMPORT 
+// OUTSOURCE IMPORT
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { DragDropContext } from 'react-beautiful-dnd'
@@ -24,9 +24,9 @@ class _BoxDetails extends Component {
 
     async componentDidMount() {
         const boxId = this.props.match.params.boxId;
+        const minimalUser = this.getMinimalUser();
         // const messages = socketService.getMessagesByBoxId(boxId)
         await this.props.loadBox(boxId);
-        const minimalUser = userService.getMinimalUser();
         await boxService.addConnectedUser(boxId, minimalUser);
 
         // SOCKET SETUP
@@ -130,8 +130,6 @@ class _BoxDetails extends Component {
     }
 
     onToggleLikeBox = async (boxId, minimalUser) => {
-        console.log("onToggleLikeBox -> minimalUser", minimalUser)
-        console.log("onToggleLikeBox -> boxId", boxId)
         await boxService.addLike(boxId, minimalUser)
         await this.props.loadBox(boxId);
     }
@@ -193,6 +191,6 @@ const mapDispatchToProps = {
     loadBox,
     updateBox,
     addMessage,
-    loadMessages
+    loadMessages 
 }
 export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails)

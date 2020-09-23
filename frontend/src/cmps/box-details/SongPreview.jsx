@@ -3,10 +3,6 @@ import { connect } from 'react-redux'
 import { Draggable } from 'react-beautiful-dnd';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 
-// If the current playing song animation is nice, delete commented lines 5,15
-// import equalizer from '../../assets/img/equalizer5.gif';
-
-// function _SongPreview({ song, onRemoveSong, onPlaySong, nowPlayingId }) {
 function _SongPreview({ currBox, song, onRemoveSong, onPlaySong, isPlaying, index, isFilter }) {
     return (
         <Draggable draggableId={song.id} index={index} isDragDisabled={isFilter}>

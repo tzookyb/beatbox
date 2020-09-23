@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-// import SaveIcon from '@material-ui/icons/Save';
-// import CreateIcon from '@material-ui/icons/Create';
+import CircleLoading from 'react-loadingg/lib/CircleLoading';
+
 import { cloudService } from '../../services/cloudService'
 import { boxService } from '../../services/boxService'
 import imgPlaceholder from '../../assets/img/img_placeholder.png';
-import CircleLoading from 'react-loadingg/lib/CircleLoading';
 
 export class BoxInfoEdit extends Component {
     state = {
@@ -18,7 +17,7 @@ export class BoxInfoEdit extends Component {
 
     onSaveInfo = (ev) => {
         ev.preventDefault();
-        this.props.onSaveInfo(this.state.box)
+        this.props.onSaveInfo(this.state.box);
     }
 
     handleInput = ({ target }) => {

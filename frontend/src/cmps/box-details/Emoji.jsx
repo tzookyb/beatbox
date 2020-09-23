@@ -8,7 +8,6 @@ export class Emoji extends React.Component {
     }
 
     render() {
-        const { keep } = this.props
         return (
             <div className="emoji-container">
                 <span onClick={(ev) => this.onEmojiChoose('😍', ev)}>😍</span>

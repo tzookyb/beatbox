@@ -1,6 +1,5 @@
 import React from "react";
-import { Row, Col, Card } from "antd";
-import Moment from "moment";
+import { Row, Col } from "antd";
 import Avatar from '@material-ui/core/Avatar';
 
 export const MessageBox = ({ text, submitBy, submitAt, avatar, own, type }) => {
@@ -64,8 +63,6 @@ export const MessageBox = ({ text, submitBy, submitAt, avatar, own, type }) => {
                   boxShadow: "1px 2px 3px #ccc",
                   textAlign: "right",
                   width: "fit-content",
-                  // position:"absolute",
-                  // right: "0" 
                 }}
               >
                 {text}
@@ -76,11 +73,10 @@ export const MessageBox = ({ text, submitBy, submitAt, avatar, own, type }) => {
       )
     }
   }
-  else { //system mesasages
+  else { 
     return (
       <div className="system-message" style={{ textAlign: "center" }}>
         <Col>
-          {/* <p className="submit-by">System</p> */}
           <p style={{ fontSize: "0.7em", fontStyle: "italic" }}>
             {dateToString}
           </p>
