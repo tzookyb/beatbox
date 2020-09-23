@@ -23,10 +23,10 @@ class _BoxApp extends Component {
     componentDidMount() {
         this.props.loadUser();
         const genre = new URLSearchParams(window.location.href).get('genre');
-        const filterBy = { name: '', genre: genre }
+        const filterBy = { name: '', genre: genre };
         const { genres } = this.props;
-        if (genres) this.setState({ genres, isHomePage: true, filterBy }, () => this.loadBoxes())
-        else this.setState({ genres: [], isHomePage: false, filterBy }, () => this.loadBoxes())
+        if (genres) this.setState({ genres, isHomePage: true, filterBy }, () => this.loadBoxes());
+        else this.setState({ genres: [], isHomePage: false, filterBy }, () => this.loadBoxes());
     }
 
     onSetFilter = (filterByName) => {

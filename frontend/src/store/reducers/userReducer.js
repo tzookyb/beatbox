@@ -1,4 +1,4 @@
-
+// replace null to guest user
 const initialState = {
     users: [],
     loggedinUser: null

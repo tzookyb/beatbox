@@ -15,7 +15,7 @@ class _Home extends Component {
 
     async componentDidMount() {
         await this.props.loadBoxes();
-        this.setState({ boxes: this.props.boxes });
+        // this.setState({ boxes: this.props.boxes });
         this.props.loadUser();
     }
 
@@ -28,7 +28,7 @@ class _Home extends Component {
     }
 
     render() {
-        const { boxes } = this.state;
+        const { boxes } = this.props;
         if (!boxes) return <CircleLoading size="large" color="#ac0aff" />
         const genres = this.getGenres(boxes);
         return (

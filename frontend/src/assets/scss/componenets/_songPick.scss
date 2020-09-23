@@ -17,7 +17,6 @@
     }
 
     .song-pick-result {
-        display: flex;
         padding: 0px 5px;
         align-items: center;
         width: 100%;
@@ -41,9 +40,10 @@
         width: 100%;
         outline: none;
         border: none;
-        background-color: #ffffff12;
-        color: #fff;
+        background-color: white;
+        font-size: 1.1rem;
         padding: 10px 25px 10px 10px;
         border-radius: 999px;
+        margin-bottom: 5px;
     }
 }
