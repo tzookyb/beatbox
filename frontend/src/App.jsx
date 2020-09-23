@@ -10,7 +10,7 @@ import { BoxAdd } from './pages/BoxAdd';
 import { Login } from './cmps/user/Login';
 import { Home } from './pages/Home';
 import { UserDetails } from './pages/UserDetails';
-import { Notification } from './cmps/Notification';
+// import { Notification } from './cmps/Notification';
 
 class _App extends Component {
  
@@ -28,7 +28,7 @@ class _App extends Component {
             <Route component={Home} path="/" />
           </Switch>
         </main>
-        <Notification />
+        {/* <Notification /> */}
         <Player />
       </div>
     )

@@ -1,4 +1,4 @@
-// OUTSOURCE IMPORT 
+// OUTSOURCE IMPORT
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { DragDropContext } from 'react-beautiful-dnd'
@@ -24,13 +24,9 @@ class _BoxDetails extends Component {
 
     async componentDidMount() {
         const boxId = this.props.match.params.boxId;
-<<<<<<< HEAD
         const minimalUser = this.getMinimalUser();
-=======
->>>>>>> 96b08e43018ee395c1ada32796a14bfc88b75a2b
         // const messages = socketService.getMessagesByBoxId(boxId)
         await this.props.loadBox(boxId);
-        const minimalUser = userService.getMinimalUser();
         await boxService.addConnectedUser(boxId, minimalUser);
 
         // SOCKET SETUP
@@ -70,21 +66,11 @@ class _BoxDetails extends Component {
     }
 
     onAddSong = (song) => {
-<<<<<<< HEAD
-        const newSong = boxService.addSong(song, this.state.box.songs)
-        const box = { ...this.state.box }
-        box.songs.push(newSong)
-        console.log(this.props.user);
-        // this.props.notify('Song added');
-        this.addMessageChat(`Song ${newSong.title} added by ${this.props.user.username}`);
-        this.props.updateBox(box)
-=======
         const newSong = boxService.addSong(song);
         const box = { ...this.props.box };
         box.songs.push(newSong);
         this.addMessageChat(`Song ${newSong.title} added by ${this.props.user.username}`);
         this.props.updateBox(box);
->>>>>>> 96b08e43018ee395c1ada32796a14bfc88b75a2b
     }
 
     onPlaySong = (songId) => {
@@ -157,14 +143,10 @@ class _BoxDetails extends Component {
     }
 
     render() {
-        const { box, isSongPickOpen, isDragging, filterBy } = this.state;
+        const { isSongPickOpen, isDragging, filterBy } = this.state;
         const isFilter = filterBy ? true : false;
-<<<<<<< HEAD
-        // const { box } = this.props;
-=======
         const { box } = this.props;
 
->>>>>>> 96b08e43018ee395c1ada32796a14bfc88b75a2b
         if (!box) return <CircleLoading size="large" color="#ac0aff" />
 
         const currSongId = box.currSong?.id || null;
@@ -210,10 +192,6 @@ const mapDispatchToProps = {
     loadBox,
     updateBox,
     addMessage,
-<<<<<<< HEAD
     loadMessages 
-=======
-    loadMessages
->>>>>>> 96b08e43018ee395c1ada32796a14bfc88b75a2b
 }
 export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails)
