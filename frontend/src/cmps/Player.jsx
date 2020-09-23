@@ -22,7 +22,6 @@ class _Player extends Component {
         isReady: false,
         isShrunk: false,
         song: '',
-        playerLocation: null,
         isPlaying: true,
         secPlayed: 0,
         muted: false,
@@ -168,22 +167,8 @@ class _Player extends Component {
         this.setState({ isShrunk: !this.state.isShrunk })
     }
 
-    onPlayerMouseDown = (ev) => {
-        this.setState({ isDragging: true })
-    }
-    onPlayerMouseUp = () => {
-        this.setState({ isDragging: false })
-    }
-    onPlayerDrag = (ev) => {
-        if (this.state.isDragging) {
-            ev.preventDefault()
-            ev.stopPropagation()
-            this.setState({ playerLocation: { x: ev.clientX, y: ev.clientY } })
-        }
-    }
-
     render() {
-        const { isReady, isPlaying, volume, muted, duration, isShrunk, playerLocation } = this.state;
+        const { isReady, isPlaying, volume, muted, duration, isShrunk } = this.state;
         const { currBox } = this.props;
 
         if (!currBox || !currBox.currSong) return null;
@@ -204,8 +189,6 @@ class _Player extends Component {
             return `${mins}:${secs}`
         }
 
-        const pL = playerLocation ? { left: `${playerLocation.x}`, top: `${playerLocation.y}` } : {};
-
         return <React.Fragment>
             <ReactPlayer
                 ref={this.ref}
@@ -224,7 +207,6 @@ class _Player extends Component {
             />
             <div
                 className={`player-container flex align-center space-between ${isPlaying ? 'is-playing' : 'paused'} ${isShrunk ? 'shrunk' : ''}`}
-                style={pL}
                 onMouseDown={this.onPlayerMouseDown}
                 onMouseUp={this.onPlayerMouseUp}
                 onDrag={this.onPlayerDrag}
