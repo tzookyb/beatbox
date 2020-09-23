@@ -128,8 +128,14 @@ function getIsUserLikeBox(currBox, currUser) {
 
 async function addConnectedUser(boxId, minimalUser) {
     const box = await getById(boxId);
+<<<<<<< HEAD
+    console.log("addConnectedUser -> box", box)
+    const updateBox = { ...box };
+    const isUserInBox = updateBox.connectedUsers.find(user => user.id === minimalUser.id)
+=======
     const newBox = { ...box };
     const isUserInBox = newBox.connectedUsers.find(user => user.id === minimalUser.id)
+>>>>>>> 96b08e43018ee395c1ada32796a14bfc88b75a2b
     if (!isUserInBox) {
         newBox.connectedUsers.push(minimalUser);
         // newBox.viewCount++;
