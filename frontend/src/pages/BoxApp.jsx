@@ -30,10 +30,6 @@ class _BoxApp extends Component {
         this.props.loadBoxes(filterBy);
     }
 
-    onSetFilter = (name, value) => {
-        this.setState({ filterBy: { ...this.state.filterBy, [name]: value } }, () => this.props.loadBoxes(this.state.filterBy))
-    }
-
     render() {
         const { boxes, genres } = this.props;
         const minimalUser = userService.getMinimalUser();

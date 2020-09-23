@@ -57,7 +57,5 @@ const mapStateToProps = state => {
         user: state.userReducer.loggedinUser
     }
 }
-const mapDispatchToProps = {
-}
 
 export const Header = connect(mapStateToProps)(withRouter(_Header))

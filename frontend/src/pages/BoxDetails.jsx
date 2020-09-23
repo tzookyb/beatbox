@@ -39,8 +39,6 @@ class _BoxDetails extends Component {
         
     }
 
- 
-
     addMsg = async (msgObj) => {
         this.props.addMessage(this.props.box._id, msgObj);
         await this.props.loadMessages(this.props.box._id);
