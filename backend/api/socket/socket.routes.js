@@ -22,21 +22,21 @@ function connectSockets(io) {
     io.on('connection', socket => {
         socket.on('chat newMsg', msg => {
         console.log("connectSockets -> msg", msg)
-        console.log("connectSockets -> ocket.myTopic", socket.myTopic)
-            io.to(socket.myTopic).emit('chat addMsg', msg)
+        console.log("connectSockets -> ocket.myTopic", socket.myBox)
+            io.to(socket.myBox).emit('chat addMsg', msg)
         })
-        socket.on('chat topic', topic => {
-            if (socket.myTopic) {
-                socket.leave(socket.myTopic)
-            }
-            socket.join(topic)
-            socket.myTopic = topic;
-        })
+        // socket.on('chat topic', topic => {
+        //     if (socket.myTopic) {
+        //         socket.leave(socket.myTopic)
+        // //     }
+        //     socket.join(topic)
+        //     socket.myTopic = topic;
+        // })
         socket.on('chat typing', userName => {
             socket.broadcast.to(socket.myTopic).emit('chat showTyping', userName)
         })
         socket.on('join box', (boxId, miniUser) => {
-            console.log(boxId)
+            console.log(socket.myBox)
             if (socket.myBox) {
                 socket.leave(socket.myBox)
             }
