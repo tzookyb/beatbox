@@ -49,7 +49,7 @@ class _Player extends Component {
 
     togglePlay = () => {
         this.props.updateSongPlay(this.props.currBox.currSong);
-
+    }
     skipToSong = (skip) => {
         const { currBox } = this.props;
         const currSongIdx = currBox.songs.findIndex(song => song.id === currBox.currSong.id);
@@ -226,6 +226,8 @@ class _Player extends Component {
         </React.Fragment >
     }
 }
+
+
 
 const mapStateToProps = state => {
     return {
