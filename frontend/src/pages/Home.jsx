@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { CircleLoading } from 'react-loadingg';
+import ExpandMoreSharpIcon from '@material-ui/icons/ExpandMoreSharp';
 
 import { BoxApp } from './BoxApp'
 import { loadBoxes } from '../store/actions/boxAction'
@@ -34,6 +35,7 @@ class _Home extends Component {
                         <h1>Share the <span>Beat</span>...</h1>
                         <a href="#box"><button>Start listening</button></a>
                     </div>
+                    <a href="#box" className="scroll-down-arrow"><ExpandMoreSharpIcon ></ExpandMoreSharpIcon></a>
                     <div className="hero-img">
                         <img src={require('../assets/img/hero3.jpg')} alt="" />
                         <img src={require('../assets/img/hero2.png')} alt="" />

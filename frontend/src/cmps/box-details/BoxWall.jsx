@@ -58,7 +58,7 @@ class _BoxWall extends Component {
                         {myEmoji}
                         <label className="reaction-user-name">{this.props.user.username}</label>
                     </div>}
-                    <Chat user={user} addmsg={this.addMessage} setEmoji={this.setEmoji} box={box}/>
+                    <Chat user={user} addMsg={this.addMessage} setEmoji={this.setEmoji} box={box}/>
                 </div>
             </div>
         )

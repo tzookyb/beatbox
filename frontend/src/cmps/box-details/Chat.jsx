@@ -17,7 +17,7 @@ export class Chat extends React.Component {
   componentDidMount() {
     console.log('lalalla');
     socketService.setup();
-    socketService.emit('chat topic', this.props.box._id);
+    // socketService.emit('chat topic', this.props.box._id);
     console.log("Chat -> componentDidMount -> this.props.box._id", this.props.box._id)
     socketService.on('chat addMsg', this.addMsg);
     socketService.on('chat typing', this.onTyping);
@@ -31,7 +31,7 @@ export class Chat extends React.Component {
 
   addMsg = msgObj => {
     console.log("Chat -> msgObj", msgObj)
-    this.props.addmsg(msgObj);
+    this.props.addMsg(msgObj);
     // this.setState(prevState => ({ msgs: [...prevState.msgs, newMsg] }));
   };
 
@@ -39,7 +39,7 @@ export class Chat extends React.Component {
     this.setState(({ typingStr: typingStr }))
   }
 
-  sendmsg = (ev) => {
+  sendMsg = (ev) => {
     ev.preventDefault();
     const { msg } = this.state;
     if (msg) {
@@ -51,7 +51,7 @@ export class Chat extends React.Component {
         avatar: this.props.user.imgUrl,
         type: 'chat'
       }
-      this.props.addmsg(msgObj);
+      this.props.addMsg(msgObj);
       socketService.emit('chat newMsg', msgObj);
       this.setState({ msg: '' })
     }
@@ -94,13 +94,13 @@ export class Chat extends React.Component {
   render() {
     return (
       <div className="chat">
-        <form className="form-msg" onSubmit={this.sendmsg}>
+        <form className="form-msg" onSubmit={this.sendMsg}>
           <div className="container-send-msg flex space-between">
             <input className="input-chat" placeholder="Write Messge" value={this.state.msg}
               name="msg" onChange={this.onHandleChange} autoComplete="off" />
             {/* <Input className="input-chat" placeholder="Write Messge" value={this.state.msg}
               name="msgInput" onChange={e => this.setState({ msg: e.target.value })} autoComplete="off" /> */}
-            <Button type="primary" onClick={this.sendmsg} style={{ color: "white" }}>
+            <Button type="primary" onClick={this.sendMsg} style={{ color: "white" }}>
               <SendIcon />
             </Button>
           </div>
