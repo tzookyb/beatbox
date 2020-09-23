@@ -188,12 +188,8 @@ const mapDispatchToProps = {
     loadBox,
     updateBox,
     addMessage,
-<<<<<<< HEAD
-    loadMessages
-=======
     loadMessages,
     setCurrSong,
     gotBoxUpdate
->>>>>>> 838d244b5d1441d0a6af5d213c6f170827293adb
 }
 export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails);

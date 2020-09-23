@@ -26,4 +26,9 @@ Wed, 23 Sep 2020 13:52:44 GMT - Info - Server is running on port: 3030
 Wed, 23 Sep 2020 13:56:47 GMT - Info - Server is running on port: 3030
 >>>>>>> 82cf5b9a53f96d0b8b9b2b8180cc94f2f2076f73
 Wed, 23 Sep 2020 14:04:08 GMT - Info - Server is running on port: 3030
+<<<<<<< HEAD
+Wed, 23 Sep 2020 14:11:05 GMT - Info - Server is running on port: 3030
+Wed, 23 Sep 2020 14:14:08 GMT - Info - Server is running on port: 3030
+=======
 Wed, 23 Sep 2020 14:09:47 GMT - Info - Server is running on port: 3030
+>>>>>>> 41f3532a42145474ac925717b90136803e712be9

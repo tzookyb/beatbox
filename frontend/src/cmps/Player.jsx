@@ -49,18 +49,9 @@ class _Player extends Component {
     }
 
     togglePlay = () => {
-        this.setState({ isPlaying: !this.state.isPlaying }, () => this.onUpdateBox());
+        this.props.updateSongPlay(this.props.currBox.currSong);
     }
-
-    onUpdateBox = () => {
-        const { currBox } = this.props;
-        const currSong = { ...currBox.currSong, isPlaying: this.state.isPlaying, secPlayed: this.state.secPlayed };
-        const newBox = { ...currBox, currSong };
-        this.props.updateBox(newBox);
-        console.log("onUpdateBox -> currSong", currSong)
-        socketService.emit('set currSong', currSong);
-    }
-
+    
     skipToSong = (skip) => {
         const { currBox } = this.props;
         const currSongIdx = currBox.songs.findIndex(song => song.id === currBox.currSong.id);
