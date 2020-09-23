@@ -44,15 +44,15 @@ export const MessageBox = ({ text, submitBy, submitAt, avatar, own, type }) => {
       )
     } else {
       return (
-        <div className="user-message" style={{ textAlign: "right" }}>
-          <Col className="flex align-center">
+        <div className="user-message flex column" style={{ textAlign: "right" }}>
+          <Col className="flex align-center justify-end">
             <p className="submit-by">You</p>
             <p style={{ fontSize: "0.7em", fontStyle: "italic" }}>
               {dateToString}
             </p>
           </Col>
           <Row type="flex" justify="end">
-            <Col>
+            <Col className="flex justify-end">
               <div
                 style={{
                   backgroundColor: "#c0c0ff",

@@ -128,6 +128,7 @@ function getIsUserLikeBox(currBox, currUser) {
 
 async function addConnectedUser(boxId, minimalUser) {
     const box = await getById(boxId);
+    console.log("addConnectedUser -> box", box)
     const updateBox = { ...box };
     const isUserInBox = updateBox.connectedUsers.find(user => user.id === minimalUser.id)
     if (!isUserInBox) {

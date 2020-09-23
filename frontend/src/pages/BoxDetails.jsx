@@ -27,7 +27,7 @@ class _BoxDetails extends Component {
 
     async componentDidMount() {
         const boxId = this.props.match.params.boxId;
-        const minimalUser = userService.getMinimalUser();
+        const minimalUser = this.getMinimalUser();
         // const messages = socketService.getMessagesByBoxId(boxId)
         await boxService.addConnectedUser(boxId, minimalUser);
         await this.props.loadBox(boxId);
@@ -84,9 +84,10 @@ class _BoxDetails extends Component {
         const newSong = boxService.addSong(song, this.state.box.songs)
         const box = { ...this.state.box }
         box.songs.push(newSong)
+        console.log(this.props.user);
         // this.props.notify('Song added');
         this.addMessageChat(`Song ${newSong.title} added by ${this.props.user.username}`);
-        this.props.saveBox(box)
+        this.props.updateBox(box)
     }
 
     onPlaySong = (songId) => {
@@ -159,9 +160,9 @@ class _BoxDetails extends Component {
     }
 
     render() {
-        const { isSongPickOpen, isDragging, filterBy } = this.state;
+        const { box, isSongPickOpen, isDragging, filterBy } = this.state;
         const isFilter = filterBy ? true : false;
-        const { box } = this.props;
+        // const { box } = this.props;
         if (!box) return <CircleLoading size="large" color="#ac0aff" />
         const currSongId = (box.currSong) ? box.currSong.id : null;
         const songsToShow = this.getSongsForDisplay();
@@ -197,7 +198,8 @@ class _BoxDetails extends Component {
 }
 const mapStateToProps = state => {
     return {
-        box: state.boxReducer.currBox
+        box: state.boxReducer.currBox,
+        user: state.userReducer.loggedinUser
     }
 }
 const mapDispatchToProps = {
@@ -206,6 +208,6 @@ const mapDispatchToProps = {
     notify,
     updateBox,
     addMessage,
-     loadMessages 
+    loadMessages 
 }
 export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails)

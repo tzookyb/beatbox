@@ -94,9 +94,9 @@ class _Player extends Component {
     togglePlay = () => {
         this.setState({ isPlaying: !this.state.isPlaying }, async () => {
             this.onUpdateBox();
-            
-        } )
-        
+
+        })
+
     }
 
     onUpdateBox = () => {
@@ -130,7 +130,7 @@ class _Player extends Component {
 
     handleSeekMouseUp = () => {
         socketService.emit('song time changed', this.state.secPlayed);
-    
+
         this.setState({ seeking: false }, () => {
             this.onUpdateBox();
             this.player.seekTo(this.state.secPlayed);
@@ -194,8 +194,10 @@ class _Player extends Component {
     }
 
     render() {
-        const { currBox, isPlaying, volume, muted, duration, isShrunk, playerLocation } = this.state;
-        
+        const { isPlaying, volume, muted, duration, isShrunk, playerLocation } = this.state;
+        const { currBox } = this.props
+        console.log("render -> currBox", currBox)
+
         if (!currBox || !currBox.currSong) return null;
         const song = currBox.songs.find(song => song.id === currBox.currSong.id)
 
