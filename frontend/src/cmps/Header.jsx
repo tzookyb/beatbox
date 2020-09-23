@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 // LOCAL IMPORT
 import Avatar from '@material-ui/core/Avatar';
-import { loadUser } from '../store/actions/userAction';
+// import { loadUser } from '../store/actions/userAction';
 
 class _Header extends Component {
 
@@ -13,7 +13,7 @@ class _Header extends Component {
     }
 
     componentDidMount() {
-        this.props.loadUser();
+        // this.props.loadUser();
         window.addEventListener("scroll", this.onScroll)
     }
 
@@ -55,7 +55,7 @@ const mapStateToProps = state => {
     }
 }
 const mapDispatchToProps = {
-    loadUser
+    // loadUser
 }
 
 export const Header = connect(mapStateToProps, mapDispatchToProps)(withRouter(_Header))

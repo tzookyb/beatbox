@@ -3,17 +3,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CircleLoading from 'react-loadingg/lib/CircleLoading'
 // LOCAL IMPORT
-import { loadBoxes } from '../store/actions/boxAction'
 import { BoxList } from '../cmps/boxes/BoxList'
 import { BoxFilter } from '../cmps/boxes/BoxFilter'
-import { ButtonsFilter } from '../cmps/ButtonsFilter'
+import { GenresFilter } from '../cmps/GenresFilter'
 import { userService } from '../services/userService'
-import { loadUser } from '../store/actions/userAction'
+import { loadBoxes } from '../store/actions/boxAction'
 
 class _BoxApp extends Component {
     state = {
-        genres: null,
-        isHomePage: true,
         filterBy: {
             name: '',
             genre: ''
@@ -21,63 +18,58 @@ class _BoxApp extends Component {
     }
 
     componentDidMount() {
-        this.props.loadUser();
-        const genre = new URLSearchParams(window.location.href).get('genre');
-        const filterBy = { name: '', genre: genre }
-        const { genres } = this.props;
-        if (genres) this.setState({ genres, isHomePage: true, filterBy }, () => this.loadBoxes())
-        else this.setState({ genres: [], isHomePage: false, filterBy }, () => this.loadBoxes())
+        let genre = new URLSearchParams(window.location.href).get('genre');
+        if (!genre) genre = '';
+        const filterBy = { name: '', genre }
+        // this.props.loadBoxes(filterBy);
+        console.log("componentDidMount -> filterBy", filterBy)
+        this.setState({ ...this.state.filterBy, filterBy: { genre } }, () => this.props.loadBoxes(filterBy))
     }
 
-    onSetFilter = (filterByName) => {
-        this.setState({ filterBy: { ...this.state.filterBy, name: filterByName.name } }, () => this.loadBoxes())
+    componentDidUpdate(prevProps, prevState) {
+        // let genre = new URLSearchParams(window.location.href).get('genre');
+        // if (!genre) genre = '';
+        // const filterBy = { name: '', genre }
+        
+        // if (genre !== prevState.filterBy.genre) {
+        //     this.props.loadBoxes(filterBy)
+        // }
+        // const filterBy = { name: '', genre }
+        // this.props.loadBoxes(filterBy)
     }
 
-    onSetFilterGenre = (filterByGenre) => {
-        this.setState({ filterBy: { ...this.state.filterBy, genre: filterByGenre } }, () => this.loadBoxes())
+    loadBoxes = (genre) => {
+        if (!genre) genre = '';
+        // const filterBy = { name: '', genre }
+        // this.setState({ ...this.state.filterBy, filterBy: {genre} })
+        this.props.loadBoxes(this.state.filterBy);
     }
 
-    loadBoxes = async () => {
-        await this.props.loadBoxes(this.state.filterBy);
+    onSetFilter = (name, value) => {
+        this.setState({ filterBy: { ...this.state.filterBy, [name]: value } }, () => this.props.loadBoxes(this.state.filterBy))
     }
 
-  
-    onAddToFavorites = (boxId) => {
-        //TODO: ADD TO USER FAVORITES
-    }
 
-    getMinimalUser() {
-        return userService.getMinimalUser();
-    }
-
-    // getBestGenres() {
-    //     const allGenres = boxService.getGenres();
-    //     const mapGenresCount = allGenres.map(genre=>{
-    //         return {genre, count:0}
-    //     })
+    // onSetFilter = (filterByName) => {
+    //     this.setState({ filterBy: { ...this.state.filterBy, name: filterByName.name } }, () => this.props.loadBoxes(this.state.filterBy))
     // }
 
     render() {
-        const { boxes } = this.props;
-        // notused:
-        const minimalUser = this.getMinimalUser();
-        const { genres } = this.state;
-        if (!boxes || !genres) return <CircleLoading  size="large" color= "#ac0aff"/>
+        const { boxes, genres } = this.props;
+        const minimalUser = userService.getMinimalUser();
+        if (!boxes) return <CircleLoading size="large" color="#ac0aff" />
         return (
             <section className="box-app" id="box">
                 <BoxFilter onSetFilter={this.onSetFilter} />
-                {this.state.isHomePage && genres.map((genre, idx) => {
+                {!!genres && genres.map((genre, idx) => {
                     return (
-                        <BoxList boxes={boxes} key={idx} genre={genre} onToggleLikeBox={this.onToggleLikeBox}
-                            minimalUser={minimalUser} onAddToFavorites={this.onAddToFavorites} />
+                        <BoxList boxes={boxes} key={idx} genre={genre}
+                            minimalUser={minimalUser} />
                     )
                 })}
 
-                {!this.state.isHomePage &&
-                    <ButtonsFilter onSetFilterGenre={this.onSetFilterGenre} genreCount={5} />
-                }
-                {!this.state.isHomePage && <BoxList boxes={boxes} onToggleLikeBox={this.onToggleLikeBox}
-                    minimalUser={minimalUser} onAddToFavorites={this.onAddToFavorites} />}
+                {!genres && <GenresFilter genreCount={5} />}
+                {!genres && <BoxList boxes={boxes} minimalUser={minimalUser} />}
             </section>
         )
     }
@@ -91,7 +83,6 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = {
     loadBoxes,
-    loadUser
 }
 
 export const BoxApp = connect(mapStateToProps, mapDispatchToProps)(_BoxApp)

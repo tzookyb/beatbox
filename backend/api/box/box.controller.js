@@ -7,7 +7,6 @@ async function getBox(req, res) {
 }
   
 async function getBoxs(req, res) {
-    // console.log(req.query);
     const boxs = await boxService.query(req.query)
     // logger.debug(boxs);
     res.send(boxs)

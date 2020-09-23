@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-// import SaveIcon from '@material-ui/icons/Save';
-// import CreateIcon from '@material-ui/icons/Create';
+import CircleLoading from 'react-loadingg/lib/CircleLoading';
+
 import { cloudService } from '../../services/cloudService'
 import { boxService } from '../../services/boxService'
 import imgPlaceholder from '../../assets/img/img_placeholder.png';
-import CircleLoading from 'react-loadingg/lib/CircleLoading';
 
 export class BoxInfoEdit extends Component {
     state = {
@@ -18,12 +17,11 @@ export class BoxInfoEdit extends Component {
 
     onSaveInfo = (ev) => {
         ev.preventDefault();
-        this.props.onSaveInfo(this.state.box)
+        this.props.onSaveInfo(this.state.box);
     }
 
     handleInput = ({ target }) => {
         const field = target.name;
-        // const value = (target.name === 'tags') ? [target.value] : target.value;
         const value = target.value;
         this.setState(prevState => {
             return {
@@ -37,7 +35,7 @@ export class BoxInfoEdit extends Component {
     }
 
     getGenresOptions() {
-        const genres = boxService.getGenres();
+        const genres = boxService.getAllGenres();
         return genres.map((gener, idx) => {
             return <option key={idx} value={gener}>{gener}</option>
         })

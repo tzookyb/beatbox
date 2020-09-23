@@ -1,6 +1,5 @@
 import { userService } from "../../services/userService"
 
-
 export function loadUser() {
     return async dispatch => {
         const user = await userService.getUser()

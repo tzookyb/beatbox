@@ -1,13 +1,14 @@
 import httpService from './httpService';
 import { youtubeService } from './youtubeService';
 
-var gGenre = ['Hip-hop', 'Arabic', 'Easy', 'Electronic', 'Country', 'Latin', 'Jazz', 'Rock',
-    'Pop', 'Classical', 'Alternative', 'Blues', 'Disco', 'Israeli']
+var gGenre = ['Hip-hop', 'Easy', 'Electronic', 'Latin', 'Rock',
+    'Pop', 'Classical', 'Alternative', 'Blues', 'Disco', 'Israeli', 'Arabic']
 
 export const boxService = {
     query,
     getById,
-    getGenres,
+    getAllGenres,
+    getUsedGenres,
     save,
     update,
     addSong,
@@ -18,8 +19,17 @@ export const boxService = {
     // remove,
 }
 
-function getGenres() {
+function getAllGenres() {
     return gGenre;
+}
+
+function getUsedGenres(boxes) {
+    let allGenres = [];
+    boxes.forEach(box => {
+        allGenres.push(box.genre);
+    })
+    const genres = [...new Set(allGenres)];
+    return genres;
 }
 
 async function getById(boxId) {
@@ -27,54 +37,12 @@ async function getById(boxId) {
 }
 //TODO: fix filter
 async function query(filterBy) {
-    // if (!filterBy) filterBy = { name: '', genre: '' };
-    // else var queryStr = `?name=${filterBy.name}&genre=${filterBy.genre}`;
-    const boxes = await httpService.get(`box`, filterBy)
-    return byFilter(boxes, filterBy);
+    if (!filterBy) filterBy = { name: '', genre: '' };
+    var queryStr = `?name=${filterBy.name}&genre=${filterBy.genre}`;
+    return httpService.get(`box${queryStr}`);
 }
 
-
-function byFilter(boxes, filterBy) {
-    if (!boxes) return;
-    if (!filterBy) return boxes;
-    var boxFilters = [];
-    if (filterBy.genre && filterBy.name) {
-        boxes.forEach(box => {
-            if (box.genre === filterBy.genre && box.name.toLowerCase().includes(filterBy.name.toLowerCase())) boxFilters.push(box);
-        })
-        return boxFilters;
-    }
-    else if (filterBy.name) {
-        boxes.forEach(box => {
-            if (box.name.toLowerCase().includes(filterBy.name.toLowerCase())) boxFilters.push(box);
-        })
-        return boxFilters;
-    }
-    else if (filterBy.genre) {
-        boxes.forEach(box => {
-            if (box.genre === filterBy.genre) boxFilters.push(box);
-            // if (box.tags.includes(filterBy.genre)) filterBoxes.push(box);
-        })
-        return boxFilters;
-    }
-
-    return boxes;
-}
-
-
-//FOR BACKEND:
-// function _buildCriteria(filterBy) {
-//     const criteria = {};
-//     if (filterBy.name) {
-//         criteria.name = { $regex: new RegExp(filterBy.name, 'ig') }
-//     }
-//     if (filterBy.genre) {
-//             criteria.genre = filterBy.genre;
-//     }
-//     return criteria;
-// }
-
-function getEmptyBox() {
+function getEmptyBox(user) {
     return {
         name: '',
         description: '',
@@ -82,7 +50,7 @@ function getEmptyBox() {
         likedByUsers: [],
         connectedUsers: [],
         genre: '',
-        createdBy: {},
+        createdBy: user,
         createdAt: Date.now(),
         songs: [],
         currSong: null,

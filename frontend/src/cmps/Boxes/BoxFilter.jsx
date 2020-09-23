@@ -6,6 +6,7 @@ import CloseIcon from '@material-ui/icons/Close';
 export class BoxFilter extends Component {
     state = {
         name: '',
+        genre: 'all',
         isSearchOpen: false
     }
 

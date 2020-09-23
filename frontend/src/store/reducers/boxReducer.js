@@ -3,9 +3,9 @@ const initialState = {
     boxes: [],
     currBox: null,
     isNoticeShown: false,
-    msg: ''
+    msg: '',
+    currSong:null
 }
-
 
 export function boxReducer(state = initialState, action) {
     switch (action.type) {
@@ -19,7 +19,7 @@ export function boxReducer(state = initialState, action) {
                 ...state,
                 currBox: action.box
             }
-        case 'EDIT_BOX':
+        case 'UPDATE_BOX':
             return {
                 ...state,
                 currBox: action.box,
@@ -34,6 +34,12 @@ export function boxReducer(state = initialState, action) {
             }
         case 'REMOVE_BOX':
             return { ...state, boxes: state.boxes.filter(box => box._id !== action.boxId) }
+
+        case 'SET_CURR_SONG':
+            return {
+                ...state, currBox: { ...state.currBox, currSong: action.currSong }
+            }
+
 
         default:
             return state

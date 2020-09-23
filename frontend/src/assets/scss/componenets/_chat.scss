@@ -1,8 +1,23 @@
 .chat {
   .form-message {
-      background-color: transparent;
-      div{
-        border-radius: 999px;
+    padding: 0;
+    background-color: transparent;
+    div {
+      border-radius: 999px;
+    }
+    .container-send-msg {
+      width: 100%;
+      // background-color: white;
+
+      .input-chat {
+        background-color: white;
+        border: none;
+        box-shadow: none;
+        width: 330px;
+        // width: 100%;
+        // border-radius: 5px;
+        // background-color: aliceblue;
       }
+    }
   }
 }

@@ -15,14 +15,12 @@ import { CircleLoading } from 'react-loadingg';
 // LOCAL IMPORT
 import { updateBox } from '../store/actions/boxAction';
 import { socketService } from '../services/socketService'
+import { loadSong, updateSongPlay, updateSongTime } from '../store/actions/playerActions';
 
 class _Player extends Component {
     state = {
-        isFirstRun: true,
         isReady: false,
         isShrunk: false,
-        song: '',
-        isPlaying: true,
         secPlayed: 0,
         muted: false,
         volume: 0.35,
@@ -31,42 +29,29 @@ class _Player extends Component {
 
     componentDidMount() {
         socketService.setup();
+<<<<<<< HEAD
         socketService.on('update song time',  this.onSeek);
+=======
+        socketService.on('update song time', (secPlayed) => {
+            // REMEMBER! UPDATED ONLY AT CLIENT PLAYER -  WITHOUT STORE
+            this.onSeek(secPlayed)
+        });
+>>>>>>> 838d244b5d1441d0a6af5d213c6f170827293adb
     }
 
     componentDidUpdate(prevProps) {
         const newBox = this.props.currBox;
-        // Prevent loop:
-        if (prevProps.currBox === newBox) return;
-        // if first box - set and start playing
-        if (this.state.isFirstRun && newBox) {
-            this.socketSetup(false);
-            this.setState({ isFirstRun: false }, this.loadSongToPlayer);
-            return;
-        }
-        // if same box id, just update playing details in state
-        if (prevProps.currBox._id === newBox._id) {
-            this.setState({
-                isPlaying: newBox.currSong.isPlaying,
-                secPlayed: newBox.currSong.secPlayed,
-            });
-            return;
-        }
-        // if box changed -> subscribe new socket and load first song 
-        if (prevProps.currBox._id !== newBox._id) {
-            this.socketSetup(true, prevProps.currBox._id);
-            this.loadSongToPlayer(0);
+        if (prevProps.currBox?._id !== newBox?._id) {
+            this.socketSetup();
+            if (newBox.songs.length) this.props.loadSong(newBox.songs[0].id);
         }
     }
 
-    socketSetup = (isJoined, prevBoxId) => {
-        if (isJoined) {
-            // CHECK IF RIGHT CONVENTION
-            socketService.off(prevBoxId, (secPlayed) => this.onSeek(secPlayed))
-        }
+    socketSetup = () => {
         socketService.emit('join box', this.props.currBox._id);
     }
 
+<<<<<<< HEAD
     loadSongToPlayer = (currSongIdx = 0) => {
         this.setState({ isReady: false });
         const { currBox } = this.props;
@@ -97,10 +82,14 @@ class _Player extends Component {
         this.props.updateBox(newBox);
         console.log("onUpdateBox -> currSong", currSong)
         socketService.emit('set currSong', currSong);
+=======
+    togglePlay = () => {
+        this.props.updateSongPlay(this.props.currBox.currSong);
+>>>>>>> 838d244b5d1441d0a6af5d213c6f170827293adb
     }
 
     skipToSong = (skip) => {
-        const { currBox } = this.state;
+        const { currBox } = this.props;
         const currSongIdx = currBox.songs.findIndex(song => song.id === currBox.currSong.id);
         const lastSongIdx = currBox.songs.length - 1
 
@@ -108,7 +97,8 @@ class _Player extends Component {
         if (nextSongIdx === -1) nextSongIdx = lastSongIdx;
         else if (nextSongIdx > lastSongIdx) nextSongIdx = 0;
 
-        this.loadSongToPlayer(nextSongIdx);
+        const nextSongId = currBox.songs[nextSongIdx].id
+        this.props.loadSong(nextSongId);
     }
 
     handleSeekMouseDown = () => {
@@ -121,9 +111,8 @@ class _Player extends Component {
 
     handleSeekMouseUp = () => {
         this.setState({ seeking: false }, () => {
-            socketService.emit('song time changed', this.state.secPlayed);
+            this.props.updateSongTime(this.state.secPlayed)
             this.player.seekTo(this.state.secPlayed);
-            this.onUpdateBox();
         });
     }
 
@@ -151,7 +140,7 @@ class _Player extends Component {
     }
 
     onReady = () => {
-        this.setState({ isReady: true }, this.play)
+        this.setState({ isReady: true });
     }
 
     handleVolumeChange = (ev, value) => {
@@ -161,20 +150,23 @@ class _Player extends Component {
     toggleMute = () => {
         this.setState({ muted: !this.state.muted })
     }
+
     ref = player => {
         this.player = player
     }
+
     onToggleShrink = () => {
-        this.setState({ isShrunk: !this.state.isShrunk })
+        this.setState({ isShrunk: !this.state.isShrunk });
     }
 
     render() {
-        const { isReady, isPlaying, volume, muted, duration, isShrunk } = this.state;
         const { currBox } = this.props;
-
         if (!currBox || !currBox.currSong) return null;
 
-        const song = currBox.songs.find(song => song.id === currBox.currSong.id)
+        const { isReady, volume, muted, duration, isShrunk } = this.state;
+        const { isPlaying } = currBox.currSong;
+
+        const song = currBox.songs.find(song => song.id === currBox.currSong.id);
         if (!song) return null;
 
         function showTime(seconds) {
@@ -280,7 +272,10 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-    updateBox
+    updateBox,
+    loadSong,
+    updateSongPlay,
+    updateSongTime
 }
 
 export const Player = connect(mapStateToProps, mapDispatchToProps)(withRouter(_Player));

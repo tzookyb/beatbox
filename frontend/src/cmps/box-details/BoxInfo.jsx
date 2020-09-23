@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
+
 import SaveIcon from '@material-ui/icons/Save';
 import CreateIcon from '@material-ui/icons/Create';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Avatar from '@material-ui/core/Avatar';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
-import { cloudService } from '../../services/cloudService'
 import CircleLoading from 'react-loadingg/lib/CircleLoading';
 
-import { boxService } from '../../services/boxService'
+import { cloudService } from '../../services/cloudService';
+import { boxService } from '../../services/boxService';
 
 export class BoxInfo extends Component {
     state = {
@@ -23,9 +24,9 @@ export class BoxInfo extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        const newBox = this.props.box
+        const newBox = this.props.box;
         if (prevProps.box === newBox) return;
-        this.setState({ box: newBox })
+        this.setState({ box: newBox });
     }
 
     onEdit = (field) => {
@@ -39,8 +40,8 @@ export class BoxInfo extends Component {
     }
 
     handleInput = ({ target }) => {
-        const field = target.name
-        const value = target.value
+        const field = target.name;
+        const value = target.value;
         this.setState(prevState => {
             return {
                 box: {
@@ -64,10 +65,6 @@ export class BoxInfo extends Component {
         this.onSave('isEditableImg');
     }
 
-    onShare = async () => {
-
-    }
-
     getUsersAvatars(connectedUsers) {
         const avatars = connectedUsers.map(user => {
             return <Avatar alt={user.name} src={user.imgUrl} style={{ width: '30px', height: '30px' }} />
@@ -87,8 +84,6 @@ export class BoxInfo extends Component {
             <section className="box-info flex space-between">
                 <div className="info-txt flex space-between column">
                     <div className="info-header flex align-end">
-
-                        {/* Suggestion for readability, if good, then do same below */}
                         {isEditableName ?
                             <React.Fragment>
                                 <input autoFocus type="txt" value={box.name} name="name" onChange={this.handleInput} />
@@ -100,7 +95,6 @@ export class BoxInfo extends Component {
                                 <button onClick={() => this.onEdit('isEditableName')} className="hide-btn"><CreateIcon /></button>
                             </React.Fragment>
                         }
-
                     </div>
 
                     <div className="info-description flex">
@@ -109,10 +103,13 @@ export class BoxInfo extends Component {
                         {isEditableDesc && <textarea autoFocus type="txt" value={box.description} name="description" onChange={this.handleInput} />}
                         {isEditableDesc && <button onClick={() => this.onSave('isEditableDesc')} ><SaveIcon /></button>}
                     </div>
+                    <h4>{box.genre}</h4>
 
-                    <div className="info-creator">
-                        Dani
-                </div>
+                    <div className="info-creator flex align-center">
+                        <label>Created By: </label>
+                        <Avatar alt="Remy Sharp" src={box.createdBy.imgUrl} style={{ width: '40px', height: '40px' }} />
+                        <label>{box.createdBy.name}</label>
+                    </div>
                 </div>
                 <div className="social-params">
                     <div onClick={() => this.props.onToggleLikeBox(box._id, minimalUser)} className={`like ${this.getIsUserLikeBox(box, minimalUser)}`}>
@@ -122,10 +119,7 @@ export class BoxInfo extends Component {
                     <AvatarGroup className="connected-users" max={4}>
                         {this.getUsersAvatars(box.connectedUsers)}
                     </AvatarGroup>
-                    {/* <ShareIcon onClick={this.onShare} /> */}
                 </div>
-
-
                 <div className="box-img">
                     <label className="upload-label" style={{ cursor: 'pointer' }}>
                         <input onChange={(ev) => this.uploadImg(ev)} type="file" hidden />

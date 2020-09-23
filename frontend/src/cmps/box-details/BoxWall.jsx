@@ -3,10 +3,7 @@ import { connect } from 'react-redux'
 
 import { Chat } from './Chat'
 import { ChatBox } from './ChatBox';
-
 import { addMessage, loadMessages } from '../../store/actions/messageAction'
-
-// import 'react-chat-elements/dist/main.css';
 
 class _BoxWall extends Component {
     state = {
@@ -14,6 +11,8 @@ class _BoxWall extends Component {
         bottom: 55,
         opacity: 1
     }
+    gInterval = null;
+   
     componentDidMount() {
         const { box } = this.props;
         this.props.loadMessages(box._id);
@@ -24,7 +23,7 @@ class _BoxWall extends Component {
         this.props.addMessage(box._id, msg)
         await this.props.loadMessages(box._id);
     }
-    gInterval = null;
+    
     setEmoji = async (myEmoji) => {
         clearInterval(this.gInterval);
         await this.setState({ myEmoji });
@@ -47,7 +46,7 @@ class _BoxWall extends Component {
 
 
     render() {
-        const { messages, user } = this.props;
+        const { messages, user, box } = this.props;
         const { myEmoji, bottom, opacity } = this.state;
         const isEmoji = (myEmoji === '') ? false : true;
         return (
@@ -55,11 +54,11 @@ class _BoxWall extends Component {
                 <h2> Box Wall </h2>
                 <div className="wall-content">
                     <ChatBox messages={messages} user={user} />
-                    { isEmoji && <div style={{ bottom: bottom + "px", opacity: opacity }} class="my-emoji flex column">
+                    {isEmoji && <div style={{ bottom: bottom + "px", opacity: opacity }} class="my-emoji flex column">
                         {myEmoji}
                         <label className="reaction-user-name">{this.props.user.username}</label>
                     </div>}
-                    <Chat user={user} addMessage={this.addMessage} setEmoji={this.setEmoji} />
+                    <Chat user={user} addmsg={this.addMessage} setEmoji={this.setEmoji} box={box}/>
                 </div>
             </div>
         )

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { DragDropContext } from 'react-beautiful-dnd'
 
 import { boxService } from '../services/boxService'
+import { userService } from '../services/userService'
 import { saveBox, loadBoxes } from '../store/actions/boxAction'
 import { BoxInfoEdit } from '../cmps/box-details/BoxInfoEdit'
 import { SongList } from '../cmps/box-details/SongList'
@@ -18,7 +19,8 @@ export class _BoxAdd extends Component {
     }
 
     componentDidMount() {
-        const emptyBox = boxService.getEmptyBox();
+        const minimalUser = userService.getMinimalUser();
+        const emptyBox = boxService.getEmptyBox(minimalUser);
         this.setState({ editBox: emptyBox });
     }
 

@@ -6,13 +6,14 @@ import CircleLoading from 'react-loadingg/lib/CircleLoading'
 // LOCAL IMPORT
 import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
-import { loadBox, updateBox } from '../store/actions/boxAction'
-import { addMessage, loadMessages } from '../store/actions/messageAction'
+import { BoxFilter } from '../cmps/boxes/BoxFilter';
+import { BoxWall } from '../cmps/box-details/BoxWall';
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService';
 import { socketService } from '../services/socketService';
-import { BoxFilter } from '../cmps/boxes/BoxFilter';
-import { BoxWall } from '../cmps/box-details/BoxWall';
+import { loadBox, updateBox, gotBoxUpdate } from '../store/actions/boxAction'
+import { addMessage, loadMessages } from '../store/actions/messageAction'
+import { setCurrSong } from '../store/actions/playerActions'
 
 class _BoxDetails extends Component {
     state = {
@@ -32,17 +33,26 @@ class _BoxDetails extends Component {
         // SOCKET SETUP
         socketService.setup();
         socketService.emit('join box', this.props.box._id);
+<<<<<<< HEAD
         socketService.on('song changed', this.onSetCurrSong);
+=======
+        socketService.on('get box status', this.props.setCurrSong)
+        socketService.on('song changed', this.props.setCurrSong);
+        socketService.on('box changed', this.props.gotBoxUpdate);
+>>>>>>> 838d244b5d1441d0a6af5d213c6f170827293adb
         // socketService.on('chat addMsg', this.addMsg);
         // socketService.on('chat typing', this.onTyping);
         // socketService.on('set currSong', this.state.box.currSong)
     }
+<<<<<<< HEAD
 
 
     onSetCurrSong = (currSong) => {
         const newBox = { ...this.props.box, currSong };
         this.props.updateBox(newBox);
     }
+=======
+>>>>>>> 838d244b5d1441d0a6af5d213c6f170827293adb
 
     onRemoveSong = (ev, songId) => {
         if (ev) {
@@ -77,8 +87,7 @@ class _BoxDetails extends Component {
     onPlaySong = (songId) => {
         const currSong = { id: songId, isPlaying: true, secPlayed: 0 };
         socketService.emit('set currSong', currSong);
-        const box = { ...this.props.box, currSong };
-        this.props.updateBox(box);
+        this.props.setCurrSong(currSong);
     }
 
     onSaveInfo = (box) => {
@@ -147,7 +156,6 @@ class _BoxDetails extends Component {
         const { isSongPickOpen, isDragging, filterBy } = this.state;
         // const isFilter = filterBy ? true : false;
         const { box } = this.props;
-
         if (!box) return <CircleLoading size="large" color="#ac0aff" />
 
         const currSongId = box.currSong?.id || null;
@@ -193,6 +201,12 @@ const mapDispatchToProps = {
     loadBox,
     updateBox,
     addMessage,
+<<<<<<< HEAD
     loadMessages
+=======
+    loadMessages,
+    setCurrSong,
+    gotBoxUpdate
+>>>>>>> 838d244b5d1441d0a6af5d213c6f170827293adb
 }
-export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails)
+export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails);

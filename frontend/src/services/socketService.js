@@ -89,5 +89,6 @@ function off(eventName, cb) {
 }
 
 function emit(eventName, data) {
+  console.log("emit -> data", data);
   socket.emit(eventName, data);
 }

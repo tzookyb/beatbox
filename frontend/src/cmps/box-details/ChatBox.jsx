@@ -1,14 +1,10 @@
 
 import React, { Component } from 'react';
-// LOCAL IMPORT
 import { Spin } from "antd";
+// LOCAL IMPORT
 import { MessageBox } from "./MessageBox";
 
 export class ChatBox extends Component {
-
-    state={
-
-    }
     renderMessages = () => {
         const { messages, user } = this.props;
         const MessageArray = [];
@@ -21,14 +17,13 @@ export class ChatBox extends Component {
                     submitBy={message.submitBy}
                     own={user._id === message.id}
                     type={message.type}
-                    key= {idx}
+                    key={idx}
                 />
             );
         });
         return (
-            <div style={{ padding: "0px", width: "100%", position:"relative" }}>
+            <div style={{ padding: "0px", width: "100%", position: "relative" }}>
                 {MessageArray.map(Message => Message)}
-                
             </div>
         );
     };
@@ -38,8 +33,6 @@ export class ChatBox extends Component {
         return (
             <div>
                 {messages ? <this.renderMessages /> : <Spin size="large" />}
-               
-                {/* {this.props.messages ? <this.renderMessages /> : <Spin size="large" />} */}
             </div>
         );
     }
