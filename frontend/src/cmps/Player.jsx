@@ -10,16 +10,17 @@ import SkipNextIcon from '@material-ui/icons/SkipNext';
 import VolumeMuteIcon from '@material-ui/icons/VolumeMute';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import Slider from '@material-ui/core/Slider';
+import { CircleLoading } from 'react-loadingg';
 
-import { saveBox, updateBox } from '../store/actions/boxAction';
+import { updateBox } from '../store/actions/boxAction';
 import { socketService } from '../services/socketService'
-import { ContactSupport } from '@material-ui/icons';
 
 class _Player extends Component {
     state = {
+        isFirstRun: true,
         isReady: false,
         isShrunk: false,
-        currBox: null,
+        // currBox: null,
         song: '',
         playerLocation: null,
         isPlaying: true,
@@ -32,35 +33,33 @@ class _Player extends Component {
     componentDidMount() {
         socketService.setup();
         socketService.on('update song time', (secPlayed) => this.onSeek(secPlayed));
-        // socketService.on('song status changed', (isPlaying) => this.setState({isPlaying}));
     }
 
 
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate(prevProps) {
         const newBox = this.props.currBox;
         // Prevent loop:
         if (prevProps.currBox === newBox) return;
-
         // if first box - set and start playing
-        if (!this.state.currBox) {
+        if (this.state.isFirstRun && newBox) {
             this.socketSetup(false);
-            this.setState({ currBox: newBox }, this.loadSongToPlayer);
+            this.setState({ isFirstRun: false }, this.loadSongToPlayer);
             return;
         }
 
         // if same box id, just update playerbox in state
         if (prevProps.currBox._id === newBox._id) {
             this.setState({
-                isPlaying: newBox.currSong?.isPlaying,
-                secPlayed: newBox.currSong?.secPlayed,
-                currBox: newBox
+                isPlaying: newBox.currSong.isPlaying,
+                secPlayed: newBox.currSong.secPlayed,
             });
             return;
         }
         // if different box -> setstate and load song idx 0 to player.
-        if (prevProps.currBox && prevProps.currBox._id !== newBox._id) {
+        if (prevProps.currBox._id !== newBox._id) {
             this.socketSetup(true, prevProps.currBox._id);
-            this.setState({ currBox: newBox }, () => this.loadSongToPlayer(0));
+            // this.setState({ currBox: newBox }, () =>
+            this.loadSongToPlayer(0);
         }
     }
 
@@ -72,38 +71,41 @@ class _Player extends Component {
     }
 
     loadSongToPlayer = (currSongIdx = 0) => {
+        this.setState({ isReady: false });
         const { currBox } = this.props;
-        console.log("loadSongToPlayer -> currBox", currBox)
+
         // If no songs in box, do nothing.
         if (!currBox.songs.length) return;
 
         const song = currBox.songs[currSongIdx];
-        this.setState({ song });
 
         const currSong = {
             id: song.id,
-            isPlaying: this.state.isPlaying,
-            secPlayed: this.state.secPlayed
+            isPlaying: true,
+            secPlayed: 0
         }
 
-        const newBox = { ...this.state.currBox, currSong };
-        this.props.saveBox(newBox);
+        const newBox = { ...this.props.currBox, currSong };
+        this.props.updateBox(newBox);
         if (this.state.isReady) this.play();
     }
 
     togglePlay = () => {
-        this.setState({ isPlaying: !this.state.isPlaying }, async () => {
+        this.setState({ isPlaying: !this.state.isPlaying }, () => {
             this.onUpdateBox();
+<<<<<<< HEAD
 
         })
 
+=======
+        })
+>>>>>>> 96b08e43018ee395c1ada32796a14bfc88b75a2b
     }
 
     onUpdateBox = () => {
-        // HAVE BEEN CHANGED - SOCKETS
         const { currBox } = this.props;
         const currSong = { ...currBox.currSong, isPlaying: this.state.isPlaying, secPlayed: this.state.secPlayed };
-        const newBox = { ...currBox, currSong }
+        const newBox = { ...currBox, currSong };
         this.props.updateBox(newBox);
         socketService.emit('set currSong', currSong);
     }
@@ -129,22 +131,25 @@ class _Player extends Component {
     }
 
     handleSeekMouseUp = () => {
+<<<<<<< HEAD
         socketService.emit('song time changed', this.state.secPlayed);
 
+=======
+>>>>>>> 96b08e43018ee395c1ada32796a14bfc88b75a2b
         this.setState({ seeking: false }, () => {
-            this.onUpdateBox();
+            socketService.emit('song time changed', this.state.secPlayed);
             this.player.seekTo(this.state.secPlayed);
+            this.onUpdateBox();
         });
     }
 
     onSeek = (secPlayed) => {
-        console.log(secPlayed)
         this.player.seekTo(secPlayed);
     }
 
     handleProgress = state => {
         if (!this.state.seeking) {
-            this.setState({ secPlayed: state.playedSeconds });
+            this.setState({ secPlayed: parseInt(state.playedSeconds) });
         }
     }
 
@@ -194,12 +199,19 @@ class _Player extends Component {
     }
 
     render() {
+<<<<<<< HEAD
         const { isPlaying, volume, muted, duration, isShrunk, playerLocation } = this.state;
         const { currBox } = this.props
         console.log("render -> currBox", currBox)
+=======
+        const { isReady, isPlaying, volume, muted, duration, isShrunk, playerLocation } = this.state;
+        const { currBox } = this.props;
+>>>>>>> 96b08e43018ee395c1ada32796a14bfc88b75a2b
 
         if (!currBox || !currBox.currSong) return null;
+
         const song = currBox.songs.find(song => song.id === currBox.currSong.id)
+        if (!song) return null;
 
         function showTime(seconds) {
             var mins;
@@ -243,27 +255,29 @@ class _Player extends Component {
 
                 <img className="player-thumbnail" onClick={this.onToggleShrink} src={song.imgUrl} title={song.title} alt="song thumbnail" />
 
-                <span className="player-title">{song.title}</span>
+                {isReady && <span className="player-title">{song.title}</span>}
 
-                <div className="song-time flex align-center space-between">
-                    <span>{showTime(this.state.secPlayed)}</span>
+                {!isReady ?
+                    <CircleLoading color="#ac0aff" /> :
+                    < div className="song-time flex align-center space-between">
+                        <span>{showTime(this.state.secPlayed)}</span>
 
-                    <Slider
-                        style={{
-                            width: '70px',
-                            color: 'white',
-                        }}
-                        name="played"
-                        min={0}
-                        max={duration}
-                        onMouseDown={this.handleSeekMouseDown}
-                        onMouseUp={this.handleSeekMouseUp}
-                        onChange={this.handleSeekChange}
-                        value={this.state.secPlayed}
-                    />
+                        <Slider
+                            style={{
+                                width: '70px',
+                                color: 'white',
+                            }}
+                            name="played"
+                            min={0}
+                            max={duration}
+                            onMouseDown={this.handleSeekMouseDown}
+                            onMouseUp={this.handleSeekMouseUp}
+                            onChange={this.handleSeekChange}
+                            value={this.state.secPlayed}
+                        />
 
-                    {duration && <span>{showTime(duration)}</span>}
-                </div>
+                        {duration && <span>{showTime(duration)}</span>}
+                    </div>}
 
                 <div className="player-controls flex align-center">
                     <button className="player-ctrl-btn flex align-center" title="Previous" onClick={() => this.skipToSong(-1)}><SkipPreviousIcon /></button>
@@ -306,7 +320,6 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-    saveBox,
     updateBox
 }
 
