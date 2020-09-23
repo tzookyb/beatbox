@@ -3,13 +3,9 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Avatar from '@material-ui/core/Avatar';
-<<<<<<< HEAD
-import { loadUser } from '../store/actions/userAction';
-=======
 
 // LOCAL IMPORT
 import { BoxFilter } from './boxes/BoxFilter';
->>>>>>> ac0a70851d2138b1b6074c4b57a80aae84b78044
 
 class _Header extends Component {
 
@@ -18,10 +14,6 @@ class _Header extends Component {
     }
 
     componentDidMount() {
-<<<<<<< HEAD
-        this.props.loadUser();
-=======
->>>>>>> ac0a70851d2138b1b6074c4b57a80aae84b78044
         window.addEventListener("scroll", this.onScroll)
     }
 
@@ -66,10 +58,6 @@ const mapStateToProps = state => {
     }
 }
 const mapDispatchToProps = {
-<<<<<<< HEAD
-    loadUser
-=======
->>>>>>> ac0a70851d2138b1b6074c4b57a80aae84b78044
 }
 
 export const Header = connect(mapStateToProps, mapDispatchToProps)(withRouter(_Header))
