@@ -51,7 +51,6 @@ class _Player extends Component {
         socketService.emit('join box', this.props.currBox._id);
     }
 
-<<<<<<< HEAD
     loadSongToPlayer = (currSongIdx = 0) => {
         this.setState({ isReady: false });
         const { currBox } = this.props;
@@ -82,10 +81,6 @@ class _Player extends Component {
         this.props.updateBox(newBox);
         console.log("onUpdateBox -> currSong", currSong)
         socketService.emit('set currSong', currSong);
-=======
-    togglePlay = () => {
-        this.props.updateSongPlay(this.props.currBox.currSong);
->>>>>>> 838d244b5d1441d0a6af5d213c6f170827293adb
     }
 
     skipToSong = (skip) => {
