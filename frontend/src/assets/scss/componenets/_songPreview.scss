@@ -1,6 +1,6 @@
 .song-preview {
     cursor: pointer;
-    transition: 0.3s;
+    transition: color 0.3s;
 
     .song-preview-img {
         max-width: 60px;
@@ -30,8 +30,6 @@
         }
     }
 
-    // left for Equalizer background:
-    // &:hover:not(.now-playing) {
     &:hover {
         color: #cdcdcdfc;
         background-color: #6e6d6d6e;
@@ -46,14 +44,4 @@
 .playing-anim {
     width: 40px;
     height: auto;
-    //     color: white;
-    //     background-image: url("../../img/equalizer2.gif");
-    //     background-size: cover;
-    //     background-blend-mode: saturation;
-    //     background-position: center;
-    //     transition: background-position 0s;
-
-    //     &:hover {
-    //         font-size: rem(14.5px);
-    //     }
 }

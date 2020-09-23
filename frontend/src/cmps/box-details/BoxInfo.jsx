@@ -67,7 +67,7 @@ export class BoxInfo extends Component {
 
     getUsersAvatars(connectedUsers) {
         const avatars = connectedUsers.map(user => {
-            return <Avatar alt={user.name} src={user.imgUrl} style={{ width: '30px', height: '30px' }} />
+            return <Avatar alt={user.name} title={user.name} key={user.id} src={user.imgUrl} style={{ width: '30px', height: '30px' }} />
         })
         return avatars;
     }

@@ -41,7 +41,6 @@ class _BoxApp extends Component {
         const minimalUser = userService.getMinimalUser();
         if (!boxes) return <CircleLoading size="large" color="#ac0aff" />
         return (
-
             <section className="box-app" id="box">
                     <BoxFilter onSetFilter={this.onSetFilter} />
                     {!!genres && genres.map((genre, idx) => {

@@ -49,11 +49,13 @@
 }
 
 /* hide-helpers */
-
-.hidden {
-  display: none !important;
+.invisible {
+  visibility: hidden;
 }
 
+.hidden {
+  display: none;
+}
 .active {
   color: rgb(65, 65, 65);
 }

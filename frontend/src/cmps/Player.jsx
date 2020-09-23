@@ -51,7 +51,6 @@ class _Player extends Component {
     togglePlay = () => {
         this.props.updateSongPlay(this.props.currBox.currSong);
     }
-    
     skipToSong = (skip) => {
         const { currBox } = this.props;
         const currSongIdx = currBox.songs.findIndex(song => song.id === currBox.currSong.id);
@@ -177,7 +176,7 @@ class _Player extends Component {
                 {!isReady ?
                     <CircleLoading color="#ac0aff" /> :
                     < div className="song-time flex align-center space-between">
-                        <span>{showTime(this.state.secPlayed)}</span>
+                        <span className="player-time">{showTime(this.state.secPlayed)}</span>
 
                         <Slider
                             style={{
@@ -193,7 +192,7 @@ class _Player extends Component {
                             value={this.state.secPlayed}
                         />
 
-                        {duration && <span>{showTime(duration)}</span>}
+                        {duration && <span className="player-time">{showTime(duration)}</span>}
                     </div>}
 
                 <div className="player-controls flex align-center">
