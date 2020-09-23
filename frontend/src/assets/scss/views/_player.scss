@@ -1,5 +1,4 @@
 .player-container {
-<<<<<<< HEAD
     width: 100%;
     display: flex;
     
@@ -23,32 +22,6 @@
         overflow: hidden;
         transition: 0.7s;
         min-width: rem(690px);
-=======
-    position: fixed;
-    height: 60px;
-    width: 65%;
-    border-radius: 999px;
-    left: 17.5%;
-    margin: 0 auto;
-    bottom: 15px;
-    z-index: 11;
-    background-image: url("../../img/fxVE.gif");
-    background-size: cover;
-    background-position: center;
-    padding: 40px 0px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: #f5f5f5;
-    text-shadow: 0px -1px 2px black;
-    overflow: hidden;
-    transition: 0.7s;
-
-    // & > * {
-    //     transition: 0.7s;
-    // }
-    .song-time {
-        min-width: 180px;
->>>>>>> b85bf7e83ff1ea758fb3c1a585c2f89ee6ead92f
 
         // &>* {
         //     transition: 0.7s;
@@ -62,7 +35,6 @@
             }
         }
 
-<<<<<<< HEAD
         .player-thumbnail {
             border-radius: 80%;
             width: 100px;
@@ -70,18 +42,6 @@
             margin: 0 10px;
             cursor: pointer;
         }
-=======
-    .player-controls {
-        min-width: 300px;
-        padding-inline-end: 20px;
-        position: relative;
-        // & > * {
-        //     cursor: pointer;
-        // }
-        .player-ctrl-btn {
-            border-radius: 45%;
-            padding: 5px;
->>>>>>> b85bf7e83ff1ea758fb3c1a585c2f89ee6ead92f
 
         .player-title {
             line-height: 1.5em;
