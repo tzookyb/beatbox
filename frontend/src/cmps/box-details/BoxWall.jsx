@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 
 import { Chat } from './Chat'
 import { ChatBox } from './ChatBox';
-
 import { addMessage, loadMessages } from '../../store/actions/messageAction'
 
 class _BoxWall extends Component {

@@ -65,7 +65,6 @@ export class BoxInfo extends Component {
     }
 
     onShare = async () => {
-        console.log('share');
 
     }
 

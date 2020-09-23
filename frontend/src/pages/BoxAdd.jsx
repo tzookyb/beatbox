@@ -127,7 +127,7 @@ export class _BoxAdd extends Component {
 
     render() {
         const { editBox, isSongPickOpen, isDragging } = this.state;
-        if (!editBox) return <CircleLoading  size="large" color= "#ac0aff"/>
+        if (!editBox) return <CircleLoading size="large" color="#ac0aff" />
         return (
             <section className="box-add main-container">
                 <h2>Create Your Box</h2>
@@ -146,6 +146,7 @@ export class _BoxAdd extends Component {
                         onDragEnd={this.onDragEnd}
                         isDragging={isDragging}
                         onPlaySong={this.onPlaySong}
+                        isBoxAdd={true}
                     />
                 </DragDropContext>
 

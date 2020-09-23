@@ -22,11 +22,12 @@ class _BoxApp extends Component {
 
     componentDidMount() {
         this.props.loadUser();
-        const genre = new URLSearchParams(window.location.href).get('genre');
-        const filterBy = { name: '', genre: genre }
+        let genre = new URLSearchParams(window.location.href).get('genre');
+        if (!genre) genre = '';
+        const filterBy = { name: '', genre }
         const { genres } = this.props;
-        if (genres) this.setState({ genres, isHomePage: true, filterBy }, () => this.loadBoxes())
-        else this.setState({ genres: [], isHomePage: false, filterBy }, () => this.loadBoxes())
+        if (genres) this.setState({ genres, isHomePage: true, filterBy }, () => this.loadBoxes(filterBy))
+        else this.setState({ genres: [], isHomePage: false, filterBy }, () => this.loadBoxes(filterBy))
     }
 
     onSetFilter = (filterByName) => {
@@ -41,7 +42,7 @@ class _BoxApp extends Component {
         await this.props.loadBoxes(this.state.filterBy);
     }
 
-  
+
     onAddToFavorites = (boxId) => {
         //TODO: ADD TO USER FAVORITES
     }
@@ -62,7 +63,7 @@ class _BoxApp extends Component {
         // notused:
         const minimalUser = this.getMinimalUser();
         const { genres } = this.state;
-        if (!boxes || !genres) return <CircleLoading  size="large" color= "#ac0aff"/>
+        if (!boxes || !genres) return <CircleLoading size="large" color="#ac0aff" />
         return (
             <section className="box-app" id="box">
                 <BoxFilter onSetFilter={this.onSetFilter} />

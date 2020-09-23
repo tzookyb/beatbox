@@ -14,7 +14,7 @@ export class ChatBox extends Component {
     renderMessages = () => {
         const { messages, user } = this.props;
         const MessageArray = [];
-        messages.forEach(message => {
+        messages.forEach((message, idx) => {
             MessageArray.push(
                 <MessageBox className="message-box"
                     text={message.text}
@@ -23,12 +23,14 @@ export class ChatBox extends Component {
                     submitBy={message.submitBy}
                     own={user._id === message.id}
                     type={message.type}
+                    key= {idx}
                 />
             );
         });
         return (
             <div style={{ padding: "0px", width: "100%", position:"relative" }}>
                 {MessageArray.map(Message => Message)}
+                
             </div>
         );
     };

@@ -9,6 +9,7 @@ export const boxService = {
     getById,
     getGenres,
     save,
+    update,
     addSong,
     addLike,
     getIsUserLikeBox,
@@ -24,54 +25,12 @@ function getGenres() {
 async function getById(boxId) {
     return httpService.get(`box/${boxId}`)
 }
-
 //TODO: fix filter
 async function query(filterBy) {
-    // if (!filterBy) filterBy = { name: '', genre: '' };
-    // else var queryStr = `?name=${filterBy.name}&genre=${filterBy.genre}`;
-    const boxes = await httpService.get(`box`, filterBy)
-    return byFilter(boxes, filterBy);
+    if (!filterBy) filterBy = { name: '', genre: '' };
+    var queryStr = `?name=${filterBy.name}&genre=${filterBy.genre}`;
+    return httpService.get(`box${queryStr}`);
 }
-
-function byFilter(boxes, filterBy) {
-    if (!boxes) return;
-    if (!filterBy) return boxes;
-    var boxFilters = [];
-    if (filterBy.genre && filterBy.name) {
-        boxes.forEach(box => {
-            if (box.genre === filterBy.genre && box.name.toLowerCase().includes(filterBy.name.toLowerCase())) boxFilters.push(box);
-        })
-        return boxFilters;
-    }
-    else if (filterBy.name) {
-        boxes.forEach(box => {
-            if (box.name.toLowerCase().includes(filterBy.name.toLowerCase())) boxFilters.push(box);
-        })
-        return boxFilters;
-    }
-    else if (filterBy.genre) {
-        boxes.forEach(box => {
-            if (box.genre === filterBy.genre) boxFilters.push(box);
-            // if (box.tags.includes(filterBy.genre)) filterBoxes.push(box);
-        })
-        return boxFilters;
-    }
-
-    return boxes;
-}
-
-
-//FOR BACKEND:
-// function _buildCriteria(filterBy) {
-//     const criteria = {};
-//     if (filterBy.name) {
-//         criteria.name = { $regex: new RegExp(filterBy.name, 'ig') }
-//     }
-//     if (filterBy.genre) {
-//             criteria.genre = filterBy.genre;
-//     }
-//     return criteria;
-// }
 
 function getEmptyBox(user) {
     return {
@@ -90,12 +49,11 @@ function getEmptyBox(user) {
 }
 
 async function save(box) {
-    if (box._id) {
-        return await httpService.put(`box/${box._id}`, box)
-    } else {
-        //ADD CREATED AT AND CREATED BT YO BACKEND
-        return httpService.post(`box`, box);
-    }
+    return await httpService.post(`box`, box);
+}
+
+async function update(box) {
+    return await httpService.put(`box/${box._id}`, box)
 }
 
 function addSong(song) {
@@ -119,7 +77,7 @@ async function addLike(boxId, user) {
     } else {
         newBox.likedByUsers.splice(userIdx, 1)
     }
-    save(newBox);
+    update(newBox);
 }
 
 function getIsUserLikeBox(currBox, currUser) {
@@ -128,12 +86,12 @@ function getIsUserLikeBox(currBox, currUser) {
 
 async function addConnectedUser(boxId, minimalUser) {
     const box = await getById(boxId);
-    const updateBox = { ...box };
-    const isUserInBox = updateBox.connectedUsers.find(user => user.id === minimalUser.id)
+    const newBox = { ...box };
+    const isUserInBox = newBox.connectedUsers.find(user => user.id === minimalUser.id)
     if (!isUserInBox) {
-        updateBox.connectedUsers.push(minimalUser);
-        updateBox.viewCount++;
-        await save(updateBox);
+        newBox.connectedUsers.push(minimalUser);
+        // newBox.viewCount++;
+        await update(newBox);
 
         //ToDO:
         // const boxIdx = getById(minimalUser.currBoxId);

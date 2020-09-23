@@ -16,19 +16,16 @@ export function loadBox(boxId) {
 
 export function saveBox(box) {
   return async dispatch => {
-    const actionType = box._id ? 'EDIT_BOX' : 'ADD_BOX';
     const newBox = await boxService.save(box);
-    dispatch({ type: actionType, box: newBox })
-    // dispatch({ type: 'NOTIFY', isShown: true, msg: 'Changes Saved!' })
+    dispatch({ type: 'ADD_BOX', box: newBox })
     return newBox;
   };
 }
 
 export function updateBox(box) {
   return dispatch => {
-    const actionType = 'EDIT_BOX';
-    boxService.save(box);
-    dispatch({ type: actionType, box })
+    boxService.update(box);
+    dispatch({ type: 'EDIT_BOX', box })
   };
 }
 
@@ -37,16 +34,4 @@ export function removeBox(boxId) {
     await boxService.remove(boxId)
     dispatch({ type: 'REMOVE_BOX', boxId })
   };
-}
-
-export function notify(txt) {
-  return dispatch => {
-    dispatch({ type: 'NOTIFY', isShown: true, msg: txt })
-  }
-}
-
-export function closeNotification() {
-  return dispatch => {
-    dispatch({ type: 'NOTIFY', isShown: false, msg: '' })
-  }
 }

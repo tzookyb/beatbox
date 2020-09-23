@@ -23,7 +23,6 @@ export class BoxInfoEdit extends Component {
 
     handleInput = ({ target }) => {
         const field = target.name;
-        // const value = (target.name === 'tags') ? [target.value] : target.value;
         const value = target.value;
         this.setState(prevState => {
             return {
