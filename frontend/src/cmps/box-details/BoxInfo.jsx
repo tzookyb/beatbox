@@ -101,7 +101,6 @@ export class BoxInfo extends Component {
                                 <button onClick={() => this.onEdit('isEditableName')} className="hide-btn"><CreateIcon /></button>
                             </React.Fragment>
                         }
-
                     </div>
 
                     <div className="info-description flex">
@@ -110,9 +109,10 @@ export class BoxInfo extends Component {
                         {isEditableDesc && <textarea autoFocus type="txt" value={box.description} name="description" onChange={this.handleInput} />}
                         {isEditableDesc && <button onClick={() => this.onSave('isEditableDesc')} ><SaveIcon /></button>}
                     </div>
+                    <h4>Genre: {box.genre}</h4>
 
                     <div className="info-creator">
-                        Dani
+                        {box.createdBy.name}
                 </div>
                 </div>
                 <div className="social-params">

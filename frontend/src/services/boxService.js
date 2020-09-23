@@ -1,8 +1,8 @@
 import httpService from './httpService';
 import { youtubeService } from './youtubeService';
 
-var gGenre = ['Hip-hop', 'Arabic', 'Easy', 'Electronic', 'Country', 'Latin', 'Rock',
-    'Pop', 'Classical', 'Alternative', 'Blues', 'Disco', 'Israeli']
+var gGenre = ['Hip-hop', 'Easy', 'Electronic' , 'Latin', 'Rock',
+    'Pop', 'Classical', 'Alternative', 'Blues', 'Disco', 'Israeli', 'Arabic']
 
 export const boxService = {
     query,
@@ -73,7 +73,7 @@ function byFilter(boxes, filterBy) {
 //     return criteria;
 // }
 
-function getEmptyBox() {
+function getEmptyBox(user) {
     return {
         name: '',
         description: '',
@@ -81,7 +81,7 @@ function getEmptyBox() {
         likedByUsers: [],
         connectedUsers: [],
         genre: '',
-        createdBy: {},
+        createdBy: user,
         createdAt: Date.now(),
         songs: [],
         currSong: null,

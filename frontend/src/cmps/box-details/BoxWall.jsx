@@ -6,8 +6,6 @@ import { ChatBox } from './ChatBox';
 
 import { addMessage, loadMessages } from '../../store/actions/messageAction'
 
-import 'react-chat-elements/dist/main.css';
-
 class _BoxWall extends Component {
     state = {
         myEmoji: '',

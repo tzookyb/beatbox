@@ -146,6 +146,8 @@ class _BoxDetails extends Component {
     }
 
     onToggleLikeBox = async (boxId, minimalUser) => {
+        console.log("onToggleLikeBox -> minimalUser", minimalUser)
+        console.log("onToggleLikeBox -> boxId", boxId)
         await boxService.addLike(boxId, minimalUser)
         await this.props.loadBox(boxId);
     }
@@ -206,6 +208,6 @@ const mapDispatchToProps = {
     notify,
     updateBox,
     addMessage,
-     loadMessages 
+    loadMessages 
 }
 export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails)

@@ -4,8 +4,6 @@ import socketService from '../../services/socketService';
 import { connect } from 'react-redux'
 import { Spin } from "antd";
 
-// import { MessageBox } from 'react-chat-elements/native';
-
 import { MessageBox } from "./MessageBox";
 
 export class ChatBox extends Component {
