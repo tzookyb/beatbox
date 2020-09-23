@@ -14,3 +14,4 @@ export function addMessage(boxId, msg) {
     dispatch({ type: 'ADD_MESSAGE', message })
   };
 }
+

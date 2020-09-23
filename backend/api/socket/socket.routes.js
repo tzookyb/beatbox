@@ -9,7 +9,8 @@ function createBoxStatus() {
             id: null,
             secPlayed: 0,
             isPlaying: true
-        }
+        },
+        // typingStr: ''
     }
 }
 
@@ -20,23 +21,7 @@ function getBoxStatus(boxId) {
 
 function connectSockets(io) {
     io.on('connection', socket => {
-        socket.on('chat newMsg', msg => {
-        console.log("connectSockets -> msg", msg)
-        console.log("connectSockets -> ocket.myTopic", socket.myTopic)
-            io.to(socket.myTopic).emit('chat addMsg', msg)
-        })
-        socket.on('chat topic', topic => {
-            if (socket.myTopic) {
-                socket.leave(socket.myTopic)
-            }
-            socket.join(topic)
-            socket.myTopic = topic;
-        })
-        socket.on('chat typing', userName => {
-            socket.broadcast.to(socket.myTopic).emit('chat showTyping', userName)
-        })
         socket.on('join box', (boxId, miniUser) => {
-            console.log(boxId)
             if (socket.myBox) {
                 socket.leave(socket.myBox)
             }
@@ -47,14 +32,27 @@ function connectSockets(io) {
             io.to(socket.myBox).emit('joined new box', boxStatus.participants)
             socket.emit('get box status', boxStatus)
         })
-        socket.on('song time changed', secPlayed => {
-            console.log("connectSockets -> secPlayed", secPlayed)
+        socket.on('chat newMsg', msg => {
+            boxMap[socket.myBox].msgs.push(msg);
+            io.to(socket.myBox).emit('chat addMsg', msg)
+        })
+        socket.on('chat typing', typingStr => {
+            // boxMap[socket.myBox].typingStr = typingStr;
+            socket.broadcast.to(socket.myBox).emit('chat showTyping', typingStr)
+        })
 
+        socket.on('chat topic', topic => {
+            if (socket.myTopic) {
+                socket.leave(socket.myTopic)
+            }
+            socket.join(topic)
+            socket.myTopic = topic;
+        })
+        socket.on('song time changed', secPlayed => {
             boxMap[socket.myBox].secPlayed = secPlayed;
             io.to(socket.myBox).emit('update song time', secPlayed)
         })
         socket.on('set currSong', currSong => {
-            console.log('set currsong')
             boxMap[socket.myBox].currSongId = currSong.id
             boxMap[socket.myBox].secPlayed = currSong.secPlayed
             boxMap[socket.myBox].isPlaying = currSong.isPlaying
@@ -62,7 +60,6 @@ function connectSockets(io) {
             io.to(socket.myBox).emit('song changed', currSong)
         })
         socket.on('set currBox', box => {
-            console.log("connectSockets -> box", box);
             io.to(socket.myBox).emit('box changed', box);
         })
         socket.on('box songs changed', box => {

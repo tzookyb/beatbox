@@ -21,55 +21,38 @@ class _BoxApp extends Component {
         let genre = new URLSearchParams(window.location.href).get('genre');
         if (!genre) genre = '';
         const filterBy = { name: '', genre }
-        // this.props.loadBoxes(filterBy);
-        console.log("componentDidMount -> filterBy", filterBy)
         this.setState({ ...this.state.filterBy, filterBy: { genre } }, () => this.props.loadBoxes(filterBy))
     }
 
     componentDidUpdate(prevProps, prevState) {
-        // let genre = new URLSearchParams(window.location.href).get('genre');
-        // if (!genre) genre = '';
-        // const filterBy = { name: '', genre }
-        
-        // if (genre !== prevState.filterBy.genre) {
-        //     this.props.loadBoxes(filterBy)
-        // }
-        // const filterBy = { name: '', genre }
-        // this.props.loadBoxes(filterBy)
-    }
-
-    loadBoxes = (genre) => {
-        if (!genre) genre = '';
-        // const filterBy = { name: '', genre }
-        // this.setState({ ...this.state.filterBy, filterBy: {genre} })
-        this.props.loadBoxes(this.state.filterBy);
+        if (this.props.location?.search === prevProps.location?.search) return;
+        const genre = new URLSearchParams(window.location.href).get('genre');
+        let filterBy = { name: '', genre: '' };
+        if (genre) filterBy = { name: '', genre }
+        this.props.loadBoxes(filterBy);
     }
 
     onSetFilter = (name, value) => {
         this.setState({ filterBy: { ...this.state.filterBy, [name]: value } }, () => this.props.loadBoxes(this.state.filterBy))
     }
 
-
-    // onSetFilter = (filterByName) => {
-    //     this.setState({ filterBy: { ...this.state.filterBy, name: filterByName.name } }, () => this.props.loadBoxes(this.state.filterBy))
-    // }
-
     render() {
         const { boxes, genres } = this.props;
         const minimalUser = userService.getMinimalUser();
         if (!boxes) return <CircleLoading size="large" color="#ac0aff" />
         return (
-            <section className="box-app" id="box">
-                <BoxFilter onSetFilter={this.onSetFilter} />
-                {!!genres && genres.map((genre, idx) => {
-                    return (
-                        <BoxList boxes={boxes} key={idx} genre={genre}
-                            minimalUser={minimalUser} />
-                    )
-                })}
 
-                {!genres && <GenresFilter genreCount={5} />}
-                {!genres && <BoxList boxes={boxes} minimalUser={minimalUser} />}
+            <section className="box-app" id="box">
+                    <BoxFilter onSetFilter={this.onSetFilter} />
+                    {!!genres && genres.map((genre, idx) => {
+                        return (
+                            <BoxList boxes={boxes} key={idx} genre={genre}
+                                minimalUser={minimalUser} />
+                        )
+                    })}
+                    {!genres && <GenresFilter genreCount={5} />}
+                    {!genres && <BoxList boxes={boxes} minimalUser={minimalUser} />}
+                
             </section>
         )
     }
