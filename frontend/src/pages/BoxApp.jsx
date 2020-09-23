@@ -60,13 +60,12 @@ class _BoxApp extends Component {
         if (!boxes) return <CircleLoading size="large" color="#ac0aff" />
         return (
             <section className="box-app" id="box">
-                <BoxFilter onSetFilter={this.onSetFilter} />
                 {!!genres && genres.map((genre, idx) => {
                     return (
                         <BoxList boxes={boxes} key={idx} genre={genre}
-                            minimalUser={minimalUser} />
-                    )
-                })}
+                        minimalUser={minimalUser} />
+                        )
+                    })}
 
                 {!genres && <GenresFilter genreCount={5} />}
                 {!genres && <BoxList boxes={boxes} minimalUser={minimalUser} />}
@@ -86,3 +85,4 @@ const mapDispatchToProps = {
 }
 
 export const BoxApp = connect(mapStateToProps, mapDispatchToProps)(_BoxApp)
+{/* <BoxFilter onSetFilter={this.onSetFilter} /> */}
