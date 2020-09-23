@@ -1,4 +1,5 @@
 import { boxService } from "../../services/boxService"
+import { socketService } from "../../services/socketService";
 
 export function loadBoxes(filterBy) {
   return async dispatch => {
@@ -22,10 +23,18 @@ export function saveBox(box) {
   };
 }
 
+// UPDATE FROM SOCKET:
+export function gotBoxUpdate(box) {
+  return dispatch => {
+    dispatch({ type: 'UPDATE_BOX', box })
+  };
+}
+
 export function updateBox(box) {
   return dispatch => {
     boxService.update(box);
-    dispatch({ type: 'EDIT_BOX', box })
+    socketService.emit('set currBox', box);
+    dispatch({ type: 'UPDATE_BOX', box })
   };
 }
 
