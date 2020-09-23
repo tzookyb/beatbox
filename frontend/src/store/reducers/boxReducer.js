@@ -23,10 +23,10 @@ export function boxReducer(state = initialState, action) {
             return {
                 ...state,
                 currBox: action.box,
-                boxes: state.boxes.map(box => {
-                    if (action.box._id === box._id) return action.box
-                    return box;
-                })
+                // boxes: state.boxes.map(box => {
+                //     if (action.box._id === box._id) return action.box
+                //     return box;
+                // })
             }
         case 'ADD_BOX':
             return {
