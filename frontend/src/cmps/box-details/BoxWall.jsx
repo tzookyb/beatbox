@@ -52,7 +52,7 @@ class _BoxWall extends Component {
                 <h2> Box Wall </h2>
                 <div className="wall-content">
                     <ChatBox messages={messages} user={user} />
-                    {isEmoji && <div style={{ bottom: bottom + "px", opacity: opacity }} class="my-emoji flex column">
+                    {isEmoji && <div style={{ bottom: bottom + "px", opacity: opacity }} className="my-emoji flex column">
                         {myEmoji}
                         <label className="reaction-user-name">{this.props.user.username}</label>
                     </div>}
