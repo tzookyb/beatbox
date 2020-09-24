@@ -4,21 +4,17 @@ import { connect } from 'react-redux'
 import { Chat } from './Chat'
 import { ChatBox } from './ChatBox';
 import { addMessage, loadMessages } from '../../store/actions/messageAction'
+import Avatar from '@material-ui/core/Avatar';
+import AvatarGroup from '@material-ui/lab/AvatarGroup';
 
 class _BoxWall extends Component {
     state = {
         myEmoji: '',
         bottom: 55,
         opacity: 1,
-        typingStr: ''
+        typingStr: '',
     }
     gInterval = null;
-
-    componentDidMount() {
-        const { box } = this.props;
-        this.props.loadMessages(box._id);
-    }
-
 
     setEmoji = async (myEmoji) => {
         clearInterval(this.gInterval);
@@ -42,28 +38,37 @@ class _BoxWall extends Component {
     setTyping = (typingStr) => {
         this.setState({ typingStr })
     }
+    getUsersAvatars(connectedUsers) {
+        const avatars = connectedUsers.map(user => {
+            return <Avatar alt={user.name} title={user.name} key={user.id} src={user.imgUrl} style={{ width: '30px', height: '30px' }} />
+        })
+        return avatars;
+    }
 
     render() {
         const { messages, user, box } = this.props;
         const { myEmoji, bottom, opacity, typingStr } = this.state;
         const isEmoji = (myEmoji === '') ? false : true;
         return (
-            <div className="wall-container">
-                <h2> Box Wall </h2>
+            <section className="wall-container">
+                <div className="chat-header">
+                    <h2> Box Wall </h2>
+                    <AvatarGroup className="connected-users" max={4}>
+                        {this.getUsersAvatars(box.connectedUsers)}
+                    </AvatarGroup>
+                    <div className="typing-container">
+                        {typingStr && <h3>{typingStr}</h3>}
+                    </div>
+                </div>
                 <div className="wall-content">
                     <ChatBox messages={messages} user={user} />
                     {isEmoji && <div style={{ bottom: bottom + "px", opacity: opacity }} class="my-emoji flex column">
                         {myEmoji}
                         <label className="reaction-user-name">{this.props.user.username}</label>
                     </div>}
-
-                    <div className="typing-container">
-                        {typingStr && <h3>{typingStr}</h3>}
-                    </div>
-
                     <Chat user={user} addMsg={this.props.addMsg} setEmoji={this.setEmoji} box={box} setTyping={this.setTyping} />
                 </div>
-            </div>
+            </section>
         )
     }
 }
@@ -72,8 +77,7 @@ const mapStateToProps = state => {
     return {
         user: state.userReducer.loggedinUser,
         messages: state.messageReducer.messages,
-        typingStr: state.messageReducer.typingStr,
-
+        box: state.boxReducer.currBox
     }
 }
 const mapDispatchToProps = {

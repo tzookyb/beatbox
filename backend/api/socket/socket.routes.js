@@ -10,7 +10,6 @@ function createBoxStatus() {
             secPlayed: 0,
             isPlaying: true
         },
-        // typingStr: ''
     }
 }
 
@@ -18,6 +17,7 @@ function getBoxStatus(boxId) {
     if (!boxMap[boxId]) boxMap[boxId] = createBoxStatus()
     return boxMap[boxId]
 }
+
 
 function connectSockets(io) {
     io.on('connection', socket => {
@@ -34,7 +34,7 @@ function connectSockets(io) {
         })
         socket.on('chat newMsg', msg => {
             boxMap[socket.myBox].msgs.push(msg);
-            io.to(socket.myBox).emit('chat addMsg', msg)
+            io.to(socket.myBox).emit('chat addMsg', msg);
         })
         socket.on('chat typing', typingStr => {
             // boxMap[socket.myBox].typingStr = typingStr;

@@ -4,7 +4,6 @@ import SaveIcon from '@material-ui/icons/Save';
 import CreateIcon from '@material-ui/icons/Create';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Avatar from '@material-ui/core/Avatar';
-import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import CircleLoading from 'react-loadingg/lib/CircleLoading';
 
 import { cloudService } from '../../services/cloudService';
@@ -65,12 +64,7 @@ export class BoxInfo extends Component {
         this.onSave('isEditableImg');
     }
 
-    getUsersAvatars(connectedUsers) {
-        const avatars = connectedUsers.map(user => {
-            return <Avatar alt={user.name} title={user.name} key={user.id} src={user.imgUrl} style={{ width: '30px', height: '30px' }} />
-        })
-        return avatars;
-    }
+    
 
     getIsUserLikeBox(box, minimalUser) {
         return (boxService.getIsUserLikeBox(box, minimalUser) !== -1) ? 'liked' : '';
@@ -116,9 +110,7 @@ export class BoxInfo extends Component {
                         {box.likedByUsers.length}
                         <FavoriteIcon />
                     </div>
-                    <AvatarGroup className="connected-users" max={4}>
-                        {this.getUsersAvatars(box.connectedUsers)}
-                    </AvatarGroup>
+               
                 </div>
                 <div className="box-img">
                     <label className="upload-label" style={{ cursor: 'pointer' }}>
