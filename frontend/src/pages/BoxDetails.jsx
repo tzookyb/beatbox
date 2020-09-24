@@ -37,9 +37,9 @@ class _BoxDetails extends Component {
         socketService.on('chat addMsg', this.addMsg);
     }
 
-    setBoxStatus =  (boxStatus) => {
+    setBoxStatus = (boxStatus) => {
         this.props.setCurrSong(boxStatus.currSong);
-         this.props.loadMessages(boxStatus.msgs)
+        this.props.loadMessages(boxStatus.msgs)
     }
 
     addMsg = (msgObj) => {
@@ -152,23 +152,26 @@ class _BoxDetails extends Component {
         const minimalUser = this.getMinimalUser();
 
         return (
-            <section className="box-details">
-                <BoxWall messages={messages} addMsg={this.addMsg} />
-                <BoxInfo box={box} onSaveInfo={this.onSaveInfo} minimalUser={minimalUser} onToggleLikeBox={this.onToggleLikeBox} />
+            <section className="box-details flex space-between">
+                <div className="box-details-main flex column space-between">
+                    <BoxInfo box={box} onSaveInfo={this.onSaveInfo} minimalUser={minimalUser} onToggleLikeBox={this.onToggleLikeBox} />
 
-                <SongList
-                    songs={songsToShow}
-                    onPlaySong={this.onPlaySong}
-                    onRemoveSong={this.onRemoveSong}
-                    onAddSong={this.onAddSong}
-                    isSongPickOpen={isSongPickOpen}
-                    toggleSongPick={this.toggleSongPick}
-                    nowPlayingId={currSongId}
-                    onDragStart={this.onDragStart}
-                    onDragEnd={this.onDragEnd}
-                    isFilter={!!filterBy}
-                    isDragging={isDragging}
-                />
+                    <SongList
+                        songs={songsToShow}
+                        onPlaySong={this.onPlaySong}
+                        onRemoveSong={this.onRemoveSong}
+                        onAddSong={this.onAddSong}
+                        isSongPickOpen={isSongPickOpen}
+                        toggleSongPick={this.toggleSongPick}
+                        nowPlayingId={currSongId}
+                        onDragStart={this.onDragStart}
+                        onDragEnd={this.onDragEnd}
+                        isFilter={!!filterBy}
+                        isDragging={isDragging}
+                    />
+
+                </div>
+                <BoxWall messages={messages} addMsg={this.addMsg} />
             </section>
         )
     }
