@@ -8,7 +8,6 @@ function createBoxStatus() {
         currSong: {
             id: null,
             secPlayed: 0,
-            isPlaying: true
         },
     }
 }
@@ -33,11 +32,11 @@ function connectSockets(io) {
             socket.emit('get box status', boxStatus)
         })
         socket.on('chat newMsg', msg => {
+        console.log("connectSockets -> msg", msg)
             boxMap[socket.myBox].msgs.push(msg);
             io.to(socket.myBox).emit('chat addMsg', msg);
         })
         socket.on('chat typing', typingStr => {
-            // boxMap[socket.myBox].typingStr = typingStr;
             socket.broadcast.to(socket.myBox).emit('chat showTyping', typingStr)
         })
 
