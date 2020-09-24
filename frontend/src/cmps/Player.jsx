@@ -35,8 +35,6 @@ class _Player extends Component {
 
     componentDidUpdate(prevProps) {
         const newBox = this.props.currBox;
-        console.log("componentDidUpdate -> prevProps", prevProps)
-        console.log("componentDidUpdate -> newBox", newBox)
         if (prevProps.currBox?._id !== newBox?._id) {
             this.socketSetup();
             if (newBox.songs.length) this.props.loadSong(newBox.songs[0].id);

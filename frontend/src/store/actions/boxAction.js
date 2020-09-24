@@ -39,7 +39,7 @@ export function updateBox(box) {
 }
 export function setFilter(filterBy) {
   return dispatch => {
-    dispatch({ type: 'SET_FILTER', filterBy })
+    dispatch({ type: 'SET_FILTER', filterByName: filterBy })
   }
 }
 

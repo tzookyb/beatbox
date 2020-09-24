@@ -5,7 +5,7 @@ const initialState = {
     isNoticeShown: false,
     msg: '',
     currSong: null,
-    filterBy: ''
+    filterByName: ''
 }
 
 export function boxReducer(state = initialState, action) {
