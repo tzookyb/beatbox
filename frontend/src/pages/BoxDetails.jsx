@@ -30,20 +30,19 @@ class _BoxDetails extends Component {
         // SOCKET SETUP
         socketService.setup();
         socketService.emit('join box', this.props.box._id);
-        socketService.on('get box status', this.setBoxStatus)
+        socketService.on('get box status', this.setBoxStatus);
         // socketService.on('get box status', this.props.setCurrSong)
         socketService.on('song changed', this.props.setCurrSong);
         socketService.on('box changed', this.props.gotBoxUpdate);
-        socketService.on('chat addMsg', this.addMsg);
+        socketService.on('chat addMsg', this.props.addMessage);
+    }
+    componentWillUnmount() {
+        socketService.off('chat addMsg', this.props.addMessage)
     }
 
     setBoxStatus = (boxStatus) => {
         this.props.setCurrSong(boxStatus.currSong);
-        this.props.loadMessages(boxStatus.msgs)
-    }
-
-    addMsg = (msgObj) => {
-        this.props.addMessage(msgObj);
+        this.props.loadMessages(boxStatus.msgs);
     }
 
     onRemoveSong = (ev, songId) => {

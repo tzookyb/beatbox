@@ -32,6 +32,7 @@ export class Chat extends React.Component {
         avatar: this.props.user.imgUrl,
         type: 'chat'
       }
+      console.log("Chat -> sendMsg -> msgObj", msgObj)
       socketService.emit('chat newMsg', msgObj);
       this.setState({ msg: '' })
     }
@@ -80,7 +81,7 @@ export class Chat extends React.Component {
             <input className="input-chat" placeholder="Send Message" value={this.state.msg}
               name="msg" onChange={this.onHandleChange} autoComplete="off" />
             <InsertEmoticonIcon onClick={this.toggleEmogis} />
-            <Button type="primary" onClick={this.sendMsg} style={{ color: "white" }}>
+            <Button type="primary" type="submit" style={{ color: "white" }}>
               <SendIcon />
             </Button>
           </div>

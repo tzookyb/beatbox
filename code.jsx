@@ -1,5 +1,12 @@
-module.exports = connectSockets
+// Frontend:
+socketService.on('get box status', this.setBoxStatus);
 
+setBoxStatus =  (boxStatus) => {
+        this.props.setCurrSong(boxStatus.currSong);
+        this.props.loadMessages(boxStatus.msgs);
+}
+
+// backend:
 const boxMap = {}
 function createBoxStatus() {
     return {
@@ -8,16 +15,14 @@ function createBoxStatus() {
         currSong: {
             id: null,
             secPlayed: 0,
+            
         },
     }
 }
-
 function getBoxStatus(boxId) {
-    if (!boxMap[boxId]) boxMap[boxId] = createBoxStatus()
-    return boxMap[boxId]
+    if (!boxMap[boxId]) boxMap[boxId] = createBoxStatus();
+    return boxMap[boxId];
 }
-
-
 function connectSockets(io) {
     io.on('connection', socket => {
         socket.on('join box', (boxId, miniUser) => {
@@ -32,24 +37,8 @@ function connectSockets(io) {
             socket.emit('get box status', boxStatus)
         })
         socket.on('chat newMsg', msg => {
-        console.log("connectSockets -> msg", msg)
             boxMap[socket.myBox].msgs.push(msg);
             io.to(socket.myBox).emit('chat addMsg', msg);
-        })
-        socket.on('chat typing', typingStr => {
-            socket.broadcast.to(socket.myBox).emit('chat showTyping', typingStr)
-        })
-
-        socket.on('chat topic', topic => {
-            if (socket.myTopic) {
-                socket.leave(socket.myTopic)
-            }
-            socket.join(topic)
-            socket.myTopic = topic;
-        })
-        socket.on('song time changed', secPlayed => {
-            boxMap[socket.myBox].secPlayed = secPlayed;
-            io.to(socket.myBox).emit('update song time', secPlayed)
         })
         socket.on('set currSong', currSong => {
             boxMap[socket.myBox].currSongId = currSong.id
@@ -58,12 +47,7 @@ function connectSockets(io) {
 
             io.to(socket.myBox).emit('song changed', currSong)
         })
-        socket.on('set currBox', box => {
-            io.to(socket.myBox).emit('box changed', box);
-        })
-        socket.on('box songs changed', box => {
-            io.to(socket.myBox).emit('box changed', box)
-        })
     })
 }
+
 
