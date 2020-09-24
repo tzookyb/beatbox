@@ -1,5 +1,9 @@
 .box-details {
+    padding: 20px;
     padding-top: 100px;
-    padding-left: 40px;
 
+    .box-details-main{
+        margin-right: 40px;
+        width: 60%;
+    }
 }

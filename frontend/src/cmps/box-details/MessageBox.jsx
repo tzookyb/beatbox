@@ -28,9 +28,9 @@ export const MessageBox = ({ text, submitBy, submitAt, avatar, own, type }) => {
                 style={{
                   backgroundColor: " #b0a5a7",
                   color: "black",
-                  borderRadius: "0px 10px 10px 0px",
+                  borderRadius: "10px",
                   padding: "10px",
-                  marginBottom: "15px",
+                  margin: "0px 10px 15px 10px",
                   // boxShadow: "1px 2px 3px #ccc",
                   width: "fit-content"
                 }}
@@ -57,9 +57,9 @@ export const MessageBox = ({ text, submitBy, submitAt, avatar, own, type }) => {
                   backgroundColor: "rgb(154 111 203)  ",
                   color: "black",
                   borderColor: "#333",
-                  borderRadius: "10px 0px 0px 10px",
+                  borderRadius: "10px",
                   padding: "10px",
-                  marginBottom: "15px",
+                  margin: "0px 10px 15px 10px",
                   // boxShadow: "1px 2px 3px #ccc",
                   textAlign: "right",
                   width: "fit-content",
@@ -94,7 +94,8 @@ export const MessageBox = ({ text, submitBy, submitAt, avatar, own, type }) => {
                 boxShadow: "1px 2px 3px #ccc",
                 textAlign: "center",
                 width: "fit-content",
-                margin: "0 20px"
+                // margin: "0 20px",
+                margin: "0 auto"
               }}
             >
               {text}
