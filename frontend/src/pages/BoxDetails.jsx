@@ -106,13 +106,13 @@ class _BoxDetails extends Component {
 
     onDragEnd = (result) => {
         const { destination, source, draggableId } = result;
+        this.setState({ isDragging: false })
         if (!destination) return;
         if (destination.droppableId === 'trash') {
             this.onRemoveSong(null, draggableId)
         }
         else if (destination.index === source.index) return;
         else this.onSwapSongs(source.index, destination.index);
-        this.setState({ isDragging: false })
     }
 
     addMessageChat = (msg) => {
@@ -156,8 +156,6 @@ class _BoxDetails extends Component {
             <section className="box-details">
                 <BoxWall messages={messages} addMsg={this.addMsg} />
                 <BoxInfo box={box} onSaveInfo={this.onSaveInfo} minimalUser={minimalUser} onToggleLikeBox={this.onToggleLikeBox} />
-
-                <BoxFilter onSetFilter={this.onSetFilter} />
 
                 <SongList
                     songs={songsToShow}

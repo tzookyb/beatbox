@@ -5,9 +5,12 @@ import CreateIcon from '@material-ui/icons/Create';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Avatar from '@material-ui/core/Avatar';
 import CircleLoading from 'react-loadingg/lib/CircleLoading';
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import FacebookIcon from '@material-ui/icons/Facebook';
 
 import { cloudService } from '../../services/cloudService';
 import { boxService } from '../../services/boxService';
+
 
 export class BoxInfo extends Component {
     state = {
@@ -64,7 +67,7 @@ export class BoxInfo extends Component {
         this.onSave('isEditableImg');
     }
 
-    
+
 
     getIsUserLikeBox(box, minimalUser) {
         return (boxService.getIsUserLikeBox(box, minimalUser) !== -1) ? 'liked' : '';
@@ -105,13 +108,19 @@ export class BoxInfo extends Component {
                         <label>{box.createdBy.name}</label>
                     </div>
                 </div>
-                <div className="social-params">
+                
+                <div className="social-params flex column space-between">
                     <div onClick={() => this.props.onToggleLikeBox(box._id, minimalUser)} className={`like ${this.getIsUserLikeBox(box, minimalUser)}`}>
                         {box.likedByUsers.length}
                         <FavoriteIcon />
                     </div>
-               
+
+                    <div className="share-btns-container">
+                        <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} target="_blank"><FacebookIcon /></a>
+                        <a className="whatsapp-share-btn" href={`whatsapp://send?text=${window.location.href}`} data-action="share/whatsapp/share"><WhatsAppIcon /></a>
+                    </div>
                 </div>
+
                 <div className="box-img">
                     <label className="upload-label" style={{ cursor: 'pointer' }}>
                         <input onChange={(ev) => this.uploadImg(ev)} type="file" hidden />

@@ -1,6 +1,6 @@
 // OUTSOURCE IMPORT
 import React, { Component } from 'react'
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
@@ -50,5 +50,3 @@ export class GenresFilter extends Component {
         )
     }
 }
-
-

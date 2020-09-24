@@ -14,13 +14,7 @@ export function loadSong(id) {
 
 export function setCurrSong(currSong) {
     return async (dispatch, getState) => {
-        currSong.id = currSong.id || getState().boxReducer.currBox.songs[0]
-        // const currSong = {
-        //     id,
-        //     isPlaying: true,
-        //     secPlayed: 0
-        // }
-        // socketService.emit('set currSong', currSong);
+        currSong.id = currSong.id || getState().boxReducer.currBox.songs[0].id;
         dispatch({ type: 'SET_CURR_SONG', currSong })
     }
 }

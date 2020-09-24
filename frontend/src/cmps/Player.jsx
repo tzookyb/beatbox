@@ -29,15 +29,14 @@ class _Player extends Component {
 
     componentDidMount() {
         socketService.setup();
+        // REMEMBER! UPDATED ONLY AT CLIENT PLAYER -  WITHOUT STORE
         socketService.on('update song time', this.onSeek);
-        socketService.on('update song time', (secPlayed) => {
-            // REMEMBER! UPDATED ONLY AT CLIENT PLAYER -  WITHOUT STORE
-            this.onSeek(secPlayed)
-        });
     }
 
     componentDidUpdate(prevProps) {
         const newBox = this.props.currBox;
+        console.log("componentDidUpdate -> prevProps", prevProps)
+        console.log("componentDidUpdate -> newBox", newBox)
         if (prevProps.currBox?._id !== newBox?._id) {
             this.socketSetup();
             if (newBox.songs.length) this.props.loadSong(newBox.songs[0].id);
@@ -103,7 +102,7 @@ class _Player extends Component {
     }
 
     onReady = () => {
-        this.setState({ isReady: true });
+        this.setState({ isReady: true }, this.play());
     }
 
     handleVolumeChange = (ev, value) => {
@@ -161,69 +160,71 @@ class _Player extends Component {
                 onProgress={this.handleProgress}
                 onDuration={this.handleDuration}
             />
-            <div
-                className={`player-container flex align-center space-between ${isPlaying ? 'is-playing' : 'paused'} ${isShrunk ? 'shrunk' : ''}`}
-                onMouseDown={this.onPlayerMouseDown}
-                onMouseUp={this.onPlayerMouseUp}
-                onDrag={this.onPlayerDrag}
-            >
+            <div className="player-container flex justify-center align-center">
+                <div
+                    className={`player-capsule flex align-center space-between ${isPlaying ? 'is-playing' : 'paused'} ${isShrunk ? 'shrunk' : ''}`}
+                    onMouseDown={this.onPlayerMouseDown}
+                    onMouseUp={this.onPlayerMouseUp}
+                    onDrag={this.onPlayerDrag}
+                >
 
 
-                <img className="player-thumbnail" onClick={this.onToggleShrink} src={song.imgUrl} title={song.title} alt="song thumbnail" />
+                    <img className="player-thumbnail" onClick={this.onToggleShrink} src={song.imgUrl} title={song.title} alt="song thumbnail" />
 
-                {isReady && <span className="player-title">{song.title}</span>}
+                    {isReady && <span className="player-title">{song.title}</span>}
 
-                {!isReady ?
-                    <CircleLoading color="#ac0aff" /> :
-                    < div className="song-time flex align-center space-between">
-                        <span className="player-time">{showTime(this.state.secPlayed)}</span>
+                    {!isReady ?
+                        <CircleLoading color="#ac0aff" /> :
+                        < div className="song-time flex align-center space-between">
+                            <span className="player-time">{showTime(this.state.secPlayed)}</span>
+
+                            <Slider
+                                style={{
+                                    width: '70px',
+                                    color: 'white',
+                                }}
+                                name="played"
+                                min={0}
+                                max={duration}
+                                onMouseDown={this.handleSeekMouseDown}
+                                onMouseUp={this.handleSeekMouseUp}
+                                onChange={this.handleSeekChange}
+                                value={this.state.secPlayed}
+                            />
+
+                            {duration && <span className="player-time">{showTime(duration)}</span>}
+                        </div>}
+
+                    <div className="player-controls flex align-center">
+                        <button className="player-ctrl-btn flex align-center" title="Previous" onClick={() => this.skipToSong(-1)}><SkipPreviousIcon /></button>
+                        <button className="player-ctrl-btn flex align-center" title={isPlaying ? 'Pause' : 'Play'} onClick={this.togglePlay}>{isPlaying ? <PauseIcon /> : <PlayArrowIcon />}</button>
+                        <button className="player-ctrl-btn flex align-center" title="Next" onClick={() => this.skipToSong(1)}><SkipNextIcon /></button>
+
 
                         <Slider
                             style={{
-                                width: '70px',
-                                color: 'white',
+                                height: '50px',
+                                color: muted ? '#292929' : 'white'
                             }}
-                            name="played"
+                            value={volume}
                             min={0}
-                            max={duration}
-                            onMouseDown={this.handleSeekMouseDown}
-                            onMouseUp={this.handleSeekMouseUp}
-                            onChange={this.handleSeekChange}
-                            value={this.state.secPlayed}
+                            step={0.05}
+                            max={1}
+                            orientation="vertical"
+                            onChange={this.handleVolumeChange}
                         />
+                        <button className="player-ctrl-btn flex align-center" title={muted ? 'Unmute' : 'Mute'} onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
 
-                        {duration && <span className="player-time">{showTime(duration)}</span>}
-                    </div>}
-
-                <div className="player-controls flex align-center">
-                    <button className="player-ctrl-btn flex align-center" title="Previous" onClick={() => this.skipToSong(-1)}><SkipPreviousIcon /></button>
-                    <button className="player-ctrl-btn flex align-center" title={isPlaying ? 'Pause' : 'Play'} onClick={this.togglePlay}>{isPlaying ? <PauseIcon /> : <PlayArrowIcon />}</button>
-                    <button className="player-ctrl-btn flex align-center" title="Next" onClick={() => this.skipToSong(1)}><SkipNextIcon /></button>
-
-
-                    <Slider
-                        style={{
-                            height: '50px',
-                            color: muted ? '#292929' : 'white'
-                        }}
-                        value={volume}
-                        min={0}
-                        step={0.05}
-                        max={1}
-                        orientation="vertical"
-                        onChange={this.handleVolumeChange}
-                    />
-                    <button className="player-ctrl-btn flex align-center" title={muted ? 'Unmute' : 'Mute'} onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
-
-                    <img
-                        style={{ visibility: (this.props.location.pathname === `/box/${currBox._id}`) ? 'hidden' : 'visible' }}
-                        className="back-to-box"
-                        src={require('../assets/img/box.png')}
-                        title="Back to box"
-                        alt="Back to box"
-                        onClick={() => this.props.history.push(`/box/${currBox._id}`)} />
-                </div>
-            </div >
+                        <img
+                            style={{ visibility: (this.props.location.pathname === `/box/${currBox._id}`) ? 'hidden' : 'visible' }}
+                            className="back-to-box"
+                            src={require('../assets/img/box.png')}
+                            title="Back to box"
+                            alt="Back to box"
+                            onClick={() => this.props.history.push(`/box/${currBox._id}`)} />
+                    </div>
+                </div >
+            </div>
         </React.Fragment >
     }
 }
