@@ -7,17 +7,6 @@ import { socketService } from '../../services/socketService';
 
 export class ChatBox extends Component {
 
-    componentDidMount() {
-        socketService.on('chat addMsg', this.addMsg);
-    }
-    
-    addMsg = msg => {
-        console.log("Chat -> msgObj", msg)
-        // this.props.addMsg(msgObj);
-        // this.setState(prevState => ({ msgs: [...prevState.msgs, newMsg] }));
-      };
-
-
     renderMessages = () => {
         const { messages, user } = this.props;
         const MessageArray = [];

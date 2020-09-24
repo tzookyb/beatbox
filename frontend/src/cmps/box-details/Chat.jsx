@@ -2,22 +2,20 @@ import React from "react";
 import { Button } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 import { Emoji } from './Emoji'
-
+import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import { socketService } from '../../services/socketService'
 
 export class Chat extends React.Component {
   state = {
     msg: '',
     isTyping: false,
+    isOpenEmojis: false
   }
 
   componentDidMount() {
     socketService.on('chat showTyping', this.onTyping);
-    // socketService.setup();
-    // socketService.emit('join box', this.props.box._id);
-    // socketService.on('chat typing', this.onTyping);
   }
-  
+
   onTyping = typingStr => {
     this.props.setTyping(typingStr)
   }
@@ -34,13 +32,14 @@ export class Chat extends React.Component {
         avatar: this.props.user.imgUrl,
         type: 'chat'
       }
-      socketService.emit('chat newMsg', msgObj);
+     socketService.emit('chat newMsg', msgObj);
       this.setState({ msg: '' })
     }
   };
 
   onEmojiChoose = (emoji) => {
-    this.props.setEmoji(emoji);
+    this.setState({ msg: this.state.msg + emoji, isOpenEmojis: false });
+    // this.props.setEmoji(emoji);
   }
 
   timeoutFunction = () => {
@@ -69,21 +68,27 @@ export class Chat extends React.Component {
     });
   }
 
+  toggleEmogis = () => {
+    console.log("Chat -> toggleEmogis -> toggleEmogis")
+    this.setState({ isOpenEmojis: !this.state.isOpenEmojis })
+  }
+
   render() {
     return (
       <div className="chat">
         <form className="form-msg" onSubmit={this.sendMsg}>
-          <div className="container-send-msg flex space-between">
+          <div className="container-send-msg flex space-between align-center">
             <input className="input-chat" placeholder="Write Messge" value={this.state.msg}
               name="msg" onChange={this.onHandleChange} autoComplete="off" />
+            <InsertEmoticonIcon onClick={this.toggleEmogis} />
             <Button type="primary" onClick={this.sendMsg} style={{ color: "white" }}>
               <SendIcon />
             </Button>
           </div>
         </form>
-        <div className="reactions flex">
+        {this.state.isOpenEmojis && <div className="reactions flex">
           <Emoji onEmojiChoose={this.onEmojiChoose} />
-        </div>
+        </div>}
       </div>
     )
   }

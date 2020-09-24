@@ -4,7 +4,6 @@ import SaveIcon from '@material-ui/icons/Save';
 import CreateIcon from '@material-ui/icons/Create';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Avatar from '@material-ui/core/Avatar';
-import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import CircleLoading from 'react-loadingg/lib/CircleLoading';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -68,12 +67,7 @@ export class BoxInfo extends Component {
         this.onSave('isEditableImg');
     }
 
-    getUsersAvatars(connectedUsers) {
-        const avatars = connectedUsers.map(user => {
-            return <Avatar alt={user.name} title={user.name} key={user.id} src={user.imgUrl} style={{ width: '30px', height: '30px' }} />
-        })
-        return avatars;
-    }
+
 
     getIsUserLikeBox(box, minimalUser) {
         return (boxService.getIsUserLikeBox(box, minimalUser) !== -1) ? 'liked' : '';
@@ -114,19 +108,19 @@ export class BoxInfo extends Component {
                         <label>{box.createdBy.name}</label>
                     </div>
                 </div>
+                
                 <div className="social-params flex column space-between">
                     <div onClick={() => this.props.onToggleLikeBox(box._id, minimalUser)} className={`like ${this.getIsUserLikeBox(box, minimalUser)}`}>
                         {box.likedByUsers.length}
                         <FavoriteIcon />
                     </div>
-                    <AvatarGroup className="connected-users" max={4}>
-                        {this.getUsersAvatars(box.connectedUsers)}
-                    </AvatarGroup>
+
                     <div className="share-btns-container">
-                    <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} target="_blank"><FacebookIcon/></a>
+                        <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} target="_blank"><FacebookIcon /></a>
                         <a className="whatsapp-share-btn" href={`whatsapp://send?text=${window.location.href}`} data-action="share/whatsapp/share"><WhatsAppIcon /></a>
                     </div>
                 </div>
+
                 <div className="box-img">
                     <label className="upload-label" style={{ cursor: 'pointer' }}>
                         <input onChange={(ev) => this.uploadImg(ev)} type="file" hidden />

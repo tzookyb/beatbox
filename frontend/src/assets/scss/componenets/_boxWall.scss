@@ -1,9 +1,13 @@
 .wall-container {
+  height: 600px;
+  overflow-y: scroll;
   grid-column: 4/6;
   grid-row: 1/4;
   display: flex;
   align-items: center;
   flex-direction: column;
+  color: white;
+  font-size: 1.2rem;
   box-shadow: 0px 1px 5px 0 rgba(231, 231, 231, 0.96),
     0 1px 3px 1px rgba(188, 188, 188, 0.149);
   margin: 10px;
@@ -19,8 +23,18 @@
     position: absolute;
     width: 100%;
     text-align: center;
-    .reaction-user-name{
-        font-size: 0.8rem;
+    .reaction-user-name {
+      font-size: 0.8rem;
     }
+  }
+  .chat-header {
+    border-bottom: 1px solid white;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-height: 150px;
+    background: #26075f;
+    border-radius: 5px;
   }
 }
