@@ -30,7 +30,6 @@ class _BoxDetails extends Component {
         await this.props.loadBox(boxId);
         await boxService.addConnectedUser(boxId, minimalUser);
         // SOCKET SETUP
-        console.log(this.props)
         socketService.setup();
         socketService.emit('join box', this.props.currBox._id);
         socketService.on('get box status', this.setBoxStatus);
@@ -140,13 +139,10 @@ class _BoxDetails extends Component {
         this.props.updateBox(newBox);
     }
 
-
     getDominantColor = () => {
         const colorThief = new ColorThief();
         const img = this.imgRef.current;
         const result = colorThief.getColor(img, 25)
-        console.log("getDominantColor -> result", result.join(','))
-
         this.setState({ dominantColor: result })
     }
 
