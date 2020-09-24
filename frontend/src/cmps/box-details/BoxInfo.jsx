@@ -121,7 +121,7 @@ export class BoxInfo extends Component {
                     </div>
 
                     <div className="share-btns-container flex space-evenely">
-                        <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} target="_blank"><FacebookIcon /></a>
+                        <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} rel="noopener noreferrer" target="_blank"><FacebookIcon /></a>
                         <a className="whatsapp-share-btn" href={`whatsapp://send?text=${window.location.href}`} data-action="share/whatsapp/share"><WhatsAppIcon /></a>
                     </div>
                 </div>

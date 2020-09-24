@@ -16,10 +16,13 @@ class _BoxApp extends Component {
     }
 
     componentDidMount() {
-        let genre = new URLSearchParams(window.location.href).get('genre');
-        if (!genre) genre = '';
-        const filterBy = { name: '', genre }
-        this.setState({ ...this.state.filterBy, filterBy: { genre } }, () => this.props.loadBoxes(filterBy))
+        let urlParams = new URLSearchParams(window.location.href);
+        let genre = urlParams.get('genre') || '';
+        let name = urlParams.get('name') || '';
+        // if (!genre) genre = ''
+        const filterBy = { name, genre };
+        this.props.loadBoxes(filterBy);
+        // this.setState({ ...this.state.filterBy, filterBy: { genre } }, () => this.props.loadBoxes(filterBy))
     }
 
     componentDidUpdate(prevProps, prevState) {
