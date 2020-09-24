@@ -1,5 +1,6 @@
 // OUTSOURCE IMPORT
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import CircleLoading from 'react-loadingg/lib/CircleLoading'
 // LOCAL IMPORT
@@ -9,28 +10,14 @@ import { userService } from '../services/userService'
 import { loadBoxes } from '../store/actions/boxAction'
 
 class _BoxApp extends Component {
-    state = {
-        filterBy: {
-            genre: ''
-        }
-    }
 
     componentDidMount() {
-        let urlParams = new URLSearchParams(window.location.href);
-        let genre = urlParams.get('genre') || '';
-        let name = urlParams.get('name') || '';
-        // if (!genre) genre = ''
-        const filterBy = { name, genre };
-        this.props.loadBoxes(filterBy);
-        // this.setState({ ...this.state.filterBy, filterBy: { genre } }, () => this.props.loadBoxes(filterBy))
+        this.props.loadBoxes();
     }
-
-    componentDidUpdate(prevProps, prevState) {
-        if (this.props.location?.search === prevProps.location?.search) return;
-        const genre = new URLSearchParams(window.location.href).get('genre');
-        let filterBy = { name: '', genre: '' };
-        if (genre) filterBy = { name: '', genre }
-        this.props.loadBoxes(filterBy);
+    componentDidUpdate(prevProps) {
+        if (prevProps.filter !== this.props.filter) {
+            this.props.loadBoxes(this.props.filter);
+        }
     }
 
     render() {
@@ -55,13 +42,12 @@ class _BoxApp extends Component {
 
 const mapStateToProps = state => {
     return {
-        filterByName: state.boxReducer.filterBy,
+        filter: state.boxReducer.filter,
         boxes: state.boxReducer.boxes,
-        user: state.userReducer.loggedinUser
     }
 }
 const mapDispatchToProps = {
     loadBoxes,
 }
 
-export const BoxApp = connect(mapStateToProps, mapDispatchToProps)(_BoxApp)
+export const BoxApp = connect(mapStateToProps, mapDispatchToProps)(withRouter(_BoxApp))

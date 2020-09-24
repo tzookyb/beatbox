@@ -1,14 +1,13 @@
 // OUTSOURCE IMPORT
 import React, { Component } from 'react'
-import { NavLink, Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 // LOCAL IMPORT
 import { boxService } from '../services/boxService'
 
-
-export class GenresFilter extends Component {
+export class _GenresFilter extends Component {
     state = {
         genres: [],
         genreCount: 5
@@ -16,8 +15,8 @@ export class GenresFilter extends Component {
 
     componentDidMount() {
         const genres = boxService.getAllGenres();
-        const { genreCount } = this.props
-        this.setState({ genres: [...genres], genreCount })
+        const { genreCount } = this.props;
+        this.setState({ genres: [...genres], genreCount });
     }
 
     goNextGenre = () => {
@@ -32,21 +31,40 @@ export class GenresFilter extends Component {
         this.setState({ genres: newGenres })
     }
 
+    getQueryParams = (genre) => {
+        let query = new URLSearchParams(this.props.history.location.search);
+        query.set('genre', genre);
+        return query.toString();
+    }
+    getCurrGenre = () => {
+        const urlParams = new URLSearchParams(this.props.history.location.search)
+        return urlParams.get('genre');
+    }
+
     render() {
-        const { genres, genreCount } = this.state
+        const { genres, genreCount } = this.state;
         if (!genres.length) return <h1>Loading...</h1>
+        const currGenre = this.getCurrGenre();
+        const isFiltered = !!this.props.location.search;
         return (
             <div className="btns-filter flex justify-center align-center">
                 <button onClick={() => this.goPrevGenre()} className="btn-filter-nav"><ArrowBackIosIcon /></button>
-                <NavLink activeClassName='active-filter' exact to={`/box`} className="btn-filter">All </NavLink>
+                <Link to="/box" className={`btn-filter ${!isFiltered ? 'active-filter' : ''}`} >All</Link>
                 {genres.map((genre, idx) => {
                     if (idx - 1 <= genreCount) {
-                        return <NavLink to={`/box?&genre=${genre}`} className="btn-filter" key={idx}>{genre} </NavLink>
+                        return <Link
+                            to={`/box?${this.getQueryParams(genre)}`}
+                            className={`btn-filter ${(genre === currGenre) ? 'active-filter' : ''}`}
+                            key={idx} > {genre}
+                        </Link>
+                        // return <NavLink to={`/ box ?& genre=${genre}`} className="btn-filter" key={idx}>{genre} </NavLink>
                     } else return null;
                 })
                 }
                 <button onClick={() => this.goNextGenre()} className="btn-filter-nav"><ArrowForwardIosIcon /></button>
-            </div>
+            </div >
         )
     }
 }
+
+export const GenresFilter = withRouter(_GenresFilter);

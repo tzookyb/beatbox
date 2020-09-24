@@ -5,7 +5,7 @@ const initialState = {
     isNoticeShown: false,
     msg: '',
     currSong: null,
-    filterByName: ''
+    filter: ''
 }
 
 export function boxReducer(state = initialState, action) {
@@ -42,7 +42,7 @@ export function boxReducer(state = initialState, action) {
             }
         case 'SET_FILTER':
             return {
-                ...state, filterBy: action.filterBy
+                ...state, filter: action.filter
             }
         default:
             return state

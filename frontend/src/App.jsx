@@ -21,7 +21,7 @@ class _App extends Component {
         <main>
           <Switch>
             <Route component={BoxAdd} path="/box/add" />
-            <Route component={BoxDetails} path="/box/:boxId" />
+            <Route component={BoxDetails} path="/box/details/:boxId" />
             <Route component={UserDetails} path="/user/:id" />
             <Route component={Login} path="/login" />
             <Route component={BoxApp} path="/box" />

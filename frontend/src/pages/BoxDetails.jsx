@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CircleLoading from 'react-loadingg/lib/CircleLoading'
 
-// LOCAL IMPORT
 import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
 import { BoxWall } from '../cmps/box-details/BoxWall';
@@ -16,13 +15,13 @@ import { setCurrSong } from '../store/actions/playerActions'
 
 class _BoxDetails extends Component {
     state = {
-        filterBy: '',
         isSongPickOpen: false,
         isDragging: false,
         messages: []
     }
 
     async componentDidMount() {
+        console.log(this.props.filter)
         const boxId = this.props.match.params.boxId;
         const minimalUser = this.getMinimalUser();
         await this.props.loadBox(boxId);
@@ -85,12 +84,8 @@ class _BoxDetails extends Component {
         this.props.updateBox(box);
     }
 
-    onSetFilter = (filterBy) => {
-        this.setState({ filterBy: filterBy.name })
-    }
-
     getSongsForDisplay = () => {
-        const songs = this.props.box.songs.filter(song => song.title.toLowerCase().includes(this.state.filterBy.toLowerCase()));
+        const songs = this.props.box.songs.filter(song => song.title.toLowerCase().includes(this.props.filter?.toLowerCase()));
         return songs;
     }
 
@@ -143,15 +138,15 @@ class _BoxDetails extends Component {
     }
 
     render() {
-        const { isSongPickOpen, isDragging, filterBy } = this.state;
-        const { box, messages } = this.props;
+        const { isSongPickOpen, isDragging, } = this.state;
+        const { box, messages, filter } = this.props;
         if (!box) return <CircleLoading size="large" color="#ac0aff" />
         const currSongId = box.currSong?.id || null;
         const songsToShow = this.getSongsForDisplay();
         const minimalUser = this.getMinimalUser();
 
         return (
-            <section className="box-details flex space-between">
+            <section className="box-details flex space-between" style={}>
                 <div className="box-details-main flex column space-between">
                     <BoxInfo box={box} onSaveInfo={this.onSaveInfo} minimalUser={minimalUser} onToggleLikeBox={this.onToggleLikeBox} />
 
@@ -165,7 +160,7 @@ class _BoxDetails extends Component {
                         nowPlayingId={currSongId}
                         onDragStart={this.onDragStart}
                         onDragEnd={this.onDragEnd}
-                        isFilter={!!filterBy}
+                        isFilter={!!filter}
                         isDragging={isDragging}
                     />
 
@@ -178,6 +173,7 @@ class _BoxDetails extends Component {
 const mapStateToProps = state => {
     return {
         box: state.boxReducer.currBox,
+        filter: state.boxReducer.filter,
         user: state.userReducer.loggedinUser,
         messages: state.messageReducer.messages
     }

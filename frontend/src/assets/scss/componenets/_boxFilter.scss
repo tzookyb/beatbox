@@ -2,13 +2,10 @@
   max-width: 300px;
   padding: 8px;
   border-radius: 5px;
-  display: flex;
   justify-content: space-evenly;
-  border: 1px solid white;
-  width: 40px;
+  border-bottom: 1px solid white;
   transition: 0.7s;
   margin-inline-start: 20px;
-
 
   .search-icon {
     cursor: pointer;
@@ -17,9 +14,7 @@
       color: $clr3;
     }
   }
-  &.open {
-    width: 250px;
-  }
+
   input {
     border-color: white;
     color: white;
@@ -31,9 +26,6 @@
     &::placeholder {
       color: rgba(206, 206, 206, 0.9);
       border-color: white;
-    }
-    svg {
-      // color: white;
     }
   }
 }

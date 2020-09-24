@@ -30,7 +30,7 @@ class _Header extends Component {
             <header onScroll={this.onScroll} className={`${this.state.isScroll || this.props.location.pathname !== '/' ? 'sticky' : ''} flex space-around align-center`}>
 
                 {(this.props.location.pathname === '/') ?
-                    <a href="/#top"><img title="BeatBox" className="logo" src={require('../assets/img/logo.png')} alt="logo" /></a> :
+                    <a href="#top"><img title="BeatBox" className="logo" src={require('../assets/img/logo.png')} alt="logo" /></a> :
                     <Link to="/" ><img title="BeatBox" className="logo" src={require('../assets/img/logo.png')} alt="logo" /></Link>
                 }
 
