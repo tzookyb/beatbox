@@ -123,7 +123,7 @@ export class BoxInfo extends Component {
                         {this.getUsersAvatars(box.connectedUsers)}
                     </AvatarGroup>
                     <div className="share-btns-container">
-                    <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} target="_blank"><FacebookIcon/></a>
+                    <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} rel="noopener noreferrer" target="_blank"><FacebookIcon/></a>
                         <a className="whatsapp-share-btn" href={`whatsapp://send?text=${window.location.href}`} data-action="share/whatsapp/share"><WhatsAppIcon /></a>
                     </div>
                 </div>

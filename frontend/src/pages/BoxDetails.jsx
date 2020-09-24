@@ -5,7 +5,6 @@ import CircleLoading from 'react-loadingg/lib/CircleLoading'
 // LOCAL IMPORT
 import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
-import { BoxFilter } from '../cmps/boxes/BoxFilter';
 import { BoxWall } from '../cmps/box-details/BoxWall';
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService';
