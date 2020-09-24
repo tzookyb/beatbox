@@ -84,28 +84,33 @@ export class BoxInfo extends Component {
                         {isEditableName ?
                             <React.Fragment>
                                 <input autoFocus type="txt" value={box.name} name="name" onChange={this.handleInput} />
-                                <button onClick={() => this.onSave('isEditableName')} ><SaveIcon /></button>
+                                <div className="btn-hide-container">
+                                    <button onClick={() => this.onSave('isEditableName')} ><SaveIcon /></button>
+                                </div>
                             </React.Fragment>
                             :
                             <React.Fragment>
                                 <h2 className="box-name"> {box.name}</h2>
                                 <button onClick={() => this.onEdit('isEditableName')} className="hide-btn"><CreateIcon /></button>
+
                             </React.Fragment>
                         }
                     </div>
 
                     <div className="info-description flex">
                         {!isEditableDesc && <p className="box-description"> {box.description}</p>}
-                        {!isEditableDesc && <button onClick={() => this.onEdit('isEditableDesc')} className="hide-btn"><CreateIcon /></button>}
+                        <div className="btn-hide-container">
+                            {!isEditableDesc && <button onClick={() => this.onEdit('isEditableDesc')} className="hide-btn"><CreateIcon /></button>}
+                        </div>
                         {isEditableDesc && <textarea autoFocus type="txt" value={box.description} name="description" onChange={this.handleInput} />}
                         {isEditableDesc && <button onClick={() => this.onSave('isEditableDesc')} ><SaveIcon /></button>}
                     </div>
                     <h4>{box.genre}</h4>
 
                     <div className="info-creator flex align-center">
-                        <label>Created By: </label>
-                        <Avatar alt="Remy Sharp" src={box.createdBy.imgUrl} style={{ width: '40px', height: '40px' }} />
-                        <label>{box.createdBy.name}</label>
+                        <h5>Created By: </h5>
+                        <Avatar alt="Remy Sharp" src={box.createdBy.imgUrl} style={{ width: '35px', height: '35px' }} />
+                        <h5>{box.createdBy.name}</h5>
                     </div>
                 </div>
 
@@ -115,7 +120,7 @@ export class BoxInfo extends Component {
                         <FavoriteIcon />
                     </div>
 
-                    <div className="share-btns-container">
+                    <div className="share-btns-container flex space-evenely">
                         <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} rel="noopener noreferrer" target="_blank"><FacebookIcon /></a>
                         <a className="whatsapp-share-btn" href={`whatsapp://send?text=${window.location.href}`} data-action="share/whatsapp/share"><WhatsAppIcon /></a>
                     </div>
@@ -128,7 +133,7 @@ export class BoxInfo extends Component {
                     </label>
                 </div>
 
-            </section>
+            </section >
         )
     }
 }

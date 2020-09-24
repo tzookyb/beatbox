@@ -38,9 +38,10 @@ class _BoxWall extends Component {
     setTyping = (typingStr) => {
         this.setState({ typingStr })
     }
+    
     getUsersAvatars(connectedUsers) {
         const avatars = connectedUsers.map(user => {
-            return <Avatar alt={user.name} title={user.name} key={user.id} src={user.imgUrl} style={{ width: '30px', height: '30px' }} />
+            return <Avatar alt={user.name} title={user.name} key={user.id} src={user.imgUrl} style={{ width: '30px', height: '30px', border:"black"}} />
         })
         return avatars;
     }
@@ -52,7 +53,7 @@ class _BoxWall extends Component {
         return (
             <section className="wall-container">
                 <div className="chat-header">
-                    <h2> Box Wall </h2>
+                    <h2> Chat Box </h2>
                     <AvatarGroup className="connected-users" max={4}>
                         {this.getUsersAvatars(box.connectedUsers)}
                     </AvatarGroup>

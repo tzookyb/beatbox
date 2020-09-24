@@ -13,24 +13,24 @@
     padding: 8px;
     margin: 0 5px;
     height: 33%;
-    .box-preview-reaction {
-      height: 100%;
-      .likes {
-        svg {
-          cursor: pointer;
-          font-size: 2.4rem;
-        }
-      }
+    // .box-preview-reaction {
+    //   height: 100%;
+    //   .likes {
+    //     svg {
+    //       cursor: pointer;
+    //       font-size: 2.4rem;
+    //     }
+    //   }
 
-      svg {
-        color: rgb(95, 95, 95);
-      }
-      .liked {
-        svg {
-          color: #c5565b;
-        }
-      }
-    }
+    //   svg {
+    //     color: rgb(95, 95, 95);
+    //   }
+    //   .liked {
+    //     svg {
+    //       color: #c5565b;
+    //     }
+    //   }
+    // }
     .box-preview-data {
       height: 100%;
       align-items: flex-end;
