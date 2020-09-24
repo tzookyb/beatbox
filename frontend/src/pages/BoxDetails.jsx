@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CircleLoading from 'react-loadingg/lib/CircleLoading'
+
 // LOCAL IMPORT
 import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
@@ -24,23 +25,25 @@ class _BoxDetails extends Component {
     async componentDidMount() {
         const boxId = this.props.match.params.boxId;
         const minimalUser = this.getMinimalUser();
-        // const messages = socketService.getMessagesByBoxId(boxId)
         await this.props.loadBox(boxId);
         await boxService.addConnectedUser(boxId, minimalUser);
-
         // SOCKET SETUP
         socketService.setup();
         socketService.emit('join box', this.props.box._id);
-        socketService.on('get box status', this.props.setCurrSong)
+        socketService.on('get box status', this.setBoxStatus)
+        // socketService.on('get box status', this.props.setCurrSong)
         socketService.on('song changed', this.props.setCurrSong);
         socketService.on('box changed', this.props.gotBoxUpdate);
         socketService.on('chat addMsg', this.addMsg);
-
     }
 
-    addMsg = async (msgObj) => {
-        this.props.addMessage(this.props.box._id, msgObj);
-        await this.props.loadMessages(this.props.box._id);
+    setBoxStatus =  (boxStatus) => {
+        this.props.setCurrSong(boxStatus.currSong);
+         this.props.loadMessages(boxStatus.msgs)
+    }
+
+    addMsg = (msgObj) => {
+        this.props.addMessage(msgObj);
     }
 
     onRemoveSong = (ev, songId) => {
@@ -111,7 +114,7 @@ class _BoxDetails extends Component {
         else this.onSwapSongs(source.index, destination.index);
     }
 
-    addMessageChat = async (msg) => {
+    addMessageChat = (msg) => {
         const messageObj = {
             text: msg,
             submitAt: new Date(),
@@ -120,10 +123,9 @@ class _BoxDetails extends Component {
             avatar: this.props.user.imgUrl,
             type: 'system'
         }
-        const { box } = this.props;
-        await this.props.addMessage(box._id, messageObj)
-        await this.props.loadMessages(box._id);
+        socketService.emit('chat newMsg', messageObj);
     }
+
     getMinimalUser() {
         return userService.getMinimalUser();
     }
@@ -143,16 +145,15 @@ class _BoxDetails extends Component {
 
     render() {
         const { isSongPickOpen, isDragging, filterBy } = this.state;
-        const { box } = this.props;
+        const { box, messages } = this.props;
         if (!box) return <CircleLoading size="large" color="#ac0aff" />
-
         const currSongId = box.currSong?.id || null;
         const songsToShow = this.getSongsForDisplay();
         const minimalUser = this.getMinimalUser();
 
         return (
             <section className="box-details">
-                <BoxWall box={box} addMsg={this.addMsg} />
+                <BoxWall messages={messages} addMsg={this.addMsg} />
                 <BoxInfo box={box} onSaveInfo={this.onSaveInfo} minimalUser={minimalUser} onToggleLikeBox={this.onToggleLikeBox} />
 
                 <SongList
@@ -175,7 +176,8 @@ class _BoxDetails extends Component {
 const mapStateToProps = state => {
     return {
         box: state.boxReducer.currBox,
-        user: state.userReducer.loggedinUser
+        user: state.userReducer.loggedinUser,
+        messages: state.messageReducer.messages
     }
 }
 const mapDispatchToProps = {

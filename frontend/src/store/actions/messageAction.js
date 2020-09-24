@@ -1,16 +1,13 @@
 
-import { socketService } from '../../services/socketService'
 
-export function loadMessages(boxId) {
+export function loadMessages(messages) {
   return async dispatch => {
-    const messages = await socketService.getMessagesByBoxId(boxId);
     dispatch({ type: 'SET_MESSAGES', messages })
   };
 }
 
-export function addMessage(boxId, msg) {
+export function addMessage(message) {
   return async dispatch => {
-    const message = await socketService.addMessagesToBox(boxId, msg);
     dispatch({ type: 'ADD_MESSAGE', message })
   };
 }

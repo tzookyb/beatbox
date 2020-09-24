@@ -10,7 +10,6 @@ function createBoxStatus() {
             secPlayed: 0,
             isPlaying: true
         },
-        // typingStr: ''
     }
 }
 
@@ -18,6 +17,7 @@ function getBoxStatus(boxId) {
     if (!boxMap[boxId]) boxMap[boxId] = createBoxStatus()
     return boxMap[boxId]
 }
+
 
 function connectSockets(io) {
     io.on('connection', socket => {
@@ -34,7 +34,7 @@ function connectSockets(io) {
         })
         socket.on('chat newMsg', msg => {
             boxMap[socket.myBox].msgs.push(msg);
-            io.to(socket.myBox).emit('chat addMsg', msg)
+            io.to(socket.myBox).emit('chat addMsg', msg);
         })
         socket.on('chat typing', typingStr => {
             // boxMap[socket.myBox].typingStr = typingStr;
@@ -53,9 +53,9 @@ function connectSockets(io) {
             io.to(socket.myBox).emit('update song time', secPlayed)
         })
         socket.on('set currSong', currSong => {
-            boxMap[socket.myBox].currSongId = currSong.id
-            boxMap[socket.myBox].secPlayed = currSong.secPlayed
-            boxMap[socket.myBox].isPlaying = currSong.isPlaying
+            boxMap[socket.myBox].currSong.id = currSong.id
+            boxMap[socket.myBox].currSong.secPlayed = currSong.secPlayed
+            boxMap[socket.myBox].currSong.isPlaying = currSong.isPlaying
 
             io.to(socket.myBox).emit('song changed', currSong)
         })

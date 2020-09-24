@@ -26,7 +26,7 @@ export const MessageBox = ({ text, submitBy, submitAt, avatar, own, type }) => {
             <Col>
               <div className="chat-message"
                 style={{
-                  backgroundColor: "pink",
+                  backgroundColor: " #b0a5a7",
                   color: "black",
                   borderRadius: "0px 10px 10px 0px",
                   padding: "10px",
