@@ -33,9 +33,9 @@ export class ChatBox extends Component {
     render() {
         const { messages } = this.props;
         return (
-            <div>
+            <section className="chat-box">
                 {messages ? <this.renderMessages /> : <Spin size="large" />}
-            </div>
+            </section>
         );
     }
 }

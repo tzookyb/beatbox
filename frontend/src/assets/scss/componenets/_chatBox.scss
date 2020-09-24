@@ -1,0 +1,10 @@
+.chat-box{
+    padding: 0px; 
+    height: 520px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.chat-box::-webkit-scrollbar {
+    display: none;
+}

@@ -44,6 +44,9 @@
   }
 
   .info-header {
+    .btn-hide-container {
+      width: 50px;
+    }
     .box-name {
       font-size: 1.8rem;
     }
@@ -63,11 +66,14 @@
   }
 
   .info-description {
+    .btn-hide-container {
+      width: 50px;
+    }
     max-width: 400px;
 
     .box-description {
       margin: 0;
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
 
     textarea {
@@ -93,10 +99,12 @@
   .info-creator {
     color: darkgray;
     font-size: 1.1rem;
+    justify-content: space-evenly;
+    width: 175px;
   }
 
   .info-input-actions {
-    >* {
+    > * {
       margin: 5px;
     }
 
@@ -123,6 +131,9 @@
   .social-params {
     .like {
       cursor: pointer;
+      svg {
+        font-size: 3rem;
+      }
     }
 
     .liked {
@@ -130,19 +141,10 @@
         color: #c5565b;
       }
     }
-.share-btns-container {
-  
-  >*{
-
-    color: #FFF;
-  }
- 
-}
-
-    .connected-users {
-      >* {
-        height: 30px;
-        width: 30px;
+    .share-btns-container {
+      width: 100px;
+      > * {
+        color: #fff;
       }
     }
   }
