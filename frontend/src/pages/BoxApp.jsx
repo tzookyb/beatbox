@@ -12,12 +12,14 @@ import { loadBoxes } from '../store/actions/boxAction'
 class _BoxApp extends Component {
 
     componentDidMount() {
-        this.props.loadBoxes();
+        this.onLoadBoxes()
     }
     componentDidUpdate(prevProps) {
-        if (prevProps.filter !== this.props.filter) {
-            this.props.loadBoxes(this.props.filter);
-        }
+        if (this.props.location.search === prevProps.location.search) return;
+        this.onLoadBoxes();
+    }
+    onLoadBoxes = () => {
+        this.props.loadBoxes(this.props.location.search);
     }
 
     render() {
@@ -42,7 +44,6 @@ class _BoxApp extends Component {
 
 const mapStateToProps = state => {
     return {
-        filter: state.boxReducer.filter,
         boxes: state.boxReducer.boxes,
     }
 }

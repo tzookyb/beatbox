@@ -33,13 +33,11 @@ export class _BoxFilter extends Component {
     }
 
     onSetFilter = () => {
-        let query;
         if (!this.state.isAtBoxDetails) {
-            query = new URLSearchParams(window.location.search);
+            const query = new URLSearchParams(window.location.search);
             if (this.state.searchStr) query.set('name', this.state.searchStr);
             this.props.history.push(`/box?${query.toString()}`);
-        } else query = this.state.searchStr;
-        this.props.setFilter(query);
+        } else this.props.setFilter(this.state.searchStr);
     }
 
     render() {

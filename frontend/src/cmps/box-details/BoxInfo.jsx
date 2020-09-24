@@ -129,7 +129,12 @@ export class BoxInfo extends Component {
                 <div className="box-img">
                     <label className="upload-label" style={{ cursor: 'pointer' }}>
                         <input onChange={(ev) => this.uploadImg(ev)} type="file" hidden />
-                        <img src={box.imgUrl} alt="" />
+                        <img
+                            crossOrigin={"anonymous"}
+                            ref={this.props.imgRef}
+                            src={box.imgUrl}
+                            alt=""
+                            onLoad={this.props.getDominantColor} />
                     </label>
                 </div>
 
@@ -137,4 +142,3 @@ export class BoxInfo extends Component {
         )
     }
 }
-

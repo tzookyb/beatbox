@@ -33,14 +33,12 @@ function getUsedGenres(boxes) {
 }
 
 async function getById(boxId) {
-    return httpService.get(`box/${boxId}`)
+    return await httpService.get(`box/${boxId}`)
 }
 
-async function query(filterBy) {
-    const name = filterBy?.get('name') || '';
-    const genre = filterBy?.get('genre') || '';
-    var queryStr = `?name=${name}&genre=${genre}`;
-    return await httpService.get(`box${queryStr}`);
+async function query(query) {
+    query = query || '';
+    return await httpService.get(`box${query}`);
 }
 
 function getEmptyBox(user) {

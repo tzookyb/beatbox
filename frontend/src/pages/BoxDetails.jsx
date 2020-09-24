@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CircleLoading from 'react-loadingg/lib/CircleLoading'
+import ColorThief from "colorthief";
 
 import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
@@ -17,20 +18,22 @@ class _BoxDetails extends Component {
     state = {
         isSongPickOpen: false,
         isDragging: false,
-        messages: []
+        messages: [],
+        dominantColor: ''
     }
 
+    imgRef = React.createRef();
+
     async componentDidMount() {
-        console.log(this.props.filter)
         const boxId = this.props.match.params.boxId;
         const minimalUser = this.getMinimalUser();
         await this.props.loadBox(boxId);
         await boxService.addConnectedUser(boxId, minimalUser);
         // SOCKET SETUP
+        console.log(this.props)
         socketService.setup();
-        socketService.emit('join box', this.props.box._id);
+        socketService.emit('join box', this.props.currBox._id);
         socketService.on('get box status', this.setBoxStatus);
-        // socketService.on('get box status', this.props.setCurrSong)
         socketService.on('song changed', this.props.setCurrSong);
         socketService.on('box changed', this.props.gotBoxUpdate);
         socketService.on('chat addMsg', this.props.addMessage);
@@ -50,7 +53,7 @@ class _BoxDetails extends Component {
             ev.preventDefault();
         }
 
-        const box = { ...this.props.box }
+        const box = { ...this.props.currBox }
         const songIdx = box.songs.findIndex(song => song.id === songId)
         if (box.currSong.id === songId) {
             if (box.songs.length === 1) {
@@ -68,7 +71,7 @@ class _BoxDetails extends Component {
 
     onAddSong = (song) => {
         const newSong = boxService.addSong(song);
-        const box = { ...this.props.box };
+        const box = { ...this.props.currBox };
         box.songs.push(newSong);
         this.addMessageChat(`Song ${newSong.title} added by ${this.props.user.username}`);
         this.props.updateBox(box);
@@ -85,12 +88,12 @@ class _BoxDetails extends Component {
     }
 
     getSongsForDisplay = () => {
-        const songs = this.props.box.songs.filter(song => song.title.toLowerCase().includes(this.props.filter?.toLowerCase()));
+        const songs = this.props.currBox.songs.filter(song => song.title.toLowerCase().includes(this.props.filter.toLowerCase));
         return songs;
     }
 
     toggleSongPick = () => {
-        this.setState({ isSongPickOpen: !this.state.isSongPickOpen })
+        this.setState(prevState => ({ isSongPickOpen: !prevState.isSongPickOpen }))
     }
 
     onDragStart = () => {
@@ -130,25 +133,35 @@ class _BoxDetails extends Component {
     }
 
     onSwapSongs = (srcIdx, destIdx) => {
-        const newSongs = [...this.props.box.songs];
+        const newSongs = [...this.props.currBox.songs];
         const [songToMove] = newSongs.splice(srcIdx, 1);
         newSongs.splice(destIdx, 0, songToMove)
-        const newBox = { ...this.props.box, songs: newSongs }
+        const newBox = { ...this.props.currBox, songs: newSongs }
         this.props.updateBox(newBox);
+    }
+
+
+    getDominantColor = () => {
+        const colorThief = new ColorThief();
+        const img = this.imgRef.current;
+        const result = colorThief.getColor(img, 25)
+        console.log("getDominantColor -> result", result.join(','))
+
+        this.setState({ dominantColor: result })
     }
 
     render() {
         const { isSongPickOpen, isDragging, } = this.state;
-        const { box, messages, filter } = this.props;
-        if (!box) return <CircleLoading size="large" color="#ac0aff" />
-        const currSongId = box.currSong?.id || null;
+        const { currBox, messages, filter } = this.props;
+        if (!currBox) return <CircleLoading size="large" color="#ac0aff" />
+        const currSongId = currBox.currSong?.id || null;
         const songsToShow = this.getSongsForDisplay();
         const minimalUser = this.getMinimalUser();
 
         return (
-            <section className="box-details flex space-between" style={}>
+            <section className="box-details flex space-between" style={{ backgroundColor: `rgb(${this.state.dominantColor})` }}>
                 <div className="box-details-main flex column space-between">
-                    <BoxInfo box={box} onSaveInfo={this.onSaveInfo} minimalUser={minimalUser} onToggleLikeBox={this.onToggleLikeBox} />
+                    <BoxInfo getDominantColor={this.getDominantColor} imgRef={this.imgRef} box={currBox} onSaveInfo={this.onSaveInfo} minimalUser={minimalUser} onToggleLikeBox={this.onToggleLikeBox} />
 
                     <SongList
                         songs={songsToShow}
@@ -172,7 +185,7 @@ class _BoxDetails extends Component {
 }
 const mapStateToProps = state => {
     return {
-        box: state.boxReducer.currBox,
+        currBox: state.boxReducer.currBox,
         filter: state.boxReducer.filter,
         user: state.userReducer.loggedinUser,
         messages: state.messageReducer.messages
