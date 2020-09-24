@@ -1,13 +1,13 @@
 .wall-container {
-  height: 600px;
-  overflow-y: scroll;
-  grid-column: 4/6;
-  grid-row: 1/4;
+  // height: 600px;
+  // overflow-y: scroll;
+  // grid-column: 4/6;
+  // grid-row: 1/4;
   display: flex;
   align-items: center;
   flex-direction: column;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
   box-shadow: 0px 1px 5px 0 rgba(231, 231, 231, 0.96),
     0 1px 3px 1px rgba(188, 188, 188, 0.149);
   margin: 10px;
@@ -15,9 +15,12 @@
   width: 80%;
   margin: 0 auto;
   position: relative;
+
   .wall-content {
     width: 100%;
+    // height: 100%;
   }
+
   .my-emoji {
     font-size: 1.8rem;
     position: absolute;
@@ -28,13 +31,26 @@
     }
   }
   .chat-header {
-    border-bottom: 1px solid white;
+    font-family: Raleway, sans-serif;
+    background: #282a2b;
     width: 100%;
     align-items: center;
     display: flex;
     flex-direction: column;
     max-height: 150px;
-    background: #26075f;
+    // background: #26075f;
     border-radius: 5px;
   }
+  .typing-container {
+    height: 30px;
+    font-size: 0.7rem;
+    color: #a6a6a6;
+  }
+   .connected-users {
+      > * {
+        height: 30px;
+        width: 30px;
+        border: black;
+      }
+    }
 }

@@ -17,7 +17,7 @@ export class Chat extends React.Component {
   }
 
   onTyping = typingStr => {
-    this.props.setTyping(typingStr)
+    this.props.setTyping(typingStr);
   }
 
   sendMsg = (ev) => {
@@ -32,7 +32,7 @@ export class Chat extends React.Component {
         avatar: this.props.user.imgUrl,
         type: 'chat'
       }
-     socketService.emit('chat newMsg', msgObj);
+      socketService.emit('chat newMsg', msgObj);
       this.setState({ msg: '' })
     }
   };
@@ -69,7 +69,6 @@ export class Chat extends React.Component {
   }
 
   toggleEmogis = () => {
-    console.log("Chat -> toggleEmogis -> toggleEmogis")
     this.setState({ isOpenEmojis: !this.state.isOpenEmojis })
   }
 
@@ -78,7 +77,7 @@ export class Chat extends React.Component {
       <div className="chat">
         <form className="form-msg" onSubmit={this.sendMsg}>
           <div className="container-send-msg flex space-between align-center">
-            <input className="input-chat" placeholder="Write Messge" value={this.state.msg}
+            <input className="input-chat" placeholder="Send Message" value={this.state.msg}
               name="msg" onChange={this.onHandleChange} autoComplete="off" />
             <InsertEmoticonIcon onClick={this.toggleEmogis} />
             <Button type="primary" onClick={this.sendMsg} style={{ color: "white" }}>

@@ -1,4 +1,4 @@
 node_modules/
 .vscode/
 frontend/debug.log
-backend/backend.log
+backend/logs/backend.log

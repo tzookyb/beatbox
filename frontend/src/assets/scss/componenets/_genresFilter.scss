@@ -1,19 +1,18 @@
 .btns-filter {
   flex-wrap: wrap;
-
+  
   .btn-filter,
   .btn-filter-nav {
+    text-align: center;
+    font-size: 1.2rem;
     background: transparent;
+    font-family: Raleway, sans-serif;
+    padding: 5px 20px;
     border-radius: 999px;
-    padding: 0 20px;
     color: white;
-    box-shadow: 0px 1px 5px 0 rgb(138, 108, 193);
     transition: 0.3s;
     width: 150px;
-    &:active {
-      background: #484848;
-    }
-
+    // border: 1px solid white;
     &:hover {
       box-shadow: 0px 1px 5px 0 rgba(231, 231, 231, 0.96),
         0 1px 3px 1px rgba(188, 188, 188, 0.149);
@@ -28,4 +27,7 @@
       box-shadow: none;
     }
   }
+  // .active-filter {
+  //   background-color: rgb(121, 121, 121);
+  // }
 }

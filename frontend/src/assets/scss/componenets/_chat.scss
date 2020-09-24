@@ -1,7 +1,7 @@
 .chat {
   .form-msg {
     padding: 10px; 
-    background-color: transparent;
+    // background-color: transparent;
     div {
       border-radius: 999px;
     }
@@ -11,18 +11,16 @@
         background-color: white;
         border: none;
         box-shadow: none;
-        width: 330px;
+        width: 70%;
         height: 50px;
         font-size: 1.2rem;
         outline: none;
+        border-radius: 5px;
       }
     }
   }
   .reactions {
-    width: 150px;
-    height: 100px;
     background: white;
-    position: fixed;
     border-radius: 5px;
   }
 }

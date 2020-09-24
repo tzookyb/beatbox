@@ -1,6 +1,6 @@
 // OUTSOURCE IMPORT
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
@@ -36,12 +36,12 @@ export class GenresFilter extends Component {
         const { genres, genreCount } = this.state
         if (!genres.length) return <h1>Loading...</h1>
         return (
-            <div className="btns-filter flex justify-center">
+            <div className="btns-filter flex justify-center align-center">
                 <button onClick={() => this.goPrevGenre()} className="btn-filter-nav"><ArrowBackIosIcon /></button>
-                <Link to={`/box`} className="btn-filter">All </Link>
+                <NavLink activeClassName='active-filter' exact to={`/box`} className="btn-filter">All </NavLink>
                 {genres.map((genre, idx) => {
                     if (idx - 1 <= genreCount) {
-                        return <Link to={`/box?&genre=${genre}`} className="btn-filter" key={idx}>{genre} </Link>
+                        return <NavLink to={`/box?&genre=${genre}`} className="btn-filter" key={idx}>{genre} </NavLink>
                     } else return null;
                 })
                 }
