@@ -2,6 +2,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CircleLoading from 'react-loadingg/lib/CircleLoading'
+import { Fab } from '@material-ui/core';
+import AddIcon from '@material-ui/icons/Add';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import WhatsappIcon from '@material-ui/icons/WhatsApp';
+import FacebookIcon from '@material-ui/icons/Facebook';
 
 // LOCAL IMPORT
 import { SongList } from '../cmps/box-details/SongList'
@@ -13,6 +18,8 @@ import { socketService } from '../services/socketService';
 import { loadBox, updateBox, gotBoxUpdate } from '../store/actions/boxAction'
 import { addMessage, loadMessages } from '../store/actions/messageAction'
 import { setCurrSong } from '../store/actions/playerActions'
+
+
 
 class _BoxDetails extends Component {
     state = {
@@ -98,6 +105,10 @@ class _BoxDetails extends Component {
         this.setState({ isSongPickOpen: !this.state.isSongPickOpen })
     }
 
+    getIsUserLikeBox(box, minimalUser) {
+        return (boxService.getIsUserLikeBox(box, minimalUser) !== -1) ? 'liked' : '';
+    }
+
     onDragStart = () => {
         this.setState({ isDragging: true })
     }
@@ -151,17 +162,33 @@ class _BoxDetails extends Component {
         const minimalUser = this.getMinimalUser();
 
         return (
-            <section className="box-details flex space-between">
-                <div className="box-details-main flex column space-between">
+            <section className="box-details">
+                <div className="box-details-main flex column">
                     <BoxInfo box={box} onSaveInfo={this.onSaveInfo} minimalUser={minimalUser} onToggleLikeBox={this.onToggleLikeBox} />
-
+                    <div className="song-social-actions flex space-between">
+                        <div className="btns-container flex">
+                        <Fab className={`add-song-btn  ${isSongPickOpen ? 'opened' : ''}`} onClick={this.toggleSongPick} aria-label="add">
+                            <AddIcon />
+                        </Fab>
+                        <div onClick={() => this.onToggleLikeBox(box._id, minimalUser)} className={`like-btn ${this.getIsUserLikeBox(box, minimalUser)}`}>
+                            {box.likedByUsers.length}
+                            <FavoriteIcon />
+                        </div>
+                        </div>
+                        <div className="share-container flex space-between column">
+                            <p>share the box: </p>
+                            <div className="share-btns flex space-evenely">
+                                <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} rel="noopener noreferrer" target="_blank"><FacebookIcon /></a>
+                                <a className="whatsapp-share-btn" href={`whatsapp://send?text=${box.createdBy.name} Shared a Box With You! : \n\n ${window.location.href}`} data-action="share/whatsapp/share"><WhatsappIcon /></a>
+                            </div>
+                        </div>
+                    </div>
                     <SongList
                         songs={songsToShow}
                         onPlaySong={this.onPlaySong}
                         onRemoveSong={this.onRemoveSong}
                         onAddSong={this.onAddSong}
                         isSongPickOpen={isSongPickOpen}
-                        toggleSongPick={this.toggleSongPick}
                         nowPlayingId={currSongId}
                         onDragStart={this.onDragStart}
                         onDragEnd={this.onDragEnd}
@@ -170,7 +197,8 @@ class _BoxDetails extends Component {
                     />
 
                 </div>
-                <BoxWall messages={messages} addMsg={this.addMsg} />
+                <div className="chat-box flex column"></div>
+                {/* <BoxWall messages={messages} addMsg={this.addMsg} /> */}
             </section>
         )
     }

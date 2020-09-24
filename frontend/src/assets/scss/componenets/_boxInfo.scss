@@ -1,12 +1,8 @@
 .box-info {
-  min-height: rem(150px);
-  margin-bottom: 15px;
-  padding: 10px;
-  width: 100%;
-  background-color: #ffffff12;
-  height: 35% ;
-
   color: #fff;
+  background: linear-gradient(transparent, rgba(0, 0, 0, .5));
+  padding: 10px;
+  max-height: 35%;
 
   .box-img {
     width: 100%;
@@ -18,12 +14,44 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 5px;
     }
   }
 
-  p {
-    max-width: 60ch;
+  .info-txt {
+    margin-inline-start: 10px;
+
+    .info-header {
+      align-items: center;
+  
+      .btn-hide-container {
+        width: 50px;
+      }
+  
+      .box-name {
+        font-size: 2.6rem;
+      }
+  
+      input {
+        border: none;
+        border-radius: 5px;
+        padding: 5px;
+        outline: none;
+      }
+  
+      &:hover {
+        .hide-btn {
+          display: block;
+        }
+      }
+    }
+
+    p {
+      max-width: 60ch;
+      padding-bottom: 12px;
+    }
   }
+
 
   button {
     background: transparent;
@@ -44,32 +72,11 @@
     display: none;
   }
 
-  .info-header {
-    .btn-hide-container {
-      width: 50px;
-    }
-    .box-name {
-      font-size: 1.4rem;
-    }
-
-    input {
-      border: none;
-      border-radius: 5px;
-      padding: 5px;
-      outline: none;
-    }
-
-    &:hover {
-      .hide-btn {
-        display: block;
-      }
-    }
-  }
-
   .info-description {
     .btn-hide-container {
       width: 50px;
     }
+
     max-width: 400px;
 
     .box-description {
@@ -105,7 +112,7 @@
   }
 
   .info-input-actions {
-    > * {
+    >* {
       margin: 5px;
     }
 
@@ -127,26 +134,5 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-  }
-
-  .social-params {
-    .like {
-      cursor: pointer;
-      svg {
-        font-size: 3rem;
-      }
-    }
-
-    .liked {
-      svg {
-        color: #c5565b;
-      }
-    }
-    .share-btns-container {
-      width: 100px;
-      > * {
-        color: #fff;
-      }
-    }
   }
 }

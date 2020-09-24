@@ -1,9 +1,8 @@
 import React from 'react'
 
-import { Fab } from '@material-ui/core';
+
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import { Delete } from '@material-ui/icons';
-import AddIcon from '@material-ui/icons/Add';
 
 import { SongPick } from './SongPick'
 import { SongPreview } from './SongPreview'
@@ -11,6 +10,7 @@ import { SongPreview } from './SongPreview'
 export function SongList({ songs, onRemoveSong, onAddSong, onPlaySong, isSongPickOpen, toggleSongPick, nowPlayingId, isFilter, isDragging, isBoxAdd, onDragEnd, onDragStart }) {
     return (
         <div className="song-list flex space-between">
+            <SongPick isBoxAdd={isBoxAdd} isSongPickOpen={isSongPickOpen} onAddSong={onAddSong} />
             <DragDropContext
                 onDragStart={onDragStart}
                 onDragEnd={onDragEnd}
@@ -48,11 +48,7 @@ export function SongList({ songs, onRemoveSong, onAddSong, onPlaySong, isSongPic
                     }
                 </Droppable>
 
-                <Fab className={`add-song-btn  ${isSongPickOpen ? 'opened' : ''}`} onClick={toggleSongPick} color="primary" aria-label="add">
-                    <AddIcon />
-                </Fab>
-
-                <SongPick isBoxAdd={isBoxAdd} isSongPickOpen={isSongPickOpen} onAddSong={onAddSong} />
+               
             </DragDropContext >
         </div >
     )
