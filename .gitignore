@@ -2,3 +2,4 @@ node_modules/
 .vscode/
 frontend/debug.log
 backend/logs/backend.log
+backend/debug.log

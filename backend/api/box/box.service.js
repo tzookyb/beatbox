@@ -3,11 +3,11 @@
 // const boxs = require('../../data/box.json')
 const dbService = require('../../services/db.service')
 const ObjectId = require('mongodb').ObjectId
-
+collection = 'box'
 
 async function query(filterBy = {}) {
     const criteria = _buildCriteria(filterBy)
-    const collection = await dbService.getCollection('box')
+    const collection = await dbService.getCollection(collection)
     try {
         const boxs = await collection.find(criteria).toArray();
         return boxs
@@ -23,13 +23,13 @@ function _buildCriteria(filterBy) {
         criteria.name = { $regex: new RegExp(filterBy.name, 'ig') }
     }
     if (filterBy.genre) {
-            criteria.genre = filterBy.genre;
+        criteria.genre = filterBy.genre;
     }
     return criteria;
 }
 
 async function getById(boxId) {
-    const collection = await dbService.getCollection('box')
+    const collection = await dbService.getCollection(collection)
     try {
         const box = await collection.findOne({ "_id": ObjectId(boxId) })
         return box
@@ -40,7 +40,7 @@ async function getById(boxId) {
 }
 
 async function remove(boxId) {
-    const collection = await dbService.getCollection('box')
+    const collection = await dbService.getCollection(collection)
     try {
         await collection.deleteOne({ "_id": ObjectId(boxId) })
     } catch (err) {
@@ -58,11 +58,11 @@ async function remove(boxId) {
 // }
 
 async function update(box) {
-    const collection = await dbService.getCollection('box')
+    const collection = await dbService.getCollection(collection)
     box._id = ObjectId(box._id);
 
     try {
-        await collection.replaceOne({ '_id': box._id }, box )
+        await collection.replaceOne({ '_id': box._id }, box)
         // console.log("update -> box", box)
         return box
     } catch (err) {
@@ -72,7 +72,7 @@ async function update(box) {
 }
 
 async function add(box) {
-    const collection = await dbService.getCollection('box')
+    const collection = await dbService.getCollection(collection)
     try {
         await collection.insertOne(box);
         return box;
