@@ -7,7 +7,7 @@ import AddIcon from '@material-ui/icons/Add';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import WhatsappIcon from '@material-ui/icons/WhatsApp';
 import FacebookIcon from '@material-ui/icons/Facebook';
-
+import ColorThief from "colorthief";
 // LOCAL IMPORT
 import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
@@ -23,11 +23,13 @@ import { setCurrSong } from '../store/actions/playerActions'
 
 class _BoxDetails extends Component {
     state = {
-        filterBy: '',
         isSongPickOpen: false,
         isDragging: false,
-        messages: []
+        messages: [],
+        dominantColor: ''
     }
+
+    imgRef = React.createRef();
 
     async componentDidMount() {
         const boxId = this.props.match.params.boxId;
@@ -36,9 +38,8 @@ class _BoxDetails extends Component {
         await boxService.addConnectedUser(boxId, minimalUser);
         // SOCKET SETUP
         socketService.setup();
-        socketService.emit('join box', this.props.box._id);
+        socketService.emit('join box', this.props.currBox._id);
         socketService.on('get box status', this.setBoxStatus);
-        // socketService.on('get box status', this.props.setCurrSong)
         socketService.on('song changed', this.props.setCurrSong);
         socketService.on('box changed', this.props.gotBoxUpdate);
         socketService.on('chat addMsg', this.props.addMessage);
@@ -58,7 +59,7 @@ class _BoxDetails extends Component {
             ev.preventDefault();
         }
 
-        const box = { ...this.props.box }
+        const box = { ...this.props.currBox }
         const songIdx = box.songs.findIndex(song => song.id === songId)
         if (box.currSong.id === songId) {
             if (box.songs.length === 1) {
@@ -76,7 +77,7 @@ class _BoxDetails extends Component {
 
     onAddSong = (song) => {
         const newSong = boxService.addSong(song);
-        const box = { ...this.props.box };
+        const box = { ...this.props.currBox };
         box.songs.push(newSong);
         this.addMessageChat(`Song ${newSong.title} added by ${this.props.user.username}`);
         this.props.updateBox(box);
@@ -92,17 +93,13 @@ class _BoxDetails extends Component {
         this.props.updateBox(box);
     }
 
-    onSetFilter = (filterBy) => {
-        this.setState({ filterBy: filterBy.name })
-    }
-
     getSongsForDisplay = () => {
-        const songs = this.props.box.songs.filter(song => song.title.toLowerCase().includes(this.state.filterBy.toLowerCase()));
+        const songs = this.props.currBox.songs.filter(song => song.title.toLowerCase().includes(this.props.filter.toLowerCase));
         return songs;
     }
 
     toggleSongPick = () => {
-        this.setState({ isSongPickOpen: !this.state.isSongPickOpen })
+        this.setState(prevState => ({ isSongPickOpen: !prevState.isSongPickOpen }))
     }
 
     getIsUserLikeBox(box, minimalUser) {
@@ -146,25 +143,32 @@ class _BoxDetails extends Component {
     }
 
     onSwapSongs = (srcIdx, destIdx) => {
-        const newSongs = [...this.props.box.songs];
+        const newSongs = [...this.props.currBox.songs];
         const [songToMove] = newSongs.splice(srcIdx, 1);
         newSongs.splice(destIdx, 0, songToMove)
-        const newBox = { ...this.props.box, songs: newSongs }
+        const newBox = { ...this.props.currBox, songs: newSongs }
         this.props.updateBox(newBox);
     }
 
+    getDominantColor = () => {
+        const colorThief = new ColorThief();
+        const img = this.imgRef.current;
+        const result = colorThief.getColor(img, 25)
+        this.setState({ dominantColor: result })
+    }
+
     render() {
-        const { isSongPickOpen, isDragging, filterBy } = this.state;
-        const { box, messages } = this.props;
-        if (!box) return <CircleLoading size="large" color="#ac0aff" />
-        const currSongId = box.currSong?.id || null;
+        const { isSongPickOpen, isDragging, } = this.state;
+        const { currBox, messages, filter } = this.props;
+        if (!currBox) return <CircleLoading size="large" color="#ac0aff" />
+        const currSongId = currBox.currSong?.id || null;
         const songsToShow = this.getSongsForDisplay();
         const minimalUser = this.getMinimalUser();
 
         return (
-            <section className="box-details">
-                <div className="box-details-main flex column">
-                    <BoxInfo box={box} onSaveInfo={this.onSaveInfo} minimalUser={minimalUser} onToggleLikeBox={this.onToggleLikeBox} />
+            <section className="box-details" style={{ backgroundColor: `rgb(${this.state.dominantColor})` }}>
+            <div className="box-details-main flex column">  
+                <BoxInfo getDominantColor={this.getDominantColor} imgRef={this.imgRef} box={currBox} onSaveInfo={this.onSaveInfo} minimalUser={minimalUser} onToggleLikeBox={this.onToggleLikeBox} />
                     <div className="song-social-actions flex space-between">
                         <div className="btns-container flex">
                         <Fab className={`add-song-btn  ${isSongPickOpen ? 'opened' : ''}`} onClick={this.toggleSongPick} aria-label="add">
@@ -192,7 +196,7 @@ class _BoxDetails extends Component {
                         nowPlayingId={currSongId}
                         onDragStart={this.onDragStart}
                         onDragEnd={this.onDragEnd}
-                        isFilter={!!filterBy}
+                        isFilter={!!filter}
                         isDragging={isDragging}
                     />
 
@@ -205,7 +209,8 @@ class _BoxDetails extends Component {
 }
 const mapStateToProps = state => {
     return {
-        box: state.boxReducer.currBox,
+        currBox: state.boxReducer.currBox,
+        filter: state.boxReducer.filter,
         user: state.userReducer.loggedinUser,
         messages: state.messageReducer.messages
     }

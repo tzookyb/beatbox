@@ -11,8 +11,6 @@ class _Home extends Component {
 
     async componentDidMount() {
         await this.props.loadBoxes();
-        // this.setState({ boxes: this.props.boxes });
-        // this.props.loadUser();
     }
 
     getGenres(boxes) {

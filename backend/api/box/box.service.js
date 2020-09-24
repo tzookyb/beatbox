@@ -7,6 +7,7 @@ const COLL_NAME = 'box'
 
 async function query(filterBy = {}) {
     const criteria = _buildCriteria(filterBy)
+    console.log("query -> filterBy", filterBy)
     const collection = await dbService.getCollection(COLL_NAME)
     try {
         const boxs = await collection.find(criteria).toArray();

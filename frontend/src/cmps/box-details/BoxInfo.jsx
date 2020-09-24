@@ -66,10 +66,6 @@ export class BoxInfo extends Component {
         this.onSave('isEditableImg');
     }
 
-
-
-  
-
     render() {
         const { box, isEditableName, isEditableDesc } = this.state;
         const { minimalUser } = this.props;
@@ -79,7 +75,12 @@ export class BoxInfo extends Component {
                 <div className="box-img">
                     <label className="upload-label" style={{ cursor: 'pointer' }}>
                         <input onChange={(ev) => this.uploadImg(ev)} type="file" hidden />
-                        <img src={box.imgUrl} alt="" />
+                        <img
+                            crossOrigin={"anonymous"}
+                            ref={this.props.imgRef}
+                            src={box.imgUrl}
+                            alt=""
+                            onLoad={this.props.getDominantColor} />
                     </label>
                 </div>
                 <div className="info-txt flex space-between column">
@@ -120,4 +121,3 @@ export class BoxInfo extends Component {
         )
     }
 }
-

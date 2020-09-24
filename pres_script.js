@@ -1,5 +1,4 @@
 // FRONTEND:
-
 // ON ENTRY TO BOX
 socketService.emit('join box', this.props.box._id);
 
@@ -25,8 +24,13 @@ function createBoxStatus() {
 }
 
 function leaveBox(socket, userId) {
-    boxMap[socket.myBox] = boxMap[socket.myBox].participants.filter(user => user.id !== userId);
-    socket.leave(socket.myBox)
+    if (boxMap[socket.myBox].participants.length === 1) boxMap[socket.myBox] = null;
+    else {
+        const boxStatus = getBoxStatus(boxId);
+        socket.emit('joined new box', boxStatus.participants);
+        boxMap[socket.myBox] = boxMap[socket.myBox].participants.filter(user => user.id !== userId);
+    }
+    socket.leave(socket.myBox);
 }
 
 function getBoxStatus(boxId) {

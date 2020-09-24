@@ -21,6 +21,7 @@ class _Player extends Component {
     state = {
         isReady: false,
         isShrunk: false,
+        isPlaying: false,
         secPlayed: 0,
         muted: false,
         volume: 0.35,
