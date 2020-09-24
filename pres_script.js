@@ -1,10 +1,17 @@
-/ Frontend:
+// FRONTEND:
+
+// ON ENTRY TO BOX
+socketService.emit('join box', this.props.box._id);
+
+
+// RECEIVE BOX STATUS
 socketService.on('get box status', this.setBoxStatus);
 setBoxStatus = (boxStatus) => {
     this.props.setCurrSong(boxStatus.currSong);
     this.props.loadMessages(boxStatus.msgs);
 }
-// backend:
+
+// BACKEND:
 const boxMap = {}
 function createBoxStatus() {
     return {
@@ -16,15 +23,22 @@ function createBoxStatus() {
         },
     }
 }
+
+function leaveBox(socket, userId) {
+    boxMap[socket.myBox] = boxMap[socket.myBox].participants.filter(user => user.id !== userId);
+    socket.leave(socket.myBox)
+}
+
 function getBoxStatus(boxId) {
     if (!boxMap[boxId]) boxMap[boxId] = createBoxStatus();
     return boxMap[boxId];
 }
+
 function connectSockets(io) {
     io.on('connection', socket => {
         socket.on('join box', (boxId, miniUser) => {
             if (socket.myBox) {
-                socket.leave(socket.myBox)
+                leaveBox(socket, miniUser.id)
             }
             socket.join(boxId)
             socket.myBox = boxId;

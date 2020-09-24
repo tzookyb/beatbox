@@ -6,6 +6,10 @@
     overflow-y: auto;
     background-color: $clr1;
 
+    &::-webkit-scrollbar {
+        display: none;
+      }
+
     .song-pick-msg {
         color: white;
         font-size: 1.1rem;
@@ -13,7 +17,7 @@
     }
     &.opened {
         max-width: 80%;
-        width: 60%;
+        width: 50%;
     }
 
     .song-pick-result {
