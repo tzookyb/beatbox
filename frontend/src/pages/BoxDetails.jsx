@@ -94,7 +94,7 @@ class _BoxDetails extends Component {
     }
 
     getSongsForDisplay = () => {
-        const songs = this.props.currBox.songs.filter(song => song.title.toLowerCase().includes(this.props.filter.toLowerCase));
+        const songs = this.props.currBox.songs.filter(song => song.title.toLowerCase().includes(this.props.filter.toLowerCase()));
         return songs;
     }
 
@@ -174,8 +174,8 @@ class _BoxDetails extends Component {
                         <Fab className={`add-song-btn  ${isSongPickOpen ? 'opened' : ''}`} onClick={this.toggleSongPick} aria-label="add">
                             <AddIcon />
                         </Fab>
-                        <div onClick={() => this.onToggleLikeBox(box._id, minimalUser)} className={`like-btn ${this.getIsUserLikeBox(box, minimalUser)}`}>
-                            {box.likedByUsers.length}
+                        <div onClick={() => this.onToggleLikeBox(currBox._id, minimalUser)} className={`like-btn ${this.getIsUserLikeBox(currBox, minimalUser)}`}>
+                            {currBox.likedByUsers.length}
                             <FavoriteIcon />
                         </div>
                         </div>
@@ -183,7 +183,7 @@ class _BoxDetails extends Component {
                             <p>share the box: </p>
                             <div className="share-btns flex space-evenely">
                                 <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} rel="noopener noreferrer" target="_blank"><FacebookIcon /></a>
-                                <a className="whatsapp-share-btn" href={`whatsapp://send?text=${box.createdBy.name} Shared a Box With You! : \n\n ${window.location.href}`} data-action="share/whatsapp/share"><WhatsappIcon /></a>
+                                <a className="whatsapp-share-btn" href={`whatsapp://send?text=${currBox.createdBy.name} Shared a Box With You! : \n\n ${window.location.href}`} data-action="share/whatsapp/share"><WhatsappIcon /></a>
                             </div>
                         </div>
                     </div>
