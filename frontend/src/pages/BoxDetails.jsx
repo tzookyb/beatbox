@@ -205,7 +205,6 @@ class _BoxDetails extends Component {
                                     <FavoriteIcon />
                                 </div>
                             </div>
-                        </div>
                         <div className="share-container flex space-between column">
                             <p>Share the box:</p>
                             <div className="share-btns flex space-evenely">
@@ -216,6 +215,7 @@ class _BoxDetails extends Component {
                                 </CopyToClipboard>
                             </div>
                             {this.state.isClipboardToast && <div className="copied-to-clipboard"><small>Copied to Clipboard!</small></div>}
+                        </div>
                         </div>
                         <SongList
                             songs={songsToShow}
