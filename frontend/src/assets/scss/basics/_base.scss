@@ -85,3 +85,10 @@ a:not(a.logo):hover {
 ::-webkit-scrollbar-thumb:hover {
     background: #9a6fcb;
 }
+
+
+@media (max-width: 720px) {
+    html {
+        font-size: 14px;
+    }
+}
