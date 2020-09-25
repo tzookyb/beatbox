@@ -23,6 +23,7 @@ import { socketService } from '../services/socketService';
 import { loadBox, updateBox, gotBoxUpdate } from '../store/actions/boxAction'
 import { addMessage, loadMessages } from '../store/actions/messageAction'
 import { setCurrSong } from '../store/actions/playerActions'
+import { youtubeService } from '../services/youtubeService';
 
 
 
@@ -119,14 +120,23 @@ class _BoxDetails extends Component {
         this.setState({ isDragging: true })
     }
 
-    onDragEnd = (result) => {
+    onDragEnd = async (result) => {
         const { destination, source, draggableId } = result;
+        console.log("onDragEnd -> result", result)
+
         this.setState({ isDragging: false })
         if (!destination) return;
         if (destination.droppableId === 'trash') {
             this.onRemoveSong(null, draggableId)
+            return;
         }
-        else if (destination.index === source.index) return;
+        if (source.droppableId === 'songPick') {
+            const song = await youtubeService.getSongById(draggableId);
+            console.log("onDragEnd -> song", song)
+            return;
+        }
+
+        if (destination.index === source.index) return;
         else this.onSwapSongs(source.index, destination.index);
     }
 
@@ -154,20 +164,21 @@ class _BoxDetails extends Component {
     onSwapSongs = (srcIdx, destIdx) => {
         const newSongs = [...this.props.currBox.songs];
         const [songToMove] = newSongs.splice(srcIdx, 1);
-        newSongs.splice(destIdx, 0, songToMove)
-        const newBox = { ...this.props.currBox, songs: newSongs }
+        newSongs.splice(destIdx, 0, songToMove);
+        const newBox = { ...this.props.currBox, songs: newSongs };
         this.props.updateBox(newBox);
     }
 
     getDominantColor = () => {
         const colorThief = new ColorThief();
         const img = this.imgRef.current;
-        let result = colorThief.getColor(img, 50)
+        let result = colorThief.getColor(img, 50);
         if (result.every(color => color > 180)) result = result.map(color => (color > 150) ? 150 : color);
-        this.setState({ dominantColor: result })
+        this.setState({ dominantColor: result });
     }
+
     toggleClipboardToast = () => {
-        this.setState({ isClipboardToast: true })
+        this.setState({ isClipboardToast: true });
         setTimeout(() => this.setState({ isClipboardToast: false }), 2000);
     }
 
