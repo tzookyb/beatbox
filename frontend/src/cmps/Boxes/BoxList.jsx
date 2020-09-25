@@ -38,13 +38,14 @@ export class BoxList extends Component {
                 {this.props.genre &&
                     <div ref={this.ref} className="box-list image-container">
                         {this.state.isScrolled && <button className="list-left-btn" onClick={() => this.executeScroll(-350)}><ArrowBackIosIcon /></button>}
-                        
+
                         {this.props.boxes.map(box => {
                             if (box.genre === this.props.genre) {
                                 return <BoxPreview
                                     isHomePage={true}
                                     key={box._id}
-                                    box={box} genre={this.props.genre}
+                                    box={box}
+                                    genre={this.props.genre}
                                     onToggleLikeBox={this.props.onToggleLikeBox}
                                     onAddToFavorites={this.props.onAddToFavorites}
                                     minimalUser={this.props.minimalUser}

@@ -14,8 +14,8 @@ export class _BoxFilter extends Component {
         this.checkIfAtDetails();
     }
 
-    componentDidUpdate(prevProps) {
-        this.checkIfAtDetails();
+    async componentDidUpdate(prevProps) {
+        await this.checkIfAtDetails();
 
         if (this.props.location.search !== prevProps.location.search &&
             this.props.location.pathname !== '/') {

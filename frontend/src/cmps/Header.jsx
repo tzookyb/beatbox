@@ -31,7 +31,7 @@ class _Header extends Component {
                 {/* || this.props.location.pathname !== '/'  */}
                 {(this.props.location.pathname === '/') ?
                     <a href="#top"><img title="BeatBox" className="logo" src={require('../assets/img/logo.png')} alt="logo" /></a> :
-                    <Link to="/" ><img title="BeatBox" className="logo" src={require('../assets/img/logo.png')} alt="logo" /></Link>
+                    <Link to="/box" ><img title="BeatBox" className="logo" src={require('../assets/img/logo.png')} alt="logo" /></Link>
                 }
 
                 <BoxFilter isShown={(this.props.location.pathname !== '/' || this.state.isScroll)} />

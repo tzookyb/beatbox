@@ -34,6 +34,7 @@ export class _SongPreview extends Component {
                             {isPlaying && currBox.currSong.isPlaying && <img className='playing-anim' src={require('../../assets/img/equalizer5.gif')} title="Now playing" alt="now-playing" />}
                             <button onClick={(ev) => onRemoveSong(ev, song.id)} className={`remove-song-btn ${!isRemoveOpen && 'hidden'}`}><DeleteOutlineIcon /></button>
                             <MoreVertIcon className="cursor-pointer" onClick={this.toggleOpen} />
+                            <h3 className="song-duration">{song.duration || ''}</h3>
                         </div>
                     </li>
                 )

@@ -75,8 +75,8 @@ class _BoxDetails extends Component {
         this.props.updateBox(box)
     }
 
-    onAddSong = (song) => {
-        const newSong = boxService.addSong(song);
+    onAddSong = async (song) => {
+        const newSong = await boxService.addSong(song);
         const box = { ...this.props.currBox };
         box.songs.push(newSong);
         this.addMessageChat(`Song ${newSong.title} added by ${this.props.user.username}`);
