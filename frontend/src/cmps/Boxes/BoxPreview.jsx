@@ -9,7 +9,7 @@ export class BoxPreview extends Component {
         const { box, isHomePage, connectedUsers } = this.props;
         return (
             <section className={`box-preview ${isHomePage ? 'box-home-preview' : ''}`}>
-                <Link to={`/box/${box._id}`} >
+                <Link to={`/box/details/${box._id}`} >
                     <div className="box-preview-img"> <img src={box.imgUrl} alt="box-preview img" /></div>
                 </Link>
 

@@ -1,6 +1,7 @@
 
 
 export function loadConnectedUsers(connectedUsers) {
+  console.log("loadConnectedUsers -> connectedUsers", connectedUsers)
   return dispatch => {
     dispatch({ type: 'SET_CONNECTED_USERS', connectedUsers })
   };

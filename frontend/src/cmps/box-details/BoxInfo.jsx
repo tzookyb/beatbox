@@ -5,8 +5,7 @@ import CreateIcon from '@material-ui/icons/Create';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Avatar from '@material-ui/core/Avatar';
 import CircleLoading from 'react-loadingg/lib/CircleLoading';
-import WhatsAppIcon from '@material-ui/icons/WhatsApp';
-import FacebookIcon from '@material-ui/icons/Facebook';
+
 
 import { cloudService } from '../../services/cloudService';
 import { boxService } from '../../services/boxService';
@@ -67,20 +66,25 @@ export class BoxInfo extends Component {
         this.onSave('isEditableImg');
     }
 
-
-
-    getIsUserLikeBox(box, minimalUser) {
-        return (boxService.getIsUserLikeBox(box, minimalUser) !== -1) ? 'liked' : '';
-    }
-
     render() {
         const { box, isEditableName, isEditableDesc } = this.state;
         const { minimalUser } = this.props;
         if (!box) return <CircleLoading size="large" color="#ac0aff" />
         return (
-            <section className="box-info flex space-between">
+            <section className="box-info flex">
+                <div className="box-img">
+                    <label className="upload-label" style={{ cursor: 'pointer' }}>
+                        <input onChange={(ev) => this.uploadImg(ev)} type="file" hidden />
+                        <img
+                            crossOrigin={"anonymous"}
+                            ref={this.props.imgRef}
+                            src={box.imgUrl}
+                            alt=""
+                            onLoad={this.props.getDominantColor} />
+                    </label>
+                </div>
                 <div className="info-txt flex space-between column">
-                    <div className="info-header flex align-end">
+                    <div className="info-header flex align-end flex-1">
                         {isEditableName ?
                             <React.Fragment>
                                 <input autoFocus type="txt" value={box.name} name="name" onChange={this.handleInput} />
@@ -113,28 +117,7 @@ export class BoxInfo extends Component {
                         <h5>{box.createdBy.name}</h5>
                     </div>
                 </div>
-
-                <div className="social-params flex column space-between">
-                    <div onClick={() => this.props.onToggleLikeBox(box._id, minimalUser)} className={`like ${this.getIsUserLikeBox(box, minimalUser)}`}>
-                        {box.likedByUsers.length}
-                        <FavoriteIcon />
-                    </div>
-
-                    <div className="share-btns-container flex space-evenely">
-                        <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} rel="noopener noreferrer" target="_blank"><FacebookIcon /></a>
-                        <a className="whatsapp-share-btn" href={`whatsapp://send?text=${box.createdBy.name} Shared a Box With You! : \n\n ${window.location.href}`} data-action="share/whatsapp/share"><WhatsAppIcon /></a>
-                    </div>
-                </div>
-
-                <div className="box-img">
-                    <label className="upload-label" style={{ cursor: 'pointer' }}>
-                        <input onChange={(ev) => this.uploadImg(ev)} type="file" hidden />
-                        <img src={box.imgUrl} alt="" />
-                    </label>
-                </div>
-
             </section >
         )
     }
 }
-

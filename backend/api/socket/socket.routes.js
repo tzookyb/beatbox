@@ -13,18 +13,17 @@ function createBoxStatus() {
 }
 
 function leaveBox(socket, boxInfo, io) {
+    socket.leave(socket.myBox);
     const boxStatus = getBoxStatus(socket.myBox);
-    
     // if (boxMap[socket.myBox].connectedUsers.length > 1) {
-        const newConnectedUsers = boxMap[socket.myBox].connectedUsers.filter(user => user.id !== boxInfo.user.id)
-        boxMap[socket.myBox].connectedUsers = newConnectedUsers;
+    const newConnectedUsers = boxMap[socket.myBox].connectedUsers.filter(user => user.id !== boxInfo.user.id)
+    boxMap[socket.myBox].connectedUsers = newConnectedUsers;
     // } 
-    io.to(socket.myBox).emit('leave box', boxStatus.connectedUsers);
     // if (boxMap[socket.myBox].connectedUsers.length === 1) {
     //     boxMap[socket.myBox] = createBoxStatus();
     // }
-    
-    socket.leave(socket.myBox);
+    // io.to(socket.myBox).emit('leave box', boxStatus.connectedUsers);
+    console.log("leaveBox -> boxStatus.connectedUsers", boxStatus.connectedUsers)
 }
 
 function getBoxStatus(boxId) {
@@ -45,6 +44,8 @@ function connectSockets(io) {
         socket.on('join box', (boxInfo) => {
             if (socket.myBox) {
                 leaveBox(socket, boxInfo, io);
+                const boxStatus = getBoxStatus(socket.myBox);
+                io.to(socket.myBox).emit('joined new box', boxStatus.connectedUsers);
             }
             socket.join(boxInfo.boxId);
             socket.myBox = boxInfo.boxId;
@@ -65,9 +66,9 @@ function connectSockets(io) {
             io.to(socket.myBox).emit('update song time', secPlayed)
         })
         socket.on('set currSong', currSong => {
-            // boxMap[socket.myBox].currSongId = currSong.id
-            // boxMap[socket.myBox].secPlayed = currSong.secPlayed
-            // boxMap[socket.myBox].isPlaying = currSong.isPlaying
+            boxMap[socket.myBox].currSongId = currSong.id
+            boxMap[socket.myBox].secPlayed = currSong.secPlayed
+            boxMap[socket.myBox].isPlaying = currSong.isPlaying
 
             io.to(socket.myBox).emit('song changed', currSong)
         })

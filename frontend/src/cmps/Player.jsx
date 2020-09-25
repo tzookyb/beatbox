@@ -22,6 +22,7 @@ class _Player extends Component {
     state = {
         isReady: false,
         isShrunk: false,
+        isPlaying: false,
         secPlayed: 0,
         muted: false,
         volume: 0.35,
@@ -225,7 +226,7 @@ class _Player extends Component {
                             src={require('../assets/img/box.png')}
                             title="Back to box"
                             alt="Back to box"
-                            onClick={() => this.props.history.push(`/box/${currBox._id}`)} />
+                            onClick={() => this.props.history.push(`/box/details/${currBox._id}`)} />
                     </div>
                 </div >
             </div>

@@ -33,13 +33,12 @@ function getUsedGenres(boxes) {
 }
 
 async function getById(boxId) {
-    return httpService.get(`box/${boxId}`)
+    return await httpService.get(`box/${boxId}`)
 }
-//TODO: fix filter
-async function query(filterBy) {
-    if (!filterBy) filterBy = { name: '', genre: '' };
-    var queryStr = `?name=${filterBy.name}&genre=${filterBy.genre}`;
-    return httpService.get(`box${queryStr}`);
+
+async function query(query) {
+    query = query || '';
+    return await httpService.get(`box${query}`);
 }
 
 function getEmptyBox(user) {

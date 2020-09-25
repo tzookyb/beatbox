@@ -2,7 +2,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CircleLoading from 'react-loadingg/lib/CircleLoading'
-
+import { Fab } from '@material-ui/core';
+import AddIcon from '@material-ui/icons/Add';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import WhatsappIcon from '@material-ui/icons/WhatsApp';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import ColorThief from "colorthief";
 // LOCAL IMPORT
 import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
@@ -13,13 +18,19 @@ import { socketService } from '../services/socketService';
 import { loadBox, updateBox, gotBoxUpdate } from '../store/actions/boxAction'
 import { addMessage, loadMessages } from '../store/actions/messageAction'
 import { setCurrSong } from '../store/actions/playerActions'
-import { loadConnectedUsers,addConnectedUser } from '../store/actions/connectedUsersAction'
+import { loadConnectedUsers, addConnectedUser } from '../store/actions/connectedUsersAction'
+
+import Avatar from '@material-ui/core/Avatar';
+import AvatarGroup from '@material-ui/lab/AvatarGroup';
+
 class _BoxDetails extends Component {
     state = {
-        filterBy: '',
         isSongPickOpen: false,
         isDragging: false,
+        dominantColor: ''
     }
+
+    imgRef = React.createRef();
 
     async componentDidMount() {
         const boxId = this.props.match.params.boxId;
@@ -29,18 +40,15 @@ class _BoxDetails extends Component {
         // SOCKET SETUP
         socketService.setup();
         const boxInfo = {
-            boxId: this.props.box._id,
+            boxId: this.props.currBox._id,
             user: minimalUser
         }
         socketService.emit('join box', boxInfo);
         socketService.on('get box status', this.setBoxStatus);
-        // socketService.on('get box status', this.props.setCurrSong)
         socketService.on('song changed', this.props.setCurrSong);
         socketService.on('box changed', this.props.gotBoxUpdate);
         socketService.on('chat addMsg', this.props.addMessage);
         socketService.on('joined new box', this.props.loadConnectedUsers);
-        socketService.on('leave box', this.props.loadConnectedUsers);
-        // socketService.on('user add', this.props.addconnectedUser);
     }
 
     componentWillUnmount() {
@@ -61,7 +69,7 @@ class _BoxDetails extends Component {
             ev.preventDefault();
         }
 
-        const box = { ...this.props.box }
+        const box = { ...this.props.currBox }
         const songIdx = box.songs.findIndex(song => song.id === songId)
         if (box.currSong.id === songId) {
             if (box.songs.length === 1) {
@@ -79,7 +87,7 @@ class _BoxDetails extends Component {
 
     onAddSong = (song) => {
         const newSong = boxService.addSong(song);
-        const box = { ...this.props.box };
+        const box = { ...this.props.currBox };
         box.songs.push(newSong);
         this.addMessageChat(`Song ${newSong.title} added by ${this.props.user.username}`);
         this.props.updateBox(box);
@@ -95,17 +103,19 @@ class _BoxDetails extends Component {
         this.props.updateBox(box);
     }
 
-    onSetFilter = (filterBy) => {
-        this.setState({ filterBy: filterBy.name })
-    }
-
     getSongsForDisplay = () => {
-        const songs = this.props.box.songs.filter(song => song.title.toLowerCase().includes(this.state.filterBy.toLowerCase()));
+        const songs = this.props.currBox.songs.filter(song => {
+            return song.title.toLowerCase().includes(this.props.filter.toLowerCase());
+        })
         return songs;
     }
 
     toggleSongPick = () => {
-        this.setState({ isSongPickOpen: !this.state.isSongPickOpen })
+        this.setState(prevState => ({ isSongPickOpen: !prevState.isSongPickOpen }))
+    }
+
+    getIsUserLikeBox(box, minimalUser) {
+        return (boxService.getIsUserLikeBox(box, minimalUser) !== -1) ? 'liked' : '';
     }
 
     onDragStart = () => {
@@ -141,47 +151,86 @@ class _BoxDetails extends Component {
     }
 
     onSwapSongs = (srcIdx, destIdx) => {
-        const newSongs = [...this.props.box.songs];
+        const newSongs = [...this.props.currBox.songs];
         const [songToMove] = newSongs.splice(srcIdx, 1);
         newSongs.splice(destIdx, 0, songToMove)
-        const newBox = { ...this.props.box, songs: newSongs }
+        const newBox = { ...this.props.currBox, songs: newSongs }
         this.props.updateBox(newBox);
     }
 
+    getDominantColor = () => {
+        const colorThief = new ColorThief();
+        const img = this.imgRef.current;
+        const result = colorThief.getColor(img, 25)
+        this.setState({ dominantColor: result })
+    }
+    // getUsersAvatars(connectedUsers) {
+    //     const avatars = connectedUsers.map(user => {
+    //         return <Avatar alt={user.name} title={user.name} key={user.id} src={user.imgUrl} style={{ width: '30px', height: '30px', border:"black"}} />
+    //     })
+    //     return avatars;
+    // }
     render() {
-        const { isSongPickOpen, isDragging, filterBy } = this.state;
-        const { box, messages } = this.props;
-        if (!box) return <CircleLoading size="large" color="#ac0aff" />
-        const currSongId = box.currSong?.id || null;
+        const { isSongPickOpen, isDragging, } = this.state;
+        const { currBox, messages, filter } = this.props;
+        if (!currBox) return <CircleLoading size="large" color="#ac0aff" />
+        const currSongId = currBox.currSong?.id || null;
         const songsToShow = this.getSongsForDisplay();
         const minimalUser = userService.getMinimalUser();
         return (
-            <section className="box-details flex space-between">
-                <div className="box-details-main flex column space-between">
-                    <BoxInfo box={box} onSaveInfo={this.onSaveInfo} minimalUser={minimalUser} onToggleLikeBox={this.onToggleLikeBox} />
+
+            <section className="box-details" style={{ backgroundColor: `rgb(${this.state.dominantColor})` }}>
+                <div className="box-details-main flex column">
+                    <BoxInfo getDominantColor={this.getDominantColor} imgRef={this.imgRef} box={currBox}
+                        onSaveInfo={this.onSaveInfo} minimalUser={minimalUser} onToggleLikeBox={this.onToggleLikeBox} />
+                    <div className="song-social-actions flex space-between">
+                        <div className="btns-container flex">
+                            <Fab className={`add-song-btn  ${isSongPickOpen ? 'opened' : ''}`} onClick={this.toggleSongPick} aria-label="add">
+                                <AddIcon />
+                            </Fab>
+                            <div onClick={() => this.onToggleLikeBox(currBox._id, minimalUser)} className={`like-btn ${this.getIsUserLikeBox(currBox, minimalUser)}`}>
+                              
+                                <FavoriteIcon />
+                            </div>
+                        </div>
+                        <div className="share-container flex space-between column">
+                            <p>share the box: </p>
+                            <div className="share-btns flex space-evenely">
+                                <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} rel="noopener noreferrer" target="_blank"><FacebookIcon /></a>
+                                <a className="whatsapp-share-btn" href={`whatsapp://send?text=${currBox.createdBy.name} Shared a Box With You! : \n\n ${window.location.href}`} data-action="share/whatsapp/share"><WhatsappIcon /></a>
+                            </div>
+                        </div>
+                    </div>
                     <SongList
                         songs={songsToShow}
                         onPlaySong={this.onPlaySong}
                         onRemoveSong={this.onRemoveSong}
                         onAddSong={this.onAddSong}
                         isSongPickOpen={isSongPickOpen}
-                        toggleSongPick={this.toggleSongPick}
                         nowPlayingId={currSongId}
                         onDragStart={this.onDragStart}
                         onDragEnd={this.onDragEnd}
-                        isFilter={!!filterBy}
+                        isFilter={!!filter}
                         isDragging={isDragging}
                     />
 
                 </div>
-                <BoxWall messages={messages} addMsg={this.addMsg} connectedUsers={this.props.connectedUsers}/>
+                <div className="chat-box flex column">
+                    <BoxWall messages={messages} addMsg={this.addMsg} connectedUsers={this.props.connectedUsers} />
+                </div>
             </section>
         )
     }
 }
+
+{/* <AvatarGroup className="connected-users" max={4}>
+                        {this.getUsersAvatars(this.props.connectedUsers)}
+                    </AvatarGroup> */}
+
 const mapStateToProps = state => {
     return {
-        box: state.boxReducer.currBox,
+        currBox: state.boxReducer.currBox,
+        filter: state.boxReducer.filter,
         user: state.userReducer.loggedinUser,
         messages: state.messageReducer.messages,
         connectedUsers: state.connectedUsersReducer.connectedUsers

@@ -1,9 +1,9 @@
 import { boxService } from "../../services/boxService"
 import { socketService } from "../../services/socketService";
 
-export function loadBoxes(filterBy) {
+export function loadBoxes(query) {
   return async dispatch => {
-    const boxes = await boxService.query(filterBy);
+    const boxes = await boxService.query(query);
     dispatch({ type: 'SET_BOXES', boxes })
   };
 }
@@ -37,9 +37,9 @@ export function updateBox(box) {
     dispatch({ type: 'UPDATE_BOX', box })
   };
 }
-export function setFilter(filterBy) {
+export function setFilter(query) {
   return dispatch => {
-    dispatch({ type: 'SET_FILTER', filterByName: filterBy })
+    dispatch({ type: 'SET_FILTER', filter: query })
   }
 }
 

@@ -1,16 +1,18 @@
 .player-container {
     width: 100%;
     display: flex;
+    position: fixed;
+    height: 75px;
+    align-items: center;
+    background-color: $clr1;
+    bottom: 0;
+    z-index: 11;
     
     .player-capsule {
-        position: fixed;
+        bottom: 15px;
         height: 60px;
         width: 65%;
         border-radius: 999px;
-        left: 17.5%;
-        margin: 0 auto;
-        bottom: 15px;
-        z-index: 11;
         background-image: url("../../img/fxVE.gif");
         background-size: cover;
         background-position: center;
@@ -72,6 +74,7 @@
                 margin: 0 0px 0px 15px;
                 height: 70px;
                 width: auto;
+                cursor: pointer;
 
                 &:hover {
                     animation: jello-horizontal 1s;

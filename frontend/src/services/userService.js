@@ -62,7 +62,7 @@ function _getGuestMode() {
     return {
         username: 'Guest',
         fullName: 'Best Guest',
-        imgUrl: 'https://res.cloudinary.com/daqs7x8my/image/upload/v1600683124/ko8ia4xof4zz3yspbgoc.png',
+        imgUrl: '',
         _id: _makeId()
     }
 }

@@ -11,8 +11,6 @@ export const MessageBox = ({ text, submitBy, submitAt, avatar, own, type }) => {
       return (
         <div className="not-user-message">
           <Row type="flex" gutter={6} justify="center" align="top">
-            <Col span={3}>
-            </Col>
             <Col className="submit-mess-data flex align-center" offset={1} span={20}>
               <Avatar alt="Remy Sharp" src={avatar} style={{ width: '20px', height: '20px' }} />
               <p className="submit-by">{submitBy}</p>
@@ -29,8 +27,8 @@ export const MessageBox = ({ text, submitBy, submitAt, avatar, own, type }) => {
                   backgroundColor: " #b0a5a7",
                   color: "black",
                   borderRadius: "10px",
-                  padding: "10px",
-                  margin: "0px 10px 15px 10px",
+                  padding: "5px 20px",
+                  // margin: "0px 10px 15px 10px",
                   // boxShadow: "1px 2px 3px #ccc",
                   width: "fit-content"
                 }}
@@ -54,12 +52,12 @@ export const MessageBox = ({ text, submitBy, submitAt, avatar, own, type }) => {
             <Col className="flex justify-end">
               <div
                 style={{
-                  backgroundColor: "rgb(154 111 203)  ",
-                  color: "black",
+                  backgroundColor: "rgb(179 179 179)",
+                  color: "white",
                   borderColor: "#333",
                   borderRadius: "10px",
-                  padding: "10px",
-                  margin: "0px 10px 15px 10px",
+                  padding: "5px 20px",
+                  // margin: "0px 10px 15px 10px",
                   // boxShadow: "1px 2px 3px #ccc",
                   textAlign: "right",
                   width: "fit-content",
@@ -73,7 +71,7 @@ export const MessageBox = ({ text, submitBy, submitAt, avatar, own, type }) => {
       )
     }
   }
-  else { 
+  else {
     return (
       <div className="system-message" style={{ textAlign: "center" }}>
         <Col>

@@ -75,15 +75,14 @@ export class Chat extends React.Component {
   render() {
     return (
       <div className="chat">
-        <form className="form-msg" onSubmit={this.sendMsg}>
-          <div className="container-send-msg flex space-between align-center">
-            <input className="input-chat" placeholder="Send Message" value={this.state.msg}
+        <form className="form-msg flex space-between align-center" onSubmit={this.sendMsg}>
+            <input className="input-chat" value={this.state.msg}
               name="msg" onChange={this.onHandleChange} autoComplete="off" />
             <InsertEmoticonIcon onClick={this.toggleEmogis} />
-            <Button type="primary" type="submit" style={{ color: "white" }}>
+            {/* <Button type="primary" style={{ color: "white" }}>
               <SendIcon />
-            </Button>
-          </div>
+            </Button> */}
+            <button className="send-btn">Send</button>
         </form>
         {this.state.isOpenEmojis && <div className="reactions flex">
           <Emoji onEmojiChoose={this.onEmojiChoose} />

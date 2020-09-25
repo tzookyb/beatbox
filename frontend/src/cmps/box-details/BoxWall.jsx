@@ -51,12 +51,12 @@ class _BoxWall extends Component {
         const { myEmoji, bottom, opacity, typingStr } = this.state;
         const isEmoji = (myEmoji === '') ? false : true;
         return (
-            <section className="wall-container">
-                <div className="chat-header">
-                    <h2> Chat Box </h2>
-                    <AvatarGroup className="connected-users" max={4}>
+            <section className="wall-container flex column space-between">
+                <div className="chat-header flex column align-center">
+                    <h2> Share your thoughts </h2>
+                    {/* <AvatarGroup className="connected-users" max={4}>
                         {this.getUsersAvatars(connectedUsers)}
-                    </AvatarGroup>
+                    </AvatarGroup> */}
                     <div className="typing-container">
                         {typingStr && <h3>{typingStr}</h3>}
                     </div>

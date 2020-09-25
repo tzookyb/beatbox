@@ -1,7 +1,6 @@
-// // FRONTEND:
-
-// // ON ENTRY TO BOX
-// socketService.emit('join box', this.props.box._id);
+// FRONTEND:
+// ON ENTRY TO BOX
+socketService.emit('join box', this.props.box._id);
 
 
 // // RECEIVE BOX STATUS
@@ -24,10 +23,15 @@
 //     }
 // }
 
-// function leaveBox(socket, userId) {
-//     boxMap[socket.myBox] = boxMap[socket.myBox].participants.filter(user => user.id !== userId);
-//     socket.leave(socket.myBox)
-// }
+function leaveBox(socket, userId) {
+    if (boxMap[socket.myBox].participants.length === 1) boxMap[socket.myBox] = null;
+    else {
+        const boxStatus = getBoxStatus(boxId);
+        socket.emit('joined new box', boxStatus.participants);
+        boxMap[socket.myBox] = boxMap[socket.myBox].participants.filter(user => user.id !== userId);
+    }
+    socket.leave(socket.myBox);
+}
 
 // function getBoxStatus(boxId) {
 //     if (!boxMap[boxId]) boxMap[boxId] = createBoxStatus();

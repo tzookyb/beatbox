@@ -13,7 +13,6 @@
 // Components
 
 @import "./componenets/header";
-@import "./componenets/chat";
 @import "./componenets/footer";
 @import "./componenets/boxList";
 @import "./componenets/boxPreview";
@@ -25,10 +24,13 @@
 @import "./componenets/genresFilter";
 @import "./componenets/login";
 @import "./componenets/boxFilter";
-@import "./componenets/boxWall";
 @import "./componenets/emoji";
+
+@import "./componenets/boxWall";
+@import "./componenets/chat";
+@import "./componenets/msgsContainer";
 @import "./componenets/messageBox";
-@import "./componenets/chatBox";
+
 // @import "./componenets/notification";
 
 // Views

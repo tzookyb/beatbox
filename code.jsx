@@ -1,9 +1,9 @@
 // Frontend:
 socketService.on('get box status', this.setBoxStatus);
 
-setBoxStatus =  (boxStatus) => {
-        this.props.setCurrSong(boxStatus.currSong);
-        this.props.loadMessages(boxStatus.msgs);
+setBoxStatus = (boxStatus) => {
+    this.props.setCurrSong(boxStatus.currSong);
+    this.props.loadMessages(boxStatus.msgs);
 }
 
 // backend:
@@ -15,7 +15,7 @@ function createBoxStatus() {
         currSong: {
             id: null,
             secPlayed: 0,
-            
+
         },
     }
 }
