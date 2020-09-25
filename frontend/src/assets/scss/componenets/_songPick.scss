@@ -2,9 +2,9 @@
     position: relative;
     width: 0;
     transition: 0.6s;
-    max-height: 25rem;
-    overflow-y: auto;
     background-color: $clr1;
+    overflow-y: auto;
+
 
     &::-webkit-scrollbar {
         display: none;
@@ -15,6 +15,7 @@
         font-size: 1.1rem;
         padding-top: 15px;
     }
+
     &.opened {
         max-width: 80%;
         width: 50%;
@@ -40,14 +41,15 @@
         }
     }
 
-    input {
-        width: 100%;
+    input{
         outline: none;
         border: none;
+        width: 100%;
         background-color: white;
         font-size: 1.1rem;
         padding: 10px 25px 10px 10px;
         border-radius: 999px;
         margin-bottom: 5px;
     }
+  
 }
