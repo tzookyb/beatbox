@@ -14,6 +14,7 @@ export const youtubeService = {
 async function get(query) {
     try {
         const res = await axios.get(`${BASE_URL}?videoCategoryId=10&part=id,snippet&videoEmbeddable=true&type=video&maxResults=10&q=${query}&key=${API_KEYS[gCurrApiKey]}`)
+        console.log("get -> res.data", res.data)
         return res.data;
     } catch (err) {
         console.dir(err);

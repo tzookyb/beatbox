@@ -87,7 +87,9 @@ class _BoxDetails extends Component {
     }
 
     getSongsForDisplay = () => {
-        const songs = this.props.currBox.songs.filter(song => song.title.toLowerCase().includes(this.props.filter.toLowerCase));
+        const songs = this.props.currBox.songs.filter(song => {
+            return song.title.toLowerCase().includes(this.props.filter.toLowerCase());
+        })
         return songs;
     }
 
@@ -154,6 +156,7 @@ class _BoxDetails extends Component {
         const songsToShow = this.getSongsForDisplay();
         const minimalUser = this.getMinimalUser();
 
+        console.log("render -> songsToShow", songsToShow)
         return (
             <section className="box-details flex space-between" style={{ backgroundColor: `rgb(${this.state.dominantColor})` }}>
                 <div className="box-details-main flex column space-between">
