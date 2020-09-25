@@ -14,6 +14,16 @@ export function SongList({ songs, onRemoveSong, onAddSong, onPlaySong, isSongPic
                 onDragStart={onDragStart}
                 onDragEnd={onDragEnd}
             >
+                <Droppable droppableId={'trash'}>
+                    {provided => (
+                        <div ref={provided.innerRef} {...provided.droppableProps} className={`remove-song flex align-center justify-center ${isDragging ? '' : 'invisible'}`}>
+                            <Delete style={{ fontSize: '60px', color: 'white' }} />
+                            {/* {provided.placeholder} */}
+                        </div>
+                    )
+                    }
+                </Droppable>
+
                 <Droppable droppableId={'songPick'}>
                     {(provided) => (
                         <div
@@ -48,17 +58,6 @@ export function SongList({ songs, onRemoveSong, onAddSong, onPlaySong, isSongPic
                         </ul>
                     )}
                 </Droppable>
-
-                <Droppable droppableId={'trash'}>
-                    {provided => (
-                        <div ref={provided.innerRef} {...provided.droppableProps} className={`remove-song flex align-center justify-center ${isDragging ? '' : 'invisible'}`}>
-                            <Delete style={{ fontSize: '60px', color: 'white' }} />
-                            {provided.placeholder}
-                        </div>
-                    )
-                    }
-                </Droppable>
-
 
             </DragDropContext >
         </div >

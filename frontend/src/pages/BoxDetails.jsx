@@ -83,10 +83,13 @@ class _BoxDetails extends Component {
         this.props.updateBox(box)
     }
 
-    onAddSong = async (song) => {
+    onAddSong = async (song, idx) => {
         const newSong = await boxService.addSong(song);
         const box = { ...this.props.currBox };
-        box.songs.push(newSong);
+        if (idx) {
+            box.songs.splice(idx, 0, newSong);
+        }
+        else box.songs.unshift(newSong);
         this.addMessageChat(`Song ${newSong.title} added by ${this.props.user.username}`);
         this.props.updateBox(box);
     }
@@ -131,8 +134,9 @@ class _BoxDetails extends Component {
             return;
         }
         if (source.droppableId === 'songPick') {
-            const song = await youtubeService.getSongById(draggableId);
-            console.log("onDragEnd -> song", song)
+            let song = await youtubeService.getSongById(draggableId);
+            [song] = song.items;
+            this.onAddSong(song, destination.index);
             return;
         }
 
@@ -199,8 +203,6 @@ class _BoxDetails extends Component {
             preventDefaultTouchmoveEvent: true,
             trackMouse: true
         };
-
-        console.log("render -> songsToShow", songsToShow)
         return (
             <Swipeable {...swipeConfig}>
                 <section className="box-details" style={{ backgroundColor: `rgb(${this.state.dominantColor})` }}>
@@ -216,17 +218,17 @@ class _BoxDetails extends Component {
                                     <FavoriteIcon />
                                 </div>
                             </div>
-                        <div className="share-container flex space-between column">
-                            <p>Share the box:</p>
-                            <div className="share-btns flex space-evenely">
-                                <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} rel="noopener noreferrer" target="_blank"><FacebookIcon /></a>
-                                <a className="whatsapp-share-btn" href={`whatsapp://send?text=${currBox.createdBy.name} Shared a Box With You! : \n\n ${window.location.href}`} data-action="share/whatsapp/share"><WhatsappIcon /></a>
-                                <CopyToClipboard text={window.location.href}>
-                                    <LinkIcon onClick={this.toggleClipboardToast} style={{ transform: 'rotate(45deg) translateY(1px) translateX(4px)' }} />
-                                </CopyToClipboard>
+                            <div className="share-container flex space-between column">
+                                <p>Share the box:</p>
+                                <div className="share-btns flex space-evenely">
+                                    <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} rel="noopener noreferrer" target="_blank"><FacebookIcon /></a>
+                                    <a className="whatsapp-share-btn" href={`whatsapp://send?text=${currBox.createdBy.name} Shared a Box With You! : \n\n ${window.location.href}`} data-action="share/whatsapp/share"><WhatsappIcon /></a>
+                                    <CopyToClipboard text={window.location.href}>
+                                        <LinkIcon onClick={this.toggleClipboardToast} style={{ transform: 'rotate(45deg) translateY(1px) translateX(4px)' }} />
+                                    </CopyToClipboard>
+                                </div>
+                                {this.state.isClipboardToast && <div className="copied-to-clipboard"><small>Copied to Clipboard!</small></div>}
                             </div>
-                            {this.state.isClipboardToast && <div className="copied-to-clipboard"><small>Copied to Clipboard!</small></div>}
-                        </div>
                         </div>
                         <SongList
                             songs={songsToShow}
