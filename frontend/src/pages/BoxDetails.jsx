@@ -10,6 +10,9 @@ import WhatsappIcon from '@material-ui/icons/WhatsApp';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkIcon from '@material-ui/icons/Link';
 import ColorThief from "colorthief";
+import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
+import { Swipeable } from "react-swipeable";
+
 // LOCAL IMPORT
 import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
@@ -30,6 +33,7 @@ class _BoxDetails extends Component {
         isDragging: false,
         messages: [],
         dominantColor: '',
+        isMobileChatOpen: false,
         isClipboardToast: false
     }
 
@@ -178,6 +182,10 @@ class _BoxDetails extends Component {
         setTimeout(() => this.setState({ isClipboardToast: false }), 2000);
     }
 
+    toggleMobileMenu = () => {
+        this.setState({ isMobileChatOpen: !this.state.isMobileChatOpen })
+    }
+
     render() {
         const { isSongPickOpen, isDragging, } = this.state;
         const { currBox, messages, filter } = this.props;
@@ -185,18 +193,28 @@ class _BoxDetails extends Component {
         const currSongId = currBox.currSong?.id || null;
         const songsToShow = this.getSongsForDisplay();
         const minimalUser = this.getMinimalUser();
+        const swipeConfig = {
+            onSwipedRight: () => this.toggleMobileMenu(),
+            onSwipedLeft: () => this.toggleMobileMenu(),
+            preventDefaultTouchmoveEvent: true,
+            trackMouse: true
+        };
+
+        console.log("render -> songsToShow", songsToShow)
         return (
-            <section className="box-details" style={{ backgroundColor: `rgb(${this.state.dominantColor})` }}>
-                <div className="box-details-main flex column">
-                    <BoxInfo getDominantColor={this.getDominantColor} imgRef={this.imgRef} box={currBox} onSaveInfo={this.onSaveInfo} minimalUser={minimalUser} onToggleLikeBox={this.onToggleLikeBox} />
-                    <div className="song-social-actions flex space-between">
-                        <div className="btns-container flex">
-                            <Fab className={`add-song-btn  ${isSongPickOpen ? 'opened' : ''}`} onClick={this.toggleSongPick} aria-label="add">
-                                <AddIcon />
-                            </Fab>
-                            <div onClick={() => this.onToggleLikeBox(currBox._id, minimalUser)} className={`like-btn ${this.getIsUserLikeBox(currBox, minimalUser)}`}>
-                                {currBox.likedByUsers.length}
-                                <FavoriteIcon />
+            <Swipeable {...swipeConfig}>
+                <section className="box-details" style={{ backgroundColor: `rgb(${this.state.dominantColor})` }}>
+                    <div className="box-details-main flex column">
+                        <BoxInfo getDominantColor={this.getDominantColor} imgRef={this.imgRef} box={currBox} onSaveInfo={this.onSaveInfo} minimalUser={minimalUser} onToggleLikeBox={this.onToggleLikeBox} />
+                        <div className="song-social-actions flex space-between">
+                            <div className="btns-container flex">
+                                <Fab className={`add-song-btn  ${isSongPickOpen ? 'opened' : ''}`} onClick={this.toggleSongPick} aria-label="add">
+                                    <AddIcon />
+                                </Fab>
+                                <div onClick={() => this.onToggleLikeBox(currBox._id, minimalUser)} className={`like-btn ${this.getIsUserLikeBox(currBox, minimalUser)}`}>
+                                    {currBox.likedByUsers.length}
+                                    <FavoriteIcon />
+                                </div>
                             </div>
                         </div>
                         <div className="share-container flex space-between column">
@@ -210,24 +228,27 @@ class _BoxDetails extends Component {
                             </div>
                             {this.state.isClipboardToast && <div className="copied-to-clipboard"><small>Copied to Clipboard!</small></div>}
                         </div>
-                    </div>
-                    <SongList
-                        songs={songsToShow}
-                        onPlaySong={this.onPlaySong}
-                        onRemoveSong={this.onRemoveSong}
-                        onAddSong={this.onAddSong}
-                        isSongPickOpen={isSongPickOpen}
-                        nowPlayingId={currSongId}
-                        onDragStart={this.onDragStart}
-                        onDragEnd={this.onDragEnd}
-                        isFilter={!!filter}
-                        isDragging={isDragging}
-                    />
+                        <SongList
+                            songs={songsToShow}
+                            onPlaySong={this.onPlaySong}
+                            onRemoveSong={this.onRemoveSong}
+                            onAddSong={this.onAddSong}
+                            isSongPickOpen={isSongPickOpen}
+                            nowPlayingId={currSongId}
+                            onDragStart={this.onDragStart}
+                            onDragEnd={this.onDragEnd}
+                            isFilter={!!filter}
+                            isDragging={isDragging}
+                        />
 
-                </div>
-                <div className="chat-box flex column"></div>
-                {/* <BoxWall messages={messages} addMsg={this.addMsg} /> */}
-            </section>
+                    </div>
+                    <div className={`${this.state.isMobileChatOpen ? 'chat-open' : ''} chat-box flex column`} >
+                    </div>
+
+                    <button className={`${this.state.isMobileChatOpen ? 'chat-open' : ''} mobile-chat-btn`} onClick={this.toggleMobileMenu}><QuestionAnswerIcon /></button>
+                    {/* <BoxWall messages={messages} addMsg={this.addMsg} /> */}
+                </section>
+            </Swipeable>
         )
     }
 }
