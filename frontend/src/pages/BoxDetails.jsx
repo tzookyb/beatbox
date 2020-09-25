@@ -13,36 +13,46 @@ import { socketService } from '../services/socketService';
 import { loadBox, updateBox, gotBoxUpdate } from '../store/actions/boxAction'
 import { addMessage, loadMessages } from '../store/actions/messageAction'
 import { setCurrSong } from '../store/actions/playerActions'
-
+import { loadConnectedUsers,addConnectedUser } from '../store/actions/connectedUsersAction'
 class _BoxDetails extends Component {
     state = {
         filterBy: '',
         isSongPickOpen: false,
         isDragging: false,
-        messages: []
     }
 
     async componentDidMount() {
         const boxId = this.props.match.params.boxId;
-        const minimalUser = this.getMinimalUser();
+        const minimalUser = userService.getMinimalUser();
         await this.props.loadBox(boxId);
-        await boxService.addConnectedUser(boxId, minimalUser);
+        // await boxService.addConnectedUser(boxId, minimalUser);
         // SOCKET SETUP
         socketService.setup();
-        socketService.emit('join box', this.props.box._id);
+        const boxInfo = {
+            boxId: this.props.box._id,
+            user: minimalUser
+        }
+        socketService.emit('join box', boxInfo);
         socketService.on('get box status', this.setBoxStatus);
         // socketService.on('get box status', this.props.setCurrSong)
         socketService.on('song changed', this.props.setCurrSong);
         socketService.on('box changed', this.props.gotBoxUpdate);
         socketService.on('chat addMsg', this.props.addMessage);
+        socketService.on('joined new box', this.props.loadConnectedUsers);
+        socketService.on('leave box', this.props.loadConnectedUsers);
+        // socketService.on('user add', this.props.addconnectedUser);
     }
+
     componentWillUnmount() {
-        socketService.off('chat addMsg', this.props.addMessage)
+        socketService.off('chat addMsg', this.props.addMessage);
     }
 
     setBoxStatus = (boxStatus) => {
         this.props.setCurrSong(boxStatus.currSong);
         this.props.loadMessages(boxStatus.msgs);
+        // this.props.loadConnectedUsers(boxStatus.connectedUsers);
+        // console.log("setBoxStatus -> boxStatus.connectedUsers", boxStatus.connectedUsers)
+        // console.log(this.props.connectedUsers);
     }
 
     onRemoveSong = (ev, songId) => {
@@ -125,10 +135,6 @@ class _BoxDetails extends Component {
         socketService.emit('chat newMsg', messageObj);
     }
 
-    getMinimalUser() {
-        return userService.getMinimalUser();
-    }
-
     onToggleLikeBox = async (boxId, minimalUser) => {
         await boxService.addLike(boxId, minimalUser)
         await this.props.loadBox(boxId);
@@ -148,13 +154,11 @@ class _BoxDetails extends Component {
         if (!box) return <CircleLoading size="large" color="#ac0aff" />
         const currSongId = box.currSong?.id || null;
         const songsToShow = this.getSongsForDisplay();
-        const minimalUser = this.getMinimalUser();
-
+        const minimalUser = userService.getMinimalUser();
         return (
             <section className="box-details flex space-between">
                 <div className="box-details-main flex column space-between">
                     <BoxInfo box={box} onSaveInfo={this.onSaveInfo} minimalUser={minimalUser} onToggleLikeBox={this.onToggleLikeBox} />
-
                     <SongList
                         songs={songsToShow}
                         onPlaySong={this.onPlaySong}
@@ -170,7 +174,7 @@ class _BoxDetails extends Component {
                     />
 
                 </div>
-                <BoxWall messages={messages} addMsg={this.addMsg} />
+                <BoxWall messages={messages} addMsg={this.addMsg} connectedUsers={this.props.connectedUsers}/>
             </section>
         )
     }
@@ -179,7 +183,8 @@ const mapStateToProps = state => {
     return {
         box: state.boxReducer.currBox,
         user: state.userReducer.loggedinUser,
-        messages: state.messageReducer.messages
+        messages: state.messageReducer.messages,
+        connectedUsers: state.connectedUsersReducer.connectedUsers
     }
 }
 const mapDispatchToProps = {
@@ -188,6 +193,8 @@ const mapDispatchToProps = {
     addMessage,
     loadMessages,
     setCurrSong,
-    gotBoxUpdate
+    gotBoxUpdate,
+    addConnectedUser,
+    loadConnectedUsers
 }
 export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails);

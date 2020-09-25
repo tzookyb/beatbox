@@ -8,7 +8,8 @@ import { Player } from './cmps/Player';
 import { BoxApp } from './pages/BoxApp';
 import { BoxDetails } from './pages/BoxDetails';
 import { BoxAdd } from './pages/BoxAdd';
-import { Login } from './cmps/user/Login';
+// import { Login } from './cmps/user/Login';
+import { Signup } from './cmps/user/Signup'
 import { Home } from './pages/Home';
 import { UserDetails } from './pages/UserDetails';
 
@@ -23,7 +24,7 @@ class _App extends Component {
             <Route component={BoxAdd} path="/box/add" />
             <Route component={BoxDetails} path="/box/:boxId" />
             <Route component={UserDetails} path="/user/:id" />
-            <Route component={Login} path="/login" />
+            <Route component={Signup} path="/login" />
             <Route component={BoxApp} path="/box" />
             <Route component={Home} path="/" />
           </Switch>

@@ -1,6 +1,6 @@
 import httpService from './httpService';
 import { youtubeService } from './youtubeService';
-
+import { userService } from '../services/userService'
 var gGenre = ['Hip-hop', 'Easy', 'Electronic', 'Latin', 'Rock',
     'Pop', 'Classical', 'Alternative', 'Blues', 'Disco', 'Israeli', 'Arabic']
 
@@ -59,6 +59,7 @@ function getEmptyBox(user) {
 }
 
 async function save(box) {
+    userService.addBox(box);
     return await httpService.post(`box`, box);
 }
 
@@ -72,7 +73,6 @@ function addSong(song) {
         youtubeId: song.id.videoId,
         title: youtubeService.titleSimplify(song.snippet.title),
         imgUrl: song.snippet.thumbnails.high.url,
-        //TODO: add loggedin user to addedby -MATAN!!!!
         addedBy: {}
     }
     return newSong;

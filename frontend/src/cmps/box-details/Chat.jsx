@@ -32,7 +32,6 @@ export class Chat extends React.Component {
         avatar: this.props.user.imgUrl,
         type: 'chat'
       }
-      console.log("Chat -> sendMsg -> msgObj", msgObj)
       socketService.emit('chat newMsg', msgObj);
       this.setState({ msg: '' })
     }

@@ -47,7 +47,7 @@ class _BoxWall extends Component {
     }
 
     render() {
-        const { messages, user, box } = this.props;
+        const { messages, user, box, connectedUsers } = this.props;
         const { myEmoji, bottom, opacity, typingStr } = this.state;
         const isEmoji = (myEmoji === '') ? false : true;
         return (
@@ -55,7 +55,7 @@ class _BoxWall extends Component {
                 <div className="chat-header">
                     <h2> Chat Box </h2>
                     <AvatarGroup className="connected-users" max={4}>
-                        {this.getUsersAvatars(box.connectedUsers)}
+                        {this.getUsersAvatars(connectedUsers)}
                     </AvatarGroup>
                     <div className="typing-container">
                         {typingStr && <h3>{typingStr}</h3>}
@@ -78,7 +78,8 @@ const mapStateToProps = state => {
     return {
         user: state.userReducer.loggedinUser,
         messages: state.messageReducer.messages,
-        box: state.boxReducer.currBox
+        box: state.boxReducer.currBox,
+        // connectedUsers: state.connectedUsersReducer.connectedUsers
     }
 }
 const mapDispatchToProps = {

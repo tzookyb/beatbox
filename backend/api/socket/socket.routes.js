@@ -4,7 +4,7 @@ const boxMap = {}
 function createBoxStatus() {
     return {
         msgs: [],
-        participants: [],
+        connectedUsers: [],
         currSong: {
             id: null,
             secPlayed: 0,
@@ -12,49 +12,62 @@ function createBoxStatus() {
     }
 }
 
-function getBoxStatus(boxId) {
-    if (!boxMap[boxId]) boxMap[boxId] = createBoxStatus()
-    return boxMap[boxId]
+function leaveBox(socket, boxInfo, io) {
+    const boxStatus = getBoxStatus(socket.myBox);
+    
+    // if (boxMap[socket.myBox].connectedUsers.length > 1) {
+        const newConnectedUsers = boxMap[socket.myBox].connectedUsers.filter(user => user.id !== boxInfo.user.id)
+        boxMap[socket.myBox].connectedUsers = newConnectedUsers;
+    // } 
+    io.to(socket.myBox).emit('leave box', boxStatus.connectedUsers);
+    // if (boxMap[socket.myBox].connectedUsers.length === 1) {
+    //     boxMap[socket.myBox] = createBoxStatus();
+    // }
+    
+    socket.leave(socket.myBox);
 }
 
+function getBoxStatus(boxId) {
+    if (!boxMap[boxId]) boxMap[boxId] = createBoxStatus();
+    return boxMap[boxId];
+}
+
+function addConnectedUser(socket, boxInfo) {
+    const boxStatus = getBoxStatus(boxInfo.boxId);
+    const isUserConnected = boxStatus.connectedUsers.find(user => user.id === boxInfo.user.id);
+    if (!isUserConnected) {
+        boxMap[socket.myBox].connectedUsers.push(boxInfo.user);
+    }
+}
 
 function connectSockets(io) {
     io.on('connection', socket => {
-        socket.on('join box', (boxId, miniUser) => {
+        socket.on('join box', (boxInfo) => {
             if (socket.myBox) {
-                socket.leave(socket.myBox)
+                leaveBox(socket, boxInfo, io);
             }
-            socket.join(boxId)
-            socket.myBox = boxId;
-            const boxStatus = getBoxStatus(boxId)
-            boxStatus.participants.push(miniUser)
-            io.to(socket.myBox).emit('joined new box', boxStatus.participants)
-            socket.emit('get box status', boxStatus)
+            socket.join(boxInfo.boxId);
+            socket.myBox = boxInfo.boxId;
+            const boxStatus = getBoxStatus(boxInfo.boxId);
+            addConnectedUser(socket, boxInfo);
+            io.to(socket.myBox).emit('joined new box', boxStatus.connectedUsers);
+            socket.emit('get box status', boxStatus);
         })
         socket.on('chat newMsg', msg => {
-        console.log("connectSockets -> msg", msg)
             boxMap[socket.myBox].msgs.push(msg);
             io.to(socket.myBox).emit('chat addMsg', msg);
         })
         socket.on('chat typing', typingStr => {
             socket.broadcast.to(socket.myBox).emit('chat showTyping', typingStr)
         })
-
-        socket.on('chat topic', topic => {
-            if (socket.myTopic) {
-                socket.leave(socket.myTopic)
-            }
-            socket.join(topic)
-            socket.myTopic = topic;
-        })
         socket.on('song time changed', secPlayed => {
             boxMap[socket.myBox].secPlayed = secPlayed;
             io.to(socket.myBox).emit('update song time', secPlayed)
         })
         socket.on('set currSong', currSong => {
-            boxMap[socket.myBox].currSongId = currSong.id
-            boxMap[socket.myBox].secPlayed = currSong.secPlayed
-            boxMap[socket.myBox].isPlaying = currSong.isPlaying
+            // boxMap[socket.myBox].currSongId = currSong.id
+            // boxMap[socket.myBox].secPlayed = currSong.secPlayed
+            // boxMap[socket.myBox].isPlaying = currSong.isPlaying
 
             io.to(socket.myBox).emit('song changed', currSong)
         })

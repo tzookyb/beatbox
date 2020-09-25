@@ -19,7 +19,6 @@ export class _BoxFilter extends Component {
         let query = new URLSearchParams();
         query.append('name', value)
         this.props.history.push(`/box/${query.toString()}`)
-        console.log("onHandleChange -> `/box/${query.toString()}`", `/box/?${query.toString()}`)
     }
 
     render() {

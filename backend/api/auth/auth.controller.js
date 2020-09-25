@@ -1,24 +1,24 @@
+
 const authService = require('./auth.service')
-const logger = require('../../services/logger.service')
+const logger = require('../../services/logger.service');
 
 async function login(req, res) {
-    const { email, password } = req.body
+    const credentials = req.body;
     try {
-        const user = await authService.login(email, password)
+        const user = await authService.login(credentials)
         req.session.user = user;
         res.json(user)
     } catch (err) {
-        res.status(401).send({ error: err })
+        res.status(401).send({ msg: 'Wrong username/password' })
     }
 }
 
 async function signup(req, res) {
     try {
-        const { email, password, username } = req.body
-        logger.debug(email + ", " + username + ', ' + password)
-        const account = await authService.signup(email, password, username)
-        logger.debug(`auth.route - new account created: ` + JSON.stringify(account))
-        const user = await authService.login(email, password)
+        const { username, fullName, password,imgUrl } = req.body
+        const account = await authService.signup(username, fullName, password,imgUrl)
+        const credentials = { username, fullName, password,imgUrl };
+        const user = await authService.login(credentials)
         req.session.user = user
         res.json(user)
     } catch (err) {
@@ -27,7 +27,7 @@ async function signup(req, res) {
     }
 }
 
-async function logout(req, res){
+async function logout(req, res) {
     try {
         req.session.destroy()
         res.send({ message: 'logged out successfully' })
@@ -41,3 +41,46 @@ module.exports = {
     signup,
     logout
 }
+// const authService = require('./auth.service')
+// const logger = require('../../services/logger.service')
+
+// async function login(req, res) {
+//     const { email, password } = req.body
+//     try {
+//         const user = await authService.login(email, password)
+//         req.session.user = user;
+//         res.json(user)
+//     } catch (err) {
+//         res.status(401).send({ error: err })
+//     }
+// }
+
+// async function signup(req, res) {
+//     try {
+//         const { email, password, username } = req.body
+//         logger.debug(email + ", " + username + ', ' + password)
+//         const account = await authService.signup(email, password, username)
+//         logger.debug(`auth.route - new account created: ` + JSON.stringify(account))
+//         const user = await authService.login(email, password)
+//         req.session.user = user
+//         res.json(user)
+//     } catch (err) {
+//         logger.error('[SIGNUP] ' + err)
+//         res.status(500).send({ error: 'could not signup, please try later' })
+//     }
+// }
+
+// async function logout(req, res){
+//     try {
+//         req.session.destroy()
+//         res.send({ message: 'logged out successfully' })
+//     } catch (err) {
+//         res.status(500).send({ error: err })
+//     }
+// }
+
+// module.exports = {
+//     login,
+//     signup,
+//     logout
+// }

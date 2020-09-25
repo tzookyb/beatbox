@@ -15,6 +15,7 @@ import { CircleLoading } from 'react-loadingg';
 // LOCAL IMPORT
 import { updateBox } from '../store/actions/boxAction';
 import { socketService } from '../services/socketService'
+import { userService } from '../services/userService'
 import { loadSong, updateSongPlay, updateSongTime } from '../store/actions/playerActions';
 
 class _Player extends Component {
@@ -42,7 +43,12 @@ class _Player extends Component {
     }
 
     socketSetup = () => {
-        socketService.emit('join box', this.props.currBox._id);
+        const minimalUser = userService.getMinimalUser();
+        const boxInfo = {
+            boxId: this.props.currBox._id,
+            user: minimalUser
+        }
+        socketService.emit('join box', boxInfo);
     }
 
     togglePlay = () => {

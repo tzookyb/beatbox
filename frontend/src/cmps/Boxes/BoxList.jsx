@@ -48,6 +48,7 @@ export class BoxList extends Component {
                                     onToggleLikeBox={this.props.onToggleLikeBox}
                                     onAddToFavorites={this.props.onAddToFavorites}
                                     minimalUser={this.props.minimalUser}
+                                    connectedUsers={this.props.connectedUsers}
                                 />
                             } else return null
                         })}
@@ -64,6 +65,7 @@ export class BoxList extends Component {
                         minimalUser={this.props.minimalUser}
                         onAddToFavorites={this.props.onAddToFavorites}
                         onToggleLikeBox={this.props.onToggleLikeBox}
+                        connectedUsers={this.props.connectedUsers}
                     />
                     )}
                 </div>}

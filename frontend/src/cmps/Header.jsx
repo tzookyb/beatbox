@@ -6,6 +6,7 @@ import Avatar from '@material-ui/core/Avatar';
 
 // LOCAL IMPORT
 import { BoxFilter } from './boxes/BoxFilter';
+import { logout } from '../store/actions/userAction'
 
 class _Header extends Component {
 
@@ -36,6 +37,7 @@ class _Header extends Component {
 
                 <BoxFilter isShown={(this.props.location.pathname !== '/' || this.state.isScroll)} />
 
+              
                 <ul className="main-nav flex clean-list space-between align-center">
                     <li><Link to="/box">Boxes</Link></li>
                     <Link to="/box/add">Create Box</Link>
@@ -57,5 +59,8 @@ const mapStateToProps = state => {
         user: state.userReducer.loggedinUser
     }
 }
+const mapDispatchToProps = {
+    logout
+}
 
-export const Header = connect(mapStateToProps)(withRouter(_Header))
+export const Header = connect(mapStateToProps, mapDispatchToProps)(withRouter(_Header))
