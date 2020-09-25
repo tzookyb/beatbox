@@ -166,8 +166,6 @@ class _BoxDetails extends Component {
         const currSongId = currBox.currSong?.id || null;
         const songsToShow = this.getSongsForDisplay();
         const minimalUser = this.getMinimalUser();
-
-        console.log("render -> songsToShow", songsToShow)
         return (
             <section className="box-details" style={{ backgroundColor: `rgb(${this.state.dominantColor})` }}>
                 <div className="box-details-main flex column">

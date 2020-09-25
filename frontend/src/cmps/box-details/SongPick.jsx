@@ -13,17 +13,22 @@ export class SongPick extends Component {
 
     inputRef = React.createRef()
 
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate(prevProps) {
+        console.log('songpick change');
         if (!this.props.isBoxAdd && this.props.isSongPickOpen) {
             this.inputRef.current.focus();
         }
+        if (prevProps.isSongPickOpen !== this.props.isSongPickOpen) this.nullResults();
     }
 
+    nullResults = () => {
+        this.setState({ searchStr: '', results: '', isSearching: false })
+    }
 
     handleInput = (ev) => {
         const { value } = ev.target;
         if (!value) {
-            this.setState({ searchStr: '', isSearching: false, results: '' });
+            this.nullResults();
             return;
         }
         this.setState({ results: '', searchStr: value, isSearching: true });
