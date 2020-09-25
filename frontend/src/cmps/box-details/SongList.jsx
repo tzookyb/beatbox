@@ -31,7 +31,7 @@ export function SongList({ songs, onRemoveSong, onAddSong, onPlaySong, isSongPic
                             ref={provided.innerRef}
                         >
                             <SongPick isBoxAdd={isBoxAdd} isSongPickOpen={isSongPickOpen} onAddSong={onAddSong} />
-                            {provided.placeholder}
+                            {/* {provided.placeholder} */}
                         </div>
                     )}
                 </Droppable>
