@@ -79,9 +79,6 @@ export class Chat extends React.Component {
             <input className="input-chat" value={this.state.msg}
               name="msg" onChange={this.onHandleChange} autoComplete="off" />
             <InsertEmoticonIcon onClick={this.toggleEmogis} />
-            {/* <Button type="primary" style={{ color: "white" }}>
-              <SendIcon />
-            </Button> */}
             <button className="send-btn">Send</button>
         </form>
         {this.state.isOpenEmojis && <div className="reactions flex">

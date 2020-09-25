@@ -1,10 +1,5 @@
 import httpService from './httpService'
-// const BASE_URL = 'http://localhost:3030/user'
 const STORAGE_KEY = 'loggedinUser'
-
-// import httpService from './httpService'
-// // const BASE_URL = 'http://localhost:3030/user'
-// const STORAGE_KEY = 'user';
 
 export const userService = {
     login,
@@ -30,7 +25,8 @@ async function login(userCred) {
 
 async function logout() {
     await httpService.post(`auth/logout`);
-    sessionStorage.clear();
+    const user = _getGuestMode();
+    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(user));
 }
 
 async function signup(userCred) {
@@ -61,7 +57,7 @@ function getMinimalUser() {
 function _getGuestMode() {
     return {
         username: 'Guest',
-        fullName: 'Best Guest',
+        fullName: 'New Guest',
         imgUrl: '',
         _id: _makeId()
     }

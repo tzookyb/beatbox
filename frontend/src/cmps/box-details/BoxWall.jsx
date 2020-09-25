@@ -54,9 +54,6 @@ class _BoxWall extends Component {
             <section className="wall-container flex column space-between">
                 <div className="chat-header flex column align-center">
                     <h2> Share your thoughts </h2>
-                    {/* <AvatarGroup className="connected-users" max={4}>
-                        {this.getUsersAvatars(connectedUsers)}
-                    </AvatarGroup> */}
                     <div className="typing-container">
                         {typingStr && <h3>{typingStr}</h3>}
                     </div>

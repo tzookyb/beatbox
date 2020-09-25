@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { Spin } from "antd";
 // LOCAL IMPORT
 import { MessageBox } from "./MessageBox";
-// import { socketService } from '../../services/socketService';
 
 export class ChatBox extends Component {
 

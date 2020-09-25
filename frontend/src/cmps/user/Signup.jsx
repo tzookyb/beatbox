@@ -1,8 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { signup } from '../../store/actions/userAction'
-import { cloudService } from '../../services/cloudService'
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
+import { signup, loadUser } from '../../store/actions/userAction'
 import imgPlaceholder from '../../assets/img/img_placeholder.png';
+import { cloudService } from '../../services/cloudService'
 
 class _Signup extends React.Component {
     state = {
@@ -30,40 +33,37 @@ class _Signup extends React.Component {
         })
     }
 
-    onSignup = async (ev) => {
+    onSignup = (ev) => {
         ev.preventDefault();
+        if (this.state.username === '') return;
         const { username, fullName, password, imgUrl } = this.state.user;
-        if (!username || !fullName || !password) {
-            return;
-        }
         const userCreds = { username, fullName, password, imgUrl };
-        await this.props.signup(userCreds);
-        this.props.history.push('/');
-        this.setState({ user: { username: '', fullName: '', password: '' } });
+        this.props.signup(userCreds);
+        this.props.loadUser()
+        this.props.handleClose();
     }
 
 
     render() {
         const { user } = this.state;
-        console.log("render -> user", user)
         return (
-            <div className="login-page">
+            <div className="signup">
                 <form className="input-login flex column" onSubmit={this.onSignup}>
-                    <input name="username" type="text" onChange={this.onChange} placeholder="User Name:" autoComplete="off" />
-                    <input name="fullName" type="text" onChange={this.onChange} placeholder="Full Name" autoComplete="off" />
-                    <input name="password" type="password" onChange={this.onChange} placeholder="Password" />
+                    <TextField name="username" type="text" onChange={this.onChange} placeholder="User Name:" autoComplete="off" />
+                    <TextField name="fullName" type="text" onChange={this.onChange} placeholder="Full Name" autoComplete="off" />
+                    <TextField name="password" type="password" onChange={this.onChange} placeholder="Password" />
 
-                    <div className="box-img">
+                    <div className="user-img">
                         <label className="upload-label" style={{ cursor: 'pointer' }} >
                             <input onChange={(ev) => this.uploadImg(ev)} type="file" hidden />
-                            <div className="upload-box-img">
-                                Upload Image
+                            <div className="upload-user-img">
+                                {user.imgUrl ? '' : 'Upload Image'}
                             </div>
                             <img src={user.imgUrl || imgPlaceholder} alt="user" />
                         </label>
                     </div>
 
-                    <button className="btn-log" onClick={this.onSignup}>Login</button>
+                    <Button className="btn-log" onClick={this.onSignup}>Signup</Button>
                 </form>
             </div>
         )
@@ -76,7 +76,10 @@ const mapStateToProps = state => {
         user: state.userReducer.loggedinUser,
     }
 }
+
 const mapDispatchToProps = {
+    // login,
+    loadUser,
     signup
 }
 

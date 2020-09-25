@@ -66,14 +66,14 @@ async function update(box) {
     return await httpService.put(`box/${box._id}`, box)
 }
 
-function addSong(song) {
+async function addSong(song) {
     const newSong = {
         id: _makeId(),
         youtubeId: song.id.videoId,
         title: youtubeService.titleSimplify(song.snippet.title),
+        duration: await youtubeService.getDuration(song.id.videoId),
         imgUrl: song.snippet.thumbnails.high.url,
-        addedBy: {}
-    }
+        }
     return newSong;
 }
 

@@ -26,14 +26,18 @@ class _BoxApp extends Component {
         const { boxes, genres, connectedUsers } = this.props;
         const minimalUser = userService.getMinimalUser();
         if (!boxes) return <CircleLoading size="large" color="#ac0aff" />
+
         return (
             <section className="box-app" id="box">
                 {!!genres && genres.map((genre, idx) => {
                     return (
-                        <BoxList boxes={boxes} key={idx} genre={genre}
-                            minimalUser={minimalUser} 
+                        <BoxList
+                            boxes={boxes}
+                            key={idx}
+                            genre={genre}
+                            minimalUser={minimalUser}
                             connectedUsers={connectedUsers}
-                            />
+                        />
                     )
                 })}
                 {!genres && <GenresFilter genreCount={5} />}

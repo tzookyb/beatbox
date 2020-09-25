@@ -197,7 +197,7 @@ class _Player extends Component {
                                 value={this.state.secPlayed}
                             />
 
-                            {duration && <span className="player-time">{showTime(duration)}</span>}
+                            {duration && <span className="player-time">{showTime(duration+1)}</span>}
                         </div>}
 
                     <div className="player-controls flex align-center">
@@ -221,7 +221,7 @@ class _Player extends Component {
                         <button className="player-ctrl-btn flex align-center" title={muted ? 'Unmute' : 'Mute'} onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
 
                         <img
-                            style={{ visibility: (this.props.location.pathname === `/box/${currBox._id}`) ? 'hidden' : 'visible' }}
+                            style={{ visibility: (this.props.location.pathname === `/box/details/${currBox._id}`) ? 'hidden' : 'visible' }}
                             className="back-to-box"
                             src={require('../assets/img/box.png')}
                             title="Back to box"
