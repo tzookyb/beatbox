@@ -159,7 +159,7 @@ class _BoxDetails extends Component {
         const colorThief = new ColorThief();
         const img = this.imgRef.current;
         let result = colorThief.getColor(img, 50)
-        if (result.every(color => color > 150)) result = result.map(color => (color > 150) ? 150 : color);
+        if (result.every(color => color > 180)) result = result.map(color => (color > 150) ? 150 : color);
         this.setState({ dominantColor: result })
     }
     toggleClipboardToast = () => {
