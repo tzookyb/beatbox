@@ -34,16 +34,16 @@ if (process.env.NODE_ENV === 'production') {
     app.use(cors(corsOptions));
 }
 
-// const authRoutes = require('./api/auth/auth.routes')
-// const userRoutes = require('./api/user/user.routes')
-const boxRoutes = require('./api/box/box.routes')
+const userRoutes = require('./api/user/user.routes');
+const boxRoutes = require('./api/box/box.routes');
+const authRoutes = require('./api/auth/auth.routes');
 const connectSockets = require('./api/socket/socket.routes')
 
 
 // routes
-// app.use('/api/auth', authRoutes)
-// app.use('/api/user', userRoutes)
+app.use('/api/user', userRoutes)
 // app.use('/api/review', reviewRoutes)
+app.use('/api/auth', authRoutes)
 app.use('/api/box', boxRoutes)
 connectSockets(io)
 

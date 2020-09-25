@@ -23,9 +23,10 @@ import { socketService } from '../services/socketService';
 import { loadBox, updateBox, gotBoxUpdate } from '../store/actions/boxAction'
 import { addMessage, loadMessages } from '../store/actions/messageAction'
 import { setCurrSong } from '../store/actions/playerActions'
+import { loadConnectedUsers, addConnectedUser } from '../store/actions/connectedUsersAction'
 import { youtubeService } from '../services/youtubeService';
-
-
+import Avatar from '@material-ui/core/Avatar';
+import AvatarGroup from '@material-ui/lab/AvatarGroup';
 
 class _BoxDetails extends Component {
     state = {
@@ -41,24 +42,33 @@ class _BoxDetails extends Component {
 
     async componentDidMount() {
         const boxId = this.props.match.params.boxId;
-        const minimalUser = this.getMinimalUser();
+        const minimalUser = userService.getMinimalUser();
         await this.props.loadBox(boxId);
-        await boxService.addConnectedUser(boxId, minimalUser);
+        // await boxService.addConnectedUser(boxId, minimalUser);
         // SOCKET SETUP
         socketService.setup();
-        socketService.emit('join box', this.props.currBox._id);
+        const boxInfo = {
+            boxId: this.props.currBox._id,
+            user: minimalUser
+        }
+        socketService.emit('join box', boxInfo);
         socketService.on('get box status', this.setBoxStatus);
         socketService.on('song changed', this.props.setCurrSong);
         socketService.on('box changed', this.props.gotBoxUpdate);
         socketService.on('chat addMsg', this.props.addMessage);
+        socketService.on('joined new box', this.props.loadConnectedUsers);
     }
+
     componentWillUnmount() {
-        socketService.off('chat addMsg', this.props.addMessage)
+        socketService.off('chat addMsg', this.props.addMessage);
     }
 
     setBoxStatus = (boxStatus) => {
         this.props.setCurrSong(boxStatus.currSong);
         this.props.loadMessages(boxStatus.msgs);
+        // this.props.loadConnectedUsers(boxStatus.connectedUsers);
+        // console.log("setBoxStatus -> boxStatus.connectedUsers", boxStatus.connectedUsers)
+        // console.log(this.props.connectedUsers);
     }
 
     onRemoveSong = (ev, songId) => {
@@ -156,10 +166,6 @@ class _BoxDetails extends Component {
         socketService.emit('chat newMsg', messageObj);
     }
 
-    getMinimalUser() {
-        return userService.getMinimalUser();
-    }
-
     onToggleLikeBox = async (boxId, minimalUser) => {
         await boxService.addLike(boxId, minimalUser)
         await this.props.loadBox(boxId);
@@ -196,7 +202,7 @@ class _BoxDetails extends Component {
         if (!currBox) return <CircleLoading size="large" color="#ac0aff" />
         const currSongId = currBox.currSong?.id || null;
         const songsToShow = this.getSongsForDisplay();
-        const minimalUser = this.getMinimalUser();
+        const minimalUser = userService.getMinimalUser();
         const swipeConfig = {
             onSwipedRight: () => this.toggleMobileMenu(),
             onSwipedLeft: () => this.toggleMobileMenu(),
@@ -214,7 +220,7 @@ class _BoxDetails extends Component {
                                     <AddIcon />
                                 </Fab>
                                 <div onClick={() => this.onToggleLikeBox(currBox._id, minimalUser)} className={`like-btn ${this.getIsUserLikeBox(currBox, minimalUser)}`}>
-                                    {currBox.likedByUsers.length}
+                                    {/* {currBox.likedByUsers.length} */}
                                     <FavoriteIcon />
                                 </div>
                             </div>
@@ -244,7 +250,9 @@ class _BoxDetails extends Component {
                         />
 
                     </div>
+
                     <div className={`${this.state.isMobileChatOpen ? 'chat-open' : ''} chat-box flex column`} >
+                        <BoxWall messages={messages} addMsg={this.addMsg} connectedUsers={this.props.connectedUsers} />
                     </div>
 
                     <button className={`${this.state.isMobileChatOpen ? 'chat-open' : ''} mobile-chat-btn`} onClick={this.toggleMobileMenu}><QuestionAnswerIcon /></button>
@@ -254,12 +262,18 @@ class _BoxDetails extends Component {
         )
     }
 }
+
+{/* <AvatarGroup className="connected-users" max={4}>
+                        {this.getUsersAvatars(this.props.connectedUsers)}
+                    </AvatarGroup> */}
+
 const mapStateToProps = state => {
     return {
         currBox: state.boxReducer.currBox,
         filter: state.boxReducer.filter,
         user: state.userReducer.loggedinUser,
-        messages: state.messageReducer.messages
+        messages: state.messageReducer.messages,
+        connectedUsers: state.connectedUsersReducer.connectedUsers
     }
 }
 const mapDispatchToProps = {
@@ -268,6 +282,8 @@ const mapDispatchToProps = {
     addMessage,
     loadMessages,
     setCurrSong,
-    gotBoxUpdate
+    gotBoxUpdate,
+    addConnectedUser,
+    loadConnectedUsers
 }
 export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails);

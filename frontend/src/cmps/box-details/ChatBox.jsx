@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { Spin } from "antd";
 // LOCAL IMPORT
 import { MessageBox } from "./MessageBox";
-// import { socketService } from '../../services/socketService';
 
 export class ChatBox extends Component {
 
@@ -33,7 +32,7 @@ export class ChatBox extends Component {
     render() {
         const { messages } = this.props;
         return (
-            <section className="chat-box">
+            <section className="msgs-container">
                 {messages ? <this.renderMessages /> : <Spin size="large" />}
             </section>
         );

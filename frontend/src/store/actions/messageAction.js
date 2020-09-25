@@ -7,7 +7,6 @@ export function loadMessages(messages) {
 }
 
 export function addMessage(message) {
-  console.log("addMessage -> message", message)
   return dispatch => {
     dispatch({ type: 'ADD_MESSAGE', message })
   };

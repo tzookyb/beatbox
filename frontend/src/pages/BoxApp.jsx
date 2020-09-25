@@ -23,7 +23,7 @@ class _BoxApp extends Component {
     }
 
     render() {
-        const { boxes, genres } = this.props;
+        const { boxes, genres, connectedUsers } = this.props;
         const minimalUser = userService.getMinimalUser();
         if (!boxes) return <CircleLoading size="large" color="#ac0aff" />
 
@@ -36,11 +36,12 @@ class _BoxApp extends Component {
                             key={idx}
                             genre={genre}
                             minimalUser={minimalUser}
+                            connectedUsers={connectedUsers}
                         />
                     )
                 })}
                 {!genres && <GenresFilter genreCount={5} />}
-                {!genres && <BoxList boxes={boxes} minimalUser={minimalUser} />}
+                {!genres && <BoxList boxes={boxes} minimalUser={minimalUser} connectedUsers={connectedUsers} />}
 
             </section>
         )
@@ -50,6 +51,8 @@ class _BoxApp extends Component {
 const mapStateToProps = state => {
     return {
         boxes: state.boxReducer.boxes,
+        user: state.userReducer.loggedinUser,
+        connectedUsers: state.connectedUsersReducer.connectedUsers
     }
 }
 const mapDispatchToProps = {

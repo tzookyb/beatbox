@@ -2,15 +2,16 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Avatar from '@material-ui/core/Avatar';
 
 // LOCAL IMPORT
 import { BoxFilter } from './boxes/BoxFilter';
+import { logout } from '../store/actions/userAction'
+import { UserMenu } from './user/UserMenu'
 
 class _Header extends Component {
 
     state = {
-        isScroll: false
+        isScroll: false,
     }
 
     componentDidMount() {
@@ -35,16 +36,11 @@ class _Header extends Component {
 
                 <BoxFilter isShown={(this.props.location.pathname !== '/' || this.state.isScroll)} />
 
+
                 <ul className="main-nav flex clean-list space-between align-center">
                     <li><Link to="/box">Boxes</Link></li>
-                    <Link to="/box/add">Create Box</Link>
-                    {!user && <Link to='/login'>Login</Link>}
-                    <Link to='/login'>Login</Link>
-                    {user && <div className="flex column align-center">
-                        <Avatar alt="Remy Sharp" src={user.imgUrl} />
-                        <label className="avatar-name">Hi {user.username}</label>
-
-                    </div>}
+                    <li><Link to="/box/add">Create Box</Link></li>
+                    <li> <UserMenu user={user} onLogout={this.props.logout}/></li>
                 </ul>
             </header >
         )
@@ -56,5 +52,8 @@ const mapStateToProps = state => {
         user: state.userReducer.loggedinUser
     }
 }
+const mapDispatchToProps = {
+    logout
+}
 
-export const Header = connect(mapStateToProps)(withRouter(_Header))
+export const Header = connect(mapStateToProps, mapDispatchToProps)(withRouter(_Header))

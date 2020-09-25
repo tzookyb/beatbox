@@ -1,26 +1,20 @@
 .chat {
-  .form-msg {
-    padding: 10px; 
-    // background-color: transparent;
-    div {
-      border-radius: 999px;
+  position: fixed;
+  bottom: 80px;
+  .form-msg{
+    padding: 0;
+    background: transparent;
+    input{
+      flex: 1 1 0%;
+      border: none;
+      outline: none;
+      padding: 15px;
+      border-radius: 10px;
     }
-    .container-send-msg {
-      width: 100%;
-      .input-chat {
-        background-color: white;
-        border: none;
-        box-shadow: none;
-        width: 70%;
-        height: 50px;
-        font-size: 1.2rem;
-        outline: none;
-        border-radius: 5px;
-      }
+    .send-btn{
+      padding: 10px;
+      background: $clr3;
+      color: white;
     }
-  }
-  .reactions {
-    background: white;
-    border-radius: 5px;
   }
 }

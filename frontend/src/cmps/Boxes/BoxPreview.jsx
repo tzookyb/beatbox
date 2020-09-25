@@ -6,7 +6,7 @@ import HeadsetIcon from '@material-ui/icons/Headset';
 export class BoxPreview extends Component {
 
     render() {
-        const { box, isHomePage } = this.props;
+        const { box, isHomePage, connectedUsers } = this.props;
         return (
             <section className={`box-preview ${isHomePage ? 'box-home-preview' : ''}`}>
                 <Link to={`/box/details/${box._id}`} >
@@ -16,7 +16,7 @@ export class BoxPreview extends Component {
                 <div className="box-preview-details flex column">
                     <div className="flex space-between">
                         <h3 className="box-name">{box.name}</h3>
-                        <div className={` "flex align-center justify-end  ${(box.connectedUsers.length > 0) ? 'heartbeat played' : ''} `}>
+                        <div className={` "flex align-center justify-end  ${(connectedUsers.length > 0) ? 'heartbeat played' : ''} `}>
                             <HeadsetIcon />
                         </div>
                     </div>

@@ -32,7 +32,6 @@ export class Chat extends React.Component {
         avatar: this.props.user.imgUrl,
         type: 'chat'
       }
-      console.log("Chat -> sendMsg -> msgObj", msgObj)
       socketService.emit('chat newMsg', msgObj);
       this.setState({ msg: '' })
     }
@@ -76,15 +75,11 @@ export class Chat extends React.Component {
   render() {
     return (
       <div className="chat">
-        <form className="form-msg" onSubmit={this.sendMsg}>
-          <div className="container-send-msg flex space-between align-center">
-            <input className="input-chat" placeholder="Send Message" value={this.state.msg}
+        <form className="form-msg flex space-between align-center" onSubmit={this.sendMsg}>
+            <input className="input-chat" value={this.state.msg}
               name="msg" onChange={this.onHandleChange} autoComplete="off" />
             <InsertEmoticonIcon onClick={this.toggleEmogis} />
-            <Button type="primary" style={{ color: "white" }}>
-              <SendIcon />
-            </Button>
-          </div>
+            <button className="send-btn">Send</button>
         </form>
         {this.state.isOpenEmojis && <div className="reactions flex">
           <Emoji onEmojiChoose={this.onEmojiChoose} />

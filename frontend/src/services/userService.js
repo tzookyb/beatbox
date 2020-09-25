@@ -1,29 +1,49 @@
-// import httpService from './httpService'
-// const BASE_URL = 'http://localhost:3030/user'
+import httpService from './httpService'
 const STORAGE_KEY = 'loggedinUser'
 
 export const userService = {
     login,
-    getUser,
-    getMinimalUser
-    // signup,
-    // logout,
+    signup,
+    logout,
     // getUsers,
-    // getUser
+    getUser,
+    getMinimalUser,
+    addBox,
 }
 
-function login(userCard) {
-    userCard._id = _makeId();
-    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(userCard))
+async function addBox(box) {
+    const user = getUser();
+    if (!user.boxes) user.boxes = [];
+    user.boxes.push(box);
+    return await httpService.put(`user/${user._id}`, user)
+}
+
+async function login(userCred) {
+    const res = await httpService.post(`auth/login`, userCred);
+    return _handleLoggedinUser(res);
+}
+
+async function logout() {
+    await httpService.post(`auth/logout`);
+    const user = _getGuestMode();
+    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(user));
+}
+
+async function signup(userCred) {
+    const res = await httpService.post(`auth/signup`, userCred);
+    return _handleLoggedinUser(res);
 }
 
 function getUser() {
-    var user = JSON.parse(sessionStorage.getItem(STORAGE_KEY));
-    if (!user) user = getGuestMode();
-    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(user))
-    // return getGuestMode();
+    let user = _loadUser();
+    if (!user) {
+        user = _getGuestMode();
+        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(user))
+        // const res = await httpService.post(`user`, user);
+    }
     return user;
 }
+
 
 function getMinimalUser() {
     var user = getUser();
@@ -34,11 +54,11 @@ function getMinimalUser() {
     }
 }
 
-function getGuestMode() {
+function _getGuestMode() {
     return {
         username: 'Guest',
-        fullName: 'Best Guest',
-        imgUrl: 'https://res.cloudinary.com/daqs7x8my/image/upload/v1600683124/ko8ia4xof4zz3yspbgoc.png',
+        fullName: 'New Guest',
+        imgUrl: '',
         _id: _makeId()
     }
 }
@@ -51,44 +71,34 @@ function _makeId(length = 5) {
     }
     return txt;
 }
-// function getUser() {
-//     return axios.get(`${BASE_URL}`)
-//         .then(res => res.data)
-// }
 
-// async function login(userCred) {
-//     const res = await httpService.post(`auth/login`, userCred)
-//     return _handleLoggedinUser(res)
-// }
+function _handleLoggedinUser(user) {
+    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(user))
+    return user;
+}
 
-// function getUser() {
-//     return _loadUser();
-// }
+function _loadUser() {
+    return JSON.parse(sessionStorage.getItem(STORAGE_KEY));
+}
+
+
 
 // async function getUsers() {
 //     return httpService.get(`user`);
 // }
 
-// async function login(userCred) {
-//     const res = await httpService.post(`auth/login`, userCred)
-//     return _handleLoggedinUser(res)
+
+
+
+// function login(userCard) {
+//     userCard._id = _makeId();
+//     sessionStorage.setItem(STORAGE_KEY, JSON.stringify(userCard))
 // }
 
-// async function logout() {
-//     await httpService.post(`auth/logout`)
-//     sessionStorage.clear();
-// }
-
-// async function signup(userCred) {
-//     const res = await httpService.post(`auth/signup`, userCred)
-//     return _handleLoggedinUser(res)
-// }
-
-// function _handleLoggedinUser(user) {
+// function getUser() {
+//     var user = JSON.parse(sessionStorage.getItem(STORAGE_KEY));
+//     if (!user) user = getGuestMode();
 //     sessionStorage.setItem(STORAGE_KEY, JSON.stringify(user))
+//     // return getGuestMode();
 //     return user;
-// }
-
-// function _loadUser() {
-//     return JSON.parse(sessionStorage.getItem(STORAGE_KEY));
 // }
