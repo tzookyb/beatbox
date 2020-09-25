@@ -70,7 +70,7 @@ async function addSong(song) {
         id: _makeId(),
         youtubeId: song.id.videoId,
         title: youtubeService.titleSimplify(song.snippet.title),
-        duration: await youtubeService.getDuration(song.id.videoId),
+        duration: await youtubeService.getDuration(song.id.videoId, song.contentDetails?.duration),
         imgUrl: song.snippet.thumbnails.high.url,
     }
     return newSong;
