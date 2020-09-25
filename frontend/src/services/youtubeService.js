@@ -1,20 +1,22 @@
 import axios from 'axios';
 import he from 'he';
 
-const BASE_URL = 'https://www.googleapis.com/youtube/v3/search'
-const API_KEYS = ['AIzaSyCPP5cxksnuliRKXkqCqeZYG3dviWGM5cM', 'AIzaSyDzlrVY5xgIReWcL92FgEkdN4Z7kym6CBg'];
-var gCurrApiKey = 1;
+const SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search'
+const DETAILS_URL = 'https://www.googleapis.com/youtube/v3/videos'
+const API_KEYS = ['AIzaSyCPP5cxksnuliRKXkqCqeZYG3dviWGM5cM', 'AIzaSyDzlrVY5xgIReWcL92FgEkdN4Z7kym6CBg', 'AIzaSyAI58t1goVjCdrSsvtkgBAz0D9_2xhhTXI'];
+var gCurrApiKey = 0;
 var gCount = 0
 
 export const youtubeService = {
     get,
-    titleSimplify
+    titleSimplify,
+    getDuration
 }
 
 async function get(query) {
     try {
-        const res = await axios.get(`${BASE_URL}?videoCategoryId=10&part=id,snippet&videoEmbeddable=true&type=video&maxResults=10&q=${query}&key=${API_KEYS[gCurrApiKey]}`)
-        console.log("get -> res.data", res.data)
+        const res = await axios.get(`${SEARCH_URL}?videoCategoryId=10&part=id,snippet&videoEmbeddable=true&type=video&maxResults=10&q=${query}&key=${API_KEYS[gCurrApiKey]}`);
+        gCount = 0;
         return res.data;
     } catch (err) {
         console.dir(err);
@@ -30,6 +32,22 @@ async function get(query) {
     }
 }
 
+async function getDuration(youtubeId) {
+    try {
+        let res = await axios.get(`${DETAILS_URL}?id=${youtubeId}&part=contentDetails&key=${API_KEYS[gCurrApiKey]}`);
+        let duration = res.data.items[0].contentDetails.duration;
+        duration = duration.substring(2);
+        duration = duration.replace('M', ':');
+        duration = duration.split(':')
+        duration[1] = duration[1].replace('S', '');
+        duration[1] = duration[1].padStart(2, '0');
+        duration = duration.join(':');
+        return duration.toString();
+    } catch (err) {
+        console.log(err);
+        throw err;
+    }
+}
 
 function titleSimplify(title) {
     // Removes HTML char codes

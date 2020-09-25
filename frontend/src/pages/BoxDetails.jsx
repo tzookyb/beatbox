@@ -2,11 +2,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CircleLoading from 'react-loadingg/lib/CircleLoading'
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Fab } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import WhatsappIcon from '@material-ui/icons/WhatsApp';
 import FacebookIcon from '@material-ui/icons/Facebook';
+import LinkIcon from '@material-ui/icons/Link';
 import ColorThief from "colorthief";
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import { Swipeable } from "react-swipeable";
@@ -30,7 +32,8 @@ class _BoxDetails extends Component {
         isDragging: false,
         messages: [],
         dominantColor: '',
-        isMobileChatOpen: false
+        isMobileChatOpen: false,
+        isClipboardToast: false
     }
 
     imgRef = React.createRef();
@@ -79,8 +82,8 @@ class _BoxDetails extends Component {
         this.props.updateBox(box)
     }
 
-    onAddSong = (song) => {
-        const newSong = boxService.addSong(song);
+    onAddSong = async (song) => {
+        const newSong = await boxService.addSong(song);
         const box = { ...this.props.currBox };
         box.songs.push(newSong);
         this.addMessageChat(`Song ${newSong.title} added by ${this.props.user.username}`);
@@ -159,8 +162,13 @@ class _BoxDetails extends Component {
     getDominantColor = () => {
         const colorThief = new ColorThief();
         const img = this.imgRef.current;
-        const result = colorThief.getColor(img, 25)
+        let result = colorThief.getColor(img, 50)
+        if (result.every(color => color > 180)) result = result.map(color => (color > 150) ? 150 : color);
         this.setState({ dominantColor: result })
+    }
+    toggleClipboardToast = () => {
+        this.setState({ isClipboardToast: true })
+        setTimeout(() => this.setState({ isClipboardToast: false }), 2000);
     }
 
     toggleMobileMenu = () => {
@@ -197,13 +205,17 @@ class _BoxDetails extends Component {
                                     <FavoriteIcon />
                                 </div>
                             </div>
-                            <div className="share-container flex space-between column">
-                                <p>share the box: </p>
-                                <div className="share-btns flex space-evenely">
-                                    <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} rel="noopener noreferrer" target="_blank"><FacebookIcon /></a>
-                                    <a className="whatsapp-share-btn" href={`whatsapp://send?text=${currBox.createdBy.name} Shared a Box With You! : \n\n ${window.location.href}`} data-action="share/whatsapp/share"><WhatsappIcon /></a>
-                                </div>
+                        </div>
+                        <div className="share-container flex space-between column">
+                            <p>Share the box:</p>
+                            <div className="share-btns flex space-evenely">
+                                <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} rel="noopener noreferrer" target="_blank"><FacebookIcon /></a>
+                                <a className="whatsapp-share-btn" href={`whatsapp://send?text=${currBox.createdBy.name} Shared a Box With You! : \n\n ${window.location.href}`} data-action="share/whatsapp/share"><WhatsappIcon /></a>
+                                <CopyToClipboard text={window.location.href}>
+                                    <LinkIcon onClick={this.toggleClipboardToast} style={{ transform: 'rotate(45deg) translateY(1px) translateX(4px)' }} />
+                                </CopyToClipboard>
                             </div>
+                            {this.state.isClipboardToast && <div className="copied-to-clipboard"><small>Copied to Clipboard!</small></div>}
                         </div>
                         <SongList
                             songs={songsToShow}

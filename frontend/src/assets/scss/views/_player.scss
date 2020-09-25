@@ -7,7 +7,7 @@
     background-color: $clr1;
     bottom: 0;
     z-index: 11;
-    
+
     .player-capsule {
         bottom: 15px;
         height: 60px;
@@ -38,6 +38,8 @@
         }
 
         .player-thumbnail {
+            transform: scale(1.4);
+            object-fit: cover;
             border-radius: 80%;
             width: 100px;
             height: auto;
