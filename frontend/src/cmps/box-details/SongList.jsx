@@ -10,11 +10,32 @@ import { SongPreview } from './SongPreview'
 export function SongList({ songs, onRemoveSong, onAddSong, onPlaySong, isSongPickOpen, toggleSongPick, nowPlayingId, isFilter, isDragging, isBoxAdd, onDragEnd, onDragStart }) {
     return (
         <div className="song-list flex space-between">
-            <SongPick isBoxAdd={isBoxAdd} isSongPickOpen={isSongPickOpen} onAddSong={onAddSong} />
             <DragDropContext
                 onDragStart={onDragStart}
                 onDragEnd={onDragEnd}
             >
+                <Droppable droppableId={'trash'}>
+                    {provided => (
+                        <div ref={provided.innerRef} {...provided.droppableProps} className={`remove-song flex align-center justify-center ${isDragging ? '' : 'invisible'}`}>
+                            <Delete style={{ fontSize: '60px', color: 'white' }} />
+                            {/* {provided.placeholder} */}
+                        </div>
+                    )
+                    }
+                </Droppable>
+
+                <Droppable droppableId={'songPick'}>
+                    {(provided) => (
+                        <div
+                            {...provided.droppableProps}
+                            ref={provided.innerRef}
+                        >
+                            <SongPick isBoxAdd={isBoxAdd} isSongPickOpen={isSongPickOpen} onAddSong={onAddSong} />
+                            {/* {provided.placeholder} */}
+                        </div>
+                    )}
+                </Droppable>
+
                 <Droppable droppableId={'songList'}>
                     {(provided) => (
                         <ul
@@ -38,17 +59,6 @@ export function SongList({ songs, onRemoveSong, onAddSong, onPlaySong, isSongPic
                     )}
                 </Droppable>
 
-                <Droppable droppableId={'trash'}>
-                    {provided => (
-                        <div ref={provided.innerRef} {...provided.droppableProps} className={`remove-song flex align-center justify-center ${isDragging ? '' : 'invisible'}`}>
-                            <Delete style={{ fontSize: '60px', color: 'white' }} />
-                            {provided.placeholder}
-                        </div>
-                    )
-                    }
-                </Droppable>
-
-               
             </DragDropContext >
         </div >
     )

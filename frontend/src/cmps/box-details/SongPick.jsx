@@ -3,6 +3,7 @@ import { debounce } from 'debounce';
 import { CircleLoading } from 'react-loadingg';
 
 import { youtubeService } from '../../services/youtubeService';
+import { Draggable } from 'react-beautiful-dnd';
 
 export class SongPick extends Component {
     state = {
@@ -40,7 +41,7 @@ export class SongPick extends Component {
     getSongs = async () => {
         const query = this.state.searchStr;
         const res = await youtubeService.get(query);
-        if (!res) return
+        if (!res) return;
         const results = res.items;
         this.setState({ results });
     }
@@ -51,6 +52,7 @@ export class SongPick extends Component {
 
     render() {
         const { results, isSearching, searchStr } = this.state;
+        const { isFilter } = this.props;
         return (
             <div className={`song-pick ${this.props.isSongPickOpen ? 'opened' : ''}`}>
                 <input ref={this.inputRef} type="search" name="searchStr" value={searchStr} onChange={this.handleInput} placeholder="Search for songs" autoComplete="off" />
@@ -60,15 +62,25 @@ export class SongPick extends Component {
                     <CircleLoading color="#ac0aff" />
                 </div>}
                 {results && !results.length && <div className="song-pick-msg flex justify-center">No results found</div>}
-                {results && results.map(result => {
+
+                {results && results.map((result, idx) => {
                     const id = result.id.videoId;
                     const title = youtubeService.titleSimplify(result.snippet.title);
                     const imgUrl = result.snippet.thumbnails.medium.url;
-
-                    return <div key={id} className="song-pick-result flex" onClick={() => this.onAddSong(result)}>
-                        <img src={imgUrl} alt="thumbnail" />
-                        <span dir="auto">{title}</span>
-                    </div>
+                    return <Draggable key={id} draggableId={id} index={idx} isDragDisabled={isFilter}>
+                        {provided => (
+                            <div
+                                ref={provided.innerRef}
+                                {...provided.draggableProps}
+                                {...provided.dragHandleProps}
+                                className="song-pick-result flex"
+                                onClick={() => this.onAddSong(result)}
+                            >
+                                <img src={imgUrl} alt="thumbnail" />
+                                <span dir="auto">{title}</span>
+                            </div>
+                        )}
+                    </Draggable>
                 })
                 }
             </div>

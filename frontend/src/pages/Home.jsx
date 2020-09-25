@@ -29,11 +29,14 @@ class _Home extends Component {
         return (
             <React.Fragment>
                 <div id="top" className="hero-container flex justify-center align-center" >
-                    <div className="hero-txt flex align-center column">
-                        <h1>Share the <span>Beat</span>...</h1>
-                        <a href="#box"><button>Start listening</button></a>
+                    <div className="hero-txt flex align-center justify-end column">
+                        <h1>Share the Beat</h1>
+                        <p>Enjoy the moment. Be happy.</p>
+                        <div className="hero-btns-container flex column space-around">
+                            <a href="#box"><button>Start listening</button></a>
+                            <a href="#box" className="scroll-down-arrow"><ExpandMoreSharpIcon ></ExpandMoreSharpIcon></a>
+                        </div>
                     </div>
-                    <a href="#box" className="scroll-down-arrow"><ExpandMoreSharpIcon ></ExpandMoreSharpIcon></a>
                     <div className="hero-img">
                         <img src={require('../assets/img/hero3.jpg')} alt="" />
                         <img src={require('../assets/img/hero2.png')} alt="" />

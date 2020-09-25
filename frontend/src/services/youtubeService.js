@@ -10,13 +10,15 @@ var gCount = 0
 export const youtubeService = {
     get,
     titleSimplify,
-    getDuration
+    getDuration,
+    getSongById,
 }
 
 async function get(query) {
     try {
         const res = await axios.get(`${SEARCH_URL}?videoCategoryId=10&part=id,snippet&videoEmbeddable=true&type=video&maxResults=10&q=${query}&key=${API_KEYS[gCurrApiKey]}`);
         gCount = 0;
+        console.log("get -> res.data", res.data)
         return res.data;
     } catch (err) {
         console.dir(err);
@@ -32,10 +34,28 @@ async function get(query) {
     }
 }
 
-async function getDuration(youtubeId) {
+async function getSongById(youtubeId) {
     try {
-        let res = await axios.get(`${DETAILS_URL}?id=${youtubeId}&part=contentDetails&key=${API_KEYS[gCurrApiKey]}`);
-        let duration = res.data.items[0].contentDetails.duration;
+        const res = await axios.get(`${DETAILS_URL}?id=${youtubeId}&part=id,contentDetails,snippet&key=${API_KEYS[gCurrApiKey]}`);
+        return res.data;
+    } catch (err) {
+        console.log(err);
+        throw err;
+    }
+}
+
+async function getDuration(youtubeId, timeString) {
+    let duration
+    if (!timeString) {
+        try {
+            let res = await axios.get(`${DETAILS_URL}?id=${youtubeId}&part=contentDetails&key=${API_KEYS[gCurrApiKey]}`);
+            duration = res.data.items[0].contentDetails.duration;
+        } catch (err) {
+            console.log(err);
+            throw err;
+        }
+    } else duration = timeString;
+    try {
         duration = duration.substring(2);
         duration = duration.replace('M', ':');
         duration = duration.split(':')
@@ -44,8 +64,7 @@ async function getDuration(youtubeId) {
         duration = duration.join(':');
         return duration.toString();
     } catch (err) {
-        console.log(err);
-        throw err;
+        return null;
     }
 }
 

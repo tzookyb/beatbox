@@ -24,7 +24,7 @@ import { loadBox, updateBox, gotBoxUpdate } from '../store/actions/boxAction'
 import { addMessage, loadMessages } from '../store/actions/messageAction'
 import { setCurrSong } from '../store/actions/playerActions'
 import { loadConnectedUsers, addConnectedUser } from '../store/actions/connectedUsersAction'
-
+import { youtubeService } from '../services/youtubeService';
 import Avatar from '@material-ui/core/Avatar';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
 
@@ -93,10 +93,13 @@ class _BoxDetails extends Component {
         this.props.updateBox(box)
     }
 
-    onAddSong = async (song) => {
+    onAddSong = async (song, idx) => {
         const newSong = await boxService.addSong(song);
         const box = { ...this.props.currBox };
-        box.songs.push(newSong);
+        if (idx) {
+            box.songs.splice(idx, 0, newSong);
+        }
+        else box.songs.unshift(newSong);
         this.addMessageChat(`Song ${newSong.title} added by ${this.props.user.username}`);
         this.props.updateBox(box);
     }
@@ -130,14 +133,24 @@ class _BoxDetails extends Component {
         this.setState({ isDragging: true })
     }
 
-    onDragEnd = (result) => {
+    onDragEnd = async (result) => {
         const { destination, source, draggableId } = result;
+        console.log("onDragEnd -> result", result)
+
         this.setState({ isDragging: false })
         if (!destination) return;
         if (destination.droppableId === 'trash') {
             this.onRemoveSong(null, draggableId)
+            return;
         }
-        else if (destination.index === source.index) return;
+        if (source.droppableId === 'songPick') {
+            let song = await youtubeService.getSongById(draggableId);
+            [song] = song.items;
+            this.onAddSong(song, destination.index);
+            return;
+        }
+
+        if (destination.index === source.index) return;
         else this.onSwapSongs(source.index, destination.index);
     }
 
@@ -161,26 +174,21 @@ class _BoxDetails extends Component {
     onSwapSongs = (srcIdx, destIdx) => {
         const newSongs = [...this.props.currBox.songs];
         const [songToMove] = newSongs.splice(srcIdx, 1);
-        newSongs.splice(destIdx, 0, songToMove)
-        const newBox = { ...this.props.currBox, songs: newSongs }
+        newSongs.splice(destIdx, 0, songToMove);
+        const newBox = { ...this.props.currBox, songs: newSongs };
         this.props.updateBox(newBox);
     }
 
     getDominantColor = () => {
         const colorThief = new ColorThief();
         const img = this.imgRef.current;
-        let result = colorThief.getColor(img, 50)
+        let result = colorThief.getColor(img, 50);
         if (result.every(color => color > 180)) result = result.map(color => (color > 150) ? 150 : color);
-        this.setState({ dominantColor: result })
+        this.setState({ dominantColor: result });
     }
-    // getUsersAvatars(connectedUsers) {
-    //     const avatars = connectedUsers.map(user => {
-    //         return <Avatar alt={user.name} title={user.name} key={user.id} src={user.imgUrl} style={{ width: '30px', height: '30px', border:"black"}} />
-    //     })
-    //     return avatars;
-    // }
+
     toggleClipboardToast = () => {
-        this.setState({ isClipboardToast: true })
+        this.setState({ isClipboardToast: true });
         setTimeout(() => this.setState({ isClipboardToast: false }), 2000);
     }
 
@@ -201,8 +209,6 @@ class _BoxDetails extends Component {
             preventDefaultTouchmoveEvent: true,
             trackMouse: true
         };
-
-        console.log("render -> songsToShow", songsToShow)
         return (
             <Swipeable {...swipeConfig}>
                 <section className="box-details" style={{ backgroundColor: `rgb(${this.state.dominantColor})` }}>
@@ -218,17 +224,17 @@ class _BoxDetails extends Component {
                                     <FavoriteIcon />
                                 </div>
                             </div>
-                        </div>
-                        <div className="share-container flex space-between column">
-                            <p>Share the box:</p>
-                            <div className="share-btns flex space-evenely">
-                                <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} rel="noopener noreferrer" target="_blank"><FacebookIcon /></a>
-                                <a className="whatsapp-share-btn" href={`whatsapp://send?text=${currBox.createdBy.name} Shared a Box With You! : \n\n ${window.location.href}`} data-action="share/whatsapp/share"><WhatsappIcon /></a>
-                                <CopyToClipboard text={window.location.href}>
-                                    <LinkIcon onClick={this.toggleClipboardToast} style={{ transform: 'rotate(45deg) translateY(1px) translateX(4px)' }} />
-                                </CopyToClipboard>
+                            <div className="share-container flex space-between column">
+                                <p>Share the box:</p>
+                                <div className="share-btns flex space-evenely">
+                                    <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} rel="noopener noreferrer" target="_blank"><FacebookIcon /></a>
+                                    <a className="whatsapp-share-btn" href={`whatsapp://send?text=${currBox.createdBy.name} Shared a Box With You! : \n\n ${window.location.href}`} data-action="share/whatsapp/share"><WhatsappIcon /></a>
+                                    <CopyToClipboard text={window.location.href}>
+                                        <LinkIcon onClick={this.toggleClipboardToast} style={{ transform: 'rotate(45deg) translateY(1px) translateX(4px)' }} />
+                                    </CopyToClipboard>
+                                </div>
+                                {this.state.isClipboardToast && <div className="copied-to-clipboard"><small>Copied to Clipboard!</small></div>}
                             </div>
-                            {this.state.isClipboardToast && <div className="copied-to-clipboard"><small>Copied to Clipboard!</small></div>}
                         </div>
                         <SongList
                             songs={songsToShow}

@@ -1,87 +1,72 @@
-.player-container {
-    width: 100%;
-    display: flex;
+.player-capsule {
+    grid-area: player;
     position: fixed;
-    height: 75px;
-    align-items: center;
-    background-color: $clr1;
-    bottom: 0;
-    z-index: 11;
+    bottom: 0px;
+    height: 60px;
+    width: 100%;
+    background-image: url("../../img/fxVE.gif");
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: $clr6;
+    text-shadow: 0px -1px 2px black;
+    transition: 0.7s;
+    
+    z-index: 30;
 
-    .player-capsule {
-        bottom: 15px;
-        height: 60px;
-        width: 65%;
-        border-radius: 999px;
-        background-image: url("../../img/fxVE.gif");
-        background-size: cover;
-        background-position: center;
-        padding: 40px 0px;
-        font-weight: bold;
-        font-size: 1.1rem;
-        color: #f5f5f5;
-        text-shadow: 0px -1px 2px black;
-        overflow: hidden;
-        transition: 0.7s;
-        min-width: rem(690px);
+}
+.song-time {
+    min-width: 180px;
 
-        // &>* {
-        //     transition: 0.7s;
-        // }
+    .player-time {
+        font-family: Righteous;
+    }
+}
 
-        .song-time {
-            min-width: 180px;
+.player-thumbnail {
+    transform: scale(1.4);
+    object-fit: cover;
+    max-width: 80px;
+    height: auto;
+    cursor: pointer;
+}
 
-            .player-time {
-                font-family: Righteous;
-            }
+.player-title {
+    line-height: 1.5em;
+    max-height: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-self: center;
+    width: 100%;
+    opacity: 1;
+    padding-inline-start: 15px;
+}
+
+.player-controls {
+    min-width: 300px;
+    padding-inline-end: 20px;
+    position: relative;
+
+    .player-ctrl-btn {
+        border-radius: 45%;
+        padding: 5px;
+
+        &:hover {
+            transform: scale(1.2);
         }
+    }
 
-        .player-thumbnail {
-            transform: scale(1.4);
-            object-fit: cover;
-            border-radius: 80%;
-            width: 100px;
-            height: auto;
-            margin: 0 10px;
-            cursor: pointer;
-        }
+    .back-to-box {
+        position: relative;
+        margin: 0 0px 0px 15px;
+        height: 70px;
+        width: auto;
+        cursor: pointer;
 
-        .player-title {
-            line-height: 1.5em;
-            max-height: 3em;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            align-self: center;
-            width: 100%;
-            opacity: 1;
-        }
-
-        .player-controls {
-            min-width: 300px;
-            padding-inline-end: 20px;
-            position: relative;
-
-            .player-ctrl-btn {
-                border-radius: 45%;
-                padding: 5px;
-
-                &:hover {
-                    transform: scale(1.2);
-                }
-            }
-
-            .back-to-box {
-                position: relative;
-                margin: 0 0px 0px 15px;
-                height: 70px;
-                width: auto;
-                cursor: pointer;
-
-                &:hover {
-                    animation: jello-horizontal 1s;
-                }
-            }
+        &:hover {
+            animation: jello-horizontal 1s;
         }
     }
 }
