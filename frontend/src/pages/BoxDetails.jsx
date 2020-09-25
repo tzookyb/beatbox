@@ -2,11 +2,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CircleLoading from 'react-loadingg/lib/CircleLoading'
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Fab } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import WhatsappIcon from '@material-ui/icons/WhatsApp';
 import FacebookIcon from '@material-ui/icons/Facebook';
+import LinkIcon from '@material-ui/icons/Link';
 import ColorThief from "colorthief";
 // LOCAL IMPORT
 import { SongList } from '../cmps/box-details/SongList'
@@ -26,7 +28,8 @@ class _BoxDetails extends Component {
         isSongPickOpen: false,
         isDragging: false,
         messages: [],
-        dominantColor: ''
+        dominantColor: '',
+        isClipboardToast: false
     }
 
     imgRef = React.createRef();
@@ -158,6 +161,10 @@ class _BoxDetails extends Component {
         const result = colorThief.getColor(img, 25)
         this.setState({ dominantColor: result })
     }
+    toggleClipboardToast = () => {
+        this.setState({ isClipboardToast: true })
+        setTimeout(() => this.setState({ isClipboardToast: false }), 2000);
+    }
 
     render() {
         const { isSongPickOpen, isDragging, } = this.state;
@@ -181,11 +188,15 @@ class _BoxDetails extends Component {
                             </div>
                         </div>
                         <div className="share-container flex space-between column">
-                            <p>share the box: </p>
+                            <p>Share the box:</p>
                             <div className="share-btns flex space-evenely">
                                 <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} rel="noopener noreferrer" target="_blank"><FacebookIcon /></a>
                                 <a className="whatsapp-share-btn" href={`whatsapp://send?text=${currBox.createdBy.name} Shared a Box With You! : \n\n ${window.location.href}`} data-action="share/whatsapp/share"><WhatsappIcon /></a>
+                                <CopyToClipboard text={window.location.href}>
+                                    <LinkIcon onClick={this.toggleClipboardToast} style={{ transform: 'rotate(45deg) translateY(1px) translateX(4px)' }} />
+                                </CopyToClipboard>
                             </div>
+                            {this.state.isClipboardToast && <div className="copied-to-clipboard"><small>Copied to Clipboard!</small></div>}
                         </div>
                     </div>
                     <SongList

@@ -29,7 +29,7 @@
         display: flex;
 
         .song-social-actions {
-            background-image: linear-gradient(rgba(0, 0, 0, .55), $clr1);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.55), $clr1);
             padding: 20px 10px;
             background-color: $clr2;
             border-bottom: 1px solid #cccccc17;
@@ -51,7 +51,6 @@
                 }
             }
 
-
             .add-song-btn {
                 z-index: 5;
                 color: #fff;
@@ -69,23 +68,33 @@
                 &:hover {
                     background-color: $clr5;
                 }
-
             }
 
             .share-container {
-
+                position: relative;
                 p {
                     margin: 0;
-                    color: #fff
+                    color: #fff;
                 }
 
                 svg {
                     cursor: pointer;
-                    color: #fff
+                    color: #fff;
+                }
+
+                .copied-to-clipboard {
+                    position: absolute;
+                    right: 20px;
+                    background-color: white;
+                    color: black;
+                    z-index: 3;
+                    padding: 5px;
+                    font-weight: bold;
+                    border-radius: 5px;
+                    bottom: -45px;
                 }
 
                 .share-btns {
-
                     .facebook-share-btn {
                         svg {
                             fill: #3d6ed4;
