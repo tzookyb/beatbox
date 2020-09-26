@@ -1,11 +1,11 @@
 
 const initialState = {
     boxes: [],
-    currBox: null,
     isNoticeShown: false,
     msg: '',
+    currBox: null,
     currSong: null,
-    filter: ''
+    filter: '',
 }
 
 export function boxReducer(state = initialState, action) {
@@ -15,35 +15,35 @@ export function boxReducer(state = initialState, action) {
                 ...state,
                 boxes: action.boxes
             }
-        case 'SET_BOX':
+
+        case 'SET_CURR_BOX':
             return {
                 ...state,
-                currBox: action.box
+                currBox: action.currBox
             }
+
         case 'UPDATE_BOX':
             return {
                 ...state,
-                currBox: action.box,
+                currBox: action.currBox,
                 boxes: state.boxes.map(box => {
-                    if (action.box._id === box._id) return action.box
+                    if (action.currBox._id === box._id) return action.currBox
                     return box;
                 })
             }
+
         case 'ADD_BOX':
-            return {
-                ...state, boxes: [...state.boxes, action.box]
-            }
+            return { ...state, boxes: [...state.boxes, action.box] }
+
         case 'REMOVE_BOX':
             return { ...state, boxes: state.boxes.filter(box => box._id !== action.boxId) }
 
         case 'SET_CURR_SONG':
-            return {
-                ...state, currBox: { ...state.currBox, currSong: action.currSong }
-            }
+            return { ...state, currSong: action.currSong }
+
         case 'SET_FILTER':
-            return {
-                ...state, filter: action.filter
-            }
+            return { ...state, filter: action.filter }
+
         default:
             return state
     }

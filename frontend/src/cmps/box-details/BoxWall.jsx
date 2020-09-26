@@ -5,7 +5,7 @@ import { Chat } from './Chat'
 import { ChatBox } from './ChatBox';
 import { addMessage, loadMessages } from '../../store/actions/messageAction'
 import Avatar from '@material-ui/core/Avatar';
-import AvatarGroup from '@material-ui/lab/AvatarGroup';
+// import AvatarGroup from '@material-ui/lab/AvatarGroup';
 
 class _BoxWall extends Component {
     state = {
@@ -47,7 +47,7 @@ class _BoxWall extends Component {
     }
 
     render() {
-        const { messages, user, box, connectedUsers } = this.props;
+        const { messages, user, box } = this.props;
         const { myEmoji, bottom, opacity, typingStr } = this.state;
         const isEmoji = (myEmoji === '') ? false : true;
         return (

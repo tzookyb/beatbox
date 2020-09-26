@@ -12,7 +12,6 @@ import LinkIcon from '@material-ui/icons/Link';
 import ColorThief from "colorthief";
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import { Swipeable } from "react-swipeable";
-
 // LOCAL IMPORT
 import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
@@ -22,11 +21,11 @@ import { userService } from '../services/userService';
 import { socketService } from '../services/socketService';
 import { loadBox, updateBox, gotBoxUpdate } from '../store/actions/boxAction'
 import { addMessage, loadMessages } from '../store/actions/messageAction'
-import { setCurrSong } from '../store/actions/playerActions'
+import { changeSong, updateLocalPlayer } from '../store/actions/playerActions'
 import { loadConnectedUsers, addConnectedUser } from '../store/actions/connectedUsersAction'
 import { youtubeService } from '../services/youtubeService';
-import Avatar from '@material-ui/core/Avatar';
-import AvatarGroup from '@material-ui/lab/AvatarGroup';
+// import Avatar from '@material-ui/core/Avatar';
+// import AvatarGroup from '@material-ui/lab/AvatarGroup';
 
 class _BoxDetails extends Component {
     state = {
@@ -48,12 +47,12 @@ class _BoxDetails extends Component {
         // SOCKET SETUP
         socketService.setup();
         const boxInfo = {
-            boxId: this.props.currBox._id,
+            boxId,
             user: minimalUser
         }
         socketService.emit('join box', boxInfo);
         socketService.on('get box status', this.setBoxStatus);
-        socketService.on('song changed', this.props.setCurrSong);
+        socketService.on('song changed', this.props.updateLocalPlayer);
         socketService.on('box changed', this.props.gotBoxUpdate);
         socketService.on('chat addMsg', this.props.addMessage);
         socketService.on('joined new box', this.props.loadConnectedUsers);
@@ -63,38 +62,36 @@ class _BoxDetails extends Component {
         socketService.off('chat addMsg', this.props.addMessage);
     }
 
-    setBoxStatus = (boxStatus) => {
-        this.props.setCurrSong(boxStatus.currSong);
-        this.props.loadMessages(boxStatus.msgs);
+    setBoxStatus = ({ msgs, currSong }) => {
+        const { currBox } = this.props;
+        if (!currSong.id) currSong.id = (currBox.songs.length) ? currBox.songs[0].id : null;
+        this.props.updateLocalPlayer(currSong);
+        this.props.loadMessages(msgs);
         // this.props.loadConnectedUsers(boxStatus.connectedUsers);
         // console.log("setBoxStatus -> boxStatus.connectedUsers", boxStatus.connectedUsers)
         // console.log(this.props.connectedUsers);
     }
 
-    onRemoveSong = (ev, songId) => {
-        if (ev) {
-            ev.stopPropagation();
-            ev.preventDefault();
-        }
-
-        const box = { ...this.props.currBox }
-        const songIdx = box.songs.findIndex(song => song.id === songId)
-        if (box.currSong.id === songId) {
-            if (box.songs.length === 1) {
-                box.currSong = null;
+    onRemoveSong = async (songId) => {
+        const { currSong } = this.props;
+        const newBox = { ...this.props.currBox }
+        const songIdx = newBox.songs.findIndex(song => song.id === songId)
+        if (currSong.id === songId) {
+            if (newBox.songs.length === 1) {
+                await this.props.setCurrSong(null)
             } else {
                 let nextSongIdx = songIdx + 1;
-                if (nextSongIdx === box.songs.length) nextSongIdx = 0;
-                box.currSong = { id: box.songs[nextSongIdx].id, isPlaying: true, played: 0 }
+                if (nextSongIdx === newBox.songs.length) nextSongIdx = 0;
+                await this.props.changeSong(newBox.songs[nextSongIdx].id)
             }
         }
-        const song = box.songs.splice(songIdx, 1);
+        const song = newBox.songs.splice(songIdx, 1);
         this.addMessageChat(`Song ${song[0].title} removed by ${this.props.user.username}`);
-        this.props.updateBox(box)
+        this.props.updateBox(newBox);
     }
 
-    onAddSong = async (song, idx) => {
-        const newSong = await boxService.addSong(song);
+    onAddSong = async (song, idx, isFromDrag) => {
+        const newSong = await boxService.addSong(song, isFromDrag);
         const box = { ...this.props.currBox };
         if (idx) {
             box.songs.splice(idx, 0, newSong);
@@ -102,12 +99,6 @@ class _BoxDetails extends Component {
         else box.songs.unshift(newSong);
         this.addMessageChat(`Song ${newSong.title} added by ${this.props.user.username}`);
         this.props.updateBox(box);
-    }
-
-    onPlaySong = (songId) => {
-        const currSong = { id: songId, isPlaying: true, secPlayed: 0 };
-        socketService.emit('set currSong', currSong);
-        this.props.setCurrSong(currSong);
     }
 
     onSaveInfo = (box) => {
@@ -135,18 +126,18 @@ class _BoxDetails extends Component {
 
     onDragEnd = async (result) => {
         const { destination, source, draggableId } = result;
-        console.log("onDragEnd -> result", result)
 
         this.setState({ isDragging: false })
         if (!destination) return;
-        if (destination.droppableId === 'trash') {
-            this.onRemoveSong(null, draggableId)
+        if (destination.droppableId === 'songPick') return;
+        if (source.droppableId === 'songList' && destination.droppableId === 'trash') {
+            this.onRemoveSong(draggableId)
             return;
         }
-        if (source.droppableId === 'songPick') {
+        if (source.droppableId === 'songPick' && destination.droppableId === 'songList') {
             let song = await youtubeService.getSongById(draggableId);
             [song] = song.items;
-            this.onAddSong(song, destination.index);
+            this.onAddSong(song, destination.index, true);
             return;
         }
 
@@ -197,10 +188,9 @@ class _BoxDetails extends Component {
     }
 
     render() {
-        const { isSongPickOpen, isDragging, } = this.state;
+        const { isSongPickOpen, isDragging } = this.state;
         const { currBox, messages, filter } = this.props;
         if (!currBox) return <CircleLoading size="large" color="#ac0aff" />
-        const currSongId = currBox.currSong?.id || null;
         const songsToShow = this.getSongsForDisplay();
         const minimalUser = userService.getMinimalUser();
         const swipeConfig = {
@@ -209,40 +199,66 @@ class _BoxDetails extends Component {
             preventDefaultTouchmoveEvent: true,
             trackMouse: true
         };
+
         return (
             <Swipeable {...swipeConfig}>
                 <section className="box-details" style={{ backgroundColor: `rgb(${this.state.dominantColor})` }}>
                     <div className="box-details-main flex column">
-                        <BoxInfo getDominantColor={this.getDominantColor} imgRef={this.imgRef} box={currBox} onSaveInfo={this.onSaveInfo} minimalUser={minimalUser} onToggleLikeBox={this.onToggleLikeBox} />
+
+                        <BoxInfo
+                            getDominantColor={this.getDominantColor}
+                            imgRef={this.imgRef}
+                            box={currBox}
+                            onSaveInfo={this.onSaveInfo}
+                            minimalUser={minimalUser}
+                            onToggleLikeBox={this.onToggleLikeBox}
+                        />
+
                         <div className="song-social-actions flex space-between">
                             <div className="btns-container flex">
-                                <Fab className={`add-song-btn  ${isSongPickOpen ? 'opened' : ''}`} onClick={this.toggleSongPick} aria-label="add">
+                                <Fab className={`add-song-btn  ${isSongPickOpen ? 'opened' : ''}`}
+                                    onClick={this.toggleSongPick}
+                                    aria-label="add"
+                                >
                                     <AddIcon />
                                 </Fab>
-                                <div onClick={() => this.onToggleLikeBox(currBox._id, minimalUser)} className={`like-btn ${this.getIsUserLikeBox(currBox, minimalUser)}`}>
+
+                                <div className={`like-btn ${this.getIsUserLikeBox(currBox, minimalUser)}`}
+                                    onClick={() => this.onToggleLikeBox(currBox._id, minimalUser)}
+                                >
                                     {/* {currBox.likedByUsers.length} */}
                                     <FavoriteIcon />
                                 </div>
+
                             </div>
+
                             <div className="share-container flex space-between column">
                                 <p>Share the box:</p>
                                 <div className="share-btns flex space-evenely">
-                                    <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} rel="noopener noreferrer" target="_blank"><FacebookIcon /></a>
-                                    <a className="whatsapp-share-btn" href={`whatsapp://send?text=${currBox.createdBy.name} Shared a Box With You! : \n\n ${window.location.href}`} data-action="share/whatsapp/share"><WhatsappIcon /></a>
+                                    <a className="facebook-share-btn"
+                                        href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
+                                        rel="noopener noreferrer" target="_blank">
+                                        <FacebookIcon />
+                                    </a>
+                                    <a className="whatsapp-share-btn"
+                                        href={`whatsapp://send?text=${currBox.createdBy.name} Shared a Box With You! : \n\n ${window.location.href}`}
+                                        data-action="share/whatsapp/share">
+                                        <WhatsappIcon />
+                                    </a>
                                     <CopyToClipboard text={window.location.href}>
                                         <LinkIcon onClick={this.toggleClipboardToast} style={{ transform: 'rotate(45deg) translateY(1px) translateX(4px)' }} />
                                     </CopyToClipboard>
                                 </div>
-                                {this.state.isClipboardToast && <div className="copied-to-clipboard"><small>Copied to Clipboard!</small></div>}
+                                {this.state.isClipboardToast && <div className="copied-to-clipboard"><small>Link copied to your clipboard!</small></div>}
                             </div>
+
                         </div>
+
                         <SongList
                             songs={songsToShow}
-                            onPlaySong={this.onPlaySong}
                             onRemoveSong={this.onRemoveSong}
                             onAddSong={this.onAddSong}
                             isSongPickOpen={isSongPickOpen}
-                            nowPlayingId={currSongId}
                             onDragStart={this.onDragStart}
                             onDragEnd={this.onDragEnd}
                             isFilter={!!filter}
@@ -263,13 +279,14 @@ class _BoxDetails extends Component {
     }
 }
 
-{/* <AvatarGroup className="connected-users" max={4}>
-                        {this.getUsersAvatars(this.props.connectedUsers)}
-                    </AvatarGroup> */}
+// {/* <AvatarGroup className="connected-users" max={4}>
+// {this.getUsersAvatars(this.props.connectedUsers)}
+// </AvatarGroup> */}
 
 const mapStateToProps = state => {
     return {
         currBox: state.boxReducer.currBox,
+        currSong: state.boxReducer.currSong,
         filter: state.boxReducer.filter,
         user: state.userReducer.loggedinUser,
         messages: state.messageReducer.messages,
@@ -281,9 +298,10 @@ const mapDispatchToProps = {
     updateBox,
     addMessage,
     loadMessages,
-    setCurrSong,
+    updateLocalPlayer,
     gotBoxUpdate,
     addConnectedUser,
-    loadConnectedUsers
+    loadConnectedUsers,
+    changeSong
 }
 export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails);

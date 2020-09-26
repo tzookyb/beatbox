@@ -3,18 +3,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 // LOCAL IMPORT
+import { socketService } from './services/socketService';
+import { UserDetails } from './pages/UserDetails';
+import { BoxDetails } from './pages/BoxDetails';
+import { BoxApp } from './pages/BoxApp';
+import { BoxAdd } from './pages/BoxAdd';
+import { Home } from './pages/Home';
 import { Header } from './cmps/Header';
 import { Player } from './cmps/Player';
-import { BoxApp } from './pages/BoxApp';
-import { BoxDetails } from './pages/BoxDetails';
-import { BoxAdd } from './pages/BoxAdd';
-// import { Login } from './cmps/user/Login';
 import { Signup } from './cmps/user/Signup'
-import { Home } from './pages/Home';
-import { UserDetails } from './pages/UserDetails';
+// import { Login } from './cmps/user/Login';
 
 class _App extends Component {
-
   render() {
     return (
       <div className="App">

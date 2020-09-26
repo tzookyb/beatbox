@@ -29,9 +29,13 @@ header {
   }
   .logo {
     position: absolute;
+<<<<<<< HEAD
     height: rem(95px);
+=======
+    height: 80px;
+>>>>>>> 9cb41aa68e31aa1bca470c71497357313f3cdf4d
     width: auto;
-    top: -10px;
+    top: -5px;
     left: 45px;
   }
 
@@ -44,7 +48,6 @@ header {
     width: 50px;
     height: 45px;
 
-    // border-radius: 50%;
     img {
       border-radius: 50%;
       width: 100%;

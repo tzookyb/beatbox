@@ -10,8 +10,8 @@ export function loadBoxes(query) {
 
 export function loadBox(boxId) {
   return async dispatch => {
-    const box = await boxService.getById(boxId);
-    dispatch({ type: 'SET_BOX', box })
+    const currBox = await boxService.getById(boxId);
+    dispatch({ type: 'SET_CURR_BOX', currBox })
   };
 }
 
@@ -23,29 +23,31 @@ export function saveBox(box) {
   };
 }
 
-// UPDATE FROM SOCKET:
-export function gotBoxUpdate(box) {
-  return dispatch => {
-    dispatch({ type: 'UPDATE_BOX', box })
-  };
-}
-
-export function updateBox(box) {
-  return dispatch => {
-    boxService.update(box);
-    socketService.emit('set currBox', box);
-    dispatch({ type: 'UPDATE_BOX', box })
-  };
-}
 export function setFilter(query) {
   return dispatch => {
     dispatch({ type: 'SET_FILTER', filter: query })
   }
 }
 
+export function updateBox(currBox) {
+  return dispatch => {
+    boxService.update(currBox);
+    socketService.emit('set currBox', currBox);
+    dispatch({ type: 'UPDATE_BOX', currBox })
+  };
+}
+
 export function removeBox(boxId) {
   return async dispatch => {
     await boxService.remove(boxId)
     dispatch({ type: 'REMOVE_BOX', boxId })
+  };
+}
+
+// UPDATES FROM SOCKET:
+export function gotBoxUpdate(currBox) {
+
+  return dispatch => {
+    dispatch({ type: 'UPDATE_BOX', currBox })
   };
 }
