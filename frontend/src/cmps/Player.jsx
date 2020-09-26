@@ -39,6 +39,7 @@ class _Player extends Component {
     componentDidUpdate(prevProps) {
         const newBox = this.props.currBox;
         if (prevProps.currBox?._id !== newBox?._id) {
+            this.setState({ isFirstJoin: true });
             this.socketSetup();
             return;
         }
@@ -109,7 +110,7 @@ class _Player extends Component {
     onReady = () => {
         this.setState({ isReady: true });
         if (this.state.isFirstJoin) {
-            socketService.emit('get song time')
+            socketService.emit('get song time');
             this.setState({ isFirstJoin: false });
         }
     }

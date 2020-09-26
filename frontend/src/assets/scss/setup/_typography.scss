@@ -1,30 +1,9 @@
 @font-face {
-    font-family: Kalam;
-    src        : url(../../fonts/Kalam-Regular.ttf);
-}
-
-@font-face {
     font-family: Righteous;
-    src        : url(../../fonts/Righteous-Regular.ttf);
+    src: url(../../fonts/Righteous-Regular.ttf);
 }
-
 @font-face {
-    font-family: ShortStack;
-    src        : url(../../fonts/ShortStack-Regular.ttf)
-}
-
-@font-face {
-    font-family: FjallaOne;
-    src        : url(../../fonts/FjallaOne-Regular.ttf)
-}
-
-@font-face {
-    font-family: Catamaran;
-    src        : url(../../fonts/Catamaran-Regular.ttf)
-}
-
-@font-face {
-    font-family  : VarelaRound;
-    src          : url(../../fonts/VarelaRound-Regular.ttf);
-	unicode-range: U+0590-05FF;
+    font-family: VarelaRound;
+    src: url(../../fonts/VarelaRound-Regular.ttf);
+    unicode-range: U+0590-05FF;
 }

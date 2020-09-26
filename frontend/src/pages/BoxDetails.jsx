@@ -78,7 +78,7 @@ class _BoxDetails extends Component {
         const songIdx = newBox.songs.findIndex(song => song.id === songId)
         if (currSong.id === songId) {
             if (newBox.songs.length === 1) {
-                await this.props.setCurrSong(null)
+                await this.props.updateLocalPlayer(null)
             } else {
                 let nextSongIdx = songIdx + 1;
                 if (nextSongIdx === newBox.songs.length) nextSongIdx = 0;
