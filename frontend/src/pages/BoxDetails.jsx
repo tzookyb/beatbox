@@ -85,8 +85,8 @@ class _BoxDetails extends Component {
                 await this.props.changeSong(newBox.songs[nextSongIdx].id)
             }
         }
-        const song = newBox.songs.splice(songIdx, 1);
-        this.addMessageChat(`Song ${song[0].title} removed by ${this.props.user.username}`);
+        const [song] = newBox.songs.splice(songIdx, 1);
+        this.addMessageChat(`Song ${song.title} removed by ${this.props.user.username}`);
         this.props.updateBox(newBox);
     }
 
