@@ -29,11 +29,7 @@ header {
   }
   .logo {
     position: absolute;
-<<<<<<< HEAD
-    height: rem(95px);
-=======
-    height: 80px;
->>>>>>> 9cb41aa68e31aa1bca470c71497357313f3cdf4d
+    height: rem(80px);
     width: auto;
     top: -5px;
     left: 45px;
@@ -87,9 +83,8 @@ header {
 
   header {
     .logo {
-      height: 85px;
       width: auto;
-      top: -10px;
+      top: -5px;
       left: -20px;
     }
     .main-nav {
