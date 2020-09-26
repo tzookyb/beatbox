@@ -50,10 +50,7 @@ function getEmptyBox(user) {
         connectedUsers: [],
         genre: '',
         createdBy: user,
-        createdAt: Date.now(),
         songs: [],
-        currSong: null,
-        viewCount: 0
     }
 }
 
@@ -66,14 +63,15 @@ async function update(box) {
     return await httpService.put(`box/${box._id}`, box)
 }
 
-async function addSong(song) {
+async function addSong(song, isFromDrag = false) {
+    const youtubeId = (isFromDrag) ? song.id : song.id.videoId;
     const newSong = {
         id: _makeId(),
-        youtubeId: song.id.videoId,
+        youtubeId,
         title: youtubeService.titleSimplify(song.snippet.title),
         duration: await youtubeService.getDuration(song.id.videoId, song.contentDetails?.duration),
         imgUrl: song.snippet.thumbnails.high.url,
-        }
+    }
     return newSong;
 }
 
@@ -99,7 +97,6 @@ async function addConnectedUser(boxId, minimalUser) {
     const isUserInBox = newBox.connectedUsers.find(user => user.id === minimalUser.id)
     if (!isUserInBox) {
         newBox.connectedUsers.push(minimalUser);
-        // newBox.viewCount++;
         await update(newBox);
 
         //ToDO:

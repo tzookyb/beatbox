@@ -10,7 +10,7 @@ class _UserDetails extends Component {
         if (!user) return <CircleLoading size="large" color="#ac0aff" />
         return (
             <div className="user-details">
-                <img src={user.imgUrl} />
+                <img src={user.imgUrl} alt="user"/>
                 <h2>{user.username}</h2>
                 <div className="boxes-creator">
 

@@ -1,111 +1,82 @@
-.player-capsule {
-    grid-area: player;
-    position: fixed;
-    bottom: 0px;
-    height: 60px;
-    width: 100%;
-    background-image: url("../../img/fxVE.gif");
-    background-size: cover;
-    background-position: center;
-    padding: 40px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: $clr6;
-    text-shadow: 0px -1px 2px black;
-    transition: 0.7s;
-    
-    z-index: 30;
+.player-container {
+    .player-capsule {
+        grid-area: player;
+        position: fixed;
+        bottom: 0px;
+        height: 80px;
+        width: 100%;
+        background-image: url("../../img/fxVE.gif");
+        background-size: cover;
+        background-position: center;
+        padding: 0 40px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #eee;
+        text-shadow: 0px -1px 2px black;
+        transition: 0.7s;
+        z-index: 30;
+        
+        &.is-playing {
+            background-color: white;
+            background-blend-mode: darken;
+        }
 
-}
-.song-time {
-    min-width: 180px;
-
-    .player-time {
-        font-family: Righteous;
-    }
-}
-
-.player-thumbnail {
-    transform: scale(1.4);
-    object-fit: cover;
-    max-width: 80px;
-    height: auto;
-    cursor: pointer;
-}
-
-.player-title {
-    line-height: 1.5em;
-    max-height: 3em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    align-self: center;
-    width: 100%;
-    opacity: 1;
-    padding-inline-start: 15px;
-}
-
-.player-controls {
-    min-width: 300px;
-    padding-inline-end: 20px;
-    position: relative;
-
-    .player-ctrl-btn {
-        border-radius: 45%;
-        padding: 5px;
-
-        &:hover {
-            transform: scale(1.2);
+        &.paused {
+            background-color: #171717;
+            background-blend-mode: color-burn;
         }
     }
-
-    .back-to-box {
-        position: relative;
-        margin: 0 0px 0px 15px;
-        height: 70px;
-        width: auto;
-        cursor: pointer;
-
-        &:hover {
-            animation: jello-horizontal 1s;
-        }
-    }
-}
-
-.is-playing {
-    background-color: white;
-    background-blend-mode: darken;
-}
-
-.paused {
-    background-color: #0a0a0a;
-    background-blend-mode: color-burn;
-}
-
-.player {
-    display: none;
-}
-
-.shrunk {
-    width: 285px;
-    transition: 1s;
-
     .song-time {
-        display: none;
+        min-width: 180px;
+
+        .player-time {
+            font-family: Righteous;
+        }
     }
 
     .player-thumbnail {
-        margin: 0;
+        transform: scale(1.4);
+        object-fit: cover;
+        max-width: 80px;
+        height: auto;
+        cursor: pointer;
     }
 
     .player-title {
-        opacity: 0;
+        line-height: 1.5em;
+        max-height: 3em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        align-self: center;
+        width: 100%;
+        opacity: 1;
+        padding-inline-start: 15px;
     }
 
-    .player-ctrl-btn {
-        margin: 2px;
+    .player-controls {
+        min-width: 300px;
+        padding-inline-end: 20px;
+        position: relative;
 
-        &:first-child {
-            margin-left: 5px;
+        .player-ctrl-btn {
+            border-radius: 45%;
+            padding: 5px;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+
+        .back-to-box {
+            position: relative;
+            margin: 0 0px 0px 15px;
+            height: 70px;
+            width: auto;
+            cursor: pointer;
+
+            &:hover {
+                animation: jello-horizontal 1s;
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 import React from "react";
-import { Button } from '@material-ui/core';
-import SendIcon from '@material-ui/icons/Send';
+// import { Button } from '@material-ui/core';
+// import SendIcon from '@material-ui/icons/Send';
 import { Emoji } from './Emoji'
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import { socketService } from '../../services/socketService'

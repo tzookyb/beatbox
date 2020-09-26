@@ -18,7 +18,6 @@ async function get(query) {
     try {
         const res = await axios.get(`${SEARCH_URL}?videoCategoryId=10&part=id,snippet&videoEmbeddable=true&type=video&maxResults=10&q=${query}&key=${API_KEYS[gCurrApiKey]}`);
         gCount = 0;
-        console.log("get -> res.data", res.data)
         return res.data;
     } catch (err) {
         console.dir(err);
