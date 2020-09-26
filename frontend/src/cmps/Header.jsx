@@ -12,6 +12,7 @@ class _Header extends Component {
 
     state = {
         isScroll: false,
+        isMobileMenuOpen: false
     }
 
     componentDidMount() {
@@ -25,6 +26,12 @@ class _Header extends Component {
         else this.setState({ isScroll: false })
     }
 
+    toggleMenu = () => {
+        this.setState({ isMobileMenuOpen: !this.state.isMobileMenuOpen })
+
+    }
+
+
     render() {
         const { user } = this.props;
         return (
@@ -33,15 +40,13 @@ class _Header extends Component {
                     <a href="#top"><img title="BeatBox" className="logo" src={require('../assets/img/logo.png')} alt="logo" /></a> :
                     <Link to="/" ><img title="BeatBox" className="logo" src={require('../assets/img/logo.png')} alt="logo" /></Link>
                 }
-
                 <BoxFilter isShown={(this.props.location.pathname !== '/' || this.state.isScroll)} />
-
-
-                <ul className="main-nav flex clean-list space-between align-center">
-                    <li><Link to="/box">Boxes</Link></li>
-                    <li><Link to="/box/add">Create Box</Link></li>
-                    <li> <UserMenu user={user} onLogout={this.props.logout}/></li>
+                <ul className={`${this.state.isMobileMenuOpen ? 'menu-open' : ''} main-nav flex clean-list align-center`}>
+                    <li><Link to="/box" onClick={this.toggleMenu}>Boxes</Link></li>
+                    <li><Link to="/box/add" onClick={this.toggleMenu}>Create Box</Link></li>
                 </ul>
+                <div className="user-avatar"><UserMenu user={user} onLogout={this.props.logout} /></div>
+                <button className={`menu-btn`} onClick={this.toggleMenu}>☰</button>
             </header >
         )
     }
