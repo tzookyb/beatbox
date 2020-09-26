@@ -24,12 +24,12 @@ export const MessageBox = ({ text, submitBy, submitAt, avatar, own, type }) => {
             <Col>
               <div className="chat-message"
                 style={{
-                  backgroundColor: " #b0a5a7",
+                  backgroundColor: "#5b3a7b",
                   color: "black",
                   borderRadius: "10px",
                   padding: "5px 20px",
-                  // margin: "0px 10px 15px 10px",
-                  // boxShadow: "1px 2px 3px #ccc",
+                  marginRigth: "50px",
+                  boxShadow: "1px 2px 3px #ccc",
                   width: "fit-content"
                 }}
               >
@@ -52,14 +52,14 @@ export const MessageBox = ({ text, submitBy, submitAt, avatar, own, type }) => {
             <Col className="flex justify-end">
               <div
                 style={{
-                  backgroundColor: "rgb(179 179 179)",
-                  color: "white",
+                  backgroundColor: "#bb93dc",
+                  color: "black",
                   borderColor: "#333",
                   borderRadius: "10px",
                   padding: "5px 20px",
-                  // margin: "0px 10px 15px 10px",
-                  // boxShadow: "1px 2px 3px #ccc",
+                  marginLeft: "50px",
                   textAlign: "right",
+                  boxShadow: "rgb(116 110 110) -2px 2px",
                   width: "fit-content",
                 }}
               >
@@ -67,41 +67,40 @@ export const MessageBox = ({ text, submitBy, submitAt, avatar, own, type }) => {
               </div>
             </Col>
           </Row>
-        </div>
+        </div >
       )
     }
   }
   else {
-    return (
-      <div className="system-message" style={{ textAlign: "center" }}>
+  return (
+    <div className="system-message" style={{ textAlign: "center" }}>
+      <Col>
+        <p style={{ fontSize: "0.7em", fontStyle: "italic" }}>
+          {dateToString}
+        </p>
+      </Col>
+      <Row type="flex" justify="end">
         <Col>
-          <p style={{ fontSize: "0.7em", fontStyle: "italic" }}>
-            {dateToString}
-          </p>
+          <div
+            style={{
+              backgroundColor: "white",
+              color: "black",
+              borderColor: "#333",
+              borderRadius: "10px 10px 10px 10px",
+              padding: "5px",
+              marginBottom: "15px",
+              boxShadow: "1px 2px 3px #ccc",
+              textAlign: "center",
+              width: "fit-content",
+              margin: "0 20px",
+            }}
+          >
+            {text}
+          </div>
         </Col>
-        <Row type="flex" justify="end">
-          <Col>
-            <div
-              style={{
-                backgroundColor: "white",
-                color: "black",
-                borderColor: "#333",
-                borderRadius: "10px 10px 10px 10px",
-                padding: "5px",
-                marginBottom: "15px",
-                boxShadow: "1px 2px 3px #ccc",
-                textAlign: "center",
-                width: "fit-content",
-                // margin: "0 20px",
-                margin: "0 auto"
-              }}
-            >
-              {text}
-            </div>
-          </Col>
-        </Row>
-      </div>
-    )
-  }
+      </Row>
+    </div>
+  )
+}
 };
 

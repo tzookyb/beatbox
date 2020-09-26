@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export function UserMenu({ user, onLogout }) {
+export function UserMenu({ user, onLogout, loadUser }) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);
@@ -28,10 +28,10 @@ export function UserMenu({ user, onLogout }) {
         setOpen((prevOpen) => !prevOpen);
     };
 
-    function logout(ev){
-        // ev.preventDefault();
-        // onLogout();
-        // setOpen(false);
+    function logout(ev) {
+        ev.preventDefault();
+        onLogout();
+        setOpen(false);
     }
 
     const handleClose = (ev) => {
@@ -60,12 +60,14 @@ export function UserMenu({ user, onLogout }) {
 
     return (
         <div className={classes.root}>
-            <div>
-                <Avatar alt="Remy Sharp" ref={anchorRef}
+            <div className="user-menu">
+                <Avatar
+                    alt="Remy Sharp" ref={anchorRef}
                     src={user.imgUrl}
                     aria-controls={open ? 'menu-list-grow' : undefined}
                     aria-haspopup="true"
-                    onClick={handleToggle} />
+                    onClick={handleToggle}
+                    style={{ cursor: "pointer" }} />
                 <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
                     {({ TransitionProps, placement }) => (
                         <Grow

@@ -25,8 +25,7 @@ async function login(userCred) {
 
 async function logout() {
     await httpService.post(`auth/logout`);
-    const user = _getGuestMode();
-    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(user));
+     sessionStorage.clear();
 }
 
 async function signup(userCred) {
@@ -39,7 +38,6 @@ function getUser() {
     if (!user) {
         user = _getGuestMode();
         sessionStorage.setItem(STORAGE_KEY, JSON.stringify(user))
-        // const res = await httpService.post(`user`, user);
     }
     return user;
 }

@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { Draggable } from 'react-beautiful-dnd';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-
 export class _SongPreview extends Component {
     state = {
         isRemoveOpen: false
@@ -19,13 +18,14 @@ export class _SongPreview extends Component {
             <Draggable draggableId={song.id} index={index} isDragDisabled={isFilter}>
                 {provided => (
                     <li
+
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                         onClick={() => onPlaySong(song.id)}
                         className="song-preview flex space-between"
                     >
-
+                
                         <div className="song-data flex align-center">
                             <div className="song-preview-img"><img src={song.imgUrl} alt="song-img" /></div>
                             <h3 className={(isPlaying && currBox.currSong.isPlaying) ? 'now-playing' : ''}>{song.title}</h3>

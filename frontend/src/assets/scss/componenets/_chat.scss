@@ -1,6 +1,6 @@
 .chat {
   position: fixed;
-  bottom: 80px;
+  bottom: 130px;
   .form-msg{
     padding: 0;
     background: transparent;
@@ -13,8 +13,8 @@
     }
     .send-btn{
       padding: 10px;
-      background: $clr3;
-      color: white;
+      background: $clr6;
+      color: black;
     }
   }
 }

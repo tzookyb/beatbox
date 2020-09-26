@@ -53,7 +53,7 @@ const mapStateToProps = state => {
     }
 }
 const mapDispatchToProps = {
-    logout
+    logout,
 }
 
 export const Header = connect(mapStateToProps, mapDispatchToProps)(withRouter(_Header))

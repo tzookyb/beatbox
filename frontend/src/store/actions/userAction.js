@@ -26,7 +26,8 @@ export function login(userCreds) {
 export function logout() {
     return async dispatch => {
         await userService.logout();
-        dispatch({ type: 'SET_USER', user: null });
+        const user = userService.getUser();
+        dispatch({ type: 'SET_USER', user });
     };
 }
 
