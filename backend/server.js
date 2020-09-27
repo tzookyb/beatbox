@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.use(session({
-    secret: 'keyboard cat',
+    secret: 'keyboard dog',
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false }
@@ -43,7 +43,6 @@ const connectSockets = require('./api/socket/socket.routes')
 
 // routes
 app.use('/api/user', userRoutes)
-// app.use('/api/review', reviewRoutes)
 app.use('/api/auth', authRoutes)
 app.use('/api/box', boxRoutes)
 connectSockets(io)

@@ -81,15 +81,15 @@ class _BoxDetails extends Component {
         const songIdx = newBox.songs.findIndex(song => song.id === songId)
         if (currSong.id === songId) {
             if (newBox.songs.length === 1) {
-                await this.props.setCurrSong(null)
+                await this.props.updateLocalPlayer(null)
             } else {
                 let nextSongIdx = songIdx + 1;
                 if (nextSongIdx === newBox.songs.length) nextSongIdx = 0;
                 await this.props.changeSong(newBox.songs[nextSongIdx].id)
             }
         }
-        const song = newBox.songs.splice(songIdx, 1);
-        this.addMsgChat(`Song ${song[0].title} removed by ${this.props.user.username}`);
+        const [song] = newBox.songs.splice(songIdx, 1);
+        this.addMessageChat(`Song ${song.title} removed by ${this.props.user.username}`);
         this.props.updateBox(newBox);
     }
 
@@ -160,10 +160,7 @@ class _BoxDetails extends Component {
         socketService.emit('chat newMsg', msgObj);
     }
 
-    onToggleLikeBox = async (boxId, minimalUser) => {
-        // await boxService.addLike(boxId, minimalUser)
-        // await this.props.loadBox(boxId);
-    }
+   
 
     onSwapSongs = (srcIdx, destIdx) => {
         const newSongs = [...this.props.currBox.songs];
@@ -228,7 +225,6 @@ class _BoxDetails extends Component {
                             box={currBox}
                             onSaveInfo={this.onSaveInfo}
                             minimalUser={minimalUser}
-                            onToggleLikeBox={this.onToggleLikeBox}
                         />
 
                         <div className="song-social-actions flex space-between">
@@ -277,7 +273,6 @@ class _BoxDetails extends Component {
                             isFilter={!!filter}
                             isDragging={isDragging}
                         />
-
                     </div>
 
                     <div className={`${this.state.isMobileChatOpen ? 'chat-open' : ''} chat-box flex column`} >
@@ -285,7 +280,8 @@ class _BoxDetails extends Component {
                         {/* <BoxWall msgs={msgs} addMsg={this.addMsg} connectedUsers={this.props.connectedUsers} /> */}
                     </div>
 
-                    <button className={`${this.state.isMobileChatOpen ? 'chat-open' : ''} mobile-chat-btn`} onClick={this.toggleMobileMenu}><QuestionAnswerIcon /></button>
+                    <button className={`${this.state.isMobileChatOpen ? 'chat-open' : ''} mobile-chat-btn`}
+                        onClick={this.toggleMobileMenu}><QuestionAnswerIcon /></button>
                     {/* <BoxWall msgs={msgs} addMsg={this.addMsg} /> */}
                 </section>
             </Swipeable>
@@ -293,9 +289,6 @@ class _BoxDetails extends Component {
     }
 }
 
-// {/* <AvatarGroup className="connected-users" max={4}>
-// {this.getUsersAvatars(this.props.connectedUsers)}
-// </AvatarGroup> */}
 
 const mapStateToProps = state => {
     return {

@@ -39,9 +39,6 @@
                 animation-delay: 0s;
             }
 
-            // &:nth-of-type(4) {
-            //     animation-delay: 0s;
-            // }
         }
     }
 
@@ -54,6 +51,10 @@
         font-family: Righteous;
         height: 100%;
 
+        .hero-title {
+            height: 50%;
+        }
+
         h1 {
             text-shadow: 0px 0px 12px white;
         }
@@ -62,7 +63,8 @@
 
     .hero-btns-container {
         height: 50%;
-         button {
+
+        button {
             font-family: Righteous;
             background-color: #c15191;
             padding: 15px;

@@ -2,3 +2,5 @@ node_modules/
 .vscode/
 *.log
 logs/
+backend/logs/backend.log
+logs/

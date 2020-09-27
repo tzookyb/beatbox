@@ -5,56 +5,68 @@ import { Delete } from '@material-ui/icons';
 // LOCAL IMPORTS
 import { SongPick } from './SongPick'
 import { SongPreview } from './SongPreview'
+import { SongPreviewExample } from './SongPreviewExample'
 
 export function SongList({ songs, onRemoveSong, onAddSong, isSongPickOpen, isFilter, isDragging, isBoxAdd, onDragEnd, onDragStart }) {
     return (
-        <div className="song-list flex space-between">
+        <React.Fragment>
             <DragDropContext
                 onDragStart={onDragStart}
                 onDragEnd={onDragEnd}
             >
+                <div className="song-list flex space-between">
 
-                <Droppable droppableId={'songPick'}>
-                    {(provided) => (
-                        <div
-                            {...provided.droppableProps}
-                            ref={provided.innerRef}
-                            className={`song-pick-container ${isSongPickOpen && 'opened'}`}
-                        >
-                            <SongPick isBoxAdd={isBoxAdd} isSongPickOpen={isSongPickOpen} onAddSong={onAddSong} />
-                            {provided.placeholder}
-                        </div>
-                    )}
-                </Droppable>
+                    <Droppable droppableId={'songPick'}>
+                        {(provided) => (
+                            <div
+                                {...provided.droppableProps}
+                                ref={provided.innerRef}
+                                className={`song-pick-container ${isSongPickOpen && 'opened'}`}
+                            >
+                                <SongPick isBoxAdd={isBoxAdd} isSongPickOpen={isSongPickOpen} onAddSong={onAddSong} />
+                                {provided.placeholder}
+                            </div>
+                        )}
+                    </Droppable>
 
-                <Droppable droppableId={'songList'}>
-                    {(provided) => (
-                        <ul
-                            {...provided.droppableProps}
-                            ref={provided.innerRef}
-                            className="clean-list flex column flex-1"
-                        >
-                            {!songs.length && <li className="song-preview">This could be your song... click '+' to add songs</li>}
-                            {
-                                songs.map((song, index) => {
-                                    return <SongPreview
-                                        key={song.id}
-                                        index={index}
-                                        onRemoveSong={onRemoveSong}
-                                        songDetails={song}
-                                        isFilter={isFilter}
-                                    />
-                                })}
-                            {provided.placeholder}
-                        </ul>
-                    )}
-                </Droppable>
+                    {/* {!songs.length && <ul className="clean-list flex column flex-1">
+                    {example}
+                </ul>} */}
+
+                    <Droppable droppableId={'songList'}>
+                        {(provided) => (
+                            <ul
+                                {...provided.droppableProps}
+                                ref={provided.innerRef}
+                                className={`clean-list flex column flex-1`}
+                            >
+                                {!songs.length && <React.Fragment>
+                                    <SongPreviewExample key={1} isFirst={true} />
+                                    <SongPreviewExample key={2} isFirst={false} />
+                                </React.Fragment>}
+
+                                {
+                                    songs.map((song, index) => {
+                                        return <SongPreview
+                                            key={song.id}
+                                            index={index}
+                                            onRemoveSong={onRemoveSong}
+                                            songDetails={song}
+                                            isFilter={isFilter}
+                                        />
+                                    })
+                                }
+                                {provided.placeholder}
+                            </ul>
+                        )}
+                    </Droppable>
+                </div>
 
                 <Droppable droppableId={'trash'}>
                     {provided => (
                         <div
                             ref={provided.innerRef} {...provided.droppableProps}
-                            className={`remove-song ${isDragging ? 'opened' : ''}`}
+                            className={`remove-song-drag ${isDragging ? 'opened' : ''}`}
                         >
                             <Delete className="bin" style={{ fontSize: '60px', color: 'white' }} />
                             {provided.placeholder}
@@ -63,6 +75,6 @@ export function SongList({ songs, onRemoveSong, onAddSong, isSongPickOpen, isFil
                     }
                 </Droppable>
             </DragDropContext >
-        </div >
+        </React.Fragment>
     )
 }

@@ -39,6 +39,7 @@ class _Player extends Component {
     componentDidUpdate(prevProps) {
         const newBox = this.props.currBox;
         if (prevProps.currBox?._id !== newBox?._id) {
+            this.setState({ isFirstJoin: true });
             this.socketSetup();
             return;
         }
@@ -109,7 +110,7 @@ class _Player extends Component {
     onReady = () => {
         this.setState({ isReady: true });
         if (this.state.isFirstJoin) {
-            socketService.emit('get song time')
+            socketService.emit('get song time');
             this.setState({ isFirstJoin: false });
         }
     }
@@ -179,8 +180,9 @@ class _Player extends Component {
 
                                 <Slider
                                     style={{
-                                        width: '70px',
+                                        flexGrow: 1,
                                         color: 'white',
+                                        margin: '0 15px'
                                     }}
                                     name="played"
                                     min={0}
@@ -215,7 +217,6 @@ class _Player extends Component {
                             onChange={this.handleVolumeChange}
                         />
                         <button className="player-ctrl-btn flex align-center" title={muted ? 'Unmute' : 'Mute'} onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
-
                         <img
                             style={{ visibility: (this.props.location.pathname === `/box/details/${currBox._id}`) ? 'hidden' : 'visible' }}
                             className="back-to-box"

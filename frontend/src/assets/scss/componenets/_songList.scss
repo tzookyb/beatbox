@@ -2,6 +2,8 @@
     background-color: $clr1;
     min-height: rem(300px);
     position: relative;
+    min-height: 45vh;
+    padding-bottom: 80px;
 
     ul {
         overflow-y: visible;
@@ -18,6 +20,7 @@
             // background-color: #ffffff12;
 
             h3 {
+                max-height: rem(40px);
                 overflow: hidden;
                 text-overflow: ellipsis;
                 color: #ccc;
@@ -26,18 +29,16 @@
     }
 }
 
-.remove-song {
+.remove-song-drag {
     position: fixed;
     bottom: 80px;
     width: 100%;
+    left: 50%;
     height: 60px;
-    visibility: collapse;
-    right: 0;
-    padding: 0 50px;
+    visibility: hidden;
     background-color: $clr1;
-    // display: flex;
     justify-content: center;
-    transition: height 0.5s;
+    transition: 0.5s;
     &.opened {
         visibility: visible;
     }
@@ -50,5 +51,14 @@
                 color: red !important;
             }
         }
+    }
+}
+
+
+@media (max-width: 720px) {
+
+
+    .song-list{
+        padding-bottom: 15vh; // same as the height of the player - 1
     }
 }

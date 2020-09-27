@@ -57,13 +57,13 @@ function connectSockets(io) {
             socket.emit('get box status', boxStatus);
         })
 
-        socket.on('disconnect', () => {
-            try {
-                leaveBox(socket, myBox)
-            } catch (err) {
-                console.log(err);
-            }
-        })
+        // socket.on('disconnect', () => {
+        //     try {
+        //         leaveBox(socket, myBox)
+        //     } catch (err) {
+        //         console.log(err);
+        //     }
+        // })
 
         // BOX SOCKETS ***********************************
         socket.on('set currBox', box => {

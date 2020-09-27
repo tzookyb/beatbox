@@ -2,20 +2,20 @@
     .player-capsule {
         grid-area: player;
         position: fixed;
-        bottom: 0px;
+        bottom: -1px;
         height: 80px;
         width: 100%;
         background-image: url("../../img/fxVE.gif");
         background-size: cover;
         background-position: center;
-        padding: 0 40px;
+        padding: 0 30px;
         font-weight: bold;
         font-size: 1.1rem;
         color: #eee;
         text-shadow: 0px -1px 2px black;
         transition: 0.7s;
         z-index: 30;
-        
+
         &.is-playing {
             background-color: white;
             background-blend-mode: darken;
@@ -26,8 +26,10 @@
             background-blend-mode: color-burn;
         }
     }
+
     .song-time {
         min-width: 180px;
+        flex-grow: 1;
 
         .player-time {
             font-family: Righteous;
@@ -37,20 +39,21 @@
     .player-thumbnail {
         transform: scale(1.4);
         object-fit: cover;
-        max-width: 80px;
-        height: auto;
+        max-width: rem(80px);
         cursor: pointer;
+        margin-right: 15px;
     }
 
     .player-title {
+        flex-grow: 1.5;
+        font-size: 1rem;
         line-height: 1.5em;
         max-height: 3em;
         overflow: hidden;
         text-overflow: ellipsis;
         align-self: center;
-        width: 100%;
         opacity: 1;
-        padding-inline-start: 15px;
+        margin-inline-start: 10px;
     }
 
     .player-controls {
@@ -77,6 +80,43 @@
             &:hover {
                 animation: jello-horizontal 1s;
             }
+        }
+    }
+}
+
+@media(max-width: 740px) {
+    .player-container {
+
+        .player-capsule {
+            flex-direction: column-reverse;
+            height: 16vh
+        }
+
+        .player-thumbnail,
+        .player-ctrl-btn:last-of-type {
+            display: none;
+        }
+
+        .song-time {
+            width: 100%;
+        }
+
+        .player-controls {
+            justify-content: center;
+            width: 100%;
+            padding-inline-end: 0;
+
+            .back-to-box {
+                position: absolute;
+                right: -24px;
+                height: 60px;
+            }
+        }
+
+        .player-title {
+            order: 1;
+            height: 3ch; 
+            text-align:center;
         }
     }
 }

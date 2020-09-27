@@ -10,23 +10,26 @@
             padding: 5px;
         }
     }
+
     .song-data {
-        > * {
+        >* {
             margin: 0 5px;
         }
+
         h3 {
             &.now-playing {
                 color: $clr3;
             }
         }
+
         .play-icon-container {
             padding: 1px;
         }
+
         .play-icon {
             font-size: 30px;
             border: 1px solid $clr6;
             border-radius: 50%;
-            cursor: pointer;
             &.now-playing {
                 color: $clr3;
                 border: 1px solid $clr3;
@@ -38,7 +41,7 @@
         margin-inline-end: 15px;
         color: $clr6;
 
-        > * {
+        >* {
             padding: 5px;
         }
 
@@ -54,6 +57,14 @@
     &:hover {
         color: #cdcdcdfc;
         background-color: #6e6d6d6e;
+    }
+
+
+    .song-pick.opened & {
+        .song-preview-btns {
+            justify-content: flex-end;
+
+        }
     }
 }
 

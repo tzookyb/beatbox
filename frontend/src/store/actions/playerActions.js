@@ -8,7 +8,6 @@ export function updateLocalPlayer(currSong) {
 }
 //  ***************************************************************
 export function changeSong(id) {
-    console.log("changeSong -> id", id)
     return (dispatch) => {
         const currSong = {
             id,
@@ -35,8 +34,8 @@ export function updateProgress(secPlayed) {
         const currSong = {
             ...getState().boxReducer.currSong, secPlayed
         }
-        dispatch({ type: 'SET_CURR_SONG', currSong })
         socketService.emit('update progress', secPlayed);
+        dispatch({ type: 'SET_CURR_SONG', currSong })
     }
 }
 
