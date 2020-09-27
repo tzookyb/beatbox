@@ -39,10 +39,11 @@ export class _SongPreview extends Component {
                         {...provided.dragHandleProps}
 
                         className="song-preview flex space-between"
+                        onDoubleClick={() => this.props.changeSong(songDetails.id)}
                     >
 
                         <div className="song-data flex align-center">
-                            <div className="play-icon-container flex align-center">
+                            <div className="play-icon-container flex align-center cursor-pointer">
                                 {isSongPlaying ?
                                     <PauseIcon
                                         onClick={() => togglePlay(currSong)}

@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 // LOCAL IMPORT
-import { socketService } from './services/socketService';
 import { UserDetails } from './pages/UserDetails';
 import { BoxDetails } from './pages/BoxDetails';
 import { BoxApp } from './pages/BoxApp';

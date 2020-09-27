@@ -35,8 +35,8 @@ export function updateProgress(secPlayed) {
         const currSong = {
             ...getState().boxReducer.currSong, secPlayed
         }
-        dispatch({ type: 'SET_CURR_SONG', currSong })
         socketService.emit('update progress', secPlayed);
+        dispatch({ type: 'SET_CURR_SONG', currSong })
     }
 }
 

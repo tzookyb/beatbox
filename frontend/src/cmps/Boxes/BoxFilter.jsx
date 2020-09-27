@@ -51,7 +51,7 @@ export class _BoxFilter extends Component {
                     autoComplete="off"
                     value={searchStr}
                     onChange={this.onHandleChange}
-                    placeholder={isAtBoxDetails ? 'Search in playlist' : 'Search for Box'} />
+                    placeholder={isAtBoxDetails ? 'Search in playlist' : 'Search for a Box'} />
                 <SearchIcon className="search-icon" onClick={this.toggleSearch} />
             </div>
         )

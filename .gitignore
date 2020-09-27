@@ -1,8 +1,6 @@
 node_modules/
 .vscode/
 *.log
-<<<<<<< HEAD
-first presentation
-=======
 logs/
->>>>>>> 9cb41aa68e31aa1bca470c71497357313f3cdf4d
+backend/logs/backend.log
+logs/

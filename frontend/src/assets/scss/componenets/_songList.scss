@@ -29,18 +29,16 @@
     }
 }
 
-.remove-song {
+.remove-song-drag {
     position: fixed;
     bottom: 80px;
     width: 100%;
+    left: 50%;
     height: 60px;
-    visibility: collapse;
-    right: 0;
-    padding: 0 50px;
+    visibility: hidden;
     background-color: $clr1;
-    // display: flex;
     justify-content: center;
-    transition: height 0.5s;
+    transition: 0.5s;
     &.opened {
         visibility: visible;
     }
