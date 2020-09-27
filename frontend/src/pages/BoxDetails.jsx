@@ -45,7 +45,6 @@ class _BoxDetails extends Component {
         const boxId = this.props.match.params.boxId;
         const minimalUser = userService.getMinimalUser();
         await this.props.loadBox(boxId);
-        this.setState({ isFavorite: await this.getIfBoxFavorite() })
         // await boxService.addConnectedUser(boxId, minimalUser);
         // SOCKET SETUP
         socketService.setup();
@@ -119,9 +118,6 @@ class _BoxDetails extends Component {
         this.setState(prevState => ({ isSongPickOpen: !prevState.isSongPickOpen }))
     }
 
-    // getIsUserLikeBox(box, minimalUser) {
-    //     return (boxService.getIsUserLikeBox(box, minimalUser) !== -1) ? 'liked' : '';
-    // }
 
     onDragStart = () => {
         this.setState({ isDragging: true })
@@ -160,7 +156,6 @@ class _BoxDetails extends Component {
         socketService.emit('chat newMsg', msgObj);
     }
 
-   
 
     onSwapSongs = (srcIdx, destIdx) => {
         const newSongs = [...this.props.currBox.songs];
@@ -188,9 +183,9 @@ class _BoxDetails extends Component {
     }
 
     onToggleToFavorite = () => {
-        const boxId = this.props.currBox._id;
-        userService.toggleToFavorite(boxId);
-        this.setState({ isFavorite: !this.state.isFavorite });
+        // const boxId = this.props.currBox._id;
+        // userService.toggleToFavorite(boxId);
+        // this.setState({ isFavorite: !this.state.isFavorite });
     }
 
     getIfBoxFavorite = async () => {

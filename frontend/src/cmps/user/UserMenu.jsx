@@ -78,9 +78,9 @@ export function UserMenu({ user, onLogout, loadUser }) {
                             <Paper>
                                 <ClickAwayListener onClickAway={handleClose}>
                                     <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                                        <MenuItem onClick={(ev) => handleClose(ev, 'Profile')}>
-                                            <Link to={`/user/${user._id}`} style={{color:"black"}}>Profile</Link>
-                                        </MenuItem>
+                                        {!user.isGuest && <MenuItem onClick={(ev) => handleClose(ev, 'Profile')}>
+                                            <Link to={`/user/${user._id}`} style={{ color: "black" }}>Profile</Link>
+                                        </MenuItem>}
                                         <MenuItem >
                                             < ModalSignup />
                                         </MenuItem>

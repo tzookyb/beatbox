@@ -110,6 +110,8 @@ class _BoxChat extends Component {
     }
 
     render() {
+        const { msgs } = this.props;
+        console.log("render -> msgs", msgs)
         const { typingStr } = this.state;
         return (
             <section className="wall-container flex column space-between">
