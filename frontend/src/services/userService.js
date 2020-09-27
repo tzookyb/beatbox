@@ -20,6 +20,7 @@ export const userService = {
 
 async function addBoxToUser(boxId) {
     const user = getUser();
+    if (user.isGuest) return;
     const userId = user._id;
     const userFromDb = await getUserById(userId);
     if (!userFromDb.boxes) userFromDb.boxes = [];
@@ -74,6 +75,7 @@ function _getGuestMode() {
         username: 'Guest',
         fullName: 'New Guest',
         imgUrl: '',
+        isGuest: true,
         _id: _makeId()
     }
 }
@@ -113,7 +115,10 @@ async function getUserBoxes(userId) {
 
 async function toggleToFavorite(boxId) {
     const user = getUser();
+    console.log("toggleToFavorite -> user.isGuest", user.isGuest)
+    if (user.isGuest) return;
     const userId = user._id;
+    console.log("toggleToFavorite -> userId", userId)
     const userFromDb = await getUserById(userId);
     if (!userFromDb.favoriteBoxes) {
         userFromDb.favoriteBoxes = [];
@@ -144,5 +149,5 @@ async function isBoxFavorite(userId, boxId) {
     let isFavoriteIdx = -1;
     if (!userFromDb.favoriteBoxes) return isFavoriteIdx;
     isFavoriteIdx = await userFromDb.favoriteBoxes.findIndex(box => box === boxId)
-    return isFavoriteIdx; 
+    return isFavoriteIdx;
 }

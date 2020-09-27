@@ -30,10 +30,11 @@ class _UserDetails extends Component {
 
     render() {
         const { user } = this.props;
+        if (this.props.user.isGuest) return;
         const { userBoxes, userBoxesFavorite } = this.state;
         console.log("render -> userBoxesFavorite", userBoxesFavorite)
         const minimalUser = userService.getMinimalUser();
-        if (!user || !userBoxes || !userBoxesFavorite) return <CircleLoading size="large" color="#ac0aff" />
+        if (!user) return <CircleLoading size="large" color="#ac0aff" />
         return (
             <div className="user-details">
                 <div className="user-info">
@@ -42,20 +43,20 @@ class _UserDetails extends Component {
                 </div>
                 <div className="user-boxes">
                     <h2>My Boxes: </h2>
-                    <BoxList
+                    {userBoxes && <BoxList
                         boxes={userBoxes}
                         minimalUser={minimalUser}
                         connectedUsers={this.props.connectedUsers}
                         onDelete={this.onDelete}
-                    />
+                    />}
                 </div>
                 <div className="user-boxes-favorite">
                     <h2>My Favorite Boxes: </h2>
-                    <BoxList
+                    {userBoxesFavorite && <BoxList
                         boxes={userBoxesFavorite}
                         minimalUser={minimalUser}
                         connectedUsers={this.props.connectedUsers}
-                    />
+                    />}
                 </div>
                 {/* <h2>Welcome {user.fullName}!</h2> */}
             </div>

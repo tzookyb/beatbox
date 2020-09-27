@@ -43,6 +43,7 @@ function connectSockets(io) {
     io.on('connection', socket => {
         var myBox;
         socket.on('join box', (boxInfo) => {
+        console.log("connectSockets -> boxInfo", boxInfo)
             myBox = boxInfo;
             if (socket.myBox) {
                 leaveBox(socket, myBox, io);
@@ -94,6 +95,7 @@ function connectSockets(io) {
         })
         // CHAT SOCKETS **************************************
         socket.on('chat newMsg', msg => {
+            console.log("connectSockets -> socket.myBox", socket.myBox)
             boxMap[socket.myBox].msgs.push(msg);
             io.to(socket.myBox).emit('chat addMsg', msg);
         })
