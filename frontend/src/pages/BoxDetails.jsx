@@ -116,9 +116,9 @@ class _BoxDetails extends Component {
         this.setState(prevState => ({ isSongPickOpen: !prevState.isSongPickOpen }))
     }
 
-    getIsUserLikeBox(box, minimalUser) {
-        return (boxService.getIsUserLikeBox(box, minimalUser) !== -1) ? 'liked' : '';
-    }
+    // getIsUserLikeBox(box, minimalUser) {
+    //     return (boxService.getIsUserLikeBox(box, minimalUser) !== -1) ? 'liked' : '';
+    // }
 
     onDragStart = () => {
         this.setState({ isDragging: true })
@@ -223,7 +223,7 @@ class _BoxDetails extends Component {
                                     <AddIcon />
                                 </Fab>
 
-                                <div className={`like-btn ${this.getIsUserLikeBox(currBox, minimalUser)}`}
+                                <div className={`like-btn`}
                                     onClick={() => this.onToggleLikeBox(currBox._id, minimalUser)}
                                 >
                                     {/* {currBox.likedByUsers.length} */}

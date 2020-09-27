@@ -29,6 +29,7 @@
 
     .song-time {
         min-width: 180px;
+        flex-grow: 1;
 
         .player-time {
             font-family: Righteous;
@@ -44,13 +45,13 @@
     }
 
     .player-title {
+        flex-grow: 1.5;
         font-size: 1rem;
         line-height: 1.5em;
         max-height: 3em;
         overflow: hidden;
         text-overflow: ellipsis;
         align-self: center;
-        width: 100%;
         opacity: 1;
         margin-inline-start: 10px;
     }
