@@ -13,8 +13,8 @@ export const boxService = {
     update,
     addSong,
     getEmptyBox,
-    addConnectedUser
-    // remove,
+    addConnectedUser,
+    remove
 }
 
 function getAllGenres() {
@@ -31,7 +31,7 @@ function getUsedGenres(boxes) {
 }
 
 async function getById(boxId) {
-    return await httpService.get(`box/${boxId}`)
+    return httpService.get(`box/${boxId}`)
 }
 
 async function query(query) {
@@ -51,8 +51,9 @@ function getEmptyBox(user) {
 }
 
 async function save(box) {
-    userService.addBox(box);
-    return await httpService.post(`box`, box);
+    const newBox = await httpService.post(`box`, box);
+    userService.addBoxToUser(newBox._id);
+    return newBox;
 }
 
 async function update(box) {
@@ -71,17 +72,6 @@ async function addSong(song, isFromDrag = false) {
     return newSong;
 }
 
-// async function addLike(boxId, user) {
-//     const box = await getById(boxId);
-//     var newBox = { ...box };
-//     var userIdx = getIsUserLikeBox(newBox, user);
-//     if (userIdx === -1) {
-//         newBox.likedByUsers.push(user);
-//     } else {
-//         newBox.likedByUsers.splice(userIdx, 1)
-//     }
-//     update(newBox);
-// }
 
 async function addConnectedUser(boxId, minimalUser) {
     const box = await getById(boxId);
@@ -104,4 +94,8 @@ function _makeId(length = 8) {
         txt += possible.charAt(Math.floor(Math.random() * possible.length));
     }
     return txt;
+}
+
+async function remove(boxId) {
+    return httpService.delete(`box/${boxId}`)
 }

@@ -13,7 +13,7 @@ function createBoxStatus() {
     }
 }
 
-function leaveBox(socket, myBox, boxInfo, io) {
+function leaveBox(socket, myBox, io) {
     socket.leave(myBox.boxId);
     const boxStatus = getBoxStatus(myBox.boxId);
     // if (boxMap[socket.myBox].connectedUsers.length > 1) {
@@ -24,7 +24,6 @@ function leaveBox(socket, myBox, boxInfo, io) {
     //     boxMap[socket.myBox] = createBoxStatus();
     // }
     // io.to(socket.myBox).emit('leave box', boxStatus.connectedUsers);
-    console.log("leaveBox -> boxStatus.connectedUsers", boxStatus.connectedUsers)
 }
 
 function getBoxStatus(boxId) {
@@ -45,10 +44,7 @@ function connectSockets(io) {
         var myBox;
         socket.on('join box', (boxInfo) => {
             myBox = boxInfo;
-            console.log("connectSockets -> myBox", myBox)
-            console.log(boxMap[myBox.boxId])
             if (socket.myBox) {
-
                 leaveBox(socket, myBox, io);
                 const boxStatus = getBoxStatus(socket.myBox);
                 io.to(socket.myBox).emit('joined new box', boxStatus.connectedUsers);

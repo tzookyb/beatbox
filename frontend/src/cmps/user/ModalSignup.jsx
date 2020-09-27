@@ -22,10 +22,9 @@ export function ModalSignup() {
       <div variant="outlined" color="primary" onClick={handleClickOpen}>
         Signup
       </div>
-      <Dialog
+      <Dialog 
         open={open}
         onClose={handleClose}
-        aria-labelledby="draggable-dialog-title"
       >
         <DialogTitle >
           Signup

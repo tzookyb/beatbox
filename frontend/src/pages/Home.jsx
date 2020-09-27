@@ -6,26 +6,26 @@ import ExpandMoreSharpIcon from '@material-ui/icons/ExpandMoreSharp';
 import { BoxApp } from './BoxApp'
 import { loadBoxes } from '../store/actions/boxAction'
 import { Footer } from '../cmps/Footer'
-
+import { boxService } from '../services/boxService'
 class _Home extends Component {
 
     async componentDidMount() {
         await this.props.loadBoxes();
     }
 
-    getGenres(boxes) {
-        let allGenres = [];
-        boxes.forEach(box => {
-            allGenres.push(box.genre);
-        })
-        const genres = [...new Set(allGenres)];
-        return genres;
-    }
+    // getGenres(boxes) {
+    //     let allGenres = [];
+    //     boxes.forEach(box => {
+    //         allGenres.push(box.genre);
+    //     })
+    //     const genres = [...new Set(allGenres)];
+    //     return genres;
+    // }
 
     render() {
         const { boxes } = this.props;
         if (!boxes) return <CircleLoading size="large" color="#ac0aff" />
-        const genres = this.getGenres(boxes);
+        const genres = boxService.getUsedGenres(boxes);
         return (
             <React.Fragment>
                 <div id="top" className="hero-container flex justify-center align-center" >

@@ -3,7 +3,7 @@ socketService.on('get box status', this.setBoxStatus);
 
 setBoxStatus = (boxStatus) => {
     this.props.setCurrSong(boxStatus.currSong);
-    this.props.loadMessages(boxStatus.msgs);
+    this.props.loadMsgs(boxStatus.msgs);
 }
 
 // backend:
