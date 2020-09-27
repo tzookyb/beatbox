@@ -5,11 +5,11 @@ import { SystemMessage } from 'react-chat-elements'
 import { Input } from 'react-chat-elements'
 import { Button } from 'react-chat-elements'
 import Avatar from '@material-ui/core/Avatar';
+import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import 'react-chat-elements/dist/main.css';
 
 import { socketService } from '../../services/socketService'
 import { addMsg, loadMsgs } from '../../store/actions/msgAction'
-
 
 class _BoxChat extends Component {
     state = {
@@ -108,15 +108,27 @@ class _BoxChat extends Component {
         return msgsArr;
     }
 
+
+    getConnectedAvatars() {
+        const { connectedUsers } = this.props;
+        return connectedUsers.map(user => {
+            return <Avatar alt={user.username} src={user.imgUrl} />
+        })
+    }
+
     render() {
-        const { msgs } = this.props;
-        console.log("render -> msgs", msgs)
+        const { msgs, connectedUsers } = this.props;
         const { typingStr } = this.state;
         return (
             <section className="wall-container flex column space-between">
                 <h2 className="chat-title"> Share your thoughts </h2>
                 <div className="typing-container">
                     {typingStr && <h3>{typingStr}</h3>}
+                </div>
+                <div className="connected-users">
+                    < AvatarGroup max={4}>
+                        {this.getConnectedAvatars()}
+                    </AvatarGroup >
                 </div>
                 <div className="msgs">
                     {this.getMsgsArr()}
@@ -144,7 +156,7 @@ const mapStateToProps = state => {
         user: state.userReducer.loggedinUser,
         msgs: state.msgReducer.msgs,
         box: state.boxReducer.currBox,
-        // connectedUsers: state.connectedUsersReducer.connectedUsers
+        connectedUsers: state.connectedUsersReducer.connectedUsers
     }
 }
 const mapDispatchToProps = {

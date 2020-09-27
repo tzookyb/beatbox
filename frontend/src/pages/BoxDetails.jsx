@@ -21,12 +21,9 @@ import { socketService } from '../services/socketService';
 import { loadBox, updateBox, gotBoxUpdate } from '../store/actions/boxAction'
 import { addMsg, loadMsgs } from '../store/actions/msgAction'
 import { changeSong, updateLocalPlayer } from '../store/actions/playerActions'
-import { loadConnectedUsers, addConnectedUser } from '../store/actions/connectedUsersAction'
+import { loadConnectedUsers } from '../store/actions/connectedUsersAction'
 import { youtubeService } from '../services/youtubeService';
 import { BoxChat } from '../cmps/box-details/BoxChat'
-
-// import Avatar from '@material-ui/core/Avatar';
-// import AvatarGroup from '@material-ui/lab/AvatarGroup';
 
 class _BoxDetails extends Component {
     state = {
@@ -62,6 +59,7 @@ class _BoxDetails extends Component {
 
     componentWillUnmount() {
         socketService.off('chat addMsg', this.props.addMsg);
+        socketService.off('joined new box', this.props.loadConnectedUsers);
     }
 
     setBoxStatus = ({ msgs, currSong }) => {
@@ -69,9 +67,6 @@ class _BoxDetails extends Component {
         if (!currSong.id) currSong.id = (currBox.songs.length) ? currBox.songs[0].id : null;
         this.props.updateLocalPlayer(currSong);
         this.props.loadMsgs(msgs);
-        // this.props.loadConnectedUsers(boxStatus.connectedUsers);
-        // console.log("setBoxStatus -> boxStatus.connectedUsers", boxStatus.connectedUsers)
-        // console.log(this.props.connectedUsers);
     }
 
     onRemoveSong = async (songId) => {
@@ -118,6 +113,13 @@ class _BoxDetails extends Component {
         this.setState(prevState => ({ isSongPickOpen: !prevState.isSongPickOpen }))
     }
 
+<<<<<<< HEAD
+    // getIsUserLikeBox(box, minimalUser) {
+    //     return (boxService.getIsUserLikeBox(box, minimalUser) !== -1) ? 'liked' : '';
+    // }
+
+=======
+>>>>>>> 67917edcb3937595d1898613733bb2fdf8a2c94f
     onDragStart = () => {
         this.setState({ isDragging: true })
     }
@@ -194,6 +196,8 @@ class _BoxDetails extends Component {
         return isFavorite;
     }
 
+ 
+
     render() {
         const { isSongPickOpen, isDragging, isFavorite } = this.state;
         const { currBox, filter } = this.props;
@@ -229,8 +233,16 @@ class _BoxDetails extends Component {
                                     <AddIcon />
                                 </Fab>
 
+<<<<<<< HEAD
+                                <div className={`like-btn`}
+                                    // onClick={() => this.onToggleLikeBox(currBox._id, minimalUser)}
+                                >
+                                    {/* {currBox.likedByUsers.length} */}
+                                    <FavoriteIcon />
+=======
                                 <div title="Add to favorite" className={`like-btn ${isFavorite ? "favortie" : ""}`}>
                                     <FavoriteIcon onClick={this.onToggleToFavorite} />
+>>>>>>> 67917edcb3937595d1898613733bb2fdf8a2c94f
                                 </div>
                             </div>
 
@@ -300,7 +312,7 @@ const mapDispatchToProps = {
     loadMsgs,
     updateLocalPlayer,
     gotBoxUpdate,
-    addConnectedUser,
+    // addConnectedUser,
     loadConnectedUsers,
     changeSong
 }
