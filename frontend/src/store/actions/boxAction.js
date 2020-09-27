@@ -1,6 +1,11 @@
 import { boxService } from "../../services/boxService"
 import { socketService } from "../../services/socketService";
-
+var log = console.log;
+console.log = function () {
+  log.apply(console, arguments);
+  // Print the stack trace
+  console.trace();
+};
 export function loadBoxes(query) {
   console.log("loadBoxes -> query", query)
   return async dispatch => {

@@ -9,18 +9,9 @@ import { Footer } from '../cmps/Footer'
 import { boxService } from '../services/boxService'
 class _Home extends Component {
 
-    async componentDidMount() {
-        await this.props.loadBoxes();
+    componentDidMount() {
+        this.props.loadBoxes();
     }
-
-    // getGenres(boxes) {
-    //     let allGenres = [];
-    //     boxes.forEach(box => {
-    //         allGenres.push(box.genre);
-    //     })
-    //     const genres = [...new Set(allGenres)];
-    //     return genres;
-    // }
 
     render() {
         const { boxes } = this.props;
