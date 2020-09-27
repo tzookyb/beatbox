@@ -113,13 +113,6 @@ class _BoxDetails extends Component {
         this.setState(prevState => ({ isSongPickOpen: !prevState.isSongPickOpen }))
     }
 
-<<<<<<< HEAD
-    // getIsUserLikeBox(box, minimalUser) {
-    //     return (boxService.getIsUserLikeBox(box, minimalUser) !== -1) ? 'liked' : '';
-    // }
-
-=======
->>>>>>> 67917edcb3937595d1898613733bb2fdf8a2c94f
     onDragStart = () => {
         this.setState({ isDragging: true })
     }
@@ -233,16 +226,8 @@ class _BoxDetails extends Component {
                                     <AddIcon />
                                 </Fab>
 
-<<<<<<< HEAD
-                                <div className={`like-btn`}
-                                    // onClick={() => this.onToggleLikeBox(currBox._id, minimalUser)}
-                                >
-                                    {/* {currBox.likedByUsers.length} */}
-                                    <FavoriteIcon />
-=======
                                 <div title="Add to favorite" className={`like-btn ${isFavorite ? "favortie" : ""}`}>
                                     <FavoriteIcon onClick={this.onToggleToFavorite} />
->>>>>>> 67917edcb3937595d1898613733bb2fdf8a2c94f
                                 </div>
                             </div>
 
