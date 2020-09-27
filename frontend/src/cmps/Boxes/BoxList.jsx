@@ -46,7 +46,7 @@ export class BoxList extends Component {
                                     key={box._id}
                                     box={box}
                                     genre={this.props.genre}
-                                    onToggleLikeBox={this.props.onToggleLikeBox}
+                                    // onToggleLikeBox={this.props.onToggleLikeBox}
                                     onAddToFavorites={this.props.onAddToFavorites}
                                     minimalUser={this.props.minimalUser}
                                     connectedUsers={this.props.connectedUsers}
@@ -65,7 +65,7 @@ export class BoxList extends Component {
                         box={box}
                         minimalUser={this.props.minimalUser}
                         onAddToFavorites={this.props.onAddToFavorites}
-                        onToggleLikeBox={this.props.onToggleLikeBox}
+                        // onToggleLikeBox={this.props.onToggleLikeBox}
                         connectedUsers={this.props.connectedUsers}
                     />
                     )}
