@@ -1,13 +1,15 @@
+// OUTSOURCE IMPORTS
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { DragDropContext } from 'react-beautiful-dnd'
-
+import CircleLoading from 'react-loadingg/lib/CircleLoading'
+// LOCAL IMPORTS
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService'
+import { youtubeService } from '../services/youtubeService'
 import { saveBox, loadBoxes } from '../store/actions/boxAction'
 import { BoxInfoEdit } from '../cmps/box-details/BoxInfoEdit'
 import { SongList } from '../cmps/box-details/SongList'
-import CircleLoading from 'react-loadingg/lib/CircleLoading'
 
 export class _BoxAdd extends Component {
     state = {
@@ -61,21 +63,17 @@ export class _BoxAdd extends Component {
         }));
     }
 
-    onRemoveSong = (ev, songId) => {
-        if (ev) {
-            ev.stopPropagation();
-            ev.preventDefault();
-        }
+    onRemoveSong = (songId) => {
         const newBox = { ...this.state.editBox };
         const songIdx = newBox.songs.findIndex(song => song.id === songId);
         newBox.songs.splice(songIdx, 1);
         this.setState({ editBox: newBox });
     }
 
-    onAddSong = (song, idx = undefined) => {
-        const newSong = boxService.addSong(song);
+    onAddSong = async (song, idx = undefined, isFromDrag = false) => {
+        const newSong = await boxService.addSong(song, isFromDrag);
         const songs = [...this.state.editBox.songs];
-        if (!idx) songs.push(newSong);
+        if (!idx) songs.unshift(newSong);
         else songs.splice(idx, 0, newSong);
         this.setState(prevState => ({ editBox: { ...prevState.editBox, songs } }));
     }
@@ -88,16 +86,24 @@ export class _BoxAdd extends Component {
         this.setState({ isDragging: true });
     }
 
-    onDragEnd = (result) => {
+    onDragEnd = async (result) => {
         const { destination, source, draggableId } = result;
+        this.setState({ isDragging: false });
 
         if (!destination) return;
+        if (destination.droppableId === 'songPick') return;
 
-        if (destination.droppableId === 'trash') {
-            this.onRemoveSong(null, draggableId);
+        if (source.droppableId === 'songList' && destination.droppableId === 'trash') {
+            this.onRemoveSong(draggableId);
+            return;
         }
 
-        this.setState({ isDragging: false });
+        if (source.droppableId === 'songPick' && destination.droppableId === 'songList') {
+            let song = await youtubeService.getSongById(draggableId);
+            [song] = song.items;
+            this.onAddSong(song, destination.index, true);
+            return;
+        }
 
         if (destination.index === source.index) return;
 
@@ -112,11 +118,6 @@ export class _BoxAdd extends Component {
         songs.splice(destIdx, 0, songToMove);
         const newBox = { ...this.state.editBox, songs };
         this.setState({ editBox: newBox });
-    }
-
-    onPlaySong = () => {
-        // TODO: add capability to demo listen to song
-        return;
     }
 
     setIsLoading = (isLoading) => {
@@ -143,7 +144,6 @@ export class _BoxAdd extends Component {
                         onDragStart={this.onDragStart}
                         onDragEnd={this.onDragEnd}
                         isDragging={isDragging}
-                        onPlaySong={this.onPlaySong}
                         isBoxAdd={true}
                     />
                 </DragDropContext>

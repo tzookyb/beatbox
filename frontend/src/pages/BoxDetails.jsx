@@ -12,30 +12,31 @@ import LinkIcon from '@material-ui/icons/Link';
 import ColorThief from "colorthief";
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import { Swipeable } from "react-swipeable";
-
 // LOCAL IMPORT
 import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
-import { BoxWall } from '../cmps/box-details/BoxWall';
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService';
 import { socketService } from '../services/socketService';
 import { loadBox, updateBox, gotBoxUpdate } from '../store/actions/boxAction'
-import { addMessage, loadMessages } from '../store/actions/messageAction'
-import { setCurrSong } from '../store/actions/playerActions'
+import { addMsg, loadMsgs } from '../store/actions/msgAction'
+import { changeSong, updateLocalPlayer } from '../store/actions/playerActions'
 import { loadConnectedUsers, addConnectedUser } from '../store/actions/connectedUsersAction'
 import { youtubeService } from '../services/youtubeService';
-import Avatar from '@material-ui/core/Avatar';
-import AvatarGroup from '@material-ui/lab/AvatarGroup';
+import { BoxChat } from '../cmps/box-details/BoxChat'
+
+// import Avatar from '@material-ui/core/Avatar';
+// import AvatarGroup from '@material-ui/lab/AvatarGroup';
 
 class _BoxDetails extends Component {
     state = {
         isSongPickOpen: false,
         isDragging: false,
-        messages: [],
+        msgs: [],
         dominantColor: '',
         isMobileChatOpen: false,
-        isClipboardToast: false
+        isClipboardToast: false,
+        isFavorite: false
     }
 
     imgRef = React.createRef();
@@ -44,70 +45,63 @@ class _BoxDetails extends Component {
         const boxId = this.props.match.params.boxId;
         const minimalUser = userService.getMinimalUser();
         await this.props.loadBox(boxId);
+        this.setState({ isFavorite: await this.getIfBoxFavorite() })
         // await boxService.addConnectedUser(boxId, minimalUser);
         // SOCKET SETUP
         socketService.setup();
         const boxInfo = {
-            boxId: this.props.currBox._id,
+            boxId,
             user: minimalUser
         }
         socketService.emit('join box', boxInfo);
         socketService.on('get box status', this.setBoxStatus);
-        socketService.on('song changed', this.props.setCurrSong);
+        socketService.on('song changed', this.props.updateLocalPlayer);
         socketService.on('box changed', this.props.gotBoxUpdate);
-        socketService.on('chat addMsg', this.props.addMessage);
+        socketService.on('chat addMsg', this.props.addMsg);
         socketService.on('joined new box', this.props.loadConnectedUsers);
     }
 
     componentWillUnmount() {
-        socketService.off('chat addMsg', this.props.addMessage);
+        socketService.off('chat addMsg', this.props.addMsg);
     }
 
-    setBoxStatus = (boxStatus) => {
-        this.props.setCurrSong(boxStatus.currSong);
-        this.props.loadMessages(boxStatus.msgs);
+    setBoxStatus = ({ msgs, currSong }) => {
+        const { currBox } = this.props;
+        if (!currSong.id) currSong.id = (currBox.songs.length) ? currBox.songs[0].id : null;
+        this.props.updateLocalPlayer(currSong);
+        this.props.loadMsgs(msgs);
         // this.props.loadConnectedUsers(boxStatus.connectedUsers);
         // console.log("setBoxStatus -> boxStatus.connectedUsers", boxStatus.connectedUsers)
         // console.log(this.props.connectedUsers);
     }
 
-    onRemoveSong = (ev, songId) => {
-        if (ev) {
-            ev.stopPropagation();
-            ev.preventDefault();
-        }
-
-        const box = { ...this.props.currBox }
-        const songIdx = box.songs.findIndex(song => song.id === songId)
-        if (box.currSong.id === songId) {
-            if (box.songs.length === 1) {
-                box.currSong = null;
+    onRemoveSong = async (songId) => {
+        const { currSong } = this.props;
+        const newBox = { ...this.props.currBox }
+        const songIdx = newBox.songs.findIndex(song => song.id === songId)
+        if (currSong.id === songId) {
+            if (newBox.songs.length === 1) {
+                await this.props.setCurrSong(null)
             } else {
                 let nextSongIdx = songIdx + 1;
-                if (nextSongIdx === box.songs.length) nextSongIdx = 0;
-                box.currSong = { id: box.songs[nextSongIdx].id, isPlaying: true, played: 0 }
+                if (nextSongIdx === newBox.songs.length) nextSongIdx = 0;
+                await this.props.changeSong(newBox.songs[nextSongIdx].id)
             }
         }
-        const song = box.songs.splice(songIdx, 1);
-        this.addMessageChat(`Song ${song[0].title} removed by ${this.props.user.username}`);
-        this.props.updateBox(box)
+        const song = newBox.songs.splice(songIdx, 1);
+        this.addMsgChat(`Song ${song[0].title} removed by ${this.props.user.username}`);
+        this.props.updateBox(newBox);
     }
 
-    onAddSong = async (song, idx) => {
-        const newSong = await boxService.addSong(song);
+    onAddSong = async (song, idx, isFromDrag) => {
+        const newSong = await boxService.addSong(song, isFromDrag);
         const box = { ...this.props.currBox };
         if (idx) {
             box.songs.splice(idx, 0, newSong);
         }
         else box.songs.unshift(newSong);
-        this.addMessageChat(`Song ${newSong.title} added by ${this.props.user.username}`);
+        this.addMsgChat(`Song ${newSong.title} added by ${this.props.user.username}`);
         this.props.updateBox(box);
-    }
-
-    onPlaySong = (songId) => {
-        const currSong = { id: songId, isPlaying: true, secPlayed: 0 };
-        socketService.emit('set currSong', currSong);
-        this.props.setCurrSong(currSong);
     }
 
     onSaveInfo = (box) => {
@@ -125,9 +119,9 @@ class _BoxDetails extends Component {
         this.setState(prevState => ({ isSongPickOpen: !prevState.isSongPickOpen }))
     }
 
-    getIsUserLikeBox(box, minimalUser) {
-        return (boxService.getIsUserLikeBox(box, minimalUser) !== -1) ? 'liked' : '';
-    }
+    // getIsUserLikeBox(box, minimalUser) {
+    //     return (boxService.getIsUserLikeBox(box, minimalUser) !== -1) ? 'liked' : '';
+    // }
 
     onDragStart = () => {
         this.setState({ isDragging: true })
@@ -135,18 +129,18 @@ class _BoxDetails extends Component {
 
     onDragEnd = async (result) => {
         const { destination, source, draggableId } = result;
-        console.log("onDragEnd -> result", result)
 
         this.setState({ isDragging: false })
         if (!destination) return;
-        if (destination.droppableId === 'trash') {
-            this.onRemoveSong(null, draggableId)
+        if (destination.droppableId === 'songPick') return;
+        if (source.droppableId === 'songList' && destination.droppableId === 'trash') {
+            this.onRemoveSong(draggableId)
             return;
         }
-        if (source.droppableId === 'songPick') {
+        if (source.droppableId === 'songPick' && destination.droppableId === 'songList') {
             let song = await youtubeService.getSongById(draggableId);
             [song] = song.items;
-            this.onAddSong(song, destination.index);
+            this.onAddSong(song, destination.index, true);
             return;
         }
 
@@ -154,21 +148,21 @@ class _BoxDetails extends Component {
         else this.onSwapSongs(source.index, destination.index);
     }
 
-    addMessageChat = (msg) => {
-        const messageObj = {
+    addMsgChat = (msg) => {
+        const msgObj = {
             text: msg,
-            submitAt: new Date(),
-            id: this.props.user._id,
-            submitBy: this.props.user.username,
+            // submitAt: new Date(),
+            id: 'system',
+            submitBy: 'system',
             avatar: this.props.user.imgUrl,
-            type: 'system'
+            // from: 'system'
         }
-        socketService.emit('chat newMsg', messageObj);
+        socketService.emit('chat newMsg', msgObj);
     }
 
     onToggleLikeBox = async (boxId, minimalUser) => {
-        await boxService.addLike(boxId, minimalUser)
-        await this.props.loadBox(boxId);
+        // await boxService.addLike(boxId, minimalUser)
+        // await this.props.loadBox(boxId);
     }
 
     onSwapSongs = (srcIdx, destIdx) => {
@@ -196,11 +190,24 @@ class _BoxDetails extends Component {
         this.setState({ isMobileChatOpen: !this.state.isMobileChatOpen })
     }
 
+    onToggleToFavorite = () => {
+        const boxId = this.props.currBox._id;
+        userService.toggleToFavorite(boxId);
+        this.setState({ isFavorite: !this.state.isFavorite });
+    }
+
+    getIfBoxFavorite = async () => {
+        const boxId = this.props.currBox._id;
+        const userId = this.props.user._id;
+        const isFavoriteIdx = await userService.isBoxFavorite(userId, boxId)
+        const isFavorite = (isFavoriteIdx === -1) ? true : false;
+        return isFavorite;
+    }
+
     render() {
-        const { isSongPickOpen, isDragging, } = this.state;
-        const { currBox, messages, filter } = this.props;
+        const { isSongPickOpen, isDragging, isFavorite } = this.state;
+        const { currBox, filter } = this.props;
         if (!currBox) return <CircleLoading size="large" color="#ac0aff" />
-        const currSongId = currBox.currSong?.id || null;
         const songsToShow = this.getSongsForDisplay();
         const minimalUser = userService.getMinimalUser();
         const swipeConfig = {
@@ -209,40 +216,62 @@ class _BoxDetails extends Component {
             preventDefaultTouchmoveEvent: true,
             trackMouse: true
         };
+
         return (
             <Swipeable {...swipeConfig}>
                 <section className="box-details" style={{ backgroundColor: `rgb(${this.state.dominantColor})` }}>
                     <div className="box-details-main flex column">
-                        <BoxInfo getDominantColor={this.getDominantColor} imgRef={this.imgRef} box={currBox} onSaveInfo={this.onSaveInfo} minimalUser={minimalUser} onToggleLikeBox={this.onToggleLikeBox} />
+
+                        <BoxInfo
+                            getDominantColor={this.getDominantColor}
+                            imgRef={this.imgRef}
+                            box={currBox}
+                            onSaveInfo={this.onSaveInfo}
+                            minimalUser={minimalUser}
+                            onToggleLikeBox={this.onToggleLikeBox}
+                        />
+
                         <div className="song-social-actions flex space-between">
                             <div className="btns-container flex">
-                                <Fab className={`add-song-btn  ${isSongPickOpen ? 'opened' : ''}`} onClick={this.toggleSongPick} aria-label="add">
+                                <Fab className={`add-song-btn  ${isSongPickOpen ? 'opened' : ''}`}
+                                    onClick={this.toggleSongPick}
+                                    aria-label="add"
+                                >
                                     <AddIcon />
                                 </Fab>
-                                <div onClick={() => this.onToggleLikeBox(currBox._id, minimalUser)} className={`like-btn ${this.getIsUserLikeBox(currBox, minimalUser)}`}>
-                                    {/* {currBox.likedByUsers.length} */}
-                                    <FavoriteIcon />
+
+                                <div title="Add to favorite" className={`like-btn ${isFavorite ? "favortie" : ""}`}>
+                                    <FavoriteIcon onClick={this.onToggleToFavorite} />
                                 </div>
                             </div>
+
                             <div className="share-container flex space-between column">
                                 <p>Share the box:</p>
                                 <div className="share-btns flex space-evenely">
-                                    <a className="facebook-share-btn" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} rel="noopener noreferrer" target="_blank"><FacebookIcon /></a>
-                                    <a className="whatsapp-share-btn" href={`whatsapp://send?text=${currBox.createdBy.name} Shared a Box With You! : \n\n ${window.location.href}`} data-action="share/whatsapp/share"><WhatsappIcon /></a>
+                                    <a className="facebook-share-btn"
+                                        href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
+                                        rel="noopener noreferrer" target="_blank">
+                                        <FacebookIcon />
+                                    </a>
+                                    <a className="whatsapp-share-btn"
+                                        href={`whatsapp://send?text=${currBox.createdBy.name} Shared a Box With You! : \n\n ${window.location.href}`}
+                                        data-action="share/whatsapp/share">
+                                        <WhatsappIcon />
+                                    </a>
                                     <CopyToClipboard text={window.location.href}>
                                         <LinkIcon onClick={this.toggleClipboardToast} style={{ transform: 'rotate(45deg) translateY(1px) translateX(4px)' }} />
                                     </CopyToClipboard>
                                 </div>
-                                {this.state.isClipboardToast && <div className="copied-to-clipboard"><small>Copied to Clipboard!</small></div>}
+                                {this.state.isClipboardToast && <div className="copied-to-clipboard"><small>Link copied to your clipboard!</small></div>}
                             </div>
+
                         </div>
+
                         <SongList
                             songs={songsToShow}
-                            onPlaySong={this.onPlaySong}
                             onRemoveSong={this.onRemoveSong}
                             onAddSong={this.onAddSong}
                             isSongPickOpen={isSongPickOpen}
-                            nowPlayingId={currSongId}
                             onDragStart={this.onDragStart}
                             onDragEnd={this.onDragEnd}
                             isFilter={!!filter}
@@ -252,38 +281,41 @@ class _BoxDetails extends Component {
                     </div>
 
                     <div className={`${this.state.isMobileChatOpen ? 'chat-open' : ''} chat-box flex column`} >
-                        <BoxWall messages={messages} addMsg={this.addMsg} connectedUsers={this.props.connectedUsers} />
+                        <BoxChat />
+                        {/* <BoxWall msgs={msgs} addMsg={this.addMsg} connectedUsers={this.props.connectedUsers} /> */}
                     </div>
 
                     <button className={`${this.state.isMobileChatOpen ? 'chat-open' : ''} mobile-chat-btn`} onClick={this.toggleMobileMenu}><QuestionAnswerIcon /></button>
-                    {/* <BoxWall messages={messages} addMsg={this.addMsg} /> */}
+                    {/* <BoxWall msgs={msgs} addMsg={this.addMsg} /> */}
                 </section>
             </Swipeable>
         )
     }
 }
 
-{/* <AvatarGroup className="connected-users" max={4}>
-                        {this.getUsersAvatars(this.props.connectedUsers)}
-                    </AvatarGroup> */}
+// {/* <AvatarGroup className="connected-users" max={4}>
+// {this.getUsersAvatars(this.props.connectedUsers)}
+// </AvatarGroup> */}
 
 const mapStateToProps = state => {
     return {
         currBox: state.boxReducer.currBox,
+        currSong: state.boxReducer.currSong,
         filter: state.boxReducer.filter,
         user: state.userReducer.loggedinUser,
-        messages: state.messageReducer.messages,
+        msgs: state.msgReducer.msgs,
         connectedUsers: state.connectedUsersReducer.connectedUsers
     }
 }
 const mapDispatchToProps = {
     loadBox,
     updateBox,
-    addMessage,
-    loadMessages,
-    setCurrSong,
+    addMsg,
+    loadMsgs,
+    updateLocalPlayer,
     gotBoxUpdate,
     addConnectedUser,
-    loadConnectedUsers
+    loadConnectedUsers,
+    changeSong
 }
 export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails);

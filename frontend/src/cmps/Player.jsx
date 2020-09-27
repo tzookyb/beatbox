@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactPlayer from 'react-player/youtube'
 import { withRouter } from 'react-router-dom';
-
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import PauseIcon from '@material-ui/icons/Pause';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
@@ -13,33 +12,35 @@ import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import Slider from '@material-ui/core/Slider';
 import { CircleLoading } from 'react-loadingg';
 // LOCAL IMPORT
-import { updateBox } from '../store/actions/boxAction';
 import { socketService } from '../services/socketService'
 import { userService } from '../services/userService'
-import { loadSong, updateSongPlay, updateSongTime } from '../store/actions/playerActions';
+import { changeSong, updateProgress, togglePlay, updateSongTime } from '../store/actions/playerActions';
 
 class _Player extends Component {
     state = {
+        isFirstJoin: true,
         isReady: false,
-        isShrunk: false,
-        isPlaying: false,
-        secPlayed: 0,
         muted: false,
+        seeking: false,
         volume: 0.35,
-        duration: undefined
+        duration: undefined,
+        secPlayed: 0,
+
     }
 
     componentDidMount() {
         socketService.setup();
-        // REMEMBER! UPDATED ONLY AT CLIENT PLAYER -  WITHOUT STORE
         socketService.on('update song time', this.onSeek);
+    }
+    ref = player => {
+        this.player = player
     }
 
     componentDidUpdate(prevProps) {
         const newBox = this.props.currBox;
         if (prevProps.currBox?._id !== newBox?._id) {
             this.socketSetup();
-            if (newBox.songs.length) this.props.loadSong(newBox.songs[0].id);
+            return;
         }
     }
 
@@ -53,11 +54,11 @@ class _Player extends Component {
     }
 
     togglePlay = () => {
-        this.props.updateSongPlay(this.props.currBox.currSong);
+        this.props.togglePlay(this.props.currSong);
     }
     skipToSong = (skip) => {
-        const { currBox } = this.props;
-        const currSongIdx = currBox.songs.findIndex(song => song.id === currBox.currSong.id);
+        const { currBox, currSong } = this.props;
+        const currSongIdx = currBox.songs.findIndex(song => song.id === currSong.id);
         const lastSongIdx = currBox.songs.length - 1
 
         var nextSongIdx = currSongIdx + skip;
@@ -65,7 +66,7 @@ class _Player extends Component {
         else if (nextSongIdx > lastSongIdx) nextSongIdx = 0;
 
         const nextSongId = currBox.songs[nextSongIdx].id
-        this.props.loadSong(nextSongId);
+        this.props.changeSong(nextSongId);
     }
 
     handleSeekMouseDown = () => {
@@ -89,10 +90,9 @@ class _Player extends Component {
 
     handleProgress = state => {
         if (!this.state.seeking) {
-            this.setState({ secPlayed: parseInt(state.playedSeconds) });
+            this.props.updateProgress(state.playedSeconds);
         }
     }
-
 
     handleEnded = () => {
         this.skipToSong(1);
@@ -107,7 +107,11 @@ class _Player extends Component {
     }
 
     onReady = () => {
-        this.setState({ isReady: true }, this.play());
+        this.setState({ isReady: true });
+        if (this.state.isFirstJoin) {
+            socketService.emit('get song time')
+            this.setState({ isFirstJoin: false });
+        }
     }
 
     handleVolumeChange = (ev, value) => {
@@ -122,18 +126,14 @@ class _Player extends Component {
         this.player = player
     }
 
-    onToggleShrink = () => {
-        this.setState({ isShrunk: !this.state.isShrunk });
-    }
-
     render() {
-        const { currBox } = this.props;
-        if (!currBox || !currBox.currSong) return null;
+        const { currBox, currSong } = this.props;
+        if (!currBox || !currSong) return null;
 
-        const { isReady, volume, muted, duration, isShrunk } = this.state;
-        const { isPlaying } = currBox.currSong;
+        const { isReady, volume, muted, duration } = this.state;
+        const { isPlaying } = currSong;
 
-        const song = currBox.songs.find(song => song.id === currBox.currSong.id);
+        const song = currBox.songs.find(song => song.id === currSong.id);
         if (!song) return null;
 
         function showTime(seconds) {
@@ -152,53 +152,49 @@ class _Player extends Component {
         return <React.Fragment>
             <ReactPlayer
                 ref={this.ref}
-                className="player"
-                url={`https://www.youtube.com/watch?v=${song.youtubeId}`}
-                playing={isPlaying}
+                className="player hidden"
+                url={`https://www.youtube.com/watch?v=${song?.youtubeId}`}
+                playing={currSong.isPlaying}
                 controls={false}
                 volume={volume}
                 muted={muted}
                 onPlay={this.handlePlay}
                 onReady={this.onReady}
-                onPause={this.handlePause}
                 onEnded={this.handleEnded}
                 onProgress={this.handleProgress}
                 onDuration={this.handleDuration}
             />
             <div className="player-container flex justify-center align-center">
-                <div
-                    className={`player-capsule flex align-center space-between ${isPlaying ? 'is-playing' : 'paused'} ${isShrunk ? 'shrunk' : ''}`}
-                    onMouseDown={this.onPlayerMouseDown}
-                    onMouseUp={this.onPlayerMouseUp}
-                    onDrag={this.onPlayerDrag}
-                >
+                <div className={`player-capsule flex align-center space-between ${isPlaying ? 'is-playing' : 'paused'}`}>
 
 
-                    <img className="player-thumbnail" onClick={this.onToggleShrink} src={song.imgUrl} title={song.title} alt="song thumbnail" />
+                    <img className="player-thumbnail" src={song.imgUrl} title={song.title} alt="song thumbnail" />
 
-                    {isReady && <span className="player-title">{song.title}</span>}
+                    {!isReady ? <CircleLoading color="#ac0aff" /> :
+                        <React.Fragment>
+                            <span className="player-title">{song.title}</span>
 
-                    {!isReady ?
-                        <CircleLoading color="#ac0aff" /> :
-                        < div className="song-time flex align-center space-between">
-                            <span className="player-time">{showTime(this.state.secPlayed)}</span>
+                            <div className="song-time flex align-center space-between">
+                                <span className="player-time">{showTime(currSong.secPlayed)}</span>
 
-                            <Slider
-                                style={{
-                                    width: '70px',
-                                    color: 'white',
-                                }}
-                                name="played"
-                                min={0}
-                                max={duration}
-                                onMouseDown={this.handleSeekMouseDown}
-                                onMouseUp={this.handleSeekMouseUp}
-                                onChange={this.handleSeekChange}
-                                value={this.state.secPlayed}
-                            />
+                                <Slider
+                                    style={{
+                                        width: '70px',
+                                        color: 'white',
+                                    }}
+                                    name="played"
+                                    min={0}
+                                    max={duration}
+                                    onMouseDown={this.handleSeekMouseDown}
+                                    onMouseUp={this.handleSeekMouseUp}
+                                    onChange={this.handleSeekChange}
+                                    value={currSong.secPlayed}
+                                />
 
-                            {duration && <span className="player-time">{showTime(duration+1)}</span>}
-                        </div>}
+                                {duration && <span className="player-time">{showTime(duration + 1)}</span>}
+                            </div>
+                        </React.Fragment>
+                    }
 
                     <div className="player-controls flex align-center">
                         <button className="player-ctrl-btn flex align-center" title="Previous" onClick={() => this.skipToSong(-1)}><SkipPreviousIcon /></button>
@@ -229,7 +225,7 @@ class _Player extends Component {
                             onClick={() => this.props.history.push(`/box/details/${currBox._id}`)} />
                     </div>
                 </div >
-            </div>
+            </div >
         </React.Fragment >
     }
 }
@@ -238,15 +234,16 @@ class _Player extends Component {
 
 const mapStateToProps = state => {
     return {
-        currBox: state.boxReducer.currBox
+        currBox: state.boxReducer.currBox,
+        currSong: state.boxReducer.currSong,
     }
 }
 
 const mapDispatchToProps = {
-    updateBox,
-    loadSong,
-    updateSongPlay,
-    updateSongTime
+    changeSong,
+    togglePlay,
+    updateSongTime,
+    updateProgress
 }
 
 export const Player = connect(mapStateToProps, mapDispatchToProps)(withRouter(_Player));

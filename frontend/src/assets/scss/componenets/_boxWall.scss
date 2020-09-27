@@ -1,23 +1,26 @@
-
-.chat-box{
-  border-right: 2px solid rgb(28, 30, 33);
-    box-shadow: rgba(0, 0, 0, 0.64) 5px 0 6px -1px, rgb(63, 62, 65) -0.5px 0 inset;
-}
 .wall-container {
   // height: 70%;
   width: 300px;
   padding: 80px 10px 0 10px;
   position: fixed;
   border-right: 2px solid rgb(28, 30, 33);
-
-  .chat-header {
-    color: #b7b0b0;
-    font-size: 1.2rem;
-    border-top: 1px solid #ffffff52;
-    .typing-container {
-      height: 30px;
-      color: gray;
-      font-size: 0.8rem;
+  .chat-title {
+    text-align: center;
+    background-color: $clr2;
+    color: white;
+    padding: 5px;
+  }
+  .input-msg {
+    position: fixed;
+    bottom: 89px;
+    width: 280px;
+  }
+  .msgs {
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      display: none;
     }
   }
 }

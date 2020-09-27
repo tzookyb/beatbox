@@ -1,20 +1,25 @@
-.chat {
-  position: fixed;
-  bottom: 130px;
-  .form-msg{
-    padding: 0;
-    background: transparent;
-    input{
-      flex: 1 1 0%;
-      border: none;
-      outline: none;
-      padding: 15px;
-      border-radius: 10px;
+.msg {
+  .msg-text {
+    padding: 5px 10px;
+    width: fit-content;
+    margin: 5px 10px;
+    overflow-wrap: anywhere;
+  }
+
+  .msg-data {
+    > * {
+      color: #adadad;
+      margin: 2px 5px;
     }
-    .send-btn{
-      padding: 10px;
-      background: $clr6;
-      color: black;
-    }
+  }
+  .user-message {
+    background: $clr5;
+    border-radius: 10px 0 10px 10px;
+    margin-left: 50px;
+  }
+  .not-user-message {
+    background: $clr6;
+    border-radius: 0 10px 10px 10px;
+    margin-right: 50px;
   }
 }

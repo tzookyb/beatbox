@@ -24,6 +24,9 @@
     align-items: center;
   }
 
+  &.flex-end {
+    align-items: flex-end;
+  }
   &.column {
     flex-direction: column;
   }
@@ -72,6 +75,6 @@
   cursor: not-allowed;
 }
 
-.cursor-pointer{
+.cursor-pointer {
   cursor: pointer;
 }

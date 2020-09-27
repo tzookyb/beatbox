@@ -57,33 +57,38 @@ export class SongPick extends Component {
             <div className={`song-pick ${this.props.isSongPickOpen ? 'opened' : ''}`}>
                 <input ref={this.inputRef} type="search" name="searchStr" value={searchStr} onChange={this.handleInput} placeholder="Search for songs" autoComplete="off" />
 
-                {(isSearching && !results) && <div className="song-pick-msg flex justify-center">
-                    Getting results...
-                    <CircleLoading color="#ac0aff" />
-                </div>}
-                {results && !results.length && <div className="song-pick-msg flex justify-center">No results found</div>}
+                <div className={`song-pick-msg flex justify-center ${results.length && `hidden`}`} >
+                    {(isSearching && !results) &&
+                        <React.Fragment>
+                            Getting results...
+                        <CircleLoading color="#ac0aff" />
+                        </React.Fragment>
+                    }
+                    {results && !results.length && 'No results found.'}
+                </div>
 
-                {results && results.map((result, idx) => {
-                    const id = result.id.videoId;
-                    const title = youtubeService.titleSimplify(result.snippet.title);
-                    const imgUrl = result.snippet.thumbnails.medium.url;
-                    return <Draggable key={id} draggableId={id} index={idx} isDragDisabled={isFilter}>
-                        {provided => (
-                            <div
-                                ref={provided.innerRef}
-                                {...provided.draggableProps}
-                                {...provided.dragHandleProps}
-                                className="song-pick-result flex"
-                                onClick={() => this.onAddSong(result)}
-                            >
-                                <img src={imgUrl} alt="thumbnail" />
-                                <span dir="auto">{title}</span>
-                            </div>
-                        )}
-                    </Draggable>
-                })
+                {
+                    results && results.map((result, idx) => {
+                        const id = result.id.videoId;
+                        const title = youtubeService.titleSimplify(result.snippet.title);
+                        const imgUrl = result.snippet.thumbnails.medium.url;
+                        return <Draggable key={id} draggableId={id} index={idx} isDragDisabled={isFilter}>
+                            {provided => (
+                                <div
+                                    ref={provided.innerRef}
+                                    {...provided.draggableProps}
+                                    {...provided.dragHandleProps}
+                                    className="song-pick-result flex"
+                                    onClick={() => this.onAddSong(result)}
+                                >
+                                    <img src={imgUrl} alt="thumbnail" />
+                                    <span dir="auto">{title}</span>
+                                </div>
+                            )}
+                        </Draggable>
+                    })
                 }
-            </div>
+            </div >
         )
     }
 }

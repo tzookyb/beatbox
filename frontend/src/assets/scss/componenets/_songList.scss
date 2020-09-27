@@ -9,12 +9,12 @@
         height: 100%;
 
         li {
-            // border-bottom: 1px solid #999;
             width: 100%;
             height: 100%;
-            // min-height: rem(50px);
             margin-bottom: 5px;
-            border-radius: 5px;
+            // border-radius: 5px;
+            // min-height: rem(50px);
+            // border-bottom: 1px solid #999;
             // background-color: #ffffff12;
 
             h3 {
@@ -28,31 +28,27 @@
 
 .remove-song {
     position: fixed;
-    top: 300px;
-    right: 8%;
-    padding: 0px 50px;
-    z-index: 9999;
-    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-    &:hover {
-        transition: 0.2s;
-        animation: wobble-ver-right 0.5s;
-        & > * {
-            color: red !important;
+    bottom: 80px;
+    width: 100%;
+    height: 60px;
+    visibility: collapse;
+    right: 0;
+    padding: 0 50px;
+    background-color: $clr1;
+    // display: flex;
+    justify-content: center;
+    transition: height 0.5s;
+    &.opened {
+        visibility: visible;
+    }
+    .bin {
+        animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+        &:hover {
+            transition: 0.2s;
+            animation: wobble-ver-right 0.5s;
+            & > * {
+                color: red !important;
+            }
         }
     }
 }
-// .remove-song {
-//     position: fixed;
-//     bottom: 90px;
-//     padding: 50px;
-//     left: calc(30% - 50px);
-//     z-index: 9999;
-//     animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-//     &:hover {
-//         transition: 0.2s;
-//         animation: wobble-ver-right 0.5s;
-//         & > * {
-//             color: red !important;
-//         }
-//     }
-// }
