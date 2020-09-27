@@ -156,8 +156,6 @@ class _BoxDetails extends Component {
         socketService.emit('chat newMsg', msgObj);
     }
 
-   
-
     onSwapSongs = (srcIdx, destIdx) => {
         const newSongs = [...this.props.currBox.songs];
         const [songToMove] = newSongs.splice(srcIdx, 1);

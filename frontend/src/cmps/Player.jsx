@@ -178,7 +178,23 @@ class _Player extends Component {
                             <div className="song-time flex align-center space-between">
                                 <span className="player-time">{showTime(currSong.secPlayed)}</span>
 
-                                <Slider
+                                <input
+                                    style={{
+                                        flexGrow: 1,
+                                        color: 'white',
+                                        margin: '0 15px'
+                                    }}
+                                    type="range"
+                                    name="played"
+                                    min={0}
+                                    max={duration}
+                                    onMouseDown={this.handleSeekMouseDown}
+                                    onMouseUp={this.handleSeekMouseUp}
+                                    onChange={(ev) => this.handleSeekChange(ev)}
+                                    onTouchEnd={this.handleSeekMouseUp}
+                                    value={this.state.secPlayed}
+                                />
+                                {/* <Slider
                                     style={{
                                         flexGrow: 1,
                                         color: 'white',
@@ -190,8 +206,8 @@ class _Player extends Component {
                                     onMouseDown={this.handleSeekMouseDown}
                                     onMouseUp={this.handleSeekMouseUp}
                                     onChange={this.handleSeekChange}
-                                    value={currSong.secPlayed}
-                                />
+                                    value={this.state.secPlayed}
+                                /> */}
 
                                 {duration && <span className="player-time">{showTime(duration + 1)}</span>}
                             </div>
