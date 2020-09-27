@@ -46,7 +46,7 @@ class _Header extends Component {
                     <li><Link to="/box/add" onClick={this.toggleMenu}>Create Box</Link></li>
                 </ul>
                 <div className="user-avatar"><UserMenu user={user} onLogout={this.props.logout} /></div>
-                <button className={`menu-btn`} onClick={this.toggleMenu}>☰</button>
+            <button className={`menu-btn`} onClick={this.toggleMenu}> {this.state.isMobileMenuOpen ? 'X': '☰'}</button>
             </header >
         )
     }

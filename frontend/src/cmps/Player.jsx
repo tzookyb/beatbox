@@ -179,8 +179,10 @@ class _Player extends Component {
 
                                 <Slider
                                     style={{
+                                        flexGrow: 1,
                                         width: '70px',
                                         color: 'white',
+                                        margin: '0 15px'
                                     }}
                                     name="played"
                                     min={0}
@@ -215,7 +217,6 @@ class _Player extends Component {
                             onChange={this.handleVolumeChange}
                         />
                         <button className="player-ctrl-btn flex align-center" title={muted ? 'Unmute' : 'Mute'} onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
-
                         <img
                             style={{ visibility: (this.props.location.pathname === `/box/details/${currBox._id}`) ? 'hidden' : 'visible' }}
                             className="back-to-box"

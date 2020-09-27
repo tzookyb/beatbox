@@ -30,8 +30,10 @@ class _Home extends Component {
             <React.Fragment>
                 <div id="top" className="hero-container flex justify-center align-center" >
                     <div className="hero-txt flex align-center justify-end column">
-                        <h1>Share the Beat</h1>
-                        <p>Enjoy the moment. Be happy.</p>
+                        <div className="hero-title flex justify-end column">
+                            <h1>Share the Beat</h1>
+                            <p>Enjoy the moment. Be happy.</p>
+                        </div>
                         <div className="hero-btns-container flex column space-around">
                             <a href="#box"><button>Start listening</button></a>
                             <a href="#box" className="scroll-down-arrow"><ExpandMoreSharpIcon ></ExpandMoreSharpIcon></a>
