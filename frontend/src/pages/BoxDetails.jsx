@@ -116,10 +116,6 @@ class _BoxDetails extends Component {
         this.setState(prevState => ({ isSongPickOpen: !prevState.isSongPickOpen }))
     }
 
-    getIsUserLikeBox(box, minimalUser) {
-        return (boxService.getIsUserLikeBox(box, minimalUser) !== -1) ? 'liked' : '';
-    }
-
     onDragStart = () => {
         this.setState({ isDragging: true })
     }
@@ -157,10 +153,10 @@ class _BoxDetails extends Component {
         socketService.emit('chat newMsg', messageObj);
     }
 
-    onToggleLikeBox = async (boxId, minimalUser) => {
-        await boxService.addLike(boxId, minimalUser)
-        await this.props.loadBox(boxId);
-    }
+    // onToggleLikeBox = async (boxId, minimalUser) => {
+    //     await boxService.addLike(boxId, minimalUser)
+    //     await this.props.loadBox(boxId);
+    // }
 
     onSwapSongs = (srcIdx, destIdx) => {
         const newSongs = [...this.props.currBox.songs];
@@ -211,7 +207,7 @@ class _BoxDetails extends Component {
                             box={currBox}
                             onSaveInfo={this.onSaveInfo}
                             minimalUser={minimalUser}
-                            onToggleLikeBox={this.onToggleLikeBox}
+                            // onToggleLikeBox={this.onToggleLikeBox}
                         />
 
                         <div className="song-social-actions flex space-between">
@@ -223,8 +219,8 @@ class _BoxDetails extends Component {
                                     <AddIcon />
                                 </Fab>
 
-                                <div className={`like-btn ${this.getIsUserLikeBox(currBox, minimalUser)}`}
-                                    onClick={() => this.onToggleLikeBox(currBox._id, minimalUser)}
+                                <div className={`like-btn`}
+                                    // onClick={() => this.onToggleLikeBox(currBox._id, minimalUser)}
                                 >
                                     {/* {currBox.likedByUsers.length} */}
                                     <FavoriteIcon />

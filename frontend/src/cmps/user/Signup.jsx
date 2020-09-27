@@ -22,7 +22,8 @@ class _Signup extends React.Component {
     }
 
     async uploadImg(ev) {
-        const imgUrl = await cloudService.uploadImg(ev)
+        const img = await cloudService.uploadImg(ev);
+        const imgUrl = cloudService.makeFaceThumb(img);
         this.setState(prevState => {
             return {
                 user: {

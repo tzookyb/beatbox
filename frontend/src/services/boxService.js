@@ -12,8 +12,6 @@ export const boxService = {
     save,
     update,
     addSong,
-    addLike,
-    getIsUserLikeBox,
     getEmptyBox,
     addConnectedUser
     // remove,
@@ -46,8 +44,6 @@ function getEmptyBox(user) {
         name: '',
         description: '',
         imgUrl: null,
-        likedByUsers: [],
-        connectedUsers: [],
         genre: '',
         createdBy: user,
         songs: [],
@@ -75,21 +71,17 @@ async function addSong(song, isFromDrag = false) {
     return newSong;
 }
 
-async function addLike(boxId, user) {
-    const box = await getById(boxId);
-    var newBox = { ...box };
-    var userIdx = getIsUserLikeBox(newBox, user);
-    if (userIdx === -1) {
-        newBox.likedByUsers.push(user);
-    } else {
-        newBox.likedByUsers.splice(userIdx, 1)
-    }
-    update(newBox);
-}
-
-function getIsUserLikeBox(currBox, currUser) {
-    return currBox.likedByUsers.findIndex(user => user.id === currUser.id)
-}
+// async function addLike(boxId, user) {
+//     const box = await getById(boxId);
+//     var newBox = { ...box };
+//     var userIdx = getIsUserLikeBox(newBox, user);
+//     if (userIdx === -1) {
+//         newBox.likedByUsers.push(user);
+//     } else {
+//         newBox.likedByUsers.splice(userIdx, 1)
+//     }
+//     update(newBox);
+// }
 
 async function addConnectedUser(boxId, minimalUser) {
     const box = await getById(boxId);

@@ -522,3 +522,6 @@ Sat, 26 Sep 2020 23:47:08 GMT - Info - Server is running on port: 3030
 >>>>>>> 7dc8a86283abf23a3630ae2665c8a1ef9664ec50
 Sun, 27 Sep 2020 00:01:49 GMT - Info - Server is running on port: 3030
 Sun, 27 Sep 2020 04:04:58 GMT - Info - Server is running on port: 3030
+Sun, 27 Sep 2020 05:13:51 GMT - Error - [SIGNUP] fullName, username and password are required!
+Sun, 27 Sep 2020 05:16:58 GMT - Error - [SIGNUP] fullName, username and password are required!
+Sun, 27 Sep 2020 05:18:04 GMT - Info - Server is running on port: 3030
