@@ -9,54 +9,34 @@ import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import VolumeMuteIcon from '@material-ui/icons/VolumeMute';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp';
-import Slider from '@material-ui/core/Slider';
 import { CircleLoading } from 'react-loadingg';
 // LOCAL IMPORT
-import { socketService } from '../services/socketService'
-import { userService } from '../services/userService'
-import { changeSong, updateProgress, togglePlay, updateSongTime } from '../store/actions/playerActions';
+import { changeSong, updateProgress, togglePlay } from '../store/actions/playerActions';
+import { socketService } from '../services/socketService';
 
 class _Player extends Component {
     state = {
-        isFirstJoin: true,
         isReady: false,
         muted: false,
         seeking: false,
         volume: 0.35,
         duration: undefined,
-        secPlayed: 0,
-
-    }
-
-    componentDidMount() {
-        socketService.setup();
-        socketService.on('update song time', this.onSeek);
+        secPlayed: 0
     }
     ref = player => {
-        this.player = player
+        this.player = player;
     }
 
     componentDidUpdate(prevProps) {
-        const newBox = this.props.currBox;
-        if (prevProps.currBox?._id !== newBox?._id) {
-            this.setState({ isFirstJoin: true });
-            this.socketSetup();
-            return;
+        if (prevProps.currSong?.secPlayed !== this.props.currSong?.secPlayed && this.props.currSong) {
+            this.seekTo(this.props.currSong.secPlayed);
         }
-    }
-
-    socketSetup = () => {
-        const minimalUser = userService.getMinimalUser();
-        const boxInfo = {
-            boxId: this.props.currBox._id,
-            user: minimalUser
-        }
-        socketService.emit('join box', boxInfo);
     }
 
     togglePlay = () => {
         this.props.togglePlay(this.props.currSong);
     }
+
     skipToSong = (skip) => {
         const { currBox, currSong } = this.props;
         const currSongIdx = currBox.songs.findIndex(song => song.id === currSong.id);
@@ -70,27 +50,27 @@ class _Player extends Component {
         this.props.changeSong(nextSongId);
     }
 
+    seekTo = (secPlayed) => {
+        this.player.seekTo(secPlayed);
+    }
+
     handleSeekMouseDown = () => {
-        this.setState({ seeking: true })
+        this.setState({ seeking: true });
     }
 
     handleSeekChange = ({ target }) => {
-        this.setState({ secPlayed: target.value });
+        this.setState({ secPlayed: (parseInt(target.value)) });
     }
 
     handleSeekMouseUp = () => {
-        this.setState({ seeking: false }, () => {
-            this.props.updateSongTime(this.state.secPlayed)
-            this.player.seekTo(this.state.secPlayed);
-        });
-    }
-
-    onSeek = (secPlayed) => {
-        this.player.seekTo(secPlayed);
+        this.setState({ seeking: false });
+        socketService.emit('update player seek', this.state.secPlayed);
+        console.log("handleSeekMouseUp -> this.state.secPlayed", this.state.secPlayed)
     }
 
     handleProgress = state => {
         if (!this.state.seeking) {
+            this.setState({ secPlayed: state.playedSeconds })
             this.props.updateProgress(state.playedSeconds);
         }
     }
@@ -103,31 +83,20 @@ class _Player extends Component {
         this.setState({ duration })
     }
 
-    play = () => {
-        this.setState({ playing: true });
-    }
-
     onReady = () => {
         this.setState({ isReady: true });
-        if (this.state.isFirstJoin) {
-            socketService.emit('get song time');
-            this.setState({ isFirstJoin: false });
-        }
     }
 
-    handleVolumeChange = (ev, value) => {
-        this.setState({ volume: value })
+    handleVolumeChange = ({ target }) => {
+        this.setState({ volume: target.value })
     }
 
     toggleMute = () => {
         this.setState({ muted: !this.state.muted })
     }
 
-    ref = player => {
-        this.player = player
-    }
-
     render() {
+        const { secPlayed } = this.state;
         const { currBox, currSong } = this.props;
         if (!currBox || !currSong) return null;
 
@@ -159,14 +128,13 @@ class _Player extends Component {
                 controls={false}
                 volume={volume}
                 muted={muted}
-                onPlay={this.handlePlay}
                 onReady={this.onReady}
                 onEnded={this.handleEnded}
                 onProgress={this.handleProgress}
                 onDuration={this.handleDuration}
             />
             <div className="player-container flex justify-center align-center">
-                <div className={`player-capsule flex align-center space-between ${isPlaying ? 'is-playing' : 'paused'}`}>
+                <div className={`player-capsule flex align-center justify-center ${isPlaying ? 'is-playing' : 'paused'}`}>
 
 
                     <img className="player-thumbnail" src={song.imgUrl} title={song.title} alt="song thumbnail" />
@@ -176,13 +144,12 @@ class _Player extends Component {
                             <span className="player-title">{song.title}</span>
 
                             <div className="song-time flex align-center space-between">
-                                <span className="player-time">{showTime(currSong.secPlayed)}</span>
+                                <span className="player-time">{showTime(secPlayed)}</span>
 
                                 <input
+                                    className="duration-slider"
                                     style={{
-                                        flexGrow: 1,
-                                        color: 'white',
-                                        margin: '0 15px'
+
                                     }}
                                     type="range"
                                     name="played"
@@ -190,24 +157,10 @@ class _Player extends Component {
                                     max={duration}
                                     onMouseDown={this.handleSeekMouseDown}
                                     onMouseUp={this.handleSeekMouseUp}
-                                    onChange={(ev) => this.handleSeekChange(ev)}
-                                    onTouchEnd={this.handleSeekMouseUp}
-                                    value={this.state.secPlayed}
-                                />
-                                {/* <Slider
-                                    style={{
-                                        flexGrow: 1,
-                                        color: 'white',
-                                        margin: '0 15px'
-                                    }}
-                                    name="played"
-                                    min={0}
-                                    max={duration}
-                                    onMouseDown={this.handleSeekMouseDown}
-                                    onMouseUp={this.handleSeekMouseUp}
                                     onChange={this.handleSeekChange}
-                                    value={this.state.secPlayed}
-                                /> */}
+                                    onTouchEnd={this.handleSeekMouseUp}
+                                    value={secPlayed}
+                                />
 
                                 {duration && <span className="player-time">{showTime(duration + 1)}</span>}
                             </div>
@@ -219,17 +172,13 @@ class _Player extends Component {
                         <button className="player-ctrl-btn flex align-center" title={isPlaying ? 'Pause' : 'Play'} onClick={this.togglePlay}>{isPlaying ? <PauseIcon /> : <PlayArrowIcon />}</button>
                         <button className="player-ctrl-btn flex align-center" title="Next" onClick={() => this.skipToSong(1)}><SkipNextIcon /></button>
 
-
-                        <Slider
-                            style={{
-                                height: '50px',
-                                color: muted ? '#292929' : 'white'
-                            }}
+                        <input
+                            className={`volume-slider ${muted ? 'muted' : ''}`}
+                            type="range"
                             value={volume}
                             min={0}
                             step={0.05}
                             max={1}
-                            orientation="vertical"
                             onChange={this.handleVolumeChange}
                         />
                         <button className="player-ctrl-btn flex align-center" title={muted ? 'Unmute' : 'Mute'} onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
@@ -248,7 +197,6 @@ class _Player extends Component {
 }
 
 
-
 const mapStateToProps = state => {
     return {
         currBox: state.boxReducer.currBox,
@@ -259,8 +207,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
     changeSong,
     togglePlay,
-    updateSongTime,
-    updateProgress
+    updateProgress,
 }
 
 export const Player = connect(mapStateToProps, mapDispatchToProps)(withRouter(_Player));

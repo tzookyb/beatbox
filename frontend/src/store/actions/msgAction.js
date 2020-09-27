@@ -1,5 +1,3 @@
-
-
 export function loadMsgs(msgs) {
   console.log("loadMsgs -> msgs", msgs)
   return dispatch => {
@@ -13,4 +11,3 @@ export function addMsg(msg) {
     dispatch({ type: 'ADD_MSG', msg })
   };
 }
-

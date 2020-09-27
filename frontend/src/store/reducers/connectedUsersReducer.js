@@ -1,5 +1,6 @@
 const initialState = {
     connectedUsers: [],
+    globalUsers: 0,
 }
 
 export function connectedUsersReducer(state = initialState, action) {
@@ -17,6 +18,9 @@ export function connectedUsersReducer(state = initialState, action) {
             return {
                 ...state, connectedUsers: state.connectedUsers.filter(user => user._id !== action.user)
             }
+        case 'SET_GLOBAL_USERS':
+            return { ...state, globalUsers: action.num }
+
         default:
             return state;
     }

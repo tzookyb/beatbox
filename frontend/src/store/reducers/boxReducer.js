@@ -1,6 +1,5 @@
-
 const initialState = {
-    boxes: [],
+    boxes: null,
     currBox: null,
     currSong: null,
     filter: '',
@@ -24,7 +23,7 @@ export function boxReducer(state = initialState, action) {
             return {
                 ...state,
                 currBox: action.currBox,
-                boxes: state.boxes.map(box => {
+                boxes: state.boxes?.map(box => {
                     if (action.currBox._id === box._id) return action.currBox
                     return box;
                 })

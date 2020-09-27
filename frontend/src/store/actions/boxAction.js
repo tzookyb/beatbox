@@ -1,13 +1,7 @@
 import { boxService } from "../../services/boxService"
 import { socketService } from "../../services/socketService";
-var log = console.log;
-console.log = function () {
-  log.apply(console, arguments);
-  // Print the stack trace
-  console.trace();
-};
+
 export function loadBoxes(query) {
-  console.log("loadBoxes -> query", query)
   return async dispatch => {
     const boxes = await boxService.query(query);
     dispatch({ type: 'SET_BOXES', boxes })
@@ -36,6 +30,7 @@ export function setFilter(query) {
 }
 
 export function updateBox(currBox) {
+  console.log("updateBox -> currBox", currBox)
   return dispatch => {
     boxService.update(currBox);
     socketService.emit('set currBox', currBox);
@@ -53,8 +48,16 @@ export function removeBox(boxId) {
 
 // UPDATES FROM SOCKET:
 export function gotBoxUpdate(currBox) {
-
   return dispatch => {
     dispatch({ type: 'UPDATE_BOX', currBox })
   };
+}
+
+export function setBoxStatus({ msgs, currSong }) {
+  return (dispatch, getState) => {
+    const { currBox } = getState().boxReducer;
+    if (!currSong.id) currSong = (currBox.songs.length) ? { id: currBox.songs[0].id, isPlaying: true, secPlayed: 0 } : null;
+    dispatch({ type: 'SET_CURR_SONG', currSong });
+    dispatch({ type: 'SET_MSGS', msgs });
+  }
 }

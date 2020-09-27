@@ -1,0 +1,3413 @@
+[
+    {
+        "name" : "Disney Songs",
+        "description" : "All time favorite songs from Disney's Movies!",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600813979/lybllxgacr5kiu5qsxwe.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Easy",
+        "createdBy" : {
+            "name" : "Idan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/w_100,h_100,c_thumb,g_face/v1601183977/clr5fhfweew2fyaixprr.jpg",
+            "id" : "123"
+        },
+        "songs" : [ 
+            {
+                "id" : "FofCoNyh",
+                "youtubeId" : "dMIhKX3EK3c",
+                "title" : "Mulan | I'll make a man out of you FULL | Lyrics",
+                "duration" : "4:51",
+                "imgUrl" : "https://i.ytimg.com/vi/dMIhKX3EK3c/hqdefault.jpg"
+            }, 
+            {
+                "id" : "nzd1PdIK",
+                "youtubeId" : "GibiNy4d4gc",
+                "title" : "Carmen Twillie, Lebo M. - Circle Of Life (Official Video from \"The Lion King\")",
+                "duration" : "4:07",
+                "imgUrl" : "https://i.ytimg.com/vi/GibiNy4d4gc/hqdefault.jpg"
+            }, 
+            {
+                "id" : "AhBwS3E6",
+                "youtubeId" : "i9a9O9hVLaY",
+                "title" : "SD - Don't Believe Me  Shot By @AZaeProduction",
+                "duration" : "3:32",
+                "imgUrl" : "https://i.ytimg.com/vi/i9a9O9hVLaY/hqdefault.jpg"
+            }, 
+            {
+                "id" : "0MxulhivCvI",
+                "youtubeId" : "0MxulhivCvI",
+                "title" : "Hakuna Matata (From \"The Lion King\")",
+                "imgUrl" : "https://i.ytimg.com/vi/0MxulhivCvI/hqdefault.jpg",
+                "duration" : "4:44"
+            }, 
+            {
+                "id" : "elBKil5zE2g",
+                "youtubeId" : "elBKil5zE2g",
+                "title" : "I'll Make a Man Out of You (From \"Mulan\"/Soundtrack)",
+                "imgUrl" : "https://i.ytimg.com/vi/elBKil5zE2g/hqdefault.jpg",
+                "duration" : "3:22"
+            }, 
+            {
+                "id" : "JZPqXkn3",
+                "youtubeId" : "rg_zwK_sSEY",
+                "title" : "ZAYN, Zhavia Ward - A Whole New World (End Title) (From \"Aladdin\")",
+                "duration" : "4:03",
+                "imgUrl" : "https://i.ytimg.com/vi/rg_zwK_sSEY/hqdefault.jpg"
+            }, 
+            {
+                "id" : "98fj3KWL",
+                "youtubeId" : "uh4dTLJ9q9o",
+                "title" : "Disney Music - Lava (Official Lyric Video from \"Lava\")",
+                "duration" : "5:44",
+                "imgUrl" : "https://i.ytimg.com/vi/uh4dTLJ9q9o/hqdefault.jpg"
+            }, 
+            {
+                "id" : "oIN5fT5n",
+                "youtubeId" : "eGLSPyGszjo",
+                "title" : "Will Smith - Prince Ali (From \"Aladdin\")",
+                "imgUrl" : "https://i.ytimg.com/vi/eGLSPyGszjo/hqdefault.jpg",
+                "duration" : "4:08"
+            }, 
+            {
+                "id" : "GC_mV1IpjWA",
+                "youtubeId" : "GC_mV1IpjWA",
+                "title" : "The Little Mermaid - Under the Sea (from The Little Mermaid) ",
+                "imgUrl" : "https://i.ytimg.com/vi/GC_mV1IpjWA/hqdefault.jpg",
+                "duration" : "3:27"
+            }
+        ]
+    },
+    {
+        "name" : "ראפ ישראלי",
+        "description" : "ראפ ישראלי בועט, גם מחתרתי ומסחרי",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600845807/zmq5ltfawme2h4czvonw.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Israeli",
+        "createdBy" : {
+            "name" : "Hilla",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
+            "id" : "014a"
+        },
+        "songs" : [ 
+            {
+                "id" : "jP4XtOEs-1s",
+                "youtubeId" : "jP4XtOEs-1s",
+                "title" : "רביד פלוטניק - כפרה שלי / Ravid Plotnik - Kapara Sheli",
+                "imgUrl" : "https://i.ytimg.com/vi/jP4XtOEs-1s/hqdefault.jpg"
+            }, 
+            {
+                "id" : "3PJmE-ucx_o",
+                "youtubeId" : "3PJmE-ucx_o",
+                "title" : "טונה - גם זה יעבור // Tuna - Gam Ze Ya'avor",
+                "imgUrl" : "https://i.ytimg.com/vi/3PJmE-ucx_o/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Singer/Songwriter",
+        "description" : "The best Singer/Songwriter compilation.\nEnchanting vocal and a guitar.",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600814004/ikjsopbdamtaqbqydccs.png",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Easy",
+        "createdBy" : {
+            "name" : "Matan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
+            "id" : "015a"
+        },
+        "songs" : [ 
+            {
+                "id" : "7k0CAhyi",
+                "youtubeId" : "RBumgq5yVrA",
+                "title" : "Passenger | Let Her Go ",
+                "duration" : "4:15",
+                "imgUrl" : "https://i.ytimg.com/vi/RBumgq5yVrA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "quWkzuH7",
+                "youtubeId" : "ZAYZmIfHEiU",
+                "title" : "Passenger | Home (Official Album Audio)",
+                "duration" : "5:50",
+                "imgUrl" : "https://i.ytimg.com/vi/ZAYZmIfHEiU/hqdefault.jpg"
+            }, 
+            {
+                "id" : "zfKNUYZ9",
+                "youtubeId" : "YrprvL0FX-E",
+                "title" : "Girls Here First | Only Come Out At Night | Official Music Video",
+                "duration" : "1:40",
+                "imgUrl" : "https://i.ytimg.com/vi/YrprvL0FX-E/hqdefault.jpg"
+            }, 
+            {
+                "id" : "MSr6OLqD",
+                "youtubeId" : "vq2wZyi4vBE",
+                "title" : "Passenger | And I Love Her ",
+                "duration" : "2:45",
+                "imgUrl" : "https://i.ytimg.com/vi/vq2wZyi4vBE/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Podcasts Box",
+        "description" : "Join this box to listen and debate with people about mind-opening talks.",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600820355/qeypdubpanizishvwo4e.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Easy",
+        "createdBy" : {
+            "name" : "Idan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/w_100,h_100,c_thumb,g_face/v1601183977/clr5fhfweew2fyaixprr.jpg",
+            "id" : "123"
+        },
+        "songs" : [ 
+            {
+                "id" : "pWv7qlhM",
+                "youtubeId" : "vqMOOh1Ky2o",
+                "title" : "Musica de Antro Gay 2018 - 2020 [Dj S.r. Yony Presents] Mick Hi Exclusive Podc For AM Nights Dubai",
+                "duration" : "37:35",
+                "imgUrl" : "https://i.ytimg.com/vi/vqMOOh1Ky2o/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Best of Coldplay",
+        "description" : "Probably the most popular band in the world!",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600813315/q0jxukjnvzfnspcltont.webp",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Pop",
+        "createdBy" : {
+            "name" : "Idan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/w_100,h_100,c_thumb,g_face/v1601183977/clr5fhfweew2fyaixprr.jpg",
+            "id" : "123"
+        },
+        "songs" : [ 
+            {
+                "id" : "yINv1tOK",
+                "youtubeId" : "WzQBAc8i73E",
+                "title" : "NEFFEX - Cold ❄️[Copyright Free]",
+                "duration" : "3:07",
+                "imgUrl" : "https://i.ytimg.com/vi/WzQBAc8i73E/hqdefault.jpg"
+            }, 
+            {
+                "id" : "eWKGljZt",
+                "youtubeId" : "xU4wN8WbTfE",
+                "title" : "James Blunt - Cold ",
+                "duration" : "4:28",
+                "imgUrl" : "https://i.ytimg.com/vi/xU4wN8WbTfE/hqdefault.jpg"
+            }, 
+            {
+                "id" : "wWmDZqSf",
+                "youtubeId" : "my9WnDXotS0",
+                "title" : "French Montana - Cold  ft. Tory Lanez",
+                "duration" : "3:36",
+                "imgUrl" : "https://i.ytimg.com/vi/my9WnDXotS0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "LVanIq5V",
+                "youtubeId" : "dRYRjMkialE",
+                "title" : "French Montana - Cold (Audio) ft. Tory Lanez",
+                "duration" : "3:42",
+                "imgUrl" : "https://i.ytimg.com/vi/dRYRjMkialE/hqdefault.jpg"
+            }, 
+            {
+                "id" : "j6fXNli4",
+                "youtubeId" : "XatXy6ZhKZw",
+                "title" : "Maroon 5 - Cold ft. Future ",
+                "duration" : "6:51",
+                "imgUrl" : "https://i.ytimg.com/vi/XatXy6ZhKZw/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Ts5oTrV5",
+                "youtubeId" : "YykjpeuMNEk",
+                "title" : "Coldplay - Hymn For The Weekend ",
+                "imgUrl" : "https://i.ytimg.com/vi/YykjpeuMNEk/hqdefault.jpg"
+            }, 
+            {
+                "id" : "v77WFwYtUE0",
+                "youtubeId" : "v77WFwYtUE0",
+                "title" : "Parachutes",
+                "imgUrl" : "https://i.ytimg.com/vi/v77WFwYtUE0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "uIgxY0yWLNY",
+                "youtubeId" : "uIgxY0yWLNY",
+                "title" : "X & Y",
+                "imgUrl" : "https://i.ytimg.com/vi/uIgxY0yWLNY/hqdefault.jpg"
+            }, 
+            {
+                "id" : "j37GED-AR3M",
+                "youtubeId" : "j37GED-AR3M",
+                "title" : "Square One",
+                "imgUrl" : "https://i.ytimg.com/vi/j37GED-AR3M/hqdefault.jpg"
+            }, 
+            {
+                "id" : "bDGYFacD",
+                "youtubeId" : "QtXby3twMmI",
+                "title" : "Coldplay - Adventure Of A Lifetime ",
+                "imgUrl" : "https://i.ytimg.com/vi/QtXby3twMmI/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Rock with Muse",
+        "description" : "It is the best progressive rock band nowadays... ",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600815277/uwngqfoqlijwp0fss8xe.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Rock",
+        "createdBy" : {
+            "name" : "Idan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/w_100,h_100,c_thumb,g_face/v1601183977/clr5fhfweew2fyaixprr.jpg",
+            "id" : "123"
+        },
+        "songs" : [ 
+            {
+                "id" : "dbB-mICjkQM",
+                "youtubeId" : "dbB-mICjkQM",
+                "title" : "Muse - Plug In Baby ",
+                "imgUrl" : "https://i.ytimg.com/vi/dbB-mICjkQM/hqdefault.jpg"
+            }, 
+            {
+                "id" : "G_sBOsh-vyI",
+                "youtubeId" : "G_sBOsh-vyI",
+                "title" : "Muse - Knights Of Cydonia  (Video)",
+                "imgUrl" : "https://i.ytimg.com/vi/G_sBOsh-vyI/hqdefault.jpg"
+            }, 
+            {
+                "id" : "3dm_5qWWDV8",
+                "youtubeId" : "3dm_5qWWDV8",
+                "title" : "Muse - Hysteria [Official Music Video]",
+                "imgUrl" : "https://i.ytimg.com/vi/3dm_5qWWDV8/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Pgum6OT_VH8",
+                "youtubeId" : "Pgum6OT_VH8",
+                "title" : "Muse - Starlight [Official Music Video]",
+                "imgUrl" : "https://i.ytimg.com/vi/Pgum6OT_VH8/hqdefault.jpg"
+            }, 
+            {
+                "id" : "zhAmug6Ts6o",
+                "youtubeId" : "zhAmug6Ts6o",
+                "title" : "Muse - Time Is Running Out (Official Music Video)",
+                "imgUrl" : "https://i.ytimg.com/vi/zhAmug6Ts6o/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Queen",
+        "description" : "Fun fun fun! Playlist of Queen!",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600815410/x5vckj6lovsxgmab6uhm.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Rock",
+        "createdBy" : {
+            "name" : "Idan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/w_100,h_100,c_thumb,g_face/v1601183977/clr5fhfweew2fyaixprr.jpg",
+            "id" : "123"
+        },
+        "songs" : [ 
+            {
+                "id" : "fJ9rUzIMcZQ",
+                "youtubeId" : "fJ9rUzIMcZQ",
+                "title" : "Queen – Bohemian Rhapsody (Official Video Remastered)",
+                "imgUrl" : "https://i.ytimg.com/vi/fJ9rUzIMcZQ/hqdefault.jpg"
+            }, 
+            {
+                "id" : "f4Mc-NYPHaQ",
+                "youtubeId" : "f4Mc-NYPHaQ",
+                "title" : "Queen - I Want To Break Free ",
+                "imgUrl" : "https://i.ytimg.com/vi/f4Mc-NYPHaQ/hqdefault.jpg"
+            }, 
+            {
+                "id" : "HgzGwKwLmgM",
+                "youtubeId" : "HgzGwKwLmgM",
+                "title" : "Queen - Don't Stop Me Now ",
+                "imgUrl" : "https://i.ytimg.com/vi/HgzGwKwLmgM/hqdefault.jpg"
+            }, 
+            {
+                "id" : "kijpcUv-b8M",
+                "youtubeId" : "kijpcUv-b8M",
+                "title" : "Queen - Somebody To Love ",
+                "imgUrl" : "https://i.ytimg.com/vi/kijpcUv-b8M/hqdefault.jpg"
+            }, 
+            {
+                "id" : "t99KH0TR-J4",
+                "youtubeId" : "t99KH0TR-J4",
+                "title" : "Queen - The Show Must Go On ",
+                "imgUrl" : "https://i.ytimg.com/vi/t99KH0TR-J4/hqdefault.jpg"
+            }, 
+            {
+                "id" : "rY0WxgSXdEE",
+                "youtubeId" : "rY0WxgSXdEE",
+                "title" : "Queen - Another One Bites the Dust ",
+                "imgUrl" : "https://i.ytimg.com/vi/rY0WxgSXdEE/hqdefault.jpg"
+            }, 
+            {
+                "id" : "o-0ygW-B_gI",
+                "youtubeId" : "o-0ygW-B_gI",
+                "title" : "Queen - Radio Ga Ga (Live Aid 1985)",
+                "imgUrl" : "https://i.ytimg.com/vi/o-0ygW-B_gI/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Melodic Trance",
+        "description" : "Trance that will send shivers down your spine!",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816521/anl1pxsisnjrqkgicqii.png",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Electronic",
+        "createdBy" : {
+            "name" : "Idan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/w_100,h_100,c_thumb,g_face/v1601183977/clr5fhfweew2fyaixprr.jpg",
+            "id" : "123"
+        },
+        "songs" : [ 
+            {
+                "id" : "NcPg80JqNX8",
+                "youtubeId" : "NcPg80JqNX8",
+                "title" : "Gaia - Tuvan (Original Mix)",
+                "imgUrl" : "https://i.ytimg.com/vi/NcPg80JqNX8/hqdefault.jpg"
+            }, 
+            {
+                "id" : "pgU0E4MgieE",
+                "youtubeId" : "pgU0E4MgieE",
+                "title" : "Ferry Corsten - Take Me (Original Extended)",
+                "imgUrl" : "https://i.ytimg.com/vi/pgU0E4MgieE/hqdefault.jpg"
+            }, 
+            {
+                "id" : "u5jIjBdmm9w",
+                "youtubeId" : "u5jIjBdmm9w",
+                "title" : "William Orbit - Adagio For Strings (Ferry Corsten Mix)",
+                "imgUrl" : "https://i.ytimg.com/vi/u5jIjBdmm9w/hqdefault.jpg"
+            }, 
+            {
+                "id" : "LBJo2KvFOCQ",
+                "youtubeId" : "LBJo2KvFOCQ",
+                "title" : "Above & Beyond - Anjunabeach (Original Mix)",
+                "imgUrl" : "https://i.ytimg.com/vi/LBJo2KvFOCQ/hqdefault.jpg"
+            }, 
+            {
+                "id" : "JynnHicr0ug",
+                "youtubeId" : "JynnHicr0ug",
+                "title" : "Daniel Kandi - Venice Beach (Original Mix)",
+                "imgUrl" : "https://i.ytimg.com/vi/JynnHicr0ug/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "להקות ישראליות",
+        "description" : "הלהקות הכי טובות, השירים הכי טובים",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600845462/z5ygriwmkltbss0r73dm.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Israeli",
+        "createdBy" : {
+            "name" : "Idan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/w_100,h_100,c_thumb,g_face/v1601183977/clr5fhfweew2fyaixprr.jpg",
+            "id" : "123"
+        },
+        "songs" : [ 
+            {
+                "id" : "5H7d6u7O",
+                "youtubeId" : "1IVBzoSCmH4",
+                "title" : "טיפקס - דחלילים",
+                "duration" : "3:03",
+                "imgUrl" : "https://i.ytimg.com/vi/1IVBzoSCmH4/hqdefault.jpg"
+            }, 
+            {
+                "id" : "d1uvv83Z_FY",
+                "youtubeId" : "d1uvv83Z_FY",
+                "title" : "Hadag Nahash - Shir Nehama הדג נחש - שיר נחמה",
+                "imgUrl" : "https://i.ytimg.com/vi/d1uvv83Z_FY/hqdefault.jpg"
+            }, 
+            {
+                "id" : "PVAD3KWgQrQ",
+                "youtubeId" : "PVAD3KWgQrQ",
+                "title" : "משינה - אין מקום אחר - קיסריה 2003",
+                "imgUrl" : "https://i.ytimg.com/vi/PVAD3KWgQrQ/hqdefault.jpg"
+            }, 
+            {
+                "id" : "BULrIKHA",
+                "youtubeId" : "KXw58dIBL6E",
+                "title" : "אתניקס - ציפור מדבר",
+                "imgUrl" : "https://i.ytimg.com/vi/KXw58dIBL6E/hqdefault.jpg"
+            }, 
+            {
+                "id" : "G5xYr3qa",
+                "youtubeId" : "hnS60ImFeds",
+                "title" : "אתניקס - כתם הפרי",
+                "imgUrl" : "https://i.ytimg.com/vi/hnS60ImFeds/hqdefault.jpg"
+            }, 
+            {
+                "id" : "SPuMfOnk",
+                "youtubeId" : "uobiZ1YD1EQ",
+                "title" : "Pashto New Dance Songs 2018 Tasleem Gul New Dance 2018 HD - Yara Zama",
+                "imgUrl" : "https://i.ytimg.com/vi/uobiZ1YD1EQ/hqdefault.jpg"
+            }, 
+            {
+                "id" : "ETiRkQBR",
+                "youtubeId" : "hT2PiIXLRrw",
+                "title" : "Kitna Bechain Hoke Tumse Mila",
+                "imgUrl" : "https://i.ytimg.com/vi/hT2PiIXLRrw/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Ride that horse",
+        "description" : "Country Music",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816628/g3rqckyu8yhdils0enpd.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Classical",
+        "createdBy" : {
+            "name" : "Hilla",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
+            "id" : "014a"
+        },
+        "songs" : [ 
+            {
+                "id" : "Ixrje2rXLMA",
+                "youtubeId" : "Ixrje2rXLMA",
+                "title" : "Dolly Parton - Jolene (Audio)",
+                "imgUrl" : "https://i.ytimg.com/vi/Ixrje2rXLMA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "8AHCfZTRGiI",
+                "youtubeId" : "8AHCfZTRGiI",
+                "title" : "Johnny Cash - Hurt (Official Music Video)",
+                "imgUrl" : "https://i.ytimg.com/vi/8AHCfZTRGiI/hqdefault.jpg"
+            }, 
+            {
+                "id" : "UgUgz4T3_wc",
+                "youtubeId" : "UgUgz4T3_wc",
+                "title" : "Miley Cyrus - Jolene (Backyard Session) HD | LYRICS IN VIDEO!",
+                "imgUrl" : "https://i.ytimg.com/vi/UgUgz4T3_wc/hqdefault.jpg"
+            }, 
+            {
+                "id" : "WaSy8yy-mr8",
+                "youtubeId" : "WaSy8yy-mr8",
+                "title" : "Carrie Underwood - Before He Cheats ",
+                "imgUrl" : "https://i.ytimg.com/vi/WaSy8yy-mr8/hqdefault.jpg"
+            }, 
+            {
+                "id" : "v9bxXO9fj98",
+                "youtubeId" : "v9bxXO9fj98",
+                "title" : "Should've Said No",
+                "imgUrl" : "https://i.ytimg.com/vi/v9bxXO9fj98/hqdefault.jpg"
+            }, 
+            {
+                "id" : "ZJL4UGSbeFg",
+                "youtubeId" : "ZJL4UGSbeFg",
+                "title" : "Shania Twain - Man! I Feel Like A Woman ",
+                "imgUrl" : "https://i.ytimg.com/vi/ZJL4UGSbeFg/hqdefault.jpg"
+            }, 
+            {
+                "id" : "byN99t5K",
+                "youtubeId" : "Ixrje2rXLMA",
+                "title" : "Dolly Parton - Jolene (Audio)",
+                "imgUrl" : "https://i.ytimg.com/vi/Ixrje2rXLMA/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Recent Eurovisions",
+        "description" : "The cheesy song contest with the addictive songs",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600820319/grli7inxgayg3nfn36bo.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Pop",
+        "createdBy" : {
+            "name" : "Hilla",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
+            "id" : "014a"
+        },
+        "songs" : [ 
+            {
+                "id" : "PHn0jA4Klx8",
+                "youtubeId" : "PHn0jA4Klx8",
+                "title" : "Toy",
+                "imgUrl" : "https://i.ytimg.com/vi/PHn0jA4Klx8/hqdefault.jpg"
+            }, 
+            {
+                "id" : "oFrvRiixXcA",
+                "youtubeId" : "oFrvRiixXcA",
+                "title" : "Arcade",
+                "imgUrl" : "https://i.ytimg.com/vi/oFrvRiixXcA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "22lISUXgSUw",
+                "youtubeId" : "22lISUXgSUw",
+                "title" : "Mahmood - Soldi (Prod. Dardust & Charlie Charles)",
+                "imgUrl" : "https://i.ytimg.com/vi/22lISUXgSUw/hqdefault.jpg"
+            }, 
+            {
+                "id" : "eVbShUW6QBM",
+                "youtubeId" : "eVbShUW6QBM",
+                "title" : "HATARI – HATRIÐ MUN SIGRA",
+                "imgUrl" : "https://i.ytimg.com/vi/eVbShUW6QBM/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Ho9MuPJPZ90",
+                "youtubeId" : "Ho9MuPJPZ90",
+                "title" : "Lake Malawi - Friend Of A Friend",
+                "imgUrl" : "https://i.ytimg.com/vi/Ho9MuPJPZ90/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Female Power",
+        "description" : "Powerful female artists",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816794/fmbiso4vba0lgaf6yyo6.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Hip-hop",
+        "createdBy" : {
+            "name" : "Hilla",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
+            "id" : "014a"
+        },
+        "songs" : [ 
+            {
+                "id" : "WDZJPJV__bQ",
+                "youtubeId" : "WDZJPJV__bQ",
+                "title" : "Beyoncé - Formation",
+                "imgUrl" : "https://i.ytimg.com/vi/WDZJPJV__bQ/hqdefault.jpg"
+            }, 
+            {
+                "id" : "bnVUHWCynig",
+                "youtubeId" : "bnVUHWCynig",
+                "title" : "Beyoncé - Halo",
+                "imgUrl" : "https://i.ytimg.com/vi/bnVUHWCynig/hqdefault.jpg"
+            }, 
+            {
+                "id" : "cjIvu7e6Wq8",
+                "youtubeId" : "cjIvu7e6Wq8",
+                "title" : "Missy Elliott - Work It ",
+                "imgUrl" : "https://i.ytimg.com/vi/cjIvu7e6Wq8/hqdefault.jpg"
+            }, 
+            {
+                "id" : "xTlNMmZKwpA",
+                "youtubeId" : "xTlNMmZKwpA",
+                "title" : "Cardi B, Bad Bunny & J Balvin - I Like It ",
+                "imgUrl" : "https://i.ytimg.com/vi/xTlNMmZKwpA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "gl1aHhXnN1k",
+                "youtubeId" : "gl1aHhXnN1k",
+                "title" : "Ariana Grande - thank u, next ",
+                "imgUrl" : "https://i.ytimg.com/vi/gl1aHhXnN1k/hqdefault.jpg"
+            }, 
+            {
+                "id" : "uxfIhgbK",
+                "youtubeId" : "JRfuAukYTKg",
+                "title" : "David Guetta - Titanium ft. Sia ",
+                "imgUrl" : "https://i.ytimg.com/vi/JRfuAukYTKg/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Boy Bands",
+        "description" : "Boys will be boys",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600812809/v2igxocbmcyywn9vc1wp.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Pop",
+        "createdBy" : {
+            "name" : "Hilla",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
+            "id" : "014a"
+        },
+        "songs" : [ 
+            {
+                "id" : "Eo-KmOd3i7s",
+                "youtubeId" : "Eo-KmOd3i7s",
+                "title" : "*NSYNC - Bye Bye Bye ",
+                "imgUrl" : "https://i.ytimg.com/vi/Eo-KmOd3i7s/hqdefault.jpg"
+            }, 
+            {
+                "id" : "6M6samPEMpM",
+                "youtubeId" : "6M6samPEMpM",
+                "title" : "Backstreet Boys - Everybody (Backstreet's Back) ",
+                "imgUrl" : "https://i.ytimg.com/vi/6M6samPEMpM/hqdefault.jpg"
+            }, 
+            {
+                "id" : "fV8vB1BB2qc",
+                "youtubeId" : "fV8vB1BB2qc",
+                "title" : "Boyz II Men - I'll Make Love To You ",
+                "imgUrl" : "https://i.ytimg.com/vi/fV8vB1BB2qc/hqdefault.jpg"
+            }, 
+            {
+                "id" : "CTqabbIPfc0",
+                "youtubeId" : "CTqabbIPfc0",
+                "title" : "Take That - How Deep Is Your Love ",
+                "imgUrl" : "https://i.ytimg.com/vi/CTqabbIPfc0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "tP_WRk-xV7I",
+                "youtubeId" : "tP_WRk-xV7I",
+                "title" : "East 17 - It s Alright ",
+                "imgUrl" : "https://i.ytimg.com/vi/tP_WRk-xV7I/hqdefault.jpg"
+            }, 
+            {
+                "id" : "pAKnMHUs",
+                "youtubeId" : "4fndeDfaWCg",
+                "title" : "Backstreet Boys - I Want It That Way ",
+                "imgUrl" : "https://i.ytimg.com/vi/4fndeDfaWCg/hqdefault.jpg"
+            }, 
+            {
+                "id" : "IhCblUYD",
+                "youtubeId" : "6M6samPEMpM",
+                "title" : "Backstreet Boys - Everybody (Backstreet's Back) ",
+                "imgUrl" : "https://i.ytimg.com/vi/6M6samPEMpM/hqdefault.jpg"
+            }, 
+            {
+                "id" : "zPJrXazk",
+                "youtubeId" : "MwdSvchtKeA",
+                "title" : "Best Of Backstreet Boys | Backstreet Boys Greatest Hits Full Album",
+                "imgUrl" : "https://i.ytimg.com/vi/MwdSvchtKeA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "evHmzLfm",
+                "youtubeId" : "6M6samPEMpM",
+                "title" : "Backstreet Boys - Everybody (Backstreet's Back) ",
+                "imgUrl" : "https://i.ytimg.com/vi/6M6samPEMpM/hqdefault.jpg"
+            }, 
+            {
+                "id" : "ghRz3kf7",
+                "youtubeId" : "4fndeDfaWCg",
+                "title" : "Backstreet Boys - I Want It That Way ",
+                "imgUrl" : "https://i.ytimg.com/vi/4fndeDfaWCg/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Electronic Chill",
+        "description" : "Wind down with this fantastic mellow electronic music.",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816532/krbjfsgznwqbltidscua.png",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Electronic",
+        "createdBy" : {
+            "name" : "Hilla",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
+            "id" : "014a"
+        },
+        "songs" : [ 
+            {
+                "id" : "mTHjFeXmnHs",
+                "youtubeId" : "mTHjFeXmnHs",
+                "title" : "Air - All I Need",
+                "imgUrl" : "https://i.ytimg.com/vi/mTHjFeXmnHs/hqdefault.jpg"
+            }, 
+            {
+                "id" : "_LQMqtXzUvs",
+                "youtubeId" : "_LQMqtXzUvs",
+                "title" : "Sunlounger - Aguas Blancas (Chillout Mix)",
+                "imgUrl" : "https://i.ytimg.com/vi/_LQMqtXzUvs/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Vg1jyL3cr60",
+                "youtubeId" : "Vg1jyL3cr60",
+                "title" : "Portishead - Roads",
+                "imgUrl" : "https://i.ytimg.com/vi/Vg1jyL3cr60/hqdefault.jpg"
+            }, 
+            {
+                "id" : "13EifDb4GYs",
+                "youtubeId" : "13EifDb4GYs",
+                "title" : "Moby - Porcelain",
+                "imgUrl" : "https://i.ytimg.com/vi/13EifDb4GYs/hqdefault.jpg"
+            }, 
+            {
+                "id" : "4cW-_8LzLfc",
+                "youtubeId" : "4cW-_8LzLfc",
+                "title" : "LUX - NORTHERN  LIGHTS",
+                "imgUrl" : "https://i.ytimg.com/vi/4cW-_8LzLfc/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "מלחמת העידנים",
+        "description" : "עידן רייכל, עידן עמדי, עידן חביב... מי הטוב ביותר?",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600845446/napqajvotyvflfe2cpfw.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Israeli",
+        "createdBy" : {
+            "name" : "Hilla",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
+            "id" : "014a"
+        },
+        "songs" : [ 
+            {
+                "id" : "iUMQ1NjHsqY",
+                "youtubeId" : "iUMQ1NjHsqY",
+                "title" : "Idan Amedi | עידן עמדי - חלק מהזמן",
+                "imgUrl" : "https://i.ytimg.com/vi/iUMQ1NjHsqY/hqdefault.jpg"
+            }, 
+            {
+                "id" : "t6vEiHoiVm0",
+                "youtubeId" : "t6vEiHoiVm0",
+                "title" : "עידן רפאל חביב - רודף אהבה בימים",
+                "imgUrl" : "https://i.ytimg.com/vi/t6vEiHoiVm0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "HZTSHJQG",
+                "youtubeId" : "iCitB5bkB3E",
+                "title" : "דולי ופן - ואז את תראי (עם דיקלה, עידן חביב ומארק אליהו)",
+                "duration" : "3:16",
+                "imgUrl" : "https://i.ytimg.com/vi/iCitB5bkB3E/hqdefault.jpg"
+            }, 
+            {
+                "id" : "dG3NAutpEoY",
+                "youtubeId" : "dG3NAutpEoY",
+                "title" : "Idan Raichel - Lifney She'Yigamer (Before It Ends) - עידן רייכל - לפני שייגמר",
+                "imgUrl" : "https://i.ytimg.com/vi/dG3NAutpEoY/hqdefault.jpg"
+            }, 
+            {
+                "id" : "34SxOkj3",
+                "youtubeId" : "5ejT8FqglLM",
+                "title" : "עידן רפאל חביב - שלמים | Idan Rafael Haviv",
+                "imgUrl" : "https://i.ytimg.com/vi/5ejT8FqglLM/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Psychedelic Trance",
+        "description" : "When you need some hard bass",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816548/ledo10kqdebdqv79lt6w.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Electronic",
+        "createdBy" : {
+            "name" : "Hilla",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
+            "id" : "014a"
+        },
+        "songs" : [ 
+            {
+                "id" : "WxhTbxMSvT0",
+                "youtubeId" : "WxhTbxMSvT0",
+                "title" : "Infected Mushroom - Becoming Insane",
+                "imgUrl" : "https://i.ytimg.com/vi/WxhTbxMSvT0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "yo4pmauhugo",
+                "youtubeId" : "yo4pmauhugo",
+                "title" : "Armin van Buuren vs Vini Vici feat. Hilight Tribe - Great Spirit (Extended Mix)",
+                "imgUrl" : "https://i.ytimg.com/vi/yo4pmauhugo/hqdefault.jpg"
+            }, 
+            {
+                "id" : "0lBjcaMokvo",
+                "youtubeId" : "0lBjcaMokvo",
+                "title" : "Hilight Tribe - Free Tibet (Vini Vici Remix)",
+                "imgUrl" : "https://i.ytimg.com/vi/0lBjcaMokvo/hqdefault.jpg"
+            }, 
+            {
+                "id" : "_k6SaRidAm0",
+                "youtubeId" : "_k6SaRidAm0",
+                "title" : "Astrix - 03 - Tweaky",
+                "imgUrl" : "https://i.ytimg.com/vi/_k6SaRidAm0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Aooy7iw-7cY",
+                "youtubeId" : "Aooy7iw-7cY",
+                "title" : "Vini Vici & Astrix - Adhana",
+                "imgUrl" : "https://i.ytimg.com/vi/Aooy7iw-7cY/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "With the Beatles",
+        "description" : "Good old Oldies",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600815584/j5mnnn1oqk449lezl6j7.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Rock",
+        "createdBy" : {
+            "name" : "Matan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
+            "id" : "015a"
+        },
+        "songs" : [ 
+            {
+                "id" : "UelDrZ1aFeY",
+                "youtubeId" : "UelDrZ1aFeY",
+                "title" : "The Beatles - Something",
+                "imgUrl" : "https://i.ytimg.com/vi/UelDrZ1aFeY/hqdefault.jpg"
+            }, 
+            {
+                "id" : "NVv7IzEVf3M",
+                "youtubeId" : "NVv7IzEVf3M",
+                "title" : "She Came In Through The Bathroom Window (Remastered 2009)",
+                "imgUrl" : "https://i.ytimg.com/vi/NVv7IzEVf3M/hqdefault.jpg"
+            }, 
+            {
+                "id" : "NrgmdOz227I",
+                "youtubeId" : "NrgmdOz227I",
+                "title" : "Yesterday (Remastered 2009)",
+                "imgUrl" : "https://i.ytimg.com/vi/NrgmdOz227I/hqdefault.jpg"
+            }, 
+            {
+                "id" : "A_MjCqQoLLA",
+                "youtubeId" : "A_MjCqQoLLA",
+                "title" : "The Beatles - Hey Jude",
+                "imgUrl" : "https://i.ytimg.com/vi/A_MjCqQoLLA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "YBcdt6DsLQA",
+                "youtubeId" : "YBcdt6DsLQA",
+                "title" : "In My Life (Remastered 2009)",
+                "imgUrl" : "https://i.ytimg.com/vi/YBcdt6DsLQA/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "This is Nirvana",
+        "description" : "Did you miss your teen spirit?",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600815824/ebnrbfkqbf8umthccw0h.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Rock",
+        "createdBy" : {
+            "name" : "Matan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
+            "id" : "015a"
+        },
+        "songs" : [ 
+            {
+                "id" : "vabnZ9-ex7o",
+                "youtubeId" : "vabnZ9-ex7o",
+                "title" : "Nirvana - Come As You Are",
+                "imgUrl" : "https://i.ytimg.com/vi/vabnZ9-ex7o/hqdefault.jpg"
+            }, 
+            {
+                "id" : "hTWKbfoikeg",
+                "youtubeId" : "hTWKbfoikeg",
+                "title" : "Nirvana - Smells Like Teen Spirit ",
+                "imgUrl" : "https://i.ytimg.com/vi/hTWKbfoikeg/hqdefault.jpg"
+            }, 
+            {
+                "id" : "pkcJEvMcnEg",
+                "youtubeId" : "pkcJEvMcnEg",
+                "title" : "Nirvana - Lithium",
+                "imgUrl" : "https://i.ytimg.com/vi/pkcJEvMcnEg/hqdefault.jpg"
+            }, 
+            {
+                "id" : "n6P0SitRwy8",
+                "youtubeId" : "n6P0SitRwy8",
+                "title" : "Nirvana - Heart-Shaped Box",
+                "imgUrl" : "https://i.ytimg.com/vi/n6P0SitRwy8/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Pearl Jam",
+        "description" : "All fans enroll here!",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816339/bdz4rvbqb6rnwpefze0f.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Rock",
+        "createdBy" : {
+            "name" : "Matan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
+            "id" : "015a"
+        },
+        "songs" : [ 
+            {
+                "id" : "IpwHB2U3J1s",
+                "youtubeId" : "IpwHB2U3J1s",
+                "title" : "Black",
+                "imgUrl" : "https://i.ytimg.com/vi/IpwHB2U3J1s/hqdefault.jpg"
+            }, 
+            {
+                "id" : "qM0zINtulhM",
+                "youtubeId" : "qM0zINtulhM",
+                "title" : "Pearl Jam - Alive ",
+                "imgUrl" : "https://i.ytimg.com/vi/qM0zINtulhM/hqdefault.jpg"
+            }, 
+            {
+                "id" : "CxKWTzr-k6s",
+                "youtubeId" : "CxKWTzr-k6s",
+                "title" : "Pearl Jam - Even Flow (Video)",
+                "imgUrl" : "https://i.ytimg.com/vi/CxKWTzr-k6s/hqdefault.jpg"
+            }, 
+            {
+                "id" : "bQtPzo-7AHs",
+                "youtubeId" : "bQtPzo-7AHs",
+                "title" : "Jeremy",
+                "imgUrl" : "https://i.ytimg.com/vi/bQtPzo-7AHs/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "90's MTV",
+        "description" : "All the best songs of 90's",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600812786/a5fgfds8zs7jt7wtp4ps.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Pop",
+        "createdBy" : {
+            "name" : "Matan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
+            "id" : "015a"
+        },
+        "songs" : [ 
+            {
+                "id" : "2kXMcjKhBgU",
+                "youtubeId" : "2kXMcjKhBgU",
+                "title" : "Phats & Small - Turn Around ",
+                "imgUrl" : "https://i.ytimg.com/vi/2kXMcjKhBgU/hqdefault.jpg"
+            }, 
+            {
+                "id" : "mMfxI3r_LyA",
+                "youtubeId" : "mMfxI3r_LyA",
+                "title" : "Modjo - Lady (Hear Me Tonight) ",
+                "imgUrl" : "https://i.ytimg.com/vi/mMfxI3r_LyA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "y6120QOlsfU",
+                "youtubeId" : "y6120QOlsfU",
+                "title" : "Darude - Sandstorm",
+                "imgUrl" : "https://i.ytimg.com/vi/y6120QOlsfU/hqdefault.jpg"
+            }, 
+            {
+                "id" : "5A9OIIapSko",
+                "youtubeId" : "5A9OIIapSko",
+                "title" : "ATB - 9PM (Till I Come) - HQ",
+                "imgUrl" : "https://i.ytimg.com/vi/5A9OIIapSko/hqdefault.jpg"
+            }, 
+            {
+                "id" : "5DKYvo18FzA",
+                "youtubeId" : "5DKYvo18FzA",
+                "title" : "Stardust - Music Sounds Better With You ",
+                "imgUrl" : "https://i.ytimg.com/vi/5DKYvo18FzA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Yau0lk2Y",
+                "youtubeId" : "9CDKexaMw8I",
+                "title" : "SWERTE KO - ft. SIOBAL D (REMAKE)",
+                "imgUrl" : "https://i.ytimg.com/vi/9CDKexaMw8I/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Daft Punk",
+        "description" : "The wonderful French electro duo.",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600583439/woryvrnfuirts1uxxmj1.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Electronic",
+        "createdBy" : {
+            "name" : "Matan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
+            "id" : "015a"
+        },
+        "songs" : [ 
+            {
+                "id" : "FGBhQbmPwH8",
+                "youtubeId" : "FGBhQbmPwH8",
+                "title" : "Daft Punk - One More Time ",
+                "imgUrl" : "https://i.ytimg.com/vi/FGBhQbmPwH8/hqdefault.jpg"
+            }, 
+            {
+                "id" : "5NV6Rdv1a3I",
+                "youtubeId" : "5NV6Rdv1a3I",
+                "title" : "Daft Punk - Get Lucky (Official Audio) ft. Pharrell Williams, Nile Rodgers",
+                "imgUrl" : "https://i.ytimg.com/vi/5NV6Rdv1a3I/hqdefault.jpg"
+            }, 
+            {
+                "id" : "dwDns8x3Jb4",
+                "youtubeId" : "dwDns8x3Jb4",
+                "title" : "Daft Punk - Around the world (Official Audio)",
+                "imgUrl" : "https://i.ytimg.com/vi/dwDns8x3Jb4/hqdefault.jpg"
+            }, 
+            {
+                "id" : "qFLhGq0060w",
+                "youtubeId" : "qFLhGq0060w",
+                "title" : "The Weeknd - I Feel It Coming ft. Daft Punk ",
+                "imgUrl" : "https://i.ytimg.com/vi/qFLhGq0060w/hqdefault.jpg"
+            }, 
+            {
+                "id" : "9sjWU5dGcGI",
+                "youtubeId" : "9sjWU5dGcGI",
+                "title" : "Daft Punk - Harder, Better, Faster, Stronger (Far Out Remix)",
+                "imgUrl" : "https://i.ytimg.com/vi/9sjWU5dGcGI/hqdefault.jpg"
+            }, 
+            {
+                "id" : "NF-kLy44Hls",
+                "youtubeId" : "NF-kLy44Hls",
+                "title" : "Daft Punk - Lose Yourself to Dance (Official Version)",
+                "imgUrl" : "https://i.ytimg.com/vi/NF-kLy44Hls/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "A day at the beach",
+        "description" : "Electronic collection suitable for a day at the beach",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600818771/yhzatrcnbddcizmdsgqk.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Electronic",
+        "createdBy" : {
+            "name" : "Matan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
+            "id" : "015a"
+        },
+        "songs" : [ 
+            {
+                "id" : "9Sc-ir2UwGU",
+                "youtubeId" : "9Sc-ir2UwGU",
+                "title" : "Kygo - Firestone ft. Conrad Sewell ",
+                "imgUrl" : "https://i.ytimg.com/vi/9Sc-ir2UwGU/hqdefault.jpg"
+            }, 
+            {
+                "id" : "ajN57m_OSpY",
+                "youtubeId" : "ajN57m_OSpY",
+                "title" : "Ellie Goulding, Diplo, Swae Lee - Close To Me ",
+                "imgUrl" : "https://i.ytimg.com/vi/ajN57m_OSpY/hqdefault.jpg"
+            }, 
+            {
+                "id" : "bvC_0foemLY",
+                "youtubeId" : "bvC_0foemLY",
+                "title" : "Robin Schulz - Sugar (feat. Francesco Yates) ",
+                "imgUrl" : "https://i.ytimg.com/vi/bvC_0foemLY/hqdefault.jpg"
+            }, 
+            {
+                "id" : "jGflUbPQfW8",
+                "youtubeId" : "jGflUbPQfW8",
+                "title" : "OMI - Cheerleader (Felix Jaehn Remix) ",
+                "imgUrl" : "https://i.ytimg.com/vi/jGflUbPQfW8/hqdefault.jpg"
+            }, 
+            {
+                "id" : "E07s5ZYygMg",
+                "youtubeId" : "E07s5ZYygMg",
+                "title" : "Harry Styles - Watermelon Sugar ",
+                "imgUrl" : "https://i.ytimg.com/vi/E07s5ZYygMg/hqdefault.jpg"
+            }, 
+            {
+                "id" : "5yXQJBU8A28",
+                "youtubeId" : "5yXQJBU8A28",
+                "title" : "Jonas Blue - Fast Car ft. Dakota ",
+                "imgUrl" : "https://i.ytimg.com/vi/5yXQJBU8A28/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Rasta Man",
+        "description" : "Finest reggae music",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600584206/njjh2z87q4gx3cxaf0db.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Blues",
+        "createdBy" : {
+            "name" : "Matan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
+            "id" : "015a"
+        },
+        "songs" : [ 
+            {
+                "id" : "w0c_dv0TUmU",
+                "youtubeId" : "w0c_dv0TUmU",
+                "title" : "Alborosie - Kingston Town",
+                "imgUrl" : "https://i.ytimg.com/vi/w0c_dv0TUmU/hqdefault.jpg"
+            }, 
+            {
+                "id" : "zXt56MB-3vc",
+                "youtubeId" : "zXt56MB-3vc",
+                "title" : "UB40 - Red Red Wine ",
+                "imgUrl" : "https://i.ytimg.com/vi/zXt56MB-3vc/hqdefault.jpg"
+            }, 
+            {
+                "id" : "CHekNnySAfM",
+                "youtubeId" : "CHekNnySAfM",
+                "title" : "Bob Marley - Is This Love",
+                "imgUrl" : "https://i.ytimg.com/vi/CHekNnySAfM/hqdefault.jpg"
+            }, 
+            {
+                "id" : "AvMuUnFNPIk",
+                "youtubeId" : "AvMuUnFNPIk",
+                "title" : "The Black Seeds - Cool Me Down ",
+                "imgUrl" : "https://i.ytimg.com/vi/AvMuUnFNPIk/hqdefault.jpg"
+            }, 
+            {
+                "id" : "ikzQmC3S-mE",
+                "youtubeId" : "ikzQmC3S-mE",
+                "title" : "Ziggy Marley | True To Myself | Dragonfly",
+                "imgUrl" : "https://i.ytimg.com/vi/ikzQmC3S-mE/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Classical Music",
+        "description" : "Gather around, classical lovers",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600584410/ljst4v8pbrw9inxkpm5v.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Classical",
+        "createdBy" : {
+            "name" : "Matan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
+            "id" : "015a"
+        },
+        "songs" : [ 
+            {
+                "id" : "lzicvVsKrRk",
+                "youtubeId" : "lzicvVsKrRk",
+                "title" : "Mozart - Symphony No. 5 in B flat, K. 22 [complete]",
+                "imgUrl" : "https://i.ytimg.com/vi/lzicvVsKrRk/hqdefault.jpg"
+            }, 
+            {
+                "id" : "GRxofEmo3HA",
+                "youtubeId" : "GRxofEmo3HA",
+                "title" : "Four Seasons ~ Vivaldi",
+                "imgUrl" : "https://i.ytimg.com/vi/GRxofEmo3HA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "pybqjwf8w8s",
+                "youtubeId" : "pybqjwf8w8s",
+                "title" : "Struggle for pleasure - Wim Mertens",
+                "imgUrl" : "https://i.ytimg.com/vi/pybqjwf8w8s/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Pulp Fiction",
+        "description" : "Let's talk about the wonderful scenes with the original soundtrack",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816677/n4mk2zcayy9mx5ln7aqh.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Blues",
+        "createdBy" : {
+            "name" : "Idan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/w_100,h_100,c_thumb,g_face/v1601183977/clr5fhfweew2fyaixprr.jpg",
+            "id" : "123"
+        },
+        "songs" : [ 
+            {
+                "id" : "dl-FN6hd-MA",
+                "youtubeId" : "dl-FN6hd-MA",
+                "title" : "Jungle Boogie",
+                "imgUrl" : "https://i.ytimg.com/vi/dl-FN6hd-MA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "DjydOI4MEIw",
+                "youtubeId" : "DjydOI4MEIw",
+                "title" : "Dusty Springfield Son of a Preacher Man",
+                "imgUrl" : "https://i.ytimg.com/vi/DjydOI4MEIw/hqdefault.jpg"
+            }, 
+            {
+                "id" : "JAHA4Jh5jkw",
+                "youtubeId" : "JAHA4Jh5jkw",
+                "title" : "Urge Overkill - Girl You'll Be a Woman Soon",
+                "imgUrl" : "https://i.ytimg.com/vi/JAHA4Jh5jkw/hqdefault.jpg"
+            }, 
+            {
+                "id" : "1hLIXrlpRe8",
+                "youtubeId" : "1hLIXrlpRe8",
+                "title" : "Pulp Fiction Misirlou",
+                "imgUrl" : "https://i.ytimg.com/vi/1hLIXrlpRe8/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "RIP Chris Cornell",
+        "description" : "Let's reminisce Chris's best songs",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816414/prep6kgbtv4zgipenn1t.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Rock",
+        "createdBy" : {
+            "name" : "Idan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/w_100,h_100,c_thumb,g_face/v1601183977/clr5fhfweew2fyaixprr.jpg",
+            "id" : "123"
+        },
+        "songs" : [ 
+            {
+                "id" : "3mbBbFH9fAg",
+                "youtubeId" : "3mbBbFH9fAg",
+                "title" : "Soundgarden - Black Hole Sun",
+                "imgUrl" : "https://i.ytimg.com/vi/3mbBbFH9fAg/hqdefault.jpg"
+            }, 
+            {
+                "id" : "7QU1nvuxaMA",
+                "youtubeId" : "7QU1nvuxaMA",
+                "title" : "Audioslave - Like a Stone ",
+                "imgUrl" : "https://i.ytimg.com/vi/7QU1nvuxaMA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "pBZs_Py-1_0",
+                "youtubeId" : "pBZs_Py-1_0",
+                "title" : "Soundgarden - Rusty Cage",
+                "imgUrl" : "https://i.ytimg.com/vi/pBZs_Py-1_0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "dXfLt-S4zpI",
+                "youtubeId" : "dXfLt-S4zpI",
+                "title" : "Say Hello 2 Heaven",
+                "imgUrl" : "https://i.ytimg.com/vi/dXfLt-S4zpI/hqdefault.jpg"
+            }, 
+            {
+                "id" : "vVXIK1xCRpY",
+                "youtubeId" : "vVXIK1xCRpY",
+                "title" : "Audioslave - Show Me How to Live ",
+                "imgUrl" : "https://i.ytimg.com/vi/vVXIK1xCRpY/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Fifa Songs",
+        "description" : "All Fifa game fans! the best game with the best songs! let's choose the best ever!",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816497/boit9u3kyi5y6lvhxvme.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Rock",
+        "createdBy" : {
+            "name" : "Idan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/w_100,h_100,c_thumb,g_face/v1601183977/clr5fhfweew2fyaixprr.jpg",
+            "id" : "123"
+        },
+        "songs" : [ 
+            {
+                "id" : "bxWxXncl53U",
+                "youtubeId" : "bxWxXncl53U",
+                "title" : "Bomba Estéreo - Soy Yo ",
+                "imgUrl" : "https://i.ytimg.com/vi/bxWxXncl53U/hqdefault.jpg"
+            }, 
+            {
+                "id" : "w5tWYmIOWGk",
+                "youtubeId" : "w5tWYmIOWGk",
+                "title" : "Imagine Dragons - On Top Of The World ",
+                "imgUrl" : "https://i.ytimg.com/vi/w5tWYmIOWGk/hqdefault.jpg"
+            }, 
+            {
+                "id" : "SSbBvKaM6sk",
+                "youtubeId" : "SSbBvKaM6sk",
+                "title" : "Blur - Song 2",
+                "imgUrl" : "https://i.ytimg.com/vi/SSbBvKaM6sk/hqdefault.jpg"
+            }, 
+            {
+                "id" : "UtF6Jej8yb4",
+                "youtubeId" : "UtF6Jej8yb4",
+                "title" : "Avicii - The Nights",
+                "imgUrl" : "https://i.ytimg.com/vi/UtF6Jej8yb4/hqdefault.jpg"
+            }, 
+            {
+                "id" : "CfihYWRWRTQ",
+                "youtubeId" : "CfihYWRWRTQ",
+                "title" : "John Newman - Love Me Again",
+                "imgUrl" : "https://i.ytimg.com/vi/CfihYWRWRTQ/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Best of Beck",
+        "description" : "We all love the pop-mastermind Beck. What's your favorite song?",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600812829/d2rlt5awolutapr5w4hz.jpg",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Pop",
+        "createdBy" : {
+            "name" : "Idan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/w_100,h_100,c_thumb,g_face/v1601183977/clr5fhfweew2fyaixprr.jpg",
+            "id" : "123"
+        },
+        "songs" : [ 
+            {
+                "id" : "YgSPaXgAdzE",
+                "youtubeId" : "YgSPaXgAdzE",
+                "title" : "Beck - Loser",
+                "imgUrl" : "https://i.ytimg.com/vi/YgSPaXgAdzE/hqdefault.jpg"
+            }, 
+            {
+                "id" : "WRCA_Fo0rWA",
+                "youtubeId" : "WRCA_Fo0rWA",
+                "title" : "Beck - Colors",
+                "imgUrl" : "https://i.ytimg.com/vi/WRCA_Fo0rWA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "qkNa5xzOe5U",
+                "youtubeId" : "qkNa5xzOe5U",
+                "title" : "Beck - Lost Cause",
+                "imgUrl" : "https://i.ytimg.com/vi/qkNa5xzOe5U/hqdefault.jpg"
+            }, 
+            {
+                "id" : "VkCg-3nxT8E",
+                "youtubeId" : "VkCg-3nxT8E",
+                "title" : "Beck - Girl",
+                "imgUrl" : "https://i.ytimg.com/vi/VkCg-3nxT8E/hqdefault.jpg"
+            }, 
+            {
+                "id" : "oTM3YPTYNo0",
+                "youtubeId" : "oTM3YPTYNo0",
+                "title" : "Beck - Dreams (Official Audio)",
+                "imgUrl" : "https://i.ytimg.com/vi/oTM3YPTYNo0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "zWe6bMVvTzk",
+                "youtubeId" : "zWe6bMVvTzk",
+                "title" : "Beck - Lonesome Tears",
+                "imgUrl" : "https://i.ytimg.com/vi/zWe6bMVvTzk/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Tj08Ni3tklw",
+                "youtubeId" : "Tj08Ni3tklw",
+                "title" : "Beck - Up All Night ",
+                "imgUrl" : "https://i.ytimg.com/vi/Tj08Ni3tklw/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "מזרחית ונהנים",
+        "description" : "",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Israeli",
+        "createdBy" : {
+            "name" : "Idan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/w_100,h_100,c_thumb,g_face/v1601183977/clr5fhfweew2fyaixprr.jpg",
+            "id" : "123"
+        },
+        "songs" : [ 
+            {
+                "id" : "1kxdH44J",
+                "youtubeId" : "lo4Trkb0cFk",
+                "title" : "עומר אדם - אף אחד לא יושב פה",
+                "imgUrl" : "https://i.ytimg.com/vi/lo4Trkb0cFk/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Kf7jl6fR",
+                "youtubeId" : "IUqS1CNGNr8",
+                "title" : "אולי היום",
+                "imgUrl" : "https://i.ytimg.com/vi/IUqS1CNGNr8/hqdefault.jpg"
+            }, 
+            {
+                "id" : "4wo2JHnw",
+                "youtubeId" : "d60H5D9GefE",
+                "title" : "עומר אדם & עדן בן זקן - קוקוריקו | Omer Adam & Eden Ben Zaken - Kuku Riku",
+                "imgUrl" : "https://i.ytimg.com/vi/d60H5D9GefE/hqdefault.jpg"
+            }, 
+            {
+                "id" : "DG8DxUYS",
+                "youtubeId" : "14OvaxHc0AU",
+                "title" : "משה פרץ ודודו אהרון - לא הבנתי",
+                "imgUrl" : "https://i.ytimg.com/vi/14OvaxHc0AU/hqdefault.jpg"
+            }, 
+            {
+                "id" : "gvLULl0v",
+                "youtubeId" : "5IGwdsR0jw0",
+                "title" : "משה פרץ - כוס של יין",
+                "imgUrl" : "https://i.ytimg.com/vi/5IGwdsR0jw0/hqdefault.jpg"
+            }
+        ],
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600901238/vxpyhzvhmvsrdnuftlnq.jpg"
+    },
+    {
+        "name" : "Silly Songs",
+        "description" : "Oh my god, i just entered this box by mistake...",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600818735/gmeyvuutlrrhzx4gexz5.png",
+        "tags" : [ 
+            "love", 
+            "happy"
+        ],
+        "genre" : "Alternative",
+        "createdBy" : {
+            "name" : "Matan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
+            "id" : "015a"
+        },
+        "songs" : [ 
+            {
+                "id" : "k85mRPqvMbE",
+                "youtubeId" : "k85mRPqvMbE",
+                "title" : "Crazy Frog - Axel F ",
+                "imgUrl" : "https://i.ytimg.com/vi/k85mRPqvMbE/hqdefault.jpg"
+            }, 
+            {
+                "id" : "cGc_NfiTxng",
+                "youtubeId" : "cGc_NfiTxng",
+                "title" : "PSY - GANGNAM STYLE [Original Video]",
+                "imgUrl" : "https://i.ytimg.com/vi/cGc_NfiTxng/hqdefault.jpg"
+            }, 
+            {
+                "id" : "ZyhrYis509A",
+                "youtubeId" : "ZyhrYis509A",
+                "title" : "Aqua - Barbie Girl",
+                "imgUrl" : "https://i.ytimg.com/vi/ZyhrYis509A/hqdefault.jpg"
+            }, 
+            {
+                "id" : "jLPYnw17GTY",
+                "youtubeId" : "jLPYnw17GTY",
+                "title" : "Crazy Frog - I Like To Move It ",
+                "imgUrl" : "https://i.ytimg.com/vi/jLPYnw17GTY/hqdefault.jpg"
+            }, 
+            {
+                "id" : "NfuiB52K7X8",
+                "youtubeId" : "NfuiB52K7X8",
+                "title" : "PIKOTARO - PPAP (Pen Pineapple Apple Pen) ",
+                "imgUrl" : "https://i.ytimg.com/vi/NfuiB52K7X8/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Morning",
+        "description" : "Bring your coffee and listen to this!",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600814302/rfnazrt12ozy4o7gs2oi.jpg",
+        "genre" : "Easy",
+        "createdBy" : {
+            "name" : "Hilla",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
+            "id" : "014a"
+        },
+        "songs" : [ 
+            {
+                "id" : "hF9LrHlw",
+                "youtubeId" : "BrbxWOMpwfs",
+                "title" : "Blur - The Universal",
+                "duration" : "3:57",
+                "imgUrl" : "https://i.ytimg.com/vi/BrbxWOMpwfs/hqdefault.jpg"
+            }, 
+            {
+                "id" : "58V9B3Zk",
+                "youtubeId" : "wk8xbWEBwtI",
+                "title" : "Gorillaz - On Melancholy Hill",
+                "duration" : "4:14",
+                "imgUrl" : "https://i.ytimg.com/vi/wk8xbWEBwtI/hqdefault.jpg"
+            }, 
+            {
+                "id" : "pOVExna2",
+                "youtubeId" : "sjb9AxDkwAQ",
+                "title" : "Good Morning Good Morning (Remastered 2009)",
+                "duration" : "2:42",
+                "imgUrl" : "https://i.ytimg.com/vi/sjb9AxDkwAQ/hqdefault.jpg"
+            }, 
+            {
+                "id" : "HerT82ak",
+                "youtubeId" : "ag8XcMG1EX4",
+                "title" : "Crowded House - Weather With You ",
+                "duration" : "3:48",
+                "imgUrl" : "https://i.ytimg.com/vi/ag8XcMG1EX4/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Get ready for bed",
+        "description" : "Let's get ready for sleep",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600814322/lcmty98v1p53nnzwqrgd.jpg",
+        "genre" : "Easy",
+        "createdBy" : {
+            "name" : "Matan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600701457/j6w7qrjtrtzu2ufks64z.jpg",
+            "id" : "015a"
+        },
+        "songs" : [ 
+            {
+                "id" : "5Pjd3EU9rnI",
+                "youtubeId" : "5Pjd3EU9rnI",
+                "title" : "Beneath the Surface",
+                "imgUrl" : "https://i.ytimg.com/vi/5Pjd3EU9rnI/hqdefault.jpg"
+            }, 
+            {
+                "id" : "QYEC4TZsy-Y",
+                "youtubeId" : "QYEC4TZsy-Y",
+                "title" : "Lou Reed - Perfect Day",
+                "imgUrl" : "https://i.ytimg.com/vi/QYEC4TZsy-Y/hqdefault.jpg"
+            }, 
+            {
+                "id" : "_qphknagXqA",
+                "youtubeId" : "_qphknagXqA",
+                "title" : "Melody Gardot - Baby I'm A Fool ",
+                "imgUrl" : "https://i.ytimg.com/vi/_qphknagXqA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "91tbOGkRx2M",
+                "youtubeId" : "91tbOGkRx2M",
+                "title" : "Geva Alon - I Can See The Stars",
+                "imgUrl" : "https://i.ytimg.com/vi/91tbOGkRx2M/hqdefault.jpg"
+            }, 
+            {
+                "id" : "s6TtwR2Dbjg",
+                "youtubeId" : "s6TtwR2Dbjg",
+                "title" : "Bryan Adams - Heaven ",
+                "imgUrl" : "https://i.ytimg.com/vi/s6TtwR2Dbjg/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Acoustic Guitar",
+        "description" : "ohhh that soft sound...",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600814501/ieur3aktqqrgruhmxalh.jpg",
+        "genre" : "Easy",
+        "createdBy" : {
+            "name" : "Hilla",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/c_thumb,w_200,g_face/v1600700980/h1xxkhwainjt1kzrwebq.jpg",
+            "id" : "014a"
+        },
+        "songs" : [ 
+            {
+                "id" : "XOAiuvGy",
+                "youtubeId" : "44FPny8k4DM",
+                "title" : "(Alan Walker) Faded - Fingerstyle Guitar Cover",
+                "duration" : "3:58",
+                "imgUrl" : "https://i.ytimg.com/vi/44FPny8k4DM/hqdefault.jpg"
+            }, 
+            {
+                "id" : "RjB41Mee",
+                "youtubeId" : "MRqjOuhZsoY",
+                "title" : "Comfortably Numb Solo - Pink Floyd - Acoustic Guitar Cover",
+                "duration" : "1:55",
+                "imgUrl" : "https://i.ytimg.com/vi/MRqjOuhZsoY/hqdefault.jpg"
+            }, 
+            {
+                "id" : "1Xyj3aXbcn8",
+                "youtubeId" : "1Xyj3aXbcn8",
+                "title" : "Heal the World (Acoustic)",
+                "imgUrl" : "https://i.ytimg.com/vi/1Xyj3aXbcn8/hqdefault.jpg"
+            }, 
+            {
+                "id" : "0gVxRvNfFLg",
+                "youtubeId" : "0gVxRvNfFLg",
+                "title" : "Ryan Adams - Wonderwall",
+                "imgUrl" : "https://i.ytimg.com/vi/0gVxRvNfFLg/hqdefault.jpg"
+            }, 
+            {
+                "id" : "vJn4c1xHk8k",
+                "youtubeId" : "vJn4c1xHk8k",
+                "title" : "Coldplay - Fix You Cover by John Adams",
+                "imgUrl" : "https://i.ytimg.com/vi/vJn4c1xHk8k/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "הליגיונרים",
+        "description" : "אמנים כחול-לבן שהצליחו בחו\"ל",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600845560/l9bukt3vquexrhoqwreh.jpg",
+        "genre" : "Israeli",
+        "createdBy" : {
+            "name" : "Idan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/w_100,h_100,c_thumb,g_face/v1601183977/clr5fhfweew2fyaixprr.jpg",
+            "id" : "123"
+        },
+        "songs" : [ 
+            {
+                "id" : "A16VcQdTL80",
+                "youtubeId" : "A16VcQdTL80",
+                "title" : "Asaf Avidan  // Reckoning Song (One Day)",
+                "imgUrl" : "https://i.ytimg.com/vi/A16VcQdTL80/hqdefault.jpg"
+            }, 
+            {
+                "id" : "wHyplEnrgQQ",
+                "youtubeId" : "wHyplEnrgQQ",
+                "title" : "Asaf Avidan - Different Pulses",
+                "imgUrl" : "https://i.ytimg.com/vi/wHyplEnrgQQ/hqdefault.jpg"
+            }, 
+            {
+                "id" : "X5e1z3bbkUA",
+                "youtubeId" : "X5e1z3bbkUA",
+                "title" : "Acollective - Happiest of All Memorial Days",
+                "imgUrl" : "https://i.ytimg.com/vi/X5e1z3bbkUA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "8Psuqys26J4",
+                "youtubeId" : "8Psuqys26J4",
+                "title" : "Balkan Beat Box - Hermetico ",
+                "imgUrl" : "https://i.ytimg.com/vi/8Psuqys26J4/hqdefault.jpg"
+            }, 
+            {
+                "id" : "rfIJ1vX_K1c",
+                "youtubeId" : "rfIJ1vX_K1c",
+                "title" : "Avishai Cohen - אבישי כהן - אהבה חדשה",
+                "imgUrl" : "https://i.ytimg.com/vi/rfIJ1vX_K1c/hqdefault.jpg"
+            }, 
+            {
+                "id" : "cJdxZ9fmkEw",
+                "youtubeId" : "cJdxZ9fmkEw",
+                "title" : "Ofra Haza - Im Nin'alu - עפרה חזה - אם ננעלו",
+                "imgUrl" : "https://i.ytimg.com/vi/cJdxZ9fmkEw/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Queen of Pop",
+        "description" : "Long live the queen",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600813047/vbysdgtxzj7d0bwa85ul.jpg",
+        "genre" : "Pop",
+        "createdBy" : {
+            "name" : "Idan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/w_100,h_100,c_thumb,g_face/v1601183977/clr5fhfweew2fyaixprr.jpg",
+            "id" : "123"
+        },
+        "songs" : [ 
+            {
+                "id" : "zpzdgmqIHOQ",
+                "youtubeId" : "zpzdgmqIHOQ",
+                "title" : "Madonna - La Isla Bonita ",
+                "imgUrl" : "https://i.ytimg.com/vi/zpzdgmqIHOQ/hqdefault.jpg"
+            }, 
+            {
+                "id" : "79fzeNUqQbQ",
+                "youtubeId" : "79fzeNUqQbQ",
+                "title" : "Madonna - Like A Prayer ",
+                "imgUrl" : "https://i.ytimg.com/vi/79fzeNUqQbQ/hqdefault.jpg"
+            }, 
+            {
+                "id" : "XS088Opj9o0",
+                "youtubeId" : "XS088Opj9o0",
+                "title" : "Madonna - Frozen ",
+                "imgUrl" : "https://i.ytimg.com/vi/XS088Opj9o0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "GuJQSAiODqI",
+                "youtubeId" : "GuJQSAiODqI",
+                "title" : "Madonna - Vogue ",
+                "imgUrl" : "https://i.ytimg.com/vi/GuJQSAiODqI/hqdefault.jpg"
+            }, 
+            {
+                "id" : "EDwb9jOVRtU",
+                "youtubeId" : "EDwb9jOVRtU",
+                "title" : "Madonna - Hung Up ",
+                "imgUrl" : "https://i.ytimg.com/vi/EDwb9jOVRtU/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "King of Pop",
+        "description" : "Long live the king!",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600813916/etbwrfi38rbmu2kqww63.jpg",
+        "genre" : "Pop",
+        "createdBy" : {
+            "name" : "Idan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/w_100,h_100,c_thumb,g_face/v1601183977/clr5fhfweew2fyaixprr.jpg",
+            "id" : "123"
+        },
+        "songs" : [ 
+            {
+                "id" : "oRdxUFDoQe0",
+                "youtubeId" : "oRdxUFDoQe0",
+                "title" : "Michael Jackson - Beat It ",
+                "imgUrl" : "https://i.ytimg.com/vi/oRdxUFDoQe0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "sOnqjkJTMaA",
+                "youtubeId" : "sOnqjkJTMaA",
+                "title" : "Michael Jackson - Thriller ",
+                "imgUrl" : "https://i.ytimg.com/vi/sOnqjkJTMaA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Zi_XLOBDo_Y",
+                "youtubeId" : "Zi_XLOBDo_Y",
+                "title" : "Michael Jackson - Billie Jean ",
+                "imgUrl" : "https://i.ytimg.com/vi/Zi_XLOBDo_Y/hqdefault.jpg"
+            }, 
+            {
+                "id" : "h_D3VFfhvs4",
+                "youtubeId" : "h_D3VFfhvs4",
+                "title" : "Michael Jackson - Smooth Criminal ",
+                "imgUrl" : "https://i.ytimg.com/vi/h_D3VFfhvs4/hqdefault.jpg"
+            }, 
+            {
+                "id" : "XAi3VTSdTxU",
+                "youtubeId" : "XAi3VTSdTxU",
+                "title" : "Michael Jackson - Earth Song ",
+                "imgUrl" : "https://i.ytimg.com/vi/XAi3VTSdTxU/hqdefault.jpg"
+            }, 
+            {
+                "id" : "LeiFF0gvqcc",
+                "youtubeId" : "LeiFF0gvqcc",
+                "title" : "Michael Jackson - Remember The Time ",
+                "imgUrl" : "https://i.ytimg.com/vi/LeiFF0gvqcc/hqdefault.jpg"
+            }, 
+            {
+                "id" : "pAyKJAtDNCw",
+                "youtubeId" : "pAyKJAtDNCw",
+                "title" : "Michael Jackson - You Are Not Alone ",
+                "imgUrl" : "https://i.ytimg.com/vi/pAyKJAtDNCw/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Let's Study",
+        "description" : "Music to keep you focused while studying with friends",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600820282/ljzuteqmfmthb1nsh8io.jpg",
+        "genre" : "Easy",
+        "createdBy" : {
+            "name" : "Idan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/w_100,h_100,c_thumb,g_face/v1601183977/clr5fhfweew2fyaixprr.jpg",
+            "id" : "123"
+        },
+        "songs" : [ 
+            {
+                "id" : "Td-yC-Mx0z4",
+                "youtubeId" : "Td-yC-Mx0z4",
+                "title" : "Rite of Passage",
+                "imgUrl" : "https://i.ytimg.com/vi/Td-yC-Mx0z4/hqdefault.jpg"
+            }, 
+            {
+                "id" : "sUh3t-ImGbs",
+                "youtubeId" : "sUh3t-ImGbs",
+                "title" : "Color Me Blue",
+                "imgUrl" : "https://i.ytimg.com/vi/sUh3t-ImGbs/hqdefault.jpg"
+            }, 
+            {
+                "id" : "JqEiEStMffc",
+                "youtubeId" : "JqEiEStMffc",
+                "title" : "The Morning After",
+                "imgUrl" : "https://i.ytimg.com/vi/JqEiEStMffc/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Chill on the beach",
+        "description" : "Music to lie on the sand",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600820220/ab8p8vny0jcq7aarfbkw.jpg",
+        "genre" : "Easy",
+        "createdBy" : {
+            "name" : "Idan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/w_100,h_100,c_thumb,g_face/v1601183977/clr5fhfweew2fyaixprr.jpg",
+            "id" : "123"
+        },
+        "songs" : [ 
+            {
+                "id" : "m4gQTYGHfRg",
+                "youtubeId" : "m4gQTYGHfRg",
+                "title" : "Xavier Rudd - Come Let Go ",
+                "imgUrl" : "https://i.ytimg.com/vi/m4gQTYGHfRg/hqdefault.jpg"
+            }, 
+            {
+                "id" : "0E1bNmyPWww",
+                "youtubeId" : "0E1bNmyPWww",
+                "title" : "Xavier Rudd - Follow The Sun ",
+                "imgUrl" : "https://i.ytimg.com/vi/0E1bNmyPWww/hqdefault.jpg"
+            }, 
+            {
+                "id" : "whbidPR4nVA",
+                "youtubeId" : "whbidPR4nVA",
+                "title" : "Dennis Lloyd - Alien (Official Audio)",
+                "imgUrl" : "https://i.ytimg.com/vi/whbidPR4nVA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "kCfVv3RsGw4",
+                "youtubeId" : "kCfVv3RsGw4",
+                "title" : "Dennis Lloyd - NEVERMIND",
+                "imgUrl" : "https://i.ytimg.com/vi/kCfVv3RsGw4/hqdefault.jpg"
+            }, 
+            {
+                "id" : "4RxbCrMarZ4",
+                "youtubeId" : "4RxbCrMarZ4",
+                "title" : "Sunlounger - Aguas Blancas (Chill Mix)",
+                "imgUrl" : "https://i.ytimg.com/vi/4RxbCrMarZ4/hqdefault.jpg"
+            }, 
+            {
+                "id" : "_bJ7RCFxR88",
+                "youtubeId" : "_bJ7RCFxR88",
+                "title" : "Sunlounger - Lost (Chill)",
+                "imgUrl" : "https://i.ytimg.com/vi/_bJ7RCFxR88/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Background Music",
+        "description" : "Soft music to have on the background",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683686/xsrdt0rrwntgribro7ke.jpg",
+        "genre" : "Easy",
+        "createdBy" : {
+            "name" : "Idan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/w_100,h_100,c_thumb,g_face/v1601183977/clr5fhfweew2fyaixprr.jpg",
+            "id" : "123"
+        },
+        "songs" : [ 
+            {
+                "id" : "rlyL0PyzkJU",
+                "youtubeId" : "rlyL0PyzkJU",
+                "title" : "Tepid Rainscape",
+                "imgUrl" : "https://i.ytimg.com/vi/rlyL0PyzkJU/hqdefault.jpg"
+            }, 
+            {
+                "id" : "r_N1ySosd50",
+                "youtubeId" : "r_N1ySosd50",
+                "title" : "Lo Air - Day and Night (Original Mix) (Music Video)",
+                "imgUrl" : "https://i.ytimg.com/vi/r_N1ySosd50/hqdefault.jpg"
+            }, 
+            {
+                "id" : "0mUDlFhz4TE",
+                "youtubeId" : "0mUDlFhz4TE",
+                "title" : "Relaxing Zen Music and Nature Sounds - Wooden Flute and Pan Flute - Meditation, Sleep Sound",
+                "imgUrl" : "https://i.ytimg.com/vi/0mUDlFhz4TE/hqdefault.jpg"
+            }, 
+            {
+                "id" : "3TNK916Pjto",
+                "youtubeId" : "3TNK916Pjto",
+                "title" : "FOREST AT NIGHT - Crickets Owls Rain Wind in Trees - Relax Study Sleep De-Stress 🎧 100% RELAX",
+                "imgUrl" : "https://i.ytimg.com/vi/3TNK916Pjto/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Arbic music",
+        "description" : "The Best arabic music ever",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600812463/gpfxahvgq10qj71a01fr.jpg",
+        "genre" : "Blues",
+        "createdBy" : {},
+        "songs" : [ 
+            {
+                "id" : "637KCo3C",
+                "youtubeId" : "zKGW9V1WSl8",
+                "title" : "Babylone Zina Official Music Video بابيلون ـ زينة الفيديو كليب الرسمي",
+                "imgUrl" : "https://i.ytimg.com/vi/zKGW9V1WSl8/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Byuyzahw",
+                "youtubeId" : "DnNTYBsdpmc",
+                "title" : "Zina - Babylone (PIANO COVER/REPRISE par OUIDAD إعادة غناء اغنية  زينة من الفنان بابيلون)",
+                "imgUrl" : "https://i.ytimg.com/vi/DnNTYBsdpmc/hqdefault.jpg"
+            }, 
+            {
+                "id" : "rbOowR4Y",
+                "youtubeId" : "ulC0T0llbtU",
+                "title" : "AYOUB & KES & ALI B - ZINA / زينه (PROD. MEMRU)",
+                "imgUrl" : "https://i.ytimg.com/vi/ulC0T0llbtU/hqdefault.jpg"
+            }, 
+            {
+                "id" : "LnDiLgaL",
+                "youtubeId" : "F_RRk9yttAM",
+                "title" : "Kifak Inta / Zina - Fayrouz & Babylone (Mashup Cover) by Mirelle Mokhtar & Andrew Mounir",
+                "imgUrl" : "https://i.ytimg.com/vi/F_RRk9yttAM/hqdefault.jpg"
+            }, 
+            {
+                "id" : "VVB6F50M",
+                "youtubeId" : "DCNZ1B9S-AY",
+                "title" : "Zina - Carla Chamoun - زينا - كارلا شمعون",
+                "imgUrl" : "https://i.ytimg.com/vi/DCNZ1B9S-AY/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Best Box",
+        "description" : "All the alternative music that you looking for",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600812678/r4vnkt1mieeewawe9j09.jpg",
+        "genre" : "Alternative",
+        "createdBy" : {},
+        "songs" : [ 
+            {
+                "id" : "zQHJHs9L",
+                "youtubeId" : "S3fTw_D3l10",
+                "title" : "Alt-J  - Taro",
+                "imgUrl" : "https://i.ytimg.com/vi/S3fTw_D3l10/hqdefault.jpg"
+            }, 
+            {
+                "id" : "ujIXAp7Z",
+                "youtubeId" : "uTPL9suizsg",
+                "title" : "Alton Ellis Mix - Best Of Alton Ellis - Classic Reggae and Rocksteady Hits Mix | Jet Star Music",
+                "imgUrl" : "https://i.ytimg.com/vi/uTPL9suizsg/hqdefault.jpg"
+            }, 
+            {
+                "id" : "nfO60u9Z",
+                "youtubeId" : "iJYPxh0trnE",
+                "title" : "Alton Ellis - Classic Hits Medley Mix (Part 2)",
+                "imgUrl" : "https://i.ytimg.com/vi/iJYPxh0trnE/hqdefault.jpg"
+            }, 
+            {
+                "id" : "jS1gqWBP",
+                "youtubeId" : "ydvHOF4nDWo",
+                "title" : "Alton Zakay - Sterk Toring ",
+                "imgUrl" : "https://i.ytimg.com/vi/ydvHOF4nDWo/hqdefault.jpg"
+            }, 
+            {
+                "id" : "64NE8sY2",
+                "youtubeId" : "kHuVw4TqSh0",
+                "title" : "Alton Ellis - A New Day (1983) Full Album",
+                "imgUrl" : "https://i.ytimg.com/vi/kHuVw4TqSh0/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Hip Hop Fun Music",
+        "description" : "Hip hop or hip-hop is a culture and art movement that was created by African Americans, Latino Americans and Caribbean Americans in the Bronx, New York City.",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600817054/ff4acc1dc2ct0eid4ukt.jpg",
+        "genre" : "Hip-hop",
+        "createdBy" : {},
+        "songs" : [ 
+            {
+                "id" : "bvfAKdqR",
+                "youtubeId" : "Kb3Tg0N2k7M",
+                "title" : "dj kool herc - b-boy",
+                "imgUrl" : "https://i.ytimg.com/vi/Kb3Tg0N2k7M/hqdefault.jpg"
+            }, 
+            {
+                "id" : "ANTZChA9",
+                "youtubeId" : "7qwml-F7zKQ",
+                "title" : "Kool Herc  \"Merry-Go-Round\" technique",
+                "imgUrl" : "https://i.ytimg.com/vi/7qwml-F7zKQ/hqdefault.jpg"
+            }, 
+            {
+                "id" : "gnL1GVNP",
+                "youtubeId" : "MHNrWMyA5Qw",
+                "title" : "DJ Kool Herc",
+                "imgUrl" : "https://i.ytimg.com/vi/MHNrWMyA5Qw/hqdefault.jpg"
+            }, 
+            {
+                "id" : "ZtftfL9c",
+                "youtubeId" : "Xru3KCB7g7c",
+                "title" : "Dj Kool Herc & The Herculords - Live The T Connection (Part 1) (1981 / Old School Hip Hop)",
+                "imgUrl" : "https://i.ytimg.com/vi/Xru3KCB7g7c/hqdefault.jpg"
+            }, 
+            {
+                "id" : "gPBwTtwv",
+                "youtubeId" : "YaEB181mZXQ",
+                "title" : "DJ KOOL HERC -1973- ''Vinyl'' [HBO]: the roots of hip-hop music",
+                "imgUrl" : "https://i.ytimg.com/vi/YaEB181mZXQ/hqdefault.jpg"
+            }, 
+            {
+                "id" : "FvszdEM9",
+                "youtubeId" : "bmvLxUxSye0",
+                "title" : "Dj Kool Herc-Let me clear my throat HQ",
+                "imgUrl" : "https://i.ytimg.com/vi/bmvLxUxSye0/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Eminem and All The best",
+        "description" : "Eminem is the best singer ever! in this box you can enjoy from him",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600817584/eq4dnmbj6ujiguqb8dwj.jpg",
+        "genre" : "Hip-hop",
+        "createdBy" : {},
+        "songs" : [ 
+            {
+                "id" : "us6hjAfu",
+                "youtubeId" : "YVkUvmDQ3HY",
+                "title" : "Eminem - Without Me ",
+                "imgUrl" : "https://i.ytimg.com/vi/YVkUvmDQ3HY/hqdefault.jpg"
+            }, 
+            {
+                "id" : "q6my9Hx3",
+                "youtubeId" : "1wYNFfgrXTI",
+                "title" : "Eminem - When I'm Gone ",
+                "imgUrl" : "https://i.ytimg.com/vi/1wYNFfgrXTI/hqdefault.jpg"
+            }, 
+            {
+                "id" : "dmo7dg5i",
+                "youtubeId" : "uelHwf8o7_U",
+                "title" : "Eminem - Love The Way You Lie ft. Rihanna",
+                "imgUrl" : "https://i.ytimg.com/vi/uelHwf8o7_U/hqdefault.jpg"
+            }, 
+            {
+                "id" : "463Bz0zL",
+                "youtubeId" : "MfTbHITdhEI",
+                "title" : "Eminem - Fall",
+                "imgUrl" : "https://i.ytimg.com/vi/MfTbHITdhEI/hqdefault.jpg"
+            }, 
+            {
+                "id" : "VWFmDU5e",
+                "youtubeId" : "eJO5HU_7_1w",
+                "title" : "Eminem - The Real Slim Shady (Official Video - Clean Version)",
+                "imgUrl" : "https://i.ytimg.com/vi/eJO5HU_7_1w/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Nostalgia ",
+        "description" : "nostalgia songs to listen and remember",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600817977/sprujkhb6aeu57ho2mjs.jpg",
+        "genre" : "Classical",
+        "createdBy" : {},
+        "songs" : [ 
+            {
+                "id" : "GVVH1G6a",
+                "youtubeId" : "pVrbA5y96sk",
+                "title" : "Taco Hemingway - \"Nostalgia\" (prod. Rumak)",
+                "imgUrl" : "https://i.ytimg.com/vi/pVrbA5y96sk/hqdefault.jpg"
+            }, 
+            {
+                "id" : "V2JxDDQQ",
+                "youtubeId" : "d0JAwXjGoDU",
+                "title" : "Nostalgia - ANTOLOGIA",
+                "imgUrl" : "https://i.ytimg.com/vi/d0JAwXjGoDU/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "R.B.D",
+        "description" : "REBELDE WAY, songs from viva times",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600818205/j7cvi2tdccnjavkm9gx5.jpg",
+        "genre" : "Latin",
+        "createdBy" : {},
+        "songs" : [ 
+            {
+                "id" : "Uhg8oM49",
+                "youtubeId" : "RoayB0pLRC0",
+                "title" : "RBD - Sálvame",
+                "imgUrl" : "https://i.ytimg.com/vi/RoayB0pLRC0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "0XVXZxqc",
+                "youtubeId" : "-2z3YwCrGMc",
+                "title" : "RBD - Nuestro Amor",
+                "imgUrl" : "https://i.ytimg.com/vi/-2z3YwCrGMc/hqdefault.jpg"
+            }, 
+            {
+                "id" : "0r967Nlg",
+                "youtubeId" : "Q1P04glmc_8",
+                "title" : "RBD - Tras De Mí (Lyric Video)",
+                "imgUrl" : "https://i.ytimg.com/vi/Q1P04glmc_8/hqdefault.jpg"
+            }, 
+            {
+                "id" : "tvDPanDO",
+                "youtubeId" : "lf_mukLGVEM",
+                "title" : "RBD - Empezar Desde Cero ",
+                "imgUrl" : "https://i.ytimg.com/vi/lf_mukLGVEM/hqdefault.jpg"
+            }, 
+            {
+                "id" : "oAgqzXgv",
+                "youtubeId" : "n4aYbJCwdXU",
+                "title" : "RBD - Ser O Parecer",
+                "imgUrl" : "https://i.ytimg.com/vi/n4aYbJCwdXU/hqdefault.jpg"
+            }, 
+            {
+                "id" : "ptorFbh9",
+                "youtubeId" : "eN96GCSjftw",
+                "title" : "RBD - Solo Quedate En Silencio",
+                "imgUrl" : "https://i.ytimg.com/vi/eN96GCSjftw/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Ib1OfcGO",
+                "youtubeId" : "B7J-29d9yks",
+                "title" : "Inalcanzable RBD HD",
+                "imgUrl" : "https://i.ytimg.com/vi/B7J-29d9yks/hqdefault.jpg"
+            }, 
+            {
+                "id" : "bMU35s01",
+                "youtubeId" : "nNwjlCSYqdM",
+                "title" : "RBD - Live In Rio - Que Hay Detras ",
+                "imgUrl" : "https://i.ytimg.com/vi/nNwjlCSYqdM/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Salsa music",
+        "description" : "Come and dance with salse music",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600818371/gdsdpuejjvkanpkjrzfd.jpg",
+        "genre" : "Latin",
+        "createdBy" : {},
+        "songs" : [ 
+            {
+                "id" : "WrDJEZK8",
+                "youtubeId" : "aCeJJslfEFA",
+                "title" : "MYA, Pedro Capó - Te Olvidaré ",
+                "imgUrl" : "https://i.ytimg.com/vi/aCeJJslfEFA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "L7Ebpx8N",
+                "youtubeId" : "nvxwiRuFgB0",
+                "title" : "Jesse & Joy - \"Me Soltaste\" (Video Oficial)",
+                "imgUrl" : "https://i.ytimg.com/vi/nvxwiRuFgB0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "RxCZapJV",
+                "youtubeId" : "MLiJ6g7tV7I",
+                "title" : "Pipe Bueno - Te Hubieras Ido Antes | Video Oficial",
+                "imgUrl" : "https://i.ytimg.com/vi/MLiJ6g7tV7I/hqdefault.jpg"
+            }, 
+            {
+                "id" : "RG4VIDHJ",
+                "youtubeId" : "Luw0l98jgU8",
+                "title" : "Cuando me besaste anoche/ JC Angelo",
+                "imgUrl" : "https://i.ytimg.com/vi/Luw0l98jgU8/hqdefault.jpg"
+            }, 
+            {
+                "id" : "TTO72Mpb",
+                "youtubeId" : "JmeyoMooJPY",
+                "title" : "TINI, Lalo Ebratt - Fresa",
+                "imgUrl" : "https://i.ytimg.com/vi/JmeyoMooJPY/hqdefault.jpg"
+            }, 
+            {
+                "id" : "vvm2cDSV",
+                "youtubeId" : "sahUrDh1234",
+                "title" : "Rombai - 2 Pa' 2 ",
+                "imgUrl" : "https://i.ytimg.com/vi/sahUrDh1234/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Enrique iglesias",
+        "description" : "The most handsome singer קהקר\n",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600818628/wsb2mf96k0gaffnk0vvx.jpg",
+        "genre" : "Latin",
+        "createdBy" : {},
+        "songs" : [ 
+            {
+                "id" : "6XmwYDfh",
+                "youtubeId" : "koJlIGDImiU",
+                "title" : "Enrique Iglesias - Hero ",
+                "imgUrl" : "https://i.ytimg.com/vi/koJlIGDImiU/hqdefault.jpg"
+            }, 
+            {
+                "id" : "RRbXigO5",
+                "youtubeId" : "b8I-7Wk_Vbc",
+                "title" : "Enrique Iglesias - Bailando (English Version) ft. Sean Paul, Descemer Bueno, Gente De Zona",
+                "imgUrl" : "https://i.ytimg.com/vi/b8I-7Wk_Vbc/hqdefault.jpg"
+            }, 
+            {
+                "id" : "bylqSOoq",
+                "youtubeId" : "xFutjZEBTXs",
+                "title" : "Enrique Iglesias - DUELE EL CORAZON ft. Wisin",
+                "imgUrl" : "https://i.ytimg.com/vi/xFutjZEBTXs/hqdefault.jpg"
+            }, 
+            {
+                "id" : "9GG3moPe",
+                "youtubeId" : "f_EiqPp-vBM",
+                "title" : "Enrique Iglesias - Finally Found You ft. Sammy Adams",
+                "imgUrl" : "https://i.ytimg.com/vi/f_EiqPp-vBM/hqdefault.jpg"
+            }, 
+            {
+                "id" : "DlmmDlve",
+                "youtubeId" : "Jx2yQejrrUE",
+                "title" : "Enrique Iglesias - Tonight (I'm Lovin' You)",
+                "imgUrl" : "https://i.ytimg.com/vi/Jx2yQejrrUE/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Cnekny0e",
+                "youtubeId" : "pRrjt4htXlE",
+                "title" : "Enrique Iglesias - Nunca Te Olvidaré ",
+                "imgUrl" : "https://i.ytimg.com/vi/pRrjt4htXlE/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Childhood in espnioal",
+        "description" : "Chiquititas, rbd, floricienta",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600819118/n7imysouztgk2vwencwe.jpg",
+        "genre" : "Latin",
+        "createdBy" : {},
+        "songs" : [ 
+            {
+                "id" : "9Fd2hOwg",
+                "youtubeId" : "qjRgMYSN-k4",
+                "title" : "Chiquititas 2000 - Pan y queso",
+                "imgUrl" : "https://i.ytimg.com/vi/qjRgMYSN-k4/hqdefault.jpg"
+            }, 
+            {
+                "id" : "LoB9NNoh",
+                "youtubeId" : "rdMJU4tIY6I",
+                "title" : "Chiquititas - Café Boutique ( Com Letra )",
+                "imgUrl" : "https://i.ytimg.com/vi/rdMJU4tIY6I/hqdefault.jpg"
+            }, 
+            {
+                "id" : "SpAF911s",
+                "youtubeId" : "mC6dPrpfIBM",
+                "title" : "Chiquitita",
+                "imgUrl" : "https://i.ytimg.com/vi/mC6dPrpfIBM/hqdefault.jpg"
+            }, 
+            {
+                "id" : "RTGem3KT",
+                "youtubeId" : "-2z3YwCrGMc",
+                "title" : "RBD - Nuestro Amor",
+                "imgUrl" : "https://i.ytimg.com/vi/-2z3YwCrGMc/hqdefault.jpg"
+            }, 
+            {
+                "id" : "yaqSnlc8",
+                "youtubeId" : "eN96GCSjftw",
+                "title" : "RBD - Solo Quedate En Silencio",
+                "imgUrl" : "https://i.ytimg.com/vi/eN96GCSjftw/hqdefault.jpg"
+            }, 
+            {
+                "id" : "QHbAocJD",
+                "youtubeId" : "5t0qckoXWhQ",
+                "title" : "Floricienta - Mi Vestido Azul",
+                "imgUrl" : "https://i.ytimg.com/vi/5t0qckoXWhQ/hqdefault.jpg"
+            }, 
+            {
+                "id" : "wlnBjO6G",
+                "youtubeId" : "6XvMCy46DuM",
+                "title" : "Floricienta y su Banda (Album Completo)",
+                "imgUrl" : "https://i.ytimg.com/vi/6XvMCy46DuM/hqdefault.jpg"
+            }, 
+            {
+                "id" : "ZzfAbN0K",
+                "youtubeId" : "5h0irx0CVig",
+                "title" : "floricienta - porque",
+                "imgUrl" : "https://i.ytimg.com/vi/5h0irx0CVig/hqdefault.jpg"
+            }, 
+            {
+                "id" : "GJedOLZa",
+                "youtubeId" : "Lw_ChhBWITE",
+                "title" : "Floricienta",
+                "imgUrl" : "https://i.ytimg.com/vi/Lw_ChhBWITE/hqdefault.jpg"
+            }, 
+            {
+                "id" : "mux2V7my",
+                "youtubeId" : "ImcHkBrhLmQ",
+                "title" : "FLORICIENTA-FLORES AMARILLAS",
+                "imgUrl" : "https://i.ytimg.com/vi/ImcHkBrhLmQ/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Abba",
+        "description" : "all Abbasongs in this box",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600820404/pv8289bktb1idsjus4g0.jpg",
+        "genre" : "Classical",
+        "createdBy" : {},
+        "songs" : [ 
+            {
+                "id" : "0mD85dzN",
+                "youtubeId" : "xFrGuyw1V8s",
+                "title" : "Abba - Dancing Queen ",
+                "imgUrl" : "https://i.ytimg.com/vi/xFrGuyw1V8s/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Dtp0kkDp",
+                "youtubeId" : "unfzfe8f9NI",
+                "title" : "Abba - Mamma Mia ",
+                "imgUrl" : "https://i.ytimg.com/vi/unfzfe8f9NI/hqdefault.jpg"
+            }, 
+            {
+                "id" : "lNEk0GqH",
+                "youtubeId" : "XEjLoHdbVeE",
+                "title" : "ABBA - Gimme! Gimme! Gimme! (A Man After Midnight)",
+                "imgUrl" : "https://i.ytimg.com/vi/XEjLoHdbVeE/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Zt5s4feu",
+                "youtubeId" : "p4QqMKe3rwY",
+                "title" : "Abba - Chiquitita",
+                "imgUrl" : "https://i.ytimg.com/vi/p4QqMKe3rwY/hqdefault.jpg"
+            }, 
+            {
+                "id" : "mM4eECCi",
+                "youtubeId" : "iyIOl-s7JTU",
+                "title" : "ABBA - The Winner Takes It All (1980) HD 0815007",
+                "imgUrl" : "https://i.ytimg.com/vi/iyIOl-s7JTU/hqdefault.jpg"
+            }, 
+            {
+                "id" : "ohfhOcFo",
+                "youtubeId" : "-crgQGdpZR0",
+                "title" : "Abba - Take A Chance On Me ",
+                "imgUrl" : "https://i.ytimg.com/vi/-crgQGdpZR0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Qr3R3koW",
+                "youtubeId" : "iUrzicaiRLU",
+                "title" : "Abba - Knowing Me, Knowing You ",
+                "imgUrl" : "https://i.ytimg.com/vi/iUrzicaiRLU/hqdefault.jpg"
+            }, 
+            {
+                "id" : "u63d8dLY",
+                "youtubeId" : "ETxmCCsMoD0",
+                "title" : "Abba - Money, Money, Money ",
+                "imgUrl" : "https://i.ytimg.com/vi/ETxmCCsMoD0/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Oasis",
+        "description" : "Don't look back in anger...",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600819391/bfjqy35zrvddbpqy5pc9.jpg",
+        "genre" : "Rock",
+        "createdBy" : {},
+        "songs" : [ 
+            {
+                "id" : "BKIveSY3",
+                "youtubeId" : "6hzrDeceEKc",
+                "title" : "Oasis - Wonderwall  ",
+                "imgUrl" : "https://i.ytimg.com/vi/6hzrDeceEKc/hqdefault.jpg"
+            }, 
+            {
+                "id" : "ssvjOWVZ",
+                "youtubeId" : "r8OipmKFDeM",
+                "title" : "Oasis - Don't Look Back In Anger ",
+                "imgUrl" : "https://i.ytimg.com/vi/r8OipmKFDeM/hqdefault.jpg"
+            }, 
+            {
+                "id" : "2V0kSHAK",
+                "youtubeId" : "Rqk_Ap481EQ",
+                "title" : "Best Songs of Oasis - Oasis Greatest Hits Full Album - Oasis Collection New",
+                "imgUrl" : "https://i.ytimg.com/vi/Rqk_Ap481EQ/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Qtes7Akd",
+                "youtubeId" : "byO74UGa8bI",
+                "title" : "Sam Smith - My Oasis (feat Burna Boy) (Lyric Video) ft. Burna Boy",
+                "imgUrl" : "https://i.ytimg.com/vi/byO74UGa8bI/hqdefault.jpg"
+            }, 
+            {
+                "id" : "2SSPj1AX",
+                "youtubeId" : "-cJauX_q6wI",
+                "title" : "Oasis - Champagne Supernova ",
+                "imgUrl" : "https://i.ytimg.com/vi/-cJauX_q6wI/hqdefault.jpg"
+            }, 
+            {
+                "id" : "bbMgTN8x",
+                "youtubeId" : "BJKpUH2kJQg",
+                "title" : "Oasis - Supersonic ",
+                "imgUrl" : "https://i.ytimg.com/vi/BJKpUH2kJQg/hqdefault.jpg"
+            }, 
+            {
+                "id" : "AirqRBMw",
+                "youtubeId" : "N9kdHXrJYF8",
+                "title" : "Oasis - Stand By Me ",
+                "imgUrl" : "https://i.ytimg.com/vi/N9kdHXrJYF8/hqdefault.jpg"
+            }, 
+            {
+                "id" : "p5iaKCqr",
+                "youtubeId" : "TDe1DqxwJoc",
+                "title" : "Oasis - Live Forever ",
+                "imgUrl" : "https://i.ytimg.com/vi/TDe1DqxwJoc/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Love Songs",
+        "description" : "For all the in love girls",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600819704/vq15tyfyhq9bgko2mhfd.jpg",
+        "genre" : "Blues",
+        "createdBy" : {},
+        "songs" : [ 
+            {
+                "id" : "jLFkMiDL",
+                "youtubeId" : "Io0fBr1XBUA",
+                "title" : "The Chainsmokers - Don't Let Me Down  ft. Daya",
+                "imgUrl" : "https://i.ytimg.com/vi/Io0fBr1XBUA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "KlMZO0EE",
+                "youtubeId" : "xHa6a3FtPJg",
+                "title" : "The End of the World",
+                "imgUrl" : "https://i.ytimg.com/vi/xHa6a3FtPJg/hqdefault.jpg"
+            }, 
+            {
+                "id" : "v7axaDsi",
+                "youtubeId" : "v3xwCkhmies",
+                "title" : "Queen - Love of My Life",
+                "imgUrl" : "https://i.ytimg.com/vi/v3xwCkhmies/hqdefault.jpg"
+            }, 
+            {
+                "id" : "cgTlxt7p",
+                "youtubeId" : "_7xMfIp-irg",
+                "title" : "All You Need Is Love (Remastered 2009)",
+                "imgUrl" : "https://i.ytimg.com/vi/_7xMfIp-irg/hqdefault.jpg"
+            }, 
+            {
+                "id" : "ZszCF6qh",
+                "youtubeId" : "uelHwf8o7_U",
+                "title" : "Eminem - Love The Way You Lie ft. Rihanna",
+                "imgUrl" : "https://i.ytimg.com/vi/uelHwf8o7_U/hqdefault.jpg"
+            }, 
+            {
+                "id" : "e3pJ1OT7",
+                "youtubeId" : "JkK8g6FMEXE",
+                "title" : "Aerosmith - I Don't Want to Miss a Thing ",
+                "imgUrl" : "https://i.ytimg.com/vi/JkK8g6FMEXE/hqdefault.jpg"
+            }, 
+            {
+                "id" : "W1uuavy5",
+                "youtubeId" : "NdYWuo9OFAw",
+                "title" : "Goo Goo Dolls - Iris ",
+                "imgUrl" : "https://i.ytimg.com/vi/NdYWuo9OFAw/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "RELAX",
+        "description" : "Take a time to yourself and relax",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600843868/d2qqgn2wzl36mv432a9c.webp",
+        "genre" : "Classical",
+        "createdBy" : {
+            "name" : "Guest",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683124/ko8ia4xof4zz3yspbgoc.png",
+            "id" : "CYPv5"
+        },
+        "songs" : [ 
+            {
+                "id" : "lScL4du4",
+                "youtubeId" : "KQetemT1sWc",
+                "title" : "The Beatles - Here Comes The Sun (2019 Mix)",
+                "imgUrl" : "https://i.ytimg.com/vi/KQetemT1sWc/hqdefault.jpg"
+            }, 
+            {
+                "id" : "c4DBRNnL",
+                "youtubeId" : "pFq1eT9tMJ4",
+                "title" : "3 Doors Down - When I'm Gone ",
+                "imgUrl" : "https://i.ytimg.com/vi/pFq1eT9tMJ4/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : " 🤘",
+        "description" : "Arosmith, 3 doors down and all the best of history",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600844686/wat4q9f7yu32hnqf8c43.jpg",
+        "genre" : "Alternative",
+        "createdBy" : {
+            "name" : "Guest",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683124/ko8ia4xof4zz3yspbgoc.png",
+            "id" : "CYPv5"
+        },
+        "songs" : [ 
+            {
+                "id" : "zx1TeHB6",
+                "youtubeId" : "JkK8g6FMEXE",
+                "title" : "Aerosmith - I Don't Want to Miss a Thing ",
+                "imgUrl" : "https://i.ytimg.com/vi/JkK8g6FMEXE/hqdefault.jpg"
+            }, 
+            {
+                "id" : "PRjvujVC",
+                "youtubeId" : "zSmOvYzSeaQ",
+                "title" : "Aerosmith - Amazing ",
+                "imgUrl" : "https://i.ytimg.com/vi/zSmOvYzSeaQ/hqdefault.jpg"
+            }, 
+            {
+                "id" : "ckJH49qs",
+                "youtubeId" : "pFq1eT9tMJ4",
+                "title" : "3 Doors Down - When I'm Gone ",
+                "imgUrl" : "https://i.ytimg.com/vi/pFq1eT9tMJ4/hqdefault.jpg"
+            }, 
+            {
+                "id" : "iJY0XOJr",
+                "youtubeId" : "NMNgbISmF4I",
+                "title" : "Aerosmith - Crazy ",
+                "imgUrl" : "https://i.ytimg.com/vi/NMNgbISmF4I/hqdefault.jpg"
+            }, 
+            {
+                "id" : "1faib6EI",
+                "youtubeId" : "CBTOGVb_cQg",
+                "title" : "Aerosmith - Angel ",
+                "imgUrl" : "https://i.ytimg.com/vi/CBTOGVb_cQg/hqdefault.jpg"
+            }, 
+            {
+                "id" : "pb7ub5xg",
+                "youtubeId" : "kPBzTxZQG5Q",
+                "title" : "3 Doors Down - Here Without You ",
+                "imgUrl" : "https://i.ytimg.com/vi/kPBzTxZQG5Q/hqdefault.jpg"
+            }, 
+            {
+                "id" : "qOFYBtPR",
+                "youtubeId" : "qpfhcljJ9bQ",
+                "title" : "3 Doors Down - It's Not My Time ",
+                "imgUrl" : "https://i.ytimg.com/vi/qpfhcljJ9bQ/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Pzdvx8dy",
+                "youtubeId" : "thc1MtNagC8",
+                "title" : "3 Doors Down - Let Me Go ",
+                "imgUrl" : "https://i.ytimg.com/vi/thc1MtNagC8/hqdefault.jpg"
+            }, 
+            {
+                "id" : "35THhugq",
+                "youtubeId" : "rguhxKEBlr4",
+                "title" : "3 Doors Down - Landing In London (All I Think About Is You) ",
+                "imgUrl" : "https://i.ytimg.com/vi/rguhxKEBlr4/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Arik ",
+        "description" : "Arik for Idan",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600850315/bggqq5bmzz7rweu619kr.jpg",
+        "genre" : "Israeli",
+        "createdBy" : {
+            "name" : "Guest",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683124/ko8ia4xof4zz3yspbgoc.png",
+            "id" : "rqmeO"
+        },
+        "songs" : [ 
+            {
+                "id" : "D6t9uATI",
+                "youtubeId" : "KlYaXvYC9Ec",
+                "title" : "אריק ברמן - הסיגריה האחרונה",
+                "imgUrl" : "https://i.ytimg.com/vi/KlYaXvYC9Ec/hqdefault.jpg"
+            }, 
+            {
+                "id" : "G73W2Hg3",
+                "youtubeId" : "Qv_tTi5Evsc",
+                "title" : "אריק ברמן - יום חדש נפלא",
+                "imgUrl" : "https://i.ytimg.com/vi/Qv_tTi5Evsc/hqdefault.jpg"
+            }, 
+            {
+                "id" : "r0ZK1m9I",
+                "youtubeId" : "W6jW8eSkntI",
+                "title" : "אריק ברמן - זו לזה לזו כשעלית למטוס",
+                "imgUrl" : "https://i.ytimg.com/vi/W6jW8eSkntI/hqdefault.jpg"
+            }, 
+            {
+                "id" : "qHGR0hI7",
+                "youtubeId" : "oQMTwh1_vtM",
+                "title" : "לא הצלחתי להתאהב בך בשישית - אריק ברמן",
+                "imgUrl" : "https://i.ytimg.com/vi/oQMTwh1_vtM/hqdefault.jpg"
+            }, 
+            {
+                "id" : "izCAPzCz",
+                "youtubeId" : "kDb-TLw6Afo",
+                "title" : "אריק ברמן - ג'וני ✫ האלבום הראשון",
+                "imgUrl" : "https://i.ytimg.com/vi/kDb-TLw6Afo/hqdefault.jpg"
+            }, 
+            {
+                "id" : "y4OiUjfm",
+                "youtubeId" : "Tww10uQEOFE",
+                "title" : "אריק ברמן - יום חדש נפלא 🐟 פישטנק",
+                "imgUrl" : "https://i.ytimg.com/vi/Tww10uQEOFE/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Latinus",
+        "description" : "Latinus Party",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600933124/m40xvycpsm5xtj8lmztr.jpg",
+        "genre" : "Latin",
+        "createdBy" : {
+            "name" : "Sapir",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600933001/wfhucehli9vfempybutp.jpg",
+            "id" : "fCWEk"
+        },
+        "songs" : [ 
+            {
+                "id" : "cgTXMJ8Q",
+                "youtubeId" : "kJQP7kiw5Fk",
+                "title" : "Luis Fonsi - Despacito ft. Daddy Yankee",
+                "imgUrl" : "https://i.ytimg.com/vi/kJQP7kiw5Fk/hqdefault.jpg"
+            }, 
+            {
+                "id" : "WNdaJx8O",
+                "youtubeId" : "iMEhjsiHbwM",
+                "title" : "Maluma - HP ",
+                "imgUrl" : "https://i.ytimg.com/vi/iMEhjsiHbwM/hqdefault.jpg"
+            }, 
+            {
+                "id" : "p2JBVG6a",
+                "youtubeId" : "pK060iUFWXg",
+                "title" : "Maluma - Hawái ",
+                "imgUrl" : "https://i.ytimg.com/vi/pK060iUFWXg/hqdefault.jpg"
+            }, 
+            {
+                "id" : "g5hzoEjz",
+                "youtubeId" : "t_jHrUE5IOk",
+                "title" : "Maluma - Felices los 4 ",
+                "imgUrl" : "https://i.ytimg.com/vi/t_jHrUE5IOk/hqdefault.jpg"
+            }, 
+            {
+                "id" : "oLvm7mOh",
+                "youtubeId" : "GmHrjFIWl6U",
+                "title" : "Maluma - Corazón  ft. Nego do Borel",
+                "imgUrl" : "https://i.ytimg.com/vi/GmHrjFIWl6U/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Disco party",
+        "description" : "Dance all the night",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600933241/zk9vpagxnzlnrmgebupn.jpg",
+        "genre" : "Alternative",
+        "createdBy" : {
+            "name" : "Sapir",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600933001/wfhucehli9vfempybutp.jpg",
+            "id" : "fCWEk"
+        },
+        "songs" : [ 
+            {
+                "id" : "Gnol07hO",
+                "youtubeId" : "3G0O3CQtcv4",
+                "title" : "Disco Malupitan Sayawan 2020",
+                "imgUrl" : "https://i.ytimg.com/vi/3G0O3CQtcv4/hqdefault.jpg"
+            }, 
+            {
+                "id" : "fFflFXvu",
+                "youtubeId" : "ALZxeT4eJ58",
+                "title" : "PINOY DISCO REMIX 2020 - OPM DISCO PINOY 2020 - OPM Tagalog Disco Remix",
+                "imgUrl" : "https://i.ytimg.com/vi/ALZxeT4eJ58/hqdefault.jpg"
+            }, 
+            {
+                "id" : "ROVqAtIG",
+                "youtubeId" : "zrsBjYukE8s",
+                "title" : "박진영 (J.Y. Park) \"When We Disco (Duet with 선미)\" M/V",
+                "imgUrl" : "https://i.ytimg.com/vi/zrsBjYukE8s/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Jx3RBL9C",
+                "youtubeId" : "7jELobZuKVE",
+                "title" : "90's & 00's Disco Hits | Eurodance | Non-Stop Playlist",
+                "imgUrl" : "https://i.ytimg.com/vi/7jELobZuKVE/hqdefault.jpg"
+            }, 
+            {
+                "id" : "39I1TGxy",
+                "youtubeId" : "vSYOmC34SW0",
+                "title" : "Disco Na Malupit",
+                "imgUrl" : "https://i.ytimg.com/vi/vSYOmC34SW0/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Hip hop party",
+        "description" : "For all hip hop party lovers",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600933554/gelr6v6ycbw0g8dnzaw0.jpg",
+        "genre" : "Hip-hop",
+        "createdBy" : {
+            "name" : "Sapir",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600933001/wfhucehli9vfempybutp.jpg",
+            "id" : "fCWEk"
+        },
+        "songs" : [ 
+            {
+                "id" : "7XkMjDjt",
+                "youtubeId" : "xTlNMmZKwpA",
+                "title" : "Cardi B, Bad Bunny & J Balvin - I Like It ",
+                "imgUrl" : "https://i.ytimg.com/vi/xTlNMmZKwpA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "viulYTu9",
+                "youtubeId" : "Wc5IbN4xw70",
+                "title" : "Cardi B - WAP feat. Megan Thee Stallion [Official Audio]",
+                "imgUrl" : "https://i.ytimg.com/vi/Wc5IbN4xw70/hqdefault.jpg"
+            }, 
+            {
+                "id" : "FtK2muv7",
+                "youtubeId" : "cJc7xWJbwJw",
+                "title" : "Cardi B - Press ",
+                "imgUrl" : "https://i.ytimg.com/vi/cJc7xWJbwJw/hqdefault.jpg"
+            }, 
+            {
+                "id" : "JHWT35xf",
+                "youtubeId" : "Zj2cK8wymIA",
+                "title" : "Cardi B - Money (Official Audio)",
+                "imgUrl" : "https://i.ytimg.com/vi/Zj2cK8wymIA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "zje4IbSY",
+                "youtubeId" : "3y-O-4IL-PU",
+                "title" : "Cardi B & Bruno Mars - Please Me ",
+                "imgUrl" : "https://i.ytimg.com/vi/3y-O-4IL-PU/hqdefault.jpg"
+            }, 
+            {
+                "id" : "I33bFBqc",
+                "youtubeId" : "8zSRkr1nQNw",
+                "title" : "Cardi B - Be Careful ",
+                "imgUrl" : "https://i.ytimg.com/vi/8zSRkr1nQNw/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Pop Party",
+        "description" : "",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600933610/rmoaors4q97lf80luu7s.jpg",
+        "genre" : "Pop",
+        "createdBy" : {
+            "name" : "Idan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600933587/iykpr52nbik3cjqjtasv.jpg",
+            "id" : "c3fMu"
+        },
+        "songs" : [ 
+            {
+                "id" : "Vz6Jj4qG",
+                "youtubeId" : "WRCA_Fo0rWA",
+                "title" : "Beck - Colors",
+                "imgUrl" : "https://i.ytimg.com/vi/WRCA_Fo0rWA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "7ede3STf",
+                "youtubeId" : "PWgvGjAhvIw",
+                "title" : "OutKast - Hey Ya! ",
+                "imgUrl" : "https://i.ytimg.com/vi/PWgvGjAhvIw/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Cajul Party",
+        "description" : "Wanna have a party? this is the best box for you!",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600954276/howqacbc9bmwuyhwaw2v.jpg",
+        "genre" : "Pop",
+        "createdBy" : {
+            "name" : "Idan",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600933587/iykpr52nbik3cjqjtasv.jpg",
+            "id" : "c3fMu"
+        },
+        "songs" : [ 
+            {
+                "id" : "fyazdRMl",
+                "youtubeId" : "zKGW9V1WSl8",
+                "title" : "Babylone Zina Official Music Video بابيلون ـ زينة الفيديو كليب الرسمي",
+                "imgUrl" : "https://i.ytimg.com/vi/zKGW9V1WSl8/hqdefault.jpg"
+            }, 
+            {
+                "id" : "VAi8kPK4",
+                "youtubeId" : "pK060iUFWXg",
+                "title" : "Maluma - Hawái ",
+                "imgUrl" : "https://i.ytimg.com/vi/pK060iUFWXg/hqdefault.jpg"
+            }, 
+            {
+                "id" : "nm3swfMD",
+                "youtubeId" : "AjrtRgZdzgU",
+                "title" : "Mata - Schodki",
+                "imgUrl" : "https://i.ytimg.com/vi/AjrtRgZdzgU/hqdefault.jpg"
+            }, 
+            {
+                "id" : "IYF8K3lA",
+                "youtubeId" : "hd4cwMITGpk",
+                "title" : "Miroslav Skoro - Mata",
+                "imgUrl" : "https://i.ytimg.com/vi/hd4cwMITGpk/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Dcn3dxcC",
+                "youtubeId" : "4j725wScY0E",
+                "title" : "GIMS, Maluma - Hola Señorita (Maria) ",
+                "imgUrl" : "https://i.ytimg.com/vi/4j725wScY0E/hqdefault.jpg"
+            }, 
+            {
+                "id" : "LoODB1pZ",
+                "youtubeId" : "BwrojtyHms8",
+                "title" : "עומר אדם - תמחל לי",
+                "imgUrl" : "https://i.ytimg.com/vi/BwrojtyHms8/hqdefault.jpg"
+            }, 
+            {
+                "id" : "he4T0E1i",
+                "youtubeId" : "wTAibxp37vE",
+                "title" : "Mata - Patointeligencja",
+                "imgUrl" : "https://i.ytimg.com/vi/wTAibxp37vE/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Puki",
+        "description" : "Box for dance with dogs ",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600994359/ig6ua1y9tvpynwhrlxm1.webp",
+        "genre" : "Alternative",
+        "createdBy" : {
+            "name" : "Guest",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683124/ko8ia4xof4zz3yspbgoc.png",
+            "id" : "KvMPD"
+        },
+        "songs" : [ 
+            {
+                "id" : "I0NI9C0H",
+                "youtubeId" : "MIIHFvFpGN0",
+                "title" : "Dubdogz - DOG PRIVATE #02 (Heliponto)",
+                "imgUrl" : "https://i.ytimg.com/vi/MIIHFvFpGN0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "RE2HtfNB",
+                "youtubeId" : "QPsbE9lmxzU",
+                "title" : "겨울왕국 Let it go 강아지 리믹스 (Frozen OST Gabe the dog cover)",
+                "imgUrl" : "https://i.ytimg.com/vi/QPsbE9lmxzU/hqdefault.jpg"
+            }, 
+            {
+                "id" : "xaePmRuX",
+                "youtubeId" : "EWuHauXtbEw",
+                "title" : "Jamey Johnson “Dog in the Yard”/“Mowin’ Down the Roses”/“The Door Is Always Open” Live Boston 4/9/19",
+                "imgUrl" : "https://i.ytimg.com/vi/EWuHauXtbEw/hqdefault.jpg"
+            }, 
+            {
+                "id" : "qjk4Yzkh",
+                "youtubeId" : "wiDIObd8YaI",
+                "title" : "Florence + The Machine - Dog Days Are Over (Live At Oxegen Festival, 2010)",
+                "imgUrl" : "https://i.ytimg.com/vi/wiDIObd8YaI/hqdefault.jpg"
+            }, 
+            {
+                "id" : "bA4nIKcV",
+                "youtubeId" : "NaKrke1EL1A",
+                "title" : "TXT (투모로우바이투게더) 'Cat & Dog' Official MV",
+                "imgUrl" : "https://i.ytimg.com/vi/NaKrke1EL1A/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "BreakUp Songs",
+        "description" : "When you'r so sad and you wanna to listen with your soul",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600994895/h5wtnocix1lme2imhprn.jpg",
+        "genre" : "Blues",
+        "createdBy" : {},
+        "songs" : [ 
+            {
+                "id" : "a8aAtOPN",
+                "youtubeId" : "ZdkhKkfNPZE",
+                "title" : "Billie Eilish ~ The End of the World (Lyrics)",
+                "imgUrl" : "https://i.ytimg.com/vi/ZdkhKkfNPZE/hqdefault.jpg"
+            }, 
+            {
+                "id" : "SsSz5m90",
+                "youtubeId" : "Hq1XJbrXvg4",
+                "title" : "עומר אדם - מאמי זה נגמר",
+                "imgUrl" : "https://i.ytimg.com/vi/Hq1XJbrXvg4/hqdefault.jpg"
+            }, 
+            {
+                "id" : "92plA1E0",
+                "youtubeId" : "DtVBCG6ThDk",
+                "title" : "Elton John - Rocket Man ",
+                "imgUrl" : "https://i.ytimg.com/vi/DtVBCG6ThDk/hqdefault.jpg"
+            }, 
+            {
+                "id" : "wSsp9xre",
+                "youtubeId" : "NrLkTZrPZA4",
+                "title" : "Elton John - Sacrifice",
+                "imgUrl" : "https://i.ytimg.com/vi/NrLkTZrPZA4/hqdefault.jpg"
+            }, 
+            {
+                "id" : "7l58b1ZB",
+                "youtubeId" : "h6KYAVn8ons",
+                "title" : "Elton John - I Guess That's Why They Call It The Blues",
+                "imgUrl" : "https://i.ytimg.com/vi/h6KYAVn8ons/hqdefault.jpg"
+            }, 
+            {
+                "id" : "kB3tFrKW",
+                "youtubeId" : "l-gSWc7TlRA",
+                "title" : "Don't Let Me Down- The Chainsmokers ft. Daya Lyrics",
+                "imgUrl" : "https://i.ytimg.com/vi/l-gSWc7TlRA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "7BqOzlVo",
+                "youtubeId" : "6QyVil0dwhk",
+                "title" : "Oasis - Stop Crying Your Heart Out ",
+                "imgUrl" : "https://i.ytimg.com/vi/6QyVil0dwhk/hqdefault.jpg"
+            }, 
+            {
+                "id" : "zeCpnpGd",
+                "youtubeId" : "v3xwCkhmies",
+                "title" : "Queen - Love of My Life",
+                "imgUrl" : "https://i.ytimg.com/vi/v3xwCkhmies/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Hip Hop 2020",
+        "description" : "Going to Turn This Up Real Loud So I Can’t Hear Men Shouting at Me to Smile as I Walk Down the Street Because I Am a Woman and This is the Way the World Is.",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601186024/mu9vchb5oapm9enm9soo.jpg",
+        "genre" : "Hip-hop",
+        "createdBy" : {
+            "name" : "daniel",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601185923/mo64hrhhdoquuclqdc8f.jpg",
+            "id" : "5f702886d47a3f45acae3c93"
+        },
+        "songs" : [ 
+            {
+                "id" : "QvIfUec5",
+                "youtubeId" : "DksSPZTZES0",
+                "title" : "Justin Timberlake - Cry Me A River (Official)",
+                "duration" : "4:51",
+                "imgUrl" : "https://i.ytimg.com/vi/DksSPZTZES0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "3Msp72U0",
+                "youtubeId" : "uuZE_IRwLNI",
+                "title" : "Justin Timberlake - Mirrors",
+                "duration" : "8:21",
+                "imgUrl" : "https://i.ytimg.com/vi/uuZE_IRwLNI/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Q87YBtpr",
+                "youtubeId" : "C5RrNaCfUXE",
+                "title" : "SZA, Justin Timberlake - The Other Side (From Trolls World Tour)",
+                "duration" : "3:07",
+                "imgUrl" : "https://i.ytimg.com/vi/C5RrNaCfUXE/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Wp1q4Xur",
+                "youtubeId" : "8MPbR6Cbwi4",
+                "title" : "Justin Timberlake - Say Something  ft. Chris Stapleton",
+                "duration" : "6:23",
+                "imgUrl" : "https://i.ytimg.com/vi/8MPbR6Cbwi4/hqdefault.jpg"
+            }, 
+            {
+                "id" : "bKyKz30k",
+                "youtubeId" : "TSVHoHyErBQ",
+                "title" : "Justin Timberlake - Rock Your Body (Video)",
+                "duration" : "4:58",
+                "imgUrl" : "https://i.ytimg.com/vi/TSVHoHyErBQ/hqdefault.jpg"
+            }, 
+            {
+                "id" : "0PABaC5c",
+                "youtubeId" : "FyXtoTLLcDk",
+                "title" : "Justin Timberlake - TKO",
+                "duration" : "7:10",
+                "imgUrl" : "https://i.ytimg.com/vi/FyXtoTLLcDk/hqdefault.jpg"
+            }, 
+            {
+                "id" : "LyavRy2u",
+                "youtubeId" : "QAnsWtJ9AFk",
+                "title" : "Justin Timberlake - Cry Me A River",
+                "duration" : "4:49",
+                "imgUrl" : "https://i.ytimg.com/vi/QAnsWtJ9AFk/hqdefault.jpg"
+            }, 
+            {
+                "id" : "3jp3lNYJ",
+                "youtubeId" : "unzWJWiCALA",
+                "title" : "Justin Timberlake - What Goes Around...Comes Around (Director's Cut)",
+                "duration" : "9:22",
+                "imgUrl" : "https://i.ytimg.com/vi/unzWJWiCALA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "6Df3jx01",
+                "youtubeId" : "TSVHoHyErBQ",
+                "title" : "Justin Timberlake - Rock Your Body (Video)",
+                "duration" : "4:58",
+                "imgUrl" : "https://i.ytimg.com/vi/TSVHoHyErBQ/hqdefault.jpg"
+            }, 
+            {
+                "id" : "k1vnbWiI",
+                "youtubeId" : "DK_0jXPuIr0",
+                "title" : "Justin Bieber - What Do You Mean? ",
+                "duration" : "4:58",
+                "imgUrl" : "https://i.ytimg.com/vi/DK_0jXPuIr0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "pbbrX0EC",
+                "youtubeId" : "0eDJ0Tla0ac",
+                "title" : "Justin Bieber - Holy (Performance Version) ft. Chance The Rapper",
+                "duration" : "3:36",
+                "imgUrl" : "https://i.ytimg.com/vi/0eDJ0Tla0ac/hqdefault.jpg"
+            }, 
+            {
+                "id" : "KcaaQfmj",
+                "youtubeId" : "fRh_vgS2dFE",
+                "title" : "Justin Bieber - Sorry (PURPOSE : The Movement)",
+                "duration" : "3:26",
+                "imgUrl" : "https://i.ytimg.com/vi/fRh_vgS2dFE/hqdefault.jpg"
+            }, 
+            {
+                "id" : "UaNwKSMO",
+                "youtubeId" : "weeI1G46q0o",
+                "title" : "DJ Khaled - I'm The One ft. Justin Bieber, Quavo, Chance the Rapper, Lil Wayne",
+                "duration" : "5:22",
+                "imgUrl" : "https://i.ytimg.com/vi/weeI1G46q0o/hqdefault.jpg"
+            }, 
+            {
+                "id" : "mac9eQ8H",
+                "youtubeId" : "oyEuk8j8imI",
+                "title" : "Justin Bieber - Love Yourself ",
+                "duration" : "4:33",
+                "imgUrl" : "https://i.ytimg.com/vi/oyEuk8j8imI/hqdefault.jpg"
+            }, 
+            {
+                "id" : "3eYtnRDo",
+                "youtubeId" : "pvPsJFRGleA",
+                "title" : "Justin Bieber - Holy ft. Chance The Rapper",
+                "duration" : "5:29",
+                "imgUrl" : "https://i.ytimg.com/vi/pvPsJFRGleA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "5Y3GzlCv",
+                "youtubeId" : "3CxtK7-XtE0",
+                "title" : "DJ Khaled ft. Drake - POPSTAR (Official Music Video - Starring Justin Bieber)",
+                "duration" : "8:06",
+                "imgUrl" : "https://i.ytimg.com/vi/3CxtK7-XtE0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "BiFP4aJp",
+                "youtubeId" : "kffacxfA7G4",
+                "title" : "Justin Bieber - Baby  ft. Ludacris",
+                "duration" : "3:40",
+                "imgUrl" : "https://i.ytimg.com/vi/kffacxfA7G4/hqdefault.jpg"
+            }, 
+            {
+                "id" : "xRPhC57p",
+                "youtubeId" : "3AyMjyHu1bA",
+                "title" : "Justin Bieber - Intentions (Official Video (Short Version)) ft. Quavo",
+                "duration" : "3:45",
+                "imgUrl" : "https://i.ytimg.com/vi/3AyMjyHu1bA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "AaCBGU2E",
+                "youtubeId" : "8EJ3zbKTWQ8",
+                "title" : "Justin Bieber - Yummy ",
+                "duration" : "3:51",
+                "imgUrl" : "https://i.ytimg.com/vi/8EJ3zbKTWQ8/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Justins",
+        "description" : "All the justins in one place",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601190388/ep5vvjjc73gr1zkrwhe0.png",
+        "genre" : "Pop",
+        "createdBy" : {
+            "name" : "Hilla",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601190346/z1a78yl5646o4tc4y4sm.jpg",
+            "id" : "5f7039cc36ea40267c62c80c"
+        },
+        "songs" : [ 
+            {
+                "id" : "phn1Fzzc",
+                "youtubeId" : "FQ3slUz7Jo8",
+                "title" : "Justin Timberlake - Like I Love You",
+                "duration" : "4:44",
+                "imgUrl" : "https://i.ytimg.com/vi/FQ3slUz7Jo8/hqdefault.jpg"
+            }, 
+            {
+                "id" : "S8mJdkhh",
+                "youtubeId" : "TSVHoHyErBQ",
+                "title" : "Justin Timberlake - Rock Your Body (Video)",
+                "duration" : "4:58",
+                "imgUrl" : "https://i.ytimg.com/vi/TSVHoHyErBQ/hqdefault.jpg"
+            }, 
+            {
+                "id" : "gkLR6Etr",
+                "youtubeId" : "IsUsVbTj2AY",
+                "title" : "Justin Timberlake - Suit & Tie (Official) ft. JAY Z",
+                "duration" : "5:30",
+                "imgUrl" : "https://i.ytimg.com/vi/IsUsVbTj2AY/hqdefault.jpg"
+            }, 
+            {
+                "id" : "LgvYhL65",
+                "youtubeId" : "ru0K8uYEZWw",
+                "title" : "CAN'T STOP THE FEELING! (From DreamWorks Animation's \"Trolls\") ",
+                "duration" : "4:46",
+                "imgUrl" : "https://i.ytimg.com/vi/ru0K8uYEZWw/hqdefault.jpg"
+            }, 
+            {
+                "id" : "hjvtMJMz",
+                "youtubeId" : "TOrnUquxtwA",
+                "title" : "Justin Timberlake - What Goes Around...Comes Around",
+                "duration" : "9:22",
+                "imgUrl" : "https://i.ytimg.com/vi/TOrnUquxtwA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "BgNoAGyo",
+                "youtubeId" : "9NUomWzmngg",
+                "title" : "Justin T - Like I Love You (The Equalizers Remix)",
+                "duration" : "6:14",
+                "imgUrl" : "https://i.ytimg.com/vi/9NUomWzmngg/hqdefault.jpg"
+            }, 
+            {
+                "id" : "SKsmCQZe",
+                "youtubeId" : "C5RrNaCfUXE",
+                "title" : "SZA, Justin Timberlake - The Other Side (From Trolls World Tour)",
+                "duration" : "3:07",
+                "imgUrl" : "https://i.ytimg.com/vi/C5RrNaCfUXE/hqdefault.jpg"
+            }, 
+            {
+                "id" : "mvTxZ2MQ",
+                "youtubeId" : "uuZE_IRwLNI",
+                "title" : "Justin Timberlake - Mirrors",
+                "duration" : "8:21",
+                "imgUrl" : "https://i.ytimg.com/vi/uuZE_IRwLNI/hqdefault.jpg"
+            }, 
+            {
+                "id" : "8guMqfav",
+                "youtubeId" : "8MPbR6Cbwi4",
+                "title" : "Justin Timberlake - Say Something  ft. Chris Stapleton",
+                "duration" : "6:23",
+                "imgUrl" : "https://i.ytimg.com/vi/8MPbR6Cbwi4/hqdefault.jpg"
+            }, 
+            {
+                "id" : "b5i3FLsm",
+                "youtubeId" : "fRh_vgS2dFE",
+                "title" : "Justin Bieber - Sorry (PURPOSE : The Movement)",
+                "duration" : "3:26",
+                "imgUrl" : "https://i.ytimg.com/vi/fRh_vgS2dFE/hqdefault.jpg"
+            }, 
+            {
+                "id" : "CWzRkmKg",
+                "youtubeId" : "0eDJ0Tla0ac",
+                "title" : "Justin Bieber - Holy (Performance Version) ft. Chance The Rapper",
+                "duration" : "3:36",
+                "imgUrl" : "https://i.ytimg.com/vi/0eDJ0Tla0ac/hqdefault.jpg"
+            }, 
+            {
+                "id" : "P0KRgwB8",
+                "youtubeId" : "bospUsfMHWU",
+                "title" : "Justin Bieber - The Making Of ‘Holy’ | Vevo Footnotes ft. Chance The Rapper",
+                "duration" : "5:32",
+                "imgUrl" : "https://i.ytimg.com/vi/bospUsfMHWU/hqdefault.jpg"
+            }, 
+            {
+                "id" : "no59MZmp",
+                "youtubeId" : "3AyMjyHu1bA",
+                "title" : "Justin Bieber - Intentions (Official Video (Short Version)) ft. Quavo",
+                "duration" : "3:45",
+                "imgUrl" : "https://i.ytimg.com/vi/3AyMjyHu1bA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "o4fCr299",
+                "youtubeId" : "kffacxfA7G4",
+                "title" : "Justin Bieber - Baby  ft. Ludacris",
+                "duration" : "3:40",
+                "imgUrl" : "https://i.ytimg.com/vi/kffacxfA7G4/hqdefault.jpg"
+            }, 
+            {
+                "id" : "YPJ7Ycrw",
+                "youtubeId" : "MgZQRAADOk0",
+                "title" : "Music | Top Songs 2020 💥 Maroon 5, Adele, Ed Sheeran, justin bieber 💗 Top 40 Popular Songs 2020 💥",
+                "duration" : null,
+                "imgUrl" : "https://i.ytimg.com/vi/MgZQRAADOk0/hqdefault_live.jpg"
+            }, 
+            {
+                "id" : "Q2XA20mA",
+                "youtubeId" : "pvPsJFRGleA",
+                "title" : "Justin Bieber - Holy ft. Chance The Rapper",
+                "duration" : "5:29",
+                "imgUrl" : "https://i.ytimg.com/vi/pvPsJFRGleA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "EOGrEi6d",
+                "youtubeId" : "3CxtK7-XtE0",
+                "title" : "DJ Khaled ft. Drake - POPSTAR (Official Music Video - Starring Justin Bieber)",
+                "duration" : "8:06",
+                "imgUrl" : "https://i.ytimg.com/vi/3CxtK7-XtE0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "RbCM0Jl3",
+                "youtubeId" : "8EJ3zbKTWQ8",
+                "title" : "Justin Bieber - Yummy ",
+                "duration" : "3:51",
+                "imgUrl" : "https://i.ytimg.com/vi/8EJ3zbKTWQ8/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "Beethoven",
+        "description" : "If you prefer your chill-out time accompanied with a country twang, this playlist is sure to satisfy.\n\n",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601197559/rouxwxdmsbnlxyu6xvcj.jpg",
+        "likedByUsers" : [],
+        "connectedUsers" : [],
+        "genre" : "Classical",
+        "createdBy" : {
+            "name" : "hilla",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601194031/v45tluuard3bcokifovk.jpg",
+            "id" : "5f704831d8b8d625ecf50c6e"
+        },
+        "songs" : [ 
+            {
+                "id" : "X0DF4YWT",
+                "youtubeId" : "_mVW8tgGY_w",
+                "title" : "Beethoven - Für Elise (Piano Version)",
+                "duration" : "2:56",
+                "imgUrl" : "https://i.ytimg.com/vi/_mVW8tgGY_w/hqdefault.jpg"
+            }, 
+            {
+                "id" : "SbcKMBIe",
+                "youtubeId" : "121LT-2vFWY",
+                "title" : "Five Things You Didn't Know About Beethoven | Famous Composers",
+                "duration" : "6:52",
+                "imgUrl" : "https://i.ytimg.com/vi/121LT-2vFWY/hqdefault.jpg"
+            }, 
+            {
+                "id" : "M4hmWrJs",
+                "youtubeId" : "wfF0zHeU3Zs",
+                "title" : "Beethoven - Für Elise",
+                "duration" : "2:56",
+                "imgUrl" : "https://i.ytimg.com/vi/wfF0zHeU3Zs/hqdefault.jpg"
+            }, 
+            {
+                "id" : "B9uVW3I5",
+                "youtubeId" : "jgpJVI3tDbY",
+                "title" : "The Best of Classical Music 🎻 Mozart, Beethoven, Bach, Chopin, Vivaldi 🎹 Most Famous Classic Pieces",
+                "duration" : "3H28:20",
+                "imgUrl" : "https://i.ytimg.com/vi/jgpJVI3tDbY/hqdefault.jpg"
+            }, 
+            {
+                "id" : "0crMR3yV",
+                "youtubeId" : "5rSKRdIk8WA",
+                "title" : "Beethoven: Symphony No. 5 in C Minor, Op. 67 - 3. Allegro",
+                "duration" : "4:55",
+                "imgUrl" : "https://i.ytimg.com/vi/5rSKRdIk8WA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "GA2P27Hi",
+                "youtubeId" : "T0ZZvX0gDbA",
+                "title" : "Beethoven: Piano Sonata No.8 In C Minor, Op.13 -\"Pathétique\" - 1. Grave - Allegro di molto e...",
+                "duration" : "9:36",
+                "imgUrl" : "https://i.ytimg.com/vi/T0ZZvX0gDbA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "waMHtCzW",
+                "youtubeId" : "RZlLaBPSlG8",
+                "title" : "A Fifth of Beethoven",
+                "duration" : "3:04",
+                "imgUrl" : "https://i.ytimg.com/vi/RZlLaBPSlG8/hqdefault.jpg"
+            }, 
+            {
+                "id" : "n5MHICiL",
+                "youtubeId" : "AtcPhQB7rh0",
+                "title" : "Beethoven: Piano Sonata No.14 In C Sharp Minor, Op.27 No.2 -\"Moonlight\" - 1. Adagio sostenuto",
+                "duration" : "6:32",
+                "imgUrl" : "https://i.ytimg.com/vi/AtcPhQB7rh0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "LKk2BAwI",
+                "youtubeId" : "xwCujH0SQIw",
+                "title" : "Nelson Freire plays Beethoven Waldstein Sonata",
+                "duration" : "2:35",
+                "imgUrl" : "https://i.ytimg.com/vi/xwCujH0SQIw/hqdefault.jpg"
+            }, 
+            {
+                "id" : "S689lwBD",
+                "youtubeId" : "Z7oPHkqzPqA",
+                "title" : "David Garrett - The 5th",
+                "duration" : "3:36",
+                "imgUrl" : "https://i.ytimg.com/vi/Z7oPHkqzPqA/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Zx2CuVMw",
+                "youtubeId" : "Vi05EG6sTVQ",
+                "title" : "Beethoven: Symphony No. 7 in A Major, Op. 92 - 2. Allegretto",
+                "duration" : "8:41",
+                "imgUrl" : "https://i.ytimg.com/vi/Vi05EG6sTVQ/hqdefault.jpg"
+            }, 
+            {
+                "id" : "cXXKoXn4",
+                "youtubeId" : "4Tr0otuiQuU",
+                "title" : "Beethoven - Moonlight Sonata (FULL)",
+                "duration" : "15:00",
+                "imgUrl" : "https://i.ytimg.com/vi/4Tr0otuiQuU/hqdefault.jpg"
+            }, 
+            {
+                "id" : "cUzbuzxn",
+                "youtubeId" : "W-fFHeTX70Q",
+                "title" : "The Best of Beethoven",
+                "duration" : "1H51:04",
+                "imgUrl" : "https://i.ytimg.com/vi/W-fFHeTX70Q/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "soul is back!",
+        "description" : "listen to good music that does good to the heart and soul.\n\nlisten to good music that does good to the heart and soul.\n\nlisten to good music that does good to the heart and soul.\n\nlisten to good music that does good to the heart and soul.\n\n",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601198520/oe0lefsizbvsow77965l.jpg",
+        "likedByUsers" : [],
+        "connectedUsers" : [],
+        "genre" : "Blues",
+        "createdBy" : {
+            "name" : "hilla",
+            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601194031/v45tluuard3bcokifovk.jpg",
+            "id" : "5f704831d8b8d625ecf50c6e"
+        },
+        "songs" : [ 
+            {
+                "id" : "j6aMXSWK",
+                "youtubeId" : "dTiRnXy4FZI",
+                "title" : "Elisa - Soul (Lyric Video)",
+                "duration" : "4:15",
+                "imgUrl" : "https://i.ytimg.com/vi/dTiRnXy4FZI/hqdefault.jpg"
+            }, 
+            {
+                "id" : "FF4d6JFY",
+                "youtubeId" : "PAWkKorCuuY",
+                "title" : "The Very Best of Soul - Top Hit Soul Songs 2020 | New Soul Music #2",
+                "duration" : "2H7:57",
+                "imgUrl" : "https://i.ytimg.com/vi/PAWkKorCuuY/hqdefault.jpg"
+            }, 
+            {
+                "id" : "zaXXuVGu",
+                "youtubeId" : "x-1IrOEdSu0",
+                "title" : " S.O.U.L _ Get Myself With You(네 꿈이 좋아)",
+                "duration" : "4:13",
+                "imgUrl" : "https://i.ytimg.com/vi/x-1IrOEdSu0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "ZdLH36Du",
+                "youtubeId" : "uwzDV1nWSVo",
+                "title" : "The Best Of Soul Train | New Soul Music | Soul Greatest Hits",
+                "duration" : "1H58:55",
+                "imgUrl" : "https://i.ytimg.com/vi/uwzDV1nWSVo/hqdefault.jpg"
+            }, 
+            {
+                "id" : "485FuP7y",
+                "youtubeId" : "LXO7UL84rK0",
+                "title" : "Michael Bolton - Soul Provider ",
+                "duration" : "4:29",
+                "imgUrl" : "https://i.ytimg.com/vi/LXO7UL84rK0/hqdefault.jpg"
+            }, 
+            {
+                "id" : "IuLqKoIs",
+                "youtubeId" : "hDHFTG21GMg",
+                "title" : "The Very Best Of Soul-Greatest Soul Songs Of All Time - Soul Music 2020",
+                "duration" : "1H29:40",
+                "imgUrl" : "https://i.ytimg.com/vi/hDHFTG21GMg/hqdefault.jpg"
+            }, 
+            {
+                "id" : "x92Xed45",
+                "youtubeId" : "ZxgDmH9FjrM",
+                "title" : "Soul Collection - Best of Soul Music - Top Hit Soul Songs 2020 Collection",
+                "duration" : "1H32:31",
+                "imgUrl" : "https://i.ytimg.com/vi/ZxgDmH9FjrM/hqdefault.jpg"
+            }, 
+            {
+                "id" : "dL6j5fsg",
+                "youtubeId" : "X7ses5rI5U4",
+                "title" : "The 100 Greatest Soul Songs of the 70s   Unforgettable Soul Music Full Playlist",
+                "duration" : "2H50:36",
+                "imgUrl" : "https://i.ytimg.com/vi/X7ses5rI5U4/hqdefault.jpg"
+            }, 
+            {
+                "id" : "IAjpp2uI",
+                "youtubeId" : "xytORFECRIM",
+                "title" : "The Very Best Of Soul - Greatest Soul Songs Of All Time - Soul Music Playlist",
+                "duration" : "1H41:24",
+                "imgUrl" : "https://i.ytimg.com/vi/xytORFECRIM/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name" : "hilasd",
+        "description" : "dasdsa",
+        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601214619/rqreonv2u1ebweohhmrj.png",
+        "genre" : "Hip-hop",
+        "createdBy" : {
+            "name" : "Guest",
+            "imgUrl" : "",
+            "id" : "teTHh"
+        },
+        "songs" : [ 
+            {
+                "id" : "U1D83py8",
+                "youtubeId" : "LYHE4lD_CSA",
+                "title" : "ASD (Afrob & Samy Deluxe) - Sneak Preview ",
+                "duration" : "4:05",
+                "imgUrl" : "https://i.ytimg.com/vi/LYHE4lD_CSA/hqdefault.jpg"
+            }
+        ]
+    }
+]
