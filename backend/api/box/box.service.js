@@ -7,7 +7,6 @@ const COLL_NAME = 'box'
 
 async function query(filterBy = {}) {
     const criteria = _buildCriteria(filterBy)
-    console.log("query -> filterBy", filterBy)
     const collection = await dbService.getCollection(COLL_NAME)
     try {
         const boxs = await collection.find(criteria).toArray();
@@ -50,13 +49,6 @@ async function remove(boxId) {
     }
 }
 
-// function remove(id) {
-//     console.log("remove -> boxs", boxs)
-//     const idx = boxs.findIndex(box => box._id === id)
-//     boxs.splice(idx, 1);
-//     _saveBoxsToFile()
-//     return Promise.resolve();
-// }
 
 async function update(box) {
     const collection = await dbService.getCollection(COLL_NAME)

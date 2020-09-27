@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 import HeadsetIcon from '@material-ui/icons/Headset';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 export class BoxPreview extends Component {
 
     render() {
-        const { box, isHomePage, connectedUsers } = this.props;
+        const { box, isHomePage, connectedUsers, onDelete } = this.props;
         return (
             <section className={`box-preview ${isHomePage ? 'box-home-preview' : ''}`}>
                 <Link to={`/box/details/${box._id}`} >
@@ -20,6 +21,7 @@ export class BoxPreview extends Component {
                             <HeadsetIcon />
                         </div>
                     </div>
+                    {onDelete && <DeleteIcon onClick={(ev) => onDelete(ev, box._id)}/> }
                 </div>
             </section >
 

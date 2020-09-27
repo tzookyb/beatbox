@@ -3,13 +3,13 @@ import thunk from 'redux-thunk';
 
 import { userReducer } from './reducers/userReducer';
 import { boxReducer } from './reducers/boxReducer';
-import { messageReducer } from './reducers/messageReducer';
+import { msgReducer } from './reducers/msgReducer';
 import { connectedUsersReducer } from './reducers/connectedUsersReducer';
 
 const rootReducer = combineReducers({
     userReducer,
     boxReducer,
-    messageReducer,
+    msgReducer,
     connectedUsersReducer
 })
 

@@ -36,6 +36,7 @@ export class _GenresFilter extends Component {
         query.set('genre', genre);
         return query.toString();
     }
+    
     getCurrGenre = () => {
         const urlParams = new URLSearchParams(this.props.history.location.search)
         return urlParams.get('genre');

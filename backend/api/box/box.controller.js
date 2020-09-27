@@ -24,7 +24,6 @@ async function updateBox(req, res) {
 }
 
 async function addBox(req, res) {
-    
     const box = req.body;
     await boxService.add(box)
     res.send(box)

@@ -2,6 +2,7 @@ import { boxService } from "../../services/boxService"
 import { socketService } from "../../services/socketService";
 
 export function loadBoxes(query) {
+  console.log("loadBoxes -> query", query)
   return async dispatch => {
     const boxes = await boxService.query(query);
     dispatch({ type: 'SET_BOXES', boxes })
@@ -38,6 +39,7 @@ export function updateBox(currBox) {
 }
 
 export function removeBox(boxId) {
+  console.log("removeBox -> boxId", boxId)
   return async dispatch => {
     await boxService.remove(boxId)
     dispatch({ type: 'REMOVE_BOX', boxId })

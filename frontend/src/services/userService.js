@@ -1,36 +1,54 @@
 import httpService from './httpService'
+import { boxService } from './boxService';
+
 const STORAGE_KEY = 'loggedinUser'
 
 export const userService = {
     login,
     signup,
     logout,
-    // getUsers,
     getUser,
     getMinimalUser,
-    addBox,
+    addBoxToUser,
+    getUserBoxes,
+    getUserById,
+    removeBoxFromUser,
+    toggleToFavorite,
+    getUserFavoriteBoxes,
+    isBoxFavorite
 }
 
-async function addBox(box) {
+async function addBoxToUser(boxId) {
     const user = getUser();
-    if (!user.boxes) user.boxes = [];
-    user.boxes.push(box);
-    return await httpService.put(`user/${user._id}`, user)
+    if (user.isGuest) return;
+    const userId = user._id;
+    const userFromDb = await getUserById(userId);
+    if (!userFromDb.boxes) userFromDb.boxes = [];
+    userFromDb.boxes.push(boxId);
+    return await httpService.put(`user/${user._id}`, userFromDb)
 }
 
-async function login(userCred) {
-    const res = await httpService.post(`auth/login`, userCred);
+async function removeBoxFromUser(boxId) {
+    const user = getUser();
+    const userId = user._id;
+    const userFromDb = await getUserById(userId);
+    const newBoxes = userFromDb.boxes.filter(box => boxId !== box);
+    userFromDb.boxes = newBoxes;
+    return await httpService.put(`user/${user._id}`, userFromDb);
+}
+
+async function login(userCerd) {
+    const res = await httpService.post(`auth/login`, userCerd);
     return _handleLoggedinUser(res);
 }
 
 async function logout() {
     await httpService.post(`auth/logout`);
-    const user = _getGuestMode();
-    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(user));
+    sessionStorage.clear();
 }
 
-async function signup(userCred) {
-    const res = await httpService.post(`auth/signup`, userCred);
+async function signup(userCerd) {
+    const res = await httpService.post(`auth/signup`, userCerd);
     return _handleLoggedinUser(res);
 }
 
@@ -39,11 +57,9 @@ function getUser() {
     if (!user) {
         user = _getGuestMode();
         sessionStorage.setItem(STORAGE_KEY, JSON.stringify(user))
-        // const res = await httpService.post(`user`, user);
     }
     return user;
 }
-
 
 function getMinimalUser() {
     var user = getUser();
@@ -59,6 +75,7 @@ function _getGuestMode() {
         username: 'Guest',
         fullName: 'New Guest',
         imgUrl: '',
+        isGuest: true,
         _id: _makeId()
     }
 }
@@ -81,24 +98,56 @@ function _loadUser() {
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY));
 }
 
+async function getUserById(userId) {
+    return httpService.get(`user/${userId}`);
+
+}
+
+async function getUserBoxes(userId) {
+    const userFromDb = await getUserById(userId);
+    if (!userFromDb.boxes) return;
+    const boxes = await Promise.all(userFromDb.boxes.map(async (boxId) => {
+        const box = await boxService.getById(boxId);
+        return box;
+    }))
+    return boxes;
+}
+
+async function toggleToFavorite(boxId) {
+    const user = getUser();
+    console.log("toggleToFavorite -> user.isGuest", user.isGuest)
+    if (user.isGuest) return;
+    const userId = user._id;
+    console.log("toggleToFavorite -> userId", userId)
+    const userFromDb = await getUserById(userId);
+    if (!userFromDb.favoriteBoxes) {
+        userFromDb.favoriteBoxes = [];
+        userFromDb.favoriteBoxes.push(boxId);
+    }
+    else {
+        // const isFavortie = isBoxFavorite(userId, boxId);
+        const isFavoriteIdx = await userFromDb.favoriteBoxes.findIndex(box => box === boxId);
+        if (isFavoriteIdx === -1) userFromDb.favoriteBoxes.push(boxId);
+        else userFromDb.favoriteBoxes.splice(isFavoriteIdx, 1);
+    }
+    return await httpService.put(`user/${user._id}`, userFromDb)
+}
 
 
-// async function getUsers() {
-//     return httpService.get(`user`);
-// }
+async function getUserFavoriteBoxes(userId) {
+    const userFromDb = await getUserById(userId);
+    if (!userFromDb.favoriteBoxes) return;
+    const boxes = await Promise.all(userFromDb.favoriteBoxes.map(async (boxId) => {
+        const box = await boxService.getById(boxId);
+        return box;
+    }))
+    return boxes;
+}
 
-
-
-
-// function login(userCard) {
-//     userCard._id = _makeId();
-//     sessionStorage.setItem(STORAGE_KEY, JSON.stringify(userCard))
-// }
-
-// function getUser() {
-//     var user = JSON.parse(sessionStorage.getItem(STORAGE_KEY));
-//     if (!user) user = getGuestMode();
-//     sessionStorage.setItem(STORAGE_KEY, JSON.stringify(user))
-//     // return getGuestMode();
-//     return user;
-// }
+async function isBoxFavorite(userId, boxId) {
+    const userFromDb = await getUserById(userId);
+    let isFavoriteIdx = -1;
+    if (!userFromDb.favoriteBoxes) return isFavoriteIdx;
+    isFavoriteIdx = await userFromDb.favoriteBoxes.findIndex(box => box === boxId)
+    return isFavoriteIdx;
+}

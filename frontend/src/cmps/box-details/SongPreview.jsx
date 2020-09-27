@@ -34,6 +34,7 @@ export class _SongPreview extends Component {
             <Draggable draggableId={songDetails.id} index={index} isDragDisabled={isFilter}>
                 {provided => (
                     <li
+
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
@@ -41,7 +42,7 @@ export class _SongPreview extends Component {
                         className="song-preview flex space-between"
                         onDoubleClick={() => this.props.changeSong(songDetails.id)}
                     >
-
+                
                         <div className="song-data flex align-center">
                             <div className="play-icon-container flex align-center cursor-pointer">
                                 {isSongPlaying ?
