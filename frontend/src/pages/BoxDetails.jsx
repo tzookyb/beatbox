@@ -118,7 +118,6 @@ class _BoxDetails extends Component {
         this.setState(prevState => ({ isSongPickOpen: !prevState.isSongPickOpen }))
     }
 
-
     onDragStart = () => {
         this.setState({ isDragging: true })
     }
@@ -155,7 +154,6 @@ class _BoxDetails extends Component {
         }
         socketService.emit('chat newMsg', msgObj);
     }
-
 
     onSwapSongs = (srcIdx, destIdx) => {
         const newSongs = [...this.props.currBox.songs];

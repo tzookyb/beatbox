@@ -49,5 +49,3 @@ function connectSockets(io) {
         })
     })
 }
-
-

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { SystemMessage } from 'react-chat-elements'
-import { MessageBox } from 'react-chat-elements';
 import { Input } from 'react-chat-elements'
 import { Button } from 'react-chat-elements'
 import Avatar from '@material-ui/core/Avatar';
