@@ -6,14 +6,14 @@ const DETAILS_URL = 'https://www.googleapis.com/youtube/v3/videos'
 
 console.clear()
 console.log('********************************************************************************')
-const db = require('./IDANCHANGE3.json');
+const db = require('./try1.json');
 let newdb = [...db]
 
-newdb.forEach(box => {
-    delete box.likedByUsers;
-    delete box.connectedUsers;
-    console.log(box)
-})
+// newdb.forEach(box => {
+//     delete box.likedByUsers;
+//     delete box.connectedUsers;
+//     console.log(box)
+// })
 
 // newdb.forEach(box => {
 //     box.songs.forEach(async (song, idx) => {
@@ -60,7 +60,7 @@ newdb.forEach(box => {
 //         return null;
 //     }
 // }
-setTimeout(() => { fs.writeFile('./IDANCHANGE3.json', JSON.stringify(newdb), (err) => console.log(err)) }, 2000)
+// setTimeout(() => { fs.writeFile('./IDANCHANGE3.json', JSON.stringify(newdb), (err) => console.log(err)) }, 2000)
 
 
 // newdb = newdb.map(box => {

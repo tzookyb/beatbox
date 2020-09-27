@@ -8,7 +8,6 @@ export function updateLocalPlayer(currSong) {
 }
 //  ***************************************************************
 export function changeSong(id) {
-    console.log("changeSong -> id", id)
     return (dispatch) => {
         const currSong = {
             id,

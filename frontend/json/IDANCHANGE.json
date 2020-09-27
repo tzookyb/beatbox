@@ -3,28 +3,6 @@
         "name": "Disney Songs",
         "description": "All time favorite songs from Disney's Movies!",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600813979/lybllxgacr5kiu5qsxwe.jpg",
-        "likedByUsers": [
-            {
-                "name": "Guest",
-                "id": "AGafG"
-            },
-            {
-                "name": "Tzookyb",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600849452/tzijfpkmytjayf3i4cox.jpg",
-                "id": "MywOw"
-            },
-            {
-                "name": "Guest",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683124/ko8ia4xof4zz3yspbgoc.png",
-                "id": "tM0q7"
-            },
-            {
-                "name": "Guest",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683124/ko8ia4xof4zz3yspbgoc.png",
-                "id": "CksWu"
-            }
-        ],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -61,13 +39,15 @@
                 "id": "0MxulhivCvI",
                 "youtubeId": "0MxulhivCvI",
                 "title": "Hakuna Matata (From \"The Lion King\")",
-                "imgUrl": "https://i.ytimg.com/vi/0MxulhivCvI/hqdefault.jpg"
+                "imgUrl": "https://i.ytimg.com/vi/0MxulhivCvI/hqdefault.jpg",
+                "duration": "4:44"
             },
             {
                 "id": "elBKil5zE2g",
                 "youtubeId": "elBKil5zE2g",
                 "title": "I'll Make a Man Out of You (From \"Mulan\"/Soundtrack)",
-                "imgUrl": "https://i.ytimg.com/vi/elBKil5zE2g/hqdefault.jpg"
+                "imgUrl": "https://i.ytimg.com/vi/elBKil5zE2g/hqdefault.jpg",
+                "duration": "3:22"
             },
             {
                 "id": "wuC6x86I",
@@ -101,13 +81,15 @@
                 "id": "oIN5fT5n",
                 "youtubeId": "eGLSPyGszjo",
                 "title": "Will Smith - Prince Ali (From \"Aladdin\")",
-                "imgUrl": "https://i.ytimg.com/vi/eGLSPyGszjo/hqdefault.jpg"
+                "imgUrl": "https://i.ytimg.com/vi/eGLSPyGszjo/hqdefault.jpg",
+                "duration": "4:08"
             },
             {
                 "id": "GC_mV1IpjWA",
                 "youtubeId": "GC_mV1IpjWA",
                 "title": "The Little Mermaid - Under the Sea (from The Little Mermaid) ",
-                "imgUrl": "https://i.ytimg.com/vi/GC_mV1IpjWA/hqdefault.jpg"
+                "imgUrl": "https://i.ytimg.com/vi/GC_mV1IpjWA/hqdefault.jpg",
+                "duration": "3:27"
             }
         ]
     },
@@ -115,13 +97,6 @@
         "name": "ראפ ישראלי",
         "description": "ראפ ישראלי בועט, גם מחתרתי ומסחרי",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600845807/zmq5ltfawme2h4czvonw.jpg",
-        "likedByUsers": [
-            {
-                "name": "Guest",
-                "id": "AGafG"
-            }
-        ],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -151,17 +126,6 @@
         "name": "Singer/Songwriter",
         "description": "The best Singer/Songwriter compilation.\nEnchanting vocal and a guitar.",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600814004/ikjsopbdamtaqbqydccs.png",
-        "likedByUsers": [
-            {
-                "name": "Guest",
-                "id": "ld7Aq"
-            },
-            {
-                "name": "Guest",
-                "id": "AGafG"
-            }
-        ],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -212,27 +176,6 @@
         "name": "Podcasts Box",
         "description": "Join this box to listen and debate with people about mind-opening talks.",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600820355/qeypdubpanizishvwo4e.jpg",
-        "likedByUsers": [
-            {
-                "name": "Guest",
-                "id": "ld7Aq"
-            },
-            {
-                "name": "Guest",
-                "id": "H04UJ"
-            },
-            {
-                "name": "Guest",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683124/ko8ia4xof4zz3yspbgoc.png",
-                "id": "bUyie"
-            },
-            {
-                "name": "Guest",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683124/ko8ia4xof4zz3yspbgoc.png",
-                "id": "CksWu"
-            }
-        ],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -257,8 +200,6 @@
         "name": "Best of Coldplay",
         "description": "Probably the most popular band in the world!",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600813315/q0jxukjnvzfnspcltont.webp",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -306,14 +247,6 @@
         "name": "Rock with Muse",
         "description": "It is the best progressive rock band nowadays... ",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600815277/uwngqfoqlijwp0fss8xe.jpg",
-        "likedByUsers": [
-            {
-                "name": "Guest",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683124/ko8ia4xof4zz3yspbgoc.png",
-                "id": "CksWu"
-            }
-        ],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -361,14 +294,6 @@
         "name": "Queen",
         "description": "Fun fun fun! Playlist of Queen!",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600815410/x5vckj6lovsxgmab6uhm.jpg",
-        "likedByUsers": [
-            {
-                "name": "Sapir",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600821454/luniofstj93aiowrw5um.jpg",
-                "id": "qZlHX"
-            }
-        ],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -428,8 +353,6 @@
         "name": "Melodic Trance",
         "description": "Trance that will send shivers down your spine!",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816521/anl1pxsisnjrqkgicqii.png",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -477,14 +400,6 @@
         "name": "להקות ישראליות",
         "description": "הלהקות הכי טובות, השירים הכי טובים",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600845462/z5ygriwmkltbss0r73dm.jpg",
-        "likedByUsers": [
-            {
-                "name": "Guest",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683124/ko8ia4xof4zz3yspbgoc.png",
-                "id": "CYPv5"
-            }
-        ],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -509,7 +424,6 @@
                 "title": "Hadag Nahash - Shir Nehama הדג נחש - שיר נחמה",
                 "imgUrl": "https://i.ytimg.com/vi/d1uvv83Z_FY/hqdefault.jpg"
             },
-            null,
             {
                 "id": "PVAD3KWgQrQ",
                 "youtubeId": "PVAD3KWgQrQ",
@@ -546,8 +460,6 @@
         "name": "Ride that horse",
         "description": "Country Music",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816628/g3rqckyu8yhdils0enpd.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -607,14 +519,6 @@
         "name": "Recent Eurovisions",
         "description": "The cheesy song contest with the addictive songs",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600820319/grli7inxgayg3nfn36bo.jpg",
-        "likedByUsers": [
-            {
-                "name": "Guest",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683124/ko8ia4xof4zz3yspbgoc.png",
-                "id": "bUyie"
-            }
-        ],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -662,8 +566,6 @@
         "name": "Female Power",
         "description": "Powerful female artists",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816794/fmbiso4vba0lgaf6yyo6.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -717,8 +619,6 @@
         "name": "Boy Bands",
         "description": "Boys will be boys",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600812809/v2igxocbmcyywn9vc1wp.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -796,8 +696,6 @@
         "name": "Electronic Chill",
         "description": "Wind down with this fantastic mellow electronic music.",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816532/krbjfsgznwqbltidscua.png",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -845,30 +743,6 @@
         "name": "מלחמת העידנים",
         "description": "עידן רייכל, עידן עמדי, עידן חביב... מי הטוב ביותר?",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600845446/napqajvotyvflfe2cpfw.jpg",
-        "likedByUsers": [
-            {
-                "name": "Guest",
-                "id": "ld7Aq"
-            },
-            {
-                "name": "hila",
-                "id": "oxGU8"
-            },
-            {
-                "name": "Guest",
-                "id": "H04UJ"
-            },
-            {
-                "name": "Guest",
-                "id": "5bzxu"
-            },
-            {
-                "name": "Guest",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683124/ko8ia4xof4zz3yspbgoc.png",
-                "id": "Z7vz0"
-            }
-        ],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -917,8 +791,6 @@
         "name": "Psychedelic Trance",
         "description": "When you need some hard bass",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816548/ledo10kqdebdqv79lt6w.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -966,26 +838,6 @@
         "name": "With the Beatles",
         "description": "Good old Oldies",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600815584/j5mnnn1oqk449lezl6j7.jpg",
-        "likedByUsers": [
-            {
-                "name": "Guest",
-                "id": "ld7Aq"
-            },
-            {
-                "name": "Guest",
-                "id": "H04UJ"
-            },
-            {
-                "name": "Guest",
-                "id": "s6oRe"
-            },
-            {
-                "name": "Shahar",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600817513/gonkjon5koqztgvojppt.jpg",
-                "id": "EXaP4"
-            }
-        ],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -1033,22 +885,6 @@
         "name": "This is Nirvana",
         "description": "Did you miss your teen spirit?",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600815824/ebnrbfkqbf8umthccw0h.jpg",
-        "likedByUsers": [
-            {
-                "name": "Guest",
-                "id": "ld7Aq"
-            },
-            {
-                "name": "Guest",
-                "id": "jiJ5U"
-            },
-            {
-                "name": "Shahar",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600817513/gonkjon5koqztgvojppt.jpg",
-                "id": "EXaP4"
-            }
-        ],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -1090,13 +926,6 @@
         "name": "Pearl Jam",
         "description": "All fans enroll here!",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816339/bdz4rvbqb6rnwpefze0f.jpg",
-        "likedByUsers": [
-            {
-                "name": "Guest",
-                "id": "ld7Aq"
-            }
-        ],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -1138,13 +967,6 @@
         "name": "90's MTV",
         "description": "All the best songs of 90's",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600812786/a5fgfds8zs7jt7wtp4ps.jpg",
-        "likedByUsers": [
-            {
-                "name": "Guest",
-                "id": "H04UJ"
-            }
-        ],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -1198,19 +1020,6 @@
         "name": "Daft Punk",
         "description": "The wonderful French electro duo.",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600583439/woryvrnfuirts1uxxmj1.jpg",
-        "likedByUsers": [
-            {
-                "name": "Shahar",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600817513/gonkjon5koqztgvojppt.jpg",
-                "id": "EXaP4"
-            },
-            {
-                "name": "Tzookyb",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600849452/tzijfpkmytjayf3i4cox.jpg",
-                "id": "MywOw"
-            }
-        ],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -1264,8 +1073,6 @@
         "name": "A day at the beach",
         "description": "Electronic collection suitable for a day at the beach",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600818771/yhzatrcnbddcizmdsgqk.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -1319,8 +1126,6 @@
         "name": "Rasta Man",
         "description": "Finest reggae music",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600584206/njjh2z87q4gx3cxaf0db.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -1368,8 +1173,6 @@
         "name": "Classical Music",
         "description": "Gather around, classical lovers",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600584410/ljst4v8pbrw9inxkpm5v.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -1405,8 +1208,6 @@
         "name": "Pulp Fiction",
         "description": "Let's talk about the wonderful scenes with the original soundtrack",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816677/n4mk2zcayy9mx5ln7aqh.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -1448,13 +1249,6 @@
         "name": "RIP Chris Cornell",
         "description": "Let's reminisce Chris's best songs",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816414/prep6kgbtv4zgipenn1t.jpg",
-        "likedByUsers": [
-            {
-                "name": "Guest",
-                "id": "ld7Aq"
-            }
-        ],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -1502,8 +1296,6 @@
         "name": "Fifa Songs",
         "description": "All Fifa game fans! the best game with the best songs! let's choose the best ever!",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816497/boit9u3kyi5y6lvhxvme.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -1551,13 +1343,6 @@
         "name": "Best of Beck",
         "description": "We all love the pop-mastermind Beck. What's your favorite song?",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600812829/d2rlt5awolutapr5w4hz.jpg",
-        "likedByUsers": [
-            {
-                "name": "Guest",
-                "id": "jiJ5U"
-            }
-        ],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -1616,22 +1401,6 @@
     {
         "name": "מזרחית ונהנים",
         "description": "",
-        "likedByUsers": [
-            {
-                "name": "Guest",
-                "id": "s6oRe"
-            },
-            {
-                "name": "Guest",
-                "id": "5bzxu"
-            },
-            {
-                "name": "Guest",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683124/ko8ia4xof4zz3yspbgoc.png",
-                "id": "CYPv5"
-            }
-        ],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -1680,8 +1449,6 @@
         "name": "Silly Songs",
         "description": "Oh my god, i just entered this box by mistake...",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600818735/gmeyvuutlrrhzx4gexz5.png",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "tags": [
             "love",
             "happy"
@@ -1729,27 +1496,6 @@
         "name": "Morning",
         "description": "Bring your coffee and listen to this!",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600814302/rfnazrt12ozy4o7gs2oi.jpg",
-        "likedByUsers": [
-            {
-                "name": "Guest",
-                "id": "YAsFp"
-            },
-            {
-                "name": "Guest",
-                "id": "5bzxu"
-            },
-            {
-                "name": "Tzookyb",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600849452/tzijfpkmytjayf3i4cox.jpg",
-                "id": "MywOw"
-            },
-            {
-                "name": "Guest",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683124/ko8ia4xof4zz3yspbgoc.png",
-                "id": "FaGIp"
-            }
-        ],
-        "connectedUsers": [],
         "genre": "Easy",
         "createdBy": {
             "name": "Hilla",
@@ -1768,35 +1514,13 @@
                 "youtubeId": "04mfKJWDSzI",
                 "title": "Gorillaz - On Melancholy Hill ",
                 "imgUrl": "https://i.ytimg.com/vi/04mfKJWDSzI/hqdefault.jpg"
-            },
-            null
+            }
         ]
     },
     {
         "name": "Get ready for bed",
         "description": "Let's get ready for sleep",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600814322/lcmty98v1p53nnzwqrgd.jpg",
-        "likedByUsers": [
-            {
-                "name": "Guest",
-                "id": "YAsFp"
-            },
-            {
-                "name": "Guest",
-                "id": "5bzxu"
-            },
-            {
-                "name": "Shahar",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600817513/gonkjon5koqztgvojppt.jpg",
-                "id": "EXaP4"
-            },
-            {
-                "name": "Guest",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683124/ko8ia4xof4zz3yspbgoc.png",
-                "id": "bUyie"
-            }
-        ],
-        "connectedUsers": [],
         "genre": "Easy",
         "createdBy": {
             "name": "Matan",
@@ -1840,13 +1564,6 @@
         "name": "Acoustic Guitar",
         "description": "ohhh that soft sound...",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600814501/ieur3aktqqrgruhmxalh.jpg",
-        "likedByUsers": [
-            {
-                "name": "Guest",
-                "id": "YAsFp"
-            }
-        ],
-        "connectedUsers": [],
         "genre": "Easy",
         "createdBy": {
             "name": "Hilla",
@@ -1878,14 +1595,6 @@
         "name": "הליגיונרים",
         "description": "אמנים כחול-לבן שהצליחו בחו\"ל",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600845560/l9bukt3vquexrhoqwreh.jpg",
-        "likedByUsers": [
-            {
-                "name": "Hila",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600887945/jy2gcjxpfza4orb505y3.jpg",
-                "id": "UQg9K"
-            }
-        ],
-        "connectedUsers": [],
         "genre": "Israeli",
         "createdBy": {
             "name": "Idan",
@@ -1935,13 +1644,6 @@
         "name": "Queen of Pop",
         "description": "Long live the queen",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600813047/vbysdgtxzj7d0bwa85ul.jpg",
-        "likedByUsers": [
-            {
-                "name": "Guest",
-                "id": "jiJ5U"
-            }
-        ],
-        "connectedUsers": [],
         "genre": "Pop",
         "createdBy": {
             "name": "Idan",
@@ -1985,8 +1687,6 @@
         "name": "King of Pop",
         "description": "Long live the king!",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600813916/etbwrfi38rbmu2kqww63.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "genre": "Pop",
         "createdBy": {
             "name": "Idan",
@@ -2042,8 +1742,6 @@
         "name": "Let's Study",
         "description": "Music to keep you focused while studying with friends",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600820282/ljzuteqmfmthb1nsh8io.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "genre": "Easy",
         "createdBy": {
             "name": "Idan",
@@ -2075,8 +1773,6 @@
         "name": "Chill on the beach",
         "description": "Music to lie on the sand",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600820220/ab8p8vny0jcq7aarfbkw.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "genre": "Easy",
         "createdBy": {
             "name": "Idan",
@@ -2126,8 +1822,6 @@
         "name": "Background Music",
         "description": "Soft music to have on the background",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683686/xsrdt0rrwntgribro7ke.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "genre": "Easy",
         "createdBy": {
             "name": "Idan",
@@ -2165,8 +1859,6 @@
         "name": "Arbic music",
         "description": "The Best arabic music ever",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600812463/gpfxahvgq10qj71a01fr.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "genre": "Blues",
         "createdBy": {},
         "songs": [
@@ -2206,8 +1898,6 @@
         "name": "Best Box",
         "description": "All the alternative music that you looking for",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600812678/r4vnkt1mieeewawe9j09.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "genre": "Alternative",
         "createdBy": {},
         "songs": [
@@ -2247,8 +1937,6 @@
         "name": "Hip Hop Fun Music",
         "description": "Hip hop or hip-hop is a culture and art movement that was created by African Americans, Latino Americans and Caribbean Americans in the Bronx, New York City.",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600817054/ff4acc1dc2ct0eid4ukt.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "genre": "Hip-hop",
         "createdBy": {},
         "songs": [
@@ -2294,8 +1982,6 @@
         "name": "Eminem and All The best",
         "description": "Eminem is the best singer ever! in this box you can enjoy from him",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600817584/eq4dnmbj6ujiguqb8dwj.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "genre": "Hip-hop",
         "createdBy": {},
         "songs": [
@@ -2335,14 +2021,6 @@
         "name": "Nostalgia ",
         "description": "nostalgia songs to listen and remember",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600817977/sprujkhb6aeu57ho2mjs.jpg",
-        "likedByUsers": [
-            {
-                "name": "Shahar",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600817513/gonkjon5koqztgvojppt.jpg",
-                "id": "EXaP4"
-            }
-        ],
-        "connectedUsers": [],
         "genre": "Classical",
         "createdBy": {},
         "songs": [
@@ -2364,14 +2042,6 @@
         "name": "R.B.D",
         "description": "REBELDE WAY, songs from viva times",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600818205/j7cvi2tdccnjavkm9gx5.jpg",
-        "likedByUsers": [
-            {
-                "name": "Sapir",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600821454/luniofstj93aiowrw5um.jpg",
-                "id": "qZlHX"
-            }
-        ],
-        "connectedUsers": [],
         "genre": "Latin",
         "createdBy": {},
         "songs": [
@@ -2429,8 +2099,6 @@
         "name": "Salsa music",
         "description": "Come and dance with salse music",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600818371/gdsdpuejjvkanpkjrzfd.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "genre": "Latin",
         "createdBy": {},
         "songs": [
@@ -2476,14 +2144,6 @@
         "name": "Enrique iglesias",
         "description": "The most handsome singer קהקר\n",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600818628/wsb2mf96k0gaffnk0vvx.jpg",
-        "likedByUsers": [
-            {
-                "name": "Sapir",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600821454/luniofstj93aiowrw5um.jpg",
-                "id": "qZlHX"
-            }
-        ],
-        "connectedUsers": [],
         "genre": "Latin",
         "createdBy": {},
         "songs": [
@@ -2505,7 +2165,6 @@
                 "title": "Enrique Iglesias - DUELE EL CORAZON ft. Wisin",
                 "imgUrl": "https://i.ytimg.com/vi/xFutjZEBTXs/hqdefault.jpg"
             },
-            null,
             {
                 "id": "9GG3moPe",
                 "youtubeId": "f_EiqPp-vBM",
@@ -2523,22 +2182,13 @@
                 "youtubeId": "pRrjt4htXlE",
                 "title": "Enrique Iglesias - Nunca Te Olvidaré ",
                 "imgUrl": "https://i.ytimg.com/vi/pRrjt4htXlE/hqdefault.jpg"
-            },
-            null
+            }
         ]
     },
     {
         "name": "Childhood in espnioal",
         "description": "Chiquititas, rbd, floricienta",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600819118/n7imysouztgk2vwencwe.jpg",
-        "likedByUsers": [
-            {
-                "name": "Shahar",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600817513/gonkjon5koqztgvojppt.jpg",
-                "id": "EXaP4"
-            }
-        ],
-        "connectedUsers": [],
         "genre": "Latin",
         "createdBy": {},
         "songs": [
@@ -2608,14 +2258,6 @@
         "name": "Abba",
         "description": "all Abbasongs in this box",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600820404/pv8289bktb1idsjus4g0.jpg",
-        "likedByUsers": [
-            {
-                "name": "Sapir",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600821454/luniofstj93aiowrw5um.jpg",
-                "id": "qZlHX"
-            }
-        ],
-        "connectedUsers": [],
         "genre": "Classical",
         "createdBy": {},
         "songs": [
@@ -2673,8 +2315,6 @@
         "name": "Oasis",
         "description": "Don't look back in anger...",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600819391/bfjqy35zrvddbpqy5pc9.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "genre": "Rock",
         "createdBy": {},
         "songs": [
@@ -2732,8 +2372,6 @@
         "name": "Love Songs",
         "description": "For all the in love girls",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600819704/vq15tyfyhq9bgko2mhfd.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "genre": "Blues",
         "createdBy": {},
         "songs": [
@@ -2785,8 +2423,6 @@
         "name": "RELAX",
         "description": "Take a time to yourself and relax",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600843868/d2qqgn2wzl36mv432a9c.webp",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "genre": "Classical",
         "createdBy": {
             "name": "Guest",
@@ -2812,14 +2448,6 @@
         "name": " 🤘",
         "description": "Arosmith, 3 doors down and all the best of history",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600844686/wat4q9f7yu32hnqf8c43.jpg",
-        "likedByUsers": [
-            {
-                "name": "Guest",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683124/ko8ia4xof4zz3yspbgoc.png",
-                "id": "CYPv5"
-            }
-        ],
-        "connectedUsers": [],
         "genre": "Alternative",
         "createdBy": {
             "name": "Guest",
@@ -2887,8 +2515,6 @@
         "name": "Arik ",
         "description": "Arik for Idan",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600850315/bggqq5bmzz7rweu619kr.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "genre": "Israeli",
         "createdBy": {
             "name": "Guest",
@@ -2938,14 +2564,6 @@
         "name": "Latinus",
         "description": "Latinus Party",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600933124/m40xvycpsm5xtj8lmztr.jpg",
-        "likedByUsers": [
-            {
-                "name": "Sapir",
-                "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600933001/wfhucehli9vfempybutp.jpg",
-                "id": "fCWEk"
-            }
-        ],
-        "connectedUsers": [],
         "genre": "Latin",
         "createdBy": {
             "name": "Sapir",
@@ -2989,8 +2607,6 @@
         "name": "Disco party",
         "description": "Dance all the night",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600933241/zk9vpagxnzlnrmgebupn.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "genre": "Alternative",
         "createdBy": {
             "name": "Sapir",
@@ -3034,8 +2650,6 @@
         "name": "Hip hop party",
         "description": "For all hip hop party lovers",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600933554/gelr6v6ycbw0g8dnzaw0.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "genre": "Hip-hop",
         "createdBy": {
             "name": "Sapir",
@@ -3085,8 +2699,6 @@
         "name": "Pop Party",
         "description": "",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600933610/rmoaors4q97lf80luu7s.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "genre": "Pop",
         "createdBy": {
             "name": "Idan",
@@ -3112,8 +2724,6 @@
         "name": "Cajul Party",
         "description": "Wanna have a party? this is the best box for you!",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600954276/howqacbc9bmwuyhwaw2v.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "genre": "Pop",
         "createdBy": {
             "name": "Idan",
@@ -3169,8 +2779,6 @@
         "name": "Puki",
         "description": "Box for dance with dogs ",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600994359/ig6ua1y9tvpynwhrlxm1.webp",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "genre": "Alternative",
         "createdBy": {
             "name": "Guest",
@@ -3214,8 +2822,6 @@
         "name": "BreakUp Songs",
         "description": "When you'r so sad and you wanna to listen with your soul",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1600994895/h5wtnocix1lme2imhprn.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "genre": "Blues",
         "createdBy": {},
         "songs": [
@@ -3273,8 +2879,6 @@
         "name": "Hip Hop 2020",
         "description": "Going to Turn This Up Real Loud So I Can’t Hear Men Shouting at Me to Smile as I Walk Down the Street Because I Am a Woman and This is the Way the World Is.",
         "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1601186024/mu9vchb5oapm9enm9soo.jpg",
-        "likedByUsers": [],
-        "connectedUsers": [],
         "genre": "Hip-hop",
         "createdBy": {
             "name": "daniel",
@@ -3410,6 +3014,145 @@
             },
             {
                 "id": "AaCBGU2E",
+                "youtubeId": "8EJ3zbKTWQ8",
+                "title": "Justin Bieber - Yummy ",
+                "duration": "3:51",
+                "imgUrl": "https://i.ytimg.com/vi/8EJ3zbKTWQ8/hqdefault.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Jusitins",
+        "description": "All the jjustins in one place",
+        "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1601190388/ep5vvjjc73gr1zkrwhe0.png",
+        "genre": "Pop",
+        "createdBy": {
+            "name": "Hilla",
+            "imgUrl": "https://res.cloudinary.com/daqs7x8my/image/upload/v1601190346/z1a78yl5646o4tc4y4sm.jpg",
+            "id": "5f7039cc36ea40267c62c80c"
+        },
+        "songs": [
+            {
+                "id": "phn1Fzzc",
+                "youtubeId": "FQ3slUz7Jo8",
+                "title": "Justin Timberlake - Like I Love You",
+                "duration": "4:44",
+                "imgUrl": "https://i.ytimg.com/vi/FQ3slUz7Jo8/hqdefault.jpg"
+            },
+            {
+                "id": "S8mJdkhh",
+                "youtubeId": "TSVHoHyErBQ",
+                "title": "Justin Timberlake - Rock Your Body (Video)",
+                "duration": "4:58",
+                "imgUrl": "https://i.ytimg.com/vi/TSVHoHyErBQ/hqdefault.jpg"
+            },
+            {
+                "id": "gkLR6Etr",
+                "youtubeId": "IsUsVbTj2AY",
+                "title": "Justin Timberlake - Suit & Tie (Official) ft. JAY Z",
+                "duration": "5:30",
+                "imgUrl": "https://i.ytimg.com/vi/IsUsVbTj2AY/hqdefault.jpg"
+            },
+            {
+                "id": "LgvYhL65",
+                "youtubeId": "ru0K8uYEZWw",
+                "title": "CAN'T STOP THE FEELING! (From DreamWorks Animation's \"Trolls\") ",
+                "duration": "4:46",
+                "imgUrl": "https://i.ytimg.com/vi/ru0K8uYEZWw/hqdefault.jpg"
+            },
+            {
+                "id": "hjvtMJMz",
+                "youtubeId": "TOrnUquxtwA",
+                "title": "Justin Timberlake - What Goes Around...Comes Around",
+                "duration": "9:22",
+                "imgUrl": "https://i.ytimg.com/vi/TOrnUquxtwA/hqdefault.jpg"
+            },
+            {
+                "id": "BgNoAGyo",
+                "youtubeId": "9NUomWzmngg",
+                "title": "Justin T - Like I Love You (The Equalizers Remix)",
+                "duration": "6:14",
+                "imgUrl": "https://i.ytimg.com/vi/9NUomWzmngg/hqdefault.jpg"
+            },
+            {
+                "id": "SKsmCQZe",
+                "youtubeId": "C5RrNaCfUXE",
+                "title": "SZA, Justin Timberlake - The Other Side (From Trolls World Tour)",
+                "duration": "3:07",
+                "imgUrl": "https://i.ytimg.com/vi/C5RrNaCfUXE/hqdefault.jpg"
+            },
+            {
+                "id": "mvTxZ2MQ",
+                "youtubeId": "uuZE_IRwLNI",
+                "title": "Justin Timberlake - Mirrors",
+                "duration": "8:21",
+                "imgUrl": "https://i.ytimg.com/vi/uuZE_IRwLNI/hqdefault.jpg"
+            },
+            {
+                "id": "8guMqfav",
+                "youtubeId": "8MPbR6Cbwi4",
+                "title": "Justin Timberlake - Say Something  ft. Chris Stapleton",
+                "duration": "6:23",
+                "imgUrl": "https://i.ytimg.com/vi/8MPbR6Cbwi4/hqdefault.jpg"
+            },
+            {
+                "id": "b5i3FLsm",
+                "youtubeId": "fRh_vgS2dFE",
+                "title": "Justin Bieber - Sorry (PURPOSE : The Movement)",
+                "duration": "3:26",
+                "imgUrl": "https://i.ytimg.com/vi/fRh_vgS2dFE/hqdefault.jpg"
+            },
+            {
+                "id": "CWzRkmKg",
+                "youtubeId": "0eDJ0Tla0ac",
+                "title": "Justin Bieber - Holy (Performance Version) ft. Chance The Rapper",
+                "duration": "3:36",
+                "imgUrl": "https://i.ytimg.com/vi/0eDJ0Tla0ac/hqdefault.jpg"
+            },
+            {
+                "id": "P0KRgwB8",
+                "youtubeId": "bospUsfMHWU",
+                "title": "Justin Bieber - The Making Of ‘Holy’ | Vevo Footnotes ft. Chance The Rapper",
+                "duration": "5:32",
+                "imgUrl": "https://i.ytimg.com/vi/bospUsfMHWU/hqdefault.jpg"
+            },
+            {
+                "id": "no59MZmp",
+                "youtubeId": "3AyMjyHu1bA",
+                "title": "Justin Bieber - Intentions (Official Video (Short Version)) ft. Quavo",
+                "duration": "3:45",
+                "imgUrl": "https://i.ytimg.com/vi/3AyMjyHu1bA/hqdefault.jpg"
+            },
+            {
+                "id": "o4fCr299",
+                "youtubeId": "kffacxfA7G4",
+                "title": "Justin Bieber - Baby  ft. Ludacris",
+                "duration": "3:40",
+                "imgUrl": "https://i.ytimg.com/vi/kffacxfA7G4/hqdefault.jpg"
+            },
+            {
+                "id": "YPJ7Ycrw",
+                "youtubeId": "MgZQRAADOk0",
+                "title": "Music | Top Songs 2020 💥 Maroon 5, Adele, Ed Sheeran, justin bieber 💗 Top 40 Popular Songs 2020 💥",
+                "duration": null,
+                "imgUrl": "https://i.ytimg.com/vi/MgZQRAADOk0/hqdefault_live.jpg"
+            },
+            {
+                "id": "Q2XA20mA",
+                "youtubeId": "pvPsJFRGleA",
+                "title": "Justin Bieber - Holy ft. Chance The Rapper",
+                "duration": "5:29",
+                "imgUrl": "https://i.ytimg.com/vi/pvPsJFRGleA/hqdefault.jpg"
+            },
+            {
+                "id": "EOGrEi6d",
+                "youtubeId": "3CxtK7-XtE0",
+                "title": "DJ Khaled ft. Drake - POPSTAR (Official Music Video - Starring Justin Bieber)",
+                "duration": "8:06",
+                "imgUrl": "https://i.ytimg.com/vi/3CxtK7-XtE0/hqdefault.jpg"
+            },
+            {
+                "id": "RbCM0Jl3",
                 "youtubeId": "8EJ3zbKTWQ8",
                 "title": "Justin Bieber - Yummy ",
                 "duration": "3:51",

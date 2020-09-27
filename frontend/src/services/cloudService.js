@@ -24,7 +24,7 @@ async function uploadImg(ev) {
 
 function makeFaceThumb(img) {
     let imgUrl = img.split('/');
-    imgUrl.splice(6, 0, 'w_100,h_100,c_thumb,g_face')
+    imgUrl.splice(6, 0, 'w_200,h_200,c_thumb,g_face')
     imgUrl = imgUrl.join('/')
     return imgUrl;
 }
