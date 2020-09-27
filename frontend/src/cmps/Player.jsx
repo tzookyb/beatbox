@@ -181,7 +181,6 @@ class _Player extends Component {
                                 <Slider
                                     style={{
                                         flexGrow: 1,
-                                        width: '70px',
                                         color: 'white',
                                         margin: '0 15px'
                                     }}
