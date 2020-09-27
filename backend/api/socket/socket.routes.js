@@ -13,17 +13,11 @@ function createBoxStatus() {
     }
 }
 
-function leaveBox(socket, myBox, io) {
-    socket.leave(myBox.boxId);
-    const boxStatus = getBoxStatus(myBox.boxId);
-    // if (boxMap[socket.myBox].connectedUsers.length > 1) {
+function leaveBox(socket, myBox) {
     const newConnectedUsers = boxMap[socket.myBox].connectedUsers.filter(user => user.id !== myBox.user.id)
     boxMap[socket.myBox].connectedUsers = newConnectedUsers;
-    // } 
-    if (boxMap[myBox.boxId].connectedUsers.length === 0) boxMap[myBox.boxId] = null;
-    //     boxMap[socket.myBox] = createBoxStatus();
-    // }
-    // io.to(socket.myBox).emit('leave box', boxStatus.connectedUsers);
+    if (boxMap[socket.myBox].connectedUsers.length === 0) boxMap[socket.myBox] = null;
+    socket.leave(myBox.boxId);
 }
 
 function getBoxStatus(boxId) {
@@ -43,10 +37,9 @@ function connectSockets(io) {
     io.on('connection', socket => {
         var myBox;
         socket.on('join box', (boxInfo) => {
-        console.log("connectSockets -> boxInfo", boxInfo)
             myBox = boxInfo;
             if (socket.myBox) {
-                leaveBox(socket, myBox, io);
+                leaveBox(socket, myBox);
                 const boxStatus = getBoxStatus(socket.myBox);
                 io.to(socket.myBox).emit('joined new box', boxStatus.connectedUsers);
             }
@@ -58,13 +51,13 @@ function connectSockets(io) {
             socket.emit('get box status', boxStatus);
         })
 
-        // socket.on('disconnect', () => {
-        //     try {
-        //         leaveBox(socket, myBox)
-        //     } catch (err) {
-        //         console.log(err);
-        //     }
-        // })
+        socket.on('disconnect', () => {
+            try {
+                leaveBox(socket, myBox)
+            } catch (err) {
+                console.log(err);
+            }
+        })
 
         // BOX SOCKETS ***********************************
         socket.on('set currBox', box => {

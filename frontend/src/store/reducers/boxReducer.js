@@ -1,8 +1,6 @@
 
 const initialState = {
     boxes: [],
-    isNoticeShown: false,
-    msg: '',
     currBox: null,
     currSong: null,
     filter: '',
