@@ -12,7 +12,7 @@ import { Header } from './cmps/Header';
 import { Player } from './cmps/Player';
 import { socketService } from './services/socketService';
 import { loadConnectedUsers, setGlobalUsers } from './store/actions/connectedUsersAction';
-import { gotBoxUpdate, loadBoxes, setBoxStatus } from './store/actions/boxAction';
+import { gotBoxUpdate, loadBoxes, setActiveBoxes, setBoxStatus } from './store/actions/boxAction';
 import { addMsg } from './store/actions/msgAction';
 import { updateLocalPlayer } from './store/actions/playerActions';
 // import { Login } from './cmps/user/Login';
@@ -27,7 +27,7 @@ class _App extends Component {
     socketService.on('box changed', this.props.gotBoxUpdate);
     socketService.on('chat addMsg', this.props.addMsg);
     socketService.on('got player update', this.props.updateLocalPlayer);
-    // socketService.on('got ')
+    socketService.on('got active boxes', this.props.setActiveBoxes);
   }
 
   render() {
@@ -60,6 +60,7 @@ const mapDispatchToProps = {
   loadConnectedUsers,
   addMsg,
   updateLocalPlayer,
-  loadBoxes
+  loadBoxes,
+  setActiveBoxes
 }
 export const App = connect(mapStateToProps, mapDispatchToProps)(_App);

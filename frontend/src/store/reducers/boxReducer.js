@@ -3,21 +3,16 @@ const initialState = {
     currBox: null,
     currSong: null,
     filter: '',
+    activeBoxes: null,
 }
 
 export function boxReducer(state = initialState, action) {
     switch (action.type) {
         case 'SET_BOXES':
-            return {
-                ...state,
-                boxes: action.boxes
-            }
+            return { ...state, boxes: action.boxes }
 
         case 'SET_CURR_BOX':
-            return {
-                ...state,
-                currBox: action.currBox
-            }
+            return { ...state, currBox: action.currBox }
 
         case 'UPDATE_BOX':
             return {
@@ -34,6 +29,10 @@ export function boxReducer(state = initialState, action) {
 
         case 'REMOVE_BOX':
             return { ...state, boxes: state.boxes.filter(box => box._id !== action.boxId) }
+
+        case 'SET_ACTIVE_BOXES':
+            console.log("boxReducer -> action", action)
+            return { ...state, activeBoxes: action.boxes }
 
         case 'SET_CURR_SONG':
             return { ...state, currSong: action.currSong }

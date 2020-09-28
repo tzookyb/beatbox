@@ -18,7 +18,7 @@ function leaveBox(socket, boxInfo) {
     const newConnectedUsers = boxMap[socket.myBox].connectedUsers.filter(user => user.id !== boxInfo.user.id)
     boxMap[socket.myBox].connectedUsers = newConnectedUsers;
     if (boxMap[socket.myBox].connectedUsers.length === 0) boxMap[socket.myBox] = null;
-    console.log("leaveBox -> boxMap", boxMap)
+    // console.log("leaveBox -> boxMap", boxMap)
     socket.leave(boxInfo.boxId);
 }
 
@@ -34,6 +34,14 @@ function addConnectedUser(socket, boxInfo) {
         boxMap[socket.myBox].connectedUsers.push(boxInfo.user);
     }
 }
+function getActiveBoxes() {
+    const activeBoxes = [];
+    for (const box in boxMap) {
+        if (!boxMap[box]) return;
+        activeBoxes.push({ boxId: box, userCount: boxMap[box].connectedUsers.length })
+    }
+    return activeBoxes;
+}
 
 function connectSockets(io) {
     io.on('connection', socket => {
@@ -41,12 +49,10 @@ function connectSockets(io) {
         socket.join(SITE);
         gUsersCount++;
         io.to(SITE).emit('got global users', gUsersCount);
-        io.to(SITE).emit('got active boxes', boxMap);
         var myBox;
 
         socket.on('join box', (boxInfo) => {
             myBox = boxInfo;
-            console.log("connectSockets -> myBox", myBox.boxId)
             if (socket.myBox) {
                 leaveBox(socket, boxInfo);
                 const boxStatus = getBoxStatus(socket.myBox);
@@ -80,6 +86,11 @@ function connectSockets(io) {
             io.to(socket.myBox).emit('box changed', box);
         })
 
+        socket.on('get active boxes', () => {
+            const activeBoxes = getActiveBoxes();
+            socket.emit('got active boxes', activeBoxes);
+        })
+
         // PLAYER SOCKETS ***********************************
         socket.on('update backend currSong', currSong => {
             if (!myBox) return;
@@ -93,7 +104,6 @@ function connectSockets(io) {
 
         socket.on('sync song time', () => {
             socket.emit('got seek update', boxMap[myBox.boxId].currSong.secPlayed)
-            console.log("connectSockets -> boxMap[myBox.boxId].currSong.secPlayed", boxMap[myBox.boxId].currSong.secPlayed)
         })
 
         socket.on('update player seek', secPlayed => {
