@@ -52,6 +52,7 @@ function connectSockets(io) {
         var myBox;
 
         socket.on('join box', (boxInfo) => {
+            console.log('join box')
             myBox = boxInfo;
             if (socket.myBox) {
                 leaveBox(socket, boxInfo);
@@ -67,6 +68,7 @@ function connectSockets(io) {
         })
 
         socket.on('disconnect', () => {
+            console.log('disconnect')
             gUsersCount--;
             io.to(SITE).emit('got global users', gUsersCount);
             if (!myBox) return;
@@ -83,13 +85,15 @@ function connectSockets(io) {
 
         // BOX SOCKETS ***********************************
         socket.on('set currBox', box => {
+            console.log('set currBox')
             io.to(socket.myBox).emit('box changed', box);
         })
 
-        socket.on('get active boxes', () => {
-            const activeBoxes = getActiveBoxes();
-            socket.emit('got active boxes', activeBoxes);
-        })
+        // socket.on('get active boxes', () => {
+        //     console.log('get active boxes')
+        //     const activeBoxes = getActiveBoxes();
+        //     socket.emit('got active boxes', activeBoxes);
+        // })
 
         // PLAYER SOCKETS ***********************************
         socket.on('update backend currSong', currSong => {
@@ -98,25 +102,31 @@ function connectSockets(io) {
         })
 
         socket.on('set currSong', currSong => {
+            console.log('set currSong')
             boxMap[myBox.boxId].currSong = currSong;
             io.to(myBox.boxId).emit('got player update', currSong);
         })
 
         socket.on('sync song time', () => {
+            console.log('sync song time')
             socket.emit('got seek update', boxMap[myBox.boxId].currSong.secPlayed)
         })
 
         socket.on('update player seek', secPlayed => {
+            console.log('update player seek')
             io.to(myBox.boxId).emit('got seek update', secPlayed);
         })
 
         // CHAT SOCKETS **************************************
         socket.on('chat newMsg', msg => {
+            console.log('chat newMsg')
             boxMap[socket.myBox].msgs.push(msg);
             io.to(socket.myBox).emit('chat addMsg', msg);
         })
         socket.on('chat typing', typingStr => {
-            socket.broadcast.to(socket.myBox).emit('chat showTyping', typingStr)
+            console.log('chat typing')
+            io.to(socket.myBox).emit('chat showTyping', typingStr)
+            // socket.broadcast.to(socket.myBox).emit('chat showTyping', typingStr)
         })
     })
 }

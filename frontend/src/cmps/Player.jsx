@@ -20,7 +20,7 @@ class _Player extends Component {
         isReady: false,
         muted: false,
         seeking: false,
-        volume: 0.35,
+        volume: 0.75,
         duration: undefined,
         secPlayed: 0
     }
@@ -199,7 +199,7 @@ class _Player extends Component {
                             max={1}
                             onChange={this.handleVolumeChange}
                         />
-                        <button className="player-ctrl-btn flex align-center" title={muted ? 'Unmute' : 'Mute'} onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
+                        <button className="player-ctrl-btn flex justify-center align-center" title={muted ? 'Unmute' : 'Mute'} onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
                         <img
                             style={{ visibility: (this.props.location.pathname === `/box/details/${currBox._id}`) ? 'hidden' : 'visible' }}
                             className="back-to-box"

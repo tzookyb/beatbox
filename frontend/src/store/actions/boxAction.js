@@ -68,13 +68,10 @@ export function setActiveBoxes(activeBoxes) {
     var boxes = [...activeBoxes];
     boxes = boxes.sort((boxA, boxB) => boxA.userCount > boxB.userCount);
     boxes = boxes.splice(0, 3);
-    boxes = await boxes.map(async (box) => {
+    boxes = await Promise.all(boxes.map(async (box) => {
       return await boxService.getById(box.boxId)
-    })
-    Promise.all(boxes)
-      .then((boxes) => {
-        console.log("setActiveBoxes -> boxes", boxes)
-        dispatch({ type: 'SET_ACTIVE_BOXES', boxes })
-      })
+    }))
+    console.log("setActiveBoxes -> boxes", boxes)
+    dispatch({ type: 'SET_ACTIVE_BOXES', boxes })
   }
 }

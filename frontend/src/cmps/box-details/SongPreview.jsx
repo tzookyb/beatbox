@@ -62,7 +62,7 @@ export class _SongPreview extends Component {
                         <div className="song-preview-btns flex align-center">
                             <h3 className="song-duration">{songDetails.duration || ''}</h3>
                             {<img
-                                className={`playing-anim ${(isSongPlaying) ? '' : 'invisible'}`}
+                                className={`playing-anim ${(isSongPlaying) ? '' : 'hidden'}`}
                                 src={require('../../assets/img/equalizer5.gif')} title="Now playing" alt="now-playing"
                             />}
                             <div><MoreVertIcon className="cursor-pointer" onClick={this.toggleRemoveOpen} /></div>
