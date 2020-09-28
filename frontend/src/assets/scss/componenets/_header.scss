@@ -1,7 +1,7 @@
 .global-users-container {
   position: fixed;
   width: rem(300px);
-  z-index: 1;
+  z-index: 29;
   top: rem(70px);
   .global-users {
     font-size: 0.9rem;
@@ -88,6 +88,10 @@ header {
 }
 
 @media (max-width: 740px) {
+  .global-users-container {
+  width: initial;
+  left: 5px;
+  }
   header {
     .logo {
       // height: auto;
@@ -112,7 +116,7 @@ header {
 
       li {
         display: flex;
-        width: 80%;
+        width: 90%;
         height: 50%;
 
         align-items: center;
@@ -127,6 +131,11 @@ header {
       }
 
       a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
         color: #fff;
         font-size: 1.5rem;
       }
