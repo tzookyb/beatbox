@@ -4,6 +4,8 @@ const initialState = {
     currBox: null,
     currSong: null,
     filter: '',
+    userBoxes: [],
+    userBoxesFavorite: []
 }
 
 export function boxReducer(state = initialState, action) {

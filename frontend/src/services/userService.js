@@ -18,25 +18,6 @@ export const userService = {
     isBoxFavorite
 }
 
-async function addBoxToUser(boxId) {
-    const user = getUser();
-    if (user.isGuest) return;
-    const userId = user._id;
-    const userFromDb = await getUserById(userId);
-    if (!userFromDb.boxes) userFromDb.boxes = [];
-    userFromDb.boxes.push(boxId);
-    return await httpService.put(`user/${user._id}`, userFromDb)
-}
-
-async function removeBoxFromUser(boxId) {
-    const user = getUser();
-    const userId = user._id;
-    const userFromDb = await getUserById(userId);
-    const newBoxes = userFromDb.boxes.filter(box => boxId !== box);
-    userFromDb.boxes = newBoxes;
-    return await httpService.put(`user/${user._id}`, userFromDb);
-}
-
 async function login(userCerd) {
     const res = await httpService.post(`auth/login`, userCerd);
     return _handleLoggedinUser(res);
@@ -103,6 +84,25 @@ async function getUserById(userId) {
 
 }
 
+async function addBoxToUser(boxId) {
+    const user = getUser();
+    if (user.isGuest) return;
+    const userId = user._id;
+    const userFromDb = await getUserById(userId);
+    if (!userFromDb.boxes) userFromDb.boxes = [];
+    userFromDb.boxes.push(boxId);
+    return await httpService.put(`user/${user._id}`, userFromDb)
+}
+
+async function removeBoxFromUser(boxId) {
+    const user = getUser();
+    const userId = user._id;
+    const userFromDb = await getUserById(userId);
+    const newBoxes = userFromDb.boxes.filter(box => boxId !== box);
+    userFromDb.boxes = newBoxes;
+    return await httpService.put(`user/${user._id}`, userFromDb);
+}
+
 async function getUserBoxes(userId) {
     const userFromDb = await getUserById(userId);
     if (!userFromDb.boxes) return;
@@ -115,10 +115,8 @@ async function getUserBoxes(userId) {
 
 async function toggleToFavorite(boxId) {
     const user = getUser();
-    console.log("toggleToFavorite -> user.isGuest", user.isGuest)
     if (user.isGuest) return;
     const userId = user._id;
-    console.log("toggleToFavorite -> userId", userId)
     const userFromDb = await getUserById(userId);
     if (!userFromDb.favoriteBoxes) {
         userFromDb.favoriteBoxes = [];
