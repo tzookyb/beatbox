@@ -5,14 +5,15 @@ import { SystemMessage } from 'react-chat-elements'
 import { Input } from 'react-chat-elements'
 import { Button } from 'react-chat-elements'
 import Avatar from '@material-ui/core/Avatar';
+import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import 'react-chat-elements/dist/main.css';
 
 import { socketService } from '../../services/socketService'
 import { addMsg, loadMsgs } from '../../store/actions/msgAction'
 
-
 class _BoxChat extends Component {
     state = {
+        msgs: [],
         msg: '',
         isTyping: false,
         typingStr: '',
@@ -21,6 +22,11 @@ class _BoxChat extends Component {
 
     componentDidMount() {
         socketService.on('chat showTyping', this.onTyping);
+    }
+
+    componentWillUnmount() {
+        socketService.off('chat showTyping', this.onTyping);
+
     }
 
     onTyping = typingStr => {
@@ -48,7 +54,6 @@ class _BoxChat extends Component {
     }
 
     sendMsg = (ev) => {
-        ev.preventDefault();
         const { msg } = this.state;
         if (msg) {
             const msgObj = {
@@ -65,7 +70,7 @@ class _BoxChat extends Component {
     };
 
     getMsgsArr() {
-        const { msgs, user } = this.props
+        const { msgs, user } = this.props;
         const msgsArr = [];
         msgs.forEach((msg, idx) => {
             // let position;
@@ -88,13 +93,13 @@ class _BoxChat extends Component {
             const dateToString = `${date.getHours()}:${date.getMinutes().toString().padStart(2, '0')}`;
             if (msg.id === 'system') {
                 msgsArr.push(<SystemMessage
-                    text={msg.text} />)
+                    key={msg.id} text={msg.text} />)
             }
             else {
                 msgsArr.push(
-                    <div className={`msg flex column ${classPosition}`} >
+                    <div key={msg.id} className={`msg flex column ${classPosition}`} >
                         <div className={`msg-data flex align-center`}>
-                            {!classPosition && <Avatar alt="Remy Sharp" src={msg.avatar} style={{ width: '20px', height: '20px' }} />}
+                            {!classPosition && <Avatar title={user.fullName} alt="User" src={msg.avatar} style={{ width: '20px', height: '20px' }} />}
                             <p className="submit-by">{title}</p>
                             {dateToString}
                         </div>
@@ -108,25 +113,39 @@ class _BoxChat extends Component {
         return msgsArr;
     }
 
+
+    getConnectedAvatars() {
+        const { connectedUsers } = this.props;
+        return connectedUsers.map(user => {
+            return <Avatar key={user.id} alt={user.username} src={user.imgUrl} />
+        })
+    }
+    onKeyUp = (ev) => {
+        if (ev.key === 'Enter') this.sendMsg();
+    }
     render() {
-        const { msgs } = this.props;
-        console.log("render -> msgs", msgs)
+        // const { msgs, connectedUsers } = this.props;
         const { typingStr } = this.state;
         return (
             <section className="wall-container flex column space-between">
                 <h2 className="chat-title"> Share your thoughts </h2>
-                <div className="typing-container">
-                    {typingStr && <h3>{typingStr}</h3>}
+                <div className="connected-users">
+                    < AvatarGroup max={4}>
+                        {this.getConnectedAvatars()}
+                    </AvatarGroup >
                 </div>
                 <div className="msgs">
                     {this.getMsgsArr()}
+                    <div className="typing-container">
+                        {typingStr && <h3>{typingStr}</h3>}
+                    </div>
                 </div>
                 <div className="input-msg">
                     <Input
                         ref={el => (this.inputRef = el)}
                         onChange={this.onHandleChange}
                         placeholder="Type here..."
-                        multiline={true}
+                        onKeyUp={this.onKeyUp}
                         rightButtons={
                             <Button text='Send' onClick={this.sendMsg}
                                 backgroundColor='#5b3a7b'
@@ -144,7 +163,7 @@ const mapStateToProps = state => {
         user: state.userReducer.loggedinUser,
         msgs: state.msgReducer.msgs,
         box: state.boxReducer.currBox,
-        // connectedUsers: state.connectedUsersReducer.connectedUsers
+        connectedUsers: state.connectedUsersReducer.connectedUsers
     }
 }
 const mapDispatchToProps = {

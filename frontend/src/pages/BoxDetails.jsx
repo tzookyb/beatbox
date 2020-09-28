@@ -21,12 +21,9 @@ import { socketService } from '../services/socketService';
 import { loadBox, updateBox, gotBoxUpdate } from '../store/actions/boxAction'
 import { addMsg, loadMsgs } from '../store/actions/msgAction'
 import { changeSong, updateLocalPlayer } from '../store/actions/playerActions'
-import { loadConnectedUsers, addConnectedUser } from '../store/actions/connectedUsersAction'
+import { loadConnectedUsers } from '../store/actions/connectedUsersAction'
 import { youtubeService } from '../services/youtubeService';
 import { BoxChat } from '../cmps/box-details/BoxChat'
-
-// import Avatar from '@material-ui/core/Avatar';
-// import AvatarGroup from '@material-ui/lab/AvatarGroup';
 
 class _BoxDetails extends Component {
     state = {
@@ -47,31 +44,11 @@ class _BoxDetails extends Component {
         await this.props.loadBox(boxId);
         // await boxService.addConnectedUser(boxId, minimalUser);
         // SOCKET SETUP
-        socketService.setup();
         const boxInfo = {
             boxId,
             user: minimalUser
         }
         socketService.emit('join box', boxInfo);
-        socketService.on('get box status', this.setBoxStatus);
-        socketService.on('song changed', this.props.updateLocalPlayer);
-        socketService.on('box changed', this.props.gotBoxUpdate);
-        socketService.on('chat addMsg', this.props.addMsg);
-        socketService.on('joined new box', this.props.loadConnectedUsers);
-    }
-
-    componentWillUnmount() {
-        socketService.off('chat addMsg', this.props.addMsg);
-    }
-
-    setBoxStatus = ({ msgs, currSong }) => {
-        const { currBox } = this.props;
-        if (!currSong.id) currSong.id = (currBox.songs.length) ? currBox.songs[0].id : null;
-        this.props.updateLocalPlayer(currSong);
-        this.props.loadMsgs(msgs);
-        // this.props.loadConnectedUsers(boxStatus.connectedUsers);
-        // console.log("setBoxStatus -> boxStatus.connectedUsers", boxStatus.connectedUsers)
-        // console.log(this.props.connectedUsers);
     }
 
     onRemoveSong = async (songId) => {
@@ -94,13 +71,13 @@ class _BoxDetails extends Component {
 
     onAddSong = async (song, idx, isFromDrag) => {
         const newSong = await boxService.addSong(song, isFromDrag);
-        const box = { ...this.props.currBox };
+        const newBox = { ...this.props.currBox };
         if (idx) {
-            box.songs.splice(idx, 0, newSong);
+            newBox.songs.splice(idx, 0, newSong);
         }
-        else box.songs.unshift(newSong);
+        else newBox.songs.unshift(newSong);
         this.addMsgChat(`Song ${newSong.title} added by ${this.props.user.username}`);
-        this.props.updateBox(box);
+        this.props.updateBox(newBox);
     }
 
     onSaveInfo = (box) => {
@@ -194,6 +171,8 @@ class _BoxDetails extends Component {
         return isFavorite;
     }
 
+
+
     render() {
         const { isSongPickOpen, isDragging, isFavorite } = this.state;
         const { currBox, filter } = this.props;
@@ -235,7 +214,7 @@ class _BoxDetails extends Component {
                             </div>
 
                             <div className="share-container flex space-between column">
-                                <p>Share the box:</p>
+                                <p>Invite a friend<br />to join you live:</p>
                                 <div className="share-btns flex space-evenely">
                                     <a className="facebook-share-btn"
                                         href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
@@ -300,7 +279,7 @@ const mapDispatchToProps = {
     loadMsgs,
     updateLocalPlayer,
     gotBoxUpdate,
-    addConnectedUser,
+    // addConnectedUser,
     loadConnectedUsers,
     changeSong
 }

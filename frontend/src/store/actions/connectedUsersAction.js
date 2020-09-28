@@ -5,14 +5,19 @@ export function loadConnectedUsers(connectedUsers) {
   };
 }
 
-export function addConnectedUser(user) {
+export function setGlobalUsers(num) {
   return dispatch => {
-    dispatch({ type: 'ADD_CONNECTED_USER', user })
-  };
+    dispatch({ type: 'SET_GLOBAL_USERS', num })
+  }
 }
+// export function addConnectedUser(user) {
+//   return dispatch => {
+//     dispatch({ type: 'ADD_CONNECTED_USER', user })
+//   };
+// }
 
-export function removeConnectedUser(user) {
-  return dispatch => {
-    dispatch({ type: 'REMOVE_CONNECTED_USER', user })
-  };
-}
+// export function removeConnectedUser(user) {
+//   return dispatch => {
+//     dispatch({ type: 'REMOVE_CONNECTED_USER', user })
+//   };
+// }

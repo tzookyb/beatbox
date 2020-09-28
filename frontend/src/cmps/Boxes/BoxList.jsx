@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 import { BoxPreview } from './BoxPreview'
 
-export class BoxList extends Component {
+export class _BoxList extends Component {
 
     state = {
         isScrolled: false
@@ -36,7 +36,7 @@ export class BoxList extends Component {
                 </div>}
 
                 {this.props.genre &&
-                    <div ref={this.ref} className="box-list image-container">
+                    <div ref={this.ref} className={`box-list image-container ${this.props.location.pathname === '/' ? 'homepage-list' : ''}`}>
                         {this.state.isScrolled && <button className="list-left-btn" onClick={() => this.executeScroll(-350)}><ArrowBackIosIcon /></button>}
 
                         {this.props.boxes.map(box => {
@@ -46,11 +46,10 @@ export class BoxList extends Component {
                                     key={box._id}
                                     box={box}
                                     genre={this.props.genre}
-                                    // onToggleLikeBox={this.props.onToggleLikeBox}
                                     onAddToFavorites={this.props.onAddToFavorites}
                                     minimalUser={this.props.minimalUser}
                                     connectedUsers={this.props.connectedUsers}
-                                   
+
                                 />
                             } else return null
                         })}
@@ -76,3 +75,4 @@ export class BoxList extends Component {
         )
     }
 }
+export const BoxList = withRouter(_BoxList);

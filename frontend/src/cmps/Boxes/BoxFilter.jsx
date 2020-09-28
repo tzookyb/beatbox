@@ -1,14 +1,17 @@
+// OUTSOURCE IMPORTS
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-
 import SearchIcon from '@material-ui/icons/Search';
+// LOCAL IMPORTS
 import { setFilter } from '../../store/actions/boxAction';
+import { debounce } from '@material-ui/core';
 
 export class _BoxFilter extends Component {
     state = {
         searchStr: '',
-        isAtBoxDetails: false,
+        isSearchOpen: false,
+        isAtBoxDetails: false
     }
     componentDidMount() {
         this.checkIfAtDetails();
@@ -30,6 +33,15 @@ export class _BoxFilter extends Component {
 
     onHandleChange = ({ target }) => {
         this.setState({ searchStr: target.value }, this.onSetFilter);
+
+        if (this.state.isSearchOpen) {
+            if (!this.debouncedSearch) {
+                this.debouncedSearch = debounce(() => {
+                    if (this.state.isSearchOpen) this.toggleSearch()
+                }, 3000)
+            }
+            this.debouncedSearch();
+        }
     }
 
     onSetFilter = () => {
@@ -39,11 +51,14 @@ export class _BoxFilter extends Component {
             this.props.history.push(`/box?${query.toString()}`);
         } else this.props.setFilter(this.state.searchStr);
     }
+    toggleSearch = () => {
+        this.setState(prevState => ({ isSearchOpen: !prevState.isSearchOpen }));
+    }
 
     render() {
         const { searchStr, isAtBoxDetails } = this.state;
         return (
-            <div className={`${(this.props.isShown) ? '' : 'invisible'} flex box-filter justify-center`}>
+            <div className={`box-filter flex ${(this.props.isShown) ? '' : 'invisible'} ${this.state.isSearchOpen ? 'is-open' : ''}`}>
                 <input
                     type="search"
                     className={isAtBoxDetails ? '' : "name-filter"}
