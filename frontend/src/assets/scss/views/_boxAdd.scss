@@ -1,5 +1,12 @@
 .box-add {
-    padding-top: 200px;
+    position: fixed;
+    // top:0;
+    // left: 0;
+    z-index: 11;
+    background-color: transparent;
+    backdrop-filter: blur(2px);
+    height: 100%;
+    width: 100%;
 //   padding-top: 100px;
 
 //   form {
@@ -7,7 +14,7 @@
 //       margin-bottom: 15px;
 //       margin-top: 0;
 //       font-size: 20px;
-//     }
+//     }}
 
 //     .upload-label {
 //       // background-color: $clr2;
@@ -16,9 +23,6 @@
 //       // color: #fff;
 //     }
 
-//     .song-list {
-//       width: 100%;
-//     }
 //   }
 //   .btn-create {
 //     border: none;

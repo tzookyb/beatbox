@@ -17,6 +17,10 @@ import { addMsg } from './store/actions/msgAction';
 import { setSeekTo, updateLocalPlayer } from './store/actions/playerActions';
 // import { Login } from './cmps/user/Login';
 class _App extends Component {
+  state = {
+
+  }
+
   componentDidMount() {
     socketService.setup();
     socketService.on('got global users', this.props.setGlobalUsers);
@@ -35,8 +39,8 @@ class _App extends Component {
       <div className="App">
         <Header />
         <main>
+          <Route component={BoxAdd} path="/box/add" />
           <Switch>
-            <Route component={BoxAdd} path="/box/add" />
             <Route component={BoxDetails} path="/box/details/:boxId" />
             <Route component={UserDetails} path="/user/:id" />
             <Route component={BoxApp} path="/box" />
