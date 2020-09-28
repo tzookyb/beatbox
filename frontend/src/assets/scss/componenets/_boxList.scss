@@ -74,6 +74,7 @@
     }
     .title-genre {
       font-size: 1.8rem;
+      padding-inline-start: rem(63px);
     }
     .see-all-genre {
       border: 1px solid white;
@@ -124,6 +125,11 @@
       .list-left-btn,
       .list-right-btn {
         margin: 0;
+      }
+    }
+    .genre-filter {
+      .title-genre {
+        padding-inline-start: initial;
       }
     }
   }
