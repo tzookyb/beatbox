@@ -25,7 +25,9 @@ async function login(userCerd) {
 
 async function logout() {
     await httpService.post(`auth/logout`);
-    sessionStorage.clear();
+    let user =  _getGuestMode();
+    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(user))
+    // sessionStorage.clear();
 }
 
 async function signup(userCerd) {
@@ -123,12 +125,11 @@ async function toggleToFavorite(boxId) {
         userFromDb.favoriteBoxes.push(boxId);
     }
     else {
-        // const isFavortie = isBoxFavorite(userId, boxId);
         const isFavoriteIdx = await userFromDb.favoriteBoxes.findIndex(box => box === boxId);
         if (isFavoriteIdx === -1) userFromDb.favoriteBoxes.push(boxId);
         else userFromDb.favoriteBoxes.splice(isFavoriteIdx, 1);
     }
-    return await httpService.put(`user/${user._id}`, userFromDb)
+    return await httpService.put(`user/${user._id}`, userFromDb);
 }
 
 
@@ -142,10 +143,12 @@ async function getUserFavoriteBoxes(userId) {
     return boxes;
 }
 
-async function isBoxFavorite(userId, boxId) {
-    const userFromDb = await getUserById(userId);
+async function isBoxFavorite(user, boxId) {
+    if (user.isGuest) return false;
+    const userFromDb = await getUserById(user.id);
     let isFavoriteIdx = -1;
-    if (!userFromDb.favoriteBoxes) return isFavoriteIdx;
+    if (!userFromDb.favoriteBoxes) return false;
     isFavoriteIdx = await userFromDb.favoriteBoxes.findIndex(box => box === boxId)
-    return isFavoriteIdx;
+    if(isFavoriteIdx === -1) return false;
+    return true;
 }

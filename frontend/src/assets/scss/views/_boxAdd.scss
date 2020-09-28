@@ -1,44 +1,96 @@
-.box-add {
-    padding-top: 200px;
-//   padding-top: 100px;
+.box-add-container {
+    position: fixed;
+    z-index: 11;
+    background-color: transparent;
+    backdrop-filter: blur(2px);
+    height: 100%;
+    width: 100%;
 
-//   form {
-//     > * {
-//       margin-bottom: 15px;
-//       margin-top: 0;
-//       font-size: 20px;
-//     }
+    .box-add-modal {
+        position: absolute;
+        top: rem(120px);
+        width: 80%;
+        max-width: rem(700px);
+        max-height: rem(550px);
+        background-color: $clr4;
+        border-radius: 10px;
+        padding: rem(10px);
 
-//     .upload-label {
-//       // background-color: $clr2;
-//       // padding: 10px;
-//       // border-radius: 5px;
-//       // color: #fff;
-//     }
+        h2 {
+            font-family: Righteous;
+            color: white;
+            text-align: center;
+        }
 
-//     .song-list {
-//       width: 100%;
-//     }
-//   }
-//   .btn-create {
-//     border: none;
-//     background: #565656cf;
-//     width: 150px;
-//     color: white;
-//     padding: 10px;
-//     margin-top: 5px;
-//   }
-//   .btn-create-container{
-//     .msg-warnning{
-//       color: $clr3;
-//     }
-//   }
-// }
+        .box-add-form {
+            padding: 15px;
+            margin-bottom: 10px;
+            > * {
+                padding: 5px;
+            }
 
-// form:not(.form-filter) {
-//   background-color: $clr2;
-//   padding: 20px;
-//   // margin: 0 auto;
-//   border-radius: 5px;
-//   // max-height: 75%;
+            .box-add-thumbnail {
+                width: 50%;
+                img {
+                    height: auto;
+                    width: 100%;
+                }
+            }
+            .upload-label {
+                color: white;
+                text-align: center;
+            }
+
+            .inputs {
+                flex-basis: 20%;
+                flex-grow: 1;
+                
+                > * {
+                    margin-bottom: 10px;
+                    border-radius: 10px;
+                    padding: 5px;
+                }
+                textarea {
+                    flex-grow: 1;
+                    resize: none;
+                    outline: none;
+                }
+                label {
+                    color: white;
+                    font-weight: bold;
+                    margin-bottom: 2px;
+                }
+                .short-input {
+                    max-width: rem(250px);
+                    outline: none;
+                }
+            }
+        }
+        .btn-create {
+            align-self: flex-end;
+            padding: 5px;
+            margin: 10px;
+        }
+    }
+}
+
+@media (max-width: 740px) {
+    .box-add {
+        .box-add-modal {
+            width: 100%;
+        }
+    }
+}
+@media (max-width: 530px) {
+    .box-add-container {
+        .box-add-modal {
+            max-height: initial;
+            .box-add-form {
+                flex-direction: column;
+                .box-add-thumbnail {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }

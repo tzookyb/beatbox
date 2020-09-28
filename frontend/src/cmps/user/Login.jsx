@@ -1,16 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import Button from '@material-ui/core/Button';
+
 import { login, loadUser } from '../../store/actions/userAction'
-import { cloudService } from '../../services/cloudService'
-import imgPlaceholder from '../../assets/img/img_placeholder.png';
 
 class _Login extends React.Component {
     state = {
         user: {
             username: '',
-            fullName: '',
-            password: '',
-            imgUrl: ''
+            password: ''
         }
     }
 
@@ -18,54 +16,42 @@ class _Login extends React.Component {
         this.setState({ user: { ...this.state.user, [ev.target.name]: ev.target.value } })
     }
 
-    async uploadImg(ev) {
-        const imgUrl = await cloudService.uploadImg(ev)
-        this.setState(prevState => {
-            return {
-                user: {
-                    ...prevState.user,
-                    imgUrl
-                }
-            }
-        })
-    }
-
-    onLogin = (ev) => {
+    onLogin = async (ev) => {
         ev.preventDefault();
         if (this.state.username === '') return;
-        const { username, fullName, password, imgUrl } = this.state.user;
-        const userCreds = { username, fullName, password, imgUrl };
-        this.props.login(userCreds);
-        this.props.loadUser()
-        .then(()=> this.props.history.push('/'))
+        const { username, password } = this.state.user
+        const userCreds = { username, password };
+        const user = await this.props.login(userCreds)
+        if (user) {
+            this.props.loadUser();
+            this.props.handleClose();
+        }
     }
 
 
     render() {
-        const { user } = this.state;
         return (
-            <div className="login-page">
-                <form className="input-login flex column" onSubmit={this.onLogin}>
-                    <input name="username" type="text" onChange={this.onChange} placeholder="User Name:" autoComplete="off" />
-                    <input name="fullName" type="text" onChange={this.onChange} placeholder="Full Name" autoComplete="off" />
-                    <input name="password" type="password" onChange={this.onChange} placeholder="Password" />
-
-                    <div className="box-img">
-                        <label className="upload-label" style={{ cursor: 'pointer' }} >
-                            <input onChange={(ev) => this.uploadImg(ev)} type="file" hidden />
-                            <div className="upload-box-img">
-                                Upload Image
-                            </div>
-                            <img src={user.imgUrl || imgPlaceholder} alt="user" />
-                        </label>
-                    </div>
-
-                    <button className="btn-log" onClick={this.onLogin}>Login</button>
-                </form>
-            </div>
+            <form className="user-add-form flex" onSubmit={this.onLogin}>
+                <div className="inputs flex column">
+                    <label>User Name:</label>
+                    <input
+                        name="username"
+                        type="text"
+                        onChange={this.onChange}
+                        placeholder="YourName"
+                        autoComplete="off"
+                    />
+                    <label>password:</label>
+                    <input
+                        name="password"
+                        type="password"
+                        onChange={this.onChange}
+                        placeholder="Password" />
+                    <Button className="btn-log" onClick={this.onLogin}>Login</Button>
+                </div>
+            </form>
         )
     }
-
 }
 
 const mapStateToProps = state => {

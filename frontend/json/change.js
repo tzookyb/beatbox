@@ -6,7 +6,7 @@ const DETAILS_URL = 'https://www.googleapis.com/youtube/v3/videos'
 
 console.clear()
 console.log('********************************************************************************')
-const db = require('./try1.json');
+const db = require('./IDANCHANGE3.json');
 let newdb = [...db]
 
 // newdb.forEach(box => {
@@ -15,15 +15,15 @@ let newdb = [...db]
 //     console.log(box)
 // })
 
-// newdb.forEach(box => {
-//     box.songs.forEach(async (song, idx) => {
-//         if (!song.hasOwnProperty('duration') || song.duration === null) {
-//             const duration = await getDuration(song.youtubeId)
-//             song.duration = duration
-//             console.log(song.title, song.duration)
-//         }
-//     })
-// })
+newdb.forEach(box => {
+    box.songs.forEach(async (song, idx) => {
+        if (!song.hasOwnProperty('duration') || song.duration === null) {
+            const duration = await getDuration(song.youtubeId)
+            song.duration = duration
+            console.log(song.title, song.duration)
+        }
+    })
+})
 
 // newdb.forEach(box => delete box.currSong)
 // newdb.forEach(box => delete box.viewCount)
@@ -37,30 +37,30 @@ let newdb = [...db]
 // })
 
 
-// async function getDuration(youtubeId, timeString) {
-//     let duration
-//     if (!timeString) {
-//         try {
-//             let res = await axios.get(`${DETAILS_URL}?id=${youtubeId}&part=contentDetails&key=${API_KEY}`);
-//             duration = res.data.items[0].contentDetails.duration;
-//         } catch (err) {
-//             console.log(err);
-//             throw err;
-//         }
-//     } else duration = timeString;
-//     try {
-//         duration = duration.substring(2);
-//         duration = duration.replace('M', ':');
-//         duration = duration.split(':')
-//         duration[1] = duration[1].replace('S', '');
-//         duration[1] = duration[1].padStart(2, '0');
-//         duration = duration.join(':');
-//         return duration.toString();
-//     } catch (err) {
-//         return null;
-//     }
-// }
-// setTimeout(() => { fs.writeFile('./IDANCHANGE3.json', JSON.stringify(newdb), (err) => console.log(err)) }, 2000)
+async function getDuration(youtubeId, timeString) {
+    let duration
+    if (!timeString) {
+        try {
+            let res = await axios.get(`${DETAILS_URL}?id=${youtubeId}&part=contentDetails&key=${API_KEY}`);
+            duration = res.data.items[0].contentDetails.duration;
+        } catch (err) {
+            console.log(err);
+            throw err;
+        }
+    } else duration = timeString;
+    try {
+        duration = duration.substring(2);
+        duration = duration.replace('M', ':');
+        duration = duration.split(':')
+        duration[1] = duration[1].replace('S', '');
+        duration[1] = duration[1].padStart(2, '0');
+        duration = duration.join(':');
+        return duration.toString();
+    } catch (err) {
+        return null;
+    }
+}
+setTimeout(() => { fs.writeFile('./IDANCHANGE3.json', JSON.stringify(newdb), (err) => console.log(err)) }, 10000)
 
 
 // newdb = newdb.map(box => {

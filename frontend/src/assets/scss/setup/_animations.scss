@@ -1,31 +1,29 @@
-// @-webkit-keyframes wobble-ver-right {
-
-//   0%,
-//   100% {
-//     transform: translateY(0) rotate(0);
-//     transform-origin: 50% 50%;
-//   }
-
-//   15% {
-//     transform: translateY(10px) rotate(6deg);
-//   }
-
-//   30% {
-//     transform: translateY(5px) rotate(-6deg);
-//   }
-
-//   45% {
-//     transform: translateY(-5px) rotate(3.6deg);
-//   }
-
-//   60% {
-//     transform: translateY(3px) rotate(-2.4deg);
-//   }
-
-//   75% {
-//     transform: translateY(-2px) rotate(1.2deg);
-//   }
-// }
+@keyframes color-change {
+  0% {
+    color: white;
+  }
+  15% {
+    color: yellow;
+  }
+  30% {
+    color: orange;
+  }
+  45% {
+    color: red;
+  }
+  60% {
+    color: green;
+  }
+  75% {
+    color: blue;
+  }
+  90% {
+    color: purple;
+  }
+  100% {
+    color: black;
+  }
+}
 
 @keyframes wobble-ver-right {
   0%,
@@ -54,36 +52,6 @@
     transform: translateY(-2px) rotate(1.2deg);
   }
 }
-
-// @-webkit-keyframes jello-horizontal {
-//   0% {
-//     transform: scale3d(1, 1, 1);
-//   }
-
-//   30% {
-//     transform: scale3d(1.25, 0.75, 1);
-//   }
-
-//   40% {
-//     transform: scale3d(0.75, 1.25, 1);
-//   }
-
-//   50% {
-//     transform: scale3d(1.15, 0.85, 1);
-//   }
-
-//   65% {
-//     transform: scale3d(0.95, 1.05, 1);
-//   }
-
-//   75% {
-//     transform: scale3d(1.05, 0.95, 1);
-//   }
-
-//   100% {
-//     transform: scale3d(1, 1, 1);
-//   }
-// }
 
 @keyframes jello-horizontal {
   0% {
@@ -145,11 +113,11 @@
     opacity: 1;
   }
 
-  17% {
+  28% {
     opacity: 1;
   }
 
-  25% {
+  32% {
     opacity: 0;
   }
 

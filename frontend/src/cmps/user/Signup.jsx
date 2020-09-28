@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
 
 import { signup, loadUser } from '../../store/actions/userAction'
 import imgPlaceholder from '../../assets/img/img_placeholder.png';
@@ -40,7 +39,7 @@ class _Signup extends React.Component {
         const { username, fullName, password, imgUrl } = this.state.user;
         const userCreds = { username, fullName, password, imgUrl };
         this.props.signup(userCreds);
-        this.props.loadUser()
+        this.props.loadUser();
         this.props.handleClose();
     }
 
@@ -48,25 +47,43 @@ class _Signup extends React.Component {
     render() {
         const { user } = this.state;
         return (
-            <div className="signup">
-                <form className="input-login flex column" onSubmit={this.onSignup}>
-                    <TextField name="username" type="text" onChange={this.onChange} placeholder="User Name:" autoComplete="off" />
-                    <TextField name="fullName" type="text" onChange={this.onChange} placeholder="Full Name" autoComplete="off" />
-                    <TextField name="password" type="password" onChange={this.onChange} placeholder="Password" />
+            <form className="user-add-form flex" onSubmit={this.onSignup}>
 
-                    <div className="user-img">
-                        <label className="upload-label" style={{ cursor: 'pointer' }} >
-                            <input onChange={(ev) => this.uploadImg(ev)} type="file" hidden />
-                            <div className="upload-user-img">
-                                {user.imgUrl ? '' : 'Upload Image'}
-                            </div>
-                            <img src={user.imgUrl || imgPlaceholder} alt="user" />
-                        </label>
-                    </div>
+                <div className="inputs flex column">
+                    <label>User Name:</label>
+                    <input
+                        name="username" type="text"
+                        onChange={this.onChange}
+                        placeholder="User Name:"
+                        autoComplete="off" />
+                    <label>full Name:</label>
+                    <input
+                        name="fullName"
+                        type="text"
+                        onChange={this.onChange}
+                        placeholder="Full Name"
+                        autoComplete="off" />
+                    <label>Password:</label>
+                    <input
+                        name="password"
+                        type="password"
+                        onChange={this.onChange}
+                        placeholder="Password" />
 
                     <Button className="btn-log" onClick={this.onSignup}>Signup</Button>
-                </form>
-            </div>
+                </div>
+                <div className="user-add-thumbnail">
+                    <label className="upload-label" style={{ cursor: 'pointer' }} >
+                        <input onChange={(ev) => this.uploadImg(ev)} type="file" hidden />
+                        <div className="img-container">
+                            <img src={user.imgUrl || imgPlaceholder} alt="box" />
+                        </div>
+                        <div>
+                            {user.imgUrl ? '' : 'Upload Image'}
+                        </div>
+                    </label>
+                </div>
+            </form>
         )
     }
 

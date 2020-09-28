@@ -42,31 +42,15 @@ class _BoxDetails extends Component {
         const boxId = this.props.match.params.boxId;
         const minimalUser = userService.getMinimalUser();
         await this.props.loadBox(boxId);
+        const isFavorite = await userService.isBoxFavorite(this.props.user, boxId);
+        this.setState({ isFavorite });
         // await boxService.addConnectedUser(boxId, minimalUser);
         // SOCKET SETUP
-        socketService.setup();
         const boxInfo = {
             boxId,
             user: minimalUser
         }
         socketService.emit('join box', boxInfo);
-        socketService.on('get box status', this.setBoxStatus);
-        socketService.on('song changed', this.props.updateLocalPlayer);
-        socketService.on('box changed', this.props.gotBoxUpdate);
-        socketService.on('chat addMsg', this.props.addMsg);
-        socketService.on('joined new box', this.props.loadConnectedUsers);
-    }
-
-    componentWillUnmount() {
-        socketService.off('chat addMsg', this.props.addMsg);
-        socketService.off('joined new box', this.props.loadConnectedUsers);
-    }
-
-    setBoxStatus = ({ msgs, currSong }) => {
-        const { currBox } = this.props;
-        if (!currSong.id) currSong.id = (currBox.songs.length) ? currBox.songs[0].id : null;
-        this.props.updateLocalPlayer(currSong);
-        this.props.loadMsgs(msgs);
     }
 
     onRemoveSong = async (songId) => {
@@ -89,13 +73,13 @@ class _BoxDetails extends Component {
 
     onAddSong = async (song, idx, isFromDrag) => {
         const newSong = await boxService.addSong(song, isFromDrag);
-        const box = { ...this.props.currBox };
+        const newBox = { ...this.props.currBox };
         if (idx) {
-            box.songs.splice(idx, 0, newSong);
+            newBox.songs.splice(idx, 0, newSong);
         }
-        else box.songs.unshift(newSong);
+        else newBox.songs.unshift(newSong);
         this.addMsgChat(`Song ${newSong.title} added by ${this.props.user.username}`);
-        this.props.updateBox(box);
+        this.props.updateBox(newBox);
     }
 
     onSaveInfo = (box) => {
@@ -175,10 +159,11 @@ class _BoxDetails extends Component {
         this.setState({ isMobileChatOpen: !this.state.isMobileChatOpen })
     }
 
-    onToggleToFavorite = () => {
-        // const boxId = this.props.currBox._id;
-        // userService.toggleToFavorite(boxId);
-        // this.setState({ isFavorite: !this.state.isFavorite });
+    onToggleToFavorite = async () => {
+        if (this.props.user.isGuest) return;
+        const boxId = this.props.currBox._id;
+        await userService.toggleToFavorite(boxId);
+        this.setState({ isFavorite: !this.state.isFavorite });
     }
 
     getIfBoxFavorite = async () => {
@@ -188,8 +173,6 @@ class _BoxDetails extends Component {
         const isFavorite = (isFavoriteIdx === -1) ? true : false;
         return isFavorite;
     }
-
- 
 
     render() {
         const { isSongPickOpen, isDragging, isFavorite } = this.state;
@@ -232,7 +215,7 @@ class _BoxDetails extends Component {
                             </div>
 
                             <div className="share-container flex space-between column">
-                                <p>Share the box:</p>
+                                <p>Invite a friend<br />to join you live:</p>
                                 <div className="share-btns flex space-evenely">
                                     <a className="facebook-share-btn"
                                         href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}

@@ -9,7 +9,7 @@ import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 
-import { ModalSignup } from './ModalSignup'
+import { ModalUser } from './ModalUser'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -82,7 +82,10 @@ export function UserMenu({ user, onLogout, loadUser }) {
                                             <Link to={`/user/${user._id}`} style={{ color: "black" }}>Profile</Link>
                                         </MenuItem>}
                                         <MenuItem >
-                                            < ModalSignup />
+                                            < ModalUser childern={'Signup'}/>
+                                        </MenuItem>
+                                        <MenuItem >
+                                            < ModalUser childern={'Login'}/>
                                         </MenuItem>
                                         <MenuItem onClick={logout}>Logout</MenuItem>
                                     </MenuList>

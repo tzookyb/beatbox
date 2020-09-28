@@ -36,8 +36,8 @@ export class BoxInfoEdit extends Component {
 
     getGenresOptions() {
         const genres = boxService.getAllGenres();
-        return genres.map((gener, idx) => {
-            return <option key={idx} value={gener}>{gener}</option>
+        return genres.map((genre, idx) => {
+            return <option key={idx} value={genre}>{genre}</option>
         })
     }
 
@@ -58,28 +58,60 @@ export class BoxInfoEdit extends Component {
 
     render() {
         const { box } = this.state;
-        if (!box) return <CircleLoading  size="large" color= "#ac0aff"/>
+        if (!box) return <CircleLoading size="large" color="#ac0aff" />
         return (
-            <form className="box-info flex space-between">
-                <div className="info-input-actions flex space-between column">
-                    <input autoComplete="off" autoFocus type="txt" value={box.name} name="name" onChange={this.handleInput} placeholder="Box Name" />
-                    <textarea type="txt" value={box.description} name="description" onChange={this.handleInput} placeholder="About the box" />
-                    <label>Genre: </label>
-                    <select id="genre" name="genre" onChange={this.handleInput} >
-                    <option value=""></option>
-                        {this.getGenresOptions()}
-                    </select>
+            <form>
+                <div className="box-add-form flex">
+
+                    <div className="box-add-thumbnail">
+                        <label className="upload-label" style={{ cursor: 'pointer' }} >
+                            <input onChange={(ev) => this.uploadImg(ev)} type="file" hidden />
+                            <img src={box.imgUrl || imgPlaceholder} alt="box" />
+                            <div>
+                                {box.imgUrl ? '' : 'Upload Image'}
+                            </div>
+                        </label>
+                    </div>
+
+                    <div className="inputs flex column">
+
+                        <label>Name:</label>
+                        <input
+                            className="short-input"
+                            autoComplete="off"
+                            autoFocus
+                            type="txt"
+                            value={box.name}
+                            name="name"
+                            onChange={this.handleInput}
+                            placeholder="Box Name"
+                        />
+
+                        <label>Genre:</label>
+                        <select
+                            className="short-input"
+                            id="genre"
+                            name="genre"
+                            onChange={this.handleInput}
+                        >
+                            <option disabled selected value="">Select genre</option>
+                            {this.getGenresOptions()}
+                        </select>
+
+                        <label>Description:</label>
+                        <textarea
+                            type="txt"
+                            value={box.description}
+                            name="description"
+                            onChange={this.handleInput}
+                            placeholder="About the box"
+                        />
+
+                    </div>
+
                 </div>
-                <div className="box-img">
-                    <label className="upload-label" style={{ cursor: 'pointer' }} >
-                        <input onChange={(ev) => this.uploadImg(ev)} type="file" hidden />
-                        <div className="upload-box-img">
-                            {box.imgUrl ? '' : 'Upload Image'}
-                        </div>
-                        <img src={box.imgUrl || imgPlaceholder} alt="box" />
-                    </label>
-                </div>
-            </form>
+
+            </form >
         )
     }
 }

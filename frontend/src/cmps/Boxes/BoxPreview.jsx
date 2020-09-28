@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 
-import HeadsetIcon from '@material-ui/icons/Headset';
+import { Link } from 'react-router-dom'
+import Avatar from '@material-ui/core/Avatar';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 export class BoxPreview extends Component {
-
     render() {
         const { box, isHomePage, connectedUsers, onDelete } = this.props;
         return (
@@ -15,16 +14,21 @@ export class BoxPreview extends Component {
                 </Link>
 
                 <div className="box-preview-details flex column">
-                    <div className="flex space-between">
+                    <div className="box-data flex space-between column">
                         <h3 className="box-name">{box.name}</h3>
-                        <div className={` "flex align-center justify-end  ${(connectedUsers.length > 0) ? 'heartbeat played' : ''} `}>
-                            <HeadsetIcon />
+                        <div className="creator flex align-end">
+                            <small>
+                                created by:
+                        </small>
+                            <Avatar alt="User" src={box.createdBy.imgUrl} style={{ width: '20px', height: '20px' }} />
                         </div>
                     </div>
-                    {onDelete && <DeleteIcon onClick={(ev) => onDelete(ev, box._id)}/> }
+                    <div className="delete-btn" title="Delete box">
+                        {onDelete && <DeleteIcon onClick={(ev) => onDelete(ev, box._id)} />}
+                    </div>
                 </div>
             </section >
-
         )
     }
 }
+

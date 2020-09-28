@@ -1,26 +1,22 @@
+// OUTSOURCE IMPORTS
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { CircleLoading } from 'react-loadingg';
 import ExpandMoreSharpIcon from '@material-ui/icons/ExpandMoreSharp';
-
-import { BoxApp } from './BoxApp'
-import { loadBoxes } from '../store/actions/boxAction'
-import { Footer } from '../cmps/Footer'
+// LOCAL IMPORTS
 import { boxService } from '../services/boxService'
+import { BoxApp } from './BoxApp'
+import { BoxActive } from '../cmps/boxes/BoxActive';
+import { Footer } from '../cmps/Footer'
+import { loadBoxes } from '../store/actions/boxAction'
+import { socketService } from '../services/socketService';
+
 class _Home extends Component {
 
-    async componentDidMount() {
-        await this.props.loadBoxes();
+    componentDidMount() {
+        this.props.loadBoxes();
+        setTimeout(() => socketService.emit('get active boxes'), 1);
     }
-
-    // getGenres(boxes) {
-    //     let allGenres = [];
-    //     boxes.forEach(box => {
-    //         allGenres.push(box.genre);
-    //     })
-    //     const genres = [...new Set(allGenres)];
-    //     return genres;
-    // }
 
     render() {
         const { boxes } = this.props;
@@ -45,6 +41,9 @@ class _Home extends Component {
                         <img src={require('../assets/img/hero1.jpg')} alt="" />
                     </div>
                 </div>
+
+                <BoxActive />
+
                 <div className="genre-list">
                     {genres.length && <BoxApp genres={genres} />}
                 </div>
