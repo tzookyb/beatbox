@@ -10,14 +10,15 @@ import { userService } from '../services/userService'
 import { loadBoxes } from '../store/actions/boxAction'
 
 class _BoxApp extends Component {
-
     componentDidMount() {
         this.onLoadBoxes()
     }
+
     componentDidUpdate(prevProps) {
         if (this.props.location.search === prevProps.location.search) return;
         this.onLoadBoxes();
     }
+
     onLoadBoxes = () => {
         this.props.loadBoxes(this.props.location.search);
     }

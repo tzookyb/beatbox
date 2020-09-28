@@ -7,6 +7,7 @@ import { boxService } from '../services/boxService'
 import { userService } from '../services/userService'
 import { saveBox, loadBoxes } from '../store/actions/boxAction'
 import { BoxInfoEdit } from '../cmps/box-details/BoxInfoEdit'
+import { withRouter } from 'react-router-dom'
 
 export class _BoxAdd extends Component {
     state = {
@@ -16,6 +17,10 @@ export class _BoxAdd extends Component {
     }
 
     componentDidMount() {
+        this.setNewBox();
+    }
+
+    setNewBox = () => {
         const minimalUser = userService.getMinimalUser();
         const emptyBox = boxService.getEmptyBox(minimalUser);
         this.setState({ editBox: emptyBox });
@@ -59,19 +64,26 @@ export class _BoxAdd extends Component {
 
         const addedBox = await this.props.saveBox(this.state.editBox);
         this.props.loadBoxes();
-        this.props.history.push(`/box/${addedBox._id}`);
+        this.props.history.push(`/box/details/${addedBox._id}`);
+    }
+
+    closeModal = () => {
+        this.props.history.goBack();
+        this.setNewBox();
     }
 
     render() {
         const { editBox } = this.state;
         if (!editBox) return <CircleLoading size="large" color="#ac0aff" />
         return (
-            <section className="box-add">
-                <div className="box-add-modal">
-                    <h2>Create Your Box</h2>
+            <section onClick={this.closeModal} className="box-add-container flex justify-center">
+                
+                <div className="box-add-modal flex column" onClick={ev => ev.stopPropagation()}>
+
+                    <h2>Create your own Box</h2>
+
                     <BoxInfoEdit updateBox={this.updateBox} setIsLoading={this.setIsLoading} />
 
-                    <div className="btn-create-container">
                         <button
                             disabled={this.state.isLoading}
                             className={`btn-create ${this.state.isLoading ? 'faded-btn' : ''}`}
@@ -80,7 +92,6 @@ export class _BoxAdd extends Component {
                             Create Box
                         </button>
                         {this.state.msgWarning && <label className="msg-warnning">{this.state.msgWarning}</label>}
-                    </div>
                 </div>
             </section>
         )
@@ -96,4 +107,4 @@ const mapDispatchToProps = {
     loadBoxes
 }
 
-export const BoxAdd = connect(mapStateToProps, mapDispatchToProps)(_BoxAdd)
+export const BoxAdd = connect(mapStateToProps, mapDispatchToProps)(withRouter(_BoxAdd))

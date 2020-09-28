@@ -2,13 +2,11 @@
   max-width: 300px;
   padding: 8px;
   border-radius: 5px;
-  justify-content: space-evenly;
+  // justify-content: space-evenly;
   border-bottom: 1px solid white;
-  // transition: 0.7s;
-  margin-inline-start: 20px;
+  margin: 0px 20px;
 
   .search-icon {
-    cursor: pointer;
     transition: 0.3s;
     &:hover {
       color: $clr3;
@@ -26,6 +24,53 @@
     &::placeholder {
       color: rgba(206, 206, 206, 0.9);
       border-color: white;
+    }
+    &::-webkit-search-cancel-button {
+      position: relative;
+      right: 15px;
+    }
+  }
+}
+
+@media (max-width: 740px) {
+  .box-filter {
+    position: absolute;
+    right: 130px;
+    justify-content: flex-end;
+    border-bottom: initial;
+    transition: 0.5s;
+    .search-icon {
+      cursor: pointer;
+      position: absolute;
+      font-size: 3.5rem;
+      top: 25px;
+    }
+    input {
+      visibility: hidden;
+    }
+    &.is-open {
+      z-index: 1;
+      right: 0;
+      width: 100%;
+      transform: translateY(60px);
+      background-color: #fff;
+      height: 50px;
+      input {
+        visibility: visible;
+        height: 100%;
+        width: 100%;
+        color: black;
+        font-size: 1.3rem;
+        &::placeholder {
+          color: $clr1;
+        }
+        &::-webkit-search-cancel-button {
+          right: 45px;
+        }
+      }
+      .search-icon {
+        top: 5px;
+      }
     }
   }
 }

@@ -7,11 +7,9 @@ export function updateLocalPlayer(currSong) {
     }
 }
 //  ***************************************************************
-export function togglePlay(song) {
+export function togglePlay(currSong) {
     return (dispatch) => {
-        const currSong = {
-            ...song, isPlaying: !song.isPlaying
-        }
+        currSong = { ...currSong, isPlaying: !currSong.isPlaying }
         socketService.emit('set currSong', currSong);
         dispatch({ type: 'SET_CURR_SONG', currSong })
     }
@@ -35,14 +33,6 @@ export function updateProgress(secPlayed) {
             ...getState().boxReducer.currSong, secPlayed
         }
         socketService.emit('update backend currSong', currSong);
-    }
-}
-
-export function setSeekTo(secPlayed) {
-    return (dispatch, getState) => {
-        const currSong = {
-            ...getState().boxReducer.currSong, secPlayed
-        }
-        dispatch({ type: 'SET_CURR_SONG', currSong })
+        dispatch({ type: 'SET_CURR_SONG', currSong });
     }
 }

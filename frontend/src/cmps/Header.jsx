@@ -28,32 +28,47 @@ class _Header extends Component {
 
     toggleMenu = () => {
         this.setState({ isMobileMenuOpen: !this.state.isMobileMenuOpen })
-
     }
 
+    getPathForBoxAdd = () => {
+        let path;
+        const currPath = this.props.location.pathname
+        if (currPath === '/') path = '/add';
+        else path = currPath.endsWith('/add') ? currPath : `${currPath}/add`
+        return path;
+    }
 
     render() {
         const { gUsers } = this.props;
         const { user } = this.props;
         return (
             <React.Fragment>
-                <div className="global-users-container flex justify-center">
+
+                {this.props.location.pathname.includes('details') ? '' : < div className="global-users-container flex justify-center">
                     {!!gUsers && <small className="global-users">{gUsers} {gUsers === 1 ? 'user' : 'users'} now online!</small>}
-                </div>
-                <header onScroll={this.onScroll} className={`${this.state.isScroll ? 'sticky' : ''} flex space-around align-center`}>
+                </div>}
+
+                <header onScroll={this.onScroll} className={`${this.state.isScroll ? 'sticky' : ''} flex space-between align-center`}>
+
                     {(this.props.location.pathname === '/') ?
                         <a href="#top"><img title="BeatBox" className="logo" src={require('../assets/img/logo.png')} alt="logo" /></a> :
                         <Link to="/" ><img title="BeatBox" className="logo" src={require('../assets/img/logo.png')} alt="logo" /></Link>
                     }
+
                     <BoxFilter isShown={(this.props.location.pathname !== '/' || this.state.isScroll)} />
-                    <ul className={`${this.state.isMobileMenuOpen ? 'menu-open' : ''} main-nav flex clean-list align-center`}>
-                        <li><Link to="/box" onClick={this.toggleMenu}>Boxes</Link></li>
-                        <li><Link to="/box/add" onClick={this.toggleMenu}>Create Box</Link></li>
-                    </ul>
-                    <div className="user-avatar"><UserMenu user={user} onLogout={this.props.logout} /></div>
-                    <button className={`menu-btn`} onClick={this.toggleMenu}> {this.state.isMobileMenuOpen ? 'X' : '☰'}</button>
+
+                    <div className="right-nav flex align-center">
+                        <ul className={`${this.state.isMobileMenuOpen ? 'menu-open' : ''} main-nav flex clean-list`}>
+                            <li><Link to="/box" onClick={this.toggleMenu}>Boxes</Link></li>
+                            <li><Link to={this.getPathForBoxAdd} onClick={this.toggleMenu} >Create Box</Link ></li>
+                        </ul>
+
+                        <div className="user-avatar"><UserMenu user={user} onLogout={this.props.logout} /></div>
+                        <button className={`menu-btn`} onClick={this.toggleMenu}> {this.state.isMobileMenuOpen ? 'X' : '☰'}</button>
+                    </div>
+
                 </header >
-            </React.Fragment>
+            </React.Fragment >
         )
     }
 }

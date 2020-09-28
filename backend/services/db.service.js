@@ -6,8 +6,6 @@ module.exports = {
     getCollection
 }
 
-// Database Name
-
 var dbConn = null;
 
 async function getCollection(collectionName) {
@@ -27,7 +25,3 @@ async function connect() {
         throw err;
     }
 }
-
-
-
-

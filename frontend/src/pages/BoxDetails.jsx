@@ -51,11 +51,6 @@ class _BoxDetails extends Component {
         socketService.emit('join box', boxInfo);
     }
 
-    componentWillUnmount() {
-        // socketService.off('chat addMsg', this.props.addMsg);
-        // socketService.off('joined new box', this.props.loadConnectedUsers);
-    }
-
     onRemoveSong = async (songId) => {
         const { currSong } = this.props;
         const newBox = { ...this.props.currBox }

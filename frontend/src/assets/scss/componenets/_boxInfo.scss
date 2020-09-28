@@ -86,7 +86,7 @@
 
     textarea {
       width: 500px;
-      // color: white;
+      resize: none;
       border-radius: 5px;
     }
 
@@ -109,21 +109,6 @@
     font-size: 1.1rem;
     justify-content: space-evenly;
     width: 175px;
-  }
-
-  .info-input-actions {
-    >* {
-      margin: 5px;
-    }
-
-    textarea,
-    input,
-    select {
-      width: 500px;
-      border-radius: 5px;
-      outline: none;
-      padding: 5px;
-    }
   }
 
   .upload-box-img {

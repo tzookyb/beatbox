@@ -46,6 +46,7 @@ function connectSockets(io) {
 
         socket.on('join box', (boxInfo) => {
             myBox = boxInfo;
+            console.log("connectSockets -> myBox", myBox.boxId)
             if (socket.myBox) {
                 leaveBox(socket, boxInfo);
                 const boxStatus = getBoxStatus(socket.myBox);
@@ -81,13 +82,18 @@ function connectSockets(io) {
 
         // PLAYER SOCKETS ***********************************
         socket.on('update backend currSong', currSong => {
-            if (!boxMap[myBox.boxId]) return;
+            if (!myBox) return;
             boxMap[myBox.boxId].currSong = currSong;
         })
 
         socket.on('set currSong', currSong => {
             boxMap[myBox.boxId].currSong = currSong;
             io.to(myBox.boxId).emit('got player update', currSong);
+        })
+
+        socket.on('sync song time', () => {
+            socket.emit('got seek update', boxMap[myBox.boxId].currSong.secPlayed)
+            console.log("connectSockets -> boxMap[myBox.boxId].currSong.secPlayed", boxMap[myBox.boxId].currSong.secPlayed)
         })
 
         socket.on('update player seek', secPlayed => {

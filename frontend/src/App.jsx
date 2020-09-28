@@ -12,16 +12,13 @@ import { Header } from './cmps/Header';
 import { Player } from './cmps/Player';
 import { socketService } from './services/socketService';
 import { loadConnectedUsers, setGlobalUsers } from './store/actions/connectedUsersAction';
-import { gotBoxUpdate, setBoxStatus } from './store/actions/boxAction';
+import { gotBoxUpdate, loadBoxes, setBoxStatus } from './store/actions/boxAction';
 import { addMsg } from './store/actions/msgAction';
-import { setSeekTo, updateLocalPlayer } from './store/actions/playerActions';
+import { updateLocalPlayer } from './store/actions/playerActions';
 // import { Login } from './cmps/user/Login';
 class _App extends Component {
-  state = {
-
-  }
-
   componentDidMount() {
+    this.props.loadBoxes();
     socketService.setup();
     socketService.on('got global users', this.props.setGlobalUsers);
     socketService.on('joined new box', this.props.loadConnectedUsers);
@@ -30,8 +27,7 @@ class _App extends Component {
     socketService.on('box changed', this.props.gotBoxUpdate);
     socketService.on('chat addMsg', this.props.addMsg);
     socketService.on('got player update', this.props.updateLocalPlayer);
-    socketService.on('got seek update', this.props.setSeekTo);
-    socketService.on('got ')
+    // socketService.on('got ')
   }
 
   render() {
@@ -39,7 +35,7 @@ class _App extends Component {
       <div className="App">
         <Header />
         <main>
-          <Route component={BoxAdd} path="/box/add" />
+          <Route component={BoxAdd} path="**/add" />
           <Switch>
             <Route component={BoxDetails} path="/box/details/:boxId" />
             <Route component={UserDetails} path="/user/:id" />
@@ -57,7 +53,6 @@ const mapStateToProps = state => {
   return {
   }
 }
-
 const mapDispatchToProps = {
   setGlobalUsers,
   setBoxStatus,
@@ -65,6 +60,6 @@ const mapDispatchToProps = {
   loadConnectedUsers,
   addMsg,
   updateLocalPlayer,
-  setSeekTo
+  loadBoxes
 }
 export const App = connect(mapStateToProps, mapDispatchToProps)(_App);

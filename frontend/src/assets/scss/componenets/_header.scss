@@ -1,7 +1,7 @@
 .global-users-container {
   position: fixed;
   width: rem(300px);
-  z-index: 29;
+  z-index: 30;
   top: rem(70px);
   .global-users {
     font-size: 0.9rem;
@@ -29,11 +29,18 @@ header {
     }
   }
 
-  .main-nav {
-    max-width: 350px;
-    > * {
-      width: 50%;
-      text-align: center;
+  .right-nav {
+    min-width: 35%;
+    justify-content: flex-end;
+    .main-nav {
+      max-width: 350px;
+      justify-content: flex-end;
+      > * {
+        padding-inline-end: 30px;
+
+        // width: 50%;
+        // text-align: center;
+      }
     }
   }
   .user-avatar {
@@ -89,17 +96,18 @@ header {
 
 @media (max-width: 740px) {
   .global-users-container {
-  width: initial;
-  left: 5px;
+    width: initial;
+    top: 65px;
+    left: 7px;
   }
   header {
     .logo {
-      // height: auto;
+      top: 5px;
       left: 5px;
     }
     .main-nav {
       flex-direction: column;
-      justify-content: inherit;
+      align-items: center;
       position: fixed;
       z-index: 2;
       top: 0;

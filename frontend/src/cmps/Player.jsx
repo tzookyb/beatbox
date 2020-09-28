@@ -16,6 +16,7 @@ import { socketService } from '../services/socketService';
 
 class _Player extends Component {
     state = {
+        isSyncing: false,
         isReady: false,
         muted: false,
         seeking: false,
@@ -26,10 +27,28 @@ class _Player extends Component {
     ref = player => {
         this.player = player;
     }
+    componentDidMount() {
+        setTimeout(() => {
+            socketService.on('got seek update', this.seekTo);
+        }, 1)
+    }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.currSong?.secPlayed !== this.props.currSong?.secPlayed && this.props.currSong) {
-            this.seekTo(this.props.currSong.secPlayed);
+        if (this.props.currBox?._id !== prevProps.currBox?._id)
+            this.waitForSync(this.props.currSong)
+    }
+
+
+    waitForSync = (currSong) => {
+        if (this.props.currSong === currSong) setTimeout(this.waitForSync, 500);
+        else if (this.props.currSong?.secPlayed) {
+            this.setState({ isSyncing: true });
+            console.log('waiting for ready, status:', this.state.isReady)
+            if (this.state.isReady) {
+                socketService.emit('sync song time');
+                this.setState({ isSyncing: false });
+            }
+            else setTimeout(this.waitForSync, 1000)
         }
     }
 
@@ -65,11 +84,10 @@ class _Player extends Component {
     handleSeekMouseUp = () => {
         this.setState({ seeking: false });
         socketService.emit('update player seek', this.state.secPlayed);
-        console.log("handleSeekMouseUp -> this.state.secPlayed", this.state.secPlayed)
     }
 
     handleProgress = state => {
-        if (!this.state.seeking) {
+        if (!this.state.seeking && !this.state.isSyncing) {
             this.setState({ secPlayed: state.playedSeconds })
             this.props.updateProgress(state.playedSeconds);
         }
@@ -96,7 +114,7 @@ class _Player extends Component {
     }
 
     render() {
-        const { secPlayed } = this.state;
+        const { secPlayed, isSyncing } = this.state;
         const { currBox, currSong } = this.props;
         if (!currBox || !currSong) return null;
 
@@ -144,7 +162,7 @@ class _Player extends Component {
                             <span className="player-title">{song.title}</span>
 
                             <div className="song-time flex align-center space-between">
-                                <span className="player-time">{showTime(secPlayed)}</span>
+                                <span className="player-time">{isSyncing ? 'Syncing play...' : showTime(secPlayed)}</span>
 
                                 <input
                                     className="duration-slider"
