@@ -4,21 +4,36 @@
   padding: 90px 10px 0 10px;
   position: fixed;
   border-right: 2px solid rgb(28, 30, 33);
+
+  > *{
+    width: 280px;
+  }
+  
+
   .chat-title {
     text-align: center;
     background-color: $clr2;
     color: white;
     padding: 5px;
+    font-size: 1.5rem;
   }
+
   .input-msg {
     position: fixed;
-    bottom: 89px;
-    width: 280px;
+    bottom: 90px;
+    font-size: 1rem;
+    
   }
+
   .msgs {
-    height: 600px;
+    height: rem(600px);
     overflow-y: scroll;
     overflow-x: hidden;
+
+    .msg-text{
+      color: #fff;
+    }
+
     &::-webkit-scrollbar {
       display: none;
     }
@@ -28,5 +43,16 @@
 @media (max-width: 720px) {
   .wall-container {
     border-right: initial;
+    width: 75vw;
+
+    > * {
+      width: 75vw;
+    }
+
+    .input-msg {
+      position: fixed;
+      bottom: 18vh;
+       // same as chat-box container - 5vw
+    }
   }
 }
