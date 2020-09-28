@@ -89,11 +89,11 @@ function connectSockets(io) {
             io.to(socket.myBox).emit('box changed', box);
         })
 
-        // socket.on('get active boxes', () => {
-        //     console.log('get active boxes')
-        //     const activeBoxes = getActiveBoxes();
-        //     socket.emit('got active boxes', activeBoxes);
-        // })
+        socket.on('get active boxes', () => {
+            console.log('get active boxes')
+            const activeBoxes = getActiveBoxes();
+            socket.emit('got active boxes', activeBoxes);
+        })
 
         // PLAYER SOCKETS ***********************************
         socket.on('update backend currSong', currSong => {
@@ -125,8 +125,7 @@ function connectSockets(io) {
         })
         socket.on('chat typing', typingStr => {
             console.log('chat typing')
-            io.to(socket.myBox).emit('chat showTyping', typingStr)
-            // socket.broadcast.to(socket.myBox).emit('chat showTyping', typingStr)
+            socket.broadcast.to(socket.myBox).emit('chat showTyping', typingStr)
         })
     })
 }

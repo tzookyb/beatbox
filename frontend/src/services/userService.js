@@ -125,7 +125,7 @@ async function toggleToFavorite(boxId) {
         userFromDb.favoriteBoxes.push(boxId);
     }
     else {
-        // const isFavortie = isBoxFavorite(userId, boxId);
+        // const isFavorite = isBoxFavorite(userId, boxId);
         const isFavoriteIdx = await userFromDb.favoriteBoxes.findIndex(box => box === boxId);
         if (isFavoriteIdx === -1) userFromDb.favoriteBoxes.push(boxId);
         else userFromDb.favoriteBoxes.splice(isFavoriteIdx, 1);

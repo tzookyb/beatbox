@@ -12,7 +12,7 @@ export class _BoxActive extends Component {
         })
         return (
             <React.Fragment>
-                <div className="active-boxes-container">
+                <div id="active-box" className="active-boxes-container main-container">
                     <h1>Join one of the currently top active Boxes:</h1>
                     <div className="active-boxes-grid">
                         {activeBoxes.map((box, idx) => {
@@ -20,21 +20,14 @@ export class _BoxActive extends Component {
                                 <div
                                     key={idx}
                                     className="active-box flex column"
-                                    onClick={this.props.history.push(`/box/details/${box._id}`)}
+                                    onClick={() => this.props.history.push(`/box/details/${box._id}`)}
                                 >
                                     <div className="active-box-title">
-                                        <h3>{box.title}</h3>
+                                        <h2>{box.name}</h2>
                                     </div>
                                     <div className="active-box-img">
                                         <img src={box.imgUrl} alt="box" />
                                     </div>
-                                    <div className="active-box songs">
-                                        <h4>Next 3 songs on playlist:</h4>
-                                        {box.songs.map((song, idx) => {
-                                            return <h5>{song.title}</h5>
-                                        })}
-                                    </div>
-
                                 </div>
                             )
                         })}
