@@ -52,6 +52,8 @@ class _BoxDetails extends Component {
             boxId,
             user: minimalUser
         }
+        socketService.on('joined new box', this.props.loadConnectedUsers);
+        socketService.on('chat addMsg', this.props.addMsg);
         socketService.emit('join box', boxInfo);
         socketService.on('joined new box', this.props.loadConnectedUsers);
         socketService.on('chat addMsg', this.props.addMsg);
@@ -61,12 +63,23 @@ class _BoxDetails extends Component {
         socketService.off('chat addMsg', this.props.addMsg);
         socketService.off('joined new box', this.props.loadConnectedUsers);
     }
+    componentWillUnmount() {
+        socketService.off('joined new box', this.props.loadConnectedUsers);
+        socketService.off('chat addMsg', this.props.addMsg);
+    }
+
+    componentDidUpdate() {
+        if (this.props.match.params.boxId !== this.props.currBox._id) {
+            this.props.loadBox(this.props.match.params.boxId);
+        }
+    }
+
 
     onRemoveSong = async (songId) => {
         const { currSong } = this.props;
         const newBox = { ...this.props.currBox }
         const songIdx = newBox.songs.findIndex(song => song.id === songId)
-        if (currSong.id === songId) {
+        if (!currSong || currSong.id === songId) {
             if (newBox.songs.length === 1) {
                 await this.props.updateLocalPlayer(null)
             } else {
