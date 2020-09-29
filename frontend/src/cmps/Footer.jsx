@@ -10,17 +10,17 @@ export function Footer() {
         <footer className="footer flex column align-center justify-center">
             <div className="container flex justify-center">
                 <div className="developer flex align-center ">
-                    <img src={imgIdan} />
+                    <img alt="Idan" src={imgIdan} />
                     <p>Idan Benjamin</p>
                     <a href="https://www.linkedin.com/in/idanbenjamin" > <LinkedInIcon /></a>
                 </div>
                 <div className="developer flex align-center">
-                    <img src={imgHilla} />
+                    <img alt="Hilla" src={imgHilla} />
                     <p>Hilla Meri</p>
                     <a href="https://www.linkedin.com/in/hilla-meri-a9757a182" > <LinkedInIcon /></a>
                 </div>
                 <div className="developer flex align-center">
-                    <img src={imgMatan} />
+                    <img alt="Matan" src={imgMatan} />
                     <p>Matan Crispel</p>
                     <a href="https://www.linkedin.com/in/matan-crispel-7316aa1a9"> <LinkedInIcon /></a>
                 </div>
@@ -31,7 +31,3 @@ export function Footer() {
         </footer>
     )
 }
-{/* <div className="social-container">
-        <div className="social-facebook"><i className="fab fa-facebook-f"></i></div>
-        <div className="social-twitter"><i className="fab fa-twitter"></i></div>
-    </div> */}
