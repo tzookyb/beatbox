@@ -45,7 +45,7 @@ class _BoxDetails extends Component {
         const isFavorite = await userService.isBoxFavorite(this.props.user, boxId);
         this.setState({ isFavorite });
         // await boxService.addConnectedUser(boxId, minimalUser);
-        
+
         // SOCKET SETUP
         const boxInfo = {
             boxId,
@@ -54,11 +54,18 @@ class _BoxDetails extends Component {
         socketService.emit('join box', boxInfo);
     }
 
+    componentDidUpdate() {
+        if (this.props.match.params.boxId !== this.props.currBox._id) {
+            this.props.loadBox(this.props.match.params.boxId);
+        }
+    }
+
+
     onRemoveSong = async (songId) => {
         const { currSong } = this.props;
         const newBox = { ...this.props.currBox }
         const songIdx = newBox.songs.findIndex(song => song.id === songId)
-        if (currSong.id === songId) {
+        if (!currSong || currSong.id === songId) {
             if (newBox.songs.length === 1) {
                 await this.props.updateLocalPlayer(null)
             } else {

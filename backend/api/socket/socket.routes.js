@@ -18,7 +18,7 @@ function leaveBox(socket, boxInfo) {
     const newConnectedUsers = boxMap[socket.myBox].connectedUsers.filter(user => user.id !== boxInfo.user.id)
     boxMap[socket.myBox].connectedUsers = newConnectedUsers;
     if (boxMap[socket.myBox].connectedUsers.length === 0) boxMap[socket.myBox] = null;
-    // console.log("leaveBox -> boxMap", boxMap)
+    console.log("leaveBox -> boxMap", boxMap)
     socket.leave(boxInfo.boxId);
 }
 
@@ -34,6 +34,7 @@ function addConnectedUser(socket, boxInfo) {
         boxMap[socket.myBox].connectedUsers.push(boxInfo.user);
     }
 }
+
 function getActiveBoxes() {
     const activeBoxes = [];
     for (const box in boxMap) {
@@ -61,8 +62,8 @@ function connectSockets(io) {
             }
             socket.join(boxInfo.boxId);
             socket.myBox = boxInfo.boxId;
-            const boxStatus = getBoxStatus(boxInfo.boxId);
             addConnectedUser(socket, boxInfo);
+            const boxStatus = getBoxStatus(boxInfo.boxId);
             io.to(socket.myBox).emit('joined new box', boxStatus.connectedUsers);
             socket.emit('got box status', boxStatus);
         })
