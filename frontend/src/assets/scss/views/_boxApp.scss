@@ -3,6 +3,13 @@
     background-color: $clr1;
     color: #fff;
     padding-top: 100px;
+    padding-bottom: 80px;
     position: relative;
     z-index: 10;
+}
+
+@media (max-width: 740px){
+    .box-app {
+    padding-bottom: 18vh;
+    }
 }

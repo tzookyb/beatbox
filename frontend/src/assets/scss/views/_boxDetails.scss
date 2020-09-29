@@ -95,6 +95,7 @@
         p {
           margin-top: -5px;
           color: #fff;
+          text-align: center;
         }
 
         svg {
@@ -147,7 +148,7 @@
 
     .chat-box {
       flex-direction: column;
-      width: 80vw;
+      width: 100vw;
       position: fixed;
       z-index: 28;
       background-color: $clr1;

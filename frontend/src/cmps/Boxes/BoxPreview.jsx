@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 
 import { Link } from 'react-router-dom'
-// import Avatar from '@material-ui/core/Avatar';
 import DeleteIcon from '@material-ui/icons/Delete';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 
 export class BoxPreview extends Component {
     render() {
-        const { box, isHomePage, connectedUsers, onDelete } = this.props;
+        const { box, isHomePage, onDelete } = this.props;
         return (
             <section className={`box-preview ${isHomePage ? 'box-home-preview' : ''}`}>
                 <Link to={`/box/details/${box._id}`} >
@@ -29,4 +28,3 @@ export class BoxPreview extends Component {
         )
     }
 }
-
