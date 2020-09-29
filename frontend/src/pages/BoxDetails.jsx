@@ -42,21 +42,36 @@ class _BoxDetails extends Component {
         const boxId = this.props.match.params.boxId;
         const minimalUser = userService.getMinimalUser();
         await this.props.loadBox(boxId);
+        const isFavorite = await userService.isBoxFavorite(this.props.user, boxId);
+        this.setState({ isFavorite });
         // await boxService.addConnectedUser(boxId, minimalUser);
-        
+
         // SOCKET SETUP
         const boxInfo = {
             boxId,
             user: minimalUser
         }
+        socketService.on('joined new box', this.props.loadConnectedUsers);
+        socketService.on('chat addMsg', this.props.addMsg);
         socketService.emit('join box', boxInfo);
     }
+    componentWillUnmount() {
+        socketService.off('joined new box', this.props.loadConnectedUsers);
+        socketService.off('chat addMsg', this.props.addMsg);
+    }
+
+    componentDidUpdate() {
+        if (this.props.match.params.boxId !== this.props.currBox._id) {
+            this.props.loadBox(this.props.match.params.boxId);
+        }
+    }
+
 
     onRemoveSong = async (songId) => {
         const { currSong } = this.props;
         const newBox = { ...this.props.currBox }
         const songIdx = newBox.songs.findIndex(song => song.id === songId)
-        if (currSong.id === songId) {
+        if (!currSong || currSong.id === songId) {
             if (newBox.songs.length === 1) {
                 await this.props.updateLocalPlayer(null)
             } else {
@@ -165,10 +180,11 @@ class _BoxDetails extends Component {
         this.setState({ isMobileChatOpen: !this.state.isMobileChatOpen })
     }
 
-    onToggleToFavorite = () => {
-        // const boxId = this.props.currBox._id;
-        // userService.toggleToFavorite(boxId);
-        // this.setState({ isFavorite: !this.state.isFavorite });
+    onToggleToFavorite = async () => {
+        if (this.props.user.isGuest) return;
+        const boxId = this.props.currBox._id;
+        await userService.toggleToFavorite(boxId);
+        this.setState({ isFavorite: !this.state.isFavorite });
     }
 
     getIfBoxFavorite = async () => {
@@ -178,8 +194,6 @@ class _BoxDetails extends Component {
         const isFavorite = (isFavoriteIdx === -1) ? true : false;
         return isFavorite;
     }
-
-
 
     render() {
         const { isSongPickOpen, isDragging, isFavorite } = this.state;

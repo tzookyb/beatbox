@@ -37,12 +37,11 @@ class _BoxApp extends Component {
                             key={idx}
                             genre={genre}
                             minimalUser={minimalUser}
-                            connectedUsers={connectedUsers}
                         />
                     )
                 })}
                 {!genres && <GenresFilter genreCount={5} />}
-                {!genres && <BoxList boxes={boxes} minimalUser={minimalUser} connectedUsers={connectedUsers} />}
+                {!genres && <BoxList boxes={boxes} minimalUser={minimalUser}  />}
 
             </section>
         )

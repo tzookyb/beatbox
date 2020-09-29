@@ -18,7 +18,7 @@ function leaveBox(socket, boxInfo) {
     const newConnectedUsers = boxMap[socket.myBox].connectedUsers.filter(user => user.id !== boxInfo.user.id)
     boxMap[socket.myBox].connectedUsers = newConnectedUsers;
     if (boxMap[socket.myBox].connectedUsers.length === 0) boxMap[socket.myBox] = null;
-    // console.log("leaveBox -> boxMap", boxMap)
+    console.log("leaveBox -> boxMap", boxMap)
     socket.leave(boxInfo.boxId);
 }
 
@@ -34,6 +34,7 @@ function addConnectedUser(socket, boxInfo) {
         boxMap[socket.myBox].connectedUsers.push(boxInfo.user);
     }
 }
+
 function getActiveBoxes() {
     const activeBoxes = [];
     for (const box in boxMap) {
@@ -61,8 +62,8 @@ function connectSockets(io) {
             }
             socket.join(boxInfo.boxId);
             socket.myBox = boxInfo.boxId;
-            const boxStatus = getBoxStatus(boxInfo.boxId);
             addConnectedUser(socket, boxInfo);
+            const boxStatus = getBoxStatus(boxInfo.boxId);
             io.to(socket.myBox).emit('joined new box', boxStatus.connectedUsers);
             socket.emit('got box status', boxStatus);
         })
@@ -120,12 +121,12 @@ function connectSockets(io) {
         // CHAT SOCKETS **************************************
         socket.on('chat newMsg', msg => {
             console.log('chat newMsg')
-            boxMap[socket.myBox].msgs.push(msg);
-            io.to(socket.myBox).emit('chat addMsg', msg);
+            boxMap[myBox.boxId].msgs.push(msg);
+            io.to(myBox.boxId).emit('chat addMsg', msg);
         })
         socket.on('chat typing', typingStr => {
             console.log('chat typing')
-            socket.broadcast.to(socket.myBox).emit('chat showTyping', typingStr)
+            socket.broadcast.to(myBox.boxId).emit('chat showTyping', typingStr)
         })
     })
 }

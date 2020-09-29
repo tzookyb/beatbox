@@ -28,6 +28,12 @@ export class _GenresFilter extends Component {
         else {
             this.setState({ isScrolled: false })
         }
+<<<<<<< HEAD
+=======
+
+        if (this.ref.current.scrollLeft >= scrollDiff) this.ref.current.scrollLeft = 0
+        else this.ref.current.scrollLeft += scrollTo
+>>>>>>> d942fa1f5799f48cdec0d87fa1b624d0067a1624
     }
 
     componentDidMount() {

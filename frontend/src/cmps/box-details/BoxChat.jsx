@@ -73,21 +73,16 @@ class _BoxChat extends Component {
         const { msgs, user } = this.props;
         const msgsArr = [];
         msgs.forEach((msg, idx) => {
-            // let position;
             let classUser;
             let classPosition = '';
             let title;
             if (msg.id === user._id) {
-                // position = 'right';
                 title = 'you';
                 classUser = 'user-message';
                 classPosition = 'flex-end'
-                // avatar = '';
             } else {
-                // position = 'left';
                 title = msg.submitBy;
                 classUser = 'not-user-message';
-
             }
             const date = new Date(msg.submitAt);
             const dateToString = `${date.getHours()}:${date.getMinutes().toString().padStart(2, '0')}`;
@@ -97,7 +92,7 @@ class _BoxChat extends Component {
             }
             else {
                 msgsArr.push(
-                    <div key={msg.id} className={`msg flex column ${classPosition}`} >
+                    <div key={idx} className={`msg flex column ${classPosition}`} >
                         <div className={`msg-data flex align-center`}>
                             {!classPosition && <Avatar title={user.fullName} alt="User" src={msg.avatar} style={{ width: '20px', height: '20px' }} />}
                             <p className="submit-by">{title}</p>
@@ -124,7 +119,6 @@ class _BoxChat extends Component {
         if (ev.key === 'Enter') this.sendMsg();
     }
     render() {
-        // const { msgs, connectedUsers } = this.props;
         const { typingStr } = this.state;
         return (
             <section className="wall-container flex column space-between">

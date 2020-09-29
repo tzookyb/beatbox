@@ -53,8 +53,6 @@ export class _BoxList extends Component {
                                     genre={this.props.genre}
                                     onAddToFavorites={this.props.onAddToFavorites}
                                     minimalUser={this.props.minimalUser}
-                                    connectedUsers={this.props.connectedUsers}
-
                                 />
                             } else return null
                         })}
@@ -70,8 +68,6 @@ export class _BoxList extends Component {
                         box={box}
                         minimalUser={this.props.minimalUser}
                         onAddToFavorites={this.props.onAddToFavorites}
-                        // onToggleLikeBox={this.props.onToggleLikeBox}
-                        connectedUsers={this.props.connectedUsers}
                         onDelete={this.props.onDelete}
                     />
                     )}

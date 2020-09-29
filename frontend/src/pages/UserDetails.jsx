@@ -30,35 +30,36 @@ class _UserDetails extends Component {
 
     render() {
         const { user } = this.props;
-        if (this.props.user.isGuest) return;
-        const { userBoxes, userBoxesFavorite } = this.state;
-        console.log("render -> userBoxesFavorite", userBoxesFavorite)
-        const minimalUser = userService.getMinimalUser();
+        if (this.props.user.isGuest) {
+            this.props.history.push(`/`);
+        }
         if (!user) return <CircleLoading size="large" color="#ac0aff" />
+        const { userBoxes, userBoxesFavorite } = this.state;
+        const minimalUser = userService.getMinimalUser();
         return (
             <div className="user-details">
                 <div className="user-info">
                     <img className="img-user" src={user.imgUrl} alt="user" />
                     <h2>{user.username}</h2>
+                    <h2>{user.fullName}</h2>
                 </div>
-                <div className="user-boxes">
-                    <h2>My Boxes: </h2>
-                    {userBoxes && <BoxList
+                {userBoxes && <div className="user-boxes">
+                    <h2>Boxes I created: </h2>
+                    <BoxList
                         boxes={userBoxes}
                         minimalUser={minimalUser}
                         connectedUsers={this.props.connectedUsers}
                         onDelete={this.onDelete}
-                    />}
-                </div>
-                <div className="user-boxes-favorite">
+                    />
+                </div>}
+                {userBoxesFavorite && <div className="user-boxes-favorite">
                     <h2>My Favorite Boxes: </h2>
-                    {userBoxesFavorite && <BoxList
+                    <BoxList
                         boxes={userBoxesFavorite}
                         minimalUser={minimalUser}
                         connectedUsers={this.props.connectedUsers}
-                    />}
-                </div>
-                {/* <h2>Welcome {user.fullName}!</h2> */}
+                    />
+                </div>}
             </div>
         )
     }

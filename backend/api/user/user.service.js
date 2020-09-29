@@ -2,20 +2,21 @@
 
 const dbService = require('../../services/db.service')
 const ObjectId = require('mongodb').ObjectId
+const session = require('express-session')
 
 module.exports = {
     getByName,
     add,
     query,
     getById,
-    update
+    update,
 }
 
 async function getByName(username) {
     const collection = await dbService.getCollection('user')
     try {
         const user = await collection.findOne({ username })
-        return user
+        return user;
     } catch (err) {
         console.log(`ERROR: while finding user ${username}`)
         throw err;
@@ -57,7 +58,11 @@ async function getById(userId) {
         throw err;
     }
 }
+
 async function update(user) {
+    const oldUser = await getByName(user.username);
+    const password =  oldUser.password;
+    user.password = password;
     const collection = await dbService.getCollection('user')
     user._id = ObjectId(user._id);
     try {
