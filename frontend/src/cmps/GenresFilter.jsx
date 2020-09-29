@@ -9,7 +9,6 @@ import { boxService } from '../services/boxService'
 export class _GenresFilter extends Component {
     state = {
         genres: [],
-        genreCount: 5,
         isScrolled: false
     }
 
@@ -37,8 +36,7 @@ export class _GenresFilter extends Component {
     componentDidMount() {
         this.ref = React.createRef()
         const genres = boxService.getAllGenres();
-        const { genreCount } = this.props;
-        this.setState({ genres: [...genres], genreCount });
+        this.setState({ genres: [...genres]});
     }
 
     getQueryParams = (genre) => {
@@ -53,7 +51,7 @@ export class _GenresFilter extends Component {
     }
 
     render() {
-        const { genres, genreCount } = this.state;
+        const { genres} = this.state;
         if (!genres.length) return <h1>Loading...</h1>
         const currGenre = this.getCurrGenre();
         const isFiltered = !!this.props.location.search;
@@ -66,13 +64,11 @@ export class _GenresFilter extends Component {
 
                     <Link to="/box" className={`btn-filter flex justify-center align-center${!isFiltered ? 'active-filter' : ''}`} >All</Link>
                     {genres.map((genre, idx) => {
-                        if (idx - 1 <= genreCount) {
-                            return <Link
-                                to={`/box?${this.getQueryParams(genre)}`}
-                                className={`btn-filter ${(genre === currGenre) ? 'active-filter' : ''}`}
-                                key={idx} > {genre}
-                            </Link>
-                        } else return null;
+                        return <Link
+                            to={`/box?${this.getQueryParams(genre)}`}
+                            className={`btn-filter ${(genre === currGenre) ? 'active-filter' : ''}`}
+                            key={idx} > {genre}
+                        </Link>
                     })
                     }
 
