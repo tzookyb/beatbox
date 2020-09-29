@@ -52,12 +52,14 @@ class _Signup extends React.Component {
                 <div className="inputs flex column">
                     <label>User Name:</label>
                     <input
+                        required
                         name="username" type="text"
                         onChange={this.onChange}
                         placeholder="User Name:"
                         autoComplete="off" />
-                    <label>full Name:</label>
+                    <label>Full Name:</label>
                     <input
+                        required
                         name="fullName"
                         type="text"
                         onChange={this.onChange}
@@ -65,6 +67,7 @@ class _Signup extends React.Component {
                         autoComplete="off" />
                     <label>Password:</label>
                     <input
+                        required
                         name="password"
                         type="password"
                         onChange={this.onChange}

@@ -1,7 +1,7 @@
 module.exports = connectSockets
 const SITE = 'beatbox';
 var gUsersCount = 0;
-const boxMap = {}
+const boxMap = {};
 function createBoxStatus() {
     return {
         msgs: [],

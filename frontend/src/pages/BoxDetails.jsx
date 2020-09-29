@@ -55,8 +55,6 @@ class _BoxDetails extends Component {
         socketService.on('joined new box', this.props.loadConnectedUsers);
         socketService.on('chat addMsg', this.props.addMsg);
         socketService.emit('join box', boxInfo);
-        socketService.on('joined new box', this.props.loadConnectedUsers);
-        socketService.on('chat addMsg', this.props.addMsg);
     }
 
     componentWillUnmount() {
