@@ -42,6 +42,7 @@ class _App extends Component {
             <Route component={Home} path="/" />
           </Switch>
         </main>
+        
         <Player />
       </div>
     )
