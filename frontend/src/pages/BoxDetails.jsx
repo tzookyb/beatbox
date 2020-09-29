@@ -45,6 +45,7 @@ class _BoxDetails extends Component {
         const isFavorite = await userService.isBoxFavorite(this.props.user, boxId);
         this.setState({ isFavorite });
         // await boxService.addConnectedUser(boxId, minimalUser);
+        
         // SOCKET SETUP
         const boxInfo = {
             boxId,
@@ -209,7 +210,7 @@ class _BoxDetails extends Component {
                                     <AddIcon />
                                 </Fab>
 
-                                <div title="Add to favorite" className={`like-btn ${isFavorite ? "favortie" : ""}`}>
+                                <div title="Add to favorite" className={`like-btn ${isFavorite ? "favorite" : ""}`}>
                                     <FavoriteIcon onClick={this.onToggleToFavorite} />
                                 </div>
                             </div>

@@ -1,7 +1,6 @@
 // OUTSOURCE IMPORT
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom';
-
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 // LOCAL IMPORT
@@ -24,9 +23,8 @@ export class _GenresFilter extends Component {
         }
 
         if (this.ref.current.scrollLeft >= scrollDiff) this.ref.current.scrollLeft = 0
-        else this.ref.current.scrollLeft += scrollTo * this.ref.current.clientWidth
+        else this.ref.current.scrollLeft += scrollTo
     }
-
 
     componentDidMount() {
         this.ref = React.createRef()
@@ -34,18 +32,6 @@ export class _GenresFilter extends Component {
         const { genreCount } = this.props;
         this.setState({ genres: [...genres], genreCount });
     }
-
-    // goNextGenre = () => {
-    //     let currGenre = this.state.genres.splice(0, 1);
-    //     let newGenres = [...this.state.genres, currGenre[0]]
-    //     this.setState({ genres: newGenres })
-    // }
-
-    // goPrevGenre = () => {
-    //     var currGenre = this.state.genres.splice(this.state.genreCount - 1, 1);
-    //     let newGenres = [currGenre[0], ...this.state.genres]
-    //     this.setState({ genres: newGenres })
-    // }
 
     getQueryParams = (genre) => {
         let query = new URLSearchParams(this.props.history.location.search);
@@ -64,30 +50,28 @@ export class _GenresFilter extends Component {
         const currGenre = this.getCurrGenre();
         const isFiltered = !!this.props.location.search;
         return (
-            // <div className="btns-filter flex justify-center align-center">
-            <div className="btns-filter" ref={this.ref}>
+            <div className="main-container">
 
-                {this.state.isScrolled && <button className="list-left-btn" onClick={() => this.executeScroll(-1)}><ArrowBackIosIcon /></button>}
+                <div className="btns-filter" ref={this.ref}>
 
-                {/* <button onClick={() => this.goPrevGenre()} className="btn-filter-nav"><ArrowBackIosIcon /></button> */}
+                    {this.state.isScrolled && <button className="list-left-btn" onClick={() => this.executeScroll(-100)}><ArrowBackIosIcon /></button>}
 
-                <Link to="/box" className={`btn-filter flex justify-center align-center${!isFiltered ? 'active-filter' : ''}`} >All</Link>
-                {genres.map((genre, idx) => {
-                    if (idx - 1 <= genreCount) {
-                        return <Link
-                            to={`/box?${this.getQueryParams(genre)}`}
-                            className={`btn-filter ${(genre === currGenre) ? 'active-filter' : ''}`}
-                            key={idx} > {genre}
-                        </Link>
-                        // return <NavLink to={`/ box ?& genre=${genre}`} className="btn-filter" key={idx}>{genre} </NavLink>
-                    } else return null;
-                })
-                }
+                    <Link to="/box" className={`btn-filter flex justify-center align-center${!isFiltered ? 'active-filter' : ''}`} >All</Link>
+                    {genres.map((genre, idx) => {
+                        if (idx - 1 <= genreCount) {
+                            return <Link
+                                to={`/box?${this.getQueryParams(genre)}`}
+                                className={`btn-filter ${(genre === currGenre) ? 'active-filter' : ''}`}
+                                key={idx} > {genre}
+                            </Link>
+                        } else return null;
+                    })
+                    }
 
-                <button className="list-right-btn" onClick={() => this.executeScroll(1)}><ArrowForwardIosIcon /></button>
+                    <button className="list-right-btn" onClick={() => this.executeScroll(100)}><ArrowForwardIosIcon /></button>
 
-                {/* <button onClick={() => this.goNextGenre()} className="btn-filter-nav"><ArrowForwardIosIcon /></button> */}
-            </div >
+                </div >
+            </div>
         )
     }
 }

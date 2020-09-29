@@ -63,7 +63,6 @@
         .volume-slider {
             color: white;
             width: 50px;
-            // height: 50px;
             transform: rotate(270deg);
             &.muted {
                 color: #292929;
@@ -98,6 +97,13 @@
             flex-direction: column-reverse;
             height: 16vh;
         }
+        
+        .player-ctrl-btn {
+            margin-top: 5px;
+            >*{
+                font-size: 2.5rem;
+            }
+        }
 
         .player-thumbnail,
         .player-ctrl-btn:last-of-type {
@@ -117,6 +123,9 @@
                 position: absolute;
                 right: -24px;
                 height: 60px;
+            }
+            .volume-slider {
+                display: none;
             }
         }
 

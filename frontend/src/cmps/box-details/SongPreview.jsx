@@ -42,7 +42,7 @@ export class _SongPreview extends Component {
                         className="song-preview flex space-between"
                         onDoubleClick={() => this.props.changeSong(songDetails.id)}
                     >
-                
+
                         <div className="song-data flex align-center">
                             <div className="play-icon-container flex align-center cursor-pointer">
                                 {isSongPlaying ?
@@ -61,21 +61,21 @@ export class _SongPreview extends Component {
                         </div>
                         <div className="song-preview-btns flex align-center">
                             <h3 className="song-duration">{songDetails.duration || ''}</h3>
-                            {<img
-                                className={`playing-anim ${(isSongPlaying) ? '' : 'invisible'}`}
-                                src={require('../../assets/img/equalizer5.gif')} title="Now playing" alt="now-playing"
-                            />}
-                            <div><MoreVertIcon className="cursor-pointer" onClick={this.toggleRemoveOpen} /></div>
+                            <img className={`playing-anim ${(isSongPlaying) ? '' : 'invisible'}`} src={require('../../assets/img/equalizer5.gif')} title="Now playing" alt="now-playing" />
+                        {isRemoveOpen ?
                             <div
                                 onClick={(ev) => this.remove(ev, songDetails.id)}
                                 className={`remove-song-btn ${isRemoveOpen ? '' : 'invisible'}`}
                             >
                                 <DeleteOutlineIcon />
-                            </div>
+                            </div> :
+
+                            <div><MoreVertIcon className="cursor-pointer" onClick={this.toggleRemoveOpen} /></div>
+                        }
                         </div>
                     </li>
-                )
-                }
+        )
+    }
             </Draggable>
         )
     }

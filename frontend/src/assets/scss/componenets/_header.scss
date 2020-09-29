@@ -97,30 +97,36 @@ header {
 @media (max-width: 740px) {
   .global-users-container {
     width: initial;
-    top: 65px;
-    left: 7px;
+    top: 57px;
+    left: 5px;
   }
   header {
     .logo {
-      top: 5px;
+      top: 0px;
       left: 5px;
     }
-    .main-nav {
-      flex-direction: column;
-      align-items: center;
-      position: fixed;
-      z-index: 2;
-      top: 0;
-      right: 0;
-      width: 100%;
-      max-width: 100%;
-      background-color: $clr4;
-      margin-inline-start: 0;
-      transform: translateY(70px);
-      height: 0px;
-      overflow: hidden;
-      transition: transform 0.8s, box-shadow 0.8s;
-      transition: height 0.5s;
+    .right-nav {
+      .main-nav {
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        width: 100%;
+        max-width: 100%;
+        background-color: $clr4;
+        margin-inline-start: 0;
+        transform: translateY(70px);
+        height: 0px;
+        overflow: hidden;
+        transition: transform 0.8s, box-shadow 0.8s;
+        transition: height 0.5s;
+        &.menu-open {
+          height: 20%;
+          transition: height 0.5s;
+        }
+      }
 
       li {
         display: flex;
@@ -146,11 +152,6 @@ header {
         height: 100%;
         color: #fff;
         font-size: 1.5rem;
-      }
-
-      &.menu-open {
-        height: 20%;
-        transition: height 0.5s;
       }
     }
   }

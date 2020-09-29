@@ -2,17 +2,22 @@
     transition: background-color 0.1s;
 
     .song-preview-img {
+        object-fit: cover;
+        min-width: 60px;
         max-width: 60px;
-
+        max-height: 40px;
+        overflow: hidden;
+        
         img {
+            transform: scale(1.8);
             width: 100%;
             height: 100%;
-            padding: 5px;
+            // padding: 5px;
         }
     }
 
     .song-data {
-        >* {
+        > * {
             margin: 0 5px;
         }
 
@@ -41,8 +46,13 @@
         margin-inline-end: 15px;
         color: $clr6;
 
-        >* {
+        > * {
             padding: 5px;
+        }
+
+        .playing-anim {
+            width: 40px;
+            height: auto;
         }
 
         .remove-song-btn {
@@ -59,16 +69,15 @@
         background-color: #6e6d6d6e;
     }
 
-
     .song-pick.opened & {
         .song-preview-btns {
             justify-content: flex-end;
-
         }
     }
 }
 
-.playing-anim {
-    width: 40px;
-    height: auto;
+@media (max-width: 740px) {
+    .playing-anim {
+        display: none;
+    }
 }
