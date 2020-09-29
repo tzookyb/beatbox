@@ -29,11 +29,12 @@ class _App extends Component {
     socketService.on('got active boxes', this.props.setActiveBoxes);
   }
 
+
   render() {
     return (
       <div className="App">
         <Header />
-        <main>
+        <main >
           <Route component={BoxAdd} path="**/add" />
           <Switch>
             <Route component={BoxDetails} path="/box/details/:boxId" />
