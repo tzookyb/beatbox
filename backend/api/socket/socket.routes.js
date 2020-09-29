@@ -126,7 +126,7 @@ function connectSockets(io) {
         socket.on('chat typing', typingStr => {
             console.log('chat typing')
             io.to(socket.myBox).emit('chat showTyping', typingStr)
-            // socket.broadcast.to(socket.myBox).emit('chat showTyping', typingStr)
+            socket.broadcast.to(socket.myBox).emit('chat showTyping', typingStr)
         })
     })
 }
