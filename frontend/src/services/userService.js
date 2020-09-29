@@ -145,7 +145,7 @@ async function getUserFavoriteBoxes(userId) {
 
 async function isBoxFavorite(user, boxId) {
     if (user.isGuest) return false;
-    const userFromDb = await getUserById(user.id);
+    const userFromDb = await getUserById(user._id);
     let isFavoriteIdx = -1;
     if (!userFromDb.favoriteBoxes) return false;
     isFavoriteIdx = await userFromDb.favoriteBoxes.findIndex(box => box === boxId)

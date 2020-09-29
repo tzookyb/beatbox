@@ -42,9 +42,21 @@
       border-bottom: 1px solid #cccccc17;
       .btns-container {
         .like-btn {
+          position: relative;
           cursor: pointer;
           margin: 5px;
-
+          width: 200px;
+          .guest-msg {
+            position: absolute;
+            right: 20px;
+            background-color: white;
+            color: black;
+            z-index: 3;
+            padding: 5px;
+            font-weight: bold;
+            border-radius: 5px;
+            bottom: -45px;
+          }
           svg {
             font-size: 3rem;
             stroke: #fff;
@@ -117,7 +129,7 @@
             }
           }
           .copy-share-btn {
-              font-size: 1.8rem;
+            font-size: 1.8rem;
           }
         }
       }

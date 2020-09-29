@@ -33,7 +33,8 @@ class _BoxDetails extends Component {
         dominantColor: '',
         isMobileChatOpen: false,
         isClipboardToast: false,
-        isFavorite: false
+        isFavorite: false,
+        isGuestMode: false
     }
 
     imgRef = React.createRef();
@@ -45,13 +46,20 @@ class _BoxDetails extends Component {
         const isFavorite = await userService.isBoxFavorite(this.props.user, boxId);
         this.setState({ isFavorite });
         // await boxService.addConnectedUser(boxId, minimalUser);
-        
+
         // SOCKET SETUP
         const boxInfo = {
             boxId,
             user: minimalUser
         }
         socketService.emit('join box', boxInfo);
+        socketService.on('joined new box', this.props.loadConnectedUsers);
+        socketService.on('chat addMsg', this.props.addMsg);
+    }
+
+    componentWillUnmount() {
+        socketService.off('chat addMsg', this.props.addMsg);
+        socketService.off('joined new box', this.props.loadConnectedUsers);
     }
 
     onRemoveSong = async (songId) => {
@@ -156,9 +164,15 @@ class _BoxDetails extends Component {
         setTimeout(() => this.setState({ isClipboardToast: false }), 2000);
     }
 
+    toggleGuestMode = () => {
+        this.setState({ isGuestMode: true });
+        setTimeout(() => this.setState({ isGuestMode: false }), 2000);
+    }
+
     openMobileChat = () => {
         this.setState({ isMobileChatOpen: true })
     }
+
     closeMobileChat = () => {
         this.setState({ isMobileChatOpen: false })
     }
@@ -168,7 +182,10 @@ class _BoxDetails extends Component {
     }
 
     onToggleToFavorite = async () => {
-        if (this.props.user.isGuest) return;
+        if (this.props.user.isGuest) {
+            this.toggleGuestMode();
+            return;
+        }
         const boxId = this.props.currBox._id;
         await userService.toggleToFavorite(boxId);
         this.setState({ isFavorite: !this.state.isFavorite });
@@ -217,8 +234,9 @@ class _BoxDetails extends Component {
                                     <AddIcon />
                                 </Fab>
 
-                                <div title="Add to favorite" className={`like-btn ${isFavorite ? "favorite" : ""}`}>
+                                <div title="Add to favorite" className={`like-btn flex align-center ${isFavorite ? "favorite" : ""}`}>
                                     <FavoriteIcon onClick={this.onToggleToFavorite} />
+                                    {this.state.isGuestMode && <div className="guest-msg"><small>Signup to enjoy favorite feature</small></div>}
                                 </div>
                             </div>
 
@@ -288,7 +306,6 @@ const mapDispatchToProps = {
     loadMsgs,
     updateLocalPlayer,
     gotBoxUpdate,
-    // addConnectedUser,
     loadConnectedUsers,
     changeSong
 }

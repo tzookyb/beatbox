@@ -30,7 +30,6 @@ export function setFilter(query) {
 }
 
 export function updateBox(currBox) {
-  console.log("updateBox -> currBox", currBox)
   return dispatch => {
     boxService.update(currBox);
     socketService.emit('set currBox', currBox);
@@ -39,7 +38,6 @@ export function updateBox(currBox) {
 }
 
 export function removeBox(boxId) {
-  console.log("removeBox -> boxId", boxId)
   return async dispatch => {
     await boxService.remove(boxId)
     dispatch({ type: 'REMOVE_BOX', boxId })
@@ -54,6 +52,7 @@ export function gotBoxUpdate(currBox) {
 }
 
 export function setBoxStatus({ msgs, currSong }) {
+  console.log("setBoxStatus -> msgs", msgs)
   return (dispatch, getState) => {
     const { currBox } = getState().boxReducer;
     if (!currSong.id) currSong = (currBox.songs.length) ? { id: currBox.songs[0].id, isPlaying: true, secPlayed: 0 } : null;
@@ -73,7 +72,6 @@ export function setActiveBoxes(activeBoxes) {
     })
     Promise.all(boxes)
       .then((boxes) => {
-        console.log("setActiveBoxes -> boxes", boxes)
         dispatch({ type: 'SET_ACTIVE_BOXES', boxes })
       })
   }

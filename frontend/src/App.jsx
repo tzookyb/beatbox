@@ -21,11 +21,11 @@ class _App extends Component {
     this.props.loadBoxes();
     socketService.setup();
     socketService.on('got global users', this.props.setGlobalUsers);
-    socketService.on('joined new box', this.props.loadConnectedUsers);
+    // socketService.on('joined new box', this.props.loadConnectedUsers);
     socketService.on('got box status', this.props.setBoxStatus);
 
     socketService.on('box changed', this.props.gotBoxUpdate);
-    socketService.on('chat addMsg', this.props.addMsg);
+    // socketService.on('chat addMsg', this.props.addMsg);
     socketService.on('got player update', this.props.updateLocalPlayer);
     socketService.on('got active boxes', this.props.setActiveBoxes);
   }
