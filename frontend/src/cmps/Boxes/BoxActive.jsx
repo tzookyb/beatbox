@@ -13,14 +13,14 @@ export class _BoxActive extends Component {
         return (
             <React.Fragment>
                 <div id="active-box" className="active-boxes-container main-container">
-                    <h1>Join one of the currently top active Boxes:</h1>
-                    <div className="active-boxes-grid">
+                    <h1 className={window.innerWidth < 740 ? 'full' : ''}>Join one of the currently top active Boxes:</h1>
+                    <div className={`active-boxes-grid ${window.innerWidth < 740 ? 'full' : ''}`}>
                         {activeBoxes.map((box, idx) => {
                             return (
                                 <div
                                     key={idx}
                                     className="active-box flex column"
-                                    onClick={() => this.props.history.push(`/box/details/${box._id}`)}
+                                    onClick={() => this.props.history.push(`/ box / details / ${box._id}`)}
                                 >
                                     <div className="active-box-title">
                                         <h2>{box.name}</h2>

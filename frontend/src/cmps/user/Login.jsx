@@ -39,7 +39,7 @@ class _Login extends React.Component {
                         name="username"
                         type="text"
                         onChange={this.onChange}
-                        placeholder="YourName"
+                        placeholder="Your Name"
                         autoComplete="off"
                     />
                     <label>password:</label>
