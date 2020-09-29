@@ -19,6 +19,7 @@
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-beautiful-dnd": "^13.0.0",
+    "react-burger-menu": "^2.7.1",
     "react-chat-elements": "^10.10.2",
     "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.13.1",

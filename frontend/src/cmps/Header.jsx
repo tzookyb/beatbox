@@ -64,7 +64,11 @@ class _Header extends Component {
                         </ul>
 
                         <div className="user-avatar"><UserMenu user={user} onLogout={this.props.logout} /></div>
-                        <button className={`menu-btn`} onClick={this.toggleMenu}> {this.state.isMobileMenuOpen ? 'X' : '☰'}</button>
+                        <button
+                            className={`menu-btn`}
+                            onClick={this.toggleMenu}>
+                            {this.state.isMobileMenuOpen ? 'X' : '☰'}
+                        </button>
                     </div>
 
                 </header >
