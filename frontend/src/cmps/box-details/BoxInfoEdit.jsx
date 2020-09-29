@@ -61,9 +61,9 @@ export class BoxInfoEdit extends Component {
         if (!box) return <CircleLoading size="large" color="#ac0aff" />
         return (
             <form>
-                <div className="box-add-form flex">
+                <div className="box-add-form flex column">
 
-                    <div className="box-add-thumbnail">
+                    <div className="box-add-thumbnail flex">
                         <label className="upload-label" style={{ cursor: 'pointer' }} >
                             <input onChange={(ev) => this.uploadImg(ev)} type="file" hidden />
                             <img src={box.imgUrl || imgPlaceholder} alt="box" />
@@ -73,7 +73,7 @@ export class BoxInfoEdit extends Component {
                         </label>
                     </div>
 
-                    <div className="inputs flex column">
+                    <div className="inputs flex column align-center">
 
                         <label>Name:</label>
                         <input

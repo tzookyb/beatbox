@@ -33,7 +33,7 @@ class _Signup extends React.Component {
         })
     }
 
-    onSignup = (ev) => {
+    onSignup = (ev) => {        
         ev.preventDefault();
         if (this.state.username === '') return;
         const { username, fullName, password, imgUrl } = this.state.user;
@@ -48,10 +48,10 @@ class _Signup extends React.Component {
         const { user } = this.state;
         return (
             <form className="user-add-form flex" onSubmit={this.onSignup}>
-
                 <div className="inputs flex column">
                     <label>User Name:</label>
                     <input
+                        autoFocus
                         required
                         name="username" type="text"
                         onChange={this.onChange}

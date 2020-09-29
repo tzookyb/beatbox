@@ -68,7 +68,6 @@ class _BoxDetails extends Component {
         }
     }
 
-
     onRemoveSong = async (songId) => {
         const { currSong } = this.props;
         const newBox = { ...this.props.currBox }

@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export function UserMenu({ user, onLogout, loadUser }) {
+export function UserMenu({ user, onLogout }) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);
@@ -42,22 +42,16 @@ export function UserMenu({ user, onLogout, loadUser }) {
         setOpen(false);
     };
 
-    function handleListKeyDown(event) {
-        if (event.key === 'Tab') {
-            event.preventDefault();
-            setOpen(false);
-        }
-    }
 
     // return focus to the button when we transitioned from !open -> open
     const prevOpen = React.useRef(open);
-    React.useEffect(() => {
-        if (prevOpen.current === true && open === false) {
-            anchorRef.current.focus();
-        }
+    // React.useEffect(() => {
+    //     if (prevOpen.current === true && open === false) {
+    //         anchorRef.current.focus();
+    //     }
 
-        prevOpen.current = open;
-    }, [open]);
+    //     prevOpen.current = open;
+    // }, [open]);
 
     return (
         <div className={classes.root}>
@@ -77,8 +71,8 @@ export function UserMenu({ user, onLogout, loadUser }) {
                         >
                             <Paper>
                                 <ClickAwayListener onClickAway={handleClose}>
-                                    <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                                        {!user.isGuest && <MenuItem onClick={(ev) => handleClose(ev, 'Profile')}>
+                                    <MenuList autoFocusItem={open} id="menu-list-grow">
+                                        {!user.isGuest && <MenuItem onClick={handleClose}>
                                             <Link to={`/user/${user._id}`} style={{ color: "black" }}>Profile</Link>
                                         </MenuItem>}
                                         <MenuItem >

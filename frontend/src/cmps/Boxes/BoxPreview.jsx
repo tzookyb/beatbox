@@ -16,12 +16,12 @@ export class BoxPreview extends Component {
                 <div className="box-preview-details flex column">
                     <div className="box-data flex space-between column">
                         <h3 className="box-name">{box.name}</h3>
-                        <div className="creator flex align-self-end">
+                        {/* <div className="creator flex align-self-end">
                             <small>
                                 created by:
                         </small>
                             <Avatar alt="User" src={box.createdBy.imgUrl} style={{ width: '20px', height: '20px' }} />
-                        </div>
+                        </div> */}
                     </div>
                     <div className="delete-btn" title="Delete box">
                         {onDelete && <DeleteIcon onClick={(ev) => onDelete(ev, box._id)} />}

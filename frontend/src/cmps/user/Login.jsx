@@ -35,6 +35,7 @@ class _Login extends React.Component {
                 <div className="inputs flex column">
                     <label>User Name:</label>
                     <input
+                        autoFocus
                         name="username"
                         type="text"
                         onChange={this.onChange}
