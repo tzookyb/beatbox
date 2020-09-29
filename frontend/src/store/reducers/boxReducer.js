@@ -31,7 +31,6 @@ export function boxReducer(state = initialState, action) {
             return { ...state, boxes: state.boxes.filter(box => box._id !== action.boxId) }
 
         case 'SET_ACTIVE_BOXES':
-            console.log("boxReducer -> action", action)
             return { ...state, activeBoxes: action.boxes }
 
         case 'SET_CURR_SONG':

@@ -61,6 +61,7 @@ function connectSockets(io) {
                 io.to(socket.myBox).emit('joined new box', boxStatus.connectedUsers);
             }
             socket.join(boxInfo.boxId);
+            console.log(boxInfo.boxId);
             socket.myBox = boxInfo.boxId;
             addConnectedUser(socket, boxInfo);
             const boxStatus = getBoxStatus(boxInfo.boxId);
@@ -91,7 +92,7 @@ function connectSockets(io) {
         })
 
         socket.on('get active boxes', () => {
-            console.log('get active boxes')
+            console.log('get active boxes');
             const activeBoxes = getActiveBoxes();
             socket.emit('got active boxes', activeBoxes);
         })
@@ -103,14 +104,15 @@ function connectSockets(io) {
         })
 
         socket.on('set currSong', currSong => {
-            console.log('set currSong')
+            console.log('set currSong');
             boxMap[myBox.boxId].currSong = currSong;
             io.to(myBox.boxId).emit('got player update', currSong);
         })
 
         socket.on('sync song time', () => {
-            console.log('sync song time')
-            socket.emit('got seek update', boxMap[myBox.boxId].currSong.secPlayed)
+            console.log('sync song time');
+            if (!myBox) return;
+            socket.emit('got seek update', boxMap[myBox.boxId].currSong.secPlayed);
         })
 
         socket.on('update player seek', secPlayed => {
@@ -121,12 +123,12 @@ function connectSockets(io) {
         // CHAT SOCKETS **************************************
         socket.on('chat newMsg', msg => {
             console.log('chat newMsg')
-            boxMap[myBox.boxId].msgs.push(msg);
-            io.to(myBox.boxId).emit('chat addMsg', msg);
+            boxMap[socket.myBox].msgs.push(msg);
+            io.to(socket.myBox).emit('chat addMsg', msg);
         })
         socket.on('chat typing', typingStr => {
             console.log('chat typing')
-            socket.broadcast.to(myBox.boxId).emit('chat showTyping', typingStr)
+            socket.broadcast.to(socket.myBox).emit('chat showTyping', typingStr)
         })
     })
 }

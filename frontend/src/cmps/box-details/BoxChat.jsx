@@ -26,7 +26,6 @@ class _BoxChat extends Component {
 
     componentWillUnmount() {
         socketService.off('chat showTyping', this.onTyping);
-
     }
 
     onTyping = typingStr => {
@@ -48,6 +47,7 @@ class _BoxChat extends Component {
         }
         await this.setState({ msg: ev.target.value });
     }
+
     timeoutFunction = () => {
         this.setState({ isTyping: false });
         socketService.emit('chat typing', '');
@@ -115,17 +115,20 @@ class _BoxChat extends Component {
             return <Avatar key={user.id} alt={user.username} src={user.imgUrl} />
         })
     }
+
     onKeyUp = (ev) => {
         if (ev.key === 'Enter') this.sendMsg();
     }
+
     render() {
         const { typingStr } = this.state;
+        const avatarsConnectedUser = this.getConnectedAvatars();
         return (
             <section className="wall-container flex column space-between">
                 <h2 className="chat-title"> Share your thoughts </h2>
                 <div className="connected-users">
                     < AvatarGroup max={4}>
-                        {this.getConnectedAvatars()}
+                        {avatarsConnectedUser}
                     </AvatarGroup >
                 </div>
                 <div className="msgs">
