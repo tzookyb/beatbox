@@ -1,7 +1,6 @@
 // OUTSOURCE IMPORT
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom';
-
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 // LOCAL IMPORT
@@ -30,8 +29,13 @@ export class _GenresFilter extends Component {
         else {
             this.setState({ isScrolled: false })
         }
-    }
+<<<<<<< HEAD
+=======
 
+        if (this.ref.current.scrollLeft >= scrollDiff) this.ref.current.scrollLeft = 0
+        else this.ref.current.scrollLeft += scrollTo
+>>>>>>> d244d8c985b3423e3954aa0dacb86ef47570703a
+    }
 
     componentDidMount() {
         this.ref = React.createRef()
@@ -57,6 +61,7 @@ export class _GenresFilter extends Component {
         const currGenre = this.getCurrGenre();
         const isFiltered = !!this.props.location.search;
         return (
+<<<<<<< HEAD
             // <div className="btns-filter flex justify-center align-center">
             <div className="main-container">
                 <div className="btns-filter" ref={this.ref}>
@@ -83,6 +88,29 @@ export class _GenresFilter extends Component {
                     {/* <button onClick={() => this.goNextGenre()} className="btn-filter-nav"><ArrowForwardIosIcon /></button> */}
                 </div >
 
+=======
+            <div className="main-container">
+
+                <div className="btns-filter" ref={this.ref}>
+
+                    {this.state.isScrolled && <button className="list-left-btn" onClick={() => this.executeScroll(-100)}><ArrowBackIosIcon /></button>}
+
+                    <Link to="/box" className={`btn-filter flex justify-center align-center${!isFiltered ? 'active-filter' : ''}`} >All</Link>
+                    {genres.map((genre, idx) => {
+                        if (idx - 1 <= genreCount) {
+                            return <Link
+                                to={`/box?${this.getQueryParams(genre)}`}
+                                className={`btn-filter ${(genre === currGenre) ? 'active-filter' : ''}`}
+                                key={idx} > {genre}
+                            </Link>
+                        } else return null;
+                    })
+                    }
+
+                    <button className="list-right-btn" onClick={() => this.executeScroll(100)}><ArrowForwardIosIcon /></button>
+
+                </div >
+>>>>>>> d244d8c985b3423e3954aa0dacb86ef47570703a
             </div>
         )
     }

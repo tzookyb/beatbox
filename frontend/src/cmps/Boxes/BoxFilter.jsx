@@ -17,6 +17,8 @@ export class _BoxFilter extends Component {
         this.checkIfAtDetails();
     }
 
+    ref = React.createRef()
+
     async componentDidUpdate(prevProps) {
         await this.checkIfAtDetails();
 
@@ -52,7 +54,9 @@ export class _BoxFilter extends Component {
         } else this.props.setFilter(this.state.searchStr);
     }
     toggleSearch = () => {
-        this.setState(prevState => ({ isSearchOpen: !prevState.isSearchOpen }));
+        this.setState(prevState => ({ isSearchOpen: !prevState.isSearchOpen }), () => {
+            if (this.state.isSearchOpen) this.ref.current.focus();
+        });
     }
 
     render() {
@@ -60,6 +64,7 @@ export class _BoxFilter extends Component {
         return (
             <div className={`box-filter flex ${(this.props.isShown) ? '' : 'invisible'} ${this.state.isSearchOpen ? 'is-open' : ''}`}>
                 <input
+                    ref={this.ref}
                     type="search"
                     className={isAtBoxDetails ? '' : "name-filter"}
                     name="name"

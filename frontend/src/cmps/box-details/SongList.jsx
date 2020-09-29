@@ -7,7 +7,7 @@ import { SongPick } from './SongPick'
 import { SongPreview } from './SongPreview'
 import { SongPreviewExample } from './SongPreviewExample'
 
-export function SongList({ songs, onRemoveSong, onAddSong, isSongPickOpen, isFilter, isDragging, isBoxAdd, onDragEnd, onDragStart }) {
+export function SongList({ songs, onRemoveSong, onAddSong, isSongPickOpen, isFilter, isDragging, onDragEnd, onDragStart }) {
     return (
         <React.Fragment>
             <DragDropContext
@@ -23,7 +23,7 @@ export function SongList({ songs, onRemoveSong, onAddSong, isSongPickOpen, isFil
                                 ref={provided.innerRef}
                                 className={`song-pick-container ${isSongPickOpen && 'opened'}`}
                             >
-                                <SongPick isBoxAdd={isBoxAdd} isSongPickOpen={isSongPickOpen} onAddSong={onAddSong} />
+                                <SongPick isSongPickOpen={isSongPickOpen} onAddSong={onAddSong} />
                                 {provided.placeholder}
                             </div>
                         )}
@@ -40,11 +40,11 @@ export function SongList({ songs, onRemoveSong, onAddSong, isSongPickOpen, isFil
                                 ref={provided.innerRef}
                                 className={`clean-list flex column flex-1`}
                             >
-                                {!songs.length && <React.Fragment>
+                                {(!songs.length && !isFilter) && <React.Fragment>
                                     <SongPreviewExample key={1} isFirst={true} />
                                     <SongPreviewExample key={2} isFirst={false} />
                                 </React.Fragment>}
-
+                                {(!songs.length && isFilter) && <li>No search results...</li>}
                                 {
                                     songs.map((song, index) => {
                                         return <SongPreview
