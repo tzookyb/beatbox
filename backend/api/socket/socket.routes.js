@@ -1,7 +1,7 @@
 module.exports = connectSockets
 const SITE = 'beatbox';
 var gUsersCount = 0;
-const boxMap = {}
+const boxMap = {};
 function createBoxStatus() {
     return {
         msgs: [],
@@ -19,7 +19,7 @@ function leaveBox(socket, boxInfo) {
     boxMap[socket.myBox].connectedUsers = newConnectedUsers;
     if (boxMap[socket.myBox].connectedUsers.length === 0) boxMap[socket.myBox] = null;
     console.log("leaveBox -> boxMap", boxMap)
-    socket.leave(boxInfo.boxId);
+    socket.leave(socket.myBox);
 }
 
 function getBoxStatus(boxId) {
