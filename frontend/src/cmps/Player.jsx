@@ -38,7 +38,6 @@ class _Player extends Component {
             this.waitForSync(this.props.currSong)
     }
 
-
     waitForSync = (currSong) => {
         if (this.props.currSong === currSong) setTimeout(this.waitForSync, 500);
         else if (this.props.currSong?.secPlayed) {

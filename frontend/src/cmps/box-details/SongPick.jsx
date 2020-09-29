@@ -1,7 +1,8 @@
+// OUTSOURCE IMPORTS
 import React, { Component } from 'react'
 import { debounce } from 'debounce';
 import { CircleLoading } from 'react-loadingg';
-
+// LOCAL IMPORTS
 import { youtubeService } from '../../services/youtubeService';
 import { Draggable } from 'react-beautiful-dnd';
 
@@ -53,7 +54,7 @@ export class SongPick extends Component {
         const { isFilter } = this.props;
         return (
             <div className={`song-pick ${this.props.isSongPickOpen ? 'opened' : ''}`}>
-                <input ref={this.inputRef} type="search" name="searchStr" value={searchStr} onChange={this.handleInput} placeholder="Search for songs" autoComplete="off" />
+                <input ref={this.inputRef} type="search" name="searchStr" value={searchStr} onChange={this.handleInput} placeholder="Search for music" autoComplete="off" />
 
                 <div className={`song-pick-msg flex justify-center ${results.length ? 'hidden' : ''}`} >
                     {(isSearching && !results) &&
@@ -80,7 +81,7 @@ export class SongPick extends Component {
                                     onClick={() => this.onAddSong(result)}
                                 >
                                     <img src={imgUrl} alt="thumbnail" />
-                                    <span dir="auto">{title}</span>
+                                    <h3 dir="auto">{title}</h3>
                                 </div>
                             )}
                         </Draggable>

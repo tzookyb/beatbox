@@ -39,7 +39,8 @@
         object-fit: cover;
         max-width: rem(80px);
         cursor: pointer;
-        margin-right: 15px;
+        margin-inline-end: 15px;
+        margin-inline-start: 30px;
     }
 
     .player-title {
@@ -95,10 +96,10 @@
             flex-direction: column-reverse;
             height: 16vh;
         }
-        
+
         .player-ctrl-btn {
             margin-top: 5px;
-            >*{
+            > * {
                 font-size: 2.5rem;
             }
         }
