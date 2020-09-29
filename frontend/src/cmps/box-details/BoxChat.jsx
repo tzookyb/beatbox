@@ -10,6 +10,7 @@ import 'react-chat-elements/dist/main.css';
 
 import { socketService } from '../../services/socketService'
 import { addMsg, loadMsgs } from '../../store/actions/msgAction'
+// import { EmojiSelector } from '../EmojiSelector'
 
 class _BoxChat extends Component {
     state = {
@@ -18,14 +19,24 @@ class _BoxChat extends Component {
         isTyping: false,
         typingStr: '',
     }
+
     inputRef = React.createRef();
+    chatRef = React.createRef();
 
     componentDidMount() {
         socketService.on('chat showTyping', this.onTyping);
     }
 
+    componentDidUpdate() {
+        this.scrollToBottom();
+    }
+
     componentWillUnmount() {
         socketService.off('chat showTyping', this.onTyping);
+    }
+
+    scrollToBottom = () => {
+        this.chatRef.current.scrollIntoView({ behavior: "smooth" });
     }
 
     onTyping = typingStr => {
@@ -136,6 +147,7 @@ class _BoxChat extends Component {
                     <div className="typing-container">
                         {typingStr && <h3>{typingStr}</h3>}
                     </div>
+                    <div ref={this.chatRef}></div>
                 </div>
                 <div className="input-msg">
                     <Input
@@ -149,6 +161,7 @@ class _BoxChat extends Component {
                             />
                         }
                     />
+                    {/* <EmojiSelector /> */}
                 </div>
             </section>
         )

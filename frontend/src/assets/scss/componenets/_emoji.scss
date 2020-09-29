@@ -1,7 +1,25 @@
 .emoji-container {
   font-size: 1.5rem;
   margin: 0 auto;
-  >*{
-    font-size:2rem;
+  > * {
+    font-size: 2rem;
   }
+}
+
+.emoji-selector {
+  display: grid;
+  grid-template-columns: repeat(4, 40px);
+  grid-template-rows: repeat(3, 30px);
+  grid-gap: 10px;
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  background-color: $clr2;
+  border-radius: 10px;
+  padding: 5px;
+}
+.emoji-icon {
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
 }

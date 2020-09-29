@@ -52,7 +52,6 @@ export function gotBoxUpdate(currBox) {
 }
 
 export function setBoxStatus({ msgs, currSong }) {
-  console.log("setBoxStatus -> msgs", msgs)
   return (dispatch, getState) => {
     const { currBox } = getState().boxReducer;
     if (!currSong.id) currSong = (currBox.songs.length) ? { id: currBox.songs[0].id, isPlaying: true, secPlayed: 0 } : null;

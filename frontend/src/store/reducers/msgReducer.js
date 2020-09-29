@@ -1,5 +1,6 @@
 const initialState = {
     msgs: [],
+    emojis: []
 }
 
 export function msgReducer(state = initialState, action) {
