@@ -60,39 +60,39 @@
         margin-bottom: 5px;
     }
 }
-@media (max-width: 1000px) {
-    .song-list {
-        position: initial;
-    }
-    .song-pick-container {
-        position: absolute;
-        top: 70px;
-        &.opened {
-            max-width: initial;
-        }
-        .song-pick {
-            margin-top: 290px;
-            height: 0px;
-            &.opened {
-                margin-top: 0px;
-                height: 290px;
-                background: #000000c7;
-            }
-            .song-pick-msg {
-                margin-top: 50px;
-                padding-top: initial;
-            }
-        }
+// @media (max-width: 1000px) {
+//     .song-list {
+//         position: initial;
+//     }
+//     .song-pick-container {
+//         position: fixed;
+//         &.opened {
+//             max-width: initial;
+//             z-index: 3;
+//         }
+//         .song-pick {
+//             height: 0px;
+//             &.opened {
+//                 bottom: 73px;
+//                 margin-top: 0px;
+//                 height: calc(100% - 16vh);
+//                 background: #000000;
+//             }
+//             .song-pick-msg {
+//                 margin-top: 50px;
+//                 padding-top: initial;
+//             }
+//         }
 
-        .song-pick-result {
-            background-color: $clr1;
-        }
+//         .song-pick-result {
+//             background-color: $clr1;
+//         }
 
-        input {
-            border-radius: 0;
-            padding: 15px 40px;
-            font-size: 1.3rem;
-            margin: 0;
-        }
-    }
-}
+//         input {
+//             border-radius: 0;
+//             padding: 15px 25px 15px 75px;
+//             font-size: 1.3rem;
+//             margin: 0;
+//         }
+//     }
+// }
