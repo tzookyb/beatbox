@@ -84,11 +84,28 @@
 @media (max-width: 530px) {
     .box-add-container {
         .box-add-modal {
+            width:100%;
             max-height: initial;
+            display: flex;
+            border-radius: 0;
+            
             .box-add-form {
-                flex-direction: column;
+                flex-direction: row;
+                .inputs {
+                    >*{
+                        width: 70%;
+                    }
+                }
                 .box-add-thumbnail {
-                    width: 100%;
+                    width: 40%;
+                    img{
+                        width: 100%;
+                    }
+                    .upload-label{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                    }
                 }
             }
         }
