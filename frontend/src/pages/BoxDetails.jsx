@@ -270,7 +270,7 @@ class _BoxDetails extends Component {
                         />
                     </div>
 
-                    <div className={`${this.state.isMobileChatOpen ? 'chat-open' : ''} chat-box flex column`} >
+                    <div className={`${this.state.isMobileChatOpen ? 'chat-open' : ''} chat-box flex column align-center`} >
                         <BoxChat />
                     </div>
 
