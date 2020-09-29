@@ -42,7 +42,7 @@ class _Home extends Component {
                     </div>
                 </div>
 
-                <BoxActive />
+                {/* <BoxActive /> */}
 
                 <div className="genre-list">
                     {genres.length && <BoxApp genres={genres} />}
