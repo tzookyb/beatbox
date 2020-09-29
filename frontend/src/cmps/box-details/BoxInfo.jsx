@@ -6,7 +6,6 @@ import CreateIcon from '@material-ui/icons/Create';
 import Avatar from '@material-ui/core/Avatar';
 import CircleLoading from 'react-loadingg/lib/CircleLoading';
 
-
 import { cloudService } from '../../services/cloudService';
 // import { boxService } from '../../services/boxService';
 

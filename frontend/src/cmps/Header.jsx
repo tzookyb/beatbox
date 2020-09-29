@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import MenuIcon from '@material-ui/icons/Menu';
+import CloseIcon from '@material-ui/icons/Close';
 // LOCAL IMPORT
 import { BoxFilter } from './boxes/BoxFilter';
 import { logout } from '../store/actions/userAction'
@@ -41,9 +43,8 @@ class _Header extends Component {
         const { user } = this.props;
         return (
             <React.Fragment>
-
+                <div onClick={this.toggleMenu} className={`screen ${this.state.isMobileMenuOpen ? 'screen-open' : ''}`} ></div>
                 <header onScroll={this.onScroll} className={`${this.state.isScroll ? 'sticky' : ''} flex space-between align-center`}>
-
                     {(this.props.location.pathname === '/') ?
                         <a href="#top"><img title="BeatBox" className="logo" src={require('../assets/img/logo.png')} alt="logo" /></a> :
                         <Link to="/" ><img title="BeatBox" className="logo" src={require('../assets/img/logo.png')} alt="logo" /></Link>
@@ -58,13 +59,17 @@ class _Header extends Component {
                         </ul>
 
                         <div className="user-avatar"><UserMenu user={user} onLogout={this.props.logout} /></div>
+
+        
                         <button
                             className={`menu-btn`}
                             onClick={this.toggleMenu}>
-                            {this.state.isMobileMenuOpen ? 'X' : '☰'}
+                            {this.state.isMobileMenuOpen ? 
+                            <CloseIcon /> :
+                            <MenuIcon /> }
+                            {/* 'X' : '☰'} */}
                         </button>
                     </div>
-
                 </header >
             </React.Fragment >
         )
