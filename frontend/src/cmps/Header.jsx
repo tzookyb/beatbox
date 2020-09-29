@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-
 // LOCAL IMPORT
 import { BoxFilter } from './boxes/BoxFilter';
 import { logout } from '../store/actions/userAction'
@@ -39,14 +38,9 @@ class _Header extends Component {
     }
 
     render() {
-        const { gUsers } = this.props;
         const { user } = this.props;
         return (
             <React.Fragment>
-
-                {this.props.location.pathname.includes('details') ? '' : < div className="global-users-container flex justify-center">
-                    {!!gUsers && <small className="global-users">{gUsers} {gUsers === 1 ? 'user' : 'users'} now online!</small>}
-                </div>}
 
                 <header onScroll={this.onScroll} className={`${this.state.isScroll ? 'sticky' : ''} flex space-between align-center`}>
 
@@ -80,7 +74,6 @@ class _Header extends Component {
 const mapStateToProps = state => {
     return {
         user: state.userReducer.loggedinUser,
-        gUsers: state.connectedUsersReducer.globalUsers
     }
 }
 const mapDispatchToProps = {

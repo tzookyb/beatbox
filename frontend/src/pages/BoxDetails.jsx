@@ -45,21 +45,13 @@ class _BoxDetails extends Component {
         await this.props.loadBox(boxId);
         const isFavorite = await userService.isBoxFavorite(this.props.user, boxId);
         this.setState({ isFavorite });
-        // await boxService.addConnectedUser(boxId, minimalUser);
 
-        // SOCKET SETUP
+        // SOCKET JOIN TO BOX
         const boxInfo = {
             boxId,
             user: minimalUser
         }
-        socketService.on('joined new box', this.props.loadConnectedUsers);
-        socketService.on('chat addMsg', this.props.addMsg);
         socketService.emit('join box', boxInfo);
-    }
-
-    componentWillUnmount() {
-        socketService.off('joined new box', this.props.loadConnectedUsers);
-        socketService.off('chat addMsg', this.props.addMsg);
     }
 
     componentDidUpdate() {
@@ -68,17 +60,17 @@ class _BoxDetails extends Component {
         }
     }
 
-    onRemoveSong = async (songId) => {
+    onRemoveSong = (songId) => {
         const { currSong } = this.props;
         const newBox = { ...this.props.currBox }
         const songIdx = newBox.songs.findIndex(song => song.id === songId)
         if (!currSong || currSong.id === songId) {
             if (newBox.songs.length === 1) {
-                await this.props.updateLocalPlayer(null)
-            } else {
+                this.props.updateLocalPlayer(null);
+            } else if (currSong && currSong.isPlaying) {
                 let nextSongIdx = songIdx + 1;
                 if (nextSongIdx === newBox.songs.length) nextSongIdx = 0;
-                await this.props.changeSong(newBox.songs[nextSongIdx].id)
+                this.props.changeSong(newBox.songs[nextSongIdx].id);
             }
         }
         const [song] = newBox.songs.splice(songIdx, 1);
@@ -140,11 +132,9 @@ class _BoxDetails extends Component {
     addMsgChat = (msg) => {
         const msgObj = {
             text: msg,
-            // submitAt: new Date(),
             id: 'system',
             submitBy: 'system',
             avatar: this.props.user.imgUrl,
-            // from: 'system'
         }
         socketService.emit('chat newMsg', msgObj);
     }
@@ -282,12 +272,10 @@ class _BoxDetails extends Component {
 
                     <div className={`${this.state.isMobileChatOpen ? 'chat-open' : ''} chat-box flex column`} >
                         <BoxChat />
-                        {/* <BoxWall msgs={msgs} addMsg={this.addMsg} connectedUsers={this.props.connectedUsers} /> */}
                     </div>
 
                     <button className={`${this.state.isMobileChatOpen ? 'chat-open' : ''} mobile-chat-btn`}
                         onClick={this.toggleMobileChat}><QuestionAnswerIcon /></button>
-                    {/* <BoxWall msgs={msgs} addMsg={this.addMsg} /> */}
                 </section>
             </Swipeable>
         )
