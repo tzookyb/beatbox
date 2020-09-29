@@ -1,9 +1,23 @@
-.user-details{
-    padding-top: 100px;
-    .img-user{
-        border-radius: 999px;
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
+.user-details {
+  padding-top: 100px;
+  color: white;
+  .user-info {
+    text-align: center;
+  }
+  .img-user {
+    border-radius: 999px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+  .user-boxes {
+    h2 {
+      margin-left: 40px;
     }
+  }
+  .user-boxes-favorite {
+    h2 {
+      margin-left: 40px;
+    }
+  }
 }

@@ -42,7 +42,10 @@ class _BoxDetails extends Component {
         const boxId = this.props.match.params.boxId;
         const minimalUser = userService.getMinimalUser();
         await this.props.loadBox(boxId);
+        const isFavorite = await userService.isBoxFavorite(this.props.user, boxId);
+        this.setState({ isFavorite });
         // await boxService.addConnectedUser(boxId, minimalUser);
+
         // SOCKET SETUP
         const boxInfo = {
             boxId,
@@ -57,11 +60,18 @@ class _BoxDetails extends Component {
         socketService.off('chat addMsg', this.props.addMsg);
     }
 
+    componentDidUpdate() {
+        if (this.props.match.params.boxId !== this.props.currBox._id) {
+            this.props.loadBox(this.props.match.params.boxId);
+        }
+    }
+
+
     onRemoveSong = async (songId) => {
         const { currSong } = this.props;
         const newBox = { ...this.props.currBox }
         const songIdx = newBox.songs.findIndex(song => song.id === songId)
-        if (currSong.id === songId) {
+        if (!currSong || currSong.id === songId) {
             if (newBox.songs.length === 1) {
                 await this.props.updateLocalPlayer(null)
             } else {
@@ -159,14 +169,22 @@ class _BoxDetails extends Component {
         setTimeout(() => this.setState({ isClipboardToast: false }), 2000);
     }
 
-    toggleMobileMenu = () => {
+    openMobileChat = () => {
+        this.setState({ isMobileChatOpen: true })
+    }
+    closeMobileChat = () => {
+        this.setState({ isMobileChatOpen: false })
+    }
+
+    toggleMobileChat = () => {
         this.setState({ isMobileChatOpen: !this.state.isMobileChatOpen })
     }
 
-    onToggleToFavorite = () => {
-        // const boxId = this.props.currBox._id;
-        // userService.toggleToFavorite(boxId);
-        // this.setState({ isFavorite: !this.state.isFavorite });
+    onToggleToFavorite = async () => {
+        if (this.props.user.isGuest) return;
+        const boxId = this.props.currBox._id;
+        await userService.toggleToFavorite(boxId);
+        this.setState({ isFavorite: !this.state.isFavorite });
     }
 
     getIfBoxFavorite = async () => {
@@ -177,8 +195,6 @@ class _BoxDetails extends Component {
         return isFavorite;
     }
 
-
-
     render() {
         const { isSongPickOpen, isDragging, isFavorite } = this.state;
         const { currBox, filter } = this.props;
@@ -186,8 +202,8 @@ class _BoxDetails extends Component {
         const songsToShow = this.getSongsForDisplay();
         const minimalUser = userService.getMinimalUser();
         const swipeConfig = {
-            onSwipedRight: () => this.toggleMobileMenu(),
-            onSwipedLeft: () => this.toggleMobileMenu(),
+            onSwipedRight: () => this.openMobileChat(),
+            onSwipedLeft: () => this.closeMobileChat(),
             preventDefaultTouchmoveEvent: true,
             trackMouse: true
         };
@@ -214,13 +230,13 @@ class _BoxDetails extends Component {
                                     <AddIcon />
                                 </Fab>
 
-                                <div title="Add to favorite" className={`like-btn ${isFavorite ? "favortie" : ""}`}>
+                                <div title="Add to favorite" className={`like-btn ${isFavorite ? "favorite" : ""}`}>
                                     <FavoriteIcon onClick={this.onToggleToFavorite} />
                                 </div>
                             </div>
 
                             <div className="share-container flex space-between column">
-                                <p>Invite a friend<br />to join you live:</p>
+                                <p>Invite a friend to join you:</p>
                                 <div className="share-btns flex space-evenely">
                                     <a className="facebook-share-btn"
                                         href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
@@ -232,7 +248,7 @@ class _BoxDetails extends Component {
                                         data-action="share/whatsapp/share">
                                         <WhatsappIcon />
                                     </a>
-                                    <CopyToClipboard text={window.location.href}>
+                                    <CopyToClipboard className="copy-share-btn" text={window.location.href}>
                                         <LinkIcon onClick={this.toggleClipboardToast} style={{ transform: 'rotate(45deg) translateY(1px) translateX(4px)' }} />
                                     </CopyToClipboard>
                                 </div>
@@ -259,7 +275,7 @@ class _BoxDetails extends Component {
                     </div>
 
                     <button className={`${this.state.isMobileChatOpen ? 'chat-open' : ''} mobile-chat-btn`}
-                        onClick={this.toggleMobileMenu}><QuestionAnswerIcon /></button>
+                        onClick={this.toggleMobileChat}><QuestionAnswerIcon /></button>
                     {/* <BoxWall msgs={msgs} addMsg={this.addMsg} /> */}
                 </section>
             </Swipeable>

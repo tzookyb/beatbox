@@ -15,15 +15,20 @@ export class _BoxList extends Component {
 
     executeScroll = (scrollTo) => {
         let scrollDiff = this.ref.current.scrollWidth - this.ref.current.offsetWidth
-        if (this.ref.current.scrollLeft === 0) {
+
+        if (this.ref.current.scrollLeft !== 0 ) {
             this.setState({ isScrolled: true });
         }
+        if (this.ref.current.scrollLeft >= scrollDiff){
+            this.ref.current.scrollLeft = 0
+            this.setState({ isScrolled: false })
+        } 
+        else if (this.ref.current.scrollLeft < scrollDiff){
+            this.ref.current.scrollLeft += scrollTo
+        } 
         else {
             this.setState({ isScrolled: false })
         }
-
-        if (this.ref.current.scrollLeft >= scrollDiff) this.ref.current.scrollLeft = 0
-        else this.ref.current.scrollLeft += scrollTo
     }
 
     render() {
@@ -48,8 +53,6 @@ export class _BoxList extends Component {
                                     genre={this.props.genre}
                                     onAddToFavorites={this.props.onAddToFavorites}
                                     minimalUser={this.props.minimalUser}
-                                    connectedUsers={this.props.connectedUsers}
-
                                 />
                             } else return null
                         })}
@@ -65,8 +68,6 @@ export class _BoxList extends Component {
                         box={box}
                         minimalUser={this.props.minimalUser}
                         onAddToFavorites={this.props.onAddToFavorites}
-                        // onToggleLikeBox={this.props.onToggleLikeBox}
-                        connectedUsers={this.props.connectedUsers}
                         onDelete={this.props.onDelete}
                     />
                     )}

@@ -15,8 +15,16 @@ export class _GenresFilter extends Component {
 
     executeScroll = (scrollTo) => {
         let scrollDiff = this.ref.current.scrollWidth - this.ref.current.offsetWidth
-        if (this.ref.current.scrollLeft === 0) {
+
+        if (this.ref.current.scrollLeft !== 0) {
             this.setState({ isScrolled: true });
+        }
+        if (this.ref.current.scrollLeft >= scrollDiff) {
+            this.ref.current.scrollLeft = 0
+            this.setState({ isScrolled: false })
+        }
+        else if (this.ref.current.scrollLeft < scrollDiff) {
+            this.ref.current.scrollLeft += scrollTo
         }
         else {
             this.setState({ isScrolled: false })

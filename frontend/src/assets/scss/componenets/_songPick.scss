@@ -21,7 +21,7 @@
     .song-pick-msg {
         color: white;
         font-size: 1.1rem;
-        padding-top: 15px;
+        padding-top: 50px;
     }
 
     &.opened {
@@ -57,5 +57,25 @@
         padding: 10px 25px 10px 10px;
         border-radius: 999px;
         margin-bottom: 5px;
+    }
+}
+@media (max-width: 740px) {
+    .song-pick {
+        &::-webkit-scrollbar {
+        }
+
+        .song-pick-msg {
+        }
+
+        &.opened {
+        }
+
+        .song-pick-result {
+            img {
+            }
+        }
+
+        input {
+        }
     }
 }

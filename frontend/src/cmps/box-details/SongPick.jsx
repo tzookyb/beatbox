@@ -12,13 +12,11 @@ export class SongPick extends Component {
         isSearching: false
     }
 
-    inputRef = React.createRef()
+    inputRef = React.createRef();
 
     componentDidUpdate(prevProps) {
-        if (!this.props.isBoxAdd && this.props.isSongPickOpen) {
-            this.inputRef.current.focus();
-        }
         if (prevProps.isSongPickOpen !== this.props.isSongPickOpen) this.nullResults();
+        if (!prevProps.isSongPickOpen && this.props.isSongPickOpen) this.inputRef.current.focus();
     }
 
     nullResults = () => {
@@ -57,7 +55,7 @@ export class SongPick extends Component {
             <div className={`song-pick ${this.props.isSongPickOpen ? 'opened' : ''}`}>
                 <input ref={this.inputRef} type="search" name="searchStr" value={searchStr} onChange={this.handleInput} placeholder="Search for songs" autoComplete="off" />
 
-                <div className={`song-pick-msg flex justify-center ${results.length ? 'hidden' : '' }`} >
+                <div className={`song-pick-msg flex justify-center ${results.length ? 'hidden' : ''}`} >
                     {(isSearching && !results) &&
                         <React.Fragment>
                             Getting results...

@@ -5,8 +5,9 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 import { Signup } from './Signup'
+import { Login } from './Login'
 
-export function ModalSignup() {
+export function ModalUser(props) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -17,21 +18,30 @@ export function ModalSignup() {
     setOpen(false);
   };
 
+  const cmpMap = {
+    Signup: Signup,
+    Login: Login
+  }
+
+  const DynamicCmp = cmpMap[props.childern];
+  if (!DynamicCmp) return <h1>Loading..</h1>
   return (
     <div className="modal-signup">
       <div variant="outlined" color="primary" onClick={handleClickOpen}>
-        Signup
+        {props.childern}
       </div>
-      <Dialog 
+      <Dialog
         open={open}
         onClose={handleClose}
       >
         <DialogTitle >
-          Signup
+        {props.childern}
         </DialogTitle>
+
         <DialogContent>
-          <Signup handleClose={handleClose}/>
+          <DynamicCmp handleClose={handleClose} />
         </DialogContent>
+
         <DialogActions>
         </DialogActions>
       </Dialog>

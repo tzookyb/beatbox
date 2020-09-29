@@ -12,10 +12,10 @@ import { loadBoxes } from '../store/actions/boxAction'
 import { socketService } from '../services/socketService';
 
 class _Home extends Component {
-
     componentDidMount() {
         this.props.loadBoxes();
         setTimeout(() => socketService.emit('get active boxes'), 1);
+        this.clientHeight = window.innerHeight;
     }
 
     render() {
@@ -31,7 +31,7 @@ class _Home extends Component {
                             <p>Enjoy the moment. Be happy.</p>
                         </div>
                         <div className="hero-btns-container flex column space-around">
-                            <a href="#box"><button>Start listening</button></a>
+                            <button onClick={() => window.scrollTo(0, this.clientHeight)}>Start listening</button>
                             <a href="#box" className="scroll-down-arrow"><ExpandMoreSharpIcon ></ExpandMoreSharpIcon></a>
                         </div>
                     </div>
