@@ -41,7 +41,7 @@ class _BoxApp extends Component {
                     )
                 })}
                 {!genres && <GenresFilter genreCount={5} />}
-                {!genres && <BoxList boxes={boxes} minimalUser={minimalUser}  />}
+                {!genres && <BoxList boxes={boxes} minimalUser={minimalUser} />}
 
             </section>
         )
