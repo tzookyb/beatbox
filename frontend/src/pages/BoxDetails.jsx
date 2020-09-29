@@ -156,7 +156,14 @@ class _BoxDetails extends Component {
         setTimeout(() => this.setState({ isClipboardToast: false }), 2000);
     }
 
-    toggleMobileMenu = () => {
+    openMobileChat = () => {
+        this.setState({ isMobileChatOpen: true })
+    }
+    closeMobileChat = () => {
+        this.setState({ isMobileChatOpen: false })
+    }
+
+    toggleMobileChat = () => {
         this.setState({ isMobileChatOpen: !this.state.isMobileChatOpen })
     }
 
@@ -182,8 +189,8 @@ class _BoxDetails extends Component {
         const songsToShow = this.getSongsForDisplay();
         const minimalUser = userService.getMinimalUser();
         const swipeConfig = {
-            onSwipedRight: () => this.toggleMobileMenu(),
-            onSwipedLeft: () => this.toggleMobileMenu(),
+            onSwipedRight: () => this.openMobileChat(),
+            onSwipedLeft: () => this.closeMobileChat(),
             preventDefaultTouchmoveEvent: true,
             trackMouse: true
         };
@@ -216,7 +223,7 @@ class _BoxDetails extends Component {
                             </div>
 
                             <div className="share-container flex space-between column">
-                                <p>Invite a friend<br />to join you live:</p>
+                                <p>Invite a friend to join you:</p>
                                 <div className="share-btns flex space-evenely">
                                     <a className="facebook-share-btn"
                                         href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
@@ -228,7 +235,7 @@ class _BoxDetails extends Component {
                                         data-action="share/whatsapp/share">
                                         <WhatsappIcon />
                                     </a>
-                                    <CopyToClipboard text={window.location.href}>
+                                    <CopyToClipboard className="copy-share-btn" text={window.location.href}>
                                         <LinkIcon onClick={this.toggleClipboardToast} style={{ transform: 'rotate(45deg) translateY(1px) translateX(4px)' }} />
                                     </CopyToClipboard>
                                 </div>
@@ -255,7 +262,7 @@ class _BoxDetails extends Component {
                     </div>
 
                     <button className={`${this.state.isMobileChatOpen ? 'chat-open' : ''} mobile-chat-btn`}
-                        onClick={this.toggleMobileMenu}><QuestionAnswerIcon /></button>
+                        onClick={this.toggleMobileChat}><QuestionAnswerIcon /></button>
                     {/* <BoxWall msgs={msgs} addMsg={this.addMsg} /> */}
                 </section>
             </Swipeable>
