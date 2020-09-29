@@ -274,8 +274,8 @@ class _BoxDetails extends Component {
                         <BoxChat />
                     </div>
 
-                    <button className={`${this.state.isMobileChatOpen ? 'chat-open' : ''} mobile-chat-btn`}
-                        onClick={this.toggleMobileChat}><QuestionAnswerIcon /></button>
+                    {/* <button className={`${this.state.isMobileChatOpen ? 'chat-open' : ''} mobile-chat-btn`}
+                        onClick={this.toggleMobileChat}><QuestionAnswerIcon /></button> */}
                 </section>
             </Swipeable>
         )
