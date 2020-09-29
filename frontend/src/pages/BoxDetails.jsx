@@ -60,10 +60,6 @@ class _BoxDetails extends Component {
     }
 
     componentWillUnmount() {
-        socketService.off('chat addMsg', this.props.addMsg);
-        socketService.off('joined new box', this.props.loadConnectedUsers);
-    }
-    componentWillUnmount() {
         socketService.off('joined new box', this.props.loadConnectedUsers);
         socketService.off('chat addMsg', this.props.addMsg);
     }
