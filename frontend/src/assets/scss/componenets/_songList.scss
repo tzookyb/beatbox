@@ -33,7 +33,8 @@
     position: fixed;
     bottom: 80px;
     width: 100%;
-    left: 50%;
+    left: 0;
+    padding-inline-start: 50%;
     height: 60px;
     visibility: hidden;
     background-color: $clr1;
@@ -54,11 +55,12 @@
     }
 }
 
-
 @media (max-width: 720px) {
-
-
-    .song-list{
+    .song-list {
         padding-bottom: 15vh; // same as the height of the player - 1
+    }
+    .remove-song-drag {
+        bottom: 150px;
+        padding-inline-start: 45%;
     }
 }

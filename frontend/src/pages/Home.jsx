@@ -6,7 +6,6 @@ import ExpandMoreSharpIcon from '@material-ui/icons/ExpandMoreSharp';
 // LOCAL IMPORTS
 import { boxService } from '../services/boxService'
 import { BoxApp } from './BoxApp'
-import { BoxActive } from '../cmps/boxes/BoxActive';
 import { Footer } from '../cmps/Footer'
 import { loadBoxes } from '../store/actions/boxAction'
 import { socketService } from '../services/socketService';
@@ -28,7 +27,7 @@ class _Home extends Component {
                     <div className="hero-txt flex align-center justify-end column">
                         <div className="hero-title flex justify-end column">
                             <h1>Share the Beat</h1>
-                            <p>Enjoy the moment. Be happy.</p>
+                            <p>Enjoy music. Enjoy company.</p>
                         </div>
                         <div className="hero-btns-container flex column space-around">
                             <button onClick={() => window.scrollTo(0, this.clientHeight)}>Start listening</button>

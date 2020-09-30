@@ -10,7 +10,6 @@ import 'react-chat-elements/dist/main.css';
 
 import { socketService } from '../../services/socketService'
 import { addMsg, loadMsgs } from '../../store/actions/msgAction'
-// import { EmojiSelector } from '../EmojiSelector'
 
 class _BoxChat extends Component {
     state = {
@@ -136,8 +135,8 @@ class _BoxChat extends Component {
         const avatarsConnectedUser = this.getConnectedAvatars();
         return (
             <section className="wall-container flex column space-between">
-                <h2 className="chat-title"> Share your thoughts </h2>
-                <div className="connected-users">
+                <h2 className="chat-title"> Box Wall </h2>
+                <div className="connected-users flex justify-center">
                     < AvatarGroup max={4}>
                         {avatarsConnectedUser}
                     </AvatarGroup >
@@ -156,12 +155,14 @@ class _BoxChat extends Component {
                         placeholder="Type here..."
                         onKeyUp={this.onKeyUp}
                         rightButtons={
-                            <Button text='Send' onClick={this.sendMsg}
-                                backgroundColor='#5b3a7b'
+                            <Button
+                            className="btn-send"
+                                text='Send'
+                                onClick={this.sendMsg}
+                                backgroundColor='#18191a'
                             />
                         }
                     />
-                    {/* <EmojiSelector /> */}
                 </div>
             </section>
         )

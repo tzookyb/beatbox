@@ -3,8 +3,8 @@ import he from 'he';
 
 const SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search'
 const DETAILS_URL = 'https://www.googleapis.com/youtube/v3/videos'
-const API_KEYS = ['AIzaSyCPP5cxksnuliRKXkqCqeZYG3dviWGM5cM', 'AIzaSyDzlrVY5xgIReWcL92FgEkdN4Z7kym6CBg', 'AIzaSyAI58t1goVjCdrSsvtkgBAz0D9_2xhhTXI'];
-var gCurrApiKey = 0;
+const API_KEYS = ['AIzaSyAbaXz2dtxN2j9YDNLWye8RfS4OOWLeNXM', 'AIzaSyAet-69tcMxIVjZynUUldjLss45_pnl60U', 'AIzaSyAlHfUbV7L6R0Y8GNZMAK6seo2tOtDWsVw'];
+var gCurrApiKey = 2;
 var gCount = 0
 
 export const youtubeService = {
@@ -16,7 +16,9 @@ export const youtubeService = {
 
 async function get(query) {
     try {
+        console.log("get -> API_KEYS[gCurrApiKey]", API_KEYS[gCurrApiKey])
         const res = await axios.get(`${SEARCH_URL}?videoCategoryId=10&part=id,snippet&videoEmbeddable=true&type=video&maxResults=10&q=${query}&key=${API_KEYS[gCurrApiKey]}`);
+        
         gCount = 0;
         return res.data;
     } catch (err) {

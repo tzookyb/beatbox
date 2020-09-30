@@ -10,7 +10,6 @@ import WhatsappIcon from '@material-ui/icons/WhatsApp';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkIcon from '@material-ui/icons/Link';
 import ColorThief from "colorthief";
-import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import { Swipeable } from "react-swipeable";
 // LOCAL IMPORT
 import { SongList } from '../cmps/box-details/SongList'

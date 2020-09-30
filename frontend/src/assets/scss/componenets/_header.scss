@@ -24,10 +24,6 @@
   width: 100vw;
 }
 
-.screen-open {
-  opacity: 1;
-  visibility: visible;
-}
 
 header {
   min-height: 70px;
@@ -102,7 +98,12 @@ header {
     font-size: 1.25rem;
     color: white;
     transition: 0.5s;
-    background-color: $clr1 ;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    svg{
+      font-size: 2.5rem;
+    }
   }
 }
 
@@ -115,6 +116,10 @@ header {
 }
 
 @media (max-width: 740px) {
+  .screen-open {
+    opacity: 1;
+    visibility: visible;
+  }  
   .global-users-container {
     width: initial;
     top: 57px;
