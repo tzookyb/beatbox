@@ -85,7 +85,7 @@ export class BoxInfo extends Component {
                             <React.Fragment>
                                 <input autoFocus type="txt" value={box.name} name="name" onChange={this.handleInput} />
                                 <div className="btn-hide-container">
-                                    <button onClick={() => this.onSave('isEditableName')} ><SaveIcon /></button>
+                                    <button className="save-btn" onClick={() => this.onSave('isEditableName')} ><SaveIcon /></button>
                                 </div>
                             </React.Fragment>
                             :
@@ -103,7 +103,7 @@ export class BoxInfo extends Component {
                             {!isEditableDesc && <button onClick={() => this.onEdit('isEditableDesc')} className="hide-btn"><CreateIcon /></button>}
                         </div>
                         {isEditableDesc && <textarea autoFocus type="txt" value={box.description} name="description" onChange={this.handleInput} />}
-                        {isEditableDesc && <button onClick={() => this.onSave('isEditableDesc')} ><SaveIcon /></button>}
+                        {isEditableDesc && <button className="save-btn" onClick={() => this.onSave('isEditableDesc')} ><SaveIcon /></button>}
                     </div>
                     <h4>{box.genre}</h4>
 

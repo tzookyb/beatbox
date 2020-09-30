@@ -29,8 +29,7 @@
     position: fixed;
     bottom: 80px;
     width: 100%;
-    left: 0;
-    padding-inline-start: 50%;
+    left: 150px;
     height: 60px;
     visibility: hidden;
     background-color: $clr1;
@@ -38,6 +37,9 @@
     transition: 0.5s;
     &.opened {
         visibility: visible;
+    }
+    svg {
+        font-size: 60px;
     }
     .bin {
         animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
@@ -56,7 +58,10 @@
         padding-bottom: 15vh; // same as the height of the player - 1
     }
     .remove-song-drag {
-        bottom: 150px;
-        padding-inline-start: 45%;
+        left: 0;
+        bottom: 15.5vh;
+        svg {
+            font-size: 35px;
+        }
     }
 }

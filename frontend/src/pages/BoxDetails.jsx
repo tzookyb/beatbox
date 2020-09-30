@@ -27,7 +27,7 @@ import { loadConnectedUsers } from '../store/actions/connectedUsersAction'
 class _BoxDetails extends Component {
     state = {
         isSongPickOpen: false,
-        isDragging: false,
+        isDragging: true,
         msgs: [],
         dominantColor: '',
         isMobileChatOpen: false,

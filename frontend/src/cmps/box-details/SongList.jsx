@@ -67,9 +67,9 @@ export function SongList({ songs, onRemoveSong, onAddSong, isSongPickOpen, isFil
                     {provided => (
                         <div
                             ref={provided.innerRef} {...provided.droppableProps}
-                            className={`remove-song-drag ${isDragging ? 'opened' : ''}`}
+                            className={`remove-song-drag flex align-center justify-center ${isDragging ? 'opened' : ''}`}
                         >
-                            <Delete className="bin" style={{ fontSize: '60px', color: 'white' }} />
+                            <Delete className="bin" style={{ color: 'white' }} />
                             {provided.placeholder}
                         </div>
                     )

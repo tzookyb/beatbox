@@ -1,11 +1,10 @@
 footer {
   position: relative;
-  min-height: 110px;
+  min-height: 120px;
   background-color: $clr4;
   color: white;
   width: 100%;
-  padding-bottom: 85px;
-  z-index: 5;
+  z-index: 31;
 
   .container {
     height: 100%;
@@ -14,6 +13,9 @@ footer {
       margin: 10px;
     }
     .developer {
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
       box-shadow: -4px 3px 6px #00000036;
       > * {
         margin: 4px;
