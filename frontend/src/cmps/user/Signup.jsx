@@ -1,10 +1,12 @@
+// OUTSOURCE IMPORTS
 import React from 'react';
 import { connect } from 'react-redux'
 import Button from '@material-ui/core/Button';
 
+// LOCAL IMPORTS
 import { signup, loadUser } from '../../store/actions/userAction'
-import imgPlaceholder from '../../assets/img/img_placeholder.png';
 import { cloudService } from '../../services/cloudService'
+import imgPlaceholder from '../../assets/img/img_placeholder.png';
 
 class _Signup extends React.Component {
     state = {
@@ -99,7 +101,6 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-    // login,
     loadUser,
     signup
 }

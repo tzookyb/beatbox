@@ -2,6 +2,7 @@
 import React from 'react'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import { Delete } from '@material-ui/icons';
+
 // LOCAL IMPORTS
 import { SongPick } from './SongPick'
 import { SongPreview } from './SongPreview'

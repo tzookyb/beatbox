@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
+
 // LOCAL IMPORT
 import { BoxFilter } from './boxes/BoxFilter';
 import { logout } from '../store/actions/userAction'

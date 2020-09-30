@@ -1,13 +1,13 @@
 // OUTSOURCE IMPORTS
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import CircleLoading from 'react-loadingg/lib/CircleLoading'
 // LOCAL IMPORTS
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService'
 import { saveBox, loadBoxes } from '../store/actions/boxAction'
 import { BoxInfoEdit } from '../cmps/box-details/BoxInfoEdit'
-import { withRouter } from 'react-router-dom'
 
 export class _BoxAdd extends Component {
     state = {

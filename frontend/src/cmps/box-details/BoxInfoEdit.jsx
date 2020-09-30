@@ -1,6 +1,8 @@
+// OUTSOURCE IMPORTS
 import React, { Component } from 'react'
 import CircleLoading from 'react-loadingg/lib/CircleLoading';
 
+// LOCAL IMPORTS
 import { cloudService } from '../../services/cloudService'
 import { boxService } from '../../services/boxService'
 import imgPlaceholder from '../../assets/img/img_placeholder.png';

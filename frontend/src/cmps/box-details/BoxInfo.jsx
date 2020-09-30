@@ -1,14 +1,12 @@
+// OUTSOURCE IMPORTS
 import React, { Component } from 'react'
-
 import SaveIcon from '@material-ui/icons/Save';
 import CreateIcon from '@material-ui/icons/Create';
-// import FavoriteIcon from '@material-ui/icons/Favorite';
 import Avatar from '@material-ui/core/Avatar';
 import CircleLoading from 'react-loadingg/lib/CircleLoading';
 
+// LOCAL IMPORTS
 import { cloudService } from '../../services/cloudService';
-// import { boxService } from '../../services/boxService';
-
 
 export class BoxInfo extends Component {
     state = {
@@ -67,7 +65,6 @@ export class BoxInfo extends Component {
 
     render() {
         const { box, isEditableName, isEditableDesc } = this.state;
-        // const { minimalUser } = this.props;
         if (!box) return <CircleLoading size="large" color="#ac0aff" />
         return (
             <section className="box-info flex">

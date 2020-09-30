@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+
 // LOCAL IMPORT
 import { boxService } from '../services/boxService'
 

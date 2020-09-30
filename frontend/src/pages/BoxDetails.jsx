@@ -12,17 +12,17 @@ import LinkIcon from '@material-ui/icons/Link';
 import ColorThief from "colorthief";
 import { Swipeable } from "react-swipeable";
 // LOCAL IMPORT
-import { SongList } from '../cmps/box-details/SongList'
-import { BoxInfo } from '../cmps/box-details/BoxInfo'
+import { youtubeService } from '../services/youtubeService';
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService';
 import { socketService } from '../services/socketService';
+import { SongList } from '../cmps/box-details/SongList'
+import { BoxInfo } from '../cmps/box-details/BoxInfo'
+import { BoxChat } from '../cmps/box-details/BoxChat'
 import { loadBox, updateBox, gotBoxUpdate } from '../store/actions/boxAction'
 import { addMsg, loadMsgs } from '../store/actions/msgAction'
 import { changeSong, updateLocalPlayer } from '../store/actions/playerActions'
 import { loadConnectedUsers } from '../store/actions/connectedUsersAction'
-import { youtubeService } from '../services/youtubeService';
-import { BoxChat } from '../cmps/box-details/BoxChat'
 
 class _BoxDetails extends Component {
     state = {

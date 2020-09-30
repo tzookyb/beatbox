@@ -4,11 +4,11 @@ import { connect } from 'react-redux'
 import { CircleLoading } from 'react-loadingg';
 import ExpandMoreSharpIcon from '@material-ui/icons/ExpandMoreSharp';
 // LOCAL IMPORTS
-import { boxService } from '../services/boxService'
 import { BoxApp } from './BoxApp'
 import { Footer } from '../cmps/Footer'
-import { loadBoxes } from '../store/actions/boxAction'
+import { boxService } from '../services/boxService'
 import { socketService } from '../services/socketService';
+import { loadBoxes } from '../store/actions/boxAction'
 
 class _Home extends Component {
     componentDidMount() {

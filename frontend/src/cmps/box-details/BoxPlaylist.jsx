@@ -1,5 +1,7 @@
+// OUTSOURCE IMPORTS
 import React from 'react';
 
+// LOCAL IMPORTS
 import { SongPreview } from './SongPreview'
 
 export function BoxPlaylist({ songs }) {

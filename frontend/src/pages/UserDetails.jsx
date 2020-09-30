@@ -1,8 +1,9 @@
-
+// OUTSOURCE IMPORT
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { CircleLoading } from 'react-loadingg';
 
+// LOCAL IMPORTS
 import { BoxList } from '../cmps/boxes/BoxList'
 import { removeBox } from '../store/actions/boxAction'
 import { userService } from '../services/userService'

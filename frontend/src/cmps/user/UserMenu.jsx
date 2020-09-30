@@ -1,3 +1,4 @@
+// OUTSOURCE IMPORTS
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
@@ -6,9 +7,10 @@ import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
-import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
+import { makeStyles } from '@material-ui/core/styles';
 
+// LOCAL IMPORTS
 import { ModalUser } from './ModalUser'
 
 const useStyles = makeStyles((theme) => ({

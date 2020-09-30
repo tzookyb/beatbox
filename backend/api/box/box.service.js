@@ -1,6 +1,4 @@
 
-// const fs = require('fs')
-// const boxs = require('../../data/box.json')
 const dbService = require('../../services/db.service')
 const ObjectId = require('mongodb').ObjectId
 const COLL_NAME = 'box'

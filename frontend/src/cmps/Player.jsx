@@ -10,6 +10,7 @@ import SkipNextIcon from '@material-ui/icons/SkipNext';
 import VolumeMuteIcon from '@material-ui/icons/VolumeMute';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import { CircleLoading } from 'react-loadingg';
+
 // LOCAL IMPORT
 import { changeSong, updateProgress, togglePlay } from '../store/actions/playerActions';
 import { socketService } from '../services/socketService';

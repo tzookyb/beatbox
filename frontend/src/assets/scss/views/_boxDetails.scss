@@ -10,11 +10,6 @@
   grid-template-areas:
     "chat-box box-details-main"
     "player player";
-
-  // .player-capsule {
-  //     grid-area: player;
-  // }
-
   .chat-box {
     grid-area: chat-box;
     width: 300px;
@@ -60,7 +55,6 @@
           svg {
             font-size: 3rem;
             stroke: #fff;
-            // fill: transparent;
           }
         }
       }
@@ -118,14 +112,12 @@
         .share-btns {
           .facebook-share-btn {
             svg {
-              // fill: #3d6ed4;
               font-size: 2.2rem;
             }
           }
 
           .whatsapp-share-btn {
             svg {
-              // fill: #128c7e;
               font-size: 2.2rem;
             }
           }

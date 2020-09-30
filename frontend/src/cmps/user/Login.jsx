@@ -1,7 +1,9 @@
+// OUTSOURCE IMPORTS
 import React from 'react';
 import { connect } from 'react-redux'
 import Button from '@material-ui/core/Button';
 
+// LOCAL IMPORTS
 import { login, loadUser } from '../../store/actions/userAction'
 
 class _Login extends React.Component {

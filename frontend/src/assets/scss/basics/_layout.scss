@@ -35,22 +35,3 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 20px;
 }
-
-// .box-details {
-//     display: grid;
-//     grid-template-columns: 20px 1fr 45px;
-
-//     padding: 40px;
-//     > * {
-//         grid-column: 1/4;
-//     }
-
-//     .wall-container {
-//         grid-column: 4/6;
-//         grid-row: 1/5;
-//     }
-
-//     @include for-normal-layout {
-//         grid-template-columns: repeat(5, 1fr);
-//     }
-// }

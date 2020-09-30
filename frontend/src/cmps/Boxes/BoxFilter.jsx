@@ -3,9 +3,10 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import SearchIcon from '@material-ui/icons/Search';
+import { debounce } from '@material-ui/core';
+
 // LOCAL IMPORTS
 import { setFilter } from '../../store/actions/boxAction';
-import { debounce } from '@material-ui/core';
 
 export class _BoxFilter extends Component {
     state = {

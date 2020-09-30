@@ -1,6 +1,6 @@
+// OUTSOURCE IMPORTS
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
 import { SystemMessage } from 'react-chat-elements'
 import { Input } from 'react-chat-elements'
 import { Button } from 'react-chat-elements'
@@ -8,6 +8,7 @@ import Avatar from '@material-ui/core/Avatar';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import 'react-chat-elements/dist/main.css';
 
+// LOCAL IMPORTS
 import { socketService } from '../../services/socketService'
 import { addMsg, loadMsgs } from '../../store/actions/msgAction'
 

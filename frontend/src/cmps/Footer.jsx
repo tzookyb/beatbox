@@ -1,7 +1,9 @@
+// OUTSOURCE IMPORTS
 import React from 'react'
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
+// LOCAL IMPORTS
 import imgIdan from '../assets/img/idan.jpeg';
 import imgHilla from '../assets/img/hilla.jpg';
 import imgMatan from '../assets/img/matan.jpg';

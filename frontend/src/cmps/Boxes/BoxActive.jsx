@@ -1,7 +1,7 @@
+// OUTSOURCE IMPORTS
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-// LOCAL IMPORTS
 
 export class _BoxActive extends Component {
     render() {
