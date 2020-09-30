@@ -67,10 +67,10 @@ export function SongList({ songs, onRemoveSong, onAddSong, isSongPickOpen, isFil
                     {provided => (
                         <div
                             ref={provided.innerRef} {...provided.droppableProps}
-                            className={`remove-song-drag flex align-center justify-center ${isDragging ? 'opened' : ''}`}
+                            className={`remove-song-drag flex ${isDragging ? 'opened' : ''}`}
                         >
-                            <Delete className="bin" style={{ color: 'white' }} />
-                            {provided.placeholder}
+                            <Delete className="bin" />
+                            {/* {provided.placeholder} */}
                         </div>
                     )
                     }

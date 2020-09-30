@@ -99,7 +99,7 @@ class _BoxChat extends Component {
             const dateToString = `${date.getHours()}:${date.getMinutes().toString().padStart(2, '0')}`;
             if (msg.id === 'system') {
                 msgsArr.push(<SystemMessage
-                    key={msg.id} text={msg.text} />)
+                    key={idx} text={msg.text} />)
             }
             else {
                 msgsArr.push(
@@ -157,7 +157,7 @@ class _BoxChat extends Component {
                         onKeyUp={this.onKeyUp}
                         rightButtons={
                             <Button
-                            className="btn-send"
+                                className="btn-send"
                                 text='Send'
                                 onClick={this.sendMsg}
                                 backgroundColor='#18191a'
