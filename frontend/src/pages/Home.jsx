@@ -6,7 +6,6 @@ import ExpandMoreSharpIcon from '@material-ui/icons/ExpandMoreSharp';
 // LOCAL IMPORTS
 import { boxService } from '../services/boxService'
 import { BoxApp } from './BoxApp'
-import { BoxActive } from '../cmps/boxes/BoxActive';
 import { Footer } from '../cmps/Footer'
 import { loadBoxes } from '../store/actions/boxAction'
 import { socketService } from '../services/socketService';
