@@ -24,10 +24,6 @@
   width: 100vw;
 }
 
-.screen-open {
-  opacity: 1;
-  visibility: visible;
-}
 
 header {
   min-height: 70px;
@@ -120,6 +116,10 @@ header {
 }
 
 @media (max-width: 740px) {
+  .screen-open {
+    opacity: 1;
+    visibility: visible;
+  }  
   .global-users-container {
     width: initial;
     top: 57px;
