@@ -17,6 +17,11 @@ function createBoxStatus() {
 socketService.emit('join box', boxInfo);
 
 // BACKEND:
+function getBoxStatus(boxId) {
+    if (!boxMap[boxId]) boxMap[boxId] = createBoxStatus();
+    return boxMap[boxId];
+}
+
 function connectSockets(io) {
     io.on('connection', socket => {
 
@@ -33,6 +38,11 @@ function connectSockets(io) {
             io.to(socket.myBox).emit('joined new box', boxStatus.connectedUsers);
         })
 
+        // FRONTEND:
+        socketService.on('got box status', this.props.setBoxStatus);
+
+
+
         // FRONTEND: EXAMPLE FOR SYNC REQUEST
         socketService.emit('sync song time', boxInfo);
 
@@ -44,10 +54,18 @@ function connectSockets(io) {
     })
 }
 
-function getBoxStatus(boxId) {
-    if (!boxMap[boxId]) boxMap[boxId] = createBoxStatus();
-    return boxMap[boxId];
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
 function leaveBox(socket, io, currUser) {
     const newConnectedUsers = boxMap[socket.myBox].connectedUsers.filter(user => user.id !== currUser.id)
@@ -57,6 +75,3 @@ function leaveBox(socket, io, currUser) {
     else io.to(socket.myBox).emit('joined new box', newConnectedUsers);
     socket.leave(socket.myBox);
 }
-
-// FRONTEND:
-socketService.on('got box status', this.props.setBoxStatus);
