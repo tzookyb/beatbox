@@ -44,6 +44,7 @@ class _BoxChat extends Component {
     }
 
     onHandleChange = async (ev) => {
+        if (!ev.target.value) return;
         var timeout;
         if (!this.state.isTyping) {
             clearTimeout(timeout);
