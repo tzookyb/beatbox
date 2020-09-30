@@ -30,7 +30,7 @@ export function Footer() {
                 </div>
             </div>
             <small>
-                © Coffee Rights BitBox 2020
+                © Coffee Rights BeatBox 2020
             </small>
         </footer>
     )

@@ -16,6 +16,8 @@
     color: white;
     padding: 5px;
     font-size: 1.5rem;
+    border-radius: 5px;
+    margin-bottom: 5px;
   }
 
   .input-msg {
@@ -58,6 +60,7 @@
       position: fixed;
       bottom: 18vh;
        // same as chat-box container - 5vw
+
     }
   }
 }
