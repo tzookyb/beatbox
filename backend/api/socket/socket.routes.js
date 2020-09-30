@@ -45,11 +45,13 @@ function connectSockets(io) {
         // BOX SOCKETS ***********************************
         socket.on('set currBox', box => {
             console.log('set currBox')
+            if (!socket.myBox) return;
             io.to(socket.myBox).emit('box changed', box);
         })
 
         socket.on('get active boxes', () => {
             console.log('get active boxes');
+            if (!socket.myBox) return;
             const activeBoxes = getActiveBoxes();
             socket.emit('got active boxes', activeBoxes);
         })
@@ -62,6 +64,7 @@ function connectSockets(io) {
 
         socket.on('set currSong', currSong => {
             console.log('set currSong');
+            if (!socket.myBox) return;
             boxMap[socket.myBox].currSong = currSong;
             io.to(socket.myBox).emit('got player update', currSong);
         })
@@ -74,17 +77,20 @@ function connectSockets(io) {
 
         socket.on('update player seek', secPlayed => {
             console.log('update player seek')
+            if (!socket.myBox) return;
             io.to(socket.myBox).emit('got seek update', secPlayed);
         })
 
         // CHAT SOCKETS **************************************
         socket.on('chat newMsg', msg => {
             console.log('chat newMsg')
+            if (!socket.myBox) return;
             boxMap[socket.myBox].msgs.push(msg);
             io.to(socket.myBox).emit('chat addMsg', msg);
         })
         socket.on('chat typing', typingStr => {
             console.log('chat typing')
+            if (!socket.myBox) return;
             socket.broadcast.to(socket.myBox).emit('chat showTyping', typingStr)
         })
     })
