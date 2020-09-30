@@ -10,7 +10,6 @@ import 'react-chat-elements/dist/main.css';
 
 import { socketService } from '../../services/socketService'
 import { addMsg, loadMsgs } from '../../store/actions/msgAction'
-// import { EmojiSelector } from '../EmojiSelector'
 
 class _BoxChat extends Component {
     state = {
@@ -161,7 +160,6 @@ class _BoxChat extends Component {
                             />
                         }
                     />
-                    {/* <EmojiSelector /> */}
                 </div>
             </section>
         )

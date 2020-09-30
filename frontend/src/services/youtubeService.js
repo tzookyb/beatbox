@@ -3,7 +3,7 @@ import he from 'he';
 
 const SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search'
 const DETAILS_URL = 'https://www.googleapis.com/youtube/v3/videos'
-const API_KEYS = ['AIzaSyCPP5cxksnuliRKXkqCqeZYG3dviWGM5cM', 'AIzaSyDzlrVY5xgIReWcL92FgEkdN4Z7kym6CBg', 'AIzaSyAI58t1goVjCdrSsvtkgBAz0D9_2xhhTXI'];
+const API_KEYS = ['AIzaSyAbaXz2dtxN2j9YDNLWye8RfS4OOWLeNXM', 'AIzaSyAet-69tcMxIVjZynUUldjLss45_pnl60U', 'AIzaSyAlHfUbV7L6R0Y8GNZMAK6seo2tOtDWsVw'];
 var gCurrApiKey = 0;
 var gCount = 0
 
