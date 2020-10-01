@@ -11,15 +11,23 @@ import { socketService } from '../services/socketService';
 import { loadBoxes } from '../store/actions/boxAction'
 
 class _Home extends Component {
+    state = {
+        loadedImgs: 0
+    }
+
     componentDidMount() {
         this.props.loadBoxes();
         setTimeout(() => socketService.emit('get active boxes'), 1);
         this.clientHeight = window.innerHeight;
     }
 
+    onLoadImg = () => {
+        this.setState(prevState => ({ loadedImgs: prevState.loadedImgs++ }))
+    }
+
     render() {
         const { boxes } = this.props;
-        if (!boxes) return <CircleLoading size="large" color="#ac0aff" />
+        if (!boxes || this.state.loadedImgs !== 3) return <CircleLoading size="large" color="#ac0aff" />
         const genres = boxService.getUsedGenres(boxes);
         return (
             <React.Fragment>
@@ -35,9 +43,9 @@ class _Home extends Component {
                         </div>
                     </div>
                     <div className="hero-img">
-                        <img src={require('../assets/img/hero3.jpg')} alt="" />
-                        <img src={require('../assets/img/hero2.png')} alt="" />
-                        <img src={require('../assets/img/hero1.jpg')} alt="" />
+                        <img onLoad={this.onLoadImg} src={require('../assets/img/hero3.jpg')} alt="" />
+                        <img onLoad={this.onLoadImg} src={require('../assets/img/hero2.png')} alt="" />
+                        <img onLoad={this.onLoadImg} src={require('../assets/img/hero1.jpg')} alt="" />
                     </div>
                 </div>
 
