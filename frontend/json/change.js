@@ -1,7 +1,7 @@
 const fs = require('fs')
 const axios = require('axios');
 
-const API_KEY = 'AIzaSyDzlrVY5xgIReWcL92FgEkdN4Z7kym6CBg'
+const API_KEY;
 const DETAILS_URL = 'https://www.googleapis.com/youtube/v3/videos'
 
 console.clear()
