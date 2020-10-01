@@ -231,7 +231,7 @@ class _BoxDetails extends Component {
 
                                 <div title="Add to favorite" className={`like-btn flex align-center ${isFavorite ? "favorite" : ""}`}>
                                     <FavoriteIcon onClick={this.onToggleToFavorite} />
-                                    {this.state.isGuestMode && <div className="guest-msg"><small>Signup to enjoy favorite feature</small></div>}
+                                    {this.state.isGuestMode && <div className="guest-msg"><small>Signup to enjoy favorites feature</small></div>}
                                 </div>
                             </div>
 

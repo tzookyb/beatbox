@@ -18,7 +18,6 @@ import { updateLocalPlayer } from './store/actions/playerActions';
 
 class _App extends Component {
   componentDidMount() {
-    this.props.loadBoxes();
     // SOCKETS
     socketService.setup();
     socketService.on('got box status', this.props.setBoxStatus);
@@ -26,7 +25,6 @@ class _App extends Component {
     socketService.on('box changed', this.props.gotBoxUpdate);
     socketService.on('chat addMsg', this.props.addMsg);
     socketService.on('got player update', this.props.updateLocalPlayer);
-    socketService.on('got active boxes', this.props.setActiveBoxes);
   }
 
 

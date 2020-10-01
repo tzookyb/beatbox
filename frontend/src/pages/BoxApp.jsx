@@ -4,14 +4,15 @@ import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import CircleLoading from 'react-loadingg/lib/CircleLoading'
 // LOCAL IMPORT
+import { boxService } from '../services/boxService'
+import { userService } from '../services/userService'
 import { BoxList } from '../cmps/boxes/BoxList'
 import { GenresFilter } from '../cmps/GenresFilter'
-import { userService } from '../services/userService'
 import { loadBoxes } from '../store/actions/boxAction'
 
 class _BoxApp extends Component {
     componentDidMount() {
-        this.onLoadBoxes()
+        this.onLoadBoxes();
     }
 
     componentDidUpdate(prevProps) {
@@ -24,9 +25,10 @@ class _BoxApp extends Component {
     }
 
     render() {
-        const { boxes, genres } = this.props;
-        const minimalUser = userService.getMinimalUser();
+        const { boxes } = this.props;
         if (!boxes) return <CircleLoading size="large" color="#ac0aff" />
+        const genres = boxService.getUsedGenres(boxes);
+        const minimalUser = userService.getMinimalUser();
 
         return (
             <section className="box-app" id="box">

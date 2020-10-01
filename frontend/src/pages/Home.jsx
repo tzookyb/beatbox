@@ -6,53 +6,47 @@ import ExpandMoreSharpIcon from '@material-ui/icons/ExpandMoreSharp';
 // LOCAL IMPORTS
 import { BoxApp } from './BoxApp'
 import { Footer } from '../cmps/Footer'
-import { boxService } from '../services/boxService'
-import { socketService } from '../services/socketService';
 import { loadBoxes } from '../store/actions/boxAction'
 
 class _Home extends Component {
     state = {
-        loadedImgs: 0
+        imgsLoaded: false
     }
 
-    componentDidMount() {
-        this.props.loadBoxes();
-        setTimeout(() => socketService.emit('get active boxes'), 1);
-        this.clientHeight = window.innerHeight;
-    }
+    countLoadedImgs = 0;
 
     onLoadImg = () => {
-        this.setState(prevState => ({ loadedImgs: prevState.loadedImgs++ }))
+        this.countLoadedImgs++;
+        if (this.countLoadedImgs === 3) {
+            this.setState({ imgsLoaded: true });
+        }
     }
 
     render() {
-        const { boxes } = this.props;
-        if (!boxes || this.state.loadedImgs !== 3) return <CircleLoading size="large" color="#ac0aff" />
-        const genres = boxService.getUsedGenres(boxes);
+        const { imgsLoaded } = this.state;
         return (
             <React.Fragment>
-                <div id="top" className="hero-container flex justify-center align-center" >
+                {(!imgsLoaded && <CircleLoading size="large" color="#ac0aff" />)}
+                <div id="top" className={`hero-container flex justify-center align-center ${(imgsLoaded) ? '' : 'invisible'}`} >
                     <div className="hero-txt flex align-center justify-end column">
                         <div className="hero-title flex justify-end column">
                             <h1>Share the Beat</h1>
                             <p>Enjoy music. Enjoy company.</p>
                         </div>
                         <div className="hero-btns-container flex column space-around">
-                            <button onClick={() => window.scrollTo(0, this.clientHeight)}>Start listening</button>
+                            <a href="#box"><button>Start listening</button></a>
                             <a href="#box" className="scroll-down-arrow"><ExpandMoreSharpIcon ></ExpandMoreSharpIcon></a>
                         </div>
                     </div>
                     <div className="hero-img">
-                        <img onLoad={this.onLoadImg} src={require('../assets/img/hero3.jpg')} alt="" />
-                        <img onLoad={this.onLoadImg} src={require('../assets/img/hero2.png')} alt="" />
-                        <img onLoad={this.onLoadImg} src={require('../assets/img/hero1.jpg')} alt="" />
+                        <img onLoad={this.onLoadImg} src={require('../assets/img/hero3.jpg')} alt="heroimg1" />
+                        <img onLoad={this.onLoadImg} src={require('../assets/img/hero2.png')} alt="heroimg2" />
+                        <img onLoad={this.onLoadImg} src={require('../assets/img/hero1.jpg')} alt="heroimg3" />
                     </div>
                 </div>
 
-                {/* <BoxActive /> */}
-
                 <div className="genre-list">
-                    {genres.length && <BoxApp genres={genres} />}
+                    <BoxApp />
                 </div>
                 <Footer />
             </React.Fragment>
