@@ -46,7 +46,7 @@ class _Home extends Component {
                 </div>
 
                 <div className="genre-list">
-                    <BoxApp />
+                    {imgsLoaded && <BoxApp />}
                 </div>
                 <Footer />
             </React.Fragment>
