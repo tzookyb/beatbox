@@ -3,7 +3,4 @@ node_modules/
 *.log
 logs/
 backend/public/
-frontend/build/
-frontend/src/config/dev.js
-frontend/.env
-dev.js
+config/dev.js
