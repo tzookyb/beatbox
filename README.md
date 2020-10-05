@@ -9,7 +9,7 @@ if someone makes a change to the playlist, you see it too. You all share the sam
 You can chat with the other users using the "Box Wall".
 If you sign-up, you can have your own avatar shown, keep your favorite boxes, and delete your created boxes.
 
-### you can check it out on: 
+#### you can check it out on: 
 https://ca-beatbox.herokuapp.com/
 
 ## What is it for?
@@ -19,7 +19,7 @@ We were 3 teammates and we worked on it for almost 2 weeks.
 
 ## What tech stack is used?
 It was built as an end-to-end project, implements CRUD using REST API methodology and web sockets.
-### Backend:
+#### Backend:
 Node.js, MongoDB, Express
-### Frontend:
+#### Frontend:
 React.js, Sass, Redux
