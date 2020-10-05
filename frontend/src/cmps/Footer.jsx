@@ -4,9 +4,9 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
 // LOCAL IMPORTS
-import imgIdan from '../assets/img/idan.jpeg';
-import imgHilla from '../assets/img/hilla.jpg';
-import imgMatan from '../assets/img/matan.jpg';
+import imgIdan from '../assets/img/idan_small.jpg';
+import imgHilla from '../assets/img/hilla_small.jpg';
+import imgMatan from '../assets/img/matan_small.jpg';
 
 export function Footer() {
     return (

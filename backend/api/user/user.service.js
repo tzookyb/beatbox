@@ -51,7 +51,6 @@ async function getById(userId) {
     const collection = await dbService.getCollection('user')
     try {
         const user = await collection.findOne({ "_id": ObjectId(userId) })
-        console.log("getById -> user", user)
         delete user.password
         return user
     } catch (err) {

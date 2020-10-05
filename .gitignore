@@ -6,3 +6,4 @@ backend/public/
 frontend/build/
 frontend/src/config/dev.js
 frontend/.env
+backend/build/

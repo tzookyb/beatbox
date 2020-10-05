@@ -43,7 +43,6 @@ class _Player extends Component {
         if (this.props.currSong === currSong) setTimeout(this.waitForSync, 500);
         else if (this.props.currSong?.secPlayed) {
             this.setState({ isSyncing: true });
-            console.log('waiting for ready, status:', this.state.isReady)
             if (this.state.isReady) {
                 socketService.emit('sync song time');
                 this.setState({ isSyncing: false });
@@ -106,7 +105,7 @@ class _Player extends Component {
     }
 
     handleVolumeChange = ({ target }) => {
-        this.setState({ volume: target.value })
+        this.setState({ volume: parseFloat(target.value) })
     }
 
     toggleMute = () => {

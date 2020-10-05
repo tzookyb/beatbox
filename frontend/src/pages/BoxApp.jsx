@@ -27,7 +27,8 @@ class _BoxApp extends Component {
     render() {
         const { boxes } = this.props;
         if (!boxes) return <CircleLoading size="large" color="#ac0aff" />
-        const genres = boxService.getUsedGenres(boxes);
+        let genres;
+        if (this.props.location.pathname === '/') genres = boxService.getUsedGenres(boxes);
         const minimalUser = userService.getMinimalUser();
 
         return (
@@ -42,7 +43,7 @@ class _BoxApp extends Component {
                         />
                     )
                 })}
-                {!genres && <GenresFilter genreCount={5} />}
+                {!genres && <GenresFilter />}
                 {!genres && <BoxList boxes={boxes} minimalUser={minimalUser} />}
 
             </section>

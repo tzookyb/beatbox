@@ -13,7 +13,6 @@ export const boxService = {
     update,
     addSong,
     getEmptyBox,
-    // addConnectedUser,
     remove
 }
 
@@ -71,21 +70,6 @@ async function addSong(song, isFromDrag = false) {
     }
     return newSong;
 }
-
-
-// async function addConnectedUser(boxId, minimalUser) {
-//     const box = await getById(boxId);
-//     const newBox = { ...box };
-//     const isUserInBox = newBox.connectedUsers.find(user => user.id === minimalUser.id)
-//     if (!isUserInBox) {
-//         newBox.connectedUsers.push(minimalUser);
-//         await update(newBox);
-
-//         //ToDO:
-//         // const boxIdx = getById(minimalUser.currBoxId);
-//         // boxes[boxIdx].connectedUsers.splice() 
-//     }
-// }
 
 function _makeId(length = 8) {
     var txt = '';

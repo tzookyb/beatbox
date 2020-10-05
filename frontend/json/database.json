@@ -3,7 +3,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a64"),
         "name" : "Disney Songs",
         "description" : "All time favorite songs from Disney's Movies!",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600813979/lybllxgacr5kiu5qsxwe.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601729701/beatbox/aob39v8bcpnoqkprgsyx.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -84,7 +84,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a65"),
         "name" : "Rap Israeli",
         "description" : "ראפ ישראלי בועט, גם מחתרתי ומסחרי",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600845807/zmq5ltfawme2h4czvonw.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741253/beatbox/bsb8xhqkgvxlxiu6rlhc.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -116,7 +116,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a66"),
         "name" : "Singer/Songwriter",
         "description" : "The best Singer/Songwriter compilation.\nEnchanting vocal and a guitar.",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600814004/ikjsopbdamtaqbqydccs.png",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741175/beatbox/vqmqrx3fdwuuzrmhuqfr.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -162,7 +162,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a67"),
         "name" : "Podcasts Box",
         "description" : "Join this box to listen and debate with people about mind-opening talks.",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600820355/qeypdubpanizishvwo4e.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741186/beatbox/lp7h95p9rsbaxijyx5xo.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -179,7 +179,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a68"),
         "name" : "Best of Coldplay",
         "description" : "Probably the most popular band in the world!",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600813315/q0jxukjnvzfnspcltont.webp",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741263/beatbox/jdwtsdyongme7j70phx2.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -246,7 +246,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a69"),
         "name" : "Rock with Muse",
         "description" : "It is the best progressive rock band nowadays... ",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600815277/uwngqfoqlijwp0fss8xe.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741272/beatbox/hylvphrehixyaokhkucl.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -264,6 +264,13 @@
                 "title" : "Muse - Plug In Baby ",
                 "imgUrl" : "https://i.ytimg.com/vi/dbB-mICjkQM/hqdefault.jpg",
                 "duration" : "3:41"
+            }, 
+            {
+                "id" : "jt3Eh1yC",
+                "youtubeId" : "Pgum6OT_VH8",
+                "title" : "Muse - Starlight ",
+                "duration" : "4:05",
+                "imgUrl" : "https://i.ytimg.com/vi/Pgum6OT_VH8/hqdefault.jpg"
             }, 
             {
                 "id" : "G_sBOsh-vyI",
@@ -299,7 +306,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a6a"),
         "name" : "Queen",
         "description" : "Fun fun fun! Playlist of Queen!",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600815410/x5vckj6lovsxgmab6uhm.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741300/beatbox/kjmx55cuzwkyanr2mlhw.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -366,7 +373,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a6b"),
         "name" : "Melodic Trance",
         "description" : "Trance that will send shivers down your spine!",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816521/anl1pxsisnjrqkgicqii.png",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741311/beatbox/l9lbdgfztchu7ii5bpyw.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -419,7 +426,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a6c"),
         "name" : "Israeli Bands",
         "description" : "Best israeli bands, Best songs ever",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600845462/z5ygriwmkltbss0r73dm.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741319/beatbox/za3tvqtdagfysgafvjk3.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -486,7 +493,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a6d"),
         "name" : "Ride that horse",
         "description" : "Country Music",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816628/g3rqckyu8yhdils0enpd.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741329/beatbox/icg6jwoxrzxvzln0fbjf.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -553,7 +560,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a6e"),
         "name" : "Recent Eurovisions",
         "description" : "The cheesy song contest with the addictive songs",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600820319/grli7inxgayg3nfn36bo.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741339/beatbox/udxehjgx8eemu0dbpdqd.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -606,7 +613,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a6f"),
         "name" : "Female Power",
         "description" : "Powerful female artists",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816794/fmbiso4vba0lgaf6yyo6.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741350/beatbox/ses7wpshdvdiutziwmaz.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -666,7 +673,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a70"),
         "name" : "Boy Bands",
         "description" : "Boys will be boys",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600812809/v2igxocbmcyywn9vc1wp.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741358/beatbox/jledaqzh2hilk5eemqdf.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -754,7 +761,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a71"),
         "name" : "Electronic Chill",
         "description" : "Wind down with this fantastic mellow electronic music.",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816532/krbjfsgznwqbltidscua.png",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741369/beatbox/lshi12uytcyc86xjjhlu.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -807,7 +814,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a72"),
         "name" : "Idans' War",
         "description" : "עידן רייכל, עידן עמדי, עידן חביב... מי הטוב ביותר",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600845446/napqajvotyvflfe2cpfw.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741379/beatbox/c9xknui7btfsz0dkm7tk.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -841,18 +848,18 @@
                 "imgUrl" : "https://i.ytimg.com/vi/iCitB5bkB3E/hqdefault.jpg"
             }, 
             {
-                "id" : "dG3NAutpEoY",
-                "youtubeId" : "dG3NAutpEoY",
-                "title" : "Idan Raichel - Lifney She'Yigamer (Before It Ends) - עידן רייכל - לפני שייגמר",
-                "imgUrl" : "https://i.ytimg.com/vi/dG3NAutpEoY/hqdefault.jpg",
-                "duration" : "4:06"
-            }, 
-            {
                 "id" : "34SxOkj3",
                 "youtubeId" : "5ejT8FqglLM",
                 "title" : "עידן רפאל חביב - שלמים | Idan Rafael Haviv",
                 "imgUrl" : "https://i.ytimg.com/vi/5ejT8FqglLM/hqdefault.jpg",
                 "duration" : "3:40"
+            }, 
+            {
+                "id" : "dG3NAutpEoY",
+                "youtubeId" : "dG3NAutpEoY",
+                "title" : "Idan Raichel - Lifney She'Yigamer (Before It Ends) - עידן רייכל - לפני שייגמר",
+                "imgUrl" : "https://i.ytimg.com/vi/dG3NAutpEoY/hqdefault.jpg",
+                "duration" : "4:06"
             }
         ]
     },
@@ -860,7 +867,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a73"),
         "name" : "Psychedelic Trance",
         "description" : "When you need some hard bass",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816548/ledo10kqdebdqv79lt6w.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741390/beatbox/ux46fjapqmepepz5hcrp.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -969,7 +976,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a74"),
         "name" : "With the Beatles",
         "description" : "Good old Oldies",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600815584/j5mnnn1oqk449lezl6j7.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741400/beatbox/ftxswrctd3ooh1yj6qwf.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -1022,7 +1029,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a75"),
         "name" : "This is Nirvana",
         "description" : "Did you miss your teen spirit?",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600815824/ebnrbfkqbf8umthccw0h.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741409/beatbox/z1jvvmpa5sk1ywxims6y.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -1068,7 +1075,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a76"),
         "name" : "Pearl Jam",
         "description" : "All fans enroll here!",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816339/bdz4rvbqb6rnwpefze0f.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741419/beatbox/vdviotze9lyzp3d5didy.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -1114,7 +1121,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a77"),
         "name" : "90's MTV",
         "description" : "All the best songs of 90's",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600812786/a5fgfds8zs7jt7wtp4ps.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741427/beatbox/eybbecbhn2lkxb3qol6o.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -1174,7 +1181,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a78"),
         "name" : "Daft Punk",
         "description" : "The wonderful French electro duo.",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600583439/woryvrnfuirts1uxxmj1.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741438/beatbox/zpwmvvtbyvgqtiudp0e3.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -1234,7 +1241,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a79"),
         "name" : "A day at the beach",
         "description" : "Electronic collection suitable for a day at the beach",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600818771/yhzatrcnbddcizmdsgqk.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741447/beatbox/esvdj8bomcw43nare0nv.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -1294,7 +1301,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a7a"),
         "name" : "Rasta Man",
         "description" : "Finest reggae music",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600584206/njjh2z87q4gx3cxaf0db.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741456/beatbox/xhrnpnyneukusnli2w1j.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -1347,7 +1354,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a7b"),
         "name" : "Classical Music",
         "description" : "Gather around, classical lovers",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600584410/ljst4v8pbrw9inxkpm5v.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741485/beatbox/nsgsuqlmjep3mmuzyn46.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -1386,7 +1393,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a7c"),
         "name" : "Pulp Fiction",
         "description" : "Let's talk about the wonderful scenes with the original soundtrack",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816677/n4mk2zcayy9mx5ln7aqh.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741493/beatbox/zaagfgzu8qgr0hngxuuu.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -1432,7 +1439,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a7d"),
         "name" : "RIP Chris Cornell",
         "description" : "Let's reminisce Chris's best songs",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816414/prep6kgbtv4zgipenn1t.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741502/beatbox/wpb3js0i88jj5lkbaw0f.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -1485,7 +1492,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a7e"),
         "name" : "FIFA Rock Songs",
         "description" : "All Fifa game fans! the best game with the best songs! let's choose the best ever!",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600816497/boit9u3kyi5y6lvhxvme.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741511/beatbox/hanko471ge6bfnw2aw9k.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -1538,7 +1545,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a7f"),
         "name" : "Best of Beck",
         "description" : "We all love the pop-mastermind Beck. What's your favorite song?",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600812829/d2rlt5awolutapr5w4hz.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741521/beatbox/t4kt267nrlmzvit76uyg.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -1652,13 +1659,13 @@
                 "duration" : "3:15"
             }
         ],
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600901238/vxpyhzvhmvsrdnuftlnq.jpg"
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741528/beatbox/aim438ipc5hvwaykq1dw.jpg"
     },
     {
         "_id" : ObjectId("5f70c27fa9489f73a54f8a81"),
         "name" : "Silly Songs",
         "description" : "Oh my god, i just entered this box by mistake...",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601388979/jelbheuehtnvgazjdbxp.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741535/beatbox/s611lqeusol9k02uh1d9.jpg",
         "tags" : [ 
             "love", 
             "happy"
@@ -1711,7 +1718,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a82"),
         "name" : "Morning",
         "description" : "Bring your coffee and listen to this!",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600814302/rfnazrt12ozy4o7gs2oi.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741543/beatbox/vjp4ix5fk8whyuokarlw.jpg",
         "genre" : "Easy",
         "createdBy" : {
             "name" : "Hilla",
@@ -1753,7 +1760,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a83"),
         "name" : "Get ready for bed",
         "description" : "Let's get ready for sleep",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600814322/lcmty98v1p53nnzwqrgd.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741204/beatbox/eurs28gtvupfivysvp8s.jpg",
         "genre" : "Easy",
         "createdBy" : {
             "name" : "Matan",
@@ -1802,7 +1809,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a84"),
         "name" : "Acoustic Guitar",
         "description" : "ohhh that soft sound...",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600814501/ieur3aktqqrgruhmxalh.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741213/beatbox/ffhqj2ajmu4juevjatjs.jpg",
         "genre" : "Easy",
         "createdBy" : {
             "name" : "Hilla",
@@ -1851,7 +1858,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a85"),
         "name" : "The Legioners",
         "description" : "אמנים כחול-לבן שהצליחו בחו\"ל",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600845560/l9bukt3vquexrhoqwreh.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741555/beatbox/dym26y6abixbku0vwxcw.jpg",
         "genre" : "Israeli",
         "createdBy" : {
             "name" : "Idan",
@@ -1907,7 +1914,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a86"),
         "name" : "Queen of Pop",
         "description" : "Long live the queen",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600813047/vbysdgtxzj7d0bwa85ul.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741563/beatbox/z98ljvggntanebvasrea.jpg",
         "genre" : "Pop",
         "createdBy" : {
             "name" : "Idan",
@@ -1956,7 +1963,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a87"),
         "name" : "King of Pop",
         "description" : "Long live the king!",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600813916/etbwrfi38rbmu2kqww63.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741571/beatbox/n2nw2ryjykmiff2zda0q.jpg",
         "genre" : "Pop",
         "createdBy" : {
             "name" : "Idan",
@@ -2019,7 +2026,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a88"),
         "name" : "Let's Study",
         "description" : "Music to keep you focused while studying with friends",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600820282/ljzuteqmfmthb1nsh8io.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741578/beatbox/d9getwffrgldznsknjfy.jpg",
         "genre" : "Easy",
         "createdBy" : {
             "name" : "Idan",
@@ -2054,7 +2061,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a89"),
         "name" : "Chill on the beach",
         "description" : "Music to lie on the sand",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600820220/ab8p8vny0jcq7aarfbkw.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741231/beatbox/vzzopdli2wxtmkouoo7j.jpg",
         "genre" : "Easy",
         "createdBy" : {
             "name" : "Idan",
@@ -2110,7 +2117,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a8a"),
         "name" : "Background Music",
         "description" : "Soft music to have on the background",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600683686/xsrdt0rrwntgribro7ke.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741586/beatbox/nhlmiwgegbgs7jchdxqj.jpg",
         "genre" : "Easy",
         "createdBy" : {
             "name" : "Idan",
@@ -2150,9 +2157,9 @@
     },
     {
         "_id" : ObjectId("5f70c27fa9489f73a54f8a8b"),
-        "name" : "Arbic music",
+        "name" : "Arabic music",
         "description" : "The Best arabic music ever",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600812463/gpfxahvgq10qj71a01fr.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741599/beatbox/bumbbcpwwooamk770aks.jpg",
         "genre" : "Arabic",
         "createdBy" : {},
         "songs" : [ 
@@ -2197,7 +2204,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a8c"),
         "name" : "Best Box",
         "description" : "All the alternative music that you looking for",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600812678/r4vnkt1mieeewawe9j09.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741607/beatbox/bp9hxwai70doseyifaxs.jpg",
         "genre" : "Alternative",
         "createdBy" : {},
         "songs" : [ 
@@ -2242,7 +2249,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a8d"),
         "name" : "Hip Hop Fun Music",
         "description" : "Hip hop or hip-hop is a culture and art movement that was created by African Americans, Latino Americans and Caribbean Americans in the Bronx, New York City.",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600817054/ff4acc1dc2ct0eid4ukt.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741614/beatbox/e1kvwqydjgxkz8fnx1hb.jpg",
         "genre" : "Hip-hop",
         "createdBy" : {},
         "songs" : [ 
@@ -2294,7 +2301,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a8e"),
         "name" : "Eminem and All The best",
         "description" : "Eminem is the best singer ever! in this box you can enjoy from him",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600817584/eq4dnmbj6ujiguqb8dwj.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741623/beatbox/dmg3sgs1kxqueoqlavtk.jpg",
         "genre" : "Hip-hop",
         "createdBy" : {},
         "songs" : [ 
@@ -2339,7 +2346,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a8f"),
         "name" : "Nostalgia ",
         "description" : "nostalgia songs to listen and remember",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600817977/sprujkhb6aeu57ho2mjs.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741631/beatbox/uqlv0omailgpsn21ki4s.jpg",
         "genre" : "Classical",
         "createdBy" : {},
         "songs" : [ 
@@ -2363,7 +2370,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a90"),
         "name" : "R.B.D",
         "description" : "REBELDE WAY, songs from viva times",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600818205/j7cvi2tdccnjavkm9gx5.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741640/beatbox/znc88pqwyu0pfqz5jq4h.jpg",
         "genre" : "Latin",
         "createdBy" : {},
         "songs" : [ 
@@ -2429,7 +2436,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a91"),
         "name" : "Salsa music",
         "description" : "Come and dance with salse music",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600818371/gdsdpuejjvkanpkjrzfd.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741648/beatbox/goqtktjn4nhfoankrxiq.jpg",
         "genre" : "Latin",
         "createdBy" : {},
         "songs" : [ 
@@ -2479,9 +2486,9 @@
     },
     {
         "_id" : ObjectId("5f70c27fa9489f73a54f8a92"),
-        "name" : "Enrique iglesias",
-        "description" : "The most handsome singer קהקר\n",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600818628/wsb2mf96k0gaffnk0vvx.jpg",
+        "name" : "Enrique Iglesias",
+        "description" : "The most handsome singer ever",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741659/beatbox/zeioedqilbpxvqxqfoci.jpg",
         "genre" : "Latin",
         "createdBy" : {},
         "songs" : [ 
@@ -2531,9 +2538,9 @@
     },
     {
         "_id" : ObjectId("5f70c27fa9489f73a54f8a93"),
-        "name" : "Childhood in espnioal",
+        "name" : "Childhood in Espaniol",
         "description" : "Chiquititas, rbd, floricienta",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600819118/n7imysouztgk2vwencwe.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741683/beatbox/cfr2apssokq182hue72m.jpg",
         "genre" : "Latin",
         "createdBy" : {},
         "songs" : [ 
@@ -2613,7 +2620,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a94"),
         "name" : "Abba",
         "description" : "all Abbasongs in this box",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600820404/pv8289bktb1idsjus4g0.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741704/beatbox/od3mucgc7ni3gln7uo72.jpg",
         "genre" : "Classical",
         "createdBy" : {},
         "songs" : [ 
@@ -2679,7 +2686,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a95"),
         "name" : "Oasis",
         "description" : "Don't look back in anger...",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600819391/bfjqy35zrvddbpqy5pc9.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741714/beatbox/cz96eywd5foda44tgto4.jpg",
         "genre" : "Rock",
         "createdBy" : {},
         "songs" : [ 
@@ -2744,8 +2751,8 @@
     {
         "_id" : ObjectId("5f70c27fa9489f73a54f8a96"),
         "name" : "Love Songs",
-        "description" : "For all the in love girls",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600819704/vq15tyfyhq9bgko2mhfd.jpg",
+        "description" : "For all the girls in love",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741724/beatbox/j3kk8gwbexyesjsp7gpm.jpg",
         "genre" : "Blues",
         "createdBy" : {},
         "songs" : [ 
@@ -2804,7 +2811,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a97"),
         "name" : "RELAX",
         "description" : "Take a time to yourself and relax",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600843868/d2qqgn2wzl36mv432a9c.webp",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741745/beatbox/etnvg1pm2rnw0kwqhbru.jpg",
         "genre" : "Classical",
         "createdBy" : {
             "name" : "Guest",
@@ -2832,7 +2839,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a98"),
         "name" : " 🤘",
         "description" : "Arosmith, 3 doors down and all the best of history",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600844686/wat4q9f7yu32hnqf8c43.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741756/beatbox/aepxiho295lslg36jmzk.jpg",
         "genre" : "Alternative",
         "createdBy" : {
             "name" : "Guest",
@@ -2909,7 +2916,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a99"),
         "name" : "Arik Berman",
         "description" : "Arik for Idan",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600850315/bggqq5bmzz7rweu619kr.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741765/beatbox/fsrzegufjkijvcqq9kt1.jpg",
         "genre" : "Israeli",
         "createdBy" : {
             "name" : "Guest",
@@ -2963,9 +2970,9 @@
     },
     {
         "_id" : ObjectId("5f70c27fa9489f73a54f8a9a"),
-        "name" : "Latinus",
+        "name" : "Latinos",
         "description" : "Latinus Party",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600933124/m40xvycpsm5xtj8lmztr.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741779/beatbox/clgkj6lltieevbdpyjfx.jpg",
         "genre" : "Latin",
         "createdBy" : {
             "name" : "Sapir",
@@ -3012,9 +3019,9 @@
     },
     {
         "_id" : ObjectId("5f70c27fa9489f73a54f8a9b"),
-        "name" : "Disco party!!",
-        "description" : "Dance all the night",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600933241/zk9vpagxnzlnrmgebupn.jpg",
+        "name" : "Disco Party!",
+        "description" : "Dance all night",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741787/beatbox/z044jvmtftfftyhd9rns.jpg",
         "genre" : "Disco",
         "createdBy" : {
             "name" : "Sapir",
@@ -3070,7 +3077,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a9c"),
         "name" : "Hip hop party",
         "description" : "For all hip hop party lovers",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600933554/gelr6v6ycbw0g8dnzaw0.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741818/beatbox/vegz1kijrpofyv8cfce8.jpg",
         "genre" : "Hip-hop",
         "createdBy" : {
             "name" : "Sapir",
@@ -3126,7 +3133,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8a9d"),
         "name" : "Pop Party",
         "description" : "",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600933610/rmoaors4q97lf80luu7s.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741832/beatbox/mtqjjuq1zuclk7h2pbwz.jpg",
         "genre" : "Pop",
         "createdBy" : {
             "name" : "Idan",
@@ -3151,73 +3158,10 @@
         ]
     },
     {
-        "_id" : ObjectId("5f70c27fa9489f73a54f8a9e"),
-        "name" : "Cajul Party",
-        "description" : "Wanna have a party? this is the best box for you!",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600954276/howqacbc9bmwuyhwaw2v.jpg",
-        "genre" : "Pop",
-        "createdBy" : {
-            "name" : "Idan",
-            "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600933587/iykpr52nbik3cjqjtasv.jpg",
-            "id" : "c3fMu"
-        },
-        "songs" : [ 
-            {
-                "id" : "fyazdRMl",
-                "youtubeId" : "zKGW9V1WSl8",
-                "title" : "Babylone Zina Official Music Video بابيلون ـ زينة الفيديو كليب الرسمي",
-                "imgUrl" : "https://i.ytimg.com/vi/zKGW9V1WSl8/hqdefault.jpg",
-                "duration" : "4:05"
-            }, 
-            {
-                "id" : "VAi8kPK4",
-                "youtubeId" : "pK060iUFWXg",
-                "title" : "Maluma - Hawái ",
-                "imgUrl" : "https://i.ytimg.com/vi/pK060iUFWXg/hqdefault.jpg",
-                "duration" : "4:19"
-            }, 
-            {
-                "id" : "nm3swfMD",
-                "youtubeId" : "AjrtRgZdzgU",
-                "title" : "Mata - Schodki",
-                "imgUrl" : "https://i.ytimg.com/vi/AjrtRgZdzgU/hqdefault.jpg",
-                "duration" : "3:56"
-            }, 
-            {
-                "id" : "IYF8K3lA",
-                "youtubeId" : "hd4cwMITGpk",
-                "title" : "Miroslav Skoro - Mata",
-                "imgUrl" : "https://i.ytimg.com/vi/hd4cwMITGpk/hqdefault.jpg",
-                "duration" : "5:43"
-            }, 
-            {
-                "id" : "Dcn3dxcC",
-                "youtubeId" : "4j725wScY0E",
-                "title" : "GIMS, Maluma - Hola Señorita (Maria) ",
-                "imgUrl" : "https://i.ytimg.com/vi/4j725wScY0E/hqdefault.jpg",
-                "duration" : "3:34"
-            }, 
-            {
-                "id" : "LoODB1pZ",
-                "youtubeId" : "BwrojtyHms8",
-                "title" : "עומר אדם - תמחל לי",
-                "imgUrl" : "https://i.ytimg.com/vi/BwrojtyHms8/hqdefault.jpg",
-                "duration" : "3:03"
-            }, 
-            {
-                "id" : "he4T0E1i",
-                "youtubeId" : "wTAibxp37vE",
-                "title" : "Mata - Patointeligencja",
-                "imgUrl" : "https://i.ytimg.com/vi/wTAibxp37vE/hqdefault.jpg",
-                "duration" : "4:21"
-            }
-        ]
-    },
-    {
         "_id" : ObjectId("5f70c27fa9489f73a54f8a9f"),
         "name" : "Puki",
         "description" : "Box for dance with dogs ",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600994359/ig6ua1y9tvpynwhrlxm1.webp",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741843/beatbox/iczitf5nc8rkxuk6gohv.jpg",
         "genre" : "Alternative",
         "createdBy" : {
             "name" : "Guest",
@@ -3266,7 +3210,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8aa0"),
         "name" : "BreakUp Songs",
         "description" : "When you'r so sad and you wanna to listen with your soul",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1600994895/h5wtnocix1lme2imhprn.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741855/beatbox/r5g9miifqrlp4ljikrzi.jpg",
         "genre" : "Blues",
         "createdBy" : {},
         "songs" : [ 
@@ -3332,7 +3276,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8aa1"),
         "name" : "Hip Hop 2020",
         "description" : "Going to Turn This Up Real Loud So I Can’t Hear Men Shouting at Me to Smile as I Walk Down the Street Because I Am a Woman and This is the Way the World Is.",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601186024/mu9vchb5oapm9enm9soo.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741862/beatbox/wwfg1th9qnhrvkrad5tz.jpg",
         "genre" : "Hip-hop",
         "createdBy" : {
             "name" : "daniel",
@@ -3479,7 +3423,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8aa2"),
         "name" : "Justins",
         "description" : "All the justins in one place",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601190388/ep5vvjjc73gr1zkrwhe0.png",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741871/beatbox/aazdydsuht3oez716igk.jpg",
         "genre" : "Pop",
         "createdBy" : {
             "name" : "Hilla",
@@ -3619,7 +3563,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8aa3"),
         "name" : "Beethoven",
         "description" : "If you prefer your chill-out time accompanied with a country twang, this playlist is sure to satisfy.\n\n",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601197559/rouxwxdmsbnlxyu6xvcj.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741880/beatbox/sgbpvkhvn7ojew8rr3zz.jpg",
         "likedByUsers" : [],
         "connectedUsers" : [],
         "genre" : "Classical",
@@ -3724,9 +3668,9 @@
     },
     {
         "_id" : ObjectId("5f70c27fa9489f73a54f8aa4"),
-        "name" : "soul is back!",
+        "name" : "Soul is back!",
         "description" : "listen to good music that does good to the heart and soul.\n\nlisten to good music that does good to the heart and soul.\n\nlisten to good music that does good to the heart and soul.\n\nlisten to good music that does good to the heart and soul.\n\n",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601198520/oe0lefsizbvsow77965l.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741891/beatbox/pyt0x9tloije5fnqsg3w.jpg",
         "likedByUsers" : [],
         "connectedUsers" : [],
         "genre" : "Blues",
@@ -3805,7 +3749,7 @@
         "_id" : ObjectId("5f70c27fa9489f73a54f8aa5"),
         "name" : "Hip Hop 70's",
         "description" : "All the 70's hip hop!!",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601387465/qq65t33ycbw64fxczxxu.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741908/beatbox/c3ukhdreagwxrex3tvxk.jpg",
         "genre" : "Hip-hop",
         "createdBy" : {
             "name" : "Guest",
@@ -4065,13 +4009,13 @@
                 "imgUrl" : "https://i.ytimg.com/vi/SZ5lQNPanvI/hqdefault.jpg"
             }
         ],
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601468673/b2dwuvvu7tn8l95daezp.jpg"
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741951/beatbox/ckkzcg0hawzucrhjpndv.jpg"
     },
     {
         "_id" : ObjectId("5f7245631739395ee06bbd3e"),
         "name" : "Best",
         "description" : "best box ever",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601324419/elknv4gaqkq5iw4zfpgg.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601741967/beatbox/z92dugin4kmdkyvxt6hf.jpg",
         "genre" : "Rock",
         "createdBy" : {
             "name" : "Hilla",
@@ -4084,7 +4028,7 @@
         "_id" : ObjectId("5f7249b9c5041b3594f7fda7"),
         "name" : "Country Road",
         "description" : "If you prefer your chill-out time accompanied with a country twang, this playlist is sure to satisfy.\n\n",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601325495/g8hxxyryztl0qe3zwpvi.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742243/beatbox/k1leodw5baemsjuvqj7k.jpg",
         "genre" : "Easy",
         "createdBy" : {
             "name" : "t",
@@ -4097,7 +4041,7 @@
         "_id" : ObjectId("5f7259844824d311c8b4d9cb"),
         "name" : "Classical Bach",
         "description" : "If you prefer your chill-out time accompanied with a country twang, this playlist is sure to satisfy.\n\n",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601329538/tjiwhbg4tvhmnxzkgkur.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742251/beatbox/lfuki3ayxjwsshaate34.jpg",
         "genre" : "Classical",
         "createdBy" : {
             "name" : "Hilla Meri",
@@ -4167,7 +4111,7 @@
         "_id" : ObjectId("5f725bbff82ff041588a9194"),
         "name" : "Club&Disco",
         "description" : "If you prefer your chill-out time accompanied with a country twang, this playlist is sure to satisfy.\n\n",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601330109/uypvxbrngtvo9maotnnm.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742259/beatbox/q7wmq3iszjsset4y5x5h.jpg",
         "genre" : "Disco",
         "createdBy" : {
             "name" : "Hilla Meri",
@@ -4175,6 +4119,13 @@
             "id" : "5f7259524824d311c8b4d9ca"
         },
         "songs" : [ 
+            {
+                "id" : "SKf5U5yQ",
+                "youtubeId" : "mJpymZpk-t8",
+                "title" : "Ottawan - D.I.S.C.O.  Legendado em PT- BR",
+                "duration" : "3:42",
+                "imgUrl" : "https://i.ytimg.com/vi/mJpymZpk-t8/hqdefault.jpg"
+            }, 
             {
                 "id" : "PW5jmeP4",
                 "youtubeId" : "vSYOmC34SW0",
@@ -4188,13 +4139,6 @@
                 "title" : "Disco Malupitan Sayawan 2020",
                 "duration" : "45:08",
                 "imgUrl" : "https://i.ytimg.com/vi/3G0O3CQtcv4/hqdefault.jpg"
-            }, 
-            {
-                "id" : "SKf5U5yQ",
-                "youtubeId" : "mJpymZpk-t8",
-                "title" : "Ottawan - D.I.S.C.O.  Legendado em PT- BR",
-                "duration" : "3:42",
-                "imgUrl" : "https://i.ytimg.com/vi/mJpymZpk-t8/hqdefault.jpg"
             }
         ]
     },
@@ -4202,7 +4146,7 @@
         "_id" : ObjectId("5f725d1c63080f3e3028e00d"),
         "name" : "Funny Disco",
         "description" : "If you are a man of disco clubs",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601330456/zlz3zjk0ojzpeqmb78lp.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742269/beatbox/u4trv57wv6hjx4xkerdc.jpg",
         "genre" : "Disco",
         "createdBy" : {
             "name" : "Hilla",
@@ -4215,7 +4159,7 @@
         "_id" : ObjectId("5f725dc91302c42710d342c3"),
         "name" : "Happy Times",
         "description" : "the best songs for happy time or when you want to remember happy times!\n\n",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601330631/xvnkisdbfeymrm1pbify.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742277/beatbox/m3duu3fiyiolklh8zaae.jpg",
         "genre" : "Alternative",
         "createdBy" : {
             "name" : "Hilla",
@@ -4285,7 +4229,7 @@
         "_id" : ObjectId("5f725ff757e3c41dd4b09eb1"),
         "name" : "Best of Avicii",
         "description" : "avicii was a legend in the electronic world... this box is for his memorial",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601406543/evkig1gkrbzf1dl1qzys.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742284/beatbox/dfw3ukapxdc8bmxuram5.jpg",
         "genre" : "Electronic",
         "createdBy" : {
             "name" : "Matan",
@@ -4341,7 +4285,7 @@
         "_id" : ObjectId("5f7260b557e3c41dd4b09eb2"),
         "name" : "Country for good vibes",
         "description" : "A Guitar is all that needs to chill and have nice vibes!!",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601331376/uvitbs3jxi15vptuuhpu.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742297/beatbox/ckdfnnhmj6j61mgijxx7.jpg",
         "genre" : "Easy",
         "createdBy" : {
             "name" : "Matan",
@@ -4397,7 +4341,7 @@
         "_id" : ObjectId("5f72628457e3c41dd4b09eb3"),
         "name" : "Soft rock times",
         "description" : "when you want to fill your time in music... fun all over the box",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601331836/jl1uah91fmscmlvscle0.png",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601731036/beatbox/tu5enb0jcbuultyugj8v.jpg",
         "genre" : "Rock",
         "createdBy" : {
             "name" : "Matan",
@@ -4460,7 +4404,7 @@
         "_id" : ObjectId("5f72652b57e3c41dd4b09eb4"),
         "name" : "Pop slow songs",
         "description" : "if tou look for box with no rush and you love pop- this is your box!",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601332519/udgsw2uvgvrunhcgqjwu.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742311/beatbox/lb0v1g2qqvtvejwdr7qp.jpg",
         "genre" : "Pop",
         "createdBy" : {
             "name" : "Matan",
@@ -4523,7 +4467,7 @@
         "_id" : ObjectId("5f72677d57e3c41dd4b09eb5"),
         "name" : "Running songs box",
         "description" : "songs with mid-high beat great for running... go for it!!",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601333113/lugguyyaiadrojitojiw.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742319/beatbox/w3qdriq52rbdbz8o3gbn.jpg",
         "genre" : "Electronic",
         "createdBy" : {
             "name" : "Matan",
@@ -4572,7 +4516,7 @@
         "_id" : ObjectId("5f726883829ac21a7cd25fc4"),
         "name" : "Best of arab",
         "description" : "To get your day going as you venture off to work, this playlist is full of arabic classic music to start your morning.\n\n",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601333376/esemhinrgz3n4uhmxpuo.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742327/beatbox/hottzfvaftwvdo77ff9q.jpg",
         "genre" : "Arabic",
         "createdBy" : {
             "name" : "Matan",
@@ -4585,7 +4529,7 @@
         "_id" : ObjectId("5f728362bca06e43407fd687"),
         "name" : "Farid El Atrash",
         "description" : "Songs of Farid El Atrash\n",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601340232/d6vfhadtvhwvfkwsylcw.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742336/beatbox/isjmbpn0r7nwf6flq3lo.jpg",
         "genre" : "Arabic",
         "createdBy" : {
             "name" : "Hilla",
@@ -4641,7 +4585,7 @@
         "_id" : ObjectId("5f72c548cf02d51f4c647e2f"),
         "name" : "Pink Floyd",
         "description" : "fds",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601461023/vwq1b0dy5li6qjtiivqn.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742345/beatbox/xfljlkg0sa3epncjdosn.jpg",
         "genre" : "Rock",
         "createdBy" : {
             "name" : "Guest",
@@ -4683,7 +4627,7 @@
         "_id" : ObjectId("5f72f9596a245b222c7a3808"),
         "name" : "Chill on the beach",
         "description" : "good music to listen to in the beach with friends\n\n",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601391823/mspzurjsdd5a0juv0hlw.webp",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742353/beatbox/drwgla6opqgc8emmwaku.jpg",
         "genre" : "Easy",
         "createdBy" : {
             "name" : "Guest",
@@ -4753,7 +4697,7 @@
         "_id" : ObjectId("5f732a47d27a572974b9fbd2"),
         "name" : "Midnight vibes",
         "description" : "good easy vibes before sleep\n\n",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601392081/hnoxemykm3xtsddwmbvy.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742363/beatbox/une0kz37jcvmwv8pl9zt.jpg",
         "genre" : "Easy",
         "createdBy" : {
             "name" : "Guest",
@@ -4830,7 +4774,7 @@
         "_id" : ObjectId("5f733b36456df759acc28423"),
         "name" : "BlueZ",
         "description" : "If you prefer your blues time accompanied with a country twang, this playlist is sure to satisfy.\n\n",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601387316/dfwh5fohmj3jldkszyuo.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742379/beatbox/xay4qea1e90cbexc9hkl.jpg",
         "genre" : "Blues",
         "createdBy" : {
             "name" : "Hilla",
@@ -4893,7 +4837,7 @@
         "_id" : ObjectId("5f733cb6456df759acc28424"),
         "name" : "Mumford & Sons",
         "description" : "All songs of Mumford & Sons, come and enjoy. 'I will wait' and all the best",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601387700/xqz45oymybnmf6dxri9t.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742386/beatbox/uuj4o6sjfr4aesxankvs.jpg",
         "genre" : "Rock",
         "createdBy" : {
             "name" : "Hilla",
@@ -4977,7 +4921,6 @@
         "_id" : ObjectId("5f733d59456df759acc28425"),
         "name" : "An Israeli classic",
         "description" : "Arik, Shlomo, shalom nd more",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601387863/t4ykslw7yto15zmwsehm.png",
         "genre" : "Israeli",
         "createdBy" : {
             "name" : "Hilla",
@@ -5160,7 +5103,8 @@
                 "duration" : "1H2:33",
                 "imgUrl" : "https://i.ytimg.com/vi/ZVGd9c7RJNg/hqdefault.jpg"
             }
-        ]
+        ],
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742396/beatbox/nwjzvqywijslf39hxjgj.jpg"
     },
     {
         "_id" : ObjectId("5f733e3a456df759acc28426"),
@@ -5285,7 +5229,7 @@
         "_id" : ObjectId("5f733ec4456df759acc28427"),
         "name" : "Jenifer Lopez",
         "description" : "The queen of pop!!!!!",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601388226/ud1kagosnlesembgewdz.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742414/beatbox/xvwkopdazoyc8e4jhtmy.jpg",
         "genre" : "Latin",
         "createdBy" : {
             "name" : "Hilla",
@@ -5397,7 +5341,7 @@
         "_id" : ObjectId("5f733f89456df759acc28428"),
         "name" : "New Israeli Singer",
         "description" : "All the new promise singers in israel",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601388423/yxusrmd1pokgbidb7utg.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742423/beatbox/ooz6a4x2epmvefhxuclf.jpg",
         "genre" : "Israeli",
         "createdBy" : {
             "name" : "Hilla",
@@ -5502,7 +5446,7 @@
         "_id" : ObjectId("5f734035456df759acc28429"),
         "name" : "🕺 Dancin'! 💃",
         "description" : "",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601388585/qhvzywddz5hf82vzrckv.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742431/beatbox/hauspkgvg7hyzvagklss.jpg",
         "genre" : "Disco",
         "createdBy" : {
             "name" : "Hilla",
@@ -5544,7 +5488,7 @@
         "_id" : ObjectId("5f73416e456df759acc2842a"),
         "name" : "metal-heads",
         "description" : "",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601388909/rpq7zxszw5qb6ykzw7ff.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742442/beatbox/etf05zmuehriyoctiwav.jpg",
         "genre" : "Electronic",
         "createdBy" : {
             "name" : "Hilla",
@@ -5614,7 +5558,7 @@
         "_id" : ObjectId("5f7342a7456df759acc2842b"),
         "name" : "مجانين - Loai Ali",
         "description" : "All the box just for Loai Ali lovers",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601389221/tzd9lquu23yxhlshyzhx.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742451/beatbox/n6gaocxrc42gwjucmdts.jpg",
         "genre" : "Arabic",
         "createdBy" : {
             "name" : "Hilla",
@@ -5677,7 +5621,7 @@
         "_id" : ObjectId("5f73436d456df759acc2842c"),
         "name" : "Just Dance",
         "description" : "Going to dance club? this playlist for you!!!",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601389420/oflpwiwzoyssrfqaxlre.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742459/beatbox/cfhaasjkl8p7jygqhg0x.jpg",
         "genre" : "Disco",
         "createdBy" : {
             "name" : "Hilla",
@@ -5766,9 +5710,9 @@
     },
     {
         "_id" : ObjectId("5f7343fb456df759acc2842d"),
-        "name" : "Ed sheeran Box",
+        "name" : "Ed Sheeran Box",
         "description" : "Ed sheeran my love! ",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601389562/vfss1v8skp8jisbtkcql.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742474/beatbox/q7xpjw7iwi7lm4qs4hyq.jpg",
         "genre" : "Blues",
         "createdBy" : {
             "name" : "Hilla",
@@ -5908,7 +5852,7 @@
         "_id" : ObjectId("5f734499456df759acc2842e"),
         "name" : "Cover Songs",
         "description" : "Prefer cover above the original?\nthis box is for you",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601389720/uz2cvjobjqaxi80qtqgi.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742482/beatbox/p6uqfdzbwdlgypfs95fu.jpg",
         "genre" : "Alternative",
         "createdBy" : {
             "name" : "Hilla",
@@ -6004,9 +5948,9 @@
     },
     {
         "_id" : ObjectId("5f7345a8456df759acc2842f"),
-        "name" : "Israeli but Arbic",
+        "name" : "Israeli but Arabic",
         "description" : "Sarit hadad, which genre  are you?",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601389989/zlqx7nx9yo5wrlyrvqav.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742496/beatbox/kwrg2mzceo8epagkqshx.jpg",
         "genre" : "Arabic",
         "createdBy" : {
             "name" : "Hilla",
@@ -6111,7 +6055,7 @@
         "_id" : ObjectId("5f73461b456df759acc28430"),
         "name" : "Shakira Shakira",
         "description" : "",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601390105/qdnjvsgwwdqbp8obnvny.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742514/beatbox/pc95ygomuurqelt0ropn.jpg",
         "genre" : "Latin",
         "createdBy" : {
             "name" : "Hilla",
@@ -6195,7 +6139,7 @@
         "_id" : ObjectId("5f7346a1456df759acc28431"),
         "name" : "Purim Party",
         "description" : "Box from the best 2020 purim party ever",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601390229/mzr4eijnnz453mdyyz1w.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742524/beatbox/izjiddqzt9h3pjjqqr6b.jpg",
         "genre" : "Disco",
         "createdBy" : {
             "name" : "Hilla",
@@ -6370,7 +6314,7 @@
         "_id" : ObjectId("5f7347ea456df759acc28433"),
         "name" : "Movies Classics ",
         "description" : "",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601390568/u3qypzi4jdbkbnbpyquv.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742540/beatbox/wgq4zrhijrajfnkilp0r.jpg",
         "genre" : "Alternative",
         "createdBy" : {
             "name" : "Hilla",
@@ -6412,7 +6356,7 @@
         "_id" : ObjectId("5f734891456df759acc28434"),
         "name" : "Silsulim",
         "description" : "",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601390736/qmxvogukmfxbwa71zeqy.webp",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742547/beatbox/ffwawxrdifawm9ydixg1.jpg",
         "genre" : "Arabic",
         "createdBy" : {
             "name" : "Hilla",
@@ -6489,7 +6433,7 @@
         "_id" : ObjectId("5f734916456df759acc28435"),
         "name" : "Latina Loca",
         "description" : "Soy latina loca\n",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601390846/jmvsrnmi2xbq6lfuahq1.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742554/beatbox/gtd2coqs25guk8wyef6u.jpg",
         "genre" : "Latin",
         "createdBy" : {
             "name" : "Hilla",
@@ -6559,7 +6503,7 @@
         "_id" : ObjectId("5f73497f456df759acc28436"),
         "name" : "Tiger Club",
         "description" : "",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601390972/afosotnr1uixbsh2ubjg.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742562/beatbox/uvtvxdcc1vc6nqda8jo6.jpg",
         "genre" : "Disco",
         "createdBy" : {
             "name" : "Hilla",
@@ -6622,7 +6566,7 @@
         "_id" : ObjectId("5f7349ef456df759acc28437"),
         "name" : "Sounds Of Movies",
         "description" : "",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601391083/sbhimri2gervaig24ojr.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742569/beatbox/xxjosp8gsvqh94emooxs.jpg",
         "genre" : "Classical",
         "createdBy" : {
             "name" : "Hilla",
@@ -6699,7 +6643,7 @@
         "_id" : ObjectId("5f734b0b456df759acc28438"),
         "name" : " \"Chris\"",
         "description" : "Christopher Maurice Brown (born May 5, 1989) is an American singer, songwriter, dancer, and actor.",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601391338/voohiwa3r2nqpexty8zp.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742576/beatbox/bpnxlgpk1ucph9cerzcw.jpg",
         "genre" : "Hip-hop",
         "createdBy" : {
             "name" : "Hilla",
@@ -6783,7 +6727,7 @@
         "_id" : ObjectId("5f734b82456df759acc28439"),
         "name" : "Maluma baby ",
         "description" : "Party without maluma is not a party, maluma baby!!",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601391487/a20kiyeo6y08ujrdd3l2.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742584/beatbox/yeyhh6yqt3avzwr1kpyi.jpg",
         "genre" : "Latin",
         "createdBy" : {
             "name" : "Hilla",
@@ -6799,13 +6743,6 @@
                 "imgUrl" : "https://i.ytimg.com/vi/k_WvAH3AE1w/hqdefault.jpg"
             }, 
             {
-                "id" : "Fsd8hUf3",
-                "youtubeId" : "NdmiGueel-I",
-                "title" : "Maluma - Hawái (La Respuesta) Betzabeth",
-                "duration" : "2:52",
-                "imgUrl" : "https://i.ytimg.com/vi/NdmiGueel-I/hqdefault.jpg"
-            }, 
-            {
                 "id" : "vJ6F5gUe",
                 "youtubeId" : "_DHSDKM-NgU",
                 "title" : "Maluma - Qué Chimba ",
@@ -6818,6 +6755,13 @@
                 "title" : "Maluma - HP ",
                 "duration" : "3:16",
                 "imgUrl" : "https://i.ytimg.com/vi/iMEhjsiHbwM/hqdefault.jpg"
+            }, 
+            {
+                "id" : "Fsd8hUf3",
+                "youtubeId" : "NdmiGueel-I",
+                "title" : "Maluma - Hawái (La Respuesta) Betzabeth",
+                "duration" : "2:52",
+                "imgUrl" : "https://i.ytimg.com/vi/NdmiGueel-I/hqdefault.jpg"
             }, 
             {
                 "id" : "XNthwjzn",
@@ -6867,7 +6811,6 @@
         "_id" : ObjectId("5f734c3d456df759acc2843a"),
         "name" : "Rolling Stone",
         "description" : "Rolling Stone is an American monthly magazine that focuses on popular culture. ",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601391675/mnh6yj2wq24shkupzdul.jpg",
         "genre" : "Alternative",
         "createdBy" : {
             "name" : "Hilla",
@@ -6938,13 +6881,14 @@
                 "duration" : "3:47",
                 "imgUrl" : "https://i.ytimg.com/vi/O4irXQhgMqg/hqdefault.jpg"
             }
-        ]
+        ],
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742618/beatbox/xgrp08tek0wdpbsgglkv.jpg"
     },
     {
         "_id" : ObjectId("5f734eaf456df759acc2843b"),
         "name" : "Yoga Songs",
         "description" : "",
-        "imgUrl" : "https://res.cloudinary.com/daqs7x8my/image/upload/v1601392301/m6ykcfrrue9uayvmiwl4.jpg",
+        "imgUrl" : "https://res.cloudinary.com/tzookyb/image/upload/v1601742641/beatbox/tioehtjbjz3wa8lll7n2.jpg",
         "genre" : "Blues",
         "createdBy" : {
             "name" : "Hilla",

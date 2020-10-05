@@ -223,6 +223,7 @@ class _BoxDetails extends Component {
                         <div className="song-social-actions flex space-between">
                             <div className="btns-container flex align-center">
                                 <Fab className={`add-song-btn  ${isSongPickOpen ? 'opened' : ''}`}
+                                    title="Add Songs to Playlist"
                                     onClick={this.toggleSongPick}
                                     aria-label="add"
                                 >

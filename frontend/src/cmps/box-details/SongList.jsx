@@ -30,10 +30,6 @@ export function SongList({ songs, onRemoveSong, onAddSong, isSongPickOpen, isFil
                         )}
                     </Droppable>
 
-                    {/* {!songs.length && <ul className="clean-list flex column flex-1">
-                    {example}
-                </ul>} */}
-
                     <Droppable droppableId={'songList'}>
                         {(provided) => (
                             <ul
