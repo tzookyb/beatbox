@@ -25,6 +25,7 @@ class _App extends Component {
     socketService.on('box changed', this.props.gotBoxUpdate);
     socketService.on('chat addMsg', this.props.addMsg);
     socketService.on('got player update', this.props.updateLocalPlayer);
+    socketService.on('got active boxes', this.props.setActiveBoxes);
   }
 
 
@@ -41,7 +42,7 @@ class _App extends Component {
             <Route component={Home} path="/" />
           </Switch>
         </main>
-        
+
         <Player />
       </div>
     )

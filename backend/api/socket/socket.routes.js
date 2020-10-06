@@ -51,7 +51,6 @@ function connectSockets(io) {
 
         socket.on('get active boxes', () => {
             console.log('get active boxes');
-            if (!socket.myBox) return;
             const activeBoxes = getActiveBoxes();
             socket.emit('got active boxes', activeBoxes);
         })
@@ -100,7 +99,7 @@ function leaveBox(socket, io, currUser) {
     const newConnectedUsers = boxMap[socket.myBox].connectedUsers.filter(user => user.id !== currUser.id)
     boxMap[socket.myBox].connectedUsers = newConnectedUsers;
 
-    if (boxMap[socket.myBox].connectedUsers.length === 0) boxMap[socket.myBox] = null;
+    if (boxMap[socket.myBox].connectedUsers.length === 0) delete boxMap[socket.myBox];
     else io.to(socket.myBox).emit('joined new box', newConnectedUsers);
     socket.leave(socket.myBox);
 }
@@ -110,11 +109,11 @@ function getBoxStatus(boxId) {
     return boxMap[boxId];
 }
 
-function getActiveBoxes() {
-    const activeBoxes = [];
-    for (const box in boxMap) {
-        if (!boxMap[box]) continue;
-        activeBoxes.push({ boxId: box, userCount: boxMap[box].connectedUsers.length })
-    }
-    return activeBoxes;
-}
+// function getActiveBoxes() {
+//     const activeBoxes = [];
+//     for (const box in boxMap) {
+//         if (!boxMap[box]) continue;
+//         activeBoxes.push({ boxId: box, userCount: boxMap[box].connectedUsers.length })
+//     }
+//     return activeBoxes;
+// }

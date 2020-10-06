@@ -7,10 +7,16 @@ import ExpandMoreSharpIcon from '@material-ui/icons/ExpandMoreSharp';
 import { BoxApp } from './BoxApp'
 import { Footer } from '../cmps/Footer'
 import { loadBoxes } from '../store/actions/boxAction'
+// import { socketService } from '../services/socketService';
+// import { BoxActive } from '../cmps/boxes/BoxActive';
 
 class _Home extends Component {
     state = {
         imgsLoaded: false
+    }
+
+    componentDidMount() {
+        // setTimeout(() => socketService.emit('get active boxes'), 0);
     }
 
     countLoadedImgs = 0;
@@ -39,12 +45,27 @@ class _Home extends Component {
                         </div>
                     </div>
                     <div className="hero-img">
-                        <img onLoad={this.onLoadImg} src={require('../assets/img/hero3.jpg')} alt="heroimg1" />
-                        <img onLoad={this.onLoadImg} src={require('../assets/img/hero2.png')} alt="heroimg2" />
-                        <img onLoad={this.onLoadImg} src={require('../assets/img/hero1.jpg')} alt="heroimg3" />
+                        <img
+                            onLoad={this.onLoadImg}
+                            src={require('../assets/img/hero3-1920w.jpg')}
+                            srcSet={`${require('../assets/img/hero3-1920w.jpg')} 800w,
+                                    ${require('../assets/img/hero3-480w.jpg')} 480w`}
+                            alt="heroimg1" />
+                        <img
+                            onLoad={this.onLoadImg}
+                            src={require('../assets/img/hero2-1920w.jpg')}
+                            srcSet={`${require('../assets/img/hero2-1920w.jpg')} 800w, 
+                                    ${require('../assets/img/hero2-480w.jpg')} 480w`}
+                            alt="heroimg2" />
+                        <img
+                            onLoad={this.onLoadImg}
+                            src={require('../assets/img/hero1-1920w.jpg')}
+                            srcSet={`${require('../assets/img/hero1-1920w.jpg')} 800w,
+                                    ${require('../assets/img/hero1-480w.jpg')} 480w`}
+                            alt="heroimg3" />
                     </div>
                 </div>
-
+                {/* <BoxActive boxes={this.props.activeBoxes} /> */}
                 <div className="genre-list">
                     {imgsLoaded && <BoxApp />}
                 </div>
@@ -57,6 +78,7 @@ class _Home extends Component {
 const mapStateToProps = state => {
     return {
         boxes: state.boxReducer.boxes,
+        activeBoxes: state.boxReducer.activeBoxes
     }
 }
 const mapDispatchToProps = {

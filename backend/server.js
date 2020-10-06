@@ -1,13 +1,13 @@
 console.clear();
-const express = require('express')
-const bodyParser = require('body-parser')
-const cors = require('cors')
-const path = require('path')
-const cookieParser = require('cookie-parser')
-const session = require('express-session')
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
 
 
-const app = express()
+const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 
@@ -38,14 +38,21 @@ if (process.env.NODE_ENV === 'production') {
 const userRoutes = require('./api/user/user.routes');
 const boxRoutes = require('./api/box/box.routes');
 const authRoutes = require('./api/auth/auth.routes');
-const connectSockets = require('./api/socket/socket.routes')
+const connectSockets = require('./api/socket/socket.routes');
 
 
-// routes
-app.use('/api/user', userRoutes)
-app.use('/api/auth', authRoutes)
-app.use('/api/box', boxRoutes)
-connectSockets(io)
+// ROUTES
+app.use((req, res, next) => {
+    if (req.secure) {
+        next();
+    } else {
+        res.redirect('https://' + req.headers.host + req.url);
+    }
+});
+app.use('/api/user', userRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/box', boxRoutes);
+connectSockets(io);
 
 
 const logger = require('./services/logger.service')

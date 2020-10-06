@@ -54,7 +54,7 @@ async function getById(userId) {
         delete user.password
         return user
     } catch (err) {
-        console.log(`ERROR: while finding user ${userId}`)
+        console.log(`ERROR: getById - while finding user ${userId}`)
         throw err;
     }
 }
