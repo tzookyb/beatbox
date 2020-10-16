@@ -42,32 +42,35 @@ class _Header extends Component {
 
     render() {
         const { user } = this.props;
+        const { pathname } = this.props.location;
+        const { isMobileMenuOpen, isScroll } = this.state;
+
         return (
             <React.Fragment>
-                <div onClick={this.toggleMenu} className={`screen ${this.state.isMobileMenuOpen ? 'screen-open' : ''}`} ></div>
-                <header onScroll={this.onScroll} className={`${this.state.isScroll ? 'sticky' : ''} flex space-between align-center`}>
-                    {(this.props.location.pathname === '/') ?
+                <div onClick={this.toggleMenu} className={`screen ${isMobileMenuOpen ? 'screen-open' : ''}`} ></div>
+                <header onScroll={this.onScroll} className={`${isScroll || isMobileMenuOpen ? 'sticky' : ''} flex space-between align-center`}>
+                    {(pathname === '/') ?
                         <a href="#top"><img title="BeatBox" className="logo" src={require('../assets/img/logo.png')} alt="logo" /></a> :
                         <Link to="/" ><img title="BeatBox" className="logo" src={require('../assets/img/logo.png')} alt="logo" /></Link>
                     }
 
-                    <BoxFilter isShown={(this.props.location.pathname !== '/' || this.state.isScroll)} />
+                    <BoxFilter isShown={(pathname !== '/' || isScroll)} />
 
                     <div className="right-nav flex align-center">
-                        <ul className={`${this.state.isMobileMenuOpen ? 'menu-open' : ''} main-nav flex clean-list`}>
+                        <ul className={`${isMobileMenuOpen ? 'menu-open' : ''} main-nav flex clean-list`}>
                             <li><Link to="/box" onClick={this.toggleMenu}>Boxes</Link></li>
                             <li><Link to={this.getPathForBoxAdd} onClick={this.toggleMenu} >Create Box</Link ></li>
                         </ul>
 
                         <div className="user-avatar"><UserMenu user={user} onLogout={this.props.logout} /></div>
 
-        
+
                         <button
-                            className={`menu-btn`}
+                            className="menu-btn flex justify-center"
                             onClick={this.toggleMenu}>
-                            {this.state.isMobileMenuOpen ? 
-                            <CloseIcon /> :
-                            <MenuIcon /> }
+                            {isMobileMenuOpen ?
+                                <CloseIcon /> :
+                                <MenuIcon />}
                             {/* 'X' : '☰'} */}
                         </button>
                     </div>

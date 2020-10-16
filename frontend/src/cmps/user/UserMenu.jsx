@@ -52,7 +52,7 @@ export function UserMenu({ user, onLogout }) {
         <div className={classes.root}>
             <div className="user-menu">
                 <Avatar
-                    alt="Remy Sharp" ref={anchorRef}
+                    alt="Avatar" ref={anchorRef}
                     src={user.imgUrl}
                     aria-controls={open ? 'menu-list-grow' : undefined}
                     aria-haspopup="true"
@@ -76,7 +76,7 @@ export function UserMenu({ user, onLogout }) {
                                         <MenuItem >
                                             < ModalUser childern={'Login'}/>
                                         </MenuItem>
-                                        <MenuItem onClick={logout}>Logout</MenuItem>
+                                        {!user.isGuest && <MenuItem onClick={logout}>Logout</MenuItem>}
                                     </MenuList>
                                 </ClickAwayListener>
                             </Paper>

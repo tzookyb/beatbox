@@ -44,7 +44,7 @@ class _Login extends React.Component {
                         placeholder="Your Name"
                         autoComplete="off"
                     />
-                    <label>password:</label>
+                    <label>Password:</label>
                     <input
                         name="password"
                         type="password"

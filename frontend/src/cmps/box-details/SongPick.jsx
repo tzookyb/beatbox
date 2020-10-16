@@ -11,10 +11,18 @@ export class SongPick extends Component {
     state = {
         searchStr: '',
         results: '',
-        isSearching: false
+        isSearching: false,
+        isMobile: false
     }
 
     inputRef = React.createRef();
+
+    componentDidMount() {
+        if (window.innerWidth < 500) {
+            this.setState({ isMobile: true });
+        }
+    }
+
 
     componentDidUpdate(prevProps) {
         if (prevProps.isSongPickOpen !== this.props.isSongPickOpen) this.nullResults();
@@ -51,7 +59,7 @@ export class SongPick extends Component {
     }
 
     render() {
-        const { results, isSearching, searchStr } = this.state;
+        const { results, isSearching, searchStr, isMobile } = this.state;
         const { isFilter } = this.props;
         return (
             <div className={`song-pick ${this.props.isSongPickOpen ? 'opened' : ''}`}>
@@ -72,7 +80,7 @@ export class SongPick extends Component {
                         const id = result.id.videoId;
                         const title = youtubeService.titleSimplify(result.snippet.title);
                         const imgUrl = result.snippet.thumbnails.medium.url;
-                        return <Draggable key={id} draggableId={id} index={idx} isDragDisabled={isFilter}>
+                        return <Draggable key={id} draggableId={id} index={idx} isDragDisabled={isFilter || isMobile}>
                             {provided => (
                                 <div
                                     ref={provided.innerRef}

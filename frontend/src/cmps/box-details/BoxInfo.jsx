@@ -108,8 +108,8 @@ export class BoxInfo extends Component {
                     <h4>{box.genre}</h4>
 
                     <div className="info-creator flex align-center">
-                        <h5>Created By: </h5>
-                        <Avatar alt="Remy Sharp" src={box.createdBy.imgUrl} style={{ width: '35px', height: '35px' }} />
+                        <h5>Created by:</h5>
+                        <Avatar alt="Avatar" src={box.createdBy.imgUrl} style={{ width: '35px', height: '35px' }} />
                         <h5>{box.createdBy.name}</h5>
                     </div>
                 </div>

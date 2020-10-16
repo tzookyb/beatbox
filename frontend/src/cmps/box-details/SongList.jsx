@@ -22,7 +22,7 @@ export function SongList({ songs, onRemoveSong, onAddSong, isSongPickOpen, isFil
                             <div
                                 {...provided.droppableProps}
                                 ref={provided.innerRef}
-                                className={`song-pick-container ${isSongPickOpen && 'opened'}`}
+                                className={`song-pick-container ${isSongPickOpen ? 'opened' : ''}`}
                             >
                                 <SongPick isSongPickOpen={isSongPickOpen} onAddSong={onAddSong} />
                                 {provided.placeholder}

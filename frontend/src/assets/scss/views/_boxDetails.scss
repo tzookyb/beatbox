@@ -33,14 +33,12 @@
     .song-social-actions {
       background-image: linear-gradient(rgba(0, 0, 0, 0.55), $clr1);
       padding: 20px 10px;
-      background-color: $clr2;
       border-bottom: 1px solid #cccccc17;
       .btns-container {
         .like-btn {
           position: relative;
           cursor: pointer;
           margin: 5px;
-          width: 200px;
           .guest-msg {
             position: absolute;
             right: 20px;
@@ -84,7 +82,8 @@
       }
 
       .share-container {
-        position: relative;
+        // position: relative;
+        min-width:130px;
 
         p {
           margin-top: -5px;
@@ -110,27 +109,20 @@
         }
 
         .share-btns {
-          .facebook-share-btn {
-            svg {
-              font-size: 2.2rem;
-            }
+          svg {
+            font-size: 2.2rem;
           }
 
-          .whatsapp-share-btn {
-            svg {
-              font-size: 2.2rem;
-            }
-          }
           .copy-share-btn {
-            font-size: 2rem;
+            position: relative;
+            bottom: 1px;
+            right: 4px;
           }
         }
       }
     }
   }
 }
-
-// MOBILE STYLE - TODO: CHANGE TO MIXINS
 
 @media (max-width: 720px) {
   .box-details {
@@ -160,8 +152,7 @@
       display: inline;
       position: fixed;
       font-size: 1.5rem;
-      box-shadow: 0px 1px 5px 0 rgba(60, 64, 67, 0.302),
-        4px 5px 8px 0px rgba(60, 64, 67, 0.149);
+      box-shadow: 0px 1px 5px 0 rgba(60, 64, 67, 0.302), 4px 5px 8px 0px rgba(60, 64, 67, 0.149);
       border: 1px solid white;
       margin-right: 5px;
       border-radius: 5px;

@@ -52,7 +52,6 @@ header {
       justify-content: flex-end;
       > * {
         padding-inline-end: 30px;
-
       }
     }
   }
@@ -145,6 +144,9 @@ header {
         overflow: hidden;
         transition: transform 0.8s, box-shadow 0.8s;
         transition: height 0.5s;
+        >*{
+          padding-inline-end: initial;
+        }
         &.menu-open {
           height: 20%;
           transition: height 0.5s;
@@ -155,7 +157,6 @@ header {
         display: flex;
         width: 90%;
         height: 50%;
-
         align-items: center;
         justify-content: center;
         background-color: transparent;

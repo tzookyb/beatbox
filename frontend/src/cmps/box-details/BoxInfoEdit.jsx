@@ -48,14 +48,7 @@ export class BoxInfoEdit extends Component {
         const imgUrl = await cloudService.uploadImg(ev);
         this.props.setIsLoading(false);
 
-        this.setState(prevState => {
-            return {
-                box: {
-                    ...prevState.box,
-                    imgUrl
-                }
-            }
-        }, () => this.props.updateBox(this.state.box))
+        this.setState({ box: { ...this.state.box, imgUrl } }, () => this.props.updateBox(this.state.box))
     }
 
     render() {
@@ -65,8 +58,8 @@ export class BoxInfoEdit extends Component {
             <form>
                 <div className="box-add-form flex column">
 
-                    <div className="box-add-thumbnail flex">
-                        <label className="upload-label" style={{ cursor: 'pointer' }} >
+                    <div className="box-add-thumbnail flex justify-center">
+                        <label className="upload-label cursor-pointer" >
                             <input onChange={(ev) => this.uploadImg(ev)} type="file" hidden />
                             <img src={box.imgUrl || imgPlaceholder} alt="box" />
                             <div>
@@ -79,6 +72,7 @@ export class BoxInfoEdit extends Component {
 
                         <label>Name:</label>
                         <input
+                            required
                             className="short-input"
                             autoComplete="off"
                             autoFocus
@@ -91,6 +85,7 @@ export class BoxInfoEdit extends Component {
 
                         <label>Genre:</label>
                         <select
+                            required
                             className="short-input"
                             id="genre"
                             name="genre"
@@ -117,4 +112,3 @@ export class BoxInfoEdit extends Component {
         )
     }
 }
-

@@ -1,20 +1,40 @@
 .user-add-form {
+  padding: 1rem;
+
   .user-add-thumbnail {
     height: 100%;
     text-align: center;
-    img{
-        object-fit: cover;
-        height: 100px;
-        width: 100px;
-        border-radius: 999px;
+    img {
+      object-fit: cover;
+      height: 100px;
+      width: 100px;
+      border-radius: 999px;
     }
   }
   .inputs {
+    padding-inline-end: 1.5rem;
     input {
-      margin-bottom: 10px;
+      margin-bottom: 1rem;
+
+      // margin-bottom: 10px;
       border-radius: 10px;
       padding: 5px;
       outline: none;
+    }
+  }
+}
+@media (max-width: 450px) {
+  .user-add-form {
+    flex-direction: column;
+
+    .user-add-thumbnail {
+      order: -1;
+      margin-bottom: 1.5rem;
+    }
+
+    .inputs {
+      input {
+      }
     }
   }
 }

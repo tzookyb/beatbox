@@ -226,7 +226,7 @@ class _BoxDetails extends Component {
                                     title="Add Songs to Playlist"
                                     onClick={this.toggleSongPick}
                                     aria-label="add"
-                                >
+                                > 
                                     <AddIcon />
                                 </Fab>
 
@@ -238,7 +238,7 @@ class _BoxDetails extends Component {
 
                             <div className="share-container flex space-between column">
                                 <p>Invite a friend to join you:</p>
-                                <div className="share-btns flex space-evenely">
+                                <div className="share-btns flex space-evenly">
                                     <a className="facebook-share-btn"
                                         href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
                                         rel="noopener noreferrer" target="_blank">

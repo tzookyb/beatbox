@@ -54,6 +54,7 @@ export class _BoxFilter extends Component {
             this.props.history.push(`/box?${query.toString()}`);
         } else this.props.setFilter(this.state.searchStr);
     }
+
     toggleSearch = () => {
         this.setState(prevState => ({ isSearchOpen: !prevState.isSearchOpen }), () => {
             if (this.state.isSearchOpen) this.ref.current.focus();
@@ -61,9 +62,10 @@ export class _BoxFilter extends Component {
     }
 
     render() {
-        const { searchStr, isAtBoxDetails } = this.state;
+        const { searchStr, isAtBoxDetails, isSearchOpen } = this.state;
+        const { isShown } = this.props;
         return (
-            <div className={`box-filter flex ${(this.props.isShown) ? '' : 'invisible'} ${this.state.isSearchOpen ? 'is-open' : ''}`}>
+            <div className={`box-filter flex ${(isShown) ? '' : 'invisible'} ${isSearchOpen ? 'is-open' : ''}`}>
                 <input
                     ref={this.ref}
                     type="search"
