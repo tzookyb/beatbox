@@ -12,7 +12,6 @@ class _Signup extends React.Component {
     state = {
         user: {
             username: '',
-            fullName: '',
             password: '',
             imgUrl: ''
         }
@@ -35,11 +34,11 @@ class _Signup extends React.Component {
         })
     }
 
-    onSignup = (ev) => {        
+    onSignup = (ev) => {
         ev.preventDefault();
         if (this.state.username === '') return;
-        const { username, fullName, password, imgUrl } = this.state.user;
-        const userCreds = { username, fullName, password, imgUrl };
+        const { username, password, imgUrl } = this.state.user;
+        const userCreds = { username, password, imgUrl };
         this.props.signup(userCreds);
         this.props.loadUser();
         this.props.handleClose();
@@ -51,25 +50,20 @@ class _Signup extends React.Component {
         return (
             <form className="user-add-form flex" onSubmit={this.onSignup}>
                 <div className="inputs flex column">
-                    <label>User Name:</label>
+                    <label for="username">User Name:</label>
                     <input
+                        type="text"
+                        id="username"
+                        name="username"
                         autoFocus
                         required
-                        name="username" type="text"
                         onChange={this.onChange}
                         placeholder="User Name:"
                         autoComplete="off" />
-                    <label>Full Name:</label>
+                    <label for="password">Password:</label>
                     <input
                         required
-                        name="fullName"
-                        type="text"
-                        onChange={this.onChange}
-                        placeholder="Full Name"
-                        autoComplete="off" />
-                    <label>Password:</label>
-                    <input
-                        required
+                        id="password"
                         name="password"
                         type="password"
                         onChange={this.onChange}

@@ -1,5 +1,6 @@
 import httpService from './httpService'
 import { boxService } from './boxService';
+import { utilService } from './utilService';
 
 const STORAGE_KEY = 'loggedinUser'
 
@@ -56,20 +57,10 @@ function getMinimalUser() {
 function _getGuestMode() {
     return {
         username: 'Guest',
-        fullName: 'New Guest',
         imgUrl: '',
         isGuest: true,
-        _id: _makeId()
+        _id: utilService.makeId(5)
     }
-}
-
-function _makeId(length = 5) {
-    var txt = '';
-    var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    for (var i = 0; i < length; i++) {
-        txt += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-    return txt;
 }
 
 function _handleLoggedinUser(user) {

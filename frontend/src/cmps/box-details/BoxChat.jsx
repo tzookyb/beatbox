@@ -106,7 +106,7 @@ class _BoxChat extends Component {
                 msgsArr.push(
                     <div key={idx} className={`msg flex column ${classPosition}`} >
                         <div className={`msg-data flex align-center`}>
-                            {!classPosition && <Avatar title={user.fullName} alt="User" src={msg.avatar} style={{ width: '20px', height: '20px' }} />}
+                            {!classPosition && <Avatar title={user.username} alt="User" src={msg.avatar} style={{ width: '20px', height: '20px' }} />}
                             <p className="submit-by">{title}</p>
                             {dateToString}
                         </div>

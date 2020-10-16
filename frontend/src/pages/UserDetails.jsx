@@ -42,7 +42,6 @@ class _UserDetails extends Component {
                 <div className="user-info">
                     <img className="img-user" src={user.imgUrl} alt="user" />
                     <h2>{user.username}</h2>
-                    <h2>{user.fullName}</h2>
                 </div>
                 {userBoxes && <div className="user-boxes">
                     <h2>Boxes I created: </h2>

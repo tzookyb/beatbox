@@ -42,13 +42,6 @@ const connectSockets = require('./api/socket/socket.routes');
 
 
 // ROUTES
-app.use((req, res, next) => {
-    if (req.secure) {
-        next();
-    } else {
-        res.redirect('https://' + req.headers.host + req.url);
-    }
-});
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/box', boxRoutes);

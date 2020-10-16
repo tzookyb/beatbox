@@ -1,6 +1,7 @@
 import httpService from './httpService';
 import { youtubeService } from './youtubeService';
 import { userService } from '../services/userService'
+import { utilService } from './utilService';
 var gGenre = ['Hip-hop', 'Easy', 'Electronic', 'Latin', 'Rock',
     'Pop', 'Classical', 'Alternative', 'Blues', 'Disco', 'Israeli', 'Arabic']
 
@@ -62,22 +63,13 @@ async function update(box) {
 async function addSong(song, isFromDrag = false) {
     const youtubeId = (isFromDrag) ? song.id : song.id.videoId;
     const newSong = {
-        id: _makeId(),
+        id: utilService.makeId(8),
         youtubeId,
         title: youtubeService.titleSimplify(song.snippet.title),
         duration: await youtubeService.getDuration(song.id.videoId, song.contentDetails?.duration),
         imgUrl: song.snippet.thumbnails.high.url,
     }
     return newSong;
-}
-
-function _makeId(length = 8) {
-    var txt = '';
-    var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    for (var i = 0; i < length; i++) {
-        txt += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-    return txt;
 }
 
 async function remove(boxId) {

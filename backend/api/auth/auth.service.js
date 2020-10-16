@@ -15,13 +15,12 @@ async function login(credentials) {
     return user;
 }
 
-async function signup(username, fullName, password, imgUrl) {
-    // logger.debug(`auth.service - signup with fullName: ${fullName}, username: ${username}`)
-    if (!username || !fullName || !password) return Promise.reject('fullName, username and password are required!');
+async function signup(username, password, imgUrl) {
+    if (!username || !password) return Promise.reject('username and password are required!');
     const hash = await bcrypt.hash(password, saltRounds);
     const user = await userService.getByName(username);
-    if (user) return Promise.reject('username is already in use!'); 
-    return userService.add({ username, password: hash, fullName , imgUrl})
+    if (user) return Promise.reject('username is already in use!');
+    return userService.add({ username, password: hash, imgUrl });
 }
 
 module.exports = {
