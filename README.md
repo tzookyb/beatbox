@@ -1,4 +1,5 @@
 <img src="/frontend/src/assets/img/logo.png" width=250>  
+
 # BeatBox  
 ## What it is?  
 It is a social-music app. It allows you to listen to music and edit playlists called "Boxes" with friends.
