@@ -4,7 +4,7 @@
 #### you can check it out on: 
 https://ca-beatbox.herokuapp.com/
 ## What it is?  
-<img src="Screenshot.png" width=650>  
+
 It is a social-music app. It allows you to listen to music and edit playlists called "Boxes" with friends.
 just choose one of the available boxes or create your own. Then invite your friends to join with with the share links
 either via Whatsapp, Facebook or just plain old URL link to paste.
@@ -12,6 +12,7 @@ when your friends are there with you, you all listen to same song playing, synch
 if someone makes a change to the playlist, you see it too. You all share the same playlist and the play status (besides volume).
 You can chat with the other users using the "Box Wall".
 If you sign-up, you can have your own avatar shown, keep your favorite boxes, and delete your created boxes.
+<img src="Screenshot.png" width=650>  
 
 ## What is it for?
 Well basically this is a showcase for the things i learned in the course.
