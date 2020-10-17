@@ -1,5 +1,5 @@
 <img src="/frontend/src/assets/img/logo.png" width=250>  
-<img src="./screenshot.png">
+<img src="screenshot.png">
 # BeatBox  
 #### you can check it out on: 
 https://ca-beatbox.herokuapp.com/
