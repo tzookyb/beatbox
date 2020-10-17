@@ -1,4 +1,4 @@
-<img src="/frontend/src/assets/img/logo.png" style="float: right" width=150>  
+<img src="/frontend/src/assets/img/logo.png" style="float:right;" width=150>  
 
 # BeatBox  
 #### you can check it out on: 
