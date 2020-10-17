@@ -1,10 +1,10 @@
-<img src="Screenshot.png" width=650>  
-<img src="/frontend/src/assets/img/logo.png" width=150>  
+<img src="/frontend/src/assets/img/logo.png" style="float: right" width=150>  
 
 # BeatBox  
 #### you can check it out on: 
 https://ca-beatbox.herokuapp.com/
 ## What it is?  
+<img src="Screenshot.png" width=650>  
 It is a social-music app. It allows you to listen to music and edit playlists called "Boxes" with friends.
 just choose one of the available boxes or create your own. Then invite your friends to join with with the share links
 either via Whatsapp, Facebook or just plain old URL link to paste.
