@@ -33,7 +33,7 @@ class _BoxDetails extends Component {
         isMobileChatOpen: false,
         isClipboardToast: false,
         isFavorite: false,
-        isGuestMode: false
+        isGuestMode: false,
     }
 
     imgRef = React.createRef();
@@ -226,7 +226,7 @@ class _BoxDetails extends Component {
                                     title="Add Songs to Playlist"
                                     onClick={this.toggleSongPick}
                                     aria-label="add"
-                                > 
+                                >
                                     <AddIcon />
                                 </Fab>
 

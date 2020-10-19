@@ -129,7 +129,7 @@ class _BoxChat extends Component {
     }
 
     onKeyUp = (ev) => {
-        if (ev.key === 'Enter') this.sendMsg();
+        if (ev.keyCode === 13) this.sendMsg();
     }
 
     render() {

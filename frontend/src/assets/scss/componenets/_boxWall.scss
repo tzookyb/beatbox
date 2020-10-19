@@ -1,13 +1,13 @@
 .wall-container {
+  position: relative;
   width: 300px;
   padding: 90px 10px 0 10px;
   position: fixed;
   border-right: 2px solid rgb(28, 30, 33);
 
-  > *{
+  > * {
     width: 280px;
   }
-  
 
   .chat-title {
     text-align: center;
@@ -23,16 +23,14 @@
     position: fixed;
     bottom: 90px;
     font-size: 1rem;
-    
   }
 
   .msgs {
     height: rem(600px);
     overflow-y: scroll;
     overflow-x: hidden;
-    
 
-    .msg-text{
+    .msg-text {
       color: #fff;
     }
 
@@ -45,20 +43,19 @@
 @media (max-width: 720px) {
   .wall-container {
     border-right: initial;
-    width: 75vw;
+    width: 95vw;
 
     > * {
-      width: 75vw;
+      width: 100%;
     }
 
-    .msgs{
+    .msgs {
       height: 48vh;
     }
 
     .input-msg {
-      position: fixed;
+      width: 90%;
       bottom: 18vh;
-
     }
   }
 }

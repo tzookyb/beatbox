@@ -82,8 +82,7 @@
       }
 
       .share-container {
-        // position: relative;
-        min-width:130px;
+        min-width: 130px;
 
         p {
           margin-top: -5px;
@@ -141,6 +140,7 @@
       padding: 1rem 0;
       font-size: 0rem;
       transform: translateX(-100%);
+      animation: chat-hint 1.5s 3s;
       transition: transform 0.8s, box-shadow 0.8s;
     }
 

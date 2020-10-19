@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -81,8 +82,6 @@ a:not(a.logo):hover {
     background: #9e9e9e47;
     border-radius: 5px;
 }
-
-
 
 @media (max-width: 740px) {
     html {
