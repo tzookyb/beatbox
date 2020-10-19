@@ -35,7 +35,7 @@
     "socket.io-client": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": " concurrently \"react-scripts start\" \"nodemon ../backend/server.js\" ",
     "json": "json-server db.json --port 3030 --id _id",
     "build": "react-scripts build",
     "test": "react-scripts test",

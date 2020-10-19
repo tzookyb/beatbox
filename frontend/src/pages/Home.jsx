@@ -1,22 +1,16 @@
 // OUTSOURCE IMPORTS
-import React, { Component } from 'react'
+import React, { Component, Suspense } from 'react'
 import { connect } from 'react-redux'
 import { CircleLoading } from 'react-loadingg';
 import ExpandMoreSharpIcon from '@material-ui/icons/ExpandMoreSharp';
 // LOCAL IMPORTS
-import { BoxApp } from './BoxApp'
 import { Footer } from '../cmps/Footer'
 import { loadBoxes } from '../store/actions/boxAction'
-// import { socketService } from '../services/socketService';
-// import { BoxActive } from '../cmps/boxes/BoxActive';
+const BoxApp = React.lazy(() => import('./BoxApp').then(module => ({ default: module.BoxApp })));
 
 class _Home extends Component {
     state = {
         imgsLoaded: false
-    }
-
-    componentDidMount() {
-        // setTimeout(() => socketService.emit('get active boxes'), 0);
     }
 
     countLoadedImgs = 0;
@@ -65,9 +59,12 @@ class _Home extends Component {
                             alt="heroimg3" />
                     </div>
                 </div>
-                {/* <BoxActive boxes={this.props.activeBoxes} /> */}
                 <div className="genre-list">
-                    {imgsLoaded && <BoxApp />}
+                    <Suspense fallback={<CircleLoading size="large" color="#ac0aff" />}>
+                        <BoxApp/>
+                        {/* {imgsLoaded && <BoxApp />} */}
+                    </Suspense>
+
                 </div>
                 <Footer />
             </React.Fragment>
@@ -78,7 +75,6 @@ class _Home extends Component {
 const mapStateToProps = state => {
     return {
         boxes: state.boxReducer.boxes,
-        activeBoxes: state.boxReducer.activeBoxes
     }
 }
 const mapDispatchToProps = {
