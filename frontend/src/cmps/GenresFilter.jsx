@@ -6,6 +6,7 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 // LOCAL IMPORT
 import { boxService } from '../services/boxService'
+import { utilService } from '../services/utilService';
 
 export class _GenresFilter extends Component {
     state = {
@@ -13,28 +14,13 @@ export class _GenresFilter extends Component {
         isScrolled: false
     }
 
-    executeScroll = (scrollTo) => {
-        let scrollDiff = this.ref.current.scrollWidth - this.ref.current.offsetWidth
+    ref = React.createRef()
 
-        if (this.ref.current.scrollLeft !== 0) {
-            this.setState({ isScrolled: true });
-        }
-        if (this.ref.current.scrollLeft >= scrollDiff) {
-            this.ref.current.scrollLeft = 0
-            this.setState({ isScrolled: false })
-        }
-        else if (this.ref.current.scrollLeft < scrollDiff) {
-            this.ref.current.scrollLeft += scrollTo
-        }
-        else {
-            this.setState({ isScrolled: false })
-        }
-    }
+    executeScroll = utilService.executeScroll;
 
     componentDidMount() {
-        this.ref = React.createRef()
         const genres = boxService.getAllGenres();
-        this.setState({ genres: [...genres]});
+        this.setState({ genres: [...genres] });
     }
 
     getQueryParams = (genre) => {
@@ -49,7 +35,7 @@ export class _GenresFilter extends Component {
     }
 
     render() {
-        const { genres} = this.state;
+        const { genres } = this.state;
         if (!genres.length) return <h1>Loading...</h1>
         const currGenre = this.getCurrGenre();
         const isFiltered = !!this.props.location.search;
@@ -58,7 +44,7 @@ export class _GenresFilter extends Component {
 
                 <div className="btns-filter" ref={this.ref}>
 
-                    {this.state.isScrolled && <button className="list-left-btn" onClick={() => this.executeScroll(-100)}><ArrowBackIosIcon /></button>}
+                    {this.state.isScrolled && <button className="list-left-btn" onClick={() => this.executeScroll(-320)}><ArrowBackIosIcon /></button>}
 
                     <Link to="/box" className={`btn-filter flex justify-center align-center${!isFiltered ? 'active-filter' : ''}`} >All</Link>
                     {genres.map((genre, idx) => {
@@ -70,7 +56,7 @@ export class _GenresFilter extends Component {
                     })
                     }
 
-                    <button className="list-right-btn" onClick={() => this.executeScroll(100)}><ArrowForwardIosIcon /></button>
+                    <button className="list-right-btn" onClick={() => this.executeScroll(320)}><ArrowForwardIosIcon /></button>
 
                 </div >
             </div>

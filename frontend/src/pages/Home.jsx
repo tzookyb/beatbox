@@ -1,12 +1,13 @@
 // OUTSOURCE IMPORTS
-import React, { Component, Suspense } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { CircleLoading } from 'react-loadingg';
 import ExpandMoreSharpIcon from '@material-ui/icons/ExpandMoreSharp';
 // LOCAL IMPORTS
-import { Footer } from '../cmps/Footer'
-import { loadBoxes } from '../store/actions/boxAction'
-const BoxApp = React.lazy(() => import('./BoxApp').then(module => ({ default: module.BoxApp })));
+import { Footer } from '../cmps/Footer';
+import { loadBoxes } from '../store/actions/boxAction';
+import { BoxApp } from './BoxApp';
+
 
 class _Home extends Component {
     state = {
@@ -59,13 +60,11 @@ class _Home extends Component {
                             alt="heroimg3" />
                     </div>
                 </div>
-                <div className="genre-list">
-                    <Suspense fallback={<CircleLoading size="large" color="#ac0aff" />}>
-                        <BoxApp/>
-                        {/* {imgsLoaded && <BoxApp />} */}
-                    </Suspense>
 
+                <div className="genre-list">
+                    {imgsLoaded && <BoxApp />}
                 </div>
+
                 <Footer />
             </React.Fragment>
         )

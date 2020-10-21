@@ -1,5 +1,6 @@
 export const utilService = {
-    makeId
+    makeId,
+    executeScroll
 }
 
 function makeId(length = 8) {
@@ -9,4 +10,18 @@ function makeId(length = 8) {
         txt += possible.charAt(Math.floor(Math.random() * possible.length));
     }
     return txt;
+}
+
+function executeScroll(scrollTo) {
+    const el = this.ref.current;
+    let scrollDiff = el.scrollWidth - el.offsetWidth;
+
+    if (el.scrollLeft >= scrollDiff) {
+        el.scrollLeft = 0;
+        this.setState({ isScrolled: false });
+    }
+    else if (el.scrollLeft < scrollDiff) {
+        el.scrollLeft += scrollTo;
+        this.setState({ isScrolled: true });
+    }
 }

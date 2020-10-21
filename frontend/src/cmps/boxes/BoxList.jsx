@@ -6,32 +6,16 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 // LOCAL IMPORTS
 import { BoxPreview } from './BoxPreview'
+import { utilService } from '../../services/utilService';
 
 export class _BoxList extends Component {
-
     state = {
         isScrolled: false
     }
 
     ref = React.createRef()
 
-    executeScroll = (scrollTo) => {
-        let scrollDiff = this.ref.current.scrollWidth - this.ref.current.offsetWidth
-
-        if (this.ref.current.scrollLeft !== 0 ) {
-            this.setState({ isScrolled: true });
-        }
-        if (this.ref.current.scrollLeft >= scrollDiff){
-            this.ref.current.scrollLeft = 0
-            this.setState({ isScrolled: false })
-        } 
-        else if (this.ref.current.scrollLeft < scrollDiff){
-            this.ref.current.scrollLeft += scrollTo
-        } 
-        else {
-            this.setState({ isScrolled: false })
-        }
-    }
+    executeScroll = utilService.executeScroll;
 
     render() {
         return (
@@ -43,7 +27,7 @@ export class _BoxList extends Component {
                 </div>}
 
                 {this.props.genre &&
-                    <div ref={this.ref} className={`box-list image-container ${this.props.location.pathname === '/' ? 'homepage-list' : ''}`}>
+                    <div ref={this.ref} className={`box-list ${this.props.location.pathname === '/' ? 'homepage-list' : ''}`}>
                         {this.state.isScrolled && <button className="list-left-btn" onClick={() => this.executeScroll(-350)}><ArrowBackIosIcon /></button>}
 
                         {this.props.boxes.map(box => {
