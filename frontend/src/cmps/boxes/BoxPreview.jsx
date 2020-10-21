@@ -7,8 +7,10 @@ import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 export class BoxPreview extends Component {
     render() {
         const { box, isHomePage, onDelete } = this.props;
+        const sectionClassName = `box-preview ${isHomePage ? 'box-home-preview' : ''}`;
+
         return (
-            <section className={`box-preview ${isHomePage ? 'box-home-preview' : ''}`}>
+            <section className={sectionClassName} >
                 <Link to={`/box/details/${box._id}`} >
                     <div className="box-preview-img"> <img src={box.imgUrl} alt="box-preview img" /></div>
                 </Link>

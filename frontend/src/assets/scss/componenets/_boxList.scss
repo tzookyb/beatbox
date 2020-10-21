@@ -8,7 +8,6 @@
     grid-gap: 20px;
     grid-auto-flow: column;
     grid-auto-columns: 205px;
-    overflow: auto;
     padding: 15px 0 40px 0;
     scroll-behavior: smooth;
 
@@ -19,8 +18,8 @@
 
     &.homepage-list {
       padding-inline-start: rem(125px);
+      overflow: auto;
     }
-
 
     .list-left-btn,
     .list-right-btn {
@@ -54,8 +53,6 @@
       grid-auto-rows: 250px;
       grid-auto-flow: row;
     }
-
-  
   }
   .genre-filter {
     margin: 0 40px;
@@ -75,7 +72,6 @@
       color: rgb(195, 195, 195);
     }
   }
-  
 }
 
 @media (max-width: 740px) {
@@ -83,7 +79,7 @@
     padding-inline-start: initial;
     .box-list {
       &.full-grid {
-        grid-template-columns: minmax(170px, 1fr) repeat(auto-fill, minmax(170px, 1fr));
+        grid-template-columns: minmax(160px, 1fr) repeat(auto-fill, minmax(160px, 1fr));
         grid-gap: 15px;
         grid-auto-rows: initial;
       }

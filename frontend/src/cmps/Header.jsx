@@ -41,7 +41,7 @@ class _Header extends Component {
     }
 
     render() {
-        const { user } = this.props;
+        const { user, logout } = this.props;
         const { pathname } = this.props.location;
         const { isMobileMenuOpen, isScroll } = this.state;
 
@@ -62,7 +62,7 @@ class _Header extends Component {
                             <li><Link to={this.getPathForBoxAdd} onClick={this.toggleMenu} >Create Box</Link ></li>
                         </ul>
 
-                        <div className="user-avatar"><UserMenu user={user} onLogout={this.props.logout} /></div>
+                        <div className="user-avatar"><UserMenu user={user} onLogout={logout} /></div>
 
 
                         <button
@@ -71,7 +71,6 @@ class _Header extends Component {
                             {isMobileMenuOpen ?
                                 <CloseIcon /> :
                                 <MenuIcon />}
-                            {/* 'X' : '☰'} */}
                         </button>
                     </div>
                 </header >

@@ -57,7 +57,7 @@ export function UserMenu({ user, onLogout }) {
                     aria-controls={open ? 'menu-list-grow' : undefined}
                     aria-haspopup="true"
                     onClick={handleToggle}
-                    style={{ cursor: "pointer" }} />
+                    className="cursor-pointer"/>
                 <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
                     {({ TransitionProps, placement }) => (
                         <Grow

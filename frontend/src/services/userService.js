@@ -74,7 +74,6 @@ function _loadUser() {
 
 async function getUserById(userId) {
     return httpService.get(`user/${userId}`);
-
 }
 
 async function addBoxToUser(boxId) {

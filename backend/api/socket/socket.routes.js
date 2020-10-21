@@ -108,12 +108,3 @@ function getBoxStatus(boxId) {
     if (!boxMap[boxId]) boxMap[boxId] = createBoxStatus();
     return boxMap[boxId];
 }
-
-// function getActiveBoxes() {
-//     const activeBoxes = [];
-//     for (const box in boxMap) {
-//         if (!boxMap[box]) continue;
-//         activeBoxes.push({ boxId: box, userCount: boxMap[box].connectedUsers.length })
-//     }
-//     return activeBoxes;
-// }

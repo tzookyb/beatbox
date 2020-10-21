@@ -4,9 +4,10 @@
   transition: 0.8s;
   position: relative;
   color: #e0e0e0;
-
+  box-shadow: 0px 0px 10px #131313;
+  
   &:hover {
-    transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale(1.05);
     color: white;
   }  
   
@@ -14,7 +15,6 @@
       padding: 8px;
       margin: 0 5px;
       height: 33%;;
-      // align-items: flex-end;
       .box-data {
         height: 100%;
         .box-name {
