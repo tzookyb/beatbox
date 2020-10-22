@@ -8,11 +8,6 @@ import { BoxPreview } from './BoxPreview';
 import { socketService } from '../../services/socketService';
 
 export function BoxActive(props) {
-    const [boxes, setBoxes] = useState(null);
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [introId, setIntroId] = useState(null);
-    const [isReady, setIsReady] = useState(false);
-
     useEffect(() => {
         socketService.on('got intro', onGotIntro)
         return () => {
@@ -20,11 +15,17 @@ export function BoxActive(props) {
         }
     }, [])
 
+    const [boxes, setBoxes] = useState(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [introId, setIntroId] = useState(null);
+    const [isReady, setIsReady] = useState(false);
+
+
     useEffect(() => {
         setBoxes(props.boxes);
     }, [props])
 
-    const elPlayer = React.useRef()
+    const elPlayer = useRef()
 
     function connectedUsersAvatars(users) {
         return users.map(user => {
@@ -35,14 +36,14 @@ export function BoxActive(props) {
     function onHoverIntro(box) {
         socketService.emit('get intro', box._id);
     }
-    var seek;
+
     async function onGotIntro(intro) {
         console.log("onGotIntro -> intro", intro)
         await setIntroId(intro.youtubeId);
         await setIsPlaying(true);
         if (isReady) {
             elPlayer.seekTo(intro.secPlayed);
-        } else seek = intro.secPlayed;
+        }
     }
 
     if (!boxes?.length) return null;
