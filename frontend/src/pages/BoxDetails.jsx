@@ -241,19 +241,19 @@ class _BoxDetails extends Component {
                                 <div className="share-btns flex space-evenly">
                                     <a className="facebook-share-btn"
                                         href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
-                                        rel="noopener noreferrer" target="_blank">
+                                        rel="noopener noreferrer" target="_blank" title="Share to Facebook">
                                         <FacebookIcon />
                                     </a>
                                     <a className="whatsapp-share-btn"
                                         href={`whatsapp://send?text=${currBox.createdBy.name} Shared a Box With You! : \n\n ${window.location.href}`}
-                                        data-action="share/whatsapp/share">
+                                        data-action="share/whatsapp/share" title="Share to Whatsapp">
                                         <WhatsappIcon />
                                     </a>
                                     <CopyToClipboard className="copy-share-btn" text={window.location.href}>
-                                        <LinkIcon onClick={this.toggleClipboardToast} style={{ transform: 'rotate(45deg) translateY(1px) translateX(4px)' }} />
+                                        <LinkIcon onClick={this.toggleClipboardToast} />
                                     </CopyToClipboard>
                                 </div>
-                                {this.state.isClipboardToast && <div className="copied-to-clipboard"><small>Link copied to your clipboard!</small></div>}
+                                {this.state.isClipboardToast && <small className="copied-to-clipboard">Link copied to your clipboard!</small>}
                             </div>
 
                         </div>
