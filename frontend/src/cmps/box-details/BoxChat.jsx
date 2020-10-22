@@ -19,7 +19,7 @@ class _BoxChat extends Component {
         isTyping: false,
         typingStr: '',
     }
-
+    typingTimeout;
     inputRef = React.createRef();
     chatRef = React.createRef();
 
@@ -40,24 +40,20 @@ class _BoxChat extends Component {
     }
 
     onTyping = typingStr => {
-        this.setState({ typingStr })
+        clearTimeout(this.typingTimeout);
+        this.setState({ typingStr });
+        this.typingTimeout = setTimeout(() => {
+            this.setState({ typingStr: '' });
+        }, 1500);
     }
 
-    onHandleChange = async (ev) => {
+    onHandleChange = (ev) => {
         if (!ev.target.value) return;
-        var timeout;
-        if (!this.state.isTyping) {
-            clearTimeout(timeout);
-            this.setState({ isTyping: true });
-            const userName = this.props.user.username;
-            const typingStr = userName + ' is typing...';
-            socketService.emit('chat typing', typingStr);
-            timeout = setTimeout(this.timeoutFunction, 1500);
-        } else {
-            clearTimeout(timeout);
-            timeout = setTimeout(this.timeoutFunction, 1500);
-        }
-        await this.setState({ msg: ev.target.value });
+        const userName = this.props.user.username;
+        const typingStr = userName + ' is typing...';
+        socketService.emit('chat typing', typingStr);
+
+        this.setState({ msg: ev.target.value });
     }
 
     timeoutFunction = () => {
@@ -120,11 +116,10 @@ class _BoxChat extends Component {
         return msgsArr;
     }
 
-
     getConnectedAvatars() {
         const { connectedUsers } = this.props;
         return connectedUsers.map(user => {
-            return <Avatar key={user.id} alt={user.username} src={user.imgUrl} />
+            return <Avatar key={user.id} src={user.imgUrl} />
         })
     }
 
@@ -137,8 +132,8 @@ class _BoxChat extends Component {
         const avatarsConnectedUser = this.getConnectedAvatars();
         return (
             <section className="wall-container flex column space-between">
-                <h2 className="chat-title"> Box Wall </h2>
-                <div className="connected-users flex justify-center">
+                <h2 className="chat-title">Box Wall</h2>
+                <div className="flex justify-center">
                     < AvatarGroup max={4}>
                         {avatarsConnectedUser}
                     </AvatarGroup >
