@@ -1,6 +1,12 @@
+const { getById, resetData } = require("../box/box.service");
+const demoData = require('../../demoData/demoData.json')
+
 module.exports = connectSockets
 
-const boxMap = {};
+var boxMap = {};
+var gActiveBoxes = null;
+var gUsersCount = 0;
+resetDemoData();
 
 function createBoxStatus() {
     return {
@@ -18,13 +24,17 @@ function connectSockets(io) {
     io.on('connection', socket => {
 
         var currUser;
+        socket.join('beatbox');
+        socket.emit('got active boxes', gActiveBoxes);
+        gUsersCount++;
+        console.log("connect", gUsersCount);
 
-        socket.on('join box', (boxInfo) => {
+        socket.on('join box', async (boxInfo) => {
             currUser = boxInfo.user;
             console.log('join box')
             if (socket.myBox) {
                 if (socket.myBox === boxInfo.boxId) return;
-                leaveBox(socket, io, currUser);
+                await leaveBox(socket, io, currUser);
             }
             socket.myBox = boxInfo.boxId;
             socket.join(socket.myBox);
@@ -32,14 +42,17 @@ function connectSockets(io) {
             socket.emit('got box status', boxStatus);
             boxMap[socket.myBox].connectedUsers.push(boxInfo.user);
             io.to(socket.myBox).emit('joined new box', boxStatus.connectedUsers);
+            handleActiveBoxes(socket.myBox, io);
         })
 
         socket.on('disconnect', () => {
-            console.log('disconnect')
-            // THIS LINE FOR DEV PURPOSES:
+            gUsersCount--;
+            if (!gUsersCount) {
+                setTimeout(resetDemoData, 5000);
+            }
+            console.log('disconnect', gUsersCount);
             if (!socket.myBox) return;
-            leaveBox(socket, io, currUser)
-
+            leaveBox(socket, io, currUser);
         })
 
         // BOX SOCKETS ***********************************
@@ -49,13 +62,16 @@ function connectSockets(io) {
             io.to(socket.myBox).emit('box changed', box);
         })
 
-        socket.on('get active boxes', () => {
-            console.log('get active boxes');
-            const activeBoxes = getActiveBoxes();
-            socket.emit('got active boxes', activeBoxes);
+        // PLAYER SOCKETS ***********************************
+        socket.on('get intro', async (boxId) => {
+            const box = await getById(boxId);
+            const currSong = boxMap[boxId].currSong;
+            const youtubeId = box.songs.find(song => song.id === currSong.id).youtubeId;
+            const secPlayed = currSong.secPlayed
+            const intro = { youtubeId, secPlayed };
+            socket.emit('got intro', intro);
         })
 
-        // PLAYER SOCKETS ***********************************
         socket.on('update backend currSong', currSong => {
             if (!socket.myBox) return;
             boxMap[socket.myBox].currSong = currSong;
@@ -88,23 +104,55 @@ function connectSockets(io) {
             io.to(socket.myBox).emit('chat addMsg', msg);
         })
         socket.on('chat typing', typingStr => {
-            console.log('chat typing')
             if (!socket.myBox) return;
             socket.broadcast.to(socket.myBox).emit('chat showTyping', typingStr)
         })
     })
 }
 
-function leaveBox(socket, io, currUser) {
+async function handleActiveBoxes(boxId, io) {
+    // If no active boxes, create empty array:
+    if (!gActiveBoxes) {
+        gActiveBoxes = [];
+
+    } else if (gActiveBoxes.length) {
+        // Check if box already exists, if so remove it:
+        const boxExistsIdx = gActiveBoxes.findIndex(box => box._id == boxId);
+        if (boxExistsIdx !== -1) {
+            gActiveBoxes.splice(boxExistsIdx, 1)
+        }
+    }
+    if (boxMap[boxId] && boxMap[boxId].connectedUsers.length) {
+        const newBox = await getById(boxId);
+        gActiveBoxes.unshift(newBox);
+        gActiveBoxes[0].connectedUsers = boxMap[boxId].connectedUsers;
+        if (gActiveBoxes.length > 3) gActiveBoxes = gActiveBoxes.slice(0, 3);
+    }
+    if (io) io.to('beatbox').emit('got active boxes', gActiveBoxes);
+}
+
+async function leaveBox(socket, io, currUser) {
     const newConnectedUsers = boxMap[socket.myBox].connectedUsers.filter(user => user.id !== currUser.id)
     boxMap[socket.myBox].connectedUsers = newConnectedUsers;
-
-    if (boxMap[socket.myBox].connectedUsers.length === 0) delete boxMap[socket.myBox];
-    else io.to(socket.myBox).emit('joined new box', newConnectedUsers);
+    if (boxMap[socket.myBox].connectedUsers.length === 0) {
+        delete boxMap[socket.myBox];
+    } else {
+        io.to(socket.myBox).emit('joined new box', newConnectedUsers);
+    }
+    await handleActiveBoxes(socket.myBox, io);
     socket.leave(socket.myBox);
 }
 
 function getBoxStatus(boxId) {
     if (!boxMap[boxId]) boxMap[boxId] = createBoxStatus();
     return boxMap[boxId];
+}
+
+async function resetDemoData() {
+    if (gUsersCount) return;
+    await resetData();
+    boxMap = demoData;
+    for (const box in boxMap) {
+        handleActiveBoxes(box);
+    }
 }
