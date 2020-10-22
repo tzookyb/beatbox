@@ -89,8 +89,10 @@ export class SongPick extends Component {
                                     className="song-pick-result flex"
                                     onClick={() => this.onAddSong(result)}
                                 >
-                                    <img src={imgUrl} alt="thumbnail" />
-                                    <h3 dir="auto">{title}</h3>
+                                    <div className="song-pick-result-img">
+                                        <img src={imgUrl} alt="thumbnail" />
+                                    </div>
+                                <h3 dir="auto">{title}</h3>
                                 </div>
                             )}
                         </Draggable>
