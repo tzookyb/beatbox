@@ -60,12 +60,8 @@
         position: relative;
 
         .volume-slider {
-            color: white;
             width: 50px;
             transform: rotate(270deg);
-            &.muted {
-                color: #292929;
-            }
         }
         .player-ctrl-btn {
             border-radius: 45%;
