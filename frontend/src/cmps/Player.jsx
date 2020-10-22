@@ -154,10 +154,10 @@ class _Player extends Component {
                 <div className={`player-capsule flex align-center justify-center ${isPlaying ? 'is-playing' : 'paused'}`}>
 
 
-                    <img className="player-thumbnail" src={song.imgUrl} title={song.title} alt="song thumbnail" />
 
                     {!isReady ? <CircleLoading color="#ac0aff" /> :
                         <React.Fragment>
+                            <img className="player-thumbnail" src={song.imgUrl} title={song.title} alt="song thumbnail" />
                             <span className="player-title">{song.title}</span>
 
                             <div className="song-time flex align-center space-between">
@@ -181,32 +181,33 @@ class _Player extends Component {
 
                                 {duration && <span className="player-time">{showTime(duration + 1)}</span>}
                             </div>
+
+                            <div className="player-controls flex align-center">
+                                <button className="player-ctrl-btn flex align-center" title="Previous" onClick={() => this.skipToSong(-1)}><SkipPreviousIcon /></button>
+                                <button className="player-ctrl-btn flex align-center" title={isPlaying ? 'Pause' : 'Play'} onClick={this.togglePlay}>{isPlaying ? <PauseIcon /> : <PlayArrowIcon />}</button>
+                                <button className="player-ctrl-btn flex align-center" title="Next" onClick={() => this.skipToSong(1)}><SkipNextIcon /></button>
+
+                                <input
+                                    className="volume-slider"
+                                    disabled={muted}
+                                    type="range"
+                                    value={volume}
+                                    min={0}
+                                    step={0.05}
+                                    max={1}
+                                    onChange={this.handleVolumeChange}
+                                />
+                                <button className="player-ctrl-btn flex justify-center align-center" title={muted ? 'Unmute' : 'Mute'} onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
+                                <img
+                                    style={{ visibility: (this.props.location.pathname === `/box/details/${currBox._id}`) ? 'hidden' : 'visible' }}
+                                    className="back-to-box"
+                                    src={require('../assets/img/box.png')}
+                                    title="Back to box"
+                                    alt="Back to box"
+                                    onClick={() => this.props.history.push(`/box/details/${currBox._id}`)} />
+                            </div>
                         </React.Fragment>
                     }
-
-                    <div className="player-controls flex align-center">
-                        <button className="player-ctrl-btn flex align-center" title="Previous" onClick={() => this.skipToSong(-1)}><SkipPreviousIcon /></button>
-                        <button className="player-ctrl-btn flex align-center" title={isPlaying ? 'Pause' : 'Play'} onClick={this.togglePlay}>{isPlaying ? <PauseIcon /> : <PlayArrowIcon />}</button>
-                        <button className="player-ctrl-btn flex align-center" title="Next" onClick={() => this.skipToSong(1)}><SkipNextIcon /></button>
-
-                        <input
-                            className={`volume-slider ${muted ? 'muted' : ''}`}
-                            type="range"
-                            value={volume}
-                            min={0}
-                            step={0.05}
-                            max={1}
-                            onChange={this.handleVolumeChange}
-                        />
-                        <button className="player-ctrl-btn flex justify-center align-center" title={muted ? 'Unmute' : 'Mute'} onClick={this.toggleMute}>{muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}</button>
-                        <img
-                            style={{ visibility: (this.props.location.pathname === `/box/details/${currBox._id}`) ? 'hidden' : 'visible' }}
-                            className="back-to-box"
-                            src={require('../assets/img/box.png')}
-                            title="Back to box"
-                            alt="Back to box"
-                            onClick={() => this.props.history.push(`/box/details/${currBox._id}`)} />
-                    </div>
                 </div >
             </div >
         </React.Fragment >
