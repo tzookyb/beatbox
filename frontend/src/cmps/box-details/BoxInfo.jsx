@@ -75,7 +75,8 @@ export class BoxInfo extends Component {
                             crossOrigin={"anonymous"}
                             ref={this.props.imgRef}
                             src={box.imgUrl}
-                            alt=""
+                            alt="box"
+                            title="Click to change Box Image"
                             onLoad={this.props.getDominantColor} />
                     </label>
                 </div>
