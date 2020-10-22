@@ -29,6 +29,7 @@ class _Header extends Component {
     }
 
     toggleMenu = () => {
+        if (window.innerWidth > 740) return;
         this.setState({ isMobileMenuOpen: !this.state.isMobileMenuOpen })
     }
 
