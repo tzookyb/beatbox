@@ -7,46 +7,57 @@
     h1 {
         text-align: center;
         font-family: Righteous;
+        font-weight: 400;
         color: white;
         margin-bottom: 15px;
-    }
-    .active-boxes-grid {
-        width: 100%;
-        display: grid;
-        border-radius: 10px;
-        grid-template-columns: 1fr 1fr 1fr;
-        justify-content: center;
-        background-color: $clr2;
-
-        .active-box {
-            padding: 15px;
-            > * {
-                margin: 0;
-            }
-            color: white;
-            h2 {
-                font-family: Righteous;
-                text-align: center;
-                margin-bottom: 10px;
-            }
-            img {
-                width: 100%;
-                object-fit: cover;
-                height: rem(250px);
-            }
-            h5 {
-                width: 100%;
-                max-width: 30ch;
-                // white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-        }
+        font-size: 2rem;
     }
 }
+
+.connected-users {
+    position: absolute;
+    z-index: 2;
+    top: rem(5px);
+    left: rem(5px);
+}
+
+.active-boxes {
+    padding: rem(10px);
+    background-color: $clr2;
+    width: fit-content;
+    max-width: 80%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    justify-content: center;
+}
+.active-box {
+    position: relative;
+    margin: rem(10px);
+    transition: 0.8s;
+
+    > *:hover {
+        transform: scale(1);
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.live {
+    position: absolute;
+    z-index: 1;
+    width: rem(55px);
+    height: auto;
+    right: 0;
+    top: 0;
+}
+
 @media (max-width: 740px) {
-    .active-boxes-container {
-        padding: 10px;
-        grid-template-columns: 1fr 1fr;
+    .active-box {
+        .box-preview {
+            height: 220px;
+        }
     }
 }

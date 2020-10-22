@@ -1,45 +1,81 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-// LOCAL IMPORTS
+import React from 'react';
+import { useState, useEffect, useRef } from 'react';
+import ReactPlayer from 'react-player/youtube'
+import { Avatar } from '@material-ui/core';
+import AvatarGroup from '@material-ui/lab/AvatarGroup';
 
-export class _BoxActive extends Component {
-    render() {
-        const { activeBoxes } = this.props;
-        if (!activeBoxes || !activeBoxes.length) return null;
-        return (
-            <React.Fragment>
-                <div id="active-box" className="active-boxes-container main-container">
-                    <h1 className={window.innerWidth < 740 ? 'full' : ''}>Join live to one the currently active Boxes:</h1>
-                    <div className={`active-boxes-grid ${window.innerWidth < 740 ? 'full' : ''}`}>
-                        {activeBoxes.map((box, idx) => {
-                            return (
-                                <div
-                                    key={idx}
-                                    className="active-box flex column cursor-pointer"
-                                    onClick={() => this.props.history.push(`/box/details/${box._id}`)}
-                                >
-                                    <div className="active-box-title">
-                                        <h2>{box.name}</h2>
-                                    </div>
-                                    <div className="active-box-img">
-                                        <img src={box.imgUrl} alt="box" />
-                                    </div>
-                                </div>
-                            )
-                        })}
+import { BoxPreview } from './BoxPreview';
+import { socketService } from '../../services/socketService';
+
+export function BoxActive(props) {
+    const [boxes, setBoxes] = useState(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [introId, setIntroId] = useState(null);
+    const [isReady, setIsReady] = useState(false);
+
+    useEffect(() => {
+        socketService.on('got intro', onGotIntro)
+        return () => {
+            socketService.off('got intro', onGotIntro)
+        }
+    }, [])
+
+    useEffect(() => {
+        setBoxes(props.boxes);
+    }, [props])
+
+    const elPlayer = React.useRef()
+
+    function connectedUsersAvatars(users) {
+        return users.map(user => {
+            return <Avatar key={user.id} alt={user.username} src={user.imgUrl} />
+        })
+    }
+
+    function onHoverIntro(box) {
+        socketService.emit('get intro', box._id);
+    }
+    var seek;
+    async function onGotIntro(intro) {
+        console.log("onGotIntro -> intro", intro)
+        await setIntroId(intro.youtubeId);
+        await setIsPlaying(true);
+        if (isReady) {
+            elPlayer.seekTo(intro.secPlayed);
+        } else seek = intro.secPlayed;
+    }
+
+    if (!boxes?.length) return null;
+    return <section id="active" className="active-boxes-container">
+
+        <h1>Top Boxes Now Live!</h1>
+        <div className="active-boxes flex">
+            {boxes.map(box => {
+
+                return <div className="active-box" onMouseEnter={() => onHoverIntro(box)} onMouseLeave={() => setIsPlaying(false)}>
+
+                    <div className="connected-users">
+                        < AvatarGroup max={4}>
+                            {connectedUsersAvatars(box.connectedUsers)}
+                        </AvatarGroup >
                     </div>
 
-                </div>
-            </React.Fragment >
-        )
-    }
-}
+                    <img className="live" src={require('../../assets/img/live.gif')} alt="live" />
 
-const mapStateToProps = state => {
-    return {
-        activeBoxes: state.boxReducer.activeBoxes
-    }
+                    <BoxPreview box={box} />
+                </div>
+            })}
+
+            <ReactPlayer
+                ref={elPlayer}
+                className="player hidden"
+                url={`https://www.youtube.com/watch?v=${introId}`}
+                volume={0.5}
+                onReady={() => setIsReady(true)}
+                playing={isPlaying}
+                controls={false}
+            />
+
+        </div>
+    </section >
 }
-const mapDispatchToProps = {}
-export const BoxActive = connect(mapStateToProps, mapDispatchToProps)(withRouter(_BoxActive));

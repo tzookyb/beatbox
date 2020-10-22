@@ -7,6 +7,7 @@ import ExpandMoreSharpIcon from '@material-ui/icons/ExpandMoreSharp';
 import { Footer } from '../cmps/Footer';
 import { loadBoxes } from '../store/actions/boxAction';
 import { BoxApp } from './BoxApp';
+import { BoxActive } from '../cmps/boxes/BoxActive';
 
 
 class _Home extends Component {
@@ -25,6 +26,7 @@ class _Home extends Component {
 
     render() {
         const { imgsLoaded } = this.state;
+        const { activeBoxes } = this.props;
         return (
             <React.Fragment>
                 {(!imgsLoaded && <CircleLoading size="large" color="#ac0aff" />)}
@@ -35,8 +37,8 @@ class _Home extends Component {
                             <p>Enjoy music. Enjoy company.</p>
                         </div>
                         <div className="hero-btns-container flex column space-around">
-                            <a href="#box"><button>Start listening</button></a>
-                            <a href="#box" className="scroll-down-arrow"><ExpandMoreSharpIcon ></ExpandMoreSharpIcon></a>
+                            <a href="#active"><button>Start listening</button></a>
+                            <a href="#active" className="scroll-down-arrow"><ExpandMoreSharpIcon ></ExpandMoreSharpIcon></a>
                         </div>
                     </div>
                     <div className="hero-img">
@@ -61,6 +63,8 @@ class _Home extends Component {
                     </div>
                 </div>
 
+                <BoxActive boxes={activeBoxes} />
+
                 <div className="genre-list">
                     {imgsLoaded && <BoxApp />}
                 </div>
@@ -74,6 +78,7 @@ class _Home extends Component {
 const mapStateToProps = state => {
     return {
         boxes: state.boxReducer.boxes,
+        activeBoxes: state.boxReducer.activeBoxes
     }
 }
 const mapDispatchToProps = {

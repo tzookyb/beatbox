@@ -61,17 +61,7 @@ export function setBoxStatus({ msgs, currSong }) {
 }
 
 export function setActiveBoxes(activeBoxes) {
-  return async dispatch => {
-    if (!activeBoxes?.length) return;
-    var boxes = [...activeBoxes];
-    boxes = boxes.sort((boxA, boxB) => boxA.userCount > boxB.userCount);
-    boxes = boxes.splice(0, 3);
-    boxes = await boxes.map(async (box) => {
-      return await boxService.getById(box.boxId)
-    })
-    Promise.all(boxes)
-      .then((boxes) => {
-        dispatch({ type: 'SET_ACTIVE_BOXES', boxes })
-      })
+  return dispatch => {
+    dispatch({ type: 'SET_ACTIVE_BOXES', activeBoxes })
   }
 }

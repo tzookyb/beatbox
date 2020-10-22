@@ -31,7 +31,7 @@ export function boxReducer(state = initialState, action) {
             return { ...state, boxes: state.boxes.filter(box => box._id !== action.boxId) }
 
         case 'SET_ACTIVE_BOXES':
-            return { ...state, activeBoxes: action.boxes }
+            return { ...state, activeBoxes: action.activeBoxes }
 
         case 'SET_CURR_SONG':
             return { ...state, currSong: action.currSong }
