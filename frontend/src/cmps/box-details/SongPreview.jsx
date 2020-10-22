@@ -34,12 +34,11 @@ export class _SongPreview extends Component {
             <Draggable draggableId={songDetails.id} index={index} isDragDisabled={isFilter}>
                 {provided => (
                     <li
-
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
 
-                        className="song-preview flex space-between"
+                        className="song-preview flex space-between align-center"
                         onDoubleClick={() => this.props.changeSong(songDetails.id)}
                     >
 
@@ -62,20 +61,20 @@ export class _SongPreview extends Component {
                         <div className="song-preview-btns flex align-center">
                             <h3 className="song-duration">{songDetails.duration || ''}</h3>
                             <img className={`playing-anim ${(isSongPlaying) ? '' : 'invisible'}`} src={require('../../assets/img/equalizer5.gif')} title="Now playing" alt="now-playing" />
-                        {isRemoveOpen ?
-                            <div
-                                onClick={(ev) => this.remove(ev, songDetails.id)}
-                                className={`remove-song-btn ${isRemoveOpen ? '' : 'invisible'}`}
-                            >
-                                <DeleteOutlineIcon />
-                            </div> :
+                            {isRemoveOpen ?
+                                <div
+                                    onClick={(ev) => this.remove(ev, songDetails.id)}
+                                    className={`remove-song-btn ${isRemoveOpen ? '' : 'invisible'}`}
+                                >
+                                    <DeleteOutlineIcon />
+                                </div> :
 
-                            <div><MoreVertIcon className="cursor-pointer" onClick={this.toggleRemoveOpen} /></div>
-                        }
+                                <div><MoreVertIcon className="cursor-pointer" onClick={this.toggleRemoveOpen} /></div>
+                            }
                         </div>
                     </li>
-        )
-    }
+                )
+                }
             </Draggable>
         )
     }
