@@ -41,14 +41,13 @@
           margin: 5px;
           .guest-msg {
             position: absolute;
-            right: 20px;
+            left: rem(45px);
             background-color: white;
             color: black;
-            z-index: 3;
+            z-index: 5;
             padding: 5px;
             font-weight: bold;
             border-radius: 5px;
-            bottom: -45px;
           }
           svg {
             font-size: 3rem;
@@ -82,6 +81,7 @@
       }
 
       .share-container {
+        position: relative;
         min-width: 130px;
 
         p {
@@ -110,12 +110,24 @@
         .share-btns {
           svg {
             font-size: 2.2rem;
+            transition: 0.2s;
+          }
+          .facebook-share-btn:hover {
+            svg {
+              color: #3b5998;
+            }
+          }
+          .whatsapp-share-btn:hover {
+            svg {
+              color: #25d366;
+            }
           }
 
           .copy-share-btn {
-            position: relative;
-            bottom: 1px;
-            right: 4px;
+            transform: rotate(45deg);
+            &:hover {
+              color: $clr3;
+            }
           }
         }
       }
