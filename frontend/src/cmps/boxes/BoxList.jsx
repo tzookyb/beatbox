@@ -43,7 +43,7 @@ export class _BoxList extends Component {
                             } else return null
                         })}
 
-                        <button className="list-right-btn" onClick={() => this.executeScroll(350)}><ArrowForwardIosIcon /></button>
+                        {this.ref.current?.scrollLeft && <button className="list-right-btn" onClick={() => this.executeScroll(350)}><ArrowForwardIosIcon /></button>}
                     </div>
                 }
 
