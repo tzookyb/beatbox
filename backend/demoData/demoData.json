@@ -1,0 +1,128 @@
+{
+    "5f70c27fa9489f73a54f8a69": {
+        "msgs": [
+            {
+                "text": "Hi Muse Fan! 🤘",
+                "submitAt": "2020-10-22T15:16:02.077Z",
+                "id": "5f8b058a2272a000174f72fe",
+                "submitBy": "Idan",
+                "avatar": "https://res.cloudinary.com/tzookyb/image/upload/w_200,h_200,c_thumb,g_face/v1602946439/beatbox/p6hfa1ky4lsv9dxojrun.jpg"
+            },
+            {
+                "text": "I'm not really Here, it's just a demo! Enjoy BeatBox",
+                "submitAt": "2020-10-22T15:16:28.045Z",
+                "id": "5f8b058a2272a000174f72fe",
+                "submitBy": "Idan",
+                "avatar": "https://res.cloudinary.com/tzookyb/image/upload/w_200,h_200,c_thumb,g_face/v1602946439/beatbox/p6hfa1ky4lsv9dxojrun.jpg"
+            },
+            {
+                "text": "Invite your friends using the Share buttons!",
+                "submitAt": "2020-10-22T15:16:02.077Z",
+                "id": "5f8b058a2272a000174f72fe",
+                "submitBy": "Idan",
+                "avatar": "https://res.cloudinary.com/tzookyb/image/upload/w_200,h_200,c_thumb,g_face/v1602946439/beatbox/p6hfa1ky4lsv9dxojrun.jpg"
+            }
+        ],
+        "connectedUsers": [
+            {
+                "name": "Idan",
+                "imgUrl": "https://res.cloudinary.com/tzookyb/image/upload/w_200,h_200,c_thumb,g_face/v1602946439/beatbox/p6hfa1ky4lsv9dxojrun.jpg",
+                "id": "5f8b058a2272a000174f72fe"
+            }
+        ],
+        "currSong": {
+            "id": "3dm_5qWWDV8",
+            "isPlaying": true,
+            "secPlayed": 113
+        }
+    },
+    "5f70c27fa9489f73a54f8a7a": {
+        "msgs": [
+            {
+                "text": "Peace Man! ✌☮",
+                "submitAt": "2020-10-22T15:20:58.981Z",
+                "id": "5f8b058a2272a000174f72fe",
+                "submitBy": "Ziggy",
+                "avatar": "https://res.cloudinary.com/tzookyb/image/upload/w_200,h_200,c_thumb,g_face/v1602946439/beatbox/oyvkcm8bwwu2fxrc5rzk.jpg"
+            },
+            {
+                "text": "I'm not really here, It's just a demo... enjoy BeatBox!",
+                "submitAt": "2020-10-22T15:21:18.796Z",
+                "id": "5f8b058a2272a000174f72fe",
+                "submitBy": "Borat",
+                "avatar": "https://res.cloudinary.com/tzookyb/image/upload/w_200,h_200,c_thumb,g_face/v1603383847/beatbox/qoxydwynxbdldljjyvxm.jpg"
+            },
+            {
+                "text": "You can invite a friend with the share buttons!",
+                "submitAt": "2020-10-22T15:21:18.796Z",
+                "id": "5f8b058a2272a000174f72fe",
+                "submitBy": "Brad",
+                "avatar": "https://res.cloudinary.com/tzookyb/image/upload/w_200,h_200,c_thumb,g_face/v1603383847/beatbox/pra9fakei84r9u5xkiyr.jpg"
+            }
+        ],
+        "connectedUsers": [
+            {
+                "name": "Brad",
+                "imgUrl": "https://res.cloudinary.com/tzookyb/image/upload/w_200,h_200,c_thumb,g_face/v1603383847/beatbox/pra9fakei84r9u5xkiyr.jpg",
+                "id": "5f91b2290c84d63514b9a42d"
+            },
+            {
+                "name": "Borat",
+                "imgUrl": "https://res.cloudinary.com/tzookyb/image/upload/w_200,h_200,c_thumb,g_face/v1603384442/beatbox/qoxydwynxbdldljjyvxm.jpg",
+                "id": "5f91b47da0b68c3b802ec1cc"
+            },
+            {
+                "name": "Ziggy",
+                "imgUrl": "https://res.cloudinary.com/tzookyb/image/upload/w_200,h_200,c_thumb,g_face/v1603384520/beatbox/oyvkcm8bwwu2fxrc5rzk.jpg",
+                "id": "5f91b4ccf3697929a8767fdd"
+            }
+        ],
+        "currSong": {
+            "id": "CHekNnySAfM",
+            "isPlaying": true,
+            "secPlayed": 32
+        }
+    },
+    "5f70c27fa9489f73a54f8a78": {
+        "msgs": [
+            {
+                "text": "Hi There and Welcome to BeatBox! 😄",
+                "submitAt": "2020-10-22T15:23:05.733Z",
+                "id": "5f8b058a2272a000174f72fe",
+                "submitBy": "Idan",
+                "avatar": "https://res.cloudinary.com/tzookyb/image/upload/w_200,h_200,c_thumb,g_face/v1602946439/beatbox/p6hfa1ky4lsv9dxojrun.jpg"
+            },
+            {
+                "text": "This is just a demo, but thanks for joining me, let's listen together to Daft Punk!",
+                "submitAt": "2020-10-22T15:23:39.557Z",
+                "id": "5f8b058a2272a000174f72fe",
+                "submitBy": "Jake",
+                "avatar": "https://res.cloudinary.com/tzookyb/image/upload/w_200,h_200,c_thumb,g_face/v1603383509/beatbox/nb31rkq7b1ed4sgdkqre.jpg"
+            },
+            {
+                "text": "Invite your friends using the Share buttons",
+                "submitAt": "2020-10-22T15:23:54.612Z",
+                "id": "5f8b058a2272a000174f72fe",
+                "submitBy": "Gal",
+                "avatar": "https://res.cloudinary.com/tzookyb/image/upload/w_200,h_200,c_thumb,g_face/v1603383509/beatbox/ycml0tapwa5jag2sqmo4.jpg"
+            }
+        ],
+        "connectedUsers": [
+            {
+                "name": "Gal",
+                "imgUrl": "https://res.cloudinary.com/tzookyb/image/upload/w_200,h_200,c_thumb,g_face/v1603383509/beatbox/ycml0tapwa5jag2sqmo4.jpg",
+                "id": "5f91b0dc8d4cf9230cbf4256"
+            },
+            {
+                "name": "Jake",
+                "imgUrl": "https://res.cloudinary.com/tzookyb/image/upload/w_200,h_200,c_thumb,g_face/v1603384300/beatbox/nb31rkq7b1ed4sgdkqre.jpg",
+                "id": "5f91b3f108753331f0c82b43"
+            }
+        ],
+        "currSong": {
+            "id": "qFLhGq0060w",
+            "isPlaying": true,
+            "secPlayed": 90
+        }
+    }
+}

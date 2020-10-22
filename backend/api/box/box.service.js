@@ -72,6 +72,24 @@ async function add(box) {
     }
 }
 
+async function resetData() {
+    const dbData = require('../../json/database.json')
+    const collection = await dbService.getCollection(COLL_NAME)
+    console.log('begin reset data...')
+    const startTime = Date.now();
+    try {
+        await collection.deleteMany({})
+        dbData.forEach(async (box) => {
+            box._id = ObjectId(box._id);
+        })
+        await collection.insertMany(dbData);
+        console.log('successfully resetted demo data.')
+    } catch (err) {
+        console.log('failed inserting demo data', err);
+    } finally {
+        console.log('finished after', ((Date.now() - startTime) / 1000) + 's');
+    }
+}
 
 // CRUDL: Create, Read, Update, Delete, List
 module.exports = {
@@ -79,5 +97,6 @@ module.exports = {
     getById,
     add,
     update,
-    remove
+    remove,
+    resetData
 }
