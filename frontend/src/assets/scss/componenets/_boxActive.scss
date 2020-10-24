@@ -48,6 +48,10 @@
             fill: $clr3;
         }
     }
+    .active-loading {
+        position: absolute;
+        bottom: 0;
+    }
 }
 
 .live {
@@ -58,11 +62,3 @@
     right: 0;
     top: 0;
 }
-
-// @media (max-width: 740px) {
-//     .active-box {
-//         .box-preview {
-//             height: 220px;
-//         }
-//     }
-// }

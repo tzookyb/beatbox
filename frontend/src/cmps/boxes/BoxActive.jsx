@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect, useRef } from 'react';
 import ReactPlayer from 'react-player/youtube'
+import CircleLoading from 'react-loadingg/lib/CircleLoading';
 import { Avatar } from '@material-ui/core';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
 
@@ -21,6 +22,7 @@ export function BoxActive(props) {
     const [introId, setIntroId] = useState(null);
     const [secPlayed, setSecPlayed] = useState(null);
     const [isTouchDevice, setIsTouchDevice] = useState(undefined);
+    const [introBoxId, setIntroBoxId] = useState(null);
 
     useEffect(() => {
         setBoxes(props.boxes);
@@ -49,17 +51,18 @@ export function BoxActive(props) {
     }
 
     const onHoverIntro = (box) => {
+        setIntroBoxId(box._id);
         socketService.emit('get intro', box._id);
     }
-    
+
     const onGotIntro = (intro) => {
         setSecPlayed(intro.secPlayed);
         setIntroId(intro.youtubeId);
     }
-    
-    const playIntro = async () => {
+
+    const playIntro = () => {
         elIntroPlayer.current.seekTo(secPlayed);
-        await setIsPlaying(true);
+        setIsPlaying(true);
     }
 
     const underTitle = isTouchDevice ? 'long touch to listen to what\'s playing' : 'hover over to listen to what\'s playing';
@@ -88,8 +91,8 @@ export function BoxActive(props) {
 
                     <img className="live" src={require('../../assets/img/live.gif')} alt="live" />
 
-                    <BoxPreview isPlaying={isPlaying} box={box} />
-
+                    <BoxPreview box={box} />
+                    {introId && introBoxId === box._id && !isPlaying && <CircleLoading className="active-loading" size="large" color="#ac0aff" />}
                 </div>
             })}
 
