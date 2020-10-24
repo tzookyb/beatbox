@@ -20,7 +20,7 @@ import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
 import { BoxChat } from '../cmps/box-details/BoxChat'
 import { loadBox, updateBox, gotBoxUpdate } from '../store/actions/boxAction'
-import { addMsg, loadMsgs } from '../store/actions/msgAction'
+import { addMsg, loadMsgs, notify } from '../store/actions/msgAction'
 import { changeSong, updateLocalPlayer } from '../store/actions/playerActions'
 import { loadConnectedUsers } from '../store/actions/connectedUsersAction'
 
@@ -74,6 +74,7 @@ class _BoxDetails extends Component {
         }
         const [song] = newBox.songs.splice(songIdx, 1);
         this.addMsgChat(`Song ${song.title} removed by ${this.props.user.username}`);
+        this.props.notify(`Song ${song.title} removed`);
         this.props.updateBox(newBox);
     }
 
@@ -85,6 +86,7 @@ class _BoxDetails extends Component {
         }
         else newBox.songs.unshift(newSong);
         this.addMsgChat(`Song ${newSong.title} added by ${this.props.user.username}`);
+        this.props.notify(`Song ${newSong.title} added`);
         this.props.updateBox(newBox);
     }
 
@@ -274,14 +276,11 @@ class _BoxDetails extends Component {
                         <BoxChat />
                     </div>
 
-                    {/* <button className={`${this.state.isMobileChatOpen ? 'chat-open' : ''} mobile-chat-btn`}
-                        onClick={this.toggleMobileChat}><QuestionAnswerIcon /></button> */}
                 </section>
             </Swipeable>
         )
     }
 }
-
 
 const mapStateToProps = state => {
     return {
@@ -293,6 +292,7 @@ const mapStateToProps = state => {
         connectedUsers: state.connectedUsersReducer.connectedUsers
     }
 }
+
 const mapDispatchToProps = {
     loadBox,
     updateBox,
@@ -301,6 +301,7 @@ const mapDispatchToProps = {
     updateLocalPlayer,
     gotBoxUpdate,
     loadConnectedUsers,
-    changeSong
+    changeSong,
+    notify
 }
 export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails);

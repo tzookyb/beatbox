@@ -15,6 +15,7 @@ import { loadConnectedUsers } from './store/actions/connectedUsersAction';
 import { gotBoxUpdate, loadBoxes, setActiveBoxes, setBoxStatus } from './store/actions/boxAction';
 import { addMsg } from './store/actions/msgAction';
 import { updateLocalPlayer } from './store/actions/playerActions';
+import { Notify } from './cmps/Notify';
 
 class _App extends Component {
   componentDidMount() {
@@ -28,11 +29,11 @@ class _App extends Component {
     socketService.on('got active boxes', this.props.setActiveBoxes);
   }
 
-
   render() {
     return (
       <div className="App">
         <Header />
+        <Notify />
         <main >
           <Route component={BoxAdd} path="**/add" />
           <Switch>

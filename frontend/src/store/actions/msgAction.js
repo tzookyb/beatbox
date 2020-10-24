@@ -9,3 +9,10 @@ export function addMsg(msg) {
     dispatch({ type: 'ADD_MSG', msg })
   };
 }
+
+export function notify(notify) {
+  return dispatch => {
+    dispatch({ type: 'SET_NOTIFY', notify })
+  };
+
+}
