@@ -27,12 +27,12 @@ class _BoxChat extends Component {
         socketService.on('chat showTyping', this.onTyping);
     }
 
-    componentDidUpdate() {
-        this.scrollToBottom();
-    }
-
     componentWillUnmount() {
         socketService.off('chat showTyping', this.onTyping);
+    }
+
+    componentDidUpdate() {
+        this.scrollToBottom();
     }
 
     scrollToBottom = () => {
@@ -170,7 +170,6 @@ const mapStateToProps = state => {
     return {
         user: state.userReducer.loggedinUser,
         msgs: state.msgReducer.msgs,
-        box: state.boxReducer.currBox,
         connectedUsers: state.connectedUsersReducer.connectedUsers
     }
 }
