@@ -1,5 +1,4 @@
 const { getById, resetData } = require("../box/box.service");
-const demoData = require('../../demoData/demoData.json')
 
 module.exports = connectSockets
 
@@ -149,9 +148,10 @@ function getBoxStatus(boxId) {
 }
 
 async function resetDemoData() {
+    const demoData = require('../../demoData/demoData.json');
     if (gUsersCount) return;
     await resetData();
-    boxMap = demoData;
+    boxMap = JSON.parse(JSON.stringify(demoData));
     for (const box in boxMap) {
         handleActiveBoxes(box);
     }
