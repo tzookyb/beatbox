@@ -25,7 +25,7 @@ export function SongList({ songs, onRemoveSong, onAddSong, isSongPickOpen, isFil
                                 className={`song-pick-container ${isSongPickOpen ? 'opened' : ''}`}
                             >
                                 <SongPick isSongPickOpen={isSongPickOpen} onAddSong={onAddSong} />
-                                {provided.placeholder}
+                                {/* {provided.placeholder} */}
                             </div>
                         )}
                     </Droppable>
