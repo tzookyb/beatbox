@@ -11,15 +11,15 @@ const _Notify = (props) => {
         setIsShown(true);
         timeoutId = setTimeout(() => {
             setIsShown(false);
-        }, 2000);
+        }, 2500);
     }, [notify])
 
-    const notifyClass = isShown && notify ? 'shown' : '';
+    const notifyClass = `${isShown && notify.txt && 'shown'} ${notify.type || ''}`;
 
     return (
         <div className="flex justify-center">
             <div className={`notify ${notifyClass}`}>
-                {notify}
+                {notify.txt}
             </div>
         </div>
     )

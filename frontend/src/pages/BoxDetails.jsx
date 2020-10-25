@@ -74,7 +74,7 @@ class _BoxDetails extends Component {
         }
         const [song] = newBox.songs.splice(songIdx, 1);
         this.addMsgChat(`Song ${song.title} removed by ${this.props.user.username}`);
-        this.props.notify(`Song ${song.title} removed`);
+        this.props.notify({ txt: `Song "${song.title}" removed`, type: 'red' });
         this.props.updateBox(newBox);
     }
 
@@ -86,7 +86,7 @@ class _BoxDetails extends Component {
         }
         else newBox.songs.unshift(newSong);
         this.addMsgChat(`Song ${newSong.title} added by ${this.props.user.username}`);
-        this.props.notify(`Song ${newSong.title} added`);
+        this.props.notify({ txt: `Song "${newSong.title}" added`, type: 'green' });
         this.props.updateBox(newBox);
     }
 

@@ -17,4 +17,11 @@
         transform: translateY(0);
         opacity: 1;
     }
+
+    &.green {
+        background-color: green;
+    }
+    &.red {
+        background-color: red;
+    }
 }
