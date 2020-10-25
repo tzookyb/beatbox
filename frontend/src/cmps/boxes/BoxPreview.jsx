@@ -1,7 +1,6 @@
 // OUTSOURCE IMPORTS
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-import LazyLoad from 'react-lazy-load';
 import DeleteIcon from '@material-ui/icons/Delete';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 
@@ -20,15 +19,13 @@ export class _BoxPreview extends Component {
         const imgClass = this.state.isImgLoaded ? '' : 'img-loading';
         return (
             <section className={sectionClassName} title={box.name} onClick={() => history.push(`/box/details/${box._id}`)}>
-                <LazyLoad debounce={false} offsetVertical={100} offsetHorizontal={100}>
-                    <div className="box-preview-img">
-                        <img
-                            className={imgClass}
-                            src={box.imgUrl}
-                            onLoad={this.onImgLoad}
-                            alt="box-preview img" />
-                    </div>
-                </LazyLoad>
+                <div className="box-preview-img">
+                    <img
+                        className={imgClass}
+                        src={box.imgUrl}
+                        onLoad={this.onImgLoad}
+                        alt="box-preview img" />
+                </div>
 
                 <div className="box-preview-details flex column">
                     <div className="box-data flex space-between">
