@@ -40,7 +40,7 @@
       width: 100%;
       height: rem(165px);
       object-fit: cover;
-      transition: opacity 0.5s;
+      transition: 0.5s;
       opacity: 1;
 
       &.img-loading {

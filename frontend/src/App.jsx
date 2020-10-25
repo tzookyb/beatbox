@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 // LOCAL IMPORT
 import { UserDetails } from './pages/UserDetails';
 import { BoxDetails } from './pages/BoxDetails';
-import { BoxApp } from './pages/BoxApp';
+import BoxApp from './pages/BoxApp';
 import { BoxAdd } from './pages/BoxAdd';
 import { Home } from './pages/Home';
 import { Header } from './cmps/Header';
@@ -50,10 +50,6 @@ class _App extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-  }
-}
 const mapDispatchToProps = {
   setBoxStatus,
   gotBoxUpdate,
@@ -62,4 +58,4 @@ const mapDispatchToProps = {
   updateLocalPlayer,
   setActiveBoxes
 }
-export const App = connect(mapStateToProps, mapDispatchToProps)(_App);
+export const App = connect(null, mapDispatchToProps)(_App);

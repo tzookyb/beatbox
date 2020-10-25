@@ -79,4 +79,4 @@ const mapDispatchToProps = {
     loadBoxes,
 }
 
-export const BoxApp = connect(mapStateToProps, mapDispatchToProps)(withRouter(_BoxApp))
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(_BoxApp))

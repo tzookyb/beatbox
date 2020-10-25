@@ -65,7 +65,6 @@ class _UserDetails extends Component {
     }
 }
 
-
 const mapStateToProps = state => {
     return {
         user: state.userReducer.loggedinUser,
@@ -76,6 +75,5 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
     removeBox
 }
-
 
 export const UserDetails = connect(mapStateToProps, mapDispatchToProps)(_UserDetails)

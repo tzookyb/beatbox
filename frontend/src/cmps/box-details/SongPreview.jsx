@@ -90,5 +90,4 @@ const mapDispatchToProps = {
     changeSong
 }
 
-
 export const SongPreview = connect(mapStateToProps, mapDispatchToProps)(_SongPreview);

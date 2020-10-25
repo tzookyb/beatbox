@@ -82,9 +82,8 @@ export class _BoxFilter extends Component {
         )
     }
 }
-const mapStateToProps = (state) => ({
-})
+
 const mapDispatchToProps = {
     setFilter
 }
-export const BoxFilter = connect(mapStateToProps, mapDispatchToProps)(withRouter(_BoxFilter))
+export const BoxFilter = connect(null, mapDispatchToProps)(withRouter(_BoxFilter))
