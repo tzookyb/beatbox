@@ -1,14 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import { useState, useEffect, useRef } from 'react';
 import ReactPlayer from 'react-player/youtube'
-import CircleLoading from 'react-loadingg/lib/CircleLoading';
 import { Avatar } from '@material-ui/core';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
+import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 
 import { BoxPreview } from './BoxPreview';
 import { socketService } from '../../services/socketService';
+import { setIsIntroPlaying } from '../../store/actions/playerActions';
+import { notify } from '../../store/actions/msgAction';
 
-export function BoxActive(props) {
+export function _BoxActive(props) {
+
     useEffect(() => {
         socketService.on('got intro', onGotIntro);
         checkIfTouchDevice();
@@ -22,7 +26,6 @@ export function BoxActive(props) {
     const [introId, setIntroId] = useState(null);
     const [secPlayed, setSecPlayed] = useState(null);
     const [isTouchDevice, setIsTouchDevice] = useState(undefined);
-    const [introBoxId, setIntroBoxId] = useState(null);
 
     useEffect(() => {
         setBoxes(props.boxes);
@@ -48,11 +51,14 @@ export function BoxActive(props) {
     const onMouseLeave = () => {
         setIsPlaying(false);
         setIntroId(null);
+        props.setIsIntroPlaying(false);
     }
 
     const onHoverIntro = (box) => {
-        setIntroBoxId(box._id);
+        if (props.currBox?._id === box._id) return;
         socketService.emit('get intro', box._id);
+        props.setIsIntroPlaying(true);
+        props.notify({ txt: `Connecting you live to "${box.name}" box...` });
     }
 
     const onGotIntro = (intro) => {
@@ -65,7 +71,9 @@ export function BoxActive(props) {
         setIsPlaying(true);
     }
 
-    const underTitle = isTouchDevice ? 'long touch to listen to what\'s playing' : 'hover over to listen to what\'s playing';
+    const underTitle = isTouchDevice ?
+        <span>touch <PlayCircleOutlineIcon style={{position: 'relative', top: '5px'}}/> button to get a taste of what's playing</span> :
+        'hover over to listen to what\'s playing';
 
     if (!boxes?.length) return null;
     return <section id="active" className="active-boxes-container">
@@ -84,15 +92,14 @@ export function BoxActive(props) {
                     onMouseLeave={onMouseLeave}>
 
                     <div className="connected-users">
-                        < AvatarGroup max={4}>
+                        <AvatarGroup max={4}>
                             {connectedUsersAvatars(box.connectedUsers)}
                         </AvatarGroup >
                     </div>
 
                     <img className="live" src={require('../../assets/img/live.gif')} alt="live" />
 
-                    <BoxPreview box={box} />
-                    {introId && introBoxId === box._id && !isPlaying && <CircleLoading className="active-loading" size="large" color="#ac0aff" />}
+                    <BoxPreview box={box} introIsTouchDevice={isTouchDevice} />
                 </div>
             })}
 
@@ -109,3 +116,14 @@ export function BoxActive(props) {
         </div>
     </section >
 }
+
+const mapStateToProps = (state) => ({
+    currBox: state.boxReducer.currBox
+})
+
+const mapDispatchToProps = {
+    setIsIntroPlaying,
+    notify
+}
+
+export const BoxActive = connect(mapStateToProps, mapDispatchToProps)((_BoxActive));

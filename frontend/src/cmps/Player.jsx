@@ -37,6 +37,39 @@ class _Player extends Component {
     componentDidUpdate(prevProps) {
         if (this.props.currBox?._id !== prevProps.currBox?._id)
             this.waitForSync(this.props.currSong)
+        if (prevProps.isIntroPlaying !== this.props.isIntroPlaying) {
+            if (!this.props.currSong?.isPlaying) return;
+            if (this.props.isIntroPlaying) this.blendIntro();
+            else this.restoreVolume();
+        }
+    }
+
+    originalVolume = 0.75;
+    timeoutId = null;
+    isFinishedRestoring = true;
+    lowerVolume = () => { };
+    restoreVolume = () => { };
+    blendIntro = () => {
+        clearTimeout(this.timeoutId)
+        this.originalVolume = this.isFinishedRestoring ? this.state.volume : this.originalVolume;
+        const volumeStep = this.originalVolume / 10
+        this.isFinishedRestoring = false;
+
+        this.restoreVolume = () => {
+            clearTimeout(this.timeoutId);
+            if (this.state.volume < this.originalVolume) {
+                this.setState(prevState => ({ volume: prevState.volume + volumeStep }));
+                this.timeoutId = setTimeout(this.restoreVolume, 200);
+            } else this.isFinishedRestoring = true;
+        }
+
+        this.lowerVolume = () => {
+            if (this.state.volume > 0) {
+                this.setState(prevState => ({ volume: prevState.volume - volumeStep }));
+                this.timeoutId = setTimeout(this.lowerVolume, 200);
+            }
+        };
+        this.lowerVolume();
     }
 
     waitForSync = (currSong) => {
@@ -219,6 +252,7 @@ const mapStateToProps = state => {
     return {
         currBox: state.boxReducer.currBox,
         currSong: state.boxReducer.currSong,
+        isIntroPlaying: state.boxReducer.isIntroPlaying
     }
 }
 

@@ -8,9 +8,11 @@ export function updateLocalPlayer(currSong) {
 }
 //  ***************************************************************
 export function togglePlay(currSong) {
+    if (!currSong.isPlaying) {
+        socketService.emit('sync song time', currSong);
+    }
     return (dispatch) => {
         currSong = { ...currSong, isPlaying: !currSong.isPlaying }
-        socketService.emit('set currSong', currSong);
         dispatch({ type: 'SET_CURR_SONG', currSong })
     }
 }
@@ -34,5 +36,11 @@ export function updateProgress(secPlayed) {
         }
         socketService.emit('update backend currSong', currSong);
         dispatch({ type: 'SET_CURR_SONG', currSong });
+    }
+}
+
+export function setIsIntroPlaying(isIntroPlaying) {
+    return dispatch => {
+        dispatch({ type: 'SET_INTRO_PLAYING', isIntroPlaying })
     }
 }

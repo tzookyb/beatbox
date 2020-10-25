@@ -13,8 +13,12 @@ export class _BoxPreview extends Component {
         this.setState({ isImgLoaded: true });
     }
 
+    playIntro(ev) {
+        ev.stopPropagation()
+    }
+
     render() {
-        const { box, isHomePage, onDelete, history } = this.props;
+        const { box, isHomePage, onDelete, history, introIsTouchDevice } = this.props;
         const sectionClassName = `box-preview cursor-pointer ${isHomePage ? 'box-home-preview' : ''}`;
         const imgClass = this.state.isImgLoaded ? '' : 'img-loading';
         return (
@@ -23,6 +27,7 @@ export class _BoxPreview extends Component {
                     <img
                         className={imgClass}
                         src={box.imgUrl}
+                        loading="lazy"
                         onLoad={this.onImgLoad}
                         alt="box-preview img" />
                 </div>
@@ -30,7 +35,8 @@ export class _BoxPreview extends Component {
                 <div className="box-preview-details flex column">
                     <div className="box-data flex space-between">
                         <h3 className="box-name">{box.name}</h3>
-                        <PlayCircleOutlineIcon />
+                        {introIsTouchDevice ? < PlayCircleOutlineIcon onClick={this.playIntro} /> :
+                            <PlayCircleOutlineIcon />}
                     </div>
 
                     <div className="delete-btn cursor-pointer" title="Delete box">

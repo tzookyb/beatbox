@@ -4,6 +4,7 @@ const initialState = {
     currSong: null,
     filter: '',
     activeBoxes: null,
+    isIntroPlaying: false,
 }
 
 export function boxReducer(state = initialState, action) {
@@ -38,6 +39,9 @@ export function boxReducer(state = initialState, action) {
 
         case 'SET_FILTER':
             return { ...state, filter: action.filter }
+
+        case 'SET_INTRO_PLAYING':
+            return { ...state, isIntroPlaying: action.isIntroPlaying }
 
         default:
             return state

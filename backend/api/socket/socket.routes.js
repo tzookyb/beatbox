@@ -92,6 +92,7 @@ function connectSockets(io) {
         socket.on('update player seek', secPlayed => {
             console.log('update player seek')
             if (!socket.myBox) return;
+            boxMap[socket.myBox].currSong.secPlayed = secPlayed;
             io.to(socket.myBox).emit('got seek update', secPlayed);
         })
 
