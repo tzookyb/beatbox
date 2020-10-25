@@ -12,7 +12,7 @@ import { Header } from './cmps/Header';
 import { Player } from './cmps/Player';
 import { socketService } from './services/socketService';
 import { loadConnectedUsers } from './store/actions/connectedUsersAction';
-import { gotBoxUpdate, loadBoxes, setActiveBoxes, setBoxStatus } from './store/actions/boxAction';
+import { gotBoxUpdate, setActiveBoxes, setBoxStatus } from './store/actions/boxAction';
 import { addMsg } from './store/actions/msgAction';
 import { updateLocalPlayer } from './store/actions/playerActions';
 import { Notify } from './cmps/Notify';
@@ -60,7 +60,6 @@ const mapDispatchToProps = {
   loadConnectedUsers,
   addMsg,
   updateLocalPlayer,
-  loadBoxes,
   setActiveBoxes
 }
 export const App = connect(mapStateToProps, mapDispatchToProps)(_App);

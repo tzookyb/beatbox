@@ -34,9 +34,8 @@ async function getById(boxId) {
     return httpService.get(`box/${boxId}`)
 }
 
-async function query(query) {
-    query = query || '';
-    return await httpService.get(`box${query}`);
+async function query() {
+    return await httpService.get('box');
 }
 
 function getEmptyBox(user) {

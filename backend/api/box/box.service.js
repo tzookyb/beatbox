@@ -1,29 +1,26 @@
-
 const dbService = require('../../services/db.service')
 const ObjectId = require('mongodb').ObjectId
 const COLL_NAME = 'box'
 
-async function query(filterBy = {}) {
-    const criteria = _buildCriteria(filterBy)
-    const collection = await dbService.getCollection(COLL_NAME)
-    try {
-        const boxs = await collection.find(criteria).toArray();
-        return boxs
-    } catch (err) {
-        console.log('ERROR: cannot find boxs')
-        throw err;
-    }
+module.exports = {
+    query,
+    getById,
+    add,
+    update,
+    remove,
+    resetData
 }
 
-function _buildCriteria(filterBy) {
-    const criteria = {};
-    if (filterBy.name) {
-        criteria.name = { $regex: new RegExp(filterBy.name, 'ig') }
+async function query() {
+    const collection = await dbService.getCollection(COLL_NAME)
+    try {
+        const boxes = await collection.find({}).toArray();
+        return boxes
+    } catch (err) {
+        console.log('ERROR: cannot find boxes')
+
+        throw err;
     }
-    if (filterBy.genre) {
-        criteria.genre = filterBy.genre;
-    }
-    return criteria;
 }
 
 async function getById(boxId) {
@@ -89,14 +86,4 @@ async function resetData() {
     } finally {
         console.log('finished after', ((Date.now() - startTime) / 1000) + 's');
     }
-}
-
-// CRUDL: Create, Read, Update, Delete, List
-module.exports = {
-    query,
-    getById,
-    add,
-    update,
-    remove,
-    resetData
 }

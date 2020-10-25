@@ -5,7 +5,6 @@ import { CircleLoading } from 'react-loadingg';
 import ExpandMoreSharpIcon from '@material-ui/icons/ExpandMoreSharp';
 // LOCAL IMPORTS
 import { Footer } from '../cmps/Footer';
-import { loadBoxes } from '../store/actions/boxAction';
 import { BoxApp } from './BoxApp';
 import { BoxActive } from '../cmps/boxes/BoxActive';
 
@@ -30,7 +29,7 @@ class _Home extends Component {
         return (
             <React.Fragment>
                 {(!imgsLoaded && <CircleLoading size="large" color="#ac0aff" />)}
-                <div id="top" className={`hero-container flex justify-center align-center ${(imgsLoaded) ? '' : 'invisible'}`} >
+                <div id="top" className={`hero-container flex justify-center align-center ${(imgsLoaded) ? '' : 'invisible'}`}>
                     <div className="hero-txt flex align-center justify-end column">
                         <div className="hero-title flex justify-end column">
                             <h1>Share the Beat</h1>
@@ -81,8 +80,4 @@ const mapStateToProps = state => {
         activeBoxes: state.boxReducer.activeBoxes
     }
 }
-const mapDispatchToProps = {
-    loadBoxes,
-}
-
-export const Home = connect(mapStateToProps, mapDispatchToProps)(_Home)
+export const Home = connect(mapStateToProps)(_Home)

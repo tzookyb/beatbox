@@ -11,24 +11,42 @@ import { GenresFilter } from '../cmps/GenresFilter'
 import { loadBoxes } from '../store/actions/boxAction'
 
 class _BoxApp extends Component {
+    state = {
+        filterBy: undefined
+    }
+
     componentDidMount() {
-        this.onLoadBoxes();
+        this.props.loadBoxes();
+        this.setFilter()
     }
 
     componentDidUpdate(prevProps) {
         if (this.props.location.search === prevProps.location.search) return;
-        this.onLoadBoxes();
+        this.setFilter();
     }
 
-    onLoadBoxes = () => {
-        this.props.loadBoxes(this.props.location.search);
+    setFilter = () => {
+        const filterBy = new URLSearchParams(this.props.location.search);
+        const genre = filterBy.get('genre') || '';
+        const name = filterBy.get('name') || '';
+        this.setState({ filterBy: { genre, name } })
     }
 
     render() {
-        const { boxes } = this.props;
+        var { boxes } = this.props;
         if (!boxes) return <CircleLoading size="large" color="#ac0aff" />
+
+        const { filterBy } = this.state;
+        if (filterBy) {
+            boxes = boxes.filter(box => {
+                return box.name.toLowerCase().includes(filterBy.name.toLowerCase()) &&
+                    box.genre.includes(filterBy.genre);
+            })
+        }
+
         let genres;
         if (this.props.location.pathname === '/') genres = boxService.getUsedGenres(boxes);
+
         const minimalUser = userService.getMinimalUser();
 
         return (

@@ -1,9 +1,9 @@
 import { boxService } from "../../services/boxService"
 import { socketService } from "../../services/socketService";
 
-export function loadBoxes(query) {
+export function loadBoxes() {
   return async dispatch => {
-    const boxes = await boxService.query(query);
+    const boxes = await boxService.query();
     dispatch({ type: 'SET_BOXES', boxes })
   };
 }

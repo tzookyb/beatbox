@@ -7,7 +7,7 @@ import CloseIcon from '@material-ui/icons/Close';
 // LOCAL IMPORTS
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService'
-import { saveBox, loadBoxes } from '../store/actions/boxAction'
+import { saveBox } from '../store/actions/boxAction'
 import { BoxInfoEdit } from '../cmps/box-details/BoxInfoEdit'
 const defaultBoxImg = 'https://res.cloudinary.com/tzookyb/image/upload/v1602846820/beatbox/j8kqknrb7vkjhzh8muzj.jpg'
 
@@ -64,10 +64,9 @@ export class _BoxAdd extends Component {
             return;
         }
         if (!this.state.editBox.imgUrl) {
-            await this.setState({ editBox: {...this.state.editBox, imgUrl: defaultBoxImg}});
+            await this.setState({ editBox: { ...this.state.editBox, imgUrl: defaultBoxImg } });
         }
         const addedBox = await this.props.saveBox(this.state.editBox);
-        this.props.loadBoxes();
         this.props.history.push(`/box/details/${addedBox._id}`);
     }
 
@@ -104,14 +103,9 @@ export class _BoxAdd extends Component {
         )
     }
 }
-const mapStateToProps = state => {
-    return {
-    }
-}
 
 const mapDispatchToProps = {
-    saveBox,
-    loadBoxes
+    saveBox
 }
 
-export const BoxAdd = connect(mapStateToProps, mapDispatchToProps)(withRouter(_BoxAdd))
+export const BoxAdd = connect(null, mapDispatchToProps)(withRouter(_BoxAdd))

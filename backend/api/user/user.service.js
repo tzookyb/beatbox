@@ -1,5 +1,3 @@
-
-
 const dbService = require('../../services/db.service')
 const ObjectId = require('mongodb').ObjectId
 const session = require('express-session')
@@ -73,5 +71,3 @@ async function update(user) {
         throw err;
     }
 }
-
-
