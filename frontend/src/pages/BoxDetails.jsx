@@ -167,6 +167,7 @@ class _BoxDetails extends Component {
     }
 
     openMobileChat = () => {
+        if (this.state.isDragging) return;
         this.setState({ isMobileChatOpen: true })
     }
 
