@@ -10,8 +10,15 @@ import { utilService } from '../../services/utilService';
 
 export class _BoxList extends Component {
     state = {
-        isScrolled: false
+        isScrolled: false,
+        isScrollAvailable: undefined,
     }
+
+    componentDidMount() {
+        const isScrollAvailable = !!(this.ref.current?.offsetWidth - this.ref.current?.scrollWidth);
+        this.setState({ isScrollAvailable });
+    }
+
 
     ref = React.createRef()
 
@@ -43,7 +50,7 @@ export class _BoxList extends Component {
                             } else return null
                         })}
 
-                        {this.ref.current?.scrollLeft && <button className="list-right-btn" onClick={() => this.executeScroll(350)}><ArrowForwardIosIcon /></button>}
+                        {this.state.isScrollAvailable && <button className="list-right-btn" onClick={() => this.executeScroll(350)}><ArrowForwardIosIcon /></button>}
                     </div>
                 }
 
