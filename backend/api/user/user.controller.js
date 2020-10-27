@@ -1,11 +1,19 @@
 const userService = require('./user.service')
 const logger = require('../../services/logger.service')
 
+module.exports = {
+    getUser,
+    getUsers,
+    deleteUser,
+    updateUser,
+    addUser
+}
+
 async function getUser(req, res) {
     const user = await userService.getById(req.params.id)
     res.send(user)
 }
-  
+
 async function getUsers(req, res) {
     const users = await userService.query(req.query)
     logger.debug(users);
@@ -27,12 +35,4 @@ async function addUser(req, res) {
     const user = req.body;
     await userService.add(user)
     res.send(user)
-}
-
-module.exports = {
-    getUser,
-    getUsers,
-    deleteUser,
-    updateUser,
-    addUser
 }

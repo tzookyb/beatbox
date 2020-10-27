@@ -3,11 +3,22 @@ const ObjectId = require('mongodb').ObjectId
 const session = require('express-session')
 
 module.exports = {
-    getByName,
     add,
+    getByName,
     query,
     getById,
     update,
+}
+
+async function add(newUser) {
+    const collection = await dbService.getCollection('user')
+    try {
+        await collection.insertOne(newUser);
+        return newUser;
+    } catch (err) {
+        console.log(`ERROR: cannot insert user`)
+        throw err;
+    }
 }
 
 async function getByName(username) {
@@ -21,19 +32,7 @@ async function getByName(username) {
     }
 }
 
-async function add(user) {
-    const collection = await dbService.getCollection('user')
-    try {
-        await collection.insertOne(user);
-        return user;
-    } catch (err) {
-        console.log(`ERROR: cannot insert user`)
-        throw err;
-    }
-}
-
 async function query(filterBy = {}) {
-    // const criteria = _buildCriteria(filterBy)
     const criteria = {};
     const collection = await dbService.getCollection('user')
     try {
@@ -59,12 +58,11 @@ async function getById(userId) {
 
 async function update(user) {
     const oldUser = await getByName(user.username);
-    const password =  oldUser.password;
-    user.password = password;
+    user.password = oldUser.password;
     const collection = await dbService.getCollection('user')
     user._id = ObjectId(user._id);
     try {
-        await collection.replaceOne({ "_id": user._id },  user)
+        await collection.replaceOne({ "_id": user._id }, user)
         return user
     } catch (err) {
         console.log(`ERROR: cannot update user ${user._id}`)

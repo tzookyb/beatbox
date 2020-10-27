@@ -1,6 +1,11 @@
-
 const authService = require('./auth.service')
 const logger = require('../../services/logger.service');
+
+module.exports = {
+    login,
+    signup,
+    logout
+}
 
 async function login(req, res) {
     const credentials = req.body;
@@ -15,10 +20,9 @@ async function login(req, res) {
 
 async function signup(req, res) {
     try {
-        const { username, password, imgUrl } = req.body;
-        const account = await authService.signup(username, password, imgUrl)
-        const credentials = { username, password, imgUrl };
-        const user = await authService.login(credentials);
+        const newUser = req.body;
+        await authService.signup(newUser)
+        const user = await authService.login(newUser);
         req.session.user = user;
         res.json(user)
     } catch (err) {
@@ -34,10 +38,4 @@ async function logout(req, res) {
     } catch (err) {
         res.status(500).send({ error: err })
     }
-}
-
-module.exports = {
-    login,
-    signup,
-    logout
 }
