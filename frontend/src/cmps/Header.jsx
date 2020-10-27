@@ -4,10 +4,9 @@ import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
-
 // LOCAL IMPORT
 import { BoxFilter } from './boxes/BoxFilter';
-import { logout } from '../store/actions/userAction'
+import { logout } from '../store/actions/userActions'
 import { UserMenu } from './user/UserMenu'
 
 class _Header extends Component {
@@ -48,7 +47,9 @@ class _Header extends Component {
 
         return (
             <React.Fragment>
-                <div onClick={this.toggleMenu} className={`screen ${isMobileMenuOpen ? 'screen-open' : ''}`} ></div>
+
+                <div onClick={this.toggleMenu} className={`screen ${isMobileMenuOpen ? 'screen-open' : ''}`} />
+
                 <header onScroll={this.onScroll} className={`${isScroll || isMobileMenuOpen ? 'sticky' : ''} flex space-between align-center`}>
                     {(pathname === '/') ?
                         <a href="#top"><img title="BeatBox" className="logo" src={require('../assets/img/logo.png')} alt="logo" /></a> :
@@ -63,8 +64,7 @@ class _Header extends Component {
                             <li><Link to={this.getPathForBoxAdd} onClick={this.toggleMenu} >Create Box</Link ></li>
                         </ul>
 
-                        <div className="user-avatar"><UserMenu user={user} onLogout={logout} /></div>
-
+                        {user && <div className="user-avatar"><UserMenu user={user} onLogout={logout} /></div>}
 
                         <button
                             className="menu-btn flex justify-center"
@@ -80,13 +80,6 @@ class _Header extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        user: state.userReducer.loggedinUser,
-    }
-}
-const mapDispatchToProps = {
-    logout
-}
-
+const mapStateToProps = state => ({ user: state.userReducer.loggedinUser });
+const mapDispatchToProps = { logout };
 export const Header = connect(mapStateToProps, mapDispatchToProps)(withRouter(_Header))
