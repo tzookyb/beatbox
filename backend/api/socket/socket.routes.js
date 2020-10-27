@@ -40,7 +40,7 @@ function connectSockets(io) {
             const boxStatus = getBoxStatus(socket.myBox);
             socket.emit('got box status', boxStatus);
             boxMap[socket.myBox].connectedUsers.push(boxInfo.user);
-            io.to(socket.myBox).emit('joined new box', boxStatus.connectedUsers);
+            io.to(socket.myBox).emit('user joined box', boxStatus.connectedUsers);
             handleActiveBoxes(socket.myBox, io);
         })
 
@@ -137,7 +137,7 @@ async function leaveBox(socket, io, currUser) {
     if (boxMap[socket.myBox].connectedUsers.length === 0) {
         delete boxMap[socket.myBox];
     } else {
-        io.to(socket.myBox).emit('joined new box', newConnectedUsers);
+        io.to(socket.myBox).emit('user joined box', newConnectedUsers);
     }
     await handleActiveBoxes(socket.myBox, io);
     socket.leave(socket.myBox);
