@@ -44,10 +44,6 @@ export function UserMenu({ user, onLogout }) {
         setOpen(false);
     };
 
-
-    // return focus to the button when we transitioned from !open -> open
-    // const prevOpen = React.useRef(open);
-
     return (
         <div className={classes.root}>
             <div className="user-menu">
@@ -57,7 +53,7 @@ export function UserMenu({ user, onLogout }) {
                     aria-controls={open ? 'menu-list-grow' : undefined}
                     aria-haspopup="true"
                     onClick={handleToggle}
-                    className="cursor-pointer"/>
+                    className="cursor-pointer" />
                 <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
                     {({ TransitionProps, placement }) => (
                         <Grow
@@ -70,12 +66,12 @@ export function UserMenu({ user, onLogout }) {
                                         {!user.isGuest && <MenuItem onClick={handleClose}>
                                             <Link to={`/user/${user._id}`} style={{ color: "black" }}>Profile</Link>
                                         </MenuItem>}
-                                        <MenuItem >
-                                            < ModalUser childern={'Signup'}/>
-                                        </MenuItem>
-                                        <MenuItem >
-                                            < ModalUser childern={'Login'}/>
-                                        </MenuItem>
+                                        {user.isGuest && <MenuItem >
+                                            < ModalUser childern={'Signup'} />
+                                        </MenuItem>}
+                                        {user.isGuest && <MenuItem >
+                                            < ModalUser childern={'Login'} />
+                                        </MenuItem>}
                                         {!user.isGuest && <MenuItem onClick={logout}>Logout</MenuItem>}
                                     </MenuList>
                                 </ClickAwayListener>
