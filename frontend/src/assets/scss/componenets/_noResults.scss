@@ -1,0 +1,14 @@
+.no-results {
+    transition: 0.5s;
+    button {
+        background-color: $clr3;
+        color: #fff;
+        &:hover {
+            background-color: lighten($clr3, 10%);
+        }
+    }
+
+    > * {
+        margin-bottom: 1rem;
+    }
+}
