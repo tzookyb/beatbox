@@ -65,4 +65,3 @@ export function setActiveBoxes(activeBoxes) {
     dispatch({ type: 'SET_ACTIVE_BOXES', activeBoxes })
   }
 }
-

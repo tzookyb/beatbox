@@ -1,6 +1,7 @@
 export const utilService = {
     makeId,
-    executeScroll
+    executeScroll,
+    getRandomInteger
 }
 
 function makeId(length = 8) {
@@ -24,4 +25,10 @@ function executeScroll(scrollTo) {
         el.scrollLeft += scrollTo;
         this.setState({ isScrolled: true });
     }
+}
+
+function getRandomInteger(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
