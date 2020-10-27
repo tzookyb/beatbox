@@ -1,17 +1,17 @@
 import { boxService } from "../../services/boxService"
 import { socketService } from "../../services/socketService";
 
-export function loadBoxes() {
-  return async dispatch => {
-    const boxes = await boxService.query();
-    dispatch({ type: 'SET_BOXES', boxes })
-  };
-}
-
 export function loadBox(boxId) {
   return async dispatch => {
     const currBox = await boxService.getById(boxId);
     dispatch({ type: 'SET_CURR_BOX', currBox })
+  };
+}
+
+export function loadBoxes() {
+  return async dispatch => {
+    const boxes = await boxService.query();
+    dispatch({ type: 'SET_BOXES', boxes })
   };
 }
 
@@ -56,7 +56,7 @@ export function setBoxStatus({ msgs, currSong }) {
     const { currBox } = getState().boxReducer;
     if (!currSong.id) currSong = (currBox.songs.length) ? { id: currBox.songs[0].id, isPlaying: true, secPlayed: 0 } : null;
     dispatch({ type: 'SET_CURR_SONG', currSong });
-    dispatch({ type: 'SET_MSGS', msgs });
+    dispatch({ type: 'SET_MSGS', msgs })
   }
 }
 
@@ -65,3 +65,4 @@ export function setActiveBoxes(activeBoxes) {
     dispatch({ type: 'SET_ACTIVE_BOXES', activeBoxes })
   }
 }
+

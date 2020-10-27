@@ -1,8 +1,14 @@
 import { userService } from "../../services/userService"
 
+export function loadConnectedUsers(connectedUsers) {
+    return dispatch => {
+        dispatch({ type: 'SET_CONNECTED_USERS', connectedUsers })
+    }
+}
+
 export function loadUser() {
     return async dispatch => {
-        const user = await userService.getUser()
+        const user = await userService.getLoggedUser()
         dispatch({ type: 'SET_USER', user })
     }
 }
@@ -26,7 +32,7 @@ export function login(userCreds) {
 export function logout() {
     return async dispatch => {
         await userService.logout();
-        const user = userService.getUser();
+        const user = userService.getLoggedUser();
         dispatch({ type: 'SET_USER', user });
     };
 }
@@ -36,4 +42,11 @@ export function signup(userCreds) {
         const user = await userService.signup(userCreds);
         dispatch({ type: 'SET_USER', user });
     };
+}
+
+export function toggleFavorite(boxId) {
+    return async dispatch => {
+        const user = await userService.toggleFavorite(boxId);
+        dispatch({ type: 'SET_USER', user });
+    }
 }
