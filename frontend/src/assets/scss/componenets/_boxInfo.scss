@@ -1,7 +1,7 @@
 .box-info {
   color: #fff;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
-  padding: 10px;
+  padding: 0 10px 10px 10px;
   max-height: 35%;
 
   .box-img {
@@ -123,11 +123,4 @@
     justify-content: space-around;
     align-items: center;
   }
-}
-
-@media (max-width: 740px) {
-
-  textarea {
-
-}
 }

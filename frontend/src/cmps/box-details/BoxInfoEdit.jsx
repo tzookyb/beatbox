@@ -91,7 +91,7 @@ export class BoxInfoEdit extends Component {
                             name="genre"
                             onChange={this.handleInput}
                         >
-                            <option disabled selected value="">Select genre</option>
+                            <option disabled selected>Select genre</option>
                             {this.getGenresOptions()}
                         </select>
 

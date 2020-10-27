@@ -21,7 +21,7 @@ export class BoxInfo extends Component {
         this.setState({ box });
     }
 
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate(prevProps) {
         const newBox = this.props.box;
         if (prevProps.box === newBox) return;
         this.setState({ box: newBox });

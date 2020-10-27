@@ -56,7 +56,7 @@
 
 /* hide-helpers */
 .invisible {
-  visibility: hidden;
+  visibility: hidden !important;
 }
 
 .hidden {

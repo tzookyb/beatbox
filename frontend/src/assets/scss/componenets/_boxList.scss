@@ -1,6 +1,5 @@
 .list-container {
   position: relative;
-  padding-inline-start: 25px;
   height: 60%;
 
   .box-list {
@@ -84,11 +83,11 @@
         grid-auto-rows: initial;
       }
       &.homepage-list {
-        padding-inline-start: initial;
+        padding-inline-start: 25px;
       }
       .list-left-btn,
       .list-right-btn {
-        margin: 0;
+        margin: 0 15px;
       }
     }
     .genre-filter {
