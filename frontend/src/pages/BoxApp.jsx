@@ -5,10 +5,10 @@ import { connect } from 'react-redux'
 import CircleLoading from 'react-loadingg/lib/CircleLoading'
 // LOCAL IMPORT
 import { boxService } from '../services/boxService'
-import { userService } from '../services/userService'
 import { BoxList } from '../cmps/boxes/BoxList'
 import { GenresFilter } from '../cmps/GenresFilter'
-import { loadBoxes } from '../store/actions/boxAction'
+import { loadBoxes } from '../store/actions/boxActions'
+import { NoResults } from '../cmps/NoResults'
 
 class _BoxApp extends Component {
     state = {
@@ -16,8 +16,8 @@ class _BoxApp extends Component {
     }
 
     componentDidMount() {
-        this.props.loadBoxes();
-        this.setFilter()
+        if (!this.props.boxes) this.props.loadBoxes();
+        this.setFilter();
     }
 
     componentDidUpdate(prevProps) {
@@ -47,36 +47,32 @@ class _BoxApp extends Component {
         let genres;
         if (this.props.location.pathname === '/') genres = boxService.getUsedGenres(boxes);
 
-        const minimalUser = userService.getMinimalUser();
-
         return (
             <section className="box-app" id="box">
-                {!!genres && genres.map((genre, idx) => {
+                {genres && genres.map((genre, idx) => {
                     return (
                         <BoxList
                             boxes={boxes}
                             key={idx}
                             genre={genre}
-                            minimalUser={minimalUser}
                         />
                     )
                 })}
-                {!genres && <GenresFilter />}
-                {!genres && <BoxList boxes={boxes} minimalUser={minimalUser} />}
+
+                {!genres && <React.Fragment>
+                    <GenresFilter />
+                    <BoxList boxes={boxes} />
+                </React.Fragment>}
+                {!boxes.length && < NoResults />}
 
             </section>
         )
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        boxes: state.boxReducer.boxes,
-        user: state.userReducer.loggedinUser,
-    }
-}
-const mapDispatchToProps = {
-    loadBoxes,
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(_BoxApp))
+const mapStateToProps = state => ({
+    boxes: state.boxReducer.boxes,
+    user: state.userReducer.loggedinUser,
+});
+const mapDispatchToProps = { loadBoxes };
+export const BoxApp = connect(mapStateToProps, mapDispatchToProps)(withRouter(_BoxApp));
