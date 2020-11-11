@@ -18,7 +18,9 @@ export function _BoxActive(props) {
         checkIfTouchDevice();
         return () => {
             socketService.off('got intro', onGotIntro);
+            props.setIsIntroPlaying(false);
         }
+        // eslint-disable-next-line
     }, [])
 
     const [boxes, setBoxes] = useState(null);
@@ -72,7 +74,7 @@ export function _BoxActive(props) {
     }
 
     const subTitle = isTouchDevice ?
-        <span>touch <PlayCircleOutlineIcon style={{position: 'relative', top: '5px'}}/> button to get a taste of what's playing</span> :
+        <span>touch <PlayCircleOutlineIcon style={{ position: 'relative', top: '5px' }} /> button to get a taste of what's playing</span> :
         'hover over to listen to what\'s playing';
 
     if (!boxes?.length) return null;
