@@ -1,34 +1,5 @@
-.global-users-container {
-  position: fixed;
-  width: rem(300px);
-  z-index: 30;
-  top: rem(70px);
-  .global-users {
-    font-size: 0.9rem;
-    font-family: Righteous;
-    animation: color-change 7s infinite alternate-reverse;
-  }
-}
-
-.screen {
-  position: fixed;
-  left: 0;
-  top: 100px;
-  // background-color: rgba(76, 74, 74, 0.6);
-  background-color: transparent;
-  z-index: 30;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.8s;
-  height: 92vh;
-  display: block;
-  width: 100vw;
-}
-
-
 header {
   min-height: 70px;
-  margin-bottom: 10px;
   position: fixed;
   width: 100%;
   transition: 0.6s;
@@ -38,27 +9,29 @@ header {
   > *:not(:nth-child(4)) {
     height: 100%;
     width: 30%;
+  }
 
-    a {
-      color: #fff;
-      font-size: rem(20px);
-    }
+  a {
+    color: #fff;
+    font-size: rem(20px);
   }
 
   .right-nav {
     min-width: 35%;
     justify-content: flex-end;
+
     .main-nav {
       max-width: 350px;
-      justify-content: flex-end;
       > * {
         padding-inline-end: 30px;
       }
     }
   }
+
   .user-avatar {
-    margin: 0 20px;
+    margin-inline-end: 20px;
   }
+
   .logo {
     position: absolute;
     width: rem(125px);
@@ -69,60 +42,44 @@ header {
 
   &.sticky {
     background-color: $clr1;
-    min-height: 70px;
-  }
-
-  .avatar-img {
-    width: 50px;
-    height: 45px;
-
-    img {
-      border-radius: 50%;
-      width: 100%;
-      height: 100%;
-    }
-
-    .avatar-name {
-      font-size: 0.8rem;
-      text-align: center;
-      width: rem(100px);
-    }
   }
 
   .menu-btn {
     width: 40px;
     margin-inline-end: 20px;
-    padding: 10px;
-    font-size: 1.25rem;
     color: white;
     transition: 0.5s;
     background: transparent;
-    border: 0;
     box-shadow: none;
-    svg{
+    display: none;
+    svg {
       font-size: 2.5rem;
     }
   }
 }
 
-@media (min-width: 740px) {
+@media (max-width: 740px) {
   header {
     .menu-btn {
-      display: none;
+      display: block;
     }
   }
-}
 
-@media (max-width: 740px) {
-  .screen-open {
-    opacity: 1;
-    visibility: visible;
-  }  
-  .global-users-container {
-    width: initial;
-    top: 57px;
-    left: 5px;
+  .screen {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    z-index: 29;
+    transition: 0.5s;
+    visibility: hidden;
+
+    &.screen-open {
+      backdrop-filter: blur(1px);
+      visibility: visible;
+    }
   }
+
   header {
     .logo {
       top: 0px;
@@ -133,24 +90,19 @@ header {
         flex-direction: column;
         align-items: center;
         position: fixed;
-        z-index: 2;
-        top: 0;
-        right: 0;
-        width: 100%;
-        max-width: 100%;
-        background-color: #18191a;
-        margin-inline-start: 0;
-        transform: translateY(70px);
-        height: 0px;
+        z-index: -1;
+        min-width: 100%;
+        background-color: $clr1;
+        top: -100%;
+        height: 100px;
         overflow: hidden;
-        transition: transform 0.8s, box-shadow 0.8s;
-        transition: height 0.5s;
-        >*{
+        transition: 0.8s;
+        > * {
           padding-inline-end: initial;
         }
         &.menu-open {
-          height: 20%;
-          transition: height 0.5s;
+          transition: 0.5s;
+          top: 69px;
         }
       }
 

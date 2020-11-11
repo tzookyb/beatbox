@@ -10,124 +10,111 @@
   grid-template-areas:
     "chat-box box-details-main"
     "player player";
-  .chat-box {
-    grid-area: chat-box;
-    width: 300px;
-    height: 100%;
-    background-color: $clr1;
-    position: relative;
-    display: flex;
-  }
+}
 
-  .mobile-chat-btn {
-    display: none;
-  }
+.box-details-main {
+  // position: relative;
+  padding-top: 90px;
+  grid-area: box-details-main;
+  width: 100%;
+  display: flex;
 
-  .box-details-main {
-    padding-top: 100px;
-    grid-area: box-details-main;
-    width: 100%;
-    position: relative;
-    display: flex;
-
-    .song-social-actions {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.55), $clr1);
-      padding: 20px 10px;
-      border-bottom: 1px solid #cccccc17;
-      .btns-container {
-        .like-btn {
-          position: relative;
-          cursor: pointer;
-          margin: 5px;
-          .guest-msg {
-            position: absolute;
-            left: rem(45px);
-            background-color: white;
-            color: black;
-            z-index: 5;
-            padding: 5px;
-            font-weight: bold;
-            border-radius: 5px;
-          }
-          svg {
-            font-size: 3rem;
-            stroke: #fff;
-          }
-        }
-      }
-      .favorite {
-        svg {
-          fill: rgb(248, 107, 107);
-        }
-      }
-
-      .add-song-btn {
-        z-index: 5;
-        color: #fff;
-        background-color: #8c6fb0;
-        transition: 0.6s;
-
-        svg {
-          font-size: 2rem;
-        }
-
-        &.opened {
-          transform: rotate(45deg);
-        }
-
-        &:hover {
-          background-color: $clr5;
-        }
-      }
-
-      .share-container {
+  .song-social-actions {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), $clr1);
+    padding: 20px 10px;
+    .btns-container {
+      .like-btn {
         position: relative;
-        min-width: 130px;
-
-        p {
-          margin-top: -5px;
-          color: #fff;
-          text-align: center;
-        }
-
-        svg {
-          cursor: pointer;
-          color: #fff;
-        }
-
-        .copied-to-clipboard {
+        cursor: pointer;
+        margin: 5px;
+        .guest-toast {
           position: absolute;
-          right: 20px;
+          left: rem(50px);
           background-color: white;
           color: black;
-          z-index: 3;
+          z-index: 5;
           padding: 5px;
           font-weight: bold;
           border-radius: 5px;
-          bottom: -45px;
+        }
+        svg {
+          font-size: 3rem;
+          stroke: #fff;
+        }
+      }
+    }
+    .favorite {
+      svg {
+        fill: rgb(248, 107, 107);
+      }
+    }
+
+    .add-song-btn {
+      z-index: 5;
+      color: #fff;
+      background-color: #8c6fb0;
+      transition: 0.6s;
+
+      svg {
+        font-size: 2rem;
+      }
+
+      &.opened {
+        transform: rotate(45deg);
+      }
+
+      &:hover {
+        background-color: $clr5;
+      }
+    }
+
+    .share-container {
+      position: relative;
+      min-width: 130px;
+
+      p {
+        margin-top: -5px;
+        color: #fff;
+        text-align: center;
+      }
+
+      svg {
+        cursor: pointer;
+        color: #fff;
+      }
+
+      .clipboard-toast {
+        position: absolute;
+        right: rem(20px);
+        background-color: white;
+        color: black;
+        z-index: 3;
+        padding: rem(5px);
+        font-weight: bold;
+        border-radius: 5px;
+        bottom: rem(-45px);
+      }
+
+      .share-btns {
+        svg {
+          font-size: 2.2rem;
+          transition: 0.2s;
+        }
+        .facebook-share-btn:hover {
+          svg {
+            color: #3b5998;
+          }
+        }
+        .whatsapp-share-btn:hover {
+          svg {
+            color: #25d366;
+          }
         }
 
-        .share-btns {
-          svg {
-            font-size: 2.2rem;
-            transition: 0.2s;
-          }
-          .facebook-share-btn:hover {
-            svg {
-              color: #3b5998;
-            }
-          }
-          .whatsapp-share-btn:hover {
-            svg {
-              color: #25d366;
-            }
-          }
-
-          .copy-share-btn {
-            transform: rotate(45deg);
-            &:hover {
-              color: $clr3;
-            }
+        .copy-share-btn {
+          transform: rotate(45deg);
+          &:hover {
+            color: $clr3;
           }
         }
       }
@@ -139,50 +126,6 @@
   .box-details {
     .box-details-main {
       grid-column: 1/-1;
-    }
-
-    .chat-box {
-      flex-direction: column;
-      width: 100vw;
-      position: fixed;
-      z-index: 28;
-      background-color: $clr1;
-      height: 100vh;
-      top: 0px;
-      padding: 1rem 0;
-      font-size: 0rem;
-      transform: translateX(-100%);
-      animation: chat-hint 1.5s 3s;
-      transition: transform 0.8s, box-shadow 0.8s;
-    }
-
-    .chat-box.chat-open {
-      transform: translateX(0);
-    }
-
-    .mobile-chat-btn {
-      display: inline;
-      position: fixed;
-      font-size: 1.5rem;
-      box-shadow: 0px 1px 5px 0 rgba(60, 64, 67, 0.302), 4px 5px 8px 0px rgba(60, 64, 67, 0.149);
-      border: 1px solid white;
-      margin-right: 5px;
-      border-radius: 5px;
-      padding: 8px 12px;
-      outline: none;
-
-      background-color: $clr5;
-      color: #fff;
-      left: 35px;
-      bottom: 18vh;
-      z-index: 1;
-      box-shadow: 0px 1px 3px 2px #4e4d4da1;
-
-      transition: 0.8s;
-    }
-
-    .mobile-chat-btn.chat-open {
-      transform: translateX(75vw);
     }
   }
 }

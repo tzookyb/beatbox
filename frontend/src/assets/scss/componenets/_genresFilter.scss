@@ -1,64 +1,53 @@
 .btns-filter {
+  position: relative;
   display: grid;
-  grid-gap: 10px;
-  justify-items: center;
   grid-auto-flow: column;
+  gap: rem(10px);
+  align-items: center;
   overflow: auto;
-  padding: 15px 0;
+  // padding: rem(15px) rem(20px);
   scroll-behavior: smooth;
   &::-webkit-scrollbar {
     display: none;
   }
 
-  .list-left-btn,
-  .list-right-btn {
+  .nav-left-btn,
+  .nav-right-btn {
     position: sticky;
     background-color: #18191acc;
     color: #fff;
     padding: rem(10px);
-    width: fit-content;
     z-index: 6;
     border-radius: 50%;
-    margin: 0 rem(15px);
-    align-self: center;
   }
 
-  .list-right-btn {
-    right: 10px;
+  .nav-right-btn {
+    right: 0;
   }
 
-  .list-left-btn {
-    left: 10px;
+  .nav-left-btn {
+    left: 0;
   }
 
   .btn-filter {
-    height: 35px;
-    text-align: center;
     font-size: 1.2rem;
-    background: transparent;
+    white-space: nowrap;
     font-family: Righteous;
-    padding: 5px 10px;
+    padding: rem(5px) rem(20px);
     border-radius: 999px;
     color: white;
     transition: 0.3s;
-    width: 130px;
     &:hover {
-      box-shadow: 0px 1px 5px 0 rgba(231, 231, 231, 0.96), 0 1px 3px 1px rgba(188, 188, 188, 0.149);
+      box-shadow: 0px 1px 7px rgb(231, 231, 231);
     }
   }
-  .btn-filter-nav {
-    box-shadow: none;
-    padding: 10px;
-    border-radius: 2px;
-    width: fit-content;
-    &:hover {
-      box-shadow: none;
-    }
-  }
+
   .active-filter {
-    background-color: rgb(121, 121, 121);
+    background-color: rgb(68, 68, 68);
+    box-shadow: 0px 1px 7px rgb(231, 231, 231);
   }
 }
+
 @media (max-width: 740px) {
   .btns-filter {
     .btn-filter {
