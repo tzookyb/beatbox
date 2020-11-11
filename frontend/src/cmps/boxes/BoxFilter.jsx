@@ -4,39 +4,32 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import SearchIcon from '@material-ui/icons/Search';
 import { debounce } from '@material-ui/core';
-
 // LOCAL IMPORTS
-import { setFilter } from '../../store/actions/boxAction';
+import { setFilter } from '../../store/actions/boxActions';
 
 export class _BoxFilter extends Component {
     state = {
-        searchStr: '',
         isSearchOpen: false,
         isAtBoxDetails: false
     }
+    ref = React.createRef()
+
     componentDidMount() {
         this.checkIfAtDetails();
     }
 
-    ref = React.createRef()
-
-    async componentDidUpdate(prevProps) {
-        await this.checkIfAtDetails();
-
-        if (this.props.location.search !== prevProps.location.search &&
-            this.props.location.pathname !== '/') {
-            this.onSetFilter();
-        }
+    componentDidUpdate(prevProps) {
+        this.checkIfAtDetails();
+        if (prevProps.filter !== this.props.filter) this.onHandleChange();
     }
 
     checkIfAtDetails = () => {
         const status = this.props.location.pathname.startsWith('/box/details')
-        if (status !== this.state.isAtBoxDetails) this.setState({ searchStr: '', isAtBoxDetails: status })
+        if (this.state.isAtBoxDetails !== status) this.setState({ isAtBoxDetails: status }, this.props.setFilter(''))
     }
 
-    onHandleChange = ({ target }) => {
-        this.setState({ searchStr: target.value }, this.onSetFilter);
-
+    onHandleChange = () => {
+        if (!this.state.isAtBoxDetails) this.searchBox();
         if (this.state.isSearchOpen) {
             if (!this.debouncedSearch) {
                 this.debouncedSearch = debounce(() => {
@@ -47,13 +40,9 @@ export class _BoxFilter extends Component {
         }
     }
 
-    onSetFilter = () => {
-        if (this.state.isAtBoxDetails) {
-            this.props.setFilter(this.state.searchStr);
-            return
-        }
+    searchBox = () => {
         const query = new URLSearchParams(window.location.search);
-        query.set('name', this.state.searchStr);
+        query.set('name', this.props.filter);
         this.props.history.push(`/box?${query.toString()}`);
     }
 
@@ -64,8 +53,9 @@ export class _BoxFilter extends Component {
     }
 
     render() {
-        const { searchStr, isAtBoxDetails, isSearchOpen } = this.state;
-        const { isShown } = this.props;
+        const { isAtBoxDetails, isSearchOpen } = this.state;
+        const { isShown, filter } = this.props;
+        if (!isShown && isSearchOpen) this.setState({ isSearchOpen: false });
         return (
             <div className={`box-filter flex ${(isShown) ? '' : 'invisible'} ${isSearchOpen ? 'is-open' : ''}`}>
                 <input
@@ -74,8 +64,8 @@ export class _BoxFilter extends Component {
                     className={isAtBoxDetails ? '' : "name-filter"}
                     name="name"
                     autoComplete="off"
-                    value={searchStr}
-                    onChange={this.onHandleChange}
+                    value={filter}
+                    onChange={(ev) => this.props.setFilter(ev.target.value)}
                     placeholder={isAtBoxDetails ? 'Search in playlist' : 'Search for a Box'} />
                 <SearchIcon className="search-icon" onClick={this.toggleSearch} />
             </div>
@@ -83,7 +73,6 @@ export class _BoxFilter extends Component {
     }
 }
 
-const mapDispatchToProps = {
-    setFilter
-}
-export const BoxFilter = connect(null, mapDispatchToProps)(withRouter(_BoxFilter))
+const mapStateToProps = state => ({ filter: state.boxReducer.filter });
+const mapDispatchToProps = { setFilter };
+export const BoxFilter = connect(mapStateToProps, mapDispatchToProps)(withRouter(_BoxFilter))
