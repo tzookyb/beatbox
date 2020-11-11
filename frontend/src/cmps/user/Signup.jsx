@@ -2,10 +2,9 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import Button from '@material-ui/core/Button';
-
 // LOCAL IMPORTS
-import { signup, loadUser } from '../../store/actions/userAction'
 import { cloudService } from '../../services/cloudService'
+import { signup, loadUser } from '../../store/actions/userActions'
 import imgPlaceholder from '../../assets/img/img_placeholder.png';
 
 class _Signup extends React.Component {
@@ -37,20 +36,18 @@ class _Signup extends React.Component {
     onSignup = (ev) => {
         ev.preventDefault();
         if (this.state.username === '') return;
-        const { username, password, imgUrl } = this.state.user;
-        const userCreds = { username, password, imgUrl };
-        this.props.signup(userCreds);
+        const newUser = { ...this.state.user };
+        this.props.signup(newUser);
         this.props.loadUser();
         this.props.handleClose();
     }
-
 
     render() {
         const { user } = this.state;
         return (
             <form className="user-add-form flex" onSubmit={this.onSignup}>
                 <div className="inputs flex column">
-                    <label for="username">User Name:</label>
+                    <label htmlFor="username">User Name:</label>
                     <input
                         type="text"
                         id="username"
@@ -60,7 +57,7 @@ class _Signup extends React.Component {
                         onChange={this.onChange}
                         placeholder="User Name:"
                         autoComplete="off" />
-                    <label for="password">Password:</label>
+                    <label htmlFor="password">Password:</label>
                     <input
                         required
                         id="password"
