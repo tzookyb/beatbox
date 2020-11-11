@@ -2,13 +2,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CircleLoading from 'react-loadingg/lib/CircleLoading'
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { Fab } from '@material-ui/core';
-import AddIcon from '@material-ui/icons/Add';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import WhatsappIcon from '@material-ui/icons/WhatsApp';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import LinkIcon from '@material-ui/icons/Link';
 import ColorThief from "colorthief";
 import { Swipeable } from "react-swipeable";
 // LOCAL IMPORT
@@ -19,44 +12,49 @@ import { socketService } from '../services/socketService';
 import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
 import { BoxChat } from '../cmps/box-details/BoxChat'
-import { loadBox, updateBox, gotBoxUpdate } from '../store/actions/boxAction'
-import { addMsg, loadMsgs, notify } from '../store/actions/msgAction'
+import { loadBox, updateBox, gotBoxUpdate, setFilter } from '../store/actions/boxActions'
+import { addMsg, notify } from '../store/actions/msgActions'
 import { changeSong, updateLocalPlayer } from '../store/actions/playerActions'
-import { loadConnectedUsers } from '../store/actions/connectedUsersAction'
+import { loadConnectedUsers, toggleFavorite } from '../store/actions/userActions'
+import { MidControls } from '../cmps/box-details/MidControls';
 
 class _BoxDetails extends Component {
     state = {
         isSongPickOpen: false,
         isDragging: false,
-        msgs: [],
         dominantColor: '',
         isMobileChatOpen: false,
-        isClipboardToast: false,
+        isGuestToast: false,
         isFavorite: false,
-        isGuestMode: false,
     }
 
     imgRef = React.createRef();
 
     async componentDidMount() {
         const boxId = this.props.match.params.boxId;
-        const minimalUser = userService.getMinimalUser();
         await this.props.loadBox(boxId);
-        const isFavorite = await userService.isBoxFavorite(this.props.user, boxId);
-        this.setState({ isFavorite });
+        this.getIsFavorite(boxId);
 
         // SOCKET JOIN TO BOX
+        const miniUser = userService.getMiniUser();
         const boxInfo = {
             boxId,
-            user: minimalUser
+            user: miniUser
         }
         socketService.emit('join box', boxInfo);
     }
 
-    componentDidUpdate() {
-        if (this.props.match.params.boxId !== this.props.currBox._id) {
-            this.props.loadBox(this.props.match.params.boxId);
+    async componentDidUpdate() {
+        if (this.props.match.params.boxId !== this.props.currBox?._id) {
+            await this.props.loadBox(this.props.match.params.boxId);
         }
+        if (this.props.filter && this.state.isSongPickOpen) this.toggleSongPick(false);
+    }
+
+    getIsFavorite = (boxId) => {
+        const idx = this.props.user.favoriteBoxes?.findIndex(box => box === boxId)
+        const isFavorite = (idx === -1) ? false : true;
+        this.setState({ isFavorite });
     }
 
     onRemoveSong = (songId) => {
@@ -73,7 +71,7 @@ class _BoxDetails extends Component {
             }
         }
         const [song] = newBox.songs.splice(songIdx, 1);
-        this.addMsgChat(`Song ${song.title} removed by ${this.props.user.username}`);
+        this.addMsgChat(`Song "${song.title}" removed by ${this.props.user.username}`);
         this.props.notify({ txt: `Song "${song.title}" removed`, type: 'red' });
         this.props.updateBox(newBox);
     }
@@ -85,7 +83,7 @@ class _BoxDetails extends Component {
             newBox.songs.splice(idx, 0, newSong);
         }
         else newBox.songs.unshift(newSong);
-        this.addMsgChat(`Song ${newSong.title} added by ${this.props.user.username}`);
+        this.addMsgChat(`Song "${newSong.title}" added by ${this.props.user.username}`);
         this.props.notify({ txt: `Song "${newSong.title}" added`, type: 'green' });
         this.props.updateBox(newBox);
     }
@@ -101,8 +99,12 @@ class _BoxDetails extends Component {
         return songs;
     }
 
-    toggleSongPick = () => {
-        this.setState(prevState => ({ isSongPickOpen: !prevState.isSongPickOpen }))
+    toggleSongPick = (isManual) => {
+        if (isManual) {
+            if (this.props.filter) this.props.setFilter('');
+            this.setState(prevState => ({ isSongPickOpen: !prevState.isSongPickOpen }));
+        }
+        else this.setState({ isSongPickOpen: false });
     }
 
     onDragStart = () => {
@@ -156,14 +158,9 @@ class _BoxDetails extends Component {
         this.setState({ dominantColor: result });
     }
 
-    toggleClipboardToast = () => {
-        this.setState({ isClipboardToast: true });
-        setTimeout(() => this.setState({ isClipboardToast: false }), 2000);
-    }
-
-    toggleGuestMode = () => {
-        this.setState({ isGuestMode: true });
-        setTimeout(() => this.setState({ isGuestMode: false }), 2000);
+    toggleGuestFavoriteToast = () => {
+        this.setState({ isGuestToast: true });
+        setTimeout(() => this.setState({ isGuestToast: false }), 2000);
     }
 
     openMobileChat = () => {
@@ -175,34 +172,27 @@ class _BoxDetails extends Component {
         this.setState({ isMobileChatOpen: false })
     }
 
-    toggleMobileChat = () => {
-        this.setState({ isMobileChatOpen: !this.state.isMobileChatOpen })
-    }
-
-    onToggleToFavorite = async () => {
+    onToggleFavorite = () => {
         if (this.props.user.isGuest) {
-            this.toggleGuestMode();
+            this.toggleGuestFavoriteToast();
             return;
         }
-        const boxId = this.props.currBox._id;
-        await userService.toggleToFavorite(boxId);
-        this.setState({ isFavorite: !this.state.isFavorite });
-    }
+        const { isFavorite } = this.state;
+        this.props.notify({
+            txt: (isFavorite) ? 'Box removed from Favorites' : 'Box added to Favorites',
+            type: (isFavorite) ? 'red' : 'green'
+        });
+        this.setState({ isFavorite: !isFavorite });
 
-    getIfBoxFavorite = async () => {
         const boxId = this.props.currBox._id;
-        const userId = this.props.user._id;
-        const isFavoriteIdx = await userService.isBoxFavorite(userId, boxId)
-        const isFavorite = (isFavoriteIdx === -1) ? true : false;
-        return isFavorite;
+        this.props.toggleFavorite(boxId);
     }
 
     render() {
-        const { isSongPickOpen, isDragging, isFavorite } = this.state;
-        const { currBox, filter } = this.props;
+        const { isSongPickOpen, isDragging, isFavorite, isGuestToast } = this.state;
+        const { currBox, filter, user } = this.props;
         if (!currBox) return <CircleLoading size="large" color="#ac0aff" />
         const songsToShow = this.getSongsForDisplay();
-        const minimalUser = userService.getMinimalUser();
         const swipeConfig = {
             onSwipedRight: () => this.openMobileChat(),
             onSwipedLeft: () => this.closeMobileChat(),
@@ -220,46 +210,15 @@ class _BoxDetails extends Component {
                             imgRef={this.imgRef}
                             box={currBox}
                             onSaveInfo={this.onSaveInfo}
-                            minimalUser={minimalUser}
                         />
 
-                        <div className="song-social-actions flex space-between">
-                            <div className="btns-container flex align-center">
-                                <Fab className={`add-song-btn  ${isSongPickOpen ? 'opened' : ''}`}
-                                    title="Add Songs to Playlist"
-                                    onClick={this.toggleSongPick}
-                                    aria-label="add"
-                                >
-                                    <AddIcon />
-                                </Fab>
-
-                                <div title="Add to favorite" className={`like-btn flex align-center ${isFavorite ? "favorite" : ""}`}>
-                                    <FavoriteIcon onClick={this.onToggleToFavorite} />
-                                    {this.state.isGuestMode && <div className="guest-msg"><small>Signup to enjoy favorites feature</small></div>}
-                                </div>
-                            </div>
-
-                            <div className="share-container flex space-between column">
-                                <p>Invite a friend to join you:</p>
-                                <div className="share-btns flex space-evenly">
-                                    <a className="facebook-share-btn"
-                                        href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
-                                        rel="noopener noreferrer" target="_blank" title="Share to Facebook">
-                                        <FacebookIcon />
-                                    </a>
-                                    <a className="whatsapp-share-btn"
-                                        href={`whatsapp://send?text=${currBox.createdBy.name} Shared a Box With You! : \n\n ${window.location.href}`}
-                                        data-action="share/whatsapp/share" title="Share to Whatsapp">
-                                        <WhatsappIcon />
-                                    </a>
-                                    <CopyToClipboard className="copy-share-btn" text={window.location.href}>
-                                        <LinkIcon onClick={this.toggleClipboardToast} />
-                                    </CopyToClipboard>
-                                </div>
-                                {this.state.isClipboardToast && <small className="copied-to-clipboard">Link copied to your clipboard!</small>}
-                            </div>
-
-                        </div>
+                        <MidControls user={user}
+                            isSongPickOpen={isSongPickOpen}
+                            isFavorite={isFavorite}
+                            isGuestToast={isGuestToast}
+                            onToggleFavorite={this.onToggleFavorite}
+                            toggleSongPick={this.toggleSongPick}
+                        />
 
                         <SongList
                             songs={songsToShow}
@@ -273,7 +232,7 @@ class _BoxDetails extends Component {
                         />
                     </div>
 
-                    <div className={`${this.state.isMobileChatOpen ? 'chat-open' : ''} chat-box flex column align-center`} >
+                    <div className={`chat-box flex column align-center ${this.state.isMobileChatOpen ? 'chat-open' : ''}`}>
                         <BoxChat />
                     </div>
 
@@ -289,20 +248,19 @@ const mapStateToProps = state => {
         currSong: state.boxReducer.currSong,
         filter: state.boxReducer.filter,
         user: state.userReducer.loggedinUser,
-        msgs: state.msgReducer.msgs,
-        connectedUsers: state.connectedUsersReducer.connectedUsers
+        connectedUsers: state.userReducer.connectedUsers
     }
 }
-
 const mapDispatchToProps = {
     loadBox,
     updateBox,
     addMsg,
-    loadMsgs,
     updateLocalPlayer,
     gotBoxUpdate,
     loadConnectedUsers,
     changeSong,
-    notify
+    notify,
+    setFilter,
+    toggleFavorite
 }
 export const BoxDetails = connect(mapStateToProps, mapDispatchToProps)(_BoxDetails);
