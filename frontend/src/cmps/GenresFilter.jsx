@@ -1,6 +1,6 @@
 // OUTSOURCE IMPORT
 import React, { Component } from 'react'
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
@@ -11,16 +11,23 @@ import { utilService } from '../services/utilService';
 export class _GenresFilter extends Component {
     state = {
         genres: [],
-        isScrolled: false
     }
 
     ref = React.createRef()
-
-    executeScroll = utilService.executeScroll;
+    activeFilter = React.createRef()
 
     componentDidMount() {
         const genres = boxService.getAllGenres();
         this.setState({ genres: [...genres] });
+        setTimeout(() => {
+            this.activeFilter.current.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'center' });
+        }, 1);
+    }
+
+    executeScroll = utilService.executeScroll;
+
+    onSetGenre = (genre) => {
+        this.props.history.push(`/box?${this.getQueryParams(genre)}`);
     }
 
     getQueryParams = (genre) => {
@@ -36,27 +43,28 @@ export class _GenresFilter extends Component {
 
     render() {
         const { genres } = this.state;
-        if (!genres.length) return <h1>Loading...</h1>
         const currGenre = this.getCurrGenre();
-        const isFiltered = !!this.props.location.search;
+
         return (
             <div className="main-container">
 
                 <div className="btns-filter" ref={this.ref}>
 
-                    {this.state.isScrolled && <button className="list-left-btn" onClick={() => this.executeScroll(-320)}><ArrowBackIosIcon /></button>}
+                <button className="nav-left-btn" onClick={() => this.executeScroll(-this.ref.current.offsetWidth-50)}><ArrowBackIosIcon /></button>
 
-                    <Link to="/box" className={`btn-filter flex justify-center align-center${!isFiltered ? 'active-filter' : ''}`} >All</Link>
+                    <p onClick={() => this.onSetGenre('')} ref={this.activeFilter} className={`btn-filter cursor-pointer ${!currGenre ? 'active-filter' : ''}`}>All</p>
                     {genres.map((genre, idx) => {
-                        return <Link
-                            to={`/box?${this.getQueryParams(genre)}`}
-                            className={`btn-filter ${(genre === currGenre) ? 'active-filter' : ''}`}
-                            key={idx} > {genre}
-                        </Link>
+                        return <p
+                            ref={genre === currGenre ? this.activeFilter : null}
+                            onClick={() => this.onSetGenre(genre)}
+                            className={`btn-filter cursor-pointer ${(genre === currGenre) ? 'active-filter' : ''}`}
+                            key={idx}>
+                            {genre}
+                        </p>
                     })
                     }
 
-                    <button className="list-right-btn" onClick={() => this.executeScroll(320)}><ArrowForwardIosIcon /></button>
+                <button className="nav-right-btn" onClick={() => this.executeScroll(this.ref.current.offsetWidth-50)}><ArrowForwardIosIcon /></button>
 
                 </div >
             </div>
