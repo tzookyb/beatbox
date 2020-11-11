@@ -2,24 +2,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { CircleLoading } from 'react-loadingg';
-
 // LOCAL IMPORTS
-import { BoxList } from '../cmps/boxes/BoxList'
-import { removeBox } from '../store/actions/boxAction'
 import { userService } from '../services/userService'
+import { BoxList } from '../cmps/boxes/BoxList'
+import { removeBox } from '../store/actions/boxActions'
 
 class _UserDetails extends Component {
 
-    state = {
-        userBoxes: [],
-        userBoxesFavorite: []
+    componentDidMount() {
+        console.log(this.props.loggedinUser);
     }
 
-    async componentDidMount() {
-        const userBoxes = await userService.getUserBoxes(this.props.user._id);
-        const userBoxesFavorite = await userService.getUserFavoriteBoxes(this.props.user._id);
-        this.setState({ userBoxes, userBoxesFavorite })
-    }
 
     onDelete = async (ev, boxId) => {
         ev.stopPropagation();
@@ -29,51 +22,52 @@ class _UserDetails extends Component {
         this.setState({ userBoxes });
     }
 
+    getBoxes = (boxesIds) => {
+        return boxesIds.map(boxId => {
+            return this.props.boxes.find(box => box._id === boxId)
+        })
+    }
+
     render() {
-        const { user } = this.props;
-        if (this.props.user.isGuest) {
-            this.props.history.push(`/`);
-        }
-        if (!user) return <CircleLoading size="large" color="#ac0aff" />
-        const { userBoxes, userBoxesFavorite } = this.state;
-        const minimalUser = userService.getMinimalUser();
+        const { loggedinUser, boxes } = this.props;
+        if (!loggedinUser || !boxes) return <CircleLoading size="large" color="#ac0aff" />
+
+        if (loggedinUser.isGuest) this.props.history.push(`/`);
+
+        let { createdBoxes, favoriteBoxes } = loggedinUser;
+        createdBoxes = this.getBoxes(createdBoxes);
+        favoriteBoxes = this.getBoxes(favoriteBoxes);
+
         return (
             <div className="user-details">
                 <div className="user-info">
-                    <img className="img-user" src={user.imgUrl} alt="user" />
-                    <h2>{user.username}</h2>
+                    <img className="img-user" src={loggedinUser.imgUrl} alt="user" />
+                    <h2>{loggedinUser.username}</h2>
                 </div>
-                {userBoxes && <div className="user-boxes">
+
+                <div className="user-boxes">
                     <h2>Boxes I created: </h2>
                     <BoxList
-                        boxes={userBoxes}
-                        minimalUser={minimalUser}
-                        connectedUsers={this.props.connectedUsers}
+                        boxes={createdBoxes}
                         onDelete={this.onDelete}
                     />
-                </div>}
-                {userBoxesFavorite && <div className="user-boxes-favorite">
+                </div>
+
+                <div className="user-boxes-favorite">
                     <h2>My Favorite Boxes: </h2>
                     <BoxList
-                        boxes={userBoxesFavorite}
-                        minimalUser={minimalUser}
-                        connectedUsers={this.props.connectedUsers}
+                        boxes={favoriteBoxes}
                     />
-                </div>}
+                </div>
+
             </div>
         )
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        user: state.userReducer.loggedinUser,
-        connectedUsers: state.connectedUsersReducer.connectedUsers
-    }
-}
-
-const mapDispatchToProps = {
-    removeBox
-}
-
-export const UserDetails = connect(mapStateToProps, mapDispatchToProps)(_UserDetails)
+const mapStateToProps = state => ({
+    loggedinUser: state.userReducer.loggedinUser,
+    boxes: state.boxReducer.boxes
+});
+const mapDispatchToProps = { removeBox };
+export const UserDetails = connect(mapStateToProps, mapDispatchToProps)(_UserDetails);
