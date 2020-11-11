@@ -9,7 +9,7 @@ import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 import { BoxPreview } from './BoxPreview';
 import { socketService } from '../../services/socketService';
 import { setIsIntroPlaying } from '../../store/actions/playerActions';
-import { notify } from '../../store/actions/msgAction';
+import { notify } from '../../store/actions/msgActions';
 
 export function _BoxActive(props) {
 
@@ -67,11 +67,11 @@ export function _BoxActive(props) {
     }
 
     const playIntro = () => {
-        elIntroPlayer.current.seekTo(secPlayed);
         setIsPlaying(true);
+        elIntroPlayer.current.seekTo(secPlayed);
     }
 
-    const underTitle = isTouchDevice ?
+    const subTitle = isTouchDevice ?
         <span>touch <PlayCircleOutlineIcon style={{position: 'relative', top: '5px'}}/> button to get a taste of what's playing</span> :
         'hover over to listen to what\'s playing';
 
@@ -80,7 +80,7 @@ export function _BoxActive(props) {
 
         <div className="active-title">
             <h1>Top Boxes Now Live!</h1>
-            <small>{underTitle}</small>
+            <small>{subTitle}</small>
         </div>
         <div className="active-boxes flex">
             {boxes.map(box => {
@@ -105,7 +105,7 @@ export function _BoxActive(props) {
 
             <ReactPlayer
                 ref={elIntroPlayer}
-                className="player hidden"
+                className="hidden"
                 url={`https://www.youtube.com/watch?v=${introId}`}
                 volume={0.75}
                 onReady={() => playIntro()}
