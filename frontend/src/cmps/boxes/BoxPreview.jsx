@@ -18,11 +18,10 @@ export class _BoxPreview extends Component {
     }
 
     render() {
-        const { box, isHomePage, onDelete, history, introIsTouchDevice } = this.props;
-        const sectionClassName = `box-preview cursor-pointer ${isHomePage ? 'box-home-preview' : ''}`;
+        const { box, onDelete, history, introIsTouchDevice } = this.props;
         const imgClass = this.state.isImgLoaded ? '' : 'img-loading';
         return (
-            <section className={sectionClassName} title={box.name} onClick={() => history.push(`/box/details/${box._id}`)}>
+            <section className='box-preview cursor-pointer' title={box.name} onClick={() => history.push(`/box/details/${box._id}`)}>
                 <div className="box-preview-img">
                     <img
                         className={imgClass}
@@ -32,18 +31,16 @@ export class _BoxPreview extends Component {
                         alt="box-preview img" />
                 </div>
 
-                <div className="box-preview-details flex column">
-                    <div className="box-data flex space-between">
-                        <h3 className="box-name">{box.name}</h3>
-                        {introIsTouchDevice ? < PlayCircleOutlineIcon onClick={this.playIntro} /> :
-                            <PlayCircleOutlineIcon />}
-                    </div>
-
-                    <div className="delete-btn cursor-pointer" title="Delete box">
-                        {onDelete && <DeleteIcon onClick={(ev) => onDelete(ev, box._id)} />}
-                    </div>
-
+                <div className="box-data flex space-between align-center">
+                    <h3 className="box-name">{box.name}</h3>
+                    {introIsTouchDevice ? <PlayCircleOutlineIcon onClick={this.playIntro} /> :
+                        <PlayCircleOutlineIcon />}
                 </div>
+
+                <div className="delete-btn cursor-pointer" title="Delete box">
+                    {onDelete && <DeleteIcon onClick={(ev) => onDelete(ev, box._id)} />}
+                </div>
+
             </section >
         )
     }
