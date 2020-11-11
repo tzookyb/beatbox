@@ -7,14 +7,14 @@ import CloseIcon from '@material-ui/icons/Close';
 // LOCAL IMPORTS
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService'
-import { saveBox } from '../store/actions/boxAction'
+import { saveBox } from '../store/actions/boxActions'
 import { BoxInfoEdit } from '../cmps/box-details/BoxInfoEdit'
+import { notify } from '../store/actions/msgActions';
 const defaultBoxImg = 'https://res.cloudinary.com/tzookyb/image/upload/v1602846820/beatbox/j8kqknrb7vkjhzh8muzj.jpg'
 
 export class _BoxAdd extends Component {
     state = {
         editBox: null,
-        msgWarning: '',
         isLoading: false
     }
 
@@ -23,16 +23,9 @@ export class _BoxAdd extends Component {
     }
 
     setNewBox = () => {
-        const minimalUser = userService.getMinimalUser();
+        const minimalUser = userService.getMiniUser();
         const emptyBox = boxService.getEmptyBox(minimalUser);
         this.setState({ editBox: emptyBox });
-    }
-
-    printMsg(msg) {
-        this.setState({ msgWarning: msg });
-        setTimeout(() => {
-            this.setState({ msgWarning: '' });
-        }, 2000)
     }
 
     setIsLoading = (isLoading) => {
@@ -56,11 +49,11 @@ export class _BoxAdd extends Component {
         ev.preventDefault();
         ev.stopPropagation();
         if (!this.state.editBox.name) {
-            this.printMsg('Name of box is required');
+            this.props.notify({ txt: 'Name of box is required', type: 'red' })
             return;
         }
         if (!this.state.editBox.genre) {
-            this.printMsg('Genre of box is required');
+            this.props.notify({ txt: 'Genre of box is required', type: 'red' })
             return;
         }
         if (!this.state.editBox.imgUrl) {
@@ -77,7 +70,6 @@ export class _BoxAdd extends Component {
 
     render() {
         const { editBox } = this.state;
-        const msg = this.state.msgWarning;
         if (!editBox) return <CircleLoading size="large" color="#ac0aff" />
 
         return (
@@ -97,7 +89,6 @@ export class _BoxAdd extends Component {
                     >
                         Create Box
                         </button>
-                    <span className="msg-warning">{msg}</span>
                 </div>
             </section>
         )
@@ -105,7 +96,7 @@ export class _BoxAdd extends Component {
 }
 
 const mapDispatchToProps = {
-    saveBox
+    saveBox,
+    notify
 }
-
 export const BoxAdd = connect(null, mapDispatchToProps)(withRouter(_BoxAdd))
