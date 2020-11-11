@@ -1,14 +1,17 @@
 // OUTSOURCE IMPORTS
 import React from 'react'
+import { connect } from 'react-redux';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import { Delete } from '@material-ui/icons';
-
 // LOCAL IMPORTS
 import { SongPick } from './SongPick'
 import { SongPreview } from './SongPreview'
 import { SongPreviewExample } from './SongPreviewExample'
+import { setFilter } from '../../store/actions/boxActions';
+import { NoResults } from '../NoResults';
 
-export function SongList({ songs, onRemoveSong, onAddSong, isSongPickOpen, isFilter, isDragging, onDragEnd, onDragStart }) {
+export function _SongList({ songs, onRemoveSong, onAddSong, isSongPickOpen, isFilter, isDragging, onDragEnd, onDragStart }) {
+
     return (
         <React.Fragment>
             <DragDropContext
@@ -41,7 +44,9 @@ export function SongList({ songs, onRemoveSong, onAddSong, isSongPickOpen, isFil
                                     <SongPreviewExample key={1} isFirst={true} />
                                     <SongPreviewExample key={2} isFirst={false} />
                                 </React.Fragment>}
-                                {(!songs.length && isFilter) && <li>No search results...</li>}
+
+                                {(!songs.length && isFilter) && <NoResults />}
+
                                 {
                                     songs.map((song, index) => {
                                         return <SongPreview
@@ -72,6 +77,11 @@ export function SongList({ songs, onRemoveSong, onAddSong, isSongPickOpen, isFil
                     }
                 </Droppable>
             </DragDropContext >
-        </React.Fragment>
+        </React.Fragment >
     )
 }
+
+const mapDispatchToProps = {
+    setFilter
+}
+export const SongList = connect(null, mapDispatchToProps)(_SongList);
