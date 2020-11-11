@@ -17,54 +17,71 @@ export class _BoxList extends Component {
     componentDidMount() {
         const isScrollAvailable = !!(this.ref.current?.offsetWidth - this.ref.current?.scrollWidth);
         this.setState({ isScrollAvailable });
+
+        if (this.props.genre) this.intervalScroll();
     }
 
+    componentWillUnmount() {
+        this.pauseInterval()
+    }
 
+    intervalId;
     ref = React.createRef()
 
     executeScroll = utilService.executeScroll;
 
+    intervalScroll = () => {
+        this.intervalId = setInterval(() => {
+            this.executeScroll(utilService.getRandomInteger(100, 300));
+        }, 7000)
+    }
+
+    pauseInterval = () => {
+        clearInterval(this.intervalId);
+    }
+
     render() {
+        const { genre, boxes } = this.props;
+        const { isScrolled, isScrollAvailable } = this.state;
+        // if "genre" is provided that means we are on the home page.
+        // no "genre" means we are on the boxes list.
         return (
-            <section className={`list-container ${this.props.genre ? '' : 'main-container'}`}>
+            <section className={`list-container ${genre ? '' : 'main-container'}`}>
 
-                {this.props.genre && <div className="genre-filter flex align-enter space-between">
-                    <h3 className="title-genre">{this.props.genre}</h3>
-                    <Link to={`/box?&genre=${this.props.genre}`}> <h3 className="see-all-genre">See All →</h3></Link>
-                </div>}
+                {genre && <React.Fragment>
+                    <div className="genre-filter flex align-center space-between">
+                        <h3 className="title-genre">{genre}</h3>
+                        <Link to={`/box?&genre=${genre}`}> <h3 className="see-all-genre">See All →</h3></Link>
+                    </div>
 
-                {this.props.genre &&
-                    <div ref={this.ref} className={`box-list ${this.props.location.pathname === '/' ? 'homepage-list' : ''}`}>
-                        {this.state.isScrolled && <button className="list-left-btn" onClick={() => this.executeScroll(-350)}><ArrowBackIosIcon /></button>}
+                    <div ref={this.ref} onMouseEnter={this.pauseInterval} onMouseLeave={this.intervalScroll} className={`box-list ${this.props.location.pathname === '/' ? 'homepage-list' : ''}`}>
+                        {isScrolled && <button className="list-left-btn" onClick={() => this.executeScroll(-window.innerWidth / 2)}><ArrowBackIosIcon /></button>}
 
-                        {this.props.boxes.map(box => {
-                            if (box.genre === this.props.genre) {
+                        {boxes.map(box => {
+                            if (box.genre === genre) {
                                 return <BoxPreview
-                                    isHomePage={true}
                                     key={box._id}
                                     box={box}
-                                    genre={this.props.genre}
-                                    onAddToFavorites={this.props.onAddToFavorites}
-                                    minimalUser={this.props.minimalUser}
+                                    genre={genre}
                                 />
                             } else return null
                         })}
 
-                        {this.state.isScrollAvailable && <button className="list-right-btn" onClick={() => this.executeScroll(350)}><ArrowForwardIosIcon /></button>}
+                        {isScrollAvailable && <button className="list-right-btn" onClick={() => this.executeScroll(window.innerWidth / 2)}><ArrowForwardIosIcon /></button>}
                     </div>
+                </React.Fragment>
                 }
 
-                {!this.props.genre && <div className="box-list full-grid ">
-                    {this.props.boxes.map(box => <BoxPreview
-                        isHomePage={false}
+
+                {!genre && <div className="box-list full-grid ">
+                    {boxes.map(box => <BoxPreview
                         key={box._id}
                         box={box}
-                        minimalUser={this.props.minimalUser}
-                        onAddToFavorites={this.props.onAddToFavorites}
                         onDelete={this.props.onDelete}
                     />
                     )}
                 </div>}
+
             </section>
         )
     }
