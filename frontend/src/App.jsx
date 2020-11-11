@@ -3,26 +3,28 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 // LOCAL IMPORT
+import { socketService } from './services/socketService';
 import { UserDetails } from './pages/UserDetails';
 import { BoxDetails } from './pages/BoxDetails';
-import BoxApp from './pages/BoxApp';
 import { BoxAdd } from './pages/BoxAdd';
 import { Home } from './pages/Home';
+import { BoxApp } from './pages/BoxApp';
 import { Header } from './cmps/Header';
 import { Player } from './cmps/Player';
-import { socketService } from './services/socketService';
-import { loadConnectedUsers } from './store/actions/connectedUsersAction';
-import { gotBoxUpdate, setActiveBoxes, setBoxStatus } from './store/actions/boxAction';
-import { addMsg } from './store/actions/msgAction';
-import { updateLocalPlayer } from './store/actions/playerActions';
 import { Notify } from './cmps/Notify';
+import { gotBoxUpdate, loadBoxes, setActiveBoxes, setBoxStatus } from './store/actions/boxActions';
+import { updateLocalPlayer } from './store/actions/playerActions';
+import { loadUser, loadConnectedUsers } from './store/actions/userActions';
+import { addMsg } from './store/actions/msgActions';
 
 class _App extends Component {
   componentDidMount() {
+    this.props.loadUser();
+    this.props.loadBoxes();
     // SOCKETS
     socketService.setup();
     socketService.on('got box status', this.props.setBoxStatus);
-    socketService.on('joined new box', this.props.loadConnectedUsers)
+    socketService.on('user joined box', this.props.loadConnectedUsers)
     socketService.on('box changed', this.props.gotBoxUpdate);
     socketService.on('chat addMsg', this.props.addMsg);
     socketService.on('got player update', this.props.updateLocalPlayer);
@@ -51,11 +53,13 @@ class _App extends Component {
 }
 
 const mapDispatchToProps = {
+  loadUser,
   setBoxStatus,
-  gotBoxUpdate,
   loadConnectedUsers,
+  gotBoxUpdate,
   addMsg,
   updateLocalPlayer,
-  setActiveBoxes
+  setActiveBoxes,
+  loadBoxes
 }
 export const App = connect(null, mapDispatchToProps)(_App);
