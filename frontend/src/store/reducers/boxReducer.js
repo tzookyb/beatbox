@@ -5,6 +5,8 @@ const initialState = {
     filter: '',
     activeBoxes: null,
     isIntroPlaying: false,
+    isMobile: null,
+    isTouch: null,
 }
 
 export function boxReducer(state = initialState, action) {
@@ -42,6 +44,12 @@ export function boxReducer(state = initialState, action) {
 
         case 'SET_INTRO_PLAYING':
             return { ...state, isIntroPlaying: action.isIntroPlaying }
+
+        case 'SET_IS_MOBILE':
+            return { ...state, isMobile: action.isMobile }
+
+        case 'SET_IS_TOUCH':
+            return { ...state, isTouch: action.isTouch }
 
         default:
             return state

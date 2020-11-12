@@ -56,12 +56,25 @@ export function setBoxStatus({ msgs, currSong }) {
     const { currBox } = getState().boxReducer;
     if (!currSong.id) currSong = (currBox.songs.length) ? { id: currBox.songs[0].id, isPlaying: true, secPlayed: 0 } : null;
     dispatch({ type: 'SET_CURR_SONG', currSong });
-    dispatch({ type: 'SET_MSGS', msgs })
+    dispatch({ type: 'SET_MSGS', msgs });
+    dispatch({ type: 'SET_UNREAD', unread: msgs.length });
   }
 }
 
 export function setActiveBoxes(activeBoxes) {
   return dispatch => {
     dispatch({ type: 'SET_ACTIVE_BOXES', activeBoxes })
+  }
+}
+
+export function setIsTouch(isTouch) {
+  return dispatch => {
+    dispatch({ type: 'SET_IS_TOUCH', isTouch })
+  }
+}
+
+export function setIsMobile(isMobile) {
+  return dispatch => {
+    dispatch({ type: 'SET_IS_MOBILE', isMobile })
   }
 }

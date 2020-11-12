@@ -12,13 +12,15 @@ import { BoxApp } from './pages/BoxApp';
 import { Header } from './cmps/Header';
 import { Player } from './cmps/Player';
 import { Notify } from './cmps/Notify';
-import { gotBoxUpdate, loadBoxes, setActiveBoxes, setBoxStatus } from './store/actions/boxActions';
+import { gotBoxUpdate, loadBoxes, setActiveBoxes, setBoxStatus, setIsMobile, setIsTouch } from './store/actions/boxActions';
 import { updateLocalPlayer } from './store/actions/playerActions';
 import { loadUser, loadConnectedUsers } from './store/actions/userActions';
 import { addMsg } from './store/actions/msgActions';
 
 class _App extends Component {
   componentDidMount() {
+    this.checkTouchDevice();
+    this.checkMobile();
     this.props.loadUser();
     this.props.loadBoxes();
     // SOCKETS
@@ -29,6 +31,19 @@ class _App extends Component {
     socketService.on('chat addMsg', this.props.addMsg);
     socketService.on('got player update', this.props.updateLocalPlayer);
     socketService.on('got active boxes', this.props.setActiveBoxes);
+  }
+
+  checkMobile = () => {
+    this.props.setIsMobile(window.innerWidth < 720)
+  }
+
+  checkTouchDevice = () => {
+    try {
+      document.createEvent("TouchEvent");
+      this.props.setIsTouch(true);
+    } catch (err) {
+      this.props.setIsTouch(false);
+    }
   }
 
   render() {
@@ -53,6 +68,8 @@ class _App extends Component {
 }
 
 const mapDispatchToProps = {
+  setIsTouch,
+  setIsMobile,
   loadUser,
   setBoxStatus,
   loadConnectedUsers,
