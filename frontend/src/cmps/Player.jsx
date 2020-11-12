@@ -186,8 +186,6 @@ class _Player extends Component {
             <div className="player-container flex justify-center align-center">
                 <div className={`player-capsule flex align-center justify-center ${isPlaying ? 'is-playing' : 'paused'}`}>
 
-
-
                     {!isReady ? <CircleLoading color="#ac0aff" /> :
                         <React.Fragment>
                             <img className="player-thumbnail" src={song.imgUrl} title={song.title} alt="song thumbnail" />
@@ -247,19 +245,14 @@ class _Player extends Component {
     }
 }
 
-
-const mapStateToProps = state => {
-    return {
-        currBox: state.boxReducer.currBox,
-        currSong: state.boxReducer.currSong,
-        isIntroPlaying: state.boxReducer.isIntroPlaying
-    }
-}
-
+const mapStateToProps = state => ({
+    currBox: state.boxReducer.currBox,
+    currSong: state.boxReducer.currSong,
+    isIntroPlaying: state.boxReducer.isIntroPlaying
+})
 const mapDispatchToProps = {
     changeSong,
     togglePlay,
     updateProgress,
 }
-
 export const Player = connect(mapStateToProps, mapDispatchToProps)(withRouter(_Player));

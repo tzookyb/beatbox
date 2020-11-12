@@ -30,6 +30,8 @@
         flex-grow: 1;
 
         .player-time {
+            width: rem(50px);
+            text-align: center;
             font-family: Righteous;
         }
     }
