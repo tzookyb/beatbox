@@ -4,9 +4,9 @@
             {
                 "text": "Hi Muse Fan! 🤘",
                 "submitAt": "2020-10-22T15:16:02.077Z",
-                "id": "5f8b058a2272a000174f72fe",
-                "submitBy": "Idan",
-                "avatar": "https://res.cloudinary.com/tzookyb/image/upload/w_200,h_200,c_thumb,g_face/v1602946439/beatbox/p6hfa1ky4lsv9dxojrun.jpg"
+                "id": "5fad5f3235093a317c8a1d69",
+                "submitBy": "Matt",
+                "avatar": "https://res.cloudinary.com/tzookyb/image/upload/w_200,h_200,c_thumb,g_face/v1602946439/beatbox/koevdqgzcffuzy0o2a95.jpg"
             },
             {
                 "text": "I'm not really here, it's just a demo! Enjoy BeatBox",
@@ -28,6 +28,11 @@
                 "name": "Idan",
                 "imgUrl": "https://res.cloudinary.com/tzookyb/image/upload/w_200,h_200,c_thumb,g_face/v1602946439/beatbox/p6hfa1ky4lsv9dxojrun.jpg",
                 "id": "5f8b058a2272a000174f72fe"
+            },
+            {
+                "name": "Matt",
+                "imgUrl": "https://res.cloudinary.com/tzookyb/image/upload/w_200,h_200,c_thumb,g_face/v1605197616/beatbox/koevdqgzcffuzy0o2a95.jpg",
+                "id": "5fad5f3235093a317c8a1d69"
             }
         ],
         "currSong": {

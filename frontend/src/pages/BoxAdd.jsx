@@ -12,7 +12,7 @@ import { BoxInfoEdit } from '../cmps/box-details/BoxInfoEdit'
 import { notify } from '../store/actions/msgActions';
 const defaultBoxImg = 'https://res.cloudinary.com/tzookyb/image/upload/v1602846820/beatbox/j8kqknrb7vkjhzh8muzj.jpg'
 
-export class _BoxAdd extends Component {
+class _BoxAdd extends Component {
     state = {
         editBox: null,
         isLoading: false

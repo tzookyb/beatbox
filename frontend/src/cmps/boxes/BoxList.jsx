@@ -8,7 +8,7 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { BoxPreview } from './BoxPreview'
 import { utilService } from '../../services/utilService';
 
-export class _BoxList extends Component {
+class _BoxList extends Component {
     state = {
         isScrolled: false,
         isScrollAvailable: undefined,

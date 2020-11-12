@@ -9,7 +9,7 @@ import PauseIcon from '@material-ui/icons/Pause';
 // LOCAL IMPORTS
 import { changeSong, togglePlay } from '../../store/actions/playerActions';
 
-export class _SongPreview extends Component {
+class _SongPreview extends Component {
     state = {
         isRemoveOpen: false,
         timeoutId: null,
@@ -80,14 +80,9 @@ export class _SongPreview extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        currSong: state.boxReducer.currSong
-    }
-}
+const mapStateToProps = state => ({ currSong: state.boxReducer.currSong })
 const mapDispatchToProps = {
     togglePlay,
     changeSong
 }
-
 export const SongPreview = connect(mapStateToProps, mapDispatchToProps)(_SongPreview);

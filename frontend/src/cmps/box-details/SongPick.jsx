@@ -1,28 +1,20 @@
 // OUTSOURCE IMPORTS
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 import { debounce } from 'debounce';
 import { CircleLoading } from 'react-loadingg';
-
 // LOCAL IMPORTS
 import { youtubeService } from '../../services/youtubeService';
 import { Draggable } from 'react-beautiful-dnd';
 
-export class SongPick extends Component {
+class _SongPick extends Component {
     state = {
         searchStr: '',
         results: '',
         isSearching: false,
-        isMobile: false
     }
 
     inputRef = React.createRef();
-
-    componentDidMount() {
-        if (window.innerWidth < 500) {
-            this.setState({ isMobile: true });
-        }
-    }
-
 
     componentDidUpdate(prevProps) {
         if (prevProps.isSongPickOpen !== this.props.isSongPickOpen) this.nullResults();
@@ -59,8 +51,8 @@ export class SongPick extends Component {
     }
 
     render() {
-        const { results, isSearching, searchStr, isMobile } = this.state;
-        const { isFilter } = this.props;
+        const { results, isSearching, searchStr } = this.state;
+        const { isFilter, isMobile } = this.props;
         return (
             <div className={`song-pick ${this.props.isSongPickOpen ? 'opened' : ''}`}>
                 <input ref={this.inputRef} type="search" name="searchStr" value={searchStr} onChange={this.handleInput} placeholder="Search for music" autoComplete="off" />
@@ -92,7 +84,7 @@ export class SongPick extends Component {
                                     <div className="song-pick-result-img">
                                         <img src={imgUrl} alt="thumbnail" />
                                     </div>
-                                <h3 dir="auto">{title}</h3>
+                                    <h3 dir="auto">{title}</h3>
                                 </div>
                             )}
                         </Draggable>
@@ -102,3 +94,8 @@ export class SongPick extends Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    isMobile: state.boxReducer.isMobile
+})
+export const SongPick = connect(mapStateToProps)(_SongPick);

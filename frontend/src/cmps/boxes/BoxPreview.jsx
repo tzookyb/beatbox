@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 import DeleteIcon from '@material-ui/icons/Delete';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 
-export class _BoxPreview extends Component {
+class _BoxPreview extends Component {
     state = {
         isImgLoaded: false
     }

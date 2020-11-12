@@ -8,7 +8,7 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { boxService } from '../services/boxService'
 import { utilService } from '../services/utilService';
 
-export class _GenresFilter extends Component {
+class _GenresFilter extends Component {
     state = {
         genres: [],
     }

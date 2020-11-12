@@ -7,7 +7,7 @@ import { debounce } from '@material-ui/core';
 // LOCAL IMPORTS
 import { setFilter } from '../../store/actions/boxActions';
 
-export class _BoxFilter extends Component {
+class _BoxFilter extends Component {
     state = {
         isSearchOpen: false,
         isAtBoxDetails: false

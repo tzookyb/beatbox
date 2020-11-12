@@ -19,8 +19,7 @@ import { addMsg } from './store/actions/msgActions';
 
 class _App extends Component {
   componentDidMount() {
-    this.checkTouchDevice();
-    this.checkMobile();
+    this.checkDevice()
     this.props.loadUser();
     this.props.loadBoxes();
     // SOCKETS
@@ -31,13 +30,19 @@ class _App extends Component {
     socketService.on('chat addMsg', this.props.addMsg);
     socketService.on('got player update', this.props.updateLocalPlayer);
     socketService.on('got active boxes', this.props.setActiveBoxes);
+    window.addEventListener('resize', this.checkDevice)
   }
 
-  checkMobile = () => {
+  checkDevice = () => {
+    this.checkIfTouch();
+    this.checkIfMobile();
+  }
+
+  checkIfMobile = () => {
     this.props.setIsMobile(window.innerWidth < 720)
   }
 
-  checkTouchDevice = () => {
+  checkIfTouch = () => {
     try {
       document.createEvent("TouchEvent");
       this.props.setIsTouch(true);
@@ -51,7 +56,7 @@ class _App extends Component {
       <div className="App">
         <Header />
         <Notify />
-        <main >
+        <main>
           <Route component={BoxAdd} path="**/add" />
           <Switch>
             <Route component={BoxDetails} path="/box/details/:boxId" />
