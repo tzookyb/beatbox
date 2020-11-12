@@ -1,7 +1,8 @@
 const initialState = {
     notify: '',
     msgs: [],
-    emojis: []
+    emojis: [],
+    unread: null
 }
 
 export function msgReducer(state = initialState, action) {
@@ -14,6 +15,9 @@ export function msgReducer(state = initialState, action) {
 
         case 'SET_NOTIFY':
             return { ...state, notify: action.notify };
+
+        case 'SET_UNREAD':
+            return { ...state, unread: action.unread }
 
         default:
             return state;

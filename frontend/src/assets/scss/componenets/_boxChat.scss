@@ -85,7 +85,7 @@
     height: 100vh;
     padding: 1rem 0;
     transform: translateX(-100%);
-    animation: chat-hint 1.5s 3s;
+    // animation: chat-hint 1.5s 3s;
     transition: transform 0.8s, box-shadow 0.8s;
 
     &.chat-open {

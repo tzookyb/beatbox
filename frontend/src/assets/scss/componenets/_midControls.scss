@@ -1,0 +1,116 @@
+.chat-notify {
+    position: absolute;
+    top: 0;
+    color: $clr3;
+    animation: color-change 2s alternate infinite;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: 0.25s;
+    &.shown {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.song-social-actions {
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), $clr1);
+    padding: 20px 10px;
+    .btns-container {
+        .like-btn {
+            position: relative;
+            cursor: pointer;
+            margin: 5px;
+            .guest-toast {
+                position: absolute;
+                left: rem(50px);
+                background-color: white;
+                color: black;
+                z-index: 5;
+                padding: 5px;
+                font-weight: bold;
+                border-radius: 5px;
+            }
+            svg {
+                font-size: 3rem;
+                stroke: #fff;
+            }
+        }
+    }
+    .favorite {
+        svg {
+            fill: rgb(248, 107, 107);
+        }
+    }
+
+    .add-song-btn {
+        z-index: 5;
+        color: #fff;
+        background-color: #8c6fb0;
+        transition: 0.6s;
+
+        svg {
+            font-size: 2rem;
+        }
+
+        &.opened {
+            transform: rotate(45deg);
+        }
+
+        &:hover {
+            background-color: $clr5;
+        }
+    }
+
+    .share-container {
+        position: relative;
+        min-width: 130px;
+
+        p {
+            margin-top: -5px;
+            color: #fff;
+            text-align: center;
+        }
+
+        svg {
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .clipboard-toast {
+            position: absolute;
+            right: rem(20px);
+            background-color: white;
+            color: black;
+            z-index: 3;
+            padding: rem(5px);
+            font-weight: bold;
+            border-radius: 5px;
+            bottom: rem(-45px);
+        }
+
+        .share-btns {
+            svg {
+                font-size: 2.2rem;
+                transition: 0.2s;
+            }
+            .facebook-share-btn:hover {
+                svg {
+                    color: #3b5998;
+                }
+            }
+            .whatsapp-share-btn:hover {
+                svg {
+                    color: #25d366;
+                }
+            }
+
+            .copy-share-btn {
+                transform: rotate(45deg);
+                &:hover {
+                    color: $clr3;
+                }
+            }
+        }
+    }
+}

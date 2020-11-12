@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import WhatsappIcon from '@material-ui/icons/WhatsApp';
@@ -7,17 +8,34 @@ import { Fab } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
-export function MidControls({ user, isSongPickOpen, isGuestToast, isFavorite, onToggleFavorite, toggleSongPick }) {
-
+export function _MidControls(props) {
+    const { user, isSongPickOpen, isGuestToast, isFavorite, onToggleFavorite, toggleSongPick, isMobile, unread, openMobileChat } = props;
     const [isClipboardToast, setIsClipboardToast] = useState(false);
+    const [chatNotify, setChatNotify] = useState('');
+    const [isShown, setIsShown] = useState(false);
 
     const toggleClipboardToast = () => {
         setIsClipboardToast(true);
         setTimeout(() => setIsClipboardToast(false), 2000);
     }
 
+    useEffect(() => {
+        if (!unread) setChatNotify('');
+        else {
+            setChatNotify(`${unread} new chat ${unread === 1 ? 'message' : 'messages'}`);
+            setIsShown(true);
+        }
+    }, [unread]);
+
+    useEffect(() => {
+        setChatNotify('Swipe right for BoxWall');
+        setIsShown(true);
+        setTimeout(() => setIsShown(false), 3000);
+    }, []);
+
     return (
         <div className="song-social-actions flex space-between">
+            {isMobile && <h3 className={`chat-notify ${isShown ? 'shown' : ''}`} onClick={openMobileChat}>{chatNotify}</h3>}
 
             <div className="btns-container flex align-center">
                 <Fab className={`add-song-btn  ${isSongPickOpen ? 'opened' : ''}`}
@@ -57,3 +75,10 @@ export function MidControls({ user, isSongPickOpen, isGuestToast, isFavorite, on
         </div>
     )
 }
+
+const mapStateToProps = state => ({
+    isMobile: state.boxReducer.isMobile,
+    unread: state.msgReducer.unread
+})
+
+export const MidControls = connect(mapStateToProps)(_MidControls);

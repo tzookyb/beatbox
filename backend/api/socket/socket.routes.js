@@ -149,8 +149,8 @@ function getBoxStatus(boxId) {
 }
 
 async function resetDemoData() {
-    const demoData = require('../../demoData/demoData.json');
     if (gUsersCount) return;
+    const demoData = require('../../demoData/demoData.json');
     await resetData();
     boxMap = JSON.parse(JSON.stringify(demoData));
     for (const box in boxMap) {

@@ -9,14 +9,14 @@ import { youtubeService } from '../services/youtubeService';
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService';
 import { socketService } from '../services/socketService';
-import { SongList } from '../cmps/box-details/SongList'
 import { BoxInfo } from '../cmps/box-details/BoxInfo'
+import { MidControls } from '../cmps/box-details/MidControls';
+import { SongList } from '../cmps/box-details/SongList'
 import { BoxChat } from '../cmps/box-details/BoxChat'
 import { loadBox, updateBox, gotBoxUpdate, setFilter } from '../store/actions/boxActions'
-import { addMsg, notify } from '../store/actions/msgActions'
+import { addMsg, notify, setReadMsg } from '../store/actions/msgActions'
 import { changeSong, updateLocalPlayer } from '../store/actions/playerActions'
 import { loadConnectedUsers, toggleFavorite } from '../store/actions/userActions'
-import { MidControls } from '../cmps/box-details/MidControls';
 
 class _BoxDetails extends Component {
     state = {
@@ -34,8 +34,11 @@ class _BoxDetails extends Component {
         const boxId = this.props.match.params.boxId;
         await this.props.loadBox(boxId);
         this.getIsFavorite(boxId);
+        this.joinBox();
+    }
 
-        // SOCKET JOIN TO BOX
+    joinBox = () => {
+        const boxId = this.props.match.params.boxId;
         const miniUser = userService.getMiniUser();
         const boxInfo = {
             boxId,
@@ -170,6 +173,7 @@ class _BoxDetails extends Component {
 
     closeMobileChat = () => {
         this.setState({ isMobileChatOpen: false })
+        this.props.setReadMsg();
     }
 
     onToggleFavorite = () => {
@@ -218,6 +222,7 @@ class _BoxDetails extends Component {
                             isGuestToast={isGuestToast}
                             onToggleFavorite={this.onToggleFavorite}
                             toggleSongPick={this.toggleSongPick}
+                            openMobileChat={this.openMobileChat}
                         />
 
                         <SongList
@@ -252,6 +257,7 @@ const mapStateToProps = state => {
     }
 }
 const mapDispatchToProps = {
+    setReadMsg,
     loadBox,
     updateBox,
     addMsg,

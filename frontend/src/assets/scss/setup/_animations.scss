@@ -1,27 +1,9 @@
 @keyframes color-change {
   0% {
-    color: white;
-  }
-  15% {
     color: yellow;
   }
-  30% {
-    color: orange;
-  }
-  45% {
-    color: red;
-  }
-  60% {
-    color: green;
-  }
-  75% {
-    color: blue;
-  }
-  90% {
-    color: purple;
-  }
   100% {
-    color: black;
+    color: red;
   }
 }
 
