@@ -205,57 +205,52 @@ class _BoxDetails extends Component {
         };
 
         return (
-            <Swipeable {...swipeConfig}>
-                <section className="box-details" style={{ backgroundColor: `rgb(${this.state.dominantColor})` }}>
-                    <div className="box-details-main flex column">
+            <Swipeable {...swipeConfig} className="box-details" style={{ backgroundColor: `rgb(${this.state.dominantColor})` }}>
+                <section className="box-details-main flex column">
 
-                        <BoxInfo
-                            getDominantColor={this.getDominantColor}
-                            imgRef={this.imgRef}
-                            box={currBox}
-                            onSaveInfo={this.onSaveInfo}
-                        />
+                    <BoxInfo
+                        getDominantColor={this.getDominantColor}
+                        imgRef={this.imgRef}
+                        box={currBox}
+                        onSaveInfo={this.onSaveInfo}
+                    />
 
-                        <MidControls user={user}
-                            isSongPickOpen={isSongPickOpen}
-                            isFavorite={isFavorite}
-                            isGuestToast={isGuestToast}
-                            onToggleFavorite={this.onToggleFavorite}
-                            toggleSongPick={this.toggleSongPick}
-                            openMobileChat={this.openMobileChat}
-                        />
+                    <MidControls user={user}
+                        isSongPickOpen={isSongPickOpen}
+                        isFavorite={isFavorite}
+                        isGuestToast={isGuestToast}
+                        onToggleFavorite={this.onToggleFavorite}
+                        toggleSongPick={this.toggleSongPick}
+                        openMobileChat={this.openMobileChat}
+                    />
 
-                        <SongList
-                            songs={songsToShow}
-                            onRemoveSong={this.onRemoveSong}
-                            onAddSong={this.onAddSong}
-                            isSongPickOpen={isSongPickOpen}
-                            onDragStart={this.onDragStart}
-                            onDragEnd={this.onDragEnd}
-                            isFilter={!!filter}
-                            isDragging={isDragging}
-                        />
-                    </div>
-
-                    <div className={`chat-box flex column align-center ${this.state.isMobileChatOpen ? 'chat-open' : ''}`}>
-                        <BoxChat />
-                    </div>
-
+                    <SongList
+                        songs={songsToShow}
+                        onRemoveSong={this.onRemoveSong}
+                        onAddSong={this.onAddSong}
+                        isSongPickOpen={isSongPickOpen}
+                        onDragStart={this.onDragStart}
+                        onDragEnd={this.onDragEnd}
+                        isFilter={!!filter}
+                        isDragging={isDragging}
+                    />
                 </section>
+
+                <div className={`chat-box flex column align-center ${this.state.isMobileChatOpen ? 'chat-open' : ''}`}>
+                    <BoxChat />
+                </div>
             </Swipeable>
         )
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        currBox: state.boxReducer.currBox,
-        currSong: state.boxReducer.currSong,
-        filter: state.boxReducer.filter,
-        user: state.userReducer.loggedinUser,
-        connectedUsers: state.userReducer.connectedUsers
-    }
-}
+const mapStateToProps = state => ({
+    currBox: state.boxReducer.currBox,
+    currSong: state.boxReducer.currSong,
+    filter: state.boxReducer.filter,
+    user: state.userReducer.loggedinUser,
+    connectedUsers: state.userReducer.connectedUsers
+})
 const mapDispatchToProps = {
     setReadMsg,
     loadBox,
