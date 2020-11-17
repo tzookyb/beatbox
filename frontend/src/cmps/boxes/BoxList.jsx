@@ -41,7 +41,7 @@ class _BoxList extends Component {
     }
 
     render() {
-        const { genre, boxes } = this.props;
+        const { genre, boxes, onDelete } = this.props;
         const { isScrolled, isScrollAvailable } = this.state;
         // if "genre" is provided that means we are on the home page.
         // no "genre" means we are on the boxes list.
@@ -77,7 +77,7 @@ class _BoxList extends Component {
                     {boxes.map(box => <BoxPreview
                         key={box._id}
                         box={box}
-                        onDelete={this.props.onDelete}
+                        onDelete={(ev) => onDelete(ev, box._id)}
                     />
                     )}
                 </div>}

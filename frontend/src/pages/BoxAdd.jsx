@@ -8,6 +8,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import { boxService } from '../services/boxService'
 import { userService } from '../services/userService'
 import { saveBox } from '../store/actions/boxActions'
+import { loadUser } from '../store/actions/userActions';
 import { BoxInfoEdit } from '../cmps/box-details/BoxInfoEdit'
 import { notify } from '../store/actions/msgActions';
 const defaultBoxImg = 'https://res.cloudinary.com/tzookyb/image/upload/v1602846820/beatbox/j8kqknrb7vkjhzh8muzj.jpg'
@@ -60,6 +61,7 @@ class _BoxAdd extends Component {
             await this.setState({ editBox: { ...this.state.editBox, imgUrl: defaultBoxImg } });
         }
         const addedBox = await this.props.saveBox(this.state.editBox);
+        this.props.loadUser();
         this.props.history.push(`/box/details/${addedBox._id}`);
     }
 
@@ -96,6 +98,7 @@ class _BoxAdd extends Component {
 }
 
 const mapDispatchToProps = {
+    loadUser,
     saveBox,
     notify
 }

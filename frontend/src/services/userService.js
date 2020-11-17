@@ -11,22 +11,41 @@ export const userService = {
     getLoggedUser,
     getMiniUser,
     addBoxToUser,
-    getUserBoxes,
     getUserById,
     removeBoxFromUser,
     toggleFavorite,
-    getUserFavoriteBoxes,
 }
 
-async function login(userCerd) {
-    const res = await httpService.post(`auth/login`, userCerd);
+function getLoggedUser() {
+    let user = _loadUser();
+    if (!user) {
+        user = _getGuestMode();
+        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(user));
+    }
+    return user;
+}
+
+function _getGuestMode() {
+    return {
+        _id: utilService.makeId(5),
+        username: 'Guest',
+        imgUrl: '',
+        isGuest: true,
+        createdBoxes: [],
+        favoriteBoxes: [],
+    }
+}
+
+async function login(userCred) {
+    const res = await httpService.post(`auth/login`, userCred);
+    console.log("login -> res", res)
     return _saveLoggedinUser(res);
 }
 
 async function logout() {
     await httpService.post(`auth/logout`);
     let user = _getGuestMode();
-    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(user))
+    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(user));
 }
 
 async function signup(userDetails) {
@@ -44,17 +63,6 @@ function getMiniUser() {
     }
 }
 
-function _getGuestMode() {
-    return {
-        _id: utilService.makeId(5),
-        username: 'Guest',
-        imgUrl: '',
-        isGuest: true,
-        createdBoxes: [],
-        favoriteBoxes: [],
-    }
-}
-
 function _saveLoggedinUser(user) {
     sessionStorage.setItem(STORAGE_KEY, JSON.stringify(user))
     return user;
@@ -67,31 +75,29 @@ async function getUserById(userId) {
 async function addBoxToUser(boxId) {
     const user = getLoggedUser();
     if (user.isGuest) return;
-    const userId = user._id;
-    const userFromDb = await getUserById(userId);
-    if (!userFromDb.boxes) userFromDb.boxes = [];
-    userFromDb.boxes.push(boxId);
-    return await httpService.put(`user/${user._id}`, userFromDb)
+    const updatedUser = await getUserById(user._id);
+    updatedUser.createdBoxes.push(boxId);
+    _saveLoggedinUser(updatedUser);
+    return await httpService.put(`user/${user._id}`, updatedUser)
 }
 
 async function removeBoxFromUser(boxId) {
     const user = getLoggedUser();
-    const userId = user._id;
-    const userFromDb = await getUserById(userId);
-    const newBoxes = userFromDb.boxes.filter(box => boxId !== box);
-    userFromDb.boxes = newBoxes;
-    return await httpService.put(`user/${user._id}`, userFromDb);
+    const updatedUser = await getUserById(user._id);
+    updatedUser.createdBoxes = updatedUser.createdBoxes.filter(box => boxId !== box);
+    _saveLoggedinUser(updatedUser);
+    return await httpService.put(`user/${user._id}`, updatedUser);
 }
 
-async function getUserBoxes(userId) {
-    const userFromDb = await getUserById(userId);
-    if (!userFromDb.boxes) return;
-    const boxes = await Promise.all(userFromDb.boxes.map(async (boxId) => {
-        const box = await boxService.getById(boxId);
-        return box;
-    }))
-    return boxes;
-}
+// async function getUserBoxes(userId) {
+//     const userFromDb = await getUserById(userId);
+//     if (!userFromDb.boxes) return;
+//     const boxes = await Promise.all(userFromDb.boxes.map(async (boxId) => {
+//         const box = await boxService.getById(boxId);
+//         return box;
+//     }))
+//     return boxes;
+// }
 
 async function toggleFavorite(boxId) {
     const user = getLoggedUser();
@@ -105,25 +111,6 @@ async function toggleFavorite(boxId) {
     return updatedUser;
 }
 
-function getLoggedUser() {
-    let user = _loadUser();
-    if (!user) {
-        user = _getGuestMode();
-        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(user));
-    }
-    return user;
-}
-
 function _loadUser() {
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY));
-}
-
-async function getUserFavoriteBoxes(userId) {
-    const userFromDb = await getUserById(userId);
-    if (!userFromDb.favoriteBoxes) return;
-    const boxes = await Promise.all(userFromDb.favoriteBoxes.map(async (boxId) => {
-        const box = await boxService.getById(boxId);
-        return box;
-    }))
-    return boxes;
 }
