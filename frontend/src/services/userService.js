@@ -1,5 +1,4 @@
 import httpService from './httpService'
-import { boxService } from './boxService';
 import { utilService } from './utilService';
 
 const STORAGE_KEY = 'loggedinUser'
@@ -88,16 +87,6 @@ async function removeBoxFromUser(boxId) {
     _saveLoggedinUser(updatedUser);
     return await httpService.put(`user/${user._id}`, updatedUser);
 }
-
-// async function getUserBoxes(userId) {
-//     const userFromDb = await getUserById(userId);
-//     if (!userFromDb.boxes) return;
-//     const boxes = await Promise.all(userFromDb.boxes.map(async (boxId) => {
-//         const box = await boxService.getById(boxId);
-//         return box;
-//     }))
-//     return boxes;
-// }
 
 async function toggleFavorite(boxId) {
     const user = getLoggedUser();
