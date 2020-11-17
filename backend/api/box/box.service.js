@@ -70,10 +70,10 @@ async function add(box) {
 }
 
 async function resetData() {
+    console.time('Reset');
     const dbData = require('../../json/database.json')
     const collection = await dbService.getCollection(COLL_NAME)
     console.log('begin reset data...')
-    const startTime = Date.now();
     try {
         await collection.deleteMany({})
         dbData.forEach(async (box) => {
@@ -84,6 +84,6 @@ async function resetData() {
     } catch (err) {
         console.log('failed inserting demo data', err);
     } finally {
-        console.log('finished after', ((Date.now() - startTime) / 1000) + 's');
+        console.timeEnd('Reset');
     }
 }
