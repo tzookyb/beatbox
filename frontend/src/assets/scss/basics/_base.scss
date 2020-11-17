@@ -20,6 +20,9 @@ body {
 main {
     min-height: 100vh;
     background-color: $clr1;
+    * > :first-child {
+        animation: fade-in 0.3s;
+    }
 }
 
 h1,
@@ -30,8 +33,8 @@ h5 {
     margin: 0;
 }
 
-input{
-    border:none;
+input {
+    border: none;
     outline: none;
 }
 
