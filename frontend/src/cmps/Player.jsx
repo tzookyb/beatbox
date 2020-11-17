@@ -189,10 +189,10 @@ class _Player extends Component {
                     {!isReady ? <CircleLoading color="#ac0aff" /> :
                         <React.Fragment>
                             <img className="player-thumbnail" src={song.imgUrl} title={song.title} alt="song thumbnail" />
-                            <span className="player-title">{song.title}</span>
+                            <span className="player-title">{isSyncing ? 'Syncing play...' : song.title}</span>
 
                             <div className="song-time flex align-center space-between">
-                                <span className="player-time">{isSyncing ? 'Syncing play...' : showTime(secPlayed)}</span>
+                                <span className="player-time">{showTime(secPlayed)}</span>
 
                                 <input
                                     className="duration-slider"
