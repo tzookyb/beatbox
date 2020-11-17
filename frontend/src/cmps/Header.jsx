@@ -28,7 +28,7 @@ class _Header extends Component {
     }
 
     toggleMenu = () => {
-        if (window.innerWidth > 740) return;
+        if (window.innerWidth > 1060) return;
         this.setState({ isMobileMenuOpen: !this.state.isMobileMenuOpen })
     }
 
@@ -59,9 +59,10 @@ class _Header extends Component {
                     <BoxFilter isShown={(pathname !== '/' || isScroll)} />
 
                     <div className="right-nav flex align-center">
-                        <ul className={`${isMobileMenuOpen ? 'menu-open' : ''} main-nav flex clean-list`}>
-                            <li><Link to="/box" onClick={this.toggleMenu}>Boxes</Link></li>
-                            <li><Link to={this.getPathForBoxAdd} onClick={this.toggleMenu} >Create Box</Link ></li>
+                        <ul onClick={this.toggleMenu} className={`${isMobileMenuOpen ? 'menu-open' : ''} main-nav flex clean-list`}>
+                            <li><Link to="/about">About</Link ></li>
+                            <li><Link to="/box">Boxes</Link></li>
+                            <li><Link to={this.getPathForBoxAdd}>Create Box</Link ></li>
                         </ul>
 
                         {user && <div className="user-avatar"><UserMenu user={user} onLogout={logout} /></div>}

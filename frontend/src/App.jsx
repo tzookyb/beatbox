@@ -9,6 +9,7 @@ import { BoxDetails } from './pages/BoxDetails';
 import { BoxAdd } from './pages/BoxAdd';
 import { Home } from './pages/Home';
 import { BoxApp } from './pages/BoxApp';
+import { About } from './pages/About';
 import { Header } from './cmps/Header';
 import { Player } from './cmps/Player';
 import { Notify } from './cmps/Notify';
@@ -59,6 +60,7 @@ class _App extends Component {
         <main>
           <Route component={BoxAdd} path="**/add" />
           <Switch>
+            <Route component={About} path="/about" />
             <Route component={BoxDetails} path="/box/details/:boxId" />
             <Route component={UserDetails} path="/user/:id" />
             <Route component={BoxApp} path="/box" />
@@ -67,7 +69,7 @@ class _App extends Component {
         </main>
 
         <Player />
-      </div>
+      </div >
     )
   }
 }

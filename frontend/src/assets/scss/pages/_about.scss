@@ -1,0 +1,42 @@
+.about {
+    padding: 80px 5.5rem 110px;
+
+    h1 {
+        font-family: Righteous;
+        font-size: 3rem;
+        background-image: linear-gradient(to bottom right, $clr3, red);
+        background-clip: text;
+        color: transparent;
+    }
+
+    p,
+    li {
+        font-size: 1.5rem;
+        color: $clr6;
+    }
+
+    li:hover {
+        cursor: pointer;
+        color: white;
+    }
+
+    .tech-grid {
+        color: white;
+        font-size: 1.1rem;
+        display: grid;
+        gap: rem(50px);
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+       
+        div img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 740px){
+    .about {
+        padding: 80px 1.5rem 170px;
+    }
+}
