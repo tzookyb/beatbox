@@ -30,6 +30,11 @@ h5 {
     margin: 0;
 }
 
+input{
+    border:none;
+    outline: none;
+}
+
 input[type="range"] {
     cursor: grab;
 }

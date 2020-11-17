@@ -36,7 +36,7 @@ class _Home extends Component {
                         </div>
                         <div className="hero-btns-container flex column space-around">
                             <a href="#active"><button>Start listening</button></a>
-                            <a href="#active" className="scroll-down-arrow"><ExpandMoreSharpIcon ></ExpandMoreSharpIcon></a>
+                            <a href="#active" className="scroll-down-arrow heartbeat2"><ExpandMoreSharpIcon ></ExpandMoreSharpIcon></a>
                         </div>
                     </div>
                     <div className="hero-img">

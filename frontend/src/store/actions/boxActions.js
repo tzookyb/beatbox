@@ -18,15 +18,15 @@ export function loadBoxes() {
 export function saveBox(box) {
   return async dispatch => {
     const newBox = await boxService.save(box);
-    dispatch({ type: 'ADD_BOX', box: newBox })
+    dispatch({ type: 'ADD_BOX', box: newBox });
     return newBox;
   };
 }
 
 export function setFilter(query) {
   return dispatch => {
-    dispatch({ type: 'SET_FILTER', filter: query })
-  }
+    dispatch({ type: 'SET_FILTER', filter: query });
+  };
 }
 
 export function updateBox(currBox) {

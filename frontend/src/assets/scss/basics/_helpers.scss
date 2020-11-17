@@ -1,6 +1,12 @@
 .flex {
   display: flex;
 
+  &.gap3 {
+    gap: 3px;
+  }
+  &.gap5 {
+    gap: 5px;
+  }
   &.space-between {
     justify-content: space-between;
   }

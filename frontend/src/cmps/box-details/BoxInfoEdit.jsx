@@ -1,7 +1,6 @@
 // OUTSOURCE IMPORTS
 import React, { Component } from 'react'
 import CircleLoading from 'react-loadingg/lib/CircleLoading';
-
 // LOCAL IMPORTS
 import { cloudService } from '../../services/cloudService'
 import { boxService } from '../../services/boxService'
@@ -33,7 +32,6 @@ export class BoxInfoEdit extends Component {
                 }
             }
         }, () => this.props.updateBox(this.state.box))
-
     }
 
     getGenresOptions() {
@@ -105,9 +103,7 @@ export class BoxInfoEdit extends Component {
                         />
 
                     </div>
-
                 </div>
-
             </form >
         )
     }

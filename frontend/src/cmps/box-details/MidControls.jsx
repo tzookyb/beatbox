@@ -22,7 +22,7 @@ export function _MidControls(props) {
     useEffect(() => {
         if (!unread) setChatNotify('');
         else {
-            setChatNotify(`${unread} new chat ${unread === 1 ? 'message' : 'messages'}`);
+            setChatNotify(`${unread} new ${unread === 1 ? 'message' : 'messages'}`);
             setIsShown(true);
         }
     }, [unread]);

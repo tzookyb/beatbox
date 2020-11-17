@@ -160,7 +160,7 @@
 
 // SCROLLDOWN ARROW
 .heartbeat2 {
-  animation: heartbeat2 5s ease-in-out 1s infinite reverse both;
+  animation: heartbeat2 3s ease-in-out 1s infinite reverse both;
 }
 
 @keyframes heartbeat2 {
@@ -199,20 +199,5 @@
     transform: scale(1);
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
-  }
-}
-
-@keyframes chat-hint {
-  0% {
-    transform: translateX(-100%);
-  }
-  40% {
-    transform: translateX(-80%);
-  }
-  60% {
-    transform: translateX(-80%);
-  }
-  100% {
-    transform: translateX(-100%);
   }
 }
