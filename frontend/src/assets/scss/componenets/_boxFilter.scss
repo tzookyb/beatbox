@@ -13,16 +13,12 @@
   }
 
   input {
-    border-color: white;
     color: white;
     width: 100%;
-    border: none;
     background-color: transparent;
     font-size: 1.1rem;
-    outline: none;
     &::placeholder {
       color: rgba(206, 206, 206, 0.9);
-      border-color: white;
     }
     &::-webkit-search-cancel-button {
       position: relative;
@@ -34,15 +30,15 @@
 @media (max-width: 740px) {
   .box-filter {
     position: absolute;
-    right: 130px;
+    right: rem(120px);
     justify-content: flex-end;
     border-bottom: initial;
     transition: 0.5s;
     .search-icon {
       cursor: pointer;
       position: absolute;
-      font-size: 3.5rem;
-      top: 15px;
+      font-size: 2.5rem;
+      top: rem(15px);
     }
     input {
       visibility: hidden;
@@ -70,6 +66,16 @@
       .search-icon {
         top: 5px;
       }
+    }
+  }
+}
+@media (max-width: 740px) {
+  .box-filter {
+    right: rem(150px);
+   
+    .search-icon {
+      top: rem(20px);
+      font-size: 3.5rem;
     }
   }
 }
