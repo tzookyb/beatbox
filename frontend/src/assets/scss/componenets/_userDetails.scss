@@ -1,5 +1,6 @@
 .user-details {
-  padding: 80px 5rem 30px;
+  padding-top: 80px;
+  padding-bottom: 30px;
   color: white;
 
   > * {
@@ -25,11 +26,5 @@
     h2 {
       margin-left: 40px;
     }
-  }
-}
-
-@media (max-width: 740px) {
-  .user-details {
-    padding: 80px 1rem 30px;
   }
 }

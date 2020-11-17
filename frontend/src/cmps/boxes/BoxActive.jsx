@@ -1,3 +1,4 @@
+// OUTSOURCE IMPORTS
 import React from 'react';
 import { connect } from 'react-redux'
 import { useState, useEffect, useRef } from 'react';
@@ -5,7 +6,7 @@ import ReactPlayer from 'react-player/youtube'
 import { Avatar } from '@material-ui/core';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
-
+// LOCAL IMPORTS
 import { BoxPreview } from './BoxPreview';
 import { socketService } from '../../services/socketService';
 import { setIsIntroPlaying } from '../../store/actions/playerActions';
@@ -54,6 +55,7 @@ export function _BoxActive(props) {
         setIsPlaying(false);
         setIntroId(null);
         props.setIsIntroPlaying(false);
+        props.notify({ txt: '' });
     }
 
     const onHoverIntro = (box) => {

@@ -1,5 +1,6 @@
 .about {
-    padding: 80px 5.5rem 110px;
+    padding-top: 100px;
+    padding-bottom: 110px;
 
     h1 {
         font-family: Righteous;
@@ -27,7 +28,7 @@
         gap: rem(50px);
         grid-template-columns: repeat(3, 1fr);
         align-items: center;
-       
+
         div img {
             height: 100%;
             width: 100%;
@@ -35,8 +36,8 @@
     }
 }
 
-@media (max-width: 740px){
+@media (max-width: 740px) {
     .about {
-        padding: 80px 1.5rem 170px;
+        padding-bottom: 170px;
     }
 }

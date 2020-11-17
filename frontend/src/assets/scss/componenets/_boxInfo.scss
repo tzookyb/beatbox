@@ -18,7 +18,8 @@
 
   .info-txt {
     margin-inline-start: 10px;
-    max-width: 50%;
+    width: 50%;
+    max-width: 300px;
 
     .info-header {
       align-items: center;
@@ -124,8 +125,8 @@
   }
 }
 
-@media (max-width: 720px) {
-  .box-info .info-txt .info-header .box-name{
+@media (max-width: 740px) {
+  .box-info .info-txt .info-header .box-name {
     font-size: 2.2rem;
   }
 }

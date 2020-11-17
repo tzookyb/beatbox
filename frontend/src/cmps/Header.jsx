@@ -50,7 +50,8 @@ class _Header extends Component {
 
                 <div onClick={this.toggleMenu} className={`screen ${isMobileMenuOpen ? 'screen-open' : ''}`} />
 
-                <header onScroll={this.onScroll} className={`${isScroll || isMobileMenuOpen ? 'sticky' : ''} flex space-between align-center`}>
+                <header onScroll={this.onScroll} className={`main-container flex space-between align-center ${isScroll || isMobileMenuOpen ? 'sticky' : ''}`}>
+
                     {(pathname === '/') ?
                         <a href="#top"><img title="BeatBox" className="logo" src={require('../assets/img/logo.png')} alt="logo" /></a> :
                         <Link to="/" ><img title="BeatBox" className="logo" src={require('../assets/img/logo.png')} alt="logo" /></Link>

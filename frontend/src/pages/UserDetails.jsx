@@ -7,6 +7,7 @@ import { userService } from '../services/userService'
 import { BoxList } from '../cmps/boxes/BoxList'
 import { removeBox } from '../store/actions/boxActions'
 import { loadUser } from '../store/actions/userActions';
+import { notify } from '../store/actions/msgActions';
 
 class _UserDetails extends Component {
 
@@ -15,6 +16,7 @@ class _UserDetails extends Component {
         await userService.removeBoxFromUser(boxId);
         this.props.loadUser();
         this.props.removeBox(boxId);
+        this.props.notify({ txt: 'Box Deleted' })
     }
 
     getBoxes = (boxesIds) => {
@@ -34,7 +36,7 @@ class _UserDetails extends Component {
         favoriteBoxes = this.getBoxes(favoriteBoxes);
 
         return (
-            <div className="user-details">
+            <div className="user-details main-container">
                 <div className="user-info">
                     <img className="img-user" src={loggedinUser.imgUrl} alt="user" />
                     <h2>{loggedinUser.username}</h2>
@@ -66,6 +68,7 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = {
     removeBox,
-    loadUser
+    loadUser,
+    notify
 };
 export const UserDetails = connect(mapStateToProps, mapDispatchToProps)(_UserDetails);

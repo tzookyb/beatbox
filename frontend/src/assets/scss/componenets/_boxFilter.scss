@@ -3,7 +3,9 @@
   padding: 8px;
   border-radius: 5px;
   border-bottom: 1px solid white;
-  margin: 0px 20px;
+  // margin-inline-start: rem(260px);
+  margin-inline-end: 20px;
+  height: 100%;
 
   .search-icon {
     transition: 0.3s;
@@ -72,7 +74,7 @@
 @media (max-width: 740px) {
   .box-filter {
     right: rem(150px);
-   
+
     .search-icon {
       top: rem(20px);
       font-size: 3.5rem;

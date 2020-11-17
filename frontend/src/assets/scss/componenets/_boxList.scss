@@ -48,6 +48,7 @@
     }
 
     &.full-grid {
+      padding: 0 5rem;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       grid-auto-rows: 250px;
       grid-auto-flow: row;
@@ -78,6 +79,7 @@
     padding-inline-start: initial;
     .box-list {
       &.full-grid {
+        padding: 0 1.5rem;
         grid-template-columns: minmax(160px, 1fr) repeat(auto-fill, minmax(160px, 1fr));
         grid-gap: 15px;
         grid-auto-rows: initial;

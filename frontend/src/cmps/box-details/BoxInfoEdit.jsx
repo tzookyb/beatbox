@@ -84,7 +84,6 @@ export class BoxInfoEdit extends Component {
                         <label>Genre:</label>
                         <select
                             required
-                            className="short-input"
                             id="genre"
                             name="genre"
                             onChange={this.handleInput}

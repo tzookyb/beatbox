@@ -46,7 +46,7 @@ class _BoxList extends Component {
         // if "genre" is provided that means we are on the home page.
         // no "genre" means we are on the boxes list.
         return (
-            <section className={`list-container ${genre ? '' : 'main-container'}`}>
+            <section className="list-container">
 
                 {genre && <React.Fragment>
                     <div className="genre-filter flex align-center space-between">
@@ -73,11 +73,11 @@ class _BoxList extends Component {
                 }
 
 
-                {!genre && <div className="box-list full-grid ">
+                {!genre && <div className="box-list full-grid">
                     {boxes.map(box => <BoxPreview
                         key={box._id}
                         box={box}
-                        onDelete={(ev) => onDelete(ev, box._id)}
+                        onDelete={onDelete}
                     />
                     )}
                 </div>}

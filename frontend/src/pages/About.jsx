@@ -8,7 +8,7 @@ import sassSvg from '../assets/svg/sass-original.svg'
 
 export function About() {
     return (
-        <section class="about flex column align-center justify-center">
+        <section className="about main-container flex column align-center justify-center">
             <h1>BeatBox</h1>
             <p>Is a social-music app. It allows you to listen to music and edit playlists called "Boxes" with friends.</p>
             <p>Just choose one of the available boxes or create your own.<br />Then invite your friends to join with with the share links either via Whatsapp, Facebook or just plain old URL link to paste.</p>

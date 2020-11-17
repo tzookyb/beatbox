@@ -6,18 +6,12 @@ header {
   font-family: Righteous;
   z-index: 29;
 
-  > *:not(:nth-child(4)) {
-    height: 100%;
-    width: 30%;
-  }
-
   a {
     color: #fff;
     font-size: rem(20px);
   }
 
   .right-nav {
-    min-width: 35%;
     justify-content: flex-end;
 
     .main-nav {
@@ -28,16 +22,11 @@ header {
     }
   }
 
-  .user-avatar {
-    margin-inline-end: 20px;
-  }
-
   .logo {
-    position: absolute;
+    position: relative;
     width: rem(125px);
     height: auto;
     top: -5px;
-    left: rem(86px);
   }
 
   &.sticky {
@@ -46,7 +35,7 @@ header {
 
   .menu-btn {
     width: 40px;
-    margin-inline-end: 20px;
+    margin-inline-start: 20px;
     color: white;
     transition: 0.5s;
     background: transparent;
@@ -88,50 +77,43 @@ header {
     .right-nav {
       .main-nav {
         flex-direction: column;
-        align-items: center;
         position: fixed;
         z-index: -1;
+        left: 0;
         min-width: 100%;
-        background-image: linear-gradient($clr1, $clr3);
-        top: -100%;
-        height: 130px;
-        overflow: hidden;
-        transition: 0.8s;
-        > * {
-          padding-inline-end: initial;
-        }
+        background-image: linear-gradient(230deg, $clr1, $clr1, $clr4, $clr3, $clr3);
+        top: 69px;
+        margin-inline-start: 100%;
+        transition: 0.5s;
+
         &.menu-open {
-          transition: 0.5s;
-          top: 69px;
+          margin-inline-start: initial;
         }
       }
 
-      li {
-        display: flex;
-        width: 100%;
-        height: 50%;
-        align-items: center;
-        justify-content: center;
-        background-color: transparent;
-        font-size: 1rem;
-        transition: background-color 0.3s;
+      li:not(:last-child) {
+        border-bottom: groove 2px $clr4;
       }
 
       a {
+        padding: 0 5rem;
         display: flex;
         align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-        color: #fff;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+        height: 6rem;
       }
     }
   }
+}
 
-  .nav-container .main-nav li {
-    visibility: visible;
-    height: 25%;
-    font-size: 1.8rem;
+@media (max-width: 740px) {
+  header {
+    .right-nav {
+      .main-nav {
+        a {
+          padding: 0 1.5rem;
+        }
+      }
+    }
   }
 }

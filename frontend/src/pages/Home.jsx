@@ -26,7 +26,7 @@ class _Home extends Component {
         const { imgsLoaded } = this.state;
         const { activeBoxes } = this.props;
         return (
-            <React.Fragment>
+            <section>
                 {(!imgsLoaded && <CircleLoading size="large" color="#ac0aff" />)}
                 <div id="top" className={`hero-container flex justify-center align-center ${(imgsLoaded) ? '' : 'invisible'}`}>
                     <div className="hero-txt flex align-center justify-end column">
@@ -50,7 +50,7 @@ class _Home extends Component {
                             onLoad={this.onLoadImg}
                             src={require('../assets/img/hero2-1920w.jpg')}
                             srcSet={`${require('../assets/img/hero2-1920w.jpg')} 800w, 
-                                    ${require('../assets/img/hero2-480w.jpg')} 480w`}
+                            ${require('../assets/img/hero2-480w.jpg')} 480w`}
                             alt="heroimg2" />
                         <img
                             onLoad={this.onLoadImg}
@@ -68,7 +68,7 @@ class _Home extends Component {
                 </div>
 
                 <Footer />
-            </React.Fragment>
+            </section>
         )
     }
 }
