@@ -1,13 +1,11 @@
 .box-info {
   color: #fff;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
-  padding: 0 10px 10px 10px;
-  max-height: 35%;
+  padding: 0 10px;
+  height: rem(200px);
 
   .box-img {
-    width: 100%;
-    max-height: rem(200px);
-    max-width: rem(220px);
+    max-height: 100%;
     position: relative;
 
     img {
@@ -20,6 +18,7 @@
 
   .info-txt {
     margin-inline-start: 10px;
+    max-width: 50%;
 
     .info-header {
       align-items: center;
@@ -33,6 +32,7 @@
       }
 
       input {
+        width: 100%;
         border: none;
         border-radius: 5px;
         padding: 5px;
@@ -109,9 +109,8 @@
 
   .info-creator {
     color: darkgray;
-    font-size: 1.1rem;
-    justify-content: space-evenly;
-    width: 175px;
+    font-size: 1rem;
+    gap: 3px;
   }
 
   .upload-box-img {
@@ -122,5 +121,11 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+  }
+}
+
+@media (max-width: 720px) {
+  .box-info .info-txt .info-header .box-name{
+    font-size: 2.2rem;
   }
 }

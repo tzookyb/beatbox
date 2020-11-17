@@ -81,7 +81,7 @@ export class BoxInfo extends Component {
                     </label>
                 </div>
                 <div className="info-txt flex space-between column">
-                    <div className="info-header flex align-end flex-1">
+                    <div className="info-header flex align-end">
                         {isEditableName ?
                             <React.Fragment>
                                 <input autoFocus type="txt" value={box.name} name="name" onChange={this.handleInput} />
@@ -106,13 +106,17 @@ export class BoxInfo extends Component {
                         {isEditableDesc && <textarea autoFocus type="txt" value={box.description} name="description" onChange={this.handleInput} />}
                         {isEditableDesc && <button className="save-btn" onClick={() => this.onSave('isEditableDesc')} ><SaveIcon /></button>}
                     </div>
-                    <h4>{box.genre}</h4>
 
-                    <div className="info-creator flex align-center">
-                        <h5>Created by:</h5>
-                        <Avatar alt="Avatar" src={box.createdBy.imgUrl} style={{ width: '35px', height: '35px' }} />
-                        <h5>{box.createdBy.name}</h5>
+                    <div className="flex space-between align-center gap5">
+                        <h4>{box.genre}</h4>
+
+                        <div className="info-creator flex align-center gap3">
+                            <h5>Created by:</h5>
+                            <Avatar alt="Avatar" src={box.createdBy.imgUrl} style={{ width: '35px', height: '35px' }} />
+                            <h5>{box.createdBy.name}</h5>
+                        </div>
                     </div>
+
                 </div>
             </section >
         )
