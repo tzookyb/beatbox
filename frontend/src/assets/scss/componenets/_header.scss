@@ -83,11 +83,11 @@ header {
         min-width: 100%;
         background-image: linear-gradient(230deg, $clr1, $clr1, $clr4, $clr3, $clr3);
         top: 69px;
-        margin-inline-start: 100%;
+        transform: translateX(100%);
         transition: 0.5s;
 
         &.menu-open {
-          margin-inline-start: initial;
+          transform: translateX(0);
         }
       }
 
