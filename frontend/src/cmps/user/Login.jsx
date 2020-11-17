@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import Button from '@material-ui/core/Button';
 // LOCAL IMPORTS
 import { login, loadUser } from '../../store/actions/userActions'
+import { notify } from '../../store/actions/msgActions';
 
 class _Login extends React.Component {
     state = {
@@ -22,10 +23,13 @@ class _Login extends React.Component {
         if (this.state.username === '') return;
         const { username, password } = this.state.user
         const userCreds = { username, password };
-        const user = await this.props.login(userCreds)
-        if (user) {
-            this.props.loadUser();
+        try {
+            await this.props.login(userCreds)
             this.props.handleClose();
+            this.props.notify({txt: 'Login Successful', type: 'green'})
+            this.props.loadUser();
+        } catch (error) {
+            this.props.notify({txt: 'Login Failed', type: 'red'})
         }
     }
 
@@ -56,15 +60,12 @@ class _Login extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        user: state.userReducer.loggedinUser,
-    }
-}
-
+const mapStateToProps = state => ({
+    user: state.userReducer.loggedinUser,
+})
 const mapDispatchToProps = {
     login,
-    loadUser
+    loadUser,
+    notify
 }
-
 export const Login = connect(mapStateToProps, mapDispatchToProps)(_Login)
