@@ -58,8 +58,8 @@ export function _BoxActive(props) {
 
     const onHoverIntro = (box) => {
         if (props.currBox?._id === box._id) return;
-        socketService.emit('get intro', box._id);
         props.setIsIntroPlaying(true);
+        socketService.emit('get intro', box._id);
         props.notify({ txt: `Connecting you live to "${box.name}" box...` });
     }
 
@@ -69,12 +69,13 @@ export function _BoxActive(props) {
     }
 
     const playIntro = () => {
+        if (!props.isIntroPlaying) return;
         setIsPlaying(true);
         elIntroPlayer.current.seekTo(secPlayed);
     }
 
     const subTitle = isTouchDevice ?
-        <span>touch <PlayCircleOutlineIcon style={{ position: 'relative', top: '5px' }} /> button to get a taste of what's playing</span> :
+        <span class="flex justify-center align-center gap3">touch <PlayCircleOutlineIcon /> button to get a taste of what's playing</span> :
         'hover over to listen to what\'s playing';
 
     if (!boxes?.length) return null;
@@ -119,13 +120,12 @@ export function _BoxActive(props) {
     </section >
 }
 
-const mapStateToProps = (state) => ({
-    currBox: state.boxReducer.currBox
+const mapStateToProps = state => ({
+    currBox: state.boxReducer.currBox,
+    isIntroPlaying: state.boxReducer.isIntroPlaying
 })
-
 const mapDispatchToProps = {
     setIsIntroPlaying,
     notify
 }
-
 export const BoxActive = connect(mapStateToProps, mapDispatchToProps)((_BoxActive));
