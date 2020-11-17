@@ -6,20 +6,15 @@ import { CircleLoading } from 'react-loadingg';
 import { userService } from '../services/userService'
 import { BoxList } from '../cmps/boxes/BoxList'
 import { removeBox } from '../store/actions/boxActions'
+import { loadUser } from '../store/actions/userActions';
 
 class _UserDetails extends Component {
 
-    componentDidMount() {
-        console.log(this.props.loggedinUser);
-    }
-
-
     onDelete = async (ev, boxId) => {
         ev.stopPropagation();
-        this.props.removeBox(boxId);
         await userService.removeBoxFromUser(boxId);
-        const userBoxes = await userService.getUserBoxes(this.props.user._id);
-        this.setState({ userBoxes });
+        this.props.loadUser();
+        this.props.removeBox(boxId);
     }
 
     getBoxes = (boxesIds) => {
@@ -69,5 +64,8 @@ const mapStateToProps = state => ({
     loggedinUser: state.userReducer.loggedinUser,
     boxes: state.boxReducer.boxes
 });
-const mapDispatchToProps = { removeBox };
+const mapDispatchToProps = {
+    removeBox,
+    loadUser
+};
 export const UserDetails = connect(mapStateToProps, mapDispatchToProps)(_UserDetails);

@@ -1,6 +1,11 @@
 .user-details {
-  padding-top: 100px;
+  padding: 80px 5rem 30px;
   color: white;
+
+  > * {
+    padding: 1rem 0;
+  }
+
   .user-info {
     text-align: center;
   }
@@ -20,5 +25,11 @@
     h2 {
       margin-left: 40px;
     }
+  }
+}
+
+@media (max-width: 740px) {
+  .user-details {
+    padding: 80px 1rem 30px;
   }
 }
