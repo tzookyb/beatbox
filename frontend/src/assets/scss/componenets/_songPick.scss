@@ -1,7 +1,7 @@
 .song-pick-container {
-    transition: 0.5s;
-    width: 0;
     max-width: 40%;
+    width: 0;
+    transition: 0.5s;
     &.opened {
         width: 100%;
     }
@@ -32,7 +32,6 @@
     }
 
     .song-pick-result {
-        // max-height: rem(45px);
         width: 100%;
         padding: 2px 0px;
         align-items: center;
@@ -46,10 +45,7 @@
         }
         .song-pick-result-img {
             object-fit: cover;
-            width: 60px;
-            // min-width: 60px;
-            // max-width: 60px;
-            max-height: 40px;
+            max-width: 60px;
             overflow: hidden;
 
             img {
@@ -79,29 +75,33 @@
         padding: 10px 25px 10px 10px;
         border-radius: 100px;
         margin-bottom: 5px;
+        transition: 0.2s;
     }
 }
+
 @media (max-width: 1000px) {
     .song-pick-container {
-        &.opened {
-            width: initial;
-        }
-    }
-    .song-pick {
-        position: absolute;
-        height: 100%;
+        position: fixed;
         z-index: 2;
-        top: -105px;
-        margin-top: 35px;
-        margin-bottom: 100%;
+        max-width: initial;
+        height: 100%;
+        padding-bottom: 110px;
+        // overflow-y: scroll;
+        top: 70px;
+    }
+
+    .song-pick {
         &.opened {
-            margin-bottom: initial;
             margin-top: initial;
-            padding-top: 35px;
+            padding-top: rem(40px);
         }
 
         input {
             padding: 10px 25px 10px 75px;
+            position: sticky;
+            top: 0px;
+            left: 10px;
+            width: 90%;
         }
     }
 }

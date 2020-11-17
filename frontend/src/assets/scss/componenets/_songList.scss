@@ -1,13 +1,11 @@
 .song-list {
+    position: relative;
     height: 100%;
     background-color: $clr1;
-    position: relative;
-    // min-height: 45vh;
+    overflow-y: auto;
     padding-bottom: 80px;
-
     ul {
-        overflow-y: visible;
-
+        overflow-y: auto;
         li {
             padding: 2px 0;
 
@@ -53,11 +51,11 @@
 
 @media (max-width: 720px) {
     .song-list {
-        padding-bottom: 16vh;
+        padding-bottom: 110px;
     }
     .remove-song-drag {
         padding-inline-start: initial;
-        bottom: 15.5vh;
+        bottom: 95px;
         svg {
             font-size: 35px;
         }

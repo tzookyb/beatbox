@@ -10,7 +10,8 @@ import { SongPreviewExample } from './SongPreviewExample'
 import { setFilter } from '../../store/actions/boxActions';
 import { NoResults } from '../NoResults';
 
-export function _SongList({ songs, onRemoveSong, onAddSong, isSongPickOpen, isFilter, isDragging, onDragEnd, onDragStart }) {
+export function _SongList(props) {
+    const { songs, onRemoveSong, onAddSong, isSongPickOpen, isFilter, isDragging, onDragEnd, onDragStart, isTouch } = props;
 
     return (
         <React.Fragment>
@@ -28,7 +29,6 @@ export function _SongList({ songs, onRemoveSong, onAddSong, isSongPickOpen, isFi
                                 className={`song-pick-container ${isSongPickOpen ? 'opened' : ''}`}
                             >
                                 <SongPick isSongPickOpen={isSongPickOpen} onAddSong={onAddSong} />
-                                {/* {provided.placeholder} */}
                             </div>
                         )}
                     </Droppable>
@@ -68,10 +68,9 @@ export function _SongList({ songs, onRemoveSong, onAddSong, isSongPickOpen, isFi
                     {provided => (
                         <div
                             ref={provided.innerRef} {...provided.droppableProps}
-                            className={`remove-song-drag flex ${isDragging ? 'opened' : ''}`}
+                            className={`remove-song-drag flex ${isDragging ? 'opened' : ''} ${isTouch ? 'hidden' : ''}`}
                         >
                             <Delete className="bin" />
-                            {/* {provided.placeholder} */}
                         </div>
                     )
                     }
@@ -80,8 +79,6 @@ export function _SongList({ songs, onRemoveSong, onAddSong, isSongPickOpen, isFi
         </React.Fragment >
     )
 }
-
-const mapDispatchToProps = {
-    setFilter
-}
-export const SongList = connect(null, mapDispatchToProps)(_SongList);
+const mapStateToProps = state => ({ isTouch: state.boxReducer.isTouch });
+const mapDispatchToProps = { setFilter };
+export const SongList = connect(mapStateToProps, mapDispatchToProps)(_SongList);

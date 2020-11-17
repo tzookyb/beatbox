@@ -44,9 +44,11 @@
     }
 
     .add-song-btn {
+        position: relative;
+        top: 0;
         z-index: 5;
         color: #fff;
-        background-color: #8c6fb0;
+        background-color: $clr3;
         transition: 0.6s;
 
         svg {
@@ -110,6 +112,17 @@
                 &:hover {
                     color: $clr3;
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .song-social-actions {
+        .add-song-btn {
+            &.opened {
+                position: absolute;
+                top: rem(-185px);
             }
         }
     }
