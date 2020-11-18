@@ -68,8 +68,9 @@ export class BoxInfo extends Component {
         if (!box) return <CircleLoading size="large" color="#ac0aff" />
         return (
             <section className="box-info flex">
+
                 <div className="box-img">
-                    <label className="upload-label" style={{ cursor: 'pointer' }}>
+                    <label className="cursor-pointer">
                         <input onChange={(ev) => this.uploadImg(ev)} type="file" hidden />
                         <img
                             crossOrigin={"anonymous"}
@@ -80,31 +81,34 @@ export class BoxInfo extends Component {
                             onLoad={this.props.getDominantColor} />
                     </label>
                 </div>
-                <div className="info-txt flex space-between column">
-                    <div className="info-header flex align-end">
-                        {isEditableName ?
-                            <React.Fragment>
-                                <input autoFocus type="txt" value={box.name} name="name" onChange={this.handleInput} />
-                                <div className="btn-hide-container">
-                                    <button className="save-btn" onClick={() => this.onSave('isEditableName')} ><SaveIcon /></button>
-                                </div>
-                            </React.Fragment>
-                            :
-                            <React.Fragment>
-                                <h2 className="box-name" title={box.name}> {box.name}</h2>
-                                <button onClick={() => this.onEdit('isEditableName')} className="hide-btn"><CreateIcon /></button>
 
-                            </React.Fragment>
+                <div className="info-txt flex space-between column">
+                    <div className="info-header flex align-center">
+                        {isEditableName ?
+                            <div className="flex align-center posrel">
+                                <input autoFocus type="txt" value={box.name} name="name" onChange={this.handleInput} />
+                                <SaveIcon className="cursor-pointer" onClick={() => this.onSave('isEditableName')} />
+                            </div>
+                            :
+                            <div className="flex align-center posrel">
+                                <h2 className="box-name" title={box.name}> {box.name}</h2>
+                                <CreateIcon className="edit-btn cursor-pointer" onClick={() => this.onEdit('isEditableName')} />
+                            </div>
                         }
                     </div>
 
                     <div className="info-description flex">
-                        {!isEditableDesc && <p className="box-description" title={box.description}>{box.description}</p>}
-                        <div className="btn-hide-container">
-                            {!isEditableDesc && <button onClick={() => this.onEdit('isEditableDesc')} className="hide-btn"><CreateIcon /></button>}
-                        </div>
-                        {isEditableDesc && <textarea autoFocus type="txt" value={box.description} name="description" onChange={this.handleInput} />}
-                        {isEditableDesc && <button className="save-btn" onClick={() => this.onSave('isEditableDesc')} ><SaveIcon /></button>}
+                        {isEditableDesc ?
+                            <div className="flex align-center posrel">
+                                <textarea autoFocus type="txt" value={box.description} name="description" onChange={this.handleInput} />
+                                <SaveIcon className="cursor-pointer" onClick={() => this.onSave('isEditableDesc')} />
+                            </div>
+                            :
+                            <div className="flex align-center posrel">
+                                <p className="box-description" title={box.description}>{box.description}</p>
+                                <CreateIcon className="edit-btn cursor-pointer" onClick={() => this.onEdit('isEditableDesc')} />
+                            </div>
+                        }
                     </div>
 
                     <div className="flex space-between align-center gap5">
