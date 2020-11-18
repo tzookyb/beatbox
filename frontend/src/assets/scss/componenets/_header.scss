@@ -47,33 +47,34 @@ header {
   }
 }
 
+.screen {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  z-index: 29;
+  transition: 0.5s;
+  visibility: hidden;
+
+  &.screen-open {
+    backdrop-filter: blur(2px);
+    visibility: visible;
+  }
+}
+
 @media (max-width: 1060px) {
   header {
     .menu-btn {
       display: block;
     }
-  }
 
-  .screen {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    background-color: transparent;
-    z-index: 29;
-    transition: 0.5s;
-    visibility: hidden;
-
-    &.screen-open {
-      backdrop-filter: blur(2px);
-      visibility: visible;
-    }
-  }
-
-  header {
     .logo {
+      z-index: 30;
       top: 0px;
-      left: 5px;
     }
+
     .right-nav {
       .main-nav {
         flex-direction: column;
@@ -83,24 +84,23 @@ header {
         min-width: 100%;
         background-image: linear-gradient(230deg, $clr1, $clr1, $clr4, $clr3, $clr3);
         top: 69px;
-        transform: translateX(100%);
+        transform: translate3d(100%, 0, 0);
         transition: 0.5s;
 
         &.menu-open {
-          transform: translateX(0);
+          transform: translate3d(0, 0, 0);
         }
-      }
+        li:not(:last-child) {
+          border-bottom: groove 2px $clr4;
+        }
 
-      li:not(:last-child) {
-        border-bottom: groove 2px $clr4;
-      }
-
-      a {
-        padding: 0 5rem;
-        display: flex;
-        align-items: center;
-        font-size: 1.8rem;
-        height: 6rem;
+        a {
+          padding: 0 5rem;
+          display: flex;
+          align-items: center;
+          font-size: 1.8rem;
+          height: 6rem;
+        }
       }
     }
   }

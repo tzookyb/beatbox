@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import WhatsappIcon from '@material-ui/icons/WhatsApp';
@@ -8,8 +8,10 @@ import { Fab } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
-export function _MidControls(props) {
-    const { user, isSongPickOpen, isGuestToast, isFavorite, onToggleFavorite, toggleSongPick, isMobile, unread, openMobileChat } = props;
+export function MidControls(props) {
+    const { user, isSongPickOpen, isGuestToast, isFavorite, onToggleFavorite, toggleSongPick, openMobileChat } = props;
+    const unread = useSelector(state => state.msgReducer.unread);
+    const isMobile = useSelector(state => state.boxReducer.isMobile);
     const [isClipboardToast, setIsClipboardToast] = useState(false);
     const [chatNotify, setChatNotify] = useState('');
     const [isShown, setIsShown] = useState(false);
@@ -75,10 +77,3 @@ export function _MidControls(props) {
         </div>
     )
 }
-
-const mapStateToProps = state => ({
-    isMobile: state.boxReducer.isMobile,
-    unread: state.msgReducer.unread
-})
-
-export const MidControls = connect(mapStateToProps)(_MidControls);

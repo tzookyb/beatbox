@@ -39,7 +39,7 @@ class _UserDetails extends Component {
             <div className="user-details main-container">
                 <div className="user-info">
                     <img className="img-user" src={loggedinUser.imgUrl} alt="user" />
-                    <h2>{loggedinUser.username}</h2>
+                    <h1>{loggedinUser.username}</h1>
                 </div>
 
                 <div className="user-boxes">

@@ -37,7 +37,6 @@ function _getGuestMode() {
 
 async function login(userCred) {
     const res = await httpService.post(`auth/login`, userCred);
-    console.log("login -> res", res)
     return _saveLoggedinUser(res);
 }
 

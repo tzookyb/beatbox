@@ -1,6 +1,6 @@
 // OUTSOURCE IMPORTS
 import React from 'react';
-import { connect } from 'react-redux'
+import { connect, useSelector } from 'react-redux'
 import { useState, useEffect, useRef } from 'react';
 import ReactPlayer from 'react-player/youtube'
 import { Avatar } from '@material-ui/core';
@@ -13,10 +13,8 @@ import { setIsIntroPlaying } from '../../store/actions/playerActions';
 import { notify } from '../../store/actions/msgActions';
 
 export function _BoxActive(props) {
-
     useEffect(() => {
         socketService.on('got intro', onGotIntro);
-        checkIfTouchDevice();
         return () => {
             socketService.off('got intro', onGotIntro);
             props.setIsIntroPlaying(false);
@@ -24,26 +22,17 @@ export function _BoxActive(props) {
         // eslint-disable-next-line
     }, [])
 
+    const isMobile = useSelector(state => state.boxReducer.isMobile);
     const [boxes, setBoxes] = useState(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [introId, setIntroId] = useState(null);
     const [secPlayed, setSecPlayed] = useState(null);
-    const [isTouchDevice, setIsTouchDevice] = useState(undefined);
 
     useEffect(() => {
         setBoxes(props.boxes);
     }, [props])
 
     const elIntroPlayer = useRef()
-
-    const checkIfTouchDevice = () => {
-        try {
-            document.createEvent("TouchEvent");
-            setIsTouchDevice(true);
-        } catch (err) {
-            setIsTouchDevice(false);
-        }
-    }
 
     const connectedUsersAvatars = (users) => {
         return users.map(user => {
@@ -76,8 +65,8 @@ export function _BoxActive(props) {
         elIntroPlayer.current.seekTo(secPlayed);
     }
 
-    const subTitle = isTouchDevice ?
-        <span class="flex justify-center align-center gap3">touch <PlayCircleOutlineIcon /> button to get a taste of what's playing</span> :
+    const subTitle = isMobile ?
+        <span className="flex justify-center align-center gap3">touch <PlayCircleOutlineIcon /> button to get a taste of what's playing</span> :
         'hover over to listen to what\'s playing';
 
     if (!boxes?.length) return null;
@@ -104,7 +93,7 @@ export function _BoxActive(props) {
 
                     <img className="live" src={require('../../assets/img/live.gif')} alt="live" />
 
-                    <BoxPreview box={box} introIsTouchDevice={isTouchDevice} />
+                    <BoxPreview box={box} introIsTouchDevice={isMobile} />
                 </div>
             })}
 

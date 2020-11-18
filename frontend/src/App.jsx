@@ -60,9 +60,9 @@ class _App extends Component {
         <main>
           <Route component={BoxAdd} path="**/add" />
           <Switch>
-            <Route component={About} path="/about" />
             <Route component={BoxDetails} path="/box/details/:boxId" />
             <Route component={UserDetails} path="/user/:id" />
+            <Route component={About} path="/about" />
             <Route component={BoxApp} path="/box" />
             <Route component={Home} path="/" />
           </Switch>

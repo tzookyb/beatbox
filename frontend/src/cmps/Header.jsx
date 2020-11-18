@@ -60,7 +60,7 @@ class _Header extends Component {
                     <BoxFilter isShown={(pathname !== '/' || isScroll)} />
 
                     <div className="right-nav flex align-center">
-                        <ul onClick={this.toggleMenu} className={`${isMobileMenuOpen ? 'menu-open' : ''} main-nav flex clean-list`}>
+                        <ul onClick={this.toggleMenu} className={`main-nav flex clean-list ${isMobileMenuOpen ? 'menu-open' : ''}`}>
                             <li><Link to="/about">About</Link ></li>
                             <li><Link to="/box">Boxes</Link></li>
                             <li><Link to={this.getPathForBoxAdd}>Create Box</Link ></li>

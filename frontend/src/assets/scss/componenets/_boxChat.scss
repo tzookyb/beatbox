@@ -30,7 +30,6 @@
 
 
 .msgs {
-  // height: calc(100vh - 305px);
   height: rem(600px);
   overflow-y: scroll;
   overflow-x: hidden;
@@ -76,7 +75,7 @@
   bottom: 90px;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 740px) {
   .chat-box {
     width: 100vw;
     position: fixed;

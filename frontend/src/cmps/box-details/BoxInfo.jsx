@@ -91,7 +91,7 @@ export class BoxInfo extends Component {
                             </React.Fragment>
                             :
                             <React.Fragment>
-                                <h2 className="box-name"> {box.name}</h2>
+                                <h2 className="box-name" title={box.name}> {box.name}</h2>
                                 <button onClick={() => this.onEdit('isEditableName')} className="hide-btn"><CreateIcon /></button>
 
                             </React.Fragment>
@@ -99,7 +99,7 @@ export class BoxInfo extends Component {
                     </div>
 
                     <div className="info-description flex">
-                        {!isEditableDesc && <p className="box-description"> {box.description}</p>}
+                        {!isEditableDesc && <p className="box-description" title={box.description}>{box.description}</p>}
                         <div className="btn-hide-container">
                             {!isEditableDesc && <button onClick={() => this.onEdit('isEditableDesc')} className="hide-btn"><CreateIcon /></button>}
                         </div>
