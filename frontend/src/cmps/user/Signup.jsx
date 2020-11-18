@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import { cloudService } from '../../services/cloudService'
 import { signup, loadUser } from '../../store/actions/userActions'
 import imgPlaceholder from '../../assets/img/img_placeholder.png';
-
+import { notify } from '../../store/actions/msgActions';
 class _Signup extends React.Component {
     state = {
         user: {
@@ -35,11 +35,23 @@ class _Signup extends React.Component {
 
     onSignup = (ev) => {
         ev.preventDefault();
-        if (this.state.username === '') return;
-        const newUser = { ...this.state.user };
-        this.props.signup(newUser);
-        this.props.loadUser();
-        this.props.handleClose();
+        const { username, password } = this.state.user;
+        if (!username || username.length < 3) {
+            this.props.notify({ txt: 'Username longer than 3 characters is required!', type: 'red' });
+            return;
+        }
+        if (!password || password.length < 3) {
+            this.props.notify({ txt: 'Password longer than 3 characters is required!', type: 'red' });
+            return;
+        }
+        try {
+            this.props.signup({ ...this.state.user });
+            this.props.loadUser();
+            this.props.handleClose();
+            this.props.notify({ txt: 'Signup Successful', type: 'green' });
+        } catch (error) {
+            this.props.notify({ txt: 'Signup Failed', type: 'red' });
+        }
     }
 
     render() {
@@ -53,13 +65,11 @@ class _Signup extends React.Component {
                         id="username"
                         name="username"
                         autoFocus
-                        required
                         onChange={this.onChange}
                         placeholder="User Name:"
                         autoComplete="off" />
                     <label htmlFor="password">Password:</label>
                     <input
-                        required
                         id="password"
                         name="password"
                         type="password"
@@ -85,15 +95,12 @@ class _Signup extends React.Component {
 
 }
 
-const mapStateToProps = state => {
-    return {
-        user: state.userReducer.loggedinUser,
-    }
-}
-
+const mapStateToProps = state => ({
+    user: state.userReducer.loggedinUser,
+})
 const mapDispatchToProps = {
+    notify,
     loadUser,
     signup
 }
-
 export const Signup = connect(mapStateToProps, mapDispatchToProps)(_Signup)

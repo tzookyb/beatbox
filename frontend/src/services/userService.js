@@ -36,8 +36,13 @@ function _getGuestMode() {
 }
 
 async function login(userCred) {
-    const res = await httpService.post(`auth/login`, userCred);
-    return _saveLoggedinUser(res);
+    try {
+        const res = await httpService.post(`auth/login`, userCred);
+        return _saveLoggedinUser(res);
+    } catch (error) {
+        throw error;
+    }
+
 }
 
 async function logout() {
@@ -48,8 +53,12 @@ async function logout() {
 
 async function signup(userDetails) {
     userDetails = { ...userDetails, createdBoxes: [], favoriteBoxes: [], isGuest: false }
-    const newUser = await httpService.post(`auth/signup`, userDetails);
-    return _saveLoggedinUser(newUser);
+    try {
+        const newUser = await httpService.post(`auth/signup`, userDetails);
+        return _saveLoggedinUser(newUser);
+    } catch (error) {
+        throw error;
+    }
 }
 
 function getMiniUser() {

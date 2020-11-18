@@ -21,18 +21,16 @@ class _Login extends React.Component {
     onLogin = async (ev) => {
         ev.preventDefault();
         if (this.state.username === '') return;
-        const { username, password } = this.state.user
-        const userCreds = { username, password };
+        const userCreds = this.state.user;
         try {
             await this.props.login(userCreds)
             this.props.handleClose();
-            this.props.notify({txt: 'Login Successful', type: 'green'})
+            this.props.notify({ txt: 'Login Successful', type: 'green' })
             this.props.loadUser();
         } catch (error) {
-            this.props.notify({txt: 'Login Failed', type: 'red'})
+            this.props.notify({ txt: 'Login Failed', type: 'red' })
         }
     }
-
 
     render() {
         return (
