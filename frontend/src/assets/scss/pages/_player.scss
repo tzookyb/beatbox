@@ -37,12 +37,17 @@
     }
 
     .player-thumbnail {
-        transform: scale(1.4);
-        object-fit: cover;
-        max-width: rem(80px);
-        cursor: pointer;
+        height: 80%;
+        max-width: rem(100px);
         margin-inline-end: 15px;
         margin-inline-start: 30px;
+        overflow: hidden;
+        border-radius: 5px;
+
+        img {
+            object-fit: cover;
+            transform: scale(1.4);
+        }
     }
 
     .player-title {
@@ -93,8 +98,7 @@
     .player-container {
         .player-capsule {
             flex-direction: column-reverse;
-            min-height: 110px;
-            height: 16vh;
+            min-height: 120px;
             padding: 10px 30px;
         }
 

@@ -188,7 +188,9 @@ class _Player extends Component {
 
                     {!isReady ? <CircleLoading color="#ac0aff" /> :
                         <React.Fragment>
-                            <img className="player-thumbnail" src={song.imgUrl} title={song.title} alt="song thumbnail" />
+                            <div className="player-thumbnail">
+                                <img src={song.imgUrl} title={song.title} alt="song thumbnail" />
+                            </div>
                             <span className="player-title">{isSyncing ? 'Syncing play...' : song.title}</span>
 
                             <div className="song-time flex align-center space-between">

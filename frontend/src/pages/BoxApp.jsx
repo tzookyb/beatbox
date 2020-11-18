@@ -45,10 +45,11 @@ class _BoxApp extends Component {
         }
 
         let genres;
-        if (this.props.location.pathname === '/') genres = boxService.getUsedGenres(boxes);
+        const isHomepage = (this.props.location.pathname === '/');
+        if (isHomepage) genres = boxService.getUsedGenres(boxes);
 
         return (
-            <section className="box-app" id="box">
+            <section className={`box-app ${isHomepage ? 'homepage-bottom' : ''}`} id="box">
                 {genres && genres.map((genre, idx) => {
                     return (
                         <BoxList
