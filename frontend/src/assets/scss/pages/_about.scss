@@ -1,3 +1,17 @@
+.feat-gif {
+    width: 100%;
+    height: calc(100vh - 70px - 120px);
+    img {
+        height: 100%;
+        width: auto;
+        opacity: 1;
+        transition: 0.3s;
+        &.img-loading {
+            opacity: 0;
+        }
+    }
+}
+
 .about {
     padding-top: 100px;
     padding-bottom: 110px;
@@ -18,7 +32,7 @@
 
     li:hover {
         cursor: pointer;
-        color: white;
+        color: $clr3;
     }
 
     .tech-grid {
@@ -28,10 +42,14 @@
         gap: rem(50px);
         grid-template-columns: repeat(3, 1fr);
         align-items: center;
-
-        div img {
-            height: 100%;
-            width: 100%;
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            img {
+                height: 100%;
+                width: 100%;
+            }
         }
     }
 }
