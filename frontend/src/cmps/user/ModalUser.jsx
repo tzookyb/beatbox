@@ -28,7 +28,7 @@ export function ModalUser(props) {
   const DynamicCmp = cmpMap[props.childern];
   if (!DynamicCmp) return <h1>Loading..</h1>
   return (
-    <div className="modal-signup">
+    <div>
       <div variant="outlined" color="primary" onClick={handleClickOpen}>
         {props.childern}
       </div>

@@ -40,7 +40,7 @@ export function About() {
                 <p>Just choose one of the available boxes or create your own.<br />Then invite your friends to join with with the share links either via Whatsapp, Facebook or just plain old URL link to paste.</p>
                 <p>Key Features: ({`${isMobile ? 'tap' : 'click'}`} to show example)</p>
                 <ul>
-                    {listItems.map((item, idx) => <li key={idx} onClick={() => setFeatGif(`${idx}.gif`)}>{item}</li>)}
+                    {listItems.map((item, idx) => <li className={isMobile ? 'feat-underline' : ''} key={idx} onClick={() => setFeatGif(`${idx}.gif`)}>{item}</li>)}
                 </ul>
 
                 <p>This app is a SPA (single page application) PWA (progressive web app) which is mobile friendly, tested on Desktop Chrome and Android.<br />
