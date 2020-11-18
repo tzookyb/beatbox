@@ -5,8 +5,7 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import PauseIcon from '@material-ui/icons/Pause';
 
 export function SongPreviewExample({ isFirst }) {
-    let num = parseInt(Math.random() * 40 + 40)
-
+    const img = require(`../../assets/img/band${isFirst ? '1' : '2'}.jpg`);
     return (
         <li key={isFirst ? 1 : 2} className="song-preview flex space-between">
             < div className="song-data flex align-center" >
@@ -14,7 +13,7 @@ export function SongPreviewExample({ isFirst }) {
                     {isFirst ? <PauseIcon className="play-icon now-playing" /> :
                         <PlayArrowIcon className="play-icon" />}
                 </div>
-                <div className="song-preview-img"><img src={`https://picsum.photos/id/${num}/120/90`} alt="song-img" /></div>
+                <div className="song-preview-img"><img src={img} alt="song-img" /></div>
                 <h3 className={isFirst ? 'now-playing' : ''}>{isFirst ? `Your songs go here... Click '+' to add them` : 'This could be your song'}</h3>
             </div >
             <div className="song-preview-btns flex align-center">
