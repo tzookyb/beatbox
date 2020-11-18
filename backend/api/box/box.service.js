@@ -71,11 +71,13 @@ async function add(box) {
 
 async function resetData() {
     console.time('Reset');
+    console.log('begin reset data...')
     const dbData = require('../../json/database.json')
     const collection = await dbService.getCollection(COLL_NAME)
-    console.log('begin reset data...')
+    console.log('connected to DB');
     try {
         await collection.deleteMany({})
+        console.log('deleted old DB');
         dbData.forEach(async (box) => {
             box._id = ObjectId(box._id);
         })

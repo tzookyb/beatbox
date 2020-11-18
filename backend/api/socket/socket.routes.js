@@ -47,7 +47,7 @@ function connectSockets(io) {
         socket.on('disconnect', () => {
             gUsersCount--;
             if (!gUsersCount) {
-                setTimeout(resetDemoData, 1000 * 1800);
+                setTimeout(resetDemoData, 10000);
             }
             console.log('disconnect', gUsersCount);
             if (!socket.myBox) return;
