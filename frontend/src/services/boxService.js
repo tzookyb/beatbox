@@ -51,7 +51,7 @@ function getEmptyBox(user) {
 
 async function save(box) {
     const newBox = await httpService.post(`box`, box);
-    userService.addBoxToUser(newBox._id);
+    await userService.addBoxToUser(newBox._id);
     return newBox;
 }
 
