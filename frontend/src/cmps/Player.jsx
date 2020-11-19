@@ -110,7 +110,7 @@ class _Player extends Component {
     }
 
     handleSeekChange = ({ target }) => {
-        this.setState({ secPlayed: (parseInt(target.value)) });
+        this.setState({ secPlayed: (+target.value) });
     }
 
     handleSeekMouseUp = () => {

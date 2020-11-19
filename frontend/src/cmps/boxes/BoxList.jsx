@@ -17,7 +17,6 @@ class _BoxList extends Component {
     componentDidMount() {
         const isScrollAvailable = !!(this.ref.current?.offsetWidth - this.ref.current?.scrollWidth);
         this.setState({ isScrollAvailable });
-
         if (this.props.genre) this.intervalScroll();
     }
 
@@ -25,36 +24,35 @@ class _BoxList extends Component {
         this.pauseInterval()
     }
 
-    intervalId;
+    intervalId = React.createRef();
     ref = React.createRef()
 
     executeScroll = utilService.executeScroll;
 
     intervalScroll = () => {
-        this.intervalId = setInterval(() => {
-            this.executeScroll(utilService.getRandomInteger(100, 300));
+        this.intervalId.current = setInterval(() => {
+            this.executeScroll(200);
         }, 7000)
     }
 
     pauseInterval = () => {
-        clearInterval(this.intervalId);
+        clearInterval(this.intervalId.current);
     }
 
     render() {
-        const { genre, boxes, onDelete } = this.props;
+        const { genre, boxes, onDelete, isHomepage } = this.props;
         const { isScrolled, isScrollAvailable } = this.state;
-        // if "genre" is provided that means we are on the home page.
-        // no "genre" means we are on the boxes list.
+
         return (
             <section className="list-container">
 
-                {genre && <React.Fragment>
+                {isHomepage && <React.Fragment>
                     <div className="genre-filter flex align-center space-between">
                         <h3 className="title-genre">{genre}</h3>
                         <Link to={`/box?&genre=${genre}`}> <h3 className="see-all-genre">See All →</h3></Link>
                     </div>
 
-                    <div ref={this.ref} onMouseEnter={this.pauseInterval} onMouseLeave={this.intervalScroll} className={`box-list ${this.props.location.pathname === '/' ? 'homepage-list' : ''}`}>
+                    <div ref={this.ref} onMouseEnter={this.pauseInterval} onMouseLeave={this.intervalScroll} className={`box-list ${isHomepage ? 'homepage-list' : ''}`}>
                         {isScrolled && <button className="list-left-btn" onClick={() => this.executeScroll(-window.innerWidth / 2)}><ArrowBackIosIcon /></button>}
 
                         {boxes.map(box => {
@@ -73,7 +71,7 @@ class _BoxList extends Component {
                 }
 
 
-                {!genre && <div className="box-list full-grid">
+                {!isHomepage && <div className="box-list full-grid">
                     {boxes.map(box => <BoxPreview
                         key={box._id}
                         box={box}

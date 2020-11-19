@@ -45,14 +45,16 @@ class _BoxApp extends Component {
         }
 
         let genres;
-        const isHomepage = (this.props.location.pathname === '/');
+        const path = this.props.location.pathname;
+        const isHomepage = (path === '/' || path === '/add');
         if (isHomepage) genres = boxService.getUsedGenres(boxes);
 
         return (
             <section className={`box-app ${isHomepage ? 'homepage-bottom' : ''}`} id="box">
-                {genres && genres.map((genre, idx) => {
+                {isHomepage && genres.map((genre, idx) => {
                     return (
                         <BoxList
+                            isHomepage={isHomepage}
                             boxes={boxes}
                             key={idx}
                             genre={genre}
@@ -60,7 +62,7 @@ class _BoxApp extends Component {
                     )
                 })}
 
-                {!genres && <React.Fragment>
+                {!isHomepage && <React.Fragment>
                     <GenresFilter />
                     <BoxList boxes={boxes} />
                 </React.Fragment>}

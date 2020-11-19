@@ -70,7 +70,6 @@ export class BoxInfoEdit extends Component {
 
                         <label>Name:</label>
                         <input
-                            required
                             className="short-input"
                             autoComplete="off"
                             autoFocus
@@ -83,7 +82,6 @@ export class BoxInfoEdit extends Component {
 
                         <label>Genre:</label>
                         <select
-                            required
                             id="genre"
                             name="genre"
                             onChange={this.handleInput}
