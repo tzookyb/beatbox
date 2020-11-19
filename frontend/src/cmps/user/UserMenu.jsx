@@ -9,18 +9,8 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import Avatar from '@material-ui/core/Avatar';
-// import { makeStyles } from '@material-ui/core/styles';
 // LOCAL IMPORTS
 import { ModalUser } from './ModalUser'
-
-// const useStyles = makeStyles((theme) => ({
-//     root: {
-//         display: 'flex',
-//     },
-//     paper: {
-//         marginRight: theme.spacing(2),
-//     },
-// }));
 
 export function UserMenu({ user, onLogout }) {
     // const classes = useStyles();
@@ -38,15 +28,7 @@ export function UserMenu({ user, onLogout }) {
         dispatch({ type: 'SET_NOTIFY', notify: { txt: 'Logout Successful', type: 'green' } });
     }
 
-    const handleClose = (ev) => {
-        if (anchorRef.current && anchorRef.current.contains(ev.target)) {
-            return;
-        }
-        setOpen(false);
-    };
-
     return (
-        // <div className={classes.root}>
         <div>
             <div className="user-menu">
                 <Avatar
@@ -63,9 +45,9 @@ export function UserMenu({ user, onLogout }) {
                             style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
                         >
                             <Paper>
-                                <ClickAwayListener onClickAway={handleClose}>
+                                <ClickAwayListener onClickAway={() => setOpen(false)}>
                                     <MenuList autoFocusItem={open} id="menu-list-grow">
-                                        {!user.isGuest && <MenuItem onClick={handleClose}>
+                                        {!user.isGuest && <MenuItem onClick={() => setOpen(false)}>
                                             <Link to={`/user/${user._id}`} style={{ color: "black" }}>Profile</Link>
                                         </MenuItem>}
                                         {user.isGuest && <MenuItem >
@@ -82,6 +64,6 @@ export function UserMenu({ user, onLogout }) {
                     )}
                 </Popper>
             </div>
-        </div>
+        </div >
     );
 }
