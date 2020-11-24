@@ -13,7 +13,7 @@ if someone makes a change to the playlist, you see it too. You all share the sam
 You can chat with the other users using the "Box Wall".
 If you sign-up, you can have your own avatar shown, keep your favorite boxes, and delete your created boxes.
 <img src="Screenshot.png">  
-<img src="Screenshot2.jpg">  
+<img src="Screenshot2.jpg align="right"">  
 
 ## What is it for?
 Well basically this is a showcase for the things i learned in the course.
