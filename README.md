@@ -12,8 +12,8 @@ when your friends are there with you, you all listen to same song playing, synch
 if someone makes a change to the playlist, you see it too. You all share the same playlist and the play status (besides volume).
 You can chat with the other users using the "Box Wall".
 If you sign-up, you can have your own avatar shown, keep your favorite boxes, and delete your created boxes.
-<img src="Screenshot.png" width=650>  
-<img src="Screenshot2.png">  
+<img src="Screenshot.png">  
+<img src="Screenshot2.jpg">  
 
 ## What is it for?
 Well basically this is a showcase for the things i learned in the course.
